@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Getting Started with eOffer</category>
+         <ttm:title>My eOffers Page</ttm:title>
+         <ttm:desc>The My eOffers screen serves as the entry point to the eOffer system. You can continue processing Saved eOffers, review Submitted eOffers, or eSign pending eOffers as required.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.16" end="00:00:05.00" region="speaker">The &quot;My eOffers&quot; screen is the entry point to the</p>
+         <p begin="00:00:05.00" end="00:00:06.40" region="speaker">eOffer system.</p>
+         <p begin="00:00:06.40" end="00:00:08.73" region="speaker">From here, you can click the drop down menu under</p>
+         <p begin="00:00:08.73" end="00:00:12.10" region="speaker">&quot;Select Solicitation&quot; and choose the solicitation</p>
+         <p begin="00:00:12.10" end="00:00:15.30" region="speaker">against which you would like to submit a proposal.</p>
+         <p begin="00:00:15.30" end="00:00:17.86" region="speaker">Each option provides the Solicitation Number,</p>
+         <p begin="00:00:17.86" end="00:00:21.06" region="speaker">Refresh Number, and the corresponding schedule.</p>
+         <p begin="00:00:21.06" end="00:00:23.83" region="speaker">Important to note is that a &quot;Refresh&quot; is, in</p>
+         <p begin="00:00:23.83" end="00:00:26.93" region="speaker">essence, an amendment to the solicitation that may</p>
+         <p begin="00:00:26.93" end="00:00:29.86" region="speaker">change some of its terms or conditions.</p>
+         <p begin="00:00:29.86" end="00:00:32.66" region="speaker">From time to time, GSA will issue these</p>
+         <p begin="00:00:32.66" end="00:00:35.63" region="speaker">&quot;refreshes&quot; in response to changes in markets,</p>
+         <p begin="00:00:35.63" end="00:00:39.43" region="speaker">federal mandates, or other administrative reasons.</p>
+         <p begin="00:00:39.43" end="00:00:41.96" region="speaker">Additionally, the &quot;My eOffers&quot; screen contains</p>
+         <p begin="00:00:41.96" end="00:00:44.70" region="speaker">information on offers that are Saved, but not yet</p>
+         <p begin="00:00:44.70" end="00:00:48.46" region="speaker">completed;submitted, but not yet approved; and</p>
+         <p begin="00:00:48.46" end="00:00:51.50" region="speaker">those that are signed and active with GSA.</p>
+         <p begin="00:00:51.50" end="00:00:54.60" region="speaker">To continue working on a saved eOffer, simply click</p>
+         <p begin="00:00:54.60" end="00:00:55.93" region="speaker">the &quot;Edit&quot; button.</p>
+         <p begin="00:00:55.93" end="00:00:58.40" region="speaker">You can also delete this offer prior to it being</p>
+         <p begin="00:00:58.40" end="00:00:59.66" region="speaker">submitted.</p>
+         <p begin="00:00:59.66" end="00:00:62.50" region="speaker">Once you submit an offer it will be locked as it</p>
+         <p begin="00:00:62.50" end="00:00:62.90" region="speaker">undergoes an initial review.</p>
+         <p begin="00:00:62.90" end="00:00:65.56" region="speaker">You will be able to tell if you can edit your</p>
+         <p begin="00:00:65.56" end="00:00:68.83" region="speaker">recently submitted offer depending on whether you</p>
+         <p begin="00:00:68.83" end="00:00:72.06" region="speaker">see a &quot;locked&quot; or &quot;unlocked&quot; icon next to</p>
+         <p begin="00:00:72.06" end="00:00:73.06" region="speaker">it.</p>
+         <p begin="00:00:73.06" end="00:00:76.23" region="speaker">You can also Edit or Withdraw submitted offers.</p>
+         <p begin="00:00:76.23" end="00:00:78.53" region="speaker">And you can View the Offer, and View or</p>
+         <p begin="00:00:78.53" end="00:00:80.56" region="speaker">Download the Package associated with your</p>
+         <p begin="00:00:80.56" end="00:00:82.96" region="speaker">active GSA contracts.</p>
+         <p begin="00:00:82.96" end="00:00:85.36" region="speaker">If you are ready to submit a new offer and have</p>
+         <p begin="00:00:85.36" end="00:00:87.46" region="speaker">identified the solicitation, to which you</p>
+         <p begin="00:00:87.46" end="00:00:90.83" region="speaker">want to respond, simply click &quot;Submit Online.&quot;</p>
+    </div>
+  </body>
+</tt>

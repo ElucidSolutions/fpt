@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Administrative Modifications</category>
+         <ttm:title>Contract Administrator/Point of Contact</ttm:title>
+         <ttm:desc>Your Contract Administrator/Point-of-Contact should be current at all times, as easy access to key personnel guarantees all matters regarding Contracts are resolved effectively.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.23" end="00:00:04.06" region="speaker">Here you can make a Modification to your</p>
+         <p begin="00:00:04.06" end="00:00:06.83" region="speaker">company&apos;s primary point of contact.</p>
+         <p begin="00:00:06.83" end="00:00:09.36" region="speaker">With this mod, you may edit the Point of</p>
+         <p begin="00:00:09.36" end="00:00:11.43" region="speaker">Contact&apos;s name only.</p>
+         <p begin="00:00:11.43" end="00:00:14.63" region="speaker">The &quot;Telephone&quot;, &quot;Fax&quot;, &quot;e-mail&quot;, &quot;URL&quot;, and</p>
+         <p begin="00:00:14.63" end="00:00:17.70" region="speaker">&quot;Contract date&quot; fields are editable by selecting the</p>
+         <p begin="00:00:17.70" end="00:00:20.76" region="speaker">appropriate &quot;Mod Type&quot; from the selection list.</p>
+         <p begin="00:00:20.76" end="00:00:23.16" region="speaker">You may also view your list of Negotiators and</p>
+         <p begin="00:00:23.16" end="00:00:24.73" region="speaker">their privileges.</p>
+         <p begin="00:00:24.73" end="00:00:27.16" region="speaker">These fields become editable after selecting</p>
+         <p begin="00:00:27.16" end="00:00:29.76" region="speaker">the corresponding &quot;Mod Type&quot; from the &apos;select mod</p>
+         <p begin="00:00:29.76" end="00:00:31.26" region="speaker">type&apos; screen.</p>
+         <p begin="00:00:31.26" end="00:00:33.03" region="speaker">When you are finished, click &quot;Save And</p>
+         <p begin="00:00:33.03" end="00:00:35.00" region="speaker">Continue.&quot;</p>
+    </div>
+  </body>
+</tt>

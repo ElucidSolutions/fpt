@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Digital Certificates</category>
+         <ttm:title>Exporting a Digital Certificate (Internet Explorer)</ttm:title>
+         <ttm:desc>You may choose to create a backup of your Digital Certificate by exporting it from your internet browser to an external drive. This video follows the steps for exporting your Digital Certificate from the Microsoft Internet Explorer web browser.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:08.23" end="00:00:10.20" region="speaker">At some point, you may wish to export your</p>
+         <p begin="00:00:10.20" end="00:00:13.43" region="speaker">digital certificate, for example, To back up your</p>
+         <p begin="00:00:13.43" end="00:00:15.70" region="speaker">digital certificate, Install your digital</p>
+         <p begin="00:00:15.70" end="00:00:18.53" region="speaker">certificate on a different or new computer, For</p>
+         <p begin="00:00:18.53" end="00:00:21.50" region="speaker">temporary use, or For using different browsers</p>
+         <p begin="00:00:21.50" end="00:00:23.83" region="speaker">You can export your digital certificate if it</p>
+         <p begin="00:00:23.83" end="00:00:25.80" region="speaker">has been marked as exportable during its</p>
+         <p begin="00:00:25.80" end="00:00:27.20" region="speaker">installation.</p>
+         <p begin="00:00:27.20" end="00:00:29.80" region="speaker">Begin by opening &quot;Internet Options&quot; under the &quot;Tools&quot;</p>
+         <p begin="00:00:29.80" end="00:00:32.23" region="speaker">menu.</p>
+         <p begin="00:00:32.23" end="00:00:35.16" region="speaker">Click the &quot;Content&quot; tab and then the</p>
+         <p begin="00:00:35.16" end="00:00:37.86" region="speaker">&quot;Certificates&quot; button.</p>
+         <p begin="00:00:37.86" end="00:00:40.46" region="speaker">From the &quot;Personal&quot; tab, click &quot;Export&quot; to start</p>
+         <p begin="00:00:40.46" end="00:00:42.46" region="speaker">the export wizard.</p>
+         <p begin="00:00:43.80" end="00:00:46.13" region="speaker">Hit &quot;Next&quot; on the Welcome page.</p>
+         <p begin="00:00:46.13" end="00:00:48.50" region="speaker">You will have the option to export your certificate</p>
+         <p begin="00:00:48.50" end="00:00:50.93" region="speaker">with the private key, or simply the certificate</p>
+         <p begin="00:00:50.93" end="00:00:52.23" region="speaker">itself.</p>
+         <p begin="00:00:52.23" end="00:00:54.33" region="speaker">In order to export the key in the Personal</p>
+         <p begin="00:00:54.33" end="00:00:56.86" region="speaker">Information Exchange format, you must select</p>
+         <p begin="00:00:56.86" end="00:00:59.73" region="speaker">&quot;Yes,&quot; then click &quot;Next.&quot;</p>
+         <p begin="00:00:59.73" end="00:00:62.30" region="speaker">It is a good idea to include all certificates</p>
+         <p begin="00:00:62.30" end="00:00:65.23" region="speaker">in the certification path and also to export all</p>
+         <p begin="00:00:65.23" end="00:00:66.56" region="speaker">extended properties.</p>
+         <p begin="00:00:68.56" end="00:00:71.26" region="speaker">If you wish to remove the cert afterwards Click</p>
+         <p begin="00:00:71.26" end="00:00:74.46" region="speaker">&quot;Delete the private key if the export is successful&quot;</p>
+         <p begin="00:00:74.46" end="00:00:76.53" region="speaker">Click Next.</p>
+         <p begin="00:00:76.53" end="00:00:79.10" region="speaker">Your private key is password protected, enter</p>
+         <p begin="00:00:79.10" end="00:00:80.23" region="speaker">the password now.</p>
+         <p begin="00:00:82.73" end="00:00:86.20" region="speaker">When you are done click &quot;Next.&quot;</p>
+         <p begin="00:00:86.20" end="00:00:89.00" region="speaker">Now choose a location to export your certificate.</p>
+         <p begin="00:00:94.66" end="00:00:97.23" region="speaker">Click &quot;Next.&quot;</p>
+         <p begin="00:00:97.23" end="00:00:100.93" region="speaker">Finally, you will see a summary of your export.</p>
+         <p begin="00:00:100.93" end="00:00:103.43" region="speaker">Click &quot;Finish&quot; to complete the export.</p>
+         <p begin="00:00:103.43" end="00:00:105.76" region="speaker">You may now move your certificate as needed.</p>
+    </div>
+  </body>
+</tt>

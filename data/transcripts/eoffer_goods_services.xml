@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Goods/Services</category>
+         <ttm:title>Goods/Services</ttm:title>
+         <ttm:desc>After adding Negotiators, the Goods/Services page is your next destination. This step involves chosing the Special Item Numbers (SINs) to be included in the eOffer. A SIN is an identifier for the type of Goods or Services being provided. Each Offer may contain multiple SINs.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:04.40" region="speaker">The &quot;Goods and Services&quot; page offers you the</p>
+         <p begin="00:00:04.40" end="00:00:07.50" region="speaker">opportunity to identify products or services your</p>
+         <p begin="00:00:07.50" end="00:00:09.56" region="speaker">firm can offer the government.</p>
+         <p begin="00:00:09.56" end="00:00:12.26" region="speaker">The types of products and services you wish to offer</p>
+         <p begin="00:00:12.26" end="00:00:16.00" region="speaker">are defined by &quot;SINs&quot; or, &quot;Special Item Numbers.&quot;</p>
+         <p begin="00:00:16.00" end="00:00:18.16" region="speaker">SINs are sub-groups of similar products,</p>
+         <p begin="00:00:18.16" end="00:00:21.40" region="speaker">services, and solutions under a Schedule, More</p>
+         <p begin="00:00:21.40" end="00:00:24.50" region="speaker">information on individual SINs can be obtained from</p>
+         <p begin="00:00:24.50" end="00:00:30.06" region="speaker">GSA E-Library at www.gsaelibrary.gsa.gov.</p>
+         <p begin="00:00:30.06" end="00:00:35.13" region="speaker">On most solicitations, you will see an &quot;Add SIN(s)&quot;</p>
+         <p begin="00:00:35.13" end="00:00:36.33" region="speaker">drop down.</p>
+         <p begin="00:00:36.33" end="00:00:38.53" region="speaker">Occasionally, SINs are grouped together to</p>
+         <p begin="00:00:38.53" end="00:00:42.03" region="speaker">organize the expansive MAS Solicitations, in which</p>
+         <p begin="00:00:42.03" end="00:00:44.80" region="speaker">case you will need to select a SIN Group before</p>
+         <p begin="00:00:44.80" end="00:00:47.43" region="speaker">selecting the individual SIN to add.</p>
+         <p begin="00:00:47.43" end="00:00:51.00" region="speaker">Make your selection then click &quot;Add SIN Details&quot; to</p>
+         <p begin="00:00:51.00" end="00:00:54.20" region="speaker">move on to provide more information about the SIN.</p>
+         <p begin="00:00:54.20" end="00:00:56.80" region="speaker">You may notice some slight variations between this</p>
+         <p begin="00:00:56.80" end="00:00:59.70" region="speaker">video and your screen, as different SINs have</p>
+         <p begin="00:00:59.70" end="00:00:61.60" region="speaker">different requirements.</p>
+         <p begin="00:00:61.60" end="00:00:63.86" region="speaker">Begin on the ADD SIN Details screen by</p>
+         <p begin="00:00:63.86" end="00:00:66.83" region="speaker">identifying the appropriate NAICS code</p>
+         <p begin="00:00:66.83" end="00:00:69.53" region="speaker">associated with the SIN you are proposing.</p>
+         <p begin="00:00:69.53" end="00:00:71.66" region="speaker">You may have multiple options avavilable to</p>
+         <p begin="00:00:71.66" end="00:00:75.33" region="speaker">choose from and you should select the NAICS code that</p>
+         <p begin="00:00:75.33" end="00:00:77.33" region="speaker">is the closest match to the service you are</p>
+         <p begin="00:00:77.33" end="00:00:78.80" region="speaker">providing.</p>
+         <p begin="00:00:78.80" end="00:00:80.86" region="speaker">You will note that the drop down box contains</p>
+         <p begin="00:00:80.86" end="00:00:83.30" region="speaker">only the numbers available for different NAICS.</p>
+         <p begin="00:00:83.30" end="00:00:87.13" region="speaker">This can be difficult in that you may not know</p>
+         <p begin="00:00:87.13" end="00:00:90.86" region="speaker">which NAICS is most relevant to your industry.</p>
+         <p begin="00:00:90.86" end="00:00:94.13" region="speaker">For more information on particular NAICS codes,</p>
+         <p begin="00:00:94.13" end="00:00:96.80" region="speaker">visit the Census Bureau website.</p>
+         <p begin="00:00:96.80" end="00:00:99.80" region="speaker">Identify the scope of your SIN by indicating whether</p>
+         <p begin="00:00:99.80" end="00:00:103.40" region="speaker">you will provide domestic or overseas delivery.</p>
+         <p begin="00:00:103.40" end="00:00:106.33" region="speaker">As you prepared to respond to this solicitation, you</p>
+         <p begin="00:00:106.33" end="00:00:109.03" region="speaker">should have performed some projections as to how much</p>
+         <p begin="00:00:109.03" end="00:00:111.56" region="speaker">business you plan to do with the government.</p>
+         <p begin="00:00:111.56" end="00:00:113.83" region="speaker">One of the solicitation documents that you will</p>
+         <p begin="00:00:113.83" end="00:00:116.86" region="speaker">later be required to enter into the application is</p>
+         <p begin="00:00:116.86" end="00:00:120.56" region="speaker">the Commercial Sales Practice, or CSP-1.</p>
+         <p begin="00:00:120.56" end="00:00:122.80" region="speaker">In this form, you will have entered projected</p>
+         <p begin="00:00:122.80" end="00:00:125.70" region="speaker">sales for each of your &quot;to be&quot; SINs.</p>
+         <p begin="00:00:125.70" end="00:00:128.60" region="speaker">Take this information and populate it into the text</p>
+         <p begin="00:00:128.60" end="00:00:132.23" region="speaker">box in the &quot;Estimated Sales&quot; category.</p>
+         <p begin="00:00:132.23" end="00:00:134.40" region="speaker">In the &quot;Commercial Delivery Schedule&quot;, you</p>
+         <p begin="00:00:134.40" end="00:00:135.90" region="speaker">will need to identify the time needed to respond to</p>
+         <p begin="00:00:135.90" end="00:00:138.13" region="speaker">orders.</p>
+         <p begin="00:00:138.13" end="00:00:141.03" region="speaker">The standard &quot;after receipt of order&quot; or A-R-O</p>
+         <p begin="00:00:141.03" end="00:00:143.86" region="speaker">response time is 30 days.</p>
+         <p begin="00:00:143.86" end="00:00:146.70" region="speaker">If you agree to this 30 day window for delivery,</p>
+         <p begin="00:00:146.70" end="00:00:147.93" region="speaker">click &quot;yes.&quot;</p>
+         <p begin="00:00:147.93" end="00:00:150.36" region="speaker">Otherwise, indicate how many days the buyer can</p>
+         <p begin="00:00:150.36" end="00:00:153.06" region="speaker">expect delivery after receipt of order and, if</p>
+         <p begin="00:00:153.06" end="00:00:155.66" region="speaker">an expedited order is requested, how long will</p>
+         <p begin="00:00:155.66" end="00:00:158.56" region="speaker">it take you to deliver on such a request.</p>
+         <p begin="00:00:158.56" end="00:00:161.63" region="speaker">Depending on your Schedule and selected SIN you may</p>
+         <p begin="00:00:161.63" end="00:00:163.50" region="speaker">have additional questions.</p>
+         <p begin="00:00:163.50" end="00:00:166.20" region="speaker">For example, you may be required to answer if you</p>
+         <p begin="00:00:166.20" end="00:00:168.56" region="speaker">agree to participate in the Cooperative Purchasing</p>
+         <p begin="00:00:168.56" end="00:00:169.70" region="speaker">program.</p>
+         <p begin="00:00:169.70" end="00:00:171.50" region="speaker">You may select a corresponding &quot;Federal</p>
+         <p begin="00:00:171.50" end="00:00:175.40" region="speaker">Supply Class&quot;, or FSC, or &quot;Product Service Code&quot;, or</p>
+         <p begin="00:00:175.40" end="00:00:178.63" region="speaker">PSC, to which your SIN correlates.</p>
+         <p begin="00:00:178.63" end="00:00:180.90" region="speaker">After you have finished responding to all of the</p>
+         <p begin="00:00:180.90" end="00:00:184.40" region="speaker">questions click &quot;Add This SIN&quot; to move on.</p>
+         <p begin="00:00:184.40" end="00:00:187.23" region="speaker">Once you have added a SIN, you can review it and any</p>
+         <p begin="00:00:187.23" end="00:00:189.53" region="speaker">other SIN applied to the contract under the &quot;Your</p>
+         <p begin="00:00:189.53" end="00:00:191.03" region="speaker">SINs&quot; heading.</p>
+         <p begin="00:00:191.03" end="00:00:192.03" region="speaker">The &quot;Edit&quot; and &quot;Delete&quot; links allow you to</p>
+         <p begin="00:00:192.03" end="00:00:195.73" region="speaker">re-address SINs that you have already completed in</p>
+         <p begin="00:00:195.73" end="00:00:196.73" region="speaker">your offer.</p>
+         <p begin="00:00:196.73" end="00:00:199.03" region="speaker">Choose a preponderance of work after adding your</p>
+         <p begin="00:00:199.03" end="00:00:200.26" region="speaker">SINs.</p>
+         <p begin="00:00:200.26" end="00:00:202.63" region="speaker">Remember that it must be one of the Naics codes</p>
+         <p begin="00:00:202.63" end="00:00:206.13" region="speaker">that corresponds to a SIN chosen for the contract.</p>
+         <p begin="00:00:206.13" end="00:00:208.20" region="speaker">This should represent the majority of work that you</p>
+         <p begin="00:00:208.20" end="00:00:210.60" region="speaker">plan on doing with your contract.</p>
+         <p begin="00:00:210.60" end="00:00:212.73" region="speaker">Once you have finished identifying all of your</p>
+         <p begin="00:00:212.73" end="00:00:215.33" region="speaker">relevant SINs, click the &quot;Save and Continue&quot;</p>
+         <p begin="00:00:215.33" end="00:00:217.33" region="speaker">button.</p>
+    </div>
+  </body>
+</tt>

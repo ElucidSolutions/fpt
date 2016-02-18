@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Technical Modifications</category>
+         <ttm:title>Part(s) Number Change</ttm:title>
+         <ttm:desc>A Part(s) Number Change Modification keeps offerings current, allowing Customers to maintain an exact understanding of the Contractor's Products and Services.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:03.06" end="00:00:05.33" region="speaker">Your company may have undergone some changes to</p>
+         <p begin="00:00:05.33" end="00:00:07.76" region="speaker">the system used to number the parts it sells to the</p>
+         <p begin="00:00:07.76" end="00:00:08.80" region="speaker">government.</p>
+         <p begin="00:00:08.80" end="00:00:11.03" region="speaker">This modification allows you to capture those</p>
+         <p begin="00:00:11.03" end="00:00:12.50" region="speaker">changes.</p>
+         <p begin="00:00:12.50" end="00:00:14.90" region="speaker">Provide a description of the part number changes</p>
+         <p begin="00:00:14.90" end="00:00:17.86" region="speaker">identifying: The affected parts and the old numbers</p>
+         <p begin="00:00:17.86" end="00:00:21.76" region="speaker">associated with them; The new part numbers, The</p>
+         <p begin="00:00:21.76" end="00:00:25.26" region="speaker">reason for the change, And any other information that</p>
+         <p begin="00:00:25.26" end="00:00:28.33" region="speaker">may be useful to the CO.</p>
+         <p begin="00:00:28.33" end="00:00:30.23" region="speaker">When you finish, click &quot;save and</p>
+         <p begin="00:00:30.23" end="00:00:32.23" region="speaker">Continue.&quot;</p>
+    </div>
+  </body>
+</tt>

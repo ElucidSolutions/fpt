@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Digital Certificates</category>
+         <ttm:title>Obtaining a Digital Certificate</ttm:title>
+         <ttm:desc>There are a number of trusted Certificate providers who partner with GSA. This video will point you in the right direction and help you begin the process of acquiring a Digital Certificate.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:07.86" end="00:00:09.83" region="speaker">As we previously mentioned, anyone who</p>
+         <p begin="00:00:09.83" end="00:00:12.70" region="speaker">wishes to work with the eOffer/eMod system must</p>
+         <p begin="00:00:12.70" end="00:00:14.90" region="speaker">obtain a digital certificate.</p>
+         <p begin="00:00:14.90" end="00:00:17.96" region="speaker">The digital certificate must be an &quot;ACES Level 3</p>
+         <p begin="00:00:17.96" end="00:00:20.43" region="speaker">Business Representative Digital Authentication</p>
+         <p begin="00:00:20.43" end="00:00:24.33" region="speaker">Certificate&quot; or a &quot;DoD ECA certificate.&quot;</p>
+         <p begin="00:00:24.33" end="00:00:27.26" region="speaker">The DoD cert has been recently added as many</p>
+         <p begin="00:00:27.26" end="00:00:29.90" region="speaker">vendors working with GSA are also in business with</p>
+         <p begin="00:00:29.90" end="00:00:31.30" region="speaker">the Department of Defense.</p>
+         <p begin="00:00:31.30" end="00:00:33.66" region="speaker">Allowing eOffer/eMod to support this type of</p>
+         <p begin="00:00:33.66" end="00:00:36.06" region="speaker">certificate eliminates the need for a vendor to</p>
+         <p begin="00:00:36.06" end="00:00:39.06" region="speaker">manage different certs when working with the DoD</p>
+         <p begin="00:00:39.06" end="00:00:41.66" region="speaker">and with GSA.</p>
+         <p begin="00:00:41.66" end="00:00:44.26" region="speaker">GSA currently has two industry partners who</p>
+         <p begin="00:00:44.26" end="00:00:46.63" region="speaker">provide the ACES Business Representative digital</p>
+         <p begin="00:00:46.63" end="00:00:49.10" region="speaker">certificates for the domestic companies in the</p>
+         <p begin="00:00:49.10" end="00:00:53.86" region="speaker">GSA vendor community: IdenTrust or Operational</p>
+         <p begin="00:00:53.86" end="00:00:59.83" region="speaker">Research Consultants (ORC) Foreign companies should</p>
+         <p begin="00:00:59.83" end="00:00:62.70" region="speaker">pay extra attention to the instructions, as there are</p>
+         <p begin="00:00:62.70" end="00:00:64.70" region="speaker">additional required steps.</p>
+    </div>
+  </body>
+</tt>

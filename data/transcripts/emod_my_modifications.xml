@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Getting Started with eMod</category>
+         <ttm:title>My Modifications Page</ttm:title>
+         <ttm:desc>The My Modifications screen serves as the entry point to the eMod system. You can continue processing Saved eMods, review Submitted eMods, or eSign pending eMods as required.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.20" end="00:00:05.06" region="speaker">The &quot;My Modifications&quot; screen is the entry point</p>
+         <p begin="00:00:05.06" end="00:00:06.96" region="speaker">to the eMod system.</p>
+         <p begin="00:00:06.96" end="00:00:08.66" region="speaker">This is where you begin creating a new</p>
+         <p begin="00:00:08.66" end="00:00:10.40" region="speaker">modification.</p>
+         <p begin="00:00:10.40" end="00:00:13.16" region="speaker">Additionally the &quot;My Modification&quot; screen</p>
+         <p begin="00:00:13.16" end="00:00:15.70" region="speaker">contains information on modifications that are</p>
+         <p begin="00:00:15.70" end="00:00:18.86" region="speaker">Saved, but not yet completed; Submitted to</p>
+         <p begin="00:00:18.86" end="00:00:22.33" region="speaker">GSA those that have been signed and are active with</p>
+         <p begin="00:00:22.33" end="00:00:23.30" region="speaker">GSA.</p>
+         <p begin="00:00:23.30" end="00:00:27.20" region="speaker">And those Initiated by GSA To continue working on a</p>
+         <p begin="00:00:27.20" end="00:00:30.30" region="speaker">saved modification, simply click the &quot;Edit Mod&quot;</p>
+         <p begin="00:00:30.30" end="00:00:31.33" region="speaker">button.</p>
+         <p begin="00:00:31.33" end="00:00:33.53" region="speaker">You can also delete a modification that is in</p>
+         <p begin="00:00:33.53" end="00:00:36.56" region="speaker">progress but hasn&apos;t yet been submitted.</p>
+         <p begin="00:00:36.56" end="00:00:38.83" region="speaker">You can view modifications that have been submitted</p>
+         <p begin="00:00:38.83" end="00:00:40.46" region="speaker">to GSA.</p>
+         <p begin="00:00:40.46" end="00:00:43.03" region="speaker">GSA will &quot;lock&quot; a modification if it&apos;s</p>
+         <p begin="00:00:43.03" end="00:00:46.43" region="speaker">being reviewed by the assigned CO or CS.</p>
+         <p begin="00:00:46.43" end="00:00:48.86" region="speaker">If a modification has been locked, there will be a</p>
+         <p begin="00:00:48.86" end="00:00:50.76" region="speaker">&quot;Closed Lock&quot; icon.</p>
+         <p begin="00:00:50.76" end="00:00:54.00" region="speaker">If a user wishes to edit a submitted modification</p>
+         <p begin="00:00:54.00" end="00:00:56.70" region="speaker">they can request to unlock the mod by clicking the</p>
+         <p begin="00:00:56.70" end="00:00:58.33" region="speaker">&quot;Edit Mod&quot; button.</p>
+         <p begin="00:00:58.33" end="00:00:61.30" region="speaker">If the mod is already unlocked a user can edit</p>
+         <p begin="00:00:61.30" end="00:00:63.66" region="speaker">the modification just by clicking the &quot;Edit Mod&quot;</p>
+         <p begin="00:00:63.66" end="00:00:65.33" region="speaker">button.</p>
+         <p begin="00:00:65.33" end="00:00:68.26" region="speaker">Once a modification has been signed, you can View</p>
+         <p begin="00:00:68.26" end="00:00:71.46" region="speaker">the Modification, View the Package, Download the</p>
+         <p begin="00:00:71.46" end="00:00:74.86" region="speaker">Package, and Download the SF30 associated with your</p>
+         <p begin="00:00:74.86" end="00:00:77.23" region="speaker">Signed Modification.</p>
+         <p begin="00:00:77.23" end="00:00:80.90" region="speaker">Lastly there are GSA Initiated Modifications</p>
+         <p begin="00:00:80.90" end="00:00:84.20" region="speaker">and as the name implies, these are modifications</p>
+         <p begin="00:00:84.20" end="00:00:86.96" region="speaker">that GSA sends to contractors.</p>
+         <p begin="00:00:86.96" end="00:00:90.03" region="speaker">The example here is for exercising an option on a</p>
+         <p begin="00:00:90.03" end="00:00:91.36" region="speaker">contract.</p>
+         <p begin="00:00:91.36" end="00:00:94.33" region="speaker">The user may click &quot;Edit Mod&quot; to begin working on</p>
+         <p begin="00:00:94.33" end="00:00:97.66" region="speaker">this modification, or &quot;Decline Mod&quot; to reject</p>
+         <p begin="00:00:97.66" end="00:00:98.96" region="speaker">it.</p>
+         <p begin="00:00:98.96" end="00:00:100.96" region="speaker">Finally, to create a modification on the</p>
+         <p begin="00:00:100.96" end="00:00:104.03" region="speaker">selected contract, click &quot;Select Contract&quot;.</p>
+    </div>
+  </body>
+</tt>

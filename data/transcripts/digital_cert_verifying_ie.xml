@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Digital Certificates</category>
+         <ttm:title>Verifying a Digital Certificate (Internet Explorer)</ttm:title>
+         <ttm:desc>After you have uploaded your Digital Certificate, it may be helpful to verify that it is properly installed within the internet browser, and that your name, company, and email address appear as expected. Doing so will ensure the Certificate is validated when you sign into the eOffer/eMod system. This video follows the Certificate verification process for the Microsoft Internet Explorer web browser.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:07.86" end="00:00:09.93" region="speaker">You may need to verify the information on your</p>
+         <p begin="00:00:09.93" end="00:00:11.30" region="speaker">digital certificate.</p>
+         <p begin="00:00:11.30" end="00:00:14.23" region="speaker">To check your certificate on Internet Explorer,</p>
+         <p begin="00:00:14.23" end="00:00:18.66" region="speaker">first click &quot;Tools,&quot; then &quot;Internet Options.&quot;</p>
+         <p begin="00:00:18.66" end="00:00:21.96" region="speaker">Click the &quot;Content&quot; tab then the &quot;Certificates&quot;</p>
+         <p begin="00:00:21.96" end="00:00:23.03" region="speaker">button.</p>
+         <p begin="00:00:23.03" end="00:00:25.73" region="speaker">To verify the details of the digital certificate in</p>
+         <p begin="00:00:25.73" end="00:00:30.90" region="speaker">Internet Explorer, select the cert and click &quot;View.&quot;</p>
+         <p begin="00:00:30.90" end="00:00:33.46" region="speaker">Open the &quot;Details&quot; tab, and select the &quot;Subject&quot;</p>
+         <p begin="00:00:33.46" end="00:00:35.46" region="speaker">field.</p>
+         <p begin="00:00:37.63" end="00:00:39.76" region="speaker">Check that your name is correct as you submitted</p>
+         <p begin="00:00:39.76" end="00:00:40.76" region="speaker">it.</p>
+         <p begin="00:00:40.76" end="00:00:42.50" region="speaker">If anything does not match, you will be unable</p>
+         <p begin="00:00:42.50" end="00:00:44.60" region="speaker">to access the system later on.</p>
+         <p begin="00:00:44.60" end="00:00:46.60" region="speaker">If there are any problems with the information in</p>
+         <p begin="00:00:46.60" end="00:00:49.06" region="speaker">your digital certificate, you must contact your</p>
+         <p begin="00:00:49.06" end="00:00:51.43" region="speaker">respective certificate provider - either</p>
+         <p begin="00:00:51.43" end="00:00:54.33" region="speaker">IdenTrust or Operational Research Consultants -</p>
+         <p begin="00:00:54.33" end="00:00:56.33" region="speaker">before moving forward.</p>
+         <p begin="00:00:57.90" end="00:00:60.76" region="speaker">Next scroll down to the &quot;Subject Alternative Name&quot;</p>
+         <p begin="00:00:60.76" end="00:00:61.93" region="speaker">field to verify your e-mail address.</p>
+         <p begin="00:00:65.13" end="00:00:68.13" region="speaker">Finally, click the &quot;Certification Path&quot; tab.</p>
+         <p begin="00:00:68.13" end="00:00:70.16" region="speaker">You will see your &quot;Certificate status,&quot;</p>
+         <p begin="00:00:70.16" end="00:00:72.56" region="speaker">which can inform you of any problems associated</p>
+         <p begin="00:00:72.56" end="00:00:74.50" region="speaker">with your digital certificate.</p>
+         <p begin="00:00:74.50" end="00:00:77.40" region="speaker">Click &quot;Okay&quot; to return to the &quot;Personal&quot; tab under</p>
+         <p begin="00:00:77.40" end="00:00:79.40" region="speaker">&quot;Certificates.&quot;</p>
+    </div>
+  </body>
+</tt>

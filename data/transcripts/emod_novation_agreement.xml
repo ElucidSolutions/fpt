@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Terms &amp; Conditions Modifications</category>
+         <ttm:title>Novation Agreement</ttm:title>
+         <ttm:desc>Novation Agreement Modifications are used when a new debtor corporation agrees to pay the debts of an old debtor corporation. These are very important Modifications, and if any question arise about whether the Mod applies to your organization, please contact your Contracting Officer.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.20" end="00:00:04.80" region="speaker">Novation Agreement Modifications are used</p>
+         <p begin="00:00:04.80" end="00:00:07.10" region="speaker">when a new debtor corporation agrees to pay</p>
+         <p begin="00:00:07.10" end="00:00:09.73" region="speaker">the debts of an old debtor corporation.</p>
+         <p begin="00:00:09.73" end="00:00:12.23" region="speaker">These are very important modifications and, if you</p>
+         <p begin="00:00:12.23" end="00:00:14.56" region="speaker">have any question about the mod&apos;s applicability to</p>
+         <p begin="00:00:14.56" end="00:00:18.10" region="speaker">you, you should contact your Contracting Officer.</p>
+         <p begin="00:00:18.10" end="00:00:21.10" region="speaker">This modification allows you to inform GSA and your</p>
+         <p begin="00:00:21.10" end="00:00:24.40" region="speaker">assigned CO of any Novation agreements.</p>
+         <p begin="00:00:24.40" end="00:00:26.56" region="speaker">This scenario might mean that you will need to</p>
+         <p begin="00:00:26.56" end="00:00:29.40" region="speaker">replace your existing DUNs with a new one.</p>
+         <p begin="00:00:29.40" end="00:00:31.43" region="speaker">To begin with you will be asked if you would like</p>
+         <p begin="00:00:31.43" end="00:00:34.70" region="speaker">the replace the existing DUNS (on this contract.</p>
+         <p begin="00:00:34.70" end="00:00:37.06" region="speaker">For the purpose of this demonstration we are going</p>
+         <p begin="00:00:37.06" end="00:00:40.53" region="speaker">to respond Yes, and take you through the process.</p>
+         <p begin="00:00:40.53" end="00:00:43.60" region="speaker">Selecting Yes will reveal text boxes which allow you</p>
+         <p begin="00:00:43.60" end="00:00:45.96" region="speaker">to enter your new DUNS and Plus 4 number if</p>
+         <p begin="00:00:45.96" end="00:00:47.16" region="speaker">applicable.</p>
+         <p begin="00:00:47.16" end="00:00:49.50" region="speaker">Answer the Novation question and each of the</p>
+         <p begin="00:00:49.50" end="00:00:51.13" region="speaker">subsequent questions.</p>
+         <p begin="00:00:51.13" end="00:00:53.16" region="speaker">The questions asked in this section change</p>
+         <p begin="00:00:53.16" end="00:00:55.00" region="speaker">depending on your answer.</p>
+         <p begin="00:00:55.00" end="00:00:57.16" region="speaker">Go through this section, answering each question,</p>
+         <p begin="00:00:57.16" end="00:00:58.26" region="speaker">by selecting the appropriate yes or no</p>
+         <p begin="00:00:58.26" end="00:00:60.60" region="speaker">radio button.</p>
+         <p begin="00:00:60.60" end="00:00:62.53" region="speaker">Your answers will determine what documents</p>
+         <p begin="00:00:62.53" end="00:00:65.33" region="speaker">are required to upload and submit the Mod.</p>
+         <p begin="00:00:65.33" end="00:00:67.46" region="speaker">The questions will all focus on whether or not</p>
+         <p begin="00:00:67.46" end="00:00:70.76" region="speaker">you have other outstanding contracts-with GSA or</p>
+         <p begin="00:00:70.76" end="00:00:72.73" region="speaker">other Federal agencies-that require</p>
+         <p begin="00:00:72.73" end="00:00:73.93" region="speaker">novation.</p>
+         <p begin="00:00:73.93" end="00:00:76.70" region="speaker">The goal is to provide the CO with enough information</p>
+         <p begin="00:00:76.70" end="00:00:79.70" region="speaker">to determine where you are in the novation process.</p>
+         <p begin="00:00:79.70" end="00:00:81.80" region="speaker">When you have finished your response, click &quot;Save</p>
+         <p begin="00:00:81.80" end="00:00:82.80" region="speaker">and Continue.&quot;</p>
+         <p begin="00:00:82.80" end="00:00:84.93" region="speaker">You will be asked to confirm that the</p>
+         <p begin="00:00:84.93" end="00:00:87.26" region="speaker">information appearing with your new DUNS number is</p>
+         <p begin="00:00:87.26" end="00:00:88.40" region="speaker">correct.</p>
+         <p begin="00:00:88.40" end="00:00:91.23" region="speaker">Review the new Corporate Information screen.</p>
+         <p begin="00:00:91.23" end="00:00:93.60" region="speaker">If there are any issues you must make corrections</p>
+         <p begin="00:00:93.60" end="00:00:99.03" region="speaker">on the SAM website at www.sam.gov eMod will take</p>
+         <p begin="00:00:99.03" end="00:00:102.76" region="speaker">24 hours for updates to be reflected in the system.</p>
+         <p begin="00:00:102.76" end="00:00:106.50" region="speaker">If everything is correct, click &quot;Save and Continue.&quot;</p>
+         <p begin="00:00:106.50" end="00:00:108.76" region="speaker">The Description for Novation Agreement page</p>
+         <p begin="00:00:108.76" end="00:00:110.76" region="speaker">will appear as shown below.</p>
+         <p begin="00:00:110.76" end="00:00:112.93" region="speaker">Begin by noting the documents that will be</p>
+         <p begin="00:00:112.93" end="00:00:114.70" region="speaker">required during the &quot;Upload Documents&quot;</p>
+         <p begin="00:00:114.70" end="00:00:115.53" region="speaker">process.</p>
+         <p begin="00:00:115.53" end="00:00:118.26" region="speaker">These can be found next to Instructions.</p>
+         <p begin="00:00:118.26" end="00:00:120.66" region="speaker">The description is optional, however,</p>
+         <p begin="00:00:120.66" end="00:00:123.00" region="speaker">entering a brief description to provide the</p>
+         <p begin="00:00:123.00" end="00:00:125.46" region="speaker">CO with enough information to determine where you are</p>
+         <p begin="00:00:125.46" end="00:00:128.23" region="speaker">in the novation process will be helpful for your</p>
+         <p begin="00:00:128.23" end="00:00:131.56" region="speaker">CO When you have finished click Save and Continue.</p>
+    </div>
+  </body>
+</tt>

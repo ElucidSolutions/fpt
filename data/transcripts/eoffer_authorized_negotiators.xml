@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Authorized Negotiators</category>
+         <ttm:title>Authorized Negotiators</ttm:title>
+         <ttm:desc>Users who need access to the eOffer system to work on a particular eOffer must be added as Authorized Negotiators. Multiple Negotiators may be added at one time, which is recommended practice to ensure a representative will be available to sign off on agreements with the government. Note that the Negotiator's name and email address must be entered exactly as they appear on the individual's Digital Certificate.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:04.76" region="speaker">Any users that need to access the system to work</p>
+         <p begin="00:00:04.76" end="00:00:07.53" region="speaker">on an eOffer will need to be added as Authorized</p>
+         <p begin="00:00:07.53" end="00:00:09.13" region="speaker">Negotiators.</p>
+         <p begin="00:00:09.13" end="00:00:12.10" region="speaker">Basically, a negotiator can be assigned one of two</p>
+         <p begin="00:00:12.10" end="00:00:15.66" region="speaker">roles - One who is authorized to sign and one</p>
+         <p begin="00:00:15.66" end="00:00:18.10" region="speaker">who is not Authorized to sign.</p>
+         <p begin="00:00:18.10" end="00:00:20.96" region="speaker">Mandatory fields include the individual&apos;s name,</p>
+         <p begin="00:00:20.96" end="00:00:23.93" region="speaker">title, phone number, and e-mail.</p>
+         <p begin="00:00:23.93" end="00:00:26.06" region="speaker">Note that the name and e-mail address of the</p>
+         <p begin="00:00:26.06" end="00:00:29.13" region="speaker">person you are assigning must appear exactly as it</p>
+         <p begin="00:00:29.13" end="00:00:32.00" region="speaker">does on that person&apos;s digital certificate or the</p>
+         <p begin="00:00:32.00" end="00:00:34.56" region="speaker">system will not allow them access.</p>
+         <p begin="00:00:34.56" end="00:00:36.83" region="speaker">These fields will initially be populated</p>
+         <p begin="00:00:36.83" end="00:00:40.13" region="speaker">from your digital certificate.</p>
+         <p begin="00:00:40.13" end="00:00:42.93" region="speaker">Begin by entering the user&apos;s title.</p>
+         <p begin="00:00:42.93" end="00:00:45.36" region="speaker">The eOffer system allows both domestic and</p>
+         <p begin="00:00:45.36" end="00:00:47.46" region="speaker">international phone numbers.</p>
+         <p begin="00:00:47.46" end="00:00:50.23" region="speaker">The &quot;domestic&quot; field must be a ten digit number with</p>
+         <p begin="00:00:50.23" end="00:00:52.90" region="speaker">hyphens separating the area code as well as the</p>
+         <p begin="00:00:52.90" end="00:00:54.63" region="speaker">last four digits.</p>
+         <p begin="00:00:54.63" end="00:00:57.36" region="speaker">The system has no required formatting when entering</p>
+         <p begin="00:00:57.36" end="00:00:59.33" region="speaker">an international number.</p>
+         <p begin="00:00:59.33" end="00:00:60.56" region="speaker">You may also enter the user&apos;s fax number, if</p>
+         <p begin="00:00:60.56" end="00:00:63.03" region="speaker">desired.</p>
+         <p begin="00:00:63.03" end="00:00:65.36" region="speaker">The &quot;Role&quot; drop down menu requires a bit of</p>
+         <p begin="00:00:65.36" end="00:00:67.06" region="speaker">explanation.</p>
+         <p begin="00:00:67.06" end="00:00:70.10" region="speaker">A negotiator who is not authorized to sign may</p>
+         <p begin="00:00:70.10" end="00:00:73.33" region="speaker">prepare or work on an offer and submit it.</p>
+         <p begin="00:00:73.33" end="00:00:75.56" region="speaker">The offer will need to be signed later by someone</p>
+         <p begin="00:00:75.56" end="00:00:78.50" region="speaker">with signing authority A negotiator who IS</p>
+         <p begin="00:00:78.50" end="00:00:81.50" region="speaker">authorized to sign may prepare an offer, sign it</p>
+         <p begin="00:00:81.50" end="00:00:83.00" region="speaker">and submit it.</p>
+         <p begin="00:00:83.00" end="00:00:85.23" region="speaker">This person, essentially, has been granted the</p>
+         <p begin="00:00:85.23" end="00:00:87.56" region="speaker">authority to bind the company into agreements</p>
+         <p begin="00:00:87.56" end="00:00:89.30" region="speaker">with GSA.</p>
+         <p begin="00:00:89.30" end="00:00:91.53" region="speaker">If you are working with a consultant to prepare your</p>
+         <p begin="00:00:91.53" end="00:00:94.03" region="speaker">offer, it is up to you whether to grant that</p>
+         <p begin="00:00:94.03" end="00:00:97.30" region="speaker">consultant the authority to sign or not.</p>
+         <p begin="00:00:97.30" end="00:00:99.96" region="speaker">Every offer needs to have at least one &quot;Authorized</p>
+         <p begin="00:00:99.96" end="00:00:101.90" region="speaker">to Sign&quot; negotiator.</p>
+         <p begin="00:00:101.90" end="00:00:104.76" region="speaker">A best practice is to have two or more, in the event</p>
+         <p begin="00:00:104.76" end="00:00:107.06" region="speaker">that something happens to one of the negotiators</p>
+         <p begin="00:00:107.06" end="00:00:109.50" region="speaker">during a time-sensitive process.</p>
+         <p begin="00:00:109.50" end="00:00:111.33" region="speaker">It is in your best interest to review your</p>
+         <p begin="00:00:111.33" end="00:00:114.33" region="speaker">negotiators, monthly, and make sure all information</p>
+         <p begin="00:00:114.33" end="00:00:116.00" region="speaker">is up to date.</p>
+         <p begin="00:00:116.00" end="00:00:118.06" region="speaker">Click &quot;Add This Negotiator&quot; when you have</p>
+         <p begin="00:00:118.06" end="00:00:121.13" region="speaker">finished entering the required information.</p>
+         <p begin="00:00:121.13" end="00:00:123.43" region="speaker">This will take you to the &quot;Authorized Negotiator&quot;</p>
+         <p begin="00:00:123.43" end="00:00:124.50" region="speaker">screen.</p>
+         <p begin="00:00:124.50" end="00:00:127.73" region="speaker">From here, you can Edit or Delete the information for</p>
+         <p begin="00:00:127.73" end="00:00:129.80" region="speaker">an existing negotiator.</p>
+         <p begin="00:00:129.80" end="00:00:133.46" region="speaker">You can also Add a New Negotiator Click the &quot;Save</p>
+         <p begin="00:00:133.46" end="00:00:135.86" region="speaker">and Continue&quot; button when you&apos;re ready to move on.</p>
+    </div>
+  </body>
+</tt>

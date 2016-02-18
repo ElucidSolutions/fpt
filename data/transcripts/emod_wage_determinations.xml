@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Pricing Modifications</category>
+         <ttm:title>Wage Determinations</ttm:title>
+         <ttm:desc>Use the Wage Determinations Modification to update the pricing levels of applicables wages, usually in order to remain in compliance with wage rates set by the Department of Labor.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.00" end="00:00:04.73" region="speaker">The Wage Determination modification allows you to</p>
+         <p begin="00:00:04.73" end="00:00:07.56" region="speaker">increase your labor prices when they fall below that</p>
+         <p begin="00:00:07.56" end="00:00:10.10" region="speaker">which is required in a given locale.</p>
+         <p begin="00:00:10.10" end="00:00:12.70" region="speaker">As this modification could potentially impact your</p>
+         <p begin="00:00:12.70" end="00:00:14.93" region="speaker">projections of how much business you plan to do</p>
+         <p begin="00:00:14.93" end="00:00:16.93" region="speaker">with the government, you may need to review and</p>
+         <p begin="00:00:16.93" end="00:00:20.16" region="speaker">update your Commercial Sales Practice If so,</p>
+         <p begin="00:00:20.16" end="00:00:22.90" region="speaker">click Yes and Save, upon which you will be taken</p>
+         <p begin="00:00:22.90" end="00:00:24.93" region="speaker">through the CSP utility.</p>
+         <p begin="00:00:24.93" end="00:00:27.56" region="speaker">Updating your CSP is covered in a different</p>
+         <p begin="00:00:27.56" end="00:00:28.60" region="speaker">video.</p>
+         <p begin="00:00:28.60" end="00:00:32.03" region="speaker">If this is not the case, select No and continue</p>
+         <p begin="00:00:32.03" end="00:00:35.43" region="speaker">with the modification Here you should provide</p>
+         <p begin="00:00:35.43" end="00:00:37.33" region="speaker">the CO with some background information</p>
+         <p begin="00:00:37.33" end="00:00:39.63" region="speaker">regarding your current prices, the applicable</p>
+         <p begin="00:00:39.63" end="00:00:42.66" region="speaker">wage determination price levels, and the increases</p>
+         <p begin="00:00:42.66" end="00:00:45.33" region="speaker">necessary for your company to be in compliance with</p>
+         <p begin="00:00:45.33" end="00:00:47.50" region="speaker">the wage determined rates set forth by the</p>
+         <p begin="00:00:47.50" end="00:00:49.86" region="speaker">Department of Labor When you have completed</p>
+         <p begin="00:00:49.86" end="00:00:52.06" region="speaker">entering the necessary information in the text</p>
+         <p begin="00:00:52.06" end="00:00:55.16" region="speaker">box, click the &quot;Save Description&quot; button.</p>
+    </div>
+  </body>
+</tt>

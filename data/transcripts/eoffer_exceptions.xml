@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Exceptions</category>
+         <ttm:title>Exceptions</ttm:title>
+         <ttm:desc>If you recall from the Standard Response section, you were asked whether you are taking Exception to any of the standard Terms and Conditions. If you answered 'Yes' to &quot;Exceptions to Terms and Conditions,&quot; you will need to check the list of Contract Clauses provided and select those Regulation(s) for which you are taking Exception by marking the corresponding checkboxes.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.06" end="00:00:04.23" region="speaker">You may recall that a question in the &quot;Standard</p>
+         <p begin="00:00:04.23" end="00:00:07.10" region="speaker">Responses&quot; section asked whether you were taking</p>
+         <p begin="00:00:07.10" end="00:00:09.90" region="speaker">exception to any terms or conditions.</p>
+         <p begin="00:00:09.90" end="00:00:12.46" region="speaker">If you selected &quot;Yes,&quot; &quot;Exceptions&quot; becomes</p>
+         <p begin="00:00:12.46" end="00:00:15.70" region="speaker">available in the left-hand navigation menu.</p>
+         <p begin="00:00:15.70" end="00:00:17.96" region="speaker">The &quot;Exceptions&quot; screen provides you with the</p>
+         <p begin="00:00:17.96" end="00:00:20.53" region="speaker">ability to take exceptions to clauses in your</p>
+         <p begin="00:00:20.53" end="00:00:22.13" region="speaker">solicitation.</p>
+         <p begin="00:00:22.13" end="00:00:23.93" region="speaker">It is through this function that you will be</p>
+         <p begin="00:00:23.93" end="00:00:26.76" region="speaker">able to define your exception and include it</p>
+         <p begin="00:00:26.76" end="00:00:28.70" region="speaker">in the solicitation response package.</p>
+         <p begin="00:00:28.70" end="00:00:32.93" region="speaker">It is important to note that not all clauses may</p>
+         <p begin="00:00:32.93" end="00:00:33.96" region="speaker">be negotiated.</p>
+         <p begin="00:00:33.96" end="00:00:36.16" region="speaker">If a particular clause does not appear in this</p>
+         <p begin="00:00:36.16" end="00:00:38.76" region="speaker">list, then it is not a clause that you may take</p>
+         <p begin="00:00:38.76" end="00:00:40.36" region="speaker">exception to.</p>
+         <p begin="00:00:40.36" end="00:00:43.03" region="speaker">You may view a clause by clicking on the hyperlink</p>
+         <p begin="00:00:43.03" end="00:00:45.93" region="speaker">located in the &quot;Clause Number&quot; column.</p>
+         <p begin="00:00:45.93" end="00:00:48.06" region="speaker">Click the checkbox next to the clause(s) that you</p>
+         <p begin="00:00:48.06" end="00:00:50.50" region="speaker">would like to take exception to and click the</p>
+         <p begin="00:00:50.50" end="00:00:52.70" region="speaker">&quot;Select Regulation(s)&quot; button.</p>
+         <p begin="00:00:52.70" end="00:00:54.86" region="speaker">This will take you to the &quot;Exception Text Editor&quot;</p>
+         <p begin="00:00:54.86" end="00:00:58.36" region="speaker">screen. We will illustrate the instructions provided for</p>
+         <p begin="00:00:58.36" end="00:00:59.70" region="speaker">you here.</p>
+         <p begin="00:00:59.70" end="00:00:62.63" region="speaker">First, click the &quot;Clause Number&quot; link to bring up a</p>
+         <p begin="00:00:62.63" end="00:00:65.56" region="speaker">PDF of the original text against which you want to</p>
+         <p begin="00:00:65.56" end="00:00:67.10" region="speaker">take exception.</p>
+         <p begin="00:00:67.10" end="00:00:68.90" region="speaker">Scroll to the portion of the clause you would like</p>
+         <p begin="00:00:68.90" end="00:00:70.10" region="speaker">to edit.</p>
+         <p begin="00:00:70.10" end="00:00:72.13" region="speaker">Highlight the text desired.</p>
+         <p begin="00:00:72.13" end="00:00:74.66" region="speaker">Press &quot;Control -C&quot; on your keyboard, to copy the</p>
+         <p begin="00:00:74.66" end="00:00:75.66" region="speaker">text.</p>
+         <p begin="00:00:75.66" end="00:00:78.60" region="speaker">Now minimize or close the PDF and return to the</p>
+         <p begin="00:00:78.60" end="00:00:81.23" region="speaker">&quot;Exception Text Editor&quot; screen.</p>
+         <p begin="00:00:81.23" end="00:00:84.36" region="speaker">Click the &quot;Excerpt from Clause&quot; text box.</p>
+         <p begin="00:00:84.36" end="00:00:86.73" region="speaker">Press &quot;Control-V&quot;, on your keyboard, to paste the</p>
+         <p begin="00:00:86.73" end="00:00:89.33" region="speaker">text you copied.</p>
+         <p begin="00:00:89.33" end="00:00:91.76" region="speaker">Click the &quot;Ready to Edit&quot; button.</p>
+         <p begin="00:00:91.76" end="00:00:94.70" region="speaker">A message appears warning you that this will update</p>
+         <p begin="00:00:94.70" end="00:00:97.56" region="speaker">any Exceptions already Taken or entered.</p>
+         <p begin="00:00:97.56" end="00:00:100.73" region="speaker">Press &quot;OK&quot; You will see the same text appear in</p>
+         <p begin="00:00:100.73" end="00:00:102.86" region="speaker">the &quot;Exception Text&quot; box.</p>
+         <p begin="00:00:102.86" end="00:00:105.63" region="speaker">Edit the &quot;Exception Text&quot; box to reflect the desired</p>
+         <p begin="00:00:105.63" end="00:00:107.13" region="speaker">clause change.</p>
+         <p begin="00:00:107.13" end="00:00:109.40" region="speaker">When you are satisfied with your exception click</p>
+         <p begin="00:00:109.40" end="00:00:111.86" region="speaker">the &quot;Save and Continue&quot; button.</p>
+         <p begin="00:00:111.86" end="00:00:114.36" region="speaker">The exception will now display as complete,</p>
+         <p begin="00:00:114.36" end="00:00:117.76" region="speaker">signified by a green check in the &quot;Select&quot; column.</p>
+         <p begin="00:00:117.76" end="00:00:120.13" region="speaker">You now have the option to edit or delete any</p>
+         <p begin="00:00:120.13" end="00:00:122.20" region="speaker">exceptions you have taken.</p>
+         <p begin="00:00:122.20" end="00:00:124.33" region="speaker">Likewise, if you would like to add another</p>
+         <p begin="00:00:124.33" end="00:00:127.23" region="speaker">exception, select the &quot;clause&quot; checkbox and</p>
+         <p begin="00:00:127.23" end="00:00:129.63" region="speaker">click the &quot;Edit Exceptions&quot; button.</p>
+         <p begin="00:00:129.63" end="00:00:132.73" region="speaker">If a selected exception is incomplete, a yellow</p>
+         <p begin="00:00:132.73" end="00:00:135.30" region="speaker">exclamation point appears in the select column.</p>
+         <p begin="00:00:135.30" end="00:00:138.20" region="speaker">To move forward, you must click the edit</p>
+         <p begin="00:00:138.20" end="00:00:141.10" region="speaker">&quot;Exceptions&quot; button to complete the exception.</p>
+         <p begin="00:00:141.10" end="00:00:143.06" region="speaker">Click the &quot;Save and Continue&quot; button when</p>
+         <p begin="00:00:143.06" end="00:00:145.06" region="speaker">complete.</p>
+    </div>
+  </body>
+</tt>

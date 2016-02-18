@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Upload Documents</category>
+         <ttm:title>Upload Documents</ttm:title>
+         <ttm:desc>The Upload Documents screen allows you to provide supporting documentation to the eOffer. This is the final step prior to submission. Documents required for all eOffers are indicated with an asterisk (*). If additional document types need to be uploaded, please use the &quot;Other (optional-offeror defined)&quot; category.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:04.53" region="speaker">The &quot;Upload Documents&quot; screen provides you with a</p>
+         <p begin="00:00:04.53" end="00:00:07.40" region="speaker">checklist to ensure that you submit all required</p>
+         <p begin="00:00:07.40" end="00:00:09.73" region="speaker">documents to GSA for evaluation.</p>
+         <p begin="00:00:09.73" end="00:00:12.46" region="speaker">It is important to note that your screen may</p>
+         <p begin="00:00:12.46" end="00:00:15.43" region="speaker">differ from that which has been provided as different</p>
+         <p begin="00:00:15.43" end="00:00:18.36" region="speaker">schedules have different required documents.</p>
+         <p begin="00:00:18.36" end="00:00:20.56" region="speaker">By the time you get to this screen, you should</p>
+         <p begin="00:00:20.56" end="00:00:23.30" region="speaker">have already completed all of the required documents</p>
+         <p begin="00:00:23.30" end="00:00:25.30" region="speaker">and have them ready to upload.</p>
+         <p begin="00:00:25.30" end="00:00:27.50" region="speaker">If you have not, however, you can view the</p>
+         <p begin="00:00:27.50" end="00:00:30.73" region="speaker">solicitation document by clicking the &quot;View PDF&quot;</p>
+         <p begin="00:00:30.73" end="00:00:33.13" region="speaker">link to get more information on any of the</p>
+         <p begin="00:00:33.13" end="00:00:35.36" region="speaker">necessary documents that you still need to</p>
+         <p begin="00:00:35.36" end="00:00:36.76" region="speaker">complete.</p>
+         <p begin="00:00:36.76" end="00:00:39.06" region="speaker">You will notice many of the documents are marked</p>
+         <p begin="00:00:39.06" end="00:00:41.53" region="speaker">as required with a red asterisk.</p>
+         <p begin="00:00:41.53" end="00:00:44.30" region="speaker">The documents you see may vary depending on your</p>
+         <p begin="00:00:44.30" end="00:00:45.43" region="speaker">offer.</p>
+         <p begin="00:00:45.43" end="00:00:48.06" region="speaker">To attach a document to your offer, simply click</p>
+         <p begin="00:00:48.06" end="00:00:50.03" region="speaker">the &quot;Upload&quot; link.</p>
+         <p begin="00:00:50.03" end="00:00:52.96" region="speaker">On the Upload Documents screen, note the types of</p>
+         <p begin="00:00:52.96" end="00:00:55.60" region="speaker">documents the system allows.</p>
+         <p begin="00:00:55.60" end="00:00:56.86" region="speaker">Most of the documents you will be uploading are</p>
+         <p begin="00:00:56.86" end="00:00:61.20" region="speaker">likely to be in Word or Excel formats.</p>
+         <p begin="00:00:61.20" end="00:00:63.30" region="speaker">Also, be sure to review the restrictions</p>
+         <p begin="00:00:63.30" end="00:00:66.20" region="speaker">associated with uploading documents.</p>
+         <p begin="00:00:66.20" end="00:00:67.53" region="speaker">&quot;The What is the document type?&quot;</p>
+         <p begin="00:00:67.53" end="00:00:70.53" region="speaker">Field is pre-populated based on your selection</p>
+         <p begin="00:00:70.53" end="00:00:72.66" region="speaker">from the previous screen.</p>
+         <p begin="00:00:72.66" end="00:00:75.06" region="speaker">Click the &quot;Browse&quot; button, navigate to where you have</p>
+         <p begin="00:00:75.06" end="00:00:77.90" region="speaker">saved all of your proposal documents, select the</p>
+         <p begin="00:00:77.90" end="00:00:80.96" region="speaker">appropriate file, and click &quot;Open.&quot;</p>
+         <p begin="00:00:80.96" end="00:00:83.03" region="speaker">Provide a name for your document.</p>
+         <p begin="00:00:83.03" end="00:00:85.46" region="speaker">It does not necessarily need to be the same file</p>
+         <p begin="00:00:85.46" end="00:00:88.20" region="speaker">name as it was saved on your computer.</p>
+         <p begin="00:00:88.20" end="00:00:90.43" region="speaker">You can name the document whatever you would like;</p>
+         <p begin="00:00:90.43" end="00:00:92.36" region="speaker">however, it is good practice to name it</p>
+         <p begin="00:00:92.36" end="00:00:94.80" region="speaker">something relevant to that which is being uploaded.</p>
+         <p begin="00:00:94.80" end="00:00:97.53" region="speaker">Click the &quot;Upload This Document&quot; button when you</p>
+         <p begin="00:00:97.53" end="00:00:98.53" region="speaker">have finished.</p>
+         <p begin="00:00:98.53" end="00:00:100.96" region="speaker">You will notice the document now appears with</p>
+         <p begin="00:00:100.96" end="00:00:103.13" region="speaker">a green &quot;Uploaded&quot; status.</p>
+         <p begin="00:00:103.13" end="00:00:105.66" region="speaker">Continue uploading all the required and relevant</p>
+         <p begin="00:00:105.66" end="00:00:107.16" region="speaker">documents.</p>
+         <p begin="00:00:107.16" end="00:00:109.53" region="speaker">When all of the required documents have been added,</p>
+         <p begin="00:00:109.53" end="00:00:111.53" region="speaker">click the &quot;Save and Continue&quot; button.</p>
+    </div>
+  </body>
+</tt>

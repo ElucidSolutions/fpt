@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Administrative Modifications</category>
+         <ttm:title>Point of Contacts for Manufacturers, Dealers, Resellers, Agents</ttm:title>
+         <ttm:desc>This particular Modification ensures current information for all Points of Contact involved in the various parts of Contract management.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:04.06" region="speaker">This screen allows you to make a change to the</p>
+         <p begin="00:00:04.06" end="00:00:06.86" region="speaker">points of contact for the manufacturers, dealers,</p>
+         <p begin="00:00:06.86" end="00:00:09.26" region="speaker">resellers, and agents associated with your</p>
+         <p begin="00:00:09.26" end="00:00:11.10" region="speaker">schedule contract.</p>
+         <p begin="00:00:11.10" end="00:00:12.96" region="speaker">Add a detailed description of the change you would</p>
+         <p begin="00:00:12.96" end="00:00:15.30" region="speaker">like to make in the text box.</p>
+         <p begin="00:00:15.30" end="00:00:17.90" region="speaker">You should include enough information so that the CO</p>
+         <p begin="00:00:17.90" end="00:00:20.06" region="speaker">knows exactly who it is that you are adding</p>
+         <p begin="00:00:20.06" end="00:00:22.30" region="speaker">information for, their relationship to your</p>
+         <p begin="00:00:22.30" end="00:00:25.70" region="speaker">company, and their role in this schedule contract.</p>
+         <p begin="00:00:25.70" end="00:00:27.63" region="speaker">When you are finished entering a description,</p>
+         <p begin="00:00:27.63" end="00:00:30.83" region="speaker">click on the &quot;Save and Continue&quot; button.</p>
+    </div>
+  </body>
+</tt>

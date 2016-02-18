@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Additions Modifications</category>
+         <ttm:title>Add Labor Category and/or Service Offerings</ttm:title>
+         <ttm:desc>The option to add a Labor Category allows you to expand Product and Service offerings.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.10" end="00:00:04.70" region="speaker">As your business evolves, you may want to add</p>
+         <p begin="00:00:04.70" end="00:00:08.03" region="speaker">additional offerings to provide to your customers.</p>
+         <p begin="00:00:08.03" end="00:00:11.16" region="speaker">As this modification could potentially impact your</p>
+         <p begin="00:00:11.16" end="00:00:13.60" region="speaker">projections of how much business you plan to do</p>
+         <p begin="00:00:13.60" end="00:00:16.03" region="speaker">with the government, you will need to review and</p>
+         <p begin="00:00:16.03" end="00:00:18.66" region="speaker">update your Commercial Sales Practice by clicking</p>
+         <p begin="00:00:18.66" end="00:00:20.23" region="speaker">&quot;Revise.&quot;</p>
+         <p begin="00:00:20.23" end="00:00:22.93" region="speaker">Updating your CSP is covered in a different</p>
+         <p begin="00:00:22.93" end="00:00:24.80" region="speaker">video.</p>
+         <p begin="00:00:24.80" end="00:00:27.86" region="speaker">To &quot;Add a Labor Category or a Service Offering&quot;</p>
+         <p begin="00:00:27.86" end="00:00:30.46" region="speaker">to your schedule contract, you&apos;ll need to provide a</p>
+         <p begin="00:00:30.46" end="00:00:33.10" region="speaker">detailed description of the labor category and/or</p>
+         <p begin="00:00:33.10" end="00:00:35.60" region="speaker">Service offering to be added.</p>
+         <p begin="00:00:35.60" end="00:00:39.16" region="speaker">A goal here is to make the review of the CO as easy</p>
+         <p begin="00:00:39.16" end="00:00:40.50" region="speaker">as possible.</p>
+         <p begin="00:00:40.50" end="00:00:43.23" region="speaker">Some information you can provide may include: the</p>
+         <p begin="00:00:43.23" end="00:00:46.20" region="speaker">SINs against which the labor category or service</p>
+         <p begin="00:00:46.20" end="00:00:48.96" region="speaker">offering are applicable A description of the labor</p>
+         <p begin="00:00:48.96" end="00:00:52.00" region="speaker">category or service offering, The associated</p>
+         <p begin="00:00:52.00" end="00:00:55.80" region="speaker">duties, responsibilities, educational requirements,</p>
+         <p begin="00:00:55.80" end="00:00:58.50" region="speaker">and experience required of a person assigned to this</p>
+         <p begin="00:00:58.50" end="00:00:60.30" region="speaker">new labor category.</p>
+         <p begin="00:00:60.30" end="00:00:62.56" region="speaker">The related products or services comprising the</p>
+         <p begin="00:00:62.56" end="00:00:64.96" region="speaker">service offering, and Any other information that may</p>
+         <p begin="00:00:64.96" end="00:00:69.30" region="speaker">help the CO in his or her review. When you are</p>
+         <p begin="00:00:69.30" end="00:00:71.76" region="speaker">finished entering your description, click Save</p>
+         <p begin="00:00:71.76" end="00:00:73.76" region="speaker">and Continue.</p>
+    </div>
+  </body>
+</tt>

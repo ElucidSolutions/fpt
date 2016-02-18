@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Digital Certificates</category>
+         <ttm:title>Exporting a Digital Certificate (Firefox)</ttm:title>
+         <ttm:desc>You may choose to create a backup of your Digital Certificate by exporting it from your internet browser to an external drive. This video follows the steps for exporting your Digital Certificate from the Mozilla Firefox web browser.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:07.96" end="00:00:10.16" region="speaker">At some point, you may wish to export your</p>
+         <p begin="00:00:10.16" end="00:00:13.23" region="speaker">digital certificate, for example, To back up your</p>
+         <p begin="00:00:13.23" end="00:00:15.50" region="speaker">digital certificate, Install your digital</p>
+         <p begin="00:00:15.50" end="00:00:18.20" region="speaker">certificate on a different or new computer, For</p>
+         <p begin="00:00:18.20" end="00:00:21.70" region="speaker">temporary use, or For using different browsers</p>
+         <p begin="00:00:21.70" end="00:00:24.00" region="speaker">You can export your digital certificate if it</p>
+         <p begin="00:00:24.00" end="00:00:25.86" region="speaker">has been marked as exportable during its</p>
+         <p begin="00:00:25.86" end="00:00:27.23" region="speaker">installation.</p>
+         <p begin="00:00:27.23" end="00:00:30.33" region="speaker">In your browser&apos;s &quot;Menu bar&quot; click &quot;Tools&quot; and</p>
+         <p begin="00:00:30.33" end="00:00:32.30" region="speaker">then &quot;Options.&quot;</p>
+         <p begin="00:00:32.30" end="00:00:35.50" region="speaker">Open the &quot;Advanced&quot; tab.</p>
+         <p begin="00:00:35.50" end="00:00:38.23" region="speaker">Then click the &quot;Encryption&quot; tab.</p>
+         <p begin="00:00:38.23" end="00:00:40.86" region="speaker">Click the &quot;View Certificates&quot; button.</p>
+         <p begin="00:00:40.86" end="00:00:42.70" region="speaker">Make sure the &quot;Your Certificates&quot; tab is</p>
+         <p begin="00:00:42.70" end="00:00:46.30" region="speaker">selected. Click the Digital Certificate that you would</p>
+         <p begin="00:00:46.30" end="00:00:50.23" region="speaker">like to backup and then click the &quot;Backup&quot; button.</p>
+         <p begin="00:00:50.23" end="00:00:53.00" region="speaker">Choose a location to export orbackup your</p>
+         <p begin="00:00:53.00" end="00:00:55.00" region="speaker">certificate.</p>
+         <p begin="00:00:56.36" end="00:00:60.46" region="speaker">Name the file, as appropriate, and then</p>
+         <p begin="00:00:60.46" end="00:00:63.96" region="speaker">click the &quot;Save&quot; button Next, you must create a</p>
+         <p begin="00:00:63.96" end="00:00:66.30" region="speaker">&quot;Backup Password&quot; to protect the certificate</p>
+         <p begin="00:00:66.30" end="00:00:67.30" region="speaker">that you are creating.</p>
+         <p begin="00:00:67.30" end="00:00:70.03" region="speaker">This step is mandatory in the backup process and</p>
+         <p begin="00:00:70.03" end="00:00:70.66" region="speaker">must be completed to proceed.</p>
+         <p begin="00:00:70.66" end="00:00:74.26" region="speaker">Note that you will not be able to access this backup</p>
+         <p begin="00:00:74.26" end="00:00:76.96" region="speaker">certificate at a later time without the password.</p>
+         <p begin="00:00:76.96" end="00:00:79.33" region="speaker">Make certain that you are able to remember it or</p>
+         <p begin="00:00:79.33" end="00:00:82.33" region="speaker">that you write it down and keep it in a safe place.</p>
+         <p begin="00:00:82.33" end="00:00:84.36" region="speaker">A built-in meter will display the quality of</p>
+         <p begin="00:00:84.36" end="00:00:86.40" region="speaker">your password&apos;s strength.</p>
+         <p begin="00:00:86.40" end="00:00:87.40" region="speaker">Click OK.</p>
+         <p begin="00:00:87.40" end="00:00:90.63" region="speaker">A message will appear informing you of the</p>
+         <p begin="00:00:90.63" end="00:00:92.70" region="speaker">successful digital certificate backup</p>
+         <p begin="00:00:92.70" end="00:00:94.33" region="speaker">creation.</p>
+         <p begin="00:00:94.33" end="00:00:97.50" region="speaker">Click OK You may now move your certificate as</p>
+         <p begin="00:00:97.50" end="00:00:98.83" region="speaker">needed.</p>
+    </div>
+  </body>
+</tt>

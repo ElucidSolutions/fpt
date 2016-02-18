@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en"
+ xmlns="http://www.w3.org/ns/ttml"
+ xmlns:tts="http://www.w3.org/ns/ttml#styling"
+ xmlns:ttm="http://www.w3.org/ns/ttml#metadata"
+ xmlns:smpte="http://www.smpte-ra.org/schemas/2052-1/2010/smpte-tt"
+ xmlns:m608="http://www.smpte-ra.org/schemas/2052-1/2010/smpte-tt#cea608"
+ xmlns:ttp="http://www.w3.org/ns/ttml#parameter"
+ ttp:timeBase="media" ttp:frameRate="30" ttp:frameRateMultiplier="1000 1001" ttp:dropMode="dropNTSC">
+ <head>
+  <metadata>
+   <ttm:desc>CaptionMaker V5.17</ttm:desc>
+   <smpte:information
+    xmlns:m608="http://www.smpte-ra.org/schemas/2052-1/2010/smpte-tt#cea608"
+    origin="http://www.smpte-ra.org/schemas/2052-1/2010/smpte-tt#cea608"
+    mode="Preserved" m608:channel="CC1" m608:programName="Demo" m608:captionService="F1C1CC"
+   />
+  </metadata>
+  <styling>
+   <style xml:id='basic' tts:color='white' tts:backgroundColor='black' tts:fontFamily='monospace' tts:fontSize='80%'/>
+  </styling>
+  <layout>
+   <region xml:id='pop1' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='pop2' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='pop3' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='pop4' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='paint' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='paint2' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='paint3' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='paint4' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='rollup2' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='rollup3' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+   <region xml:id='rollup4' tts:backgroundColor='transparent' tts:showBackground='whenActive'></region>
+  </layout>
+ </head>
+ <body>
+  <div>
+   <p region='pop1' style='basic' begin='00:00:02:01' end='00:00:05:25' tts:origin='17.5% 79.33%' tts:extent='62.5% 5.33%'>The eOffer/eMod system is</p>
+   <p region='pop2' style='basic' begin='00:00:02:01' end='00:00:05:25' tts:origin='20% 84.66%' tts:extent='57.5% 5.33%'>a web-based application</p>
+   <p region='pop1' style='basic' begin='00:00:05:25' end='00:00:08:11' tts:origin='20% 79.33%' tts:extent='60% 5.33%'>that allows companies to</p>
+   <p region='pop2' style='basic' begin='00:00:05:25' end='00:00:08:11' tts:origin='17.5% 84.66%' tts:extent='65% 5.33%'>electronically prepare and</p>
+   <p region='pop1' style='basic' begin='00:00:08:11' end='00:00:11:18' tts:origin='25% 79.33%' tts:extent='47.5% 5.33%'>submit MAS contract</p>
+   <p region='pop2' style='basic' begin='00:00:08:11' end='00:00:11:18' tts:origin='22.5% 84.66%' tts:extent='55% 5.33%'>proposals and contract</p>
+   <p region='pop1' style='basic' begin='00:00:11:18' end='00:00:13:01' tts:origin='22.5% 84.66%' tts:extent='52.5% 5.33%'>modifications to GSA.</p>
+   <p region='pop1' style='basic' begin='00:00:13:01' end='00:00:15:25' tts:origin='20% 79.33%' tts:extent='60% 5.33%'>At any point, as you are</p>
+   <p region='pop2' style='basic' begin='00:00:13:01' end='00:00:15:25' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>proceeding through these</p>
+   <p region='pop1' style='basic' begin='00:00:15:25' end='00:00:19:03' tts:origin='17.5% 79.33%' tts:extent='65% 5.33%'>systems, you can click the</p>
+   <p region='pop2' style='basic' begin='00:00:15:25' end='00:00:19:03' tts:origin='17.5% 84.66%' tts:extent='65% 5.33%'>&quot;video&quot; icon on the screen</p>
+   <p region='pop1' style='basic' begin='00:00:19:03' end='00:00:20:26' tts:origin='30% 79.33%' tts:extent='40% 5.33%'>to get help with</p>
+   <p region='pop2' style='basic' begin='00:00:19:03' end='00:00:20:26' tts:origin='20% 84.66%' tts:extent='57.5% 5.33%'>completing a particular</p>
+   <p region='pop1' style='basic' begin='00:00:20:26' end='00:00:22:25' tts:origin='40% 84.66%' tts:extent='20% 5.33%'>section.</p>
+   <p region='pop1' style='basic' begin='00:00:22:25' end='00:00:25:07' tts:origin='20% 79.33%' tts:extent='60% 5.33%'>On the right side of the</p>
+   <p region='pop2' style='basic' begin='00:00:22:25' end='00:00:25:07' tts:origin='17.5% 84.66%' tts:extent='62.5% 5.33%'>homepage, you will notice</p>
+   <p region='pop1' style='basic' begin='00:00:25:07' end='00:00:28:08' tts:origin='20% 79.33%' tts:extent='57.5% 5.33%'>boxes that allow you to</p>
+   <p region='pop2' style='basic' begin='00:00:25:07' end='00:00:28:08' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>prepare Contract Offers,</p>
+   <p region='pop1' style='basic' begin='00:00:28:08' end='00:00:31:09' tts:origin='35% 79.33%' tts:extent='30% 5.33%'>and Contract</p>
+   <p region='pop2' style='basic' begin='00:00:28:08' end='00:00:31:09' tts:origin='27.5% 84.66%' tts:extent='45% 5.33%'>Modifications This</p>
+   <p region='pop1' style='basic' begin='00:00:31:09' end='00:00:33:20' tts:origin='20% 79.33%' tts:extent='57.5% 5.33%'>homepage provides links</p>
+   <p region='pop2' style='basic' begin='00:00:31:09' end='00:00:33:20' tts:origin='17.5% 84.66%' tts:extent='65% 5.33%'>to a wealth of information</p>
+   <p region='pop1' style='basic' begin='00:00:33:20' end='00:00:35:29' tts:origin='17.5% 79.33%' tts:extent='65% 5.33%'>that you can review before</p>
+   <p region='pop2' style='basic' begin='00:00:33:20' end='00:00:35:29' tts:origin='20% 84.66%' tts:extent='57.5% 5.33%'>getting started with an</p>
+   <p region='pop1' style='basic' begin='00:00:35:29' end='00:00:37:27' tts:origin='30% 84.66%' tts:extent='37.5% 5.33%'>eOffer or eMod.</p>
+   <p region='pop1' style='basic' begin='00:00:37:27' end='00:00:40:06' tts:origin='17.5% 79.33%' tts:extent='65% 5.33%'>The &quot;About eOffer&quot; section</p>
+   <p region='pop2' style='basic' begin='00:00:37:27' end='00:00:40:06' tts:origin='25% 84.66%' tts:extent='47.5% 5.33%'>provides high level</p>
+   <p region='pop1' style='basic' begin='00:00:40:06' end='00:00:42:12' tts:origin='27.5% 79.33%' tts:extent='42.5% 5.33%'>information about</p>
+   <p region='pop2' style='basic' begin='00:00:40:06' end='00:00:42:12' tts:origin='35% 84.66%' tts:extent='30% 5.33%'>the systems.</p>
+   <p region='pop1' style='basic' begin='00:00:42:12' end='00:00:44:15' tts:origin='22.5% 79.33%' tts:extent='55% 5.33%'>By clicking the links,</p>
+   <p region='pop2' style='basic' begin='00:00:42:12' end='00:00:44:15' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>you can learn more about</p>
+   <p region='pop1' style='basic' begin='00:00:44:15' end='00:00:45:29' tts:origin='27.5% 84.66%' tts:extent='45% 5.33%'>eOffers and eMods.</p>
+   <p region='pop1' style='basic' begin='00:00:46:26' end='00:00:49:01' tts:origin='17.5% 79.33%' tts:extent='65% 5.33%'>The &quot;Digital Certificates&quot;</p>
+   <p region='pop2' style='basic' begin='00:00:46:26' end='00:00:49:01' tts:origin='30% 84.66%' tts:extent='37.5% 5.33%'>and &quot;Authorized</p>
+   <p region='pop1' style='basic' begin='00:00:49:01' end='00:00:51:16' tts:origin='22.5% 79.33%' tts:extent='52.5% 5.33%'>Negotiator&quot; links are</p>
+   <p region='pop2' style='basic' begin='00:00:49:01' end='00:00:51:16' tts:origin='17.5% 84.66%' tts:extent='65% 5.33%'>useful for vendors who are</p>
+   <p region='pop1' style='basic' begin='00:00:51:16' end='00:00:54:08' tts:origin='20% 79.33%' tts:extent='60% 5.33%'>having trouble accessing</p>
+   <p region='pop2' style='basic' begin='00:00:51:16' end='00:00:54:08' tts:origin='20% 84.66%' tts:extent='57.5% 5.33%'>the system because they</p>
+   <p region='pop1' style='basic' begin='00:00:54:08' end='00:00:55:22' tts:origin='17.5% 79.33%' tts:extent='62.5% 5.33%'>have either: not obtained</p>
+   <p region='pop2' style='basic' begin='00:00:54:08' end='00:00:55:22' tts:origin='20% 84.66%' tts:extent='57.5% 5.33%'>or loaded their digital</p>
+   <p region='pop1' style='basic' begin='00:00:55:22' end='00:00:59:13' tts:origin='17.5% 79.33%' tts:extent='62.5% 5.33%'>certificate, or they have</p>
+   <p region='pop2' style='basic' begin='00:00:55:22' end='00:00:59:13' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>not been designated as a</p>
+   <p region='pop1' style='basic' begin='00:00:59:13' end='00:01:02:09' tts:origin='22.5% 79.33%' tts:extent='55% 5.33%'>negotiator assigned to</p>
+   <p region='pop2' style='basic' begin='00:00:59:13' end='00:01:02:09' tts:origin='17.5% 84.66%' tts:extent='62.5% 5.33%'>their company's contract.</p>
+   <p region='pop1' style='basic' begin='00:01:02:09' end='00:01:04:22' tts:origin='25% 79.33%' tts:extent='50% 5.33%'>Note that, without a</p>
+   <p region='pop2' style='basic' begin='00:01:02:09' end='00:01:04:22' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>valid certificate, it is</p>
+   <p region='pop1' style='basic' begin='00:01:04:22' end='00:01:07:25' tts:origin='17.5% 79.33%' tts:extent='62.5% 5.33%'>impossible to do anything</p>
+   <p region='pop2' style='basic' begin='00:01:04:22' end='00:01:07:25' tts:origin='22.5% 84.66%' tts:extent='55% 5.33%'>in eOffer/eMod at all.</p>
+   <p region='pop1' style='basic' begin='00:01:08:25' end='00:01:11:27' tts:origin='17.5% 79.33%' tts:extent='62.5% 5.33%'>The &quot;Subcontracting Plan&quot;</p>
+   <p region='pop2' style='basic' begin='00:01:08:25' end='00:01:11:27' tts:origin='17.5% 84.66%' tts:extent='65% 5.33%'>template provides offerors</p>
+   <p region='pop1' style='basic' begin='00:01:11:27' end='00:01:14:04' tts:origin='22.5% 79.33%' tts:extent='52.5% 5.33%'>with a model template</p>
+   <p region='pop2' style='basic' begin='00:01:11:27' end='00:01:14:04' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>that can be modified and</p>
+   <p region='pop1' style='basic' begin='00:01:14:04' end='00:01:15:28' tts:origin='27.5% 79.33%' tts:extent='42.5% 5.33%'>included in their</p>
+   <p region='pop2' style='basic' begin='00:01:14:04' end='00:01:15:28' tts:origin='30% 84.66%' tts:extent='37.5% 5.33%'>contract offer.</p>
+   <p region='pop1' style='basic' begin='00:01:16:24' end='00:01:19:13' tts:origin='20% 79.33%' tts:extent='60% 5.33%'>Subcontracting plans are</p>
+   <p region='pop2' style='basic' begin='00:01:16:24' end='00:01:19:13' tts:origin='20% 84.66%' tts:extent='57.5% 5.33%'>generally applicable to</p>
+   <p region='pop1' style='basic' begin='00:01:19:13' end='00:01:22:05' tts:origin='17.5% 79.33%' tts:extent='62.5% 5.33%'>certain &quot;Other than Small</p>
+   <p region='pop2' style='basic' begin='00:01:19:13' end='00:01:22:05' tts:origin='20% 84.66%' tts:extent='57.5% 5.33%'>Businesses,&quot; who meet a</p>
+   <p region='pop1' style='basic' begin='00:01:22:05' end='00:01:23:21' tts:origin='17.5% 84.66%' tts:extent='62.5% 5.33%'>certain dollar threshold.</p>
+   <p region='pop1' style='basic' begin='00:01:23:21' end='00:01:28:22' tts:origin='17.5% 79.33%' tts:extent='65% 5.33%'>Finally, the &quot;MAS Schedule</p>
+   <p region='pop2' style='basic' begin='00:01:23:21' end='00:01:28:22' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>Solicitations&quot; link will</p>
+   <p region='pop1' style='basic' begin='00:01:28:22' end='00:01:30:23' tts:origin='22.5% 79.33%' tts:extent='55% 5.33%'>provide you with links</p>
+   <p region='pop2' style='basic' begin='00:01:28:22' end='00:01:30:23' tts:origin='20% 84.66%' tts:extent='57.5% 5.33%'>to each of the schedule</p>
+   <p region='pop1' style='basic' begin='00:01:30:23' end='00:01:32:00' tts:origin='32.5% 84.66%' tts:extent='35% 5.33%'>solicitations.</p>
+   <p region='pop1' style='basic' begin='00:01:33:01' end='00:01:35:13' tts:origin='20% 79.33%' tts:extent='57.5% 5.33%'>The Customer Assistance</p>
+   <p region='pop2' style='basic' begin='00:01:33:01' end='00:01:35:13' tts:origin='25% 84.66%' tts:extent='50% 5.33%'>and Training section</p>
+   <p region='pop1' style='basic' begin='00:01:35:13' end='00:01:38:07' tts:origin='22.5% 79.33%' tts:extent='55% 5.33%'>provides links to User</p>
+   <p region='pop2' style='basic' begin='00:01:35:13' end='00:01:38:07' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>Guides, Frequently Asked</p>
+   <p region='pop1' style='basic' begin='00:01:38:07' end='00:01:43:00' tts:origin='22.5% 79.33%' tts:extent='55% 5.33%'>Questions, GSA Contact</p>
+   <p region='pop2' style='basic' begin='00:01:38:07' end='00:01:43:00' tts:origin='27.5% 84.66%' tts:extent='45% 5.33%'>Information, I The</p>
+   <p region='pop1' style='basic' begin='00:01:43:00' end='00:01:45:11' tts:origin='17.5% 79.33%' tts:extent='65% 5.33%'>&quot;Before you Begin&quot; section</p>
+   <p region='pop2' style='basic' begin='00:01:43:00' end='00:01:45:11' tts:origin='22.5% 84.66%' tts:extent='55% 5.33%'>basically provides you</p>
+   <p region='pop1' style='basic' begin='00:01:45:11' end='00:01:46:10' tts:origin='22.5% 79.33%' tts:extent='55% 5.33%'>with a &quot;To Do List&quot; of</p>
+   <p region='pop2' style='basic' begin='00:01:45:11' end='00:01:46:10' tts:origin='22.5% 84.66%' tts:extent='55% 5.33%'>things that you should</p>
+   <p region='pop1' style='basic' begin='00:01:46:10' end='00:01:50:22' tts:origin='27.5% 79.33%' tts:extent='42.5% 5.33%'>complete prior to</p>
+   <p region='pop2' style='basic' begin='00:01:46:10' end='00:01:50:22' tts:origin='20% 84.66%' tts:extent='60% 5.33%'>submitting an Offer or a</p>
+   <p region='pop1' style='basic' begin='00:01:50:22' end='00:01:51:22' tts:origin='32.5% 84.66%' tts:extent='32.5% 5.33%'>Modification.</p>
+   <p region='pop1' style='basic' begin='00:01:51:22' end='00:01:54:13' tts:origin='20% 79.33%' tts:extent='57.5% 5.33%'>Items include reviewing</p>
+   <p region='pop2' style='basic' begin='00:01:51:22' end='00:01:54:13' tts:origin='17.5% 84.66%' tts:extent='62.5% 5.33%'>solicitations, completing</p>
+   <p region='pop1' style='basic' begin='00:01:54:13' end='00:01:57:07' tts:origin='27.5% 79.33%' tts:extent='42.5% 5.33%'>training, Did you</p>
+   <p region='pop2' style='basic' begin='00:01:54:13' end='00:01:57:07' tts:origin='22.5% 84.66%' tts:extent='52.5% 5.33%'>get your DUNs number?</p>
+   <p region='pop1' style='basic' begin='00:01:57:07' end='00:01:59:04' tts:origin='25% 79.33%' tts:extent='47.5% 5.33%'>Audio change needed</p>
+   <p region='pop2' style='basic' begin='00:01:57:07' end='00:01:59:04' tts:origin='22.5% 84.66%' tts:extent='52.5% 5.33%'>&quot;Registering with SAM</p>
+   <p region='pop1' style='basic' begin='00:01:59:04' end='00:02:02:21' tts:origin='20% 79.33%' tts:extent='57.5% 5.33%'>(formerly CCR and Orca)</p>
+   <p region='pop2' style='basic' begin='00:01:59:04' end='00:02:02:21' tts:origin='17.5% 84.66%' tts:extent='65% 5.33%'>&quot;Have you applied for your</p>
+   <p region='pop1' style='basic' begin='00:02:02:21' end='00:02:03:26' tts:origin='32.5% 84.66%' tts:extent='35% 5.33%'>digital cert?&quot;</p>
+   <p region='pop1' style='basic' begin='00:02:03:26' end='00:02:05:26' tts:origin='35% 84.66%' tts:extent='27.5% 5.33%'>, and more.</p>
+   <p region='pop1' style='basic' begin='00:02:07:14' end='00:02:10:01' tts:origin='17.5% 79.33%' tts:extent='62.5% 5.33%'>Whenever you are ready to</p>
+   <p region='pop2' style='basic' begin='00:02:07:14' end='00:02:10:01' tts:origin='17.5% 84.66%' tts:extent='62.5% 5.33%'>begin a Contract Offer or</p>
+   <p region='pop1' style='basic' begin='00:02:10:01' end='00:02:13:27' tts:origin='25% 79.33%' tts:extent='50% 5.33%'>Modification, simply</p>
+   <p region='pop2' style='basic' begin='00:02:10:01' end='00:02:13:27' tts:origin='17.5% 84.66%' tts:extent='62.5% 5.33%'>click the &quot;Sign In&quot; link.</p>
+   <p region='pop1' style='basic' begin='00:02:13:27' end='00:02:15:24' tts:origin='30% 79.33%' tts:extent='37.5% 5.33%'>If your digital</p>
+   <p region='pop2' style='basic' begin='00:02:13:27' end='00:02:15:24' tts:origin='20% 84.66%' tts:extent='57.5% 5.33%'>certificate is properly</p>
+   <p region='pop1' style='basic' begin='00:02:15:24' end='00:02:18:12' tts:origin='20% 79.33%' tts:extent='57.5% 5.33%'>loaded to your browser,</p>
+   <p region='pop2' style='basic' begin='00:02:15:24' end='00:02:18:12' tts:origin='17.5% 84.66%' tts:extent='65% 5.33%'>you will be granted access</p>
+   <p region='pop1' style='basic' begin='00:02:18:12' end='00:02:20:12' tts:origin='32.5% 84.66%' tts:extent='35% 5.33%'>to the system.</p>
+  </div>
+ </body>
+</tt>

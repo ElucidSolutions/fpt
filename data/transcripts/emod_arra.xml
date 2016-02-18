@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Terms &amp; Conditions Modifications</category>
+         <ttm:title>American Recovery and Reinvestment Act (ARRA)</ttm:title>
+         <ttm:desc>The American Recovery and Reinvestment Act (ARRA) Modification allows Contractors to change whether they would like to opt in or opt out of the Program. Opting in allows Contractors to accept Orders made with Recovery Act funds.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:04.56" region="speaker">This screen allows you to modify your response to</p>
+         <p begin="00:00:04.56" end="00:00:08.56" region="speaker">the American Recovery And Reinvestment Act of 2009.</p>
+         <p begin="00:00:08.56" end="00:00:10.83" region="speaker">By participating in the program, you are allowed</p>
+         <p begin="00:00:10.83" end="00:00:13.80" region="speaker">to accept orders made with recovery act funds.</p>
+         <p begin="00:00:13.80" end="00:00:16.70" region="speaker">You will see a question asking whether or not your</p>
+         <p begin="00:00:16.70" end="00:00:19.20" region="speaker">company accepts all clauses associated with</p>
+         <p begin="00:00:19.20" end="00:00:22.40" region="speaker">the American Recovery and Reinvestment Act.</p>
+         <p begin="00:00:22.40" end="00:00:24.53" region="speaker">Participating in the program allows you to</p>
+         <p begin="00:00:24.53" end="00:00:26.90" region="speaker">accept orders that are made with recovery act</p>
+         <p begin="00:00:26.90" end="00:00:28.16" region="speaker">funds.</p>
+         <p begin="00:00:28.16" end="00:00:29.96" region="speaker">Choose Yes or No.</p>
+         <p begin="00:00:29.96" end="00:00:32.50" region="speaker">When you finish, click &quot;Save and Continue.&quot;</p>
+    </div>
+  </body>
+</tt>

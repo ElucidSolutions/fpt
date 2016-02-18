@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Terms &amp; Conditions Modifications</category>
+         <ttm:title>Update/Revise Commercial Sales Practice</ttm:title>
+         <ttm:desc>When you submitted your initial Offer, you would have been asked to perform projections as to how much business you planned to do with the government. One of the Solicitation documents that you were required to upload was the CSP-1. You will notice that on some Mods there is a section called &quot;Update/Revise Commerical Sales Practice (CSP-1).&quot; Beginning in August of 2013, all Contract Modifications that could potentially impact the CSP will include the ability to revise the existing CSP-1 associated with your Contract. The primary Mod types within this section include Additions, Deletions, and Pricing.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:04.56" region="speaker">Depending on what mod you are submitting, you may</p>
+         <p begin="00:00:04.56" end="00:00:07.23" region="speaker">need to update your Commercial Sales Practice.</p>
+         <p begin="00:00:07.23" end="00:00:10.00" region="speaker">If you used the CSP Creation tool in eOffer</p>
+         <p begin="00:00:10.00" end="00:00:11.96" region="speaker">when submitting your initial offer, your</p>
+         <p begin="00:00:11.96" end="00:00:14.43" region="speaker">information will be prepopulated here, in</p>
+         <p begin="00:00:14.43" end="00:00:17.70" region="speaker">which case you can update the relevant information.</p>
+         <p begin="00:00:17.70" end="00:00:20.30" region="speaker">If not, you will need to fill out the CSP from</p>
+         <p begin="00:00:20.30" end="00:00:21.40" region="speaker">scratch.</p>
+         <p begin="00:00:21.40" end="00:00:23.90" region="speaker">This video will walk you through completing the CSP</p>
+         <p begin="00:00:23.90" end="00:00:25.16" region="speaker">in full.</p>
+         <p begin="00:00:25.16" end="00:00:28.30" region="speaker">On question 1a, enter a dollar figure that</p>
+         <p begin="00:00:28.30" end="00:00:31.26" region="speaker">reflects the total sales of the product or service</p>
+         <p begin="00:00:31.26" end="00:00:34.10" region="speaker">during the previous 12 month period or during the</p>
+         <p begin="00:00:34.10" end="00:00:38.43" region="speaker">last fiscal year In 1b, designate the 12 month</p>
+         <p begin="00:00:38.43" end="00:00:40.36" region="speaker">period for which you are providing the dollar</p>
+         <p begin="00:00:40.36" end="00:00:41.56" region="speaker">figure.</p>
+         <p begin="00:00:41.56" end="00:00:43.76" region="speaker">If you feel that the dollar figure is not an</p>
+         <p begin="00:00:43.76" end="00:00:46.40" region="speaker">appropriate measure for sales, provide your own</p>
+         <p begin="00:00:46.40" end="00:00:48.13" region="speaker">measure of the sales of the item(s) in the</p>
+         <p begin="00:00:48.13" end="00:00:51.50" region="speaker">textbox, otherwise leave it empty.</p>
+         <p begin="00:00:51.50" end="00:00:54.60" region="speaker">The table in 2a contains the SINS with projected</p>
+         <p begin="00:00:54.60" end="00:00:57.30" region="speaker">annual sales, which you entered in the Goods and</p>
+         <p begin="00:00:57.30" end="00:00:59.20" region="speaker">Services section.</p>
+         <p begin="00:00:59.20" end="00:00:61.56" region="speaker">If you already hold a Federal Supply Schedule</p>
+         <p begin="00:00:61.56" end="00:00:64.06" region="speaker">contract for the SIN, you should have based your</p>
+         <p begin="00:00:64.06" end="00:00:66.86" region="speaker">projected annual sales off of the previous 12 months</p>
+         <p begin="00:00:66.86" end="00:00:70.03" region="speaker">under that contract If that&apos;s the case, enter</p>
+         <p begin="00:00:70.03" end="00:00:72.00" region="speaker">your Federal Supply Schedule contract</p>
+         <p begin="00:00:72.00" end="00:00:76.13" region="speaker">information in the textbox in 2b.</p>
+         <p begin="00:00:76.13" end="00:00:79.20" region="speaker">Next, identify whether the discounts and any</p>
+         <p begin="00:00:79.20" end="00:00:81.86" region="speaker">concessions which you offer the Government are</p>
+         <p begin="00:00:81.86" end="00:00:84.70" region="speaker">equal or better than your best price offered to any</p>
+         <p begin="00:00:84.70" end="00:00:87.70" region="speaker">customer acquiring the same items, regardless of</p>
+         <p begin="00:00:87.70" end="00:00:90.66" region="speaker">quantity or terms and conditions.</p>
+         <p begin="00:00:90.66" end="00:00:93.10" region="speaker">The next step is to identity the level at</p>
+         <p begin="00:00:93.10" end="00:00:95.66" region="speaker">which you want to specify the discount or concession</p>
+         <p begin="00:00:95.66" end="00:00:96.93" region="speaker">policy.</p>
+         <p begin="00:00:96.93" end="00:00:99.96" region="speaker">This can be done at an Offer/Contract level or</p>
+         <p begin="00:00:99.96" end="00:00:103.56" region="speaker">specified down to the individual SIN.</p>
+         <p begin="00:00:103.56" end="00:00:106.73" region="speaker">In the case of line item EAS Schedules, those can</p>
+         <p begin="00:00:106.73" end="00:00:110.20" region="speaker">be specified down to the line item level Before you</p>
+         <p begin="00:00:110.20" end="00:00:113.13" region="speaker">can add the specifics of your discount policy, you</p>
+         <p begin="00:00:113.13" end="00:00:115.23" region="speaker">will need to finish filling out and saving the</p>
+         <p begin="00:00:115.23" end="00:00:117.13" region="speaker">rest of the CSP.</p>
+         <p begin="00:00:117.13" end="00:00:119.40" region="speaker">Upon saving you will be able to enter the</p>
+         <p begin="00:00:119.40" end="00:00:121.90" region="speaker">specificities of your policy.</p>
+         <p begin="00:00:121.90" end="00:00:124.00" region="speaker">Question 4b wants to know if any deviations from</p>
+         <p begin="00:00:124.00" end="00:00:128.86" region="speaker">your written policies or standard CSP disclosed in</p>
+         <p begin="00:00:128.86" end="00:00:132.20" region="speaker">4a ever resulted in better discounts, meaning lower</p>
+         <p begin="00:00:132.20" end="00:00:135.23" region="speaker">prices, or concessions than indicated.</p>
+         <p begin="00:00:135.23" end="00:00:137.73" region="speaker">This is a little counter intuitive since you</p>
+         <p begin="00:00:137.73" end="00:00:140.43" region="speaker">haven&apos;t filled out your discount policies in 4a</p>
+         <p begin="00:00:140.43" end="00:00:141.46" region="speaker">yet.</p>
+         <p begin="00:00:141.46" end="00:00:144.40" region="speaker">What we&apos;ll do for now is answer &quot;No&quot; and come back</p>
+         <p begin="00:00:144.40" end="00:00:146.50" region="speaker">to the question after entering your discount</p>
+         <p begin="00:00:146.50" end="00:00:147.93" region="speaker">policies.</p>
+         <p begin="00:00:147.93" end="00:00:150.80" region="speaker">Click Save and you will see a message asking you</p>
+         <p begin="00:00:150.80" end="00:00:154.03" region="speaker">to now add your discount policy in 4a.</p>
+         <p begin="00:00:154.03" end="00:00:157.83" region="speaker">Go to 4a and click Add Discount Policy.</p>
+         <p begin="00:00:157.83" end="00:00:161.26" region="speaker">On the Discount Policy, Concession Terms page,</p>
+         <p begin="00:00:161.26" end="00:00:163.40" region="speaker">enter the Customer to whom you intend to give the</p>
+         <p begin="00:00:163.40" end="00:00:164.76" region="speaker">discount.</p>
+         <p begin="00:00:164.76" end="00:00:167.46" region="speaker">Enter the discount, either in percent or in dollar</p>
+         <p begin="00:00:167.46" end="00:00:168.63" region="speaker">figure.</p>
+         <p begin="00:00:168.63" end="00:00:171.70" region="speaker">Enter a Quantity or Volume discount, typically in the</p>
+         <p begin="00:00:171.70" end="00:00:174.76" region="speaker">number of items purchased or amount of money spent,</p>
+         <p begin="00:00:174.76" end="00:00:176.33" region="speaker">respectively.</p>
+         <p begin="00:00:176.33" end="00:00:179.60" region="speaker">Select the FOB Terms, or freight terms.</p>
+         <p begin="00:00:179.60" end="00:00:182.83" region="speaker">Lastly the concessions row allows you to enter any</p>
+         <p begin="00:00:182.83" end="00:00:185.60" region="speaker">terms not previously listed, for example</p>
+         <p begin="00:00:185.60" end="00:00:188.66" region="speaker">prompt-payment terms, aggregate discount terms,</p>
+         <p begin="00:00:188.66" end="00:00:191.46" region="speaker">enhanced or additional services offered.</p>
+         <p begin="00:00:191.46" end="00:00:193.96" region="speaker">If you chose a discount policy at the SIN level,</p>
+         <p begin="00:00:193.96" end="00:00:197.43" region="speaker">you will now be able to choose the applicable SIN,</p>
+         <p begin="00:00:197.43" end="00:00:200.60" region="speaker">if you chose to discount at an Offer/Contract level</p>
+         <p begin="00:00:200.60" end="00:00:202.50" region="speaker">then you are finished.</p>
+         <p begin="00:00:202.50" end="00:00:204.06" region="speaker">Click Save.</p>
+         <p begin="00:00:204.06" end="00:00:206.86" region="speaker">You will now see your discount policy, continue</p>
+         <p begin="00:00:206.86" end="00:00:209.86" region="speaker">adding any relevant discount policies.</p>
+         <p begin="00:00:209.86" end="00:00:213.06" region="speaker">When you are finished move on to 4b.</p>
+         <p begin="00:00:213.06" end="00:00:214.83" region="speaker">Now that we have established our discount</p>
+         <p begin="00:00:214.83" end="00:00:218.70" region="speaker">policies in 4a, we can accurately answer whether</p>
+         <p begin="00:00:218.70" end="00:00:221.00" region="speaker">we have any deviations that have resulted in</p>
+         <p begin="00:00:221.00" end="00:00:223.03" region="speaker">better discounts than those previously</p>
+         <p begin="00:00:223.03" end="00:00:224.33" region="speaker">indicated.</p>
+         <p begin="00:00:224.33" end="00:00:226.33" region="speaker">This is a way for the government to determine if</p>
+         <p begin="00:00:226.33" end="00:00:228.56" region="speaker">a vendor is truly providing the most fair</p>
+         <p begin="00:00:228.56" end="00:00:230.80" region="speaker">and reasonable price.</p>
+         <p begin="00:00:230.80" end="00:00:233.30" region="speaker">If you answer &quot;Yes&quot;, include the following in</p>
+         <p begin="00:00:233.30" end="00:00:236.06" region="speaker">the textbox provided: discussion on any</p>
+         <p begin="00:00:236.06" end="00:00:239.06" region="speaker">situations that lead to deviations from standard</p>
+         <p begin="00:00:239.06" end="00:00:242.83" region="speaker">practice, an explanation of how often they occur,</p>
+         <p begin="00:00:242.83" end="00:00:244.83" region="speaker">and the controls you employ to assure the</p>
+         <p begin="00:00:244.83" end="00:00:246.80" region="speaker">integrity of your pricing.</p>
+         <p begin="00:00:246.80" end="00:00:249.60" region="speaker">Examples of typical deviations may include,</p>
+         <p begin="00:00:249.60" end="00:00:252.16" region="speaker">but are not limited to, one time goodwill</p>
+         <p begin="00:00:252.16" end="00:00:254.96" region="speaker">discounts to charity organizations or to</p>
+         <p begin="00:00:254.96" end="00:00:258.06" region="speaker">compensate an otherwise disgruntled customer; a</p>
+         <p begin="00:00:258.06" end="00:00:261.73" region="speaker">limited sale of obsolete or damaged goods; the sale</p>
+         <p begin="00:00:261.73" end="00:00:264.80" region="speaker">of sample goods to a new customer; or the sales of</p>
+         <p begin="00:00:264.80" end="00:00:267.70" region="speaker">prototype goods for testing purposes.</p>
+         <p begin="00:00:267.70" end="00:00:270.36" region="speaker">If deviations from your written policies or</p>
+         <p begin="00:00:270.36" end="00:00:273.03" region="speaker">standard commercial sales practices disclosed in the</p>
+         <p begin="00:00:273.03" end="00:00:275.96" region="speaker">chart on the Commercial Sales Practices Format are</p>
+         <p begin="00:00:275.96" end="00:00:278.70" region="speaker">so significant and/or frequent that the</p>
+         <p begin="00:00:278.70" end="00:00:281.10" region="speaker">Contracting Officer cannot establish whether the</p>
+         <p begin="00:00:281.10" end="00:00:285.03" region="speaker">price(s) offered is fair and reasonable, then you</p>
+         <p begin="00:00:285.03" end="00:00:288.26" region="speaker">may be asked to provide additional information.</p>
+         <p begin="00:00:288.26" end="00:00:291.26" region="speaker">The Contracting Officer may ask for information to</p>
+         <p begin="00:00:291.26" end="00:00:293.63" region="speaker">demonstrate that you have made substantial sales of</p>
+         <p begin="00:00:293.63" end="00:00:295.63" region="speaker">the item(s) in the commercial market</p>
+         <p begin="00:00:295.63" end="00:00:297.73" region="speaker">consistent with the information reflected on</p>
+         <p begin="00:00:297.73" end="00:00:299.63" region="speaker">the chart on the Commercial Sales Practice</p>
+         <p begin="00:00:299.63" end="00:00:302.70" region="speaker">Format, a description of the conditions surrounding</p>
+         <p begin="00:00:302.70" end="00:00:306.23" region="speaker">those sales deviations, or other information that may</p>
+         <p begin="00:00:306.23" end="00:00:309.16" region="speaker">be necessary in order for the Contracting Officer to</p>
+         <p begin="00:00:309.16" end="00:00:311.60" region="speaker">determine whether your offered price(s) is fair</p>
+         <p begin="00:00:311.60" end="00:00:312.96" region="speaker">and reasonable.</p>
+         <p begin="00:00:312.96" end="00:00:316.20" region="speaker">In cases where additional information is requested,</p>
+         <p begin="00:00:316.20" end="00:00:319.23" region="speaker">the Contracting Officer will target the request in</p>
+         <p begin="00:00:319.23" end="00:00:321.60" region="speaker">order to limit the submission of data to that</p>
+         <p begin="00:00:321.60" end="00:00:323.80" region="speaker">needed to establish the reasonableness of the</p>
+         <p begin="00:00:323.80" end="00:00:325.20" region="speaker">offered price.</p>
+         <p begin="00:00:325.20" end="00:00:327.86" region="speaker">When you have finished accurately answering 4b,</p>
+         <p begin="00:00:327.86" end="00:00:329.73" region="speaker">click Save and you will be returned to the</p>
+         <p begin="00:00:329.73" end="00:00:331.80" region="speaker">modification on which you are working.</p>
+    </div>
+  </body>
+</tt>

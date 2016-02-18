@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Cancel Contract Modifications</category>
+         <ttm:title>Cancel Contract</ttm:title>
+         <ttm:desc>The Cancellation Modification is used to cancel the Contract, a process that asks you to provide for reasons for having made your determination.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.16" end="00:00:04.66" region="speaker">In order to cancel a contract, you must fill</p>
+         <p begin="00:00:04.66" end="00:00:06.96" region="speaker">out a detailed reason as to why you are cancelling</p>
+         <p begin="00:00:06.96" end="00:00:08.50" region="speaker">this contract.</p>
+         <p begin="00:00:08.50" end="00:00:10.73" region="speaker">Click the textbox and provide the CO with</p>
+         <p begin="00:00:10.73" end="00:00:12.70" region="speaker">information as to why you are cancelling your</p>
+         <p begin="00:00:12.70" end="00:00:14.13" region="speaker">contract.</p>
+         <p begin="00:00:14.13" end="00:00:16.53" region="speaker">Cancelling your contract is an important decision</p>
+         <p begin="00:00:16.53" end="00:00:18.80" region="speaker">that can only be undone during the thirty day</p>
+         <p begin="00:00:18.80" end="00:00:21.63" region="speaker">window between submitting the cancellation request</p>
+         <p begin="00:00:21.63" end="00:00:24.06" region="speaker">and the time that it goes into effect.</p>
+         <p begin="00:00:24.06" end="00:00:26.33" region="speaker">After this thirty day period, you will need to</p>
+         <p begin="00:00:26.33" end="00:00:28.66" region="speaker">go through the contract offer process all over</p>
+         <p begin="00:00:28.66" end="00:00:29.66" region="speaker">again.</p>
+         <p begin="00:00:29.66" end="00:00:32.03" region="speaker">With this in mind, think carefully as to whether or</p>
+         <p begin="00:00:32.03" end="00:00:34.83" region="speaker">not you really want to cancel your contract.</p>
+         <p begin="00:00:34.83" end="00:00:36.40" region="speaker">When you are finished click &quot;Save and</p>
+         <p begin="00:00:36.40" end="00:00:38.40" region="speaker">Continue.&quot;</p>
+    </div>
+  </body>
+</tt>

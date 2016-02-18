@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Terms &amp; Conditions Modifications</category>
+         <ttm:title>Cooperative Purchasing</ttm:title>
+         <ttm:desc>The Cooperative Purchasing Modification enables Contractors to opt into the Cooperative Purchasing Program, in which local and tribal governments can acquire services through a specific set of GSA Schedule Contracts.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:03.73" end="00:00:06.63" region="speaker">GSA is the government&apos;s savings agency, but this</p>
+         <p begin="00:00:06.63" end="00:00:09.36" region="speaker">is not limited to only federal agencies.</p>
+         <p begin="00:00:09.36" end="00:00:12.03" region="speaker">The Cooperative Purchasing Program allows state,</p>
+         <p begin="00:00:12.03" end="00:00:14.43" region="speaker">local, and tribal governments to enjoy the</p>
+         <p begin="00:00:14.43" end="00:00:16.96" region="speaker">benefits of pre-vetted vendors on information</p>
+         <p begin="00:00:16.96" end="00:00:19.43" region="speaker">technology and law enforcement products and</p>
+         <p begin="00:00:19.43" end="00:00:22.43" region="speaker">services offered through Schedule 70 and Schedule</p>
+         <p begin="00:00:22.43" end="00:00:23.60" region="speaker">84.</p>
+         <p begin="00:00:23.60" end="00:00:25.53" region="speaker">Eligible entities may purchase from these</p>
+         <p begin="00:00:25.53" end="00:00:28.16" region="speaker">pre-vetted vendors at any time, for any reason,</p>
+         <p begin="00:00:28.16" end="00:00:30.40" region="speaker">using any funds available.</p>
+         <p begin="00:00:30.40" end="00:00:32.23" region="speaker">Items under the Cooperative Purchasing</p>
+         <p begin="00:00:32.23" end="00:00:35.16" region="speaker">program will stand out to these state, local, and</p>
+         <p begin="00:00:35.16" end="00:00:38.10" region="speaker">tribal entities on GSA Advantage by being marked</p>
+         <p begin="00:00:38.10" end="00:00:40.13" region="speaker">with a special icon.</p>
+         <p begin="00:00:40.13" end="00:00:42.90" region="speaker">The Cooperative Purchasing modification allows you to</p>
+         <p begin="00:00:42.90" end="00:00:46.30" region="speaker">enter or withdraw selected SINs from this program.</p>
+         <p begin="00:00:46.30" end="00:00:48.90" region="speaker">Select the desired SIN from the dropdown menu</p>
+         <p begin="00:00:48.90" end="00:00:51.83" region="speaker">then click &quot;Update SIN Details.&quot;</p>
+         <p begin="00:00:51.83" end="00:00:54.73" region="speaker">The SIN details will show you whether the chosen SIN</p>
+         <p begin="00:00:54.73" end="00:00:56.93" region="speaker">is currently enrolled in the Cooperative Purchasing</p>
+         <p begin="00:00:56.93" end="00:00:58.16" region="speaker">program.</p>
+         <p begin="00:00:58.16" end="00:00:60.63" region="speaker">Choose whether you wish to be enrolled in the program</p>
+         <p begin="00:00:60.63" end="00:00:63.80" region="speaker">and click &quot;Update this SIN.&quot;</p>
+         <p begin="00:00:63.80" end="00:00:65.33" region="speaker">If you would like to make changes to your</p>
+         <p begin="00:00:65.33" end="00:00:67.70" region="speaker">Cooperative Purchasing enrollment or if you have</p>
+         <p begin="00:00:67.70" end="00:00:70.96" region="speaker">made an error and wish to delete the change in scope</p>
+         <p begin="00:00:70.96" end="00:00:74.40" region="speaker">you may do so with the &quot;Edit&quot; and &quot;Delete&quot; links.</p>
+         <p begin="00:00:74.40" end="00:00:76.90" region="speaker">When you are finished click &quot;Save and Continue.&quot;</p>
+    </div>
+  </body>
+</tt>

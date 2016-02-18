@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Legal Modifications</category>
+         <ttm:title>Change of Name Agreement</ttm:title>
+         <ttm:desc>Changing the legal name of your business entity is a major step, and carries with it many issues that must be addressed. Your DUNS number may be affected, and you may need to change business information in the System for Award Management (SAM). Please note that the bulk of information that must accompany a Change of Name Modification is provided by the Contractor via the Upload Documents section.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.10" end="00:00:04.30" region="speaker">You may submit a modification requesting</p>
+         <p begin="00:00:04.30" end="00:00:06.43" region="speaker">that your company be identified by a different</p>
+         <p begin="00:00:06.43" end="00:00:07.43" region="speaker">name.</p>
+         <p begin="00:00:07.43" end="00:00:10.20" region="speaker">In doing so, your DUNS may be impacted.</p>
+         <p begin="00:00:10.20" end="00:00:12.53" region="speaker">To begin with you will be asked if you would like to</p>
+         <p begin="00:00:12.53" end="00:00:15.23" region="speaker">replace the existing DUNS on this contract.</p>
+         <p begin="00:00:15.23" end="00:00:17.56" region="speaker">For the purpose of this demonstration we are going</p>
+         <p begin="00:00:17.56" end="00:00:20.73" region="speaker">to respond &quot;Yes&quot; and take you through the process.</p>
+         <p begin="00:00:20.73" end="00:00:23.90" region="speaker">Selecting Yes will reveal text boxes which allow you</p>
+         <p begin="00:00:23.90" end="00:00:26.23" region="speaker">to enter your new DUNS and Plus 4 number if</p>
+         <p begin="00:00:26.23" end="00:00:27.36" region="speaker">applicable.</p>
+         <p begin="00:00:27.36" end="00:00:30.36" region="speaker">Click &quot;Save and Continue&quot; to move on.</p>
+         <p begin="00:00:30.36" end="00:00:32.00" region="speaker">You will be asked to confirm that the</p>
+         <p begin="00:00:32.00" end="00:00:34.26" region="speaker">information appearing with your new DUNS number is</p>
+         <p begin="00:00:34.26" end="00:00:35.40" region="speaker">correct.</p>
+         <p begin="00:00:35.40" end="00:00:37.76" region="speaker">Review the new Corporate Information screen.</p>
+         <p begin="00:00:37.76" end="00:00:40.13" region="speaker">If there are any issues you must make corrections</p>
+         <p begin="00:00:40.13" end="00:00:44.90" region="speaker">on the SAM website at www.sam.gov.</p>
+         <p begin="00:00:44.90" end="00:00:47.36" region="speaker">eMod will take 24 hours for updates to be</p>
+         <p begin="00:00:47.36" end="00:00:49.36" region="speaker">reflected in the system.</p>
+         <p begin="00:00:49.36" end="00:00:53.20" region="speaker">If everything is correct, click &quot;Save and Continue.&quot;</p>
+         <p begin="00:00:53.20" end="00:00:55.63" region="speaker">The list of information that must accompany such a</p>
+         <p begin="00:00:55.63" end="00:00:58.00" region="speaker">modification is provided by the uploaded documents</p>
+         <p begin="00:00:58.00" end="00:00:60.63" region="speaker">described here.</p>
+         <p begin="00:00:60.63" end="00:00:63.20" region="speaker">Additional required documents will include:</p>
+         <p begin="00:00:63.20" end="00:00:65.36" region="speaker">Documentation authenticated by a State</p>
+         <p begin="00:00:65.36" end="00:00:67.96" region="speaker">official, an opinion by your company&apos;s legal</p>
+         <p begin="00:00:67.96" end="00:00:70.93" region="speaker">counsel, and a list of all affected contracts and</p>
+         <p begin="00:00:70.93" end="00:00:72.60" region="speaker">purchase orders.</p>
+         <p begin="00:00:72.60" end="00:00:75.30" region="speaker">Review this information carefully</p>
+         <p begin="00:00:75.30" end="00:00:78.63" region="speaker">and make notes of what you will need to</p>
+         <p begin="00:00:78.63" end="00:00:79.63" region="speaker">provide when proceeding to the Upload Documents</p>
+         <p begin="00:00:79.63" end="00:00:81.40" region="speaker">section. For this screen, however, you should still</p>
+         <p begin="00:00:81.40" end="00:00:83.93" region="speaker">provide the CO with some information regarding the</p>
+         <p begin="00:00:83.93" end="00:00:86.33" region="speaker">reason for your change of name and a list of the</p>
+         <p begin="00:00:86.33" end="00:00:88.40" region="speaker">relevant documents that will be attached to this</p>
+         <p begin="00:00:88.40" end="00:00:89.70" region="speaker">mod request.</p>
+         <p begin="00:00:89.70" end="00:00:92.83" region="speaker">Enter this information in the text box provided.</p>
+         <p begin="00:00:92.83" end="00:00:95.43" region="speaker">To continue to the Upload Documents screen click</p>
+         <p begin="00:00:95.43" end="00:00:97.43" region="speaker">&quot;Save and Continue.&quot;</p>
+    </div>
+  </body>
+</tt>

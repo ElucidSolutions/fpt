@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Digital Certificates</category>
+         <ttm:title>Importing a Digital Certificate (Firefox)</ttm:title>
+         <ttm:desc>Once you have acquired your Digital Certificate, you will need to upload it to the internet browser you use to access the eOffer/eMod system. This video walks you through the Certificate import steps for the Mozilla Firefox web browser.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:08.33" end="00:00:10.33" region="speaker">Once you have received your Digital Certificate,</p>
+         <p begin="00:00:10.33" end="00:00:13.33" region="speaker">you will need to install it on your web browser.</p>
+         <p begin="00:00:13.33" end="00:00:15.46" region="speaker">This video covers installation instructions</p>
+         <p begin="00:00:15.46" end="00:00:17.00" region="speaker">for Firefox.</p>
+         <p begin="00:00:17.00" end="00:00:20.23" region="speaker">In your browser&apos;s &quot;Menu bar&quot; click &quot;Tools&quot; and</p>
+         <p begin="00:00:20.23" end="00:00:21.96" region="speaker">then &quot;Options.&quot;</p>
+         <p begin="00:00:21.96" end="00:00:24.50" region="speaker">Open the &quot;Advanced&quot; tab.</p>
+         <p begin="00:00:24.50" end="00:00:26.16" region="speaker">Then click the &quot;Encryption&quot; tab.</p>
+         <p begin="00:00:26.16" end="00:00:30.63" region="speaker">Click the &quot;View Certificates&quot; button.</p>
+         <p begin="00:00:30.63" end="00:00:32.43" region="speaker">Make sure the &quot;Your Certificates&quot; tab is</p>
+         <p begin="00:00:32.43" end="00:00:36.70" region="speaker">selected Click the &quot;Import&quot; button.</p>
+         <p begin="00:00:36.70" end="00:00:39.03" region="speaker">This will launch a browser window where you can then</p>
+         <p begin="00:00:39.03" end="00:00:41.66" region="speaker">search for the saved Digital Certificate.</p>
+         <p begin="00:00:41.66" end="00:00:43.56" region="speaker">Browse to the location where your Digital</p>
+         <p begin="00:00:43.56" end="00:00:46.86" region="speaker">Certificate was previously saved Now select your</p>
+         <p begin="00:00:46.86" end="00:00:48.86" region="speaker">digital certificate.</p>
+         <p begin="00:00:50.16" end="00:00:53.00" region="speaker">Enter your private key&apos;s password.</p>
+         <p begin="00:00:53.00" end="00:00:55.33" region="speaker">It is important to note at this point that neither</p>
+         <p begin="00:00:55.33" end="00:00:59.03" region="speaker">the cert provider nor GSA can recover your password.</p>
+         <p begin="00:00:59.03" end="00:00:61.96" region="speaker">Thus if you forget or lose it, you&apos;ll have to buy a</p>
+         <p begin="00:00:61.96" end="00:00:63.43" region="speaker">new certificate altogether.</p>
+         <p begin="00:00:63.43" end="00:00:68.86" region="speaker">Click OK A message will appear, informing you of a</p>
+         <p begin="00:00:68.86" end="00:00:71.96" region="speaker">successful import of the certificate.</p>
+         <p begin="00:00:71.96" end="00:00:74.03" region="speaker">You will see your digital cert show up under the</p>
+         <p begin="00:00:74.03" end="00:00:76.03" region="speaker">&quot;Your Certificates&quot; tab.</p>
+    </div>
+  </body>
+</tt>

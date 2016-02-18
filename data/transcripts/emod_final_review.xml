@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Final Review</category>
+         <ttm:title>Final Review of eMod</ttm:title>
+         <ttm:desc>The Final Review of eMod screen affords one last opportunity to review the contents of your Modification. Take the time to review each of the documents. Read the disclaimer carefully before agreeing to it and submitting your eMod.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.06" end="00:00:04.66" region="speaker">This screen offers you one final review of your</p>
+         <p begin="00:00:04.66" end="00:00:06.70" region="speaker">modification request.</p>
+         <p begin="00:00:06.70" end="00:00:08.60" region="speaker">Note that all of the items in the left-hand</p>
+         <p begin="00:00:08.60" end="00:00:11.40" region="speaker">navigation should contain green boxes with white</p>
+         <p begin="00:00:11.40" end="00:00:15.16" region="speaker">checks, except for &quot;Submit Request&quot; If you want to go</p>
+         <p begin="00:00:15.16" end="00:00:17.30" region="speaker">back and review the information you provided</p>
+         <p begin="00:00:17.30" end="00:00:19.96" region="speaker">in any of the sections, all you need to do is</p>
+         <p begin="00:00:19.96" end="00:00:23.20" region="speaker">click the desired link from the navigation menu.</p>
+         <p begin="00:00:23.20" end="00:00:25.36" region="speaker">Additionally, you can review all of the</p>
+         <p begin="00:00:25.36" end="00:00:27.56" region="speaker">supporting documents that you had previously</p>
+         <p begin="00:00:27.56" end="00:00:31.30" region="speaker">attached by clicking the appropriate &quot;Review&quot; link.</p>
+         <p begin="00:00:31.30" end="00:00:33.60" region="speaker">Review the final disclaimer and, if you</p>
+         <p begin="00:00:33.60" end="00:00:36.60" region="speaker">agree to the terms, select Yes.</p>
+         <p begin="00:00:36.60" end="00:00:38.60" region="speaker">Click &quot;Continue.&quot;</p>
+    </div>
+  </body>
+</tt>

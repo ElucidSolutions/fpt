@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<database>
+  <library>
+    <name>eoffer</name>
+    <title>eOffer</title>
+    <description>A collection of help videos about eOffer.</description>
+    <collection>
+      <name>getting-started</name>
+      <title>Getting Started</title>
+      <description></description>
+      <video>
+	<title>eOffer/eMod Homepage</title>
+	<description><![CDATA[<p>Within the eMod/eOffer system there are two modules, both of which are accessible on the right-hand side of the screen in the box marked "System Access." Each module serves its own distinct purposes, and these videos will illuminate the step-by-step processes associated with each.</p>]]></description>
+	<duration>00:02:21</duration>
+	<url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_emod_homepage.mp4</url>
+        <transcript>data/transcripts/eoffer_emod_homepage.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>getting-started-with-oeffer</name>
+      <title>Getting Started with eOffer</title>
+      <description></description>
+      <video>
+	<title>eOffer Sign In</title>
+	<description><![CDATA[<p>When you visit the eOffer/eMod site you will find the Sign In buttons for each of the two systems on the right-hand side. Both systems use the same initial log in process. In our example, we will assume this is the first time you have visited the site.</p>]]></description>
+	<duration>00:01:16</duration>
+	<url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_sign_in.mp4</url>
+        <transcript>data/transcripts/eoffer_sign_in.xml</transcript>
+      </video>
+      <video>
+	<title>My eOffers Page</title>
+	<description><![CDATA[The My eOffers screen serves as the entry point to the eOffer system. You can continue processing Saved eOffers, review Submitted eOffers, or eSign pending eOffers as required.]]></description>
+	<duration>00:01:27</duration>
+	<url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_my_eoffers.mp4</url>
+        <transcript>data/transcripts/eoffer_my_eoffers.xml</transcript>
+      </video>
+      <video>
+	<title>Creating an eOffer</title>
+	<description><![CDATA[<p>To create an eOffer, select a Solicitation against which the Offer will be submitted. You will need to have completed a few preliminary qualifications in order to begin the eOffer creation process.</p>]]></description>
+	<duration>00:00:33</duration>
+	<url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_creating_eoffer.mp4</url>
+        <transcript>data/transcripts/eoffer_creating_eoffer.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>corporate-information</name>
+      <title>Corporate Information</title>
+      <description></description>
+      <video>
+	<title>Corporate Information</title>
+	<description><![CDATA[<p>Confirm your Corporate Information before proceeding. Your Corporate Information is pulled directly frm the System for Award Management, (SAM). Therefore, if incorrect, Corporate Information must be corrected outside the eOffer/eMod system.</p>]]></description>
+	<duration>00:01:04</duration>
+	<url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_corporate_information.mp4</url>
+	<transcript>data/transcripts/eoffer_corporate_information.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>authorized-negotiators</name>
+      <title>Authorized Negotiators</title>
+      <description></description>
+        <video>
+          <title>Authorized Negotiators</title>
+          <description><![CDATA[<p>Users who need access to the eOffer system to work on a particular eOffer must be added as Authorized Negotiators. Multiple Negotiators may be added at one time, which is recommended practice to ensure a representative will be available to sign off on agreements with the government. Note that the Negotiator's name and email address must be entered exactly as they appear on the individual's Digital Certificate.</p>]]></description>
+          <duration>00:02:13</duration>
+          <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_authorized_negotiators.mp4</url>
+          <transcript>data/transcripts/eoffer_authorized_negotiators.xml</transcript>
+        </video>
+    </collection>
+    <collection>
+      <name>goods-services</name>
+      <title>Goods/Services</title>
+      <description></description>
+      <video>
+        <title>Goods/Services</title>
+        <description><![CDATA[After adding Negotiators, the Goods/Services page is your next destination. This step involves chosing the Special Item Numbers (SINs) to be included in the eOffer. A SIN is an identifier for the type of Goods or Services being provided. Each Offer may contain multiple SINs.]]></description>
+        <duration>00:03:35</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_goods_services.mp4</url>
+        <transcript>data/transcripts/eoffer_goods_services.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>solicitation-clauses</name>
+      <title>Solicitation Clauses</title>
+      <description></description>
+      <video>
+        <title>Standard Responses</title>
+        <description><![CDATA[There are five specific questions to which you must respond, each of which relates to various acts, programs, or administrative issues concerning your GSA Schedule Contract Offer. Though there is some information available on-screen, in this video we will identify some of the important elements of feach question requiring your response.]]></description>
+        <duration>00:02:33</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_standard_responses.mp4</url>
+        <transcript>data/transcripts/eoffer_standard_responses.xml</transcript>
+      </video>
+      <video>
+        <title>Solicitation Clauses Overview</title>
+        <description><![CDATA[Each of the four Templates requires your response before proceeding. As you respond to each section, the status will change from &quot;Incomplete&quot; to &quot;Complete.&quot;]]></description>
+        <duration>00:00:46</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_solicitation_clauses_overview.mp4</url>
+        <transcript>data/transcripts/eoffer_solicitation_clauses_overview.xml</transcript>
+      </video>
+      <video>
+        <title>Basic Information</title>
+        <description><![CDATA[In the Basic Information Template, the actual Clauses you use may vary depending on both your Standard Responses and the Schedule to which you are submitting your Offer.]]></description>
+        <duration>00:03:30</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_solicitation_clauses_basic_info.mp4</url>
+        <transcript>data/transcripts/eoffer_solicitation_clauses_basic_info.xml</transcript>
+      </video>
+      <video>
+        <title>Commercial Sales Practice</title>
+        <description><![CDATA[In the Commercial Sales Practice Template, you must enter information regarding your sales history, estimates of projected sales for each SIN included in the eOffer, and any discount policies that will affect pricing.]]></description>
+        <duration>00:05:27</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_solicitation_clauses_csp.mp4</url>
+        <transcript>data/transcripts/eoffer_solicitation_clauses_csp.xml</transcript>
+      </video>
+      <video>
+        <title>Point of Contact Information</title>
+        <description><![CDATA[Multiple Points of Contact may be designated in the Points of Contact Information Template. For some organizations, it may be advantageous to designate separate Points of Contact for specialized roles, such as Marketing and Contract Administration.]]></description>
+        <duration>00:02:32</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_solicitation_clauses_poc.mp4</url>
+        <transcript>data/transcripts/eoffer_solicitation_clauses_poc.xml</transcript>
+      </video>
+      <video>
+        <title>Ordering Information</title>
+        <description><![CDATA[Include details on how your Company wishes to receives Orders in the Order Information Template. You may select either Facsimile Transmission, or Computer-to-Computer Electronic Data Interchange, (EDI). Selecting EDI requires contact information for the Company representative responsible for establishing the EDI connection.]]></description>
+        <duration>00:01:45</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_solicitation_clauses_ordering.mp4</url>
+        <transcript>data/transcripts/eoffer_solicitation_clauses_ordering.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>subcontracting-plan</name>
+      <title>Subcontracting Plan</title>
+      <description></description>
+      <video>
+        <title>Subcontracting Plan Overview</title>
+        <description><![CDATA[A Subcontracting Plan is required on a Contract under certain circumstances. The Incorporate Sub-Contracting Plan (SubK) Modification allows Contractors to add a Subcontracting Plan to their Contract Offer as required. Generally, Federal Acquisition Regulations (FAR) require a Subcontracting Plan from a Contractor classified as &quot;Other than Small Business&quot; when the actual Sales of a Contract exceed the $650,000 threshold, (or the $1,500,000 threshold for construction).]]></description>
+        <duration>00:01:40</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_subk_overview.mp4</url>
+        <transcript>data/transcripts/eoffer_subk_overview.xml</transcript>
+      </video>
+      <video>
+        <title>Identification Data</title>
+        <description><![CDATA[Enter a detailed description of your Supplies/Services in the textbox. Next enter your Place of Performance, and then the Estimated Contract Value covering the Base Period and all of the Option Periods of the Contract.]]></description>
+        <duration>00:00:21</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_subk_identification.mp4</url>
+        <transcript>data/transcripts/eoffer_subk_identification.xml</transcript>
+      </video>
+      <video>
+        <title>Goals</title>
+        <description><![CDATA[The Goals section asks you to state the percentage of the Contract value that you intend to designate for each of the various Subcontracting categories. These values are applied to Small Business types according to the designations for which Subcontractors may qualify, and then defined over the Base year, and all Option years of the Contract.]]></description>
+        <duration>00:02:30</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_subk_goals.mp4</url>
+        <transcript>data/transcripts/eoffer_subk_goals.xml</transcript>
+      </video>
+      <video>
+        <title>Program Administrator</title>
+        <description><![CDATA[When completing a Subcontracting Plan, you must designate a Subcontracting Plan Administrator in the Point of Contact Information Template of the Solicitation Clauses section.]]></description>
+        <duration>00:01:28</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_subk_admin.mp4</url>
+        <transcript>data/transcripts/eoffer_subk_admin.xml</transcript>
+      </video>
+      <video>
+        <title>Equitable Opportunity</title>
+        <description><![CDATA[The Equitable Opportunity section summarizes your business' efforts to ensure Equitable Opportunity and Competition, including outreach efforts and internal programs designed for purchasing and personnel. Check all applicable boxes and describe any additional efforts in the textbox provided.]]></description>
+        <duration>00:00:31</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_subk_equitable_opportunity.mp4</url>
+        <transcript>data/transcripts/eoffer_subk_equitable_opportunity.xml</transcript>
+      </video>
+      <video>
+        <title>Clause Inclusion and Flow Down</title>
+        <description><![CDATA[The Clause Inclusion and Flow Down section requires your assurance that all Subcontracts in excess of $650,000 (or $1,500,000 for construction) adopt plans that provide further Subcontracting opportunities. You must agree to this Clause by marking the checkbox.]]></description>
+        <duration>00:00:21</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_subk_clause_inclusion.mp4</url>
+        <transcript>data/transcripts/eoffer_subk_clause_inclusion.xml</transcript>
+      </video>
+      <video>
+        <title>Reporting and Cooperation</title>
+        <description><![CDATA[The Reporting and Cooperation section contains assurances required by FAR that all Contractors will submit various Reports, including a timetable for Individual Subcontract Reports. All Contractors must agree to these conditions. Confirm your agreement by marking the checkbox.]]></description>
+        <duration>00:00:21</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_subk_reporting.mp4</url>
+        <transcript>data/transcripts/eoffer_subk_reporting.xml</transcript>
+      </video>
+      <video>
+        <title>Record Keeping</title>
+        <description><![CDATA[The Record Keeping section requires your assurance that records have been maintained to prove compliance with the requirements and goals of your Subcontracting Plan.]]></description>
+        <duration>00:00:21</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_subk_record_keeping.mp4</url>
+        <transcript>data/transcripts/eoffer_subk_record_keeping.xml</transcript>
+      </video>
+      <video>
+        <title>Statutory Requirements</title>
+        <description><![CDATA[The Statutory Requirements section requires your agreement to the responsibilities of a Prime Contractor as established by FAR.]]></description>
+        <duration>00:00:17</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_subk_statutory.mp4</url>
+        <transcript>data/transcripts/eoffer_subk_statutory.xml</transcript>
+      </video>
+      <video>
+        <title>Good Faith Efforts</title>
+        <description><![CDATA[The final Subcontracting Plan section is the demonstration of Good Faith Effort, in which you must provide a detailed outline of the steps your Company plans to take to achieve your Subcontracting goals.]]></description>
+        <duration>00:00:15</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_subk_good_faith.mp4</url>
+        <transcript>data/transcripts/eoffer_subk_good_faith.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>exceptions</name>
+      <title>Exceptions</title>
+      <description></description>
+      <video>
+        <title>Exceptions</title>
+        <description><![CDATA[If you recall from the Standard Response section, you were asked whether you are taking Exception to any of the standard Terms and Conditions. If you answered 'Yes' to &quot;Exceptions to Terms and Conditions,&quot; you will need to check the list of Contract Clauses provided and select those Regulation(s) for which you are taking Exception by marking the corresponding checkboxes.]]></description>
+        <duration>00:02:23</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_exceptions.mp4</url>
+        <transcript>data/transcripts/eoffer_exceptions.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>upload-documents</name>
+      <title>Upload Documents</title>
+      <description></description>
+      <video>
+        <title>Upload Documents</title>
+        <description><![CDATA[The Upload Documents screen allows you to provide supporting documentation to the eOffer. This is the final step prior to submission. Documents required for all eOffers are indicated with an asterisk (*). If additional document types need to be uploaded, please use the &quot;Other (optional-offeror defined)&quot; category.]]></description>
+        <duration>00:01:50</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/eoffer_upload.mp4</url>
+        <transcript>data/transcripts/eoffer_upload.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>final-review</name>
+      <title>Final Review</title>
+      <description></description>
+      <video>
+        <title>Final Review</title>
+        <description><![CDATA[The Final Review of eMod screen affords one last opportunity to review the contents of your Modification. Take the time to review each of the documents. Read the disclaimer carefully before agreeing to it and submitting your eMod.]]></description>
+        <duration>00:01:29</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_final_review.mp4</url>
+        <transcript>data/transcripts/emod_final_review.xml</transcript>
+      </video>
+    </collection>
+  </library>
+  <library>
+    <name>emod</name>
+    <title>eMod</title>
+    <description></description>
+    <collection>
+      <name>getting-started-with-emod</name>
+      <title>Getting Started with eMod</title>
+      <description></description>
+      <video>
+        <title>eMod Sign In</title>
+        <description><![CDATA[<p>When you visit the eOffer/eMod site you will find the Sign In buttons for each of the two systems on the right-hand side. Both systems use the same initial log in process. In our example, we will assume this is the first time you have visited the site.</p>]]></description>
+        <duration>00:01:35</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_sign_in.mp4</url>
+        <transcript>data/transcripts/emod_sign_in.xml</transcript>
+      </video>
+      <video>
+        <title>My Modifications Page</title>
+        <description><![CDATA[The My Modifications screen serves as the entry point to the eMod system. You can continue processing Saved eMods, review Submitted eMods, or eSign pending eMods as required.]]></description>
+        <duration>00:01:41</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_my_modifications.mp4</url>
+        <transcript>data/transcripts/emod_my_modifications.xml</transcript>
+      </video>
+      <video>
+        <title>Creating an eMod</title>
+        <description><![CDATA[From the My Modifications homepage you can see all of the Saved, Submitted, and Signed Modifications. From here, you can create a new eMod, or edit an existing one. It is important to note that eMod will allow you to submit only one Modification Request for any given type of Mod Action.]]></description>
+        <duration>00:00:16</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_creating_emod.mp4</url>
+        <transcript>data/transcripts/emod_creating_emod.xml</transcript>
+      </video>
+      <video>
+        <title>Mod Type Selection</title>
+        <description><![CDATA[There are eight primary Modification types, each of which includes several sub-types pertaining to various processes and procedures relevant to the Modification process.]]></description>
+        <duration>00:00:51</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_modtype_selection.mp4</url>
+        <transcript>data/transcripts/emod_modtype_selection.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>additions-modifications</name>
+      <title>Additions Modifications</title>
+      <description></description>
+      <video>
+        <title>Add Labor Category and/or Service Offerings</title>
+        <description><![CDATA[The option to add a Labor Category allows you to expand Product and Service offerings.]]></description>
+        <duration>00:01:12</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_add_labor_service.mp4</url>
+        <transcript>data/transcripts/emod_add_labor_service.xml</transcript>
+      </video>
+      <video>
+        <title>Add Product(s)</title>
+        <description><![CDATA[The Add Product(s) option allows you to specify the Product or Service you are adding to the Contract Offer.]]></description>
+        <duration>00:00:57</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_add_product.mp4</url>
+        <transcript>data/transcripts/emod_add_product.xml</transcript>
+      </video>
+      <video>
+        <title>Add SIN</title>
+        <description><![CDATA[Your Modification may refer to the addition of a specific SIN, allowing GSA to quickly identify the Product or Service in the Contract Offer.]]></description>
+        <duration>00:01:27</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_add_sin.mp4</url>
+        <transcript>data/transcripts/emod_add_sin.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>administrative-modifications</name>
+      <title>Administrative Modifications</title>
+      <description></description>
+      <video>
+        <title>Address Change</title>
+        <description><![CDATA[This particular Modification is recommended to keep your Company information up-to-date.]]></description>
+        <duration>00:00:59</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_address_change.mp4</url>
+        <transcript>data/transcripts/emod_address_change.xml</transcript>
+      </video>
+      <video>
+        <title>Contract Administrator/Point of Contact</title>
+        <description><![CDATA[Your Contract Administrator/Point-of-Contact should be current at all times, as easy access to key personnel guarantees all matters regarding Contracts are resolved effectively.]]></description>
+        <duration>00:00:33</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_contract_admin_poc.mp4</url>
+        <transcript>data/transcripts/emod_contract_admin_poc.xml</transcript>
+      </video>
+      <video>
+        <title>Authorized Negotiator</title>
+        <description><![CDATA[Depending on their assigned role, Authorized Negotiators can either Sign binding Contract documents, or remain limited to simply preparingn eMods. It is important for these roles to be clearly distinguished at all times. Note that an Authorized Negotiator is the term used for an individual prior to Contract Award. After an Award has been made, that same person will be referred to as a Contract Administrator.]]></description>
+        <duration>00:01:42</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_authorized_negotiator.mp4</url>
+        <transcript>data/transcripts/emod_authorized_negotiator.xml</transcript>
+      </video>
+      <video>
+        <title>Email Address Change</title>
+        <description><![CDATA[Maintaining a current email address is key to keeping all phases of the Contract process running smoothly.]]></description>
+        <duration>00:00:21</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_email_change.mp4</url>
+        <transcript>data/transcripts/emod_email_change.xml</transcript>
+      </video>
+      <video>
+        <title>Fax Change</title>
+        <description><![CDATA[A working fax number guarantees the prompt, timely exchange of any document not suited for email transmission, or transmission via other electronic method.]]></description>
+        <duration>00:00:21</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_fax_change.mp4</url>
+        <transcript>data/transcripts/emod_fax_change.xml</transcript>
+      </video>
+      <video>
+        <title>Point of Contacts for Manufacturers, Dealers, Resellers, Agents Telephone Change</title>
+        <description><![CDATA[This particular Modification ensures current information for all Points of Contact involved in the various parts of Contract management.]]></description>
+        <duration>00:00:28</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_poc_manufacturers_dealers_resellers_agents.mp4</url>
+        <transcript>data/transcripts/emod_poc_manufacturers_dealers_resellers_agents.xml</transcript>
+      </video>
+      <video>
+        <title>Website Address Change</title>
+        <description><![CDATA[Your website is a substantial part of how parties involved in Contract execution keep abreast of your Company. Use the Website Address Change Modification to ensure that GSA has an up-to-date website address.]]></description>
+        <duration>00:00:24</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_website_change.mp4</url>
+        <transcript>data/transcripts/emod_website_change.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>cancel-contract-modifications</name>
+      <title>Cancel Contract Modifications</title>
+      <description></description>
+      <video>
+        <title>Cancel Contract</title>
+        <description><![CDATA[The Cancellation Modification is used to cancel the Contract, a process that asks you to provide for reasons for having made your determination.]]></description>
+        <duration>00:00:36</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_cancel_contract.mp4</url>
+        <transcript>data/transcripts/emod_cancel_contract.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>deletions-modifications</name>
+      <title>Deletions Modifications</title>
+      <description></description>
+      <video>
+        <title>Delete Labor Category and/or Service Offerings</title>
+        <description><![CDATA[Use the Delete Labor Category and/or Service Offering Modification to narrow the scope of your business' Products and Services within the terms of the Contract Offer. Note that Deletion Modifications fall under the category known as &quot;Rapid Action Modifications.&quot; This means a Contractor can submit a Deletion Modification Request and the Contracting Officer can approve it without having to go through the Signature process.]]></description>
+        <duration>00:00:43</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_delete_labor_service.mp4</url>
+        <transcript>data/transcripts/emod_delete_labor_service.xml</transcript>
+      </video>
+      <video>
+        <title>Delete Product(s)</title>
+        <description><![CDATA[Use the Delete Product(s) Modification to narrow the scope of your business' Products within the terms of the Contract Offer. Note that Deletion Modifications fall under the category known as &quot;Rapid Action Modifications.&quot; This means a Contractor can submit a Deletion Modification Request and the Contracting Officer can approve it without having to go through the Signature process.]]></description>
+        <duration>00:00:36</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_delete_product.mp4</url>
+        <transcript>data/transcripts/emod_delete_product.xml</transcript>
+      </video>
+      <video>
+        <title>Delete SIN</title>
+        <description><![CDATA[If you remove Products or Services from the Contract, you should also be sure to remove the SINs that correspond to those Products or Services. Note that Deletion Modifications fall under the category known as &quot;Rapid Action Modifications.&quot; This means a Contractor can submit a Deletion Modification Request and the Contracting Officer can approve it without having to go through the Signature process.]]></description>
+        <duration>00:01:20</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_delete_sin.mp4</url>
+        <transcript>data/transcripts/emod_delete_sin.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>legal-modifications</name>
+      <title>Legal Modifications</title>
+      <description></description>
+      <video>
+        <title>Change of Name Agreement</title>
+        <description><![CDATA[Changing the legal name of your business entity is a major step, and carries with it many issues that must be addressed. Your DUNS number may be affected, and you may need to change business information in the System for Award Management (SAM). Please note that the bulk of information that must accompany a Change of Name Modification is provided by the Contractor via the Upload Documents section.]]></description>
+        <duration>00:01:35</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_change_name.mp4</url>
+        <transcript>data/transcripts/emod_change_name.xml</transcript>
+      </video>
+      <video>
+        <title>Novation Agreement</title>
+        <description><![CDATA[Novation Agreement Modifications are used when a new debtor corporation agrees to pay the debts of an old debtor corporation. These are very important Modifications, and if any question arise about whether the Mod applies to your organization, please contact your Contracting Officer.]]></description>
+        <duration>00:02:08</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_novation_agreement.mp4</url>
+        <transcript>data/transcripts/emod_novation_agreement.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>pricing-modifications</name>
+      <title>Pricing Modifications</title>
+      <description></description>
+      <video>
+        <title>Temporary Price Reduction</title>
+        <description><![CDATA[A Temporary Price Reduction Modification indicates an adjustment of prices over a defined period of time, and may be necessary based on a variety of factors including competition or internal Company changes.]]></description>
+        <duration>00:00:58</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_temp_price_reduction.mp4</url>
+        <transcript>data/transcripts/emod_temp_price_reduction.xml</transcript>
+      </video>
+      <video>
+        <title>Economic Price Adjustments (EPA) with Commercial Price List (increase)</title>
+        <description><![CDATA[Economic Price Adjustments (EPAs) are Modifications to Commercial Pricing that are made based on changes in the national economic climate. Whether submitted with a Commercial Price List or without, this Modification is intended for pricing increases.]]></description>
+        <duration>00:00:59</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_epa_with_cpl.mp4</url>
+        <transcript>data/transcripts/emod_epa_with_cpl.xml</transcript>
+      </video>
+      <video>
+        <title>Economic Price Adjustments (EPA) without Commercial Price List (increase)</title>
+        <description><![CDATA[Economic Price Adjustments (EPAs) are Modifications to Commercial Pricing that are made based on changes in the national economic climate. Whether submitted with a Commercial Price List or without, this Modification is intended for pricing increases.]]></description>
+        <duration>00:00:59</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_epa_without_cpl.mp4</url>
+        <transcript>data/transcripts/emod_epa_without_cpl.xml</transcript>
+      </video>
+      <video>
+        <title>Permanent Price Reduction (Based on Most Favored Customer)</title>
+        <description><![CDATA[A Permanent Price Reduction Modification may be implemented for the benefit of a specific Contractor-Customer relationship, in which case &quot;Most Favored Customer&quot; rates are applied to the Schedule Contract.]]></description>
+        <duration>00:00:56</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_ppr_mfc.mp4</url>
+        <transcript>data/transcripts/emod_ppr_mfc.xml</transcript>
+      </video>
+      <video>
+        <title>Permanent Price Reduction (Industry Partner requested)</title>
+        <description><![CDATA[A Permanent Price Reduction Modification may also be implemented for the purposes of lowering costs through an Industry Partnership, in which case an &quot;Industry Partner Request&quot; is added to the Schedule Contract.]]></description>
+        <duration>00:00:48</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_ppr_ipr.mp4</url>
+        <transcript>data/transcripts/emod_ppr_ipr.xml</transcript>
+      </video>
+      <video>
+        <title>Wage Determinations</title>
+        <description><![CDATA[Use the Wage Determinations Modification to update the pricing levels of applicables wages, usually in order to remain in compliance with wage rates set by the Department of Labor.]]></description>
+        <duration>00:00:52</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_wage_determinations.mp4</url>
+        <transcript>data/transcripts/emod_wage_determinations.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>technical-modifications</name>
+      <title>Technical Modifications</title>
+      <description></description>
+      <video>
+        <title>Change in Geographic Coverage (scope)</title>
+        <description><![CDATA[Change of Scope refers to a Change in Geographic Coverage Modification.]]></description>
+        <duration>00:00:46</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_scope_change.mp4</url>
+        <transcript>data/transcripts/emod_scope_change.xml</transcript>
+      </video>
+      <video>
+        <title>Part(s) Number Change</title>
+        <description><![CDATA[A Part(s) Number Change Modification keeps offerings current, allowing Customers to maintain an exact understanding of the Contractor's Products and Services.]]></description>
+        <duration>00:00:30</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_parts_change.mp4</url>
+        <transcript>data/transcripts/emod_parts_change.xml</transcript>
+      </video>
+      <video>
+        <title>Product Descriptive Changes</title>
+        <description><![CDATA[A Product Descriptive Change Modification allows Contractors to update the description of Products included in the Contract Offer.]]></description>
+        <duration>00:00:36</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_product_descriptive_change.mp4</url>
+        <transcript>data/transcripts/emod_product_descriptive_change.xml</transcript>
+      </video>
+      <video>
+        <title>Service Descriptive Change</title>
+        <description><![CDATA[A Service Descriptive Change Modification allows Contractors to update the description of Services included in the Contract Offer.]]></description>
+        <duration>00:00:31</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_service_descriptive_change.mp4</url>
+        <transcript>data/transcripts/emod_service_descriptive_change.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>terms-conditions-modifications</name>
+      <title>Terms &amp; Conditions Modifications</title>
+      <description></description>
+      <video>
+        <title>American Recovery and Reinvestment Act (ARRA)</title>
+        <description><![CDATA[The American Recovery and Reinvestment Act (ARRA) Modification allows Contractors to change whether they would like to opt in or opt out of the Program. Opting in allows Contractors to accept Orders made with Recovery Act funds.]]></description>
+        <duration>00:00:30</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_arra.mp4</url>
+        <transcript>data/transcripts/emod_arra.xml</transcript>
+      </video>
+      <video>
+        <title>Create/Manage Clause Exception(s)</title>
+        <description><![CDATA[GSA currently lists dozens of Contract Clauses outlining guidelines that pertain to everything from equipment purchases to Privacy Act notifications. Should your company not be able to meet one of these requirements, an Exception must be put forth for approval by the CO.]]></description>
+        <duration>00:01:23</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_create_manage_clause_exceptions.mp4</url>
+        <transcript>data/transcripts/emod_create_manage_clause_exceptions.xml</transcript>
+      </video>
+      <video>
+        <title>Disaster Recovery</title>
+        <description><![CDATA[The Disaster Recovery Modification allows Contractors to opt in or opt out of the Recovery Purchasing Program.]]></description>
+        <duration>00:00:28</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_disaster_recovery.mp4</url>
+        <transcript>data/transcripts/emod_disaster_recovery.xml</transcript>
+      </video>
+      <video>
+        <title>E-Verify</title>
+        <description><![CDATA[The E-Verify Modification allows Contractors to change their response to the Employment Eligibility Verification question based on the U.S. Citizenship and Immigration Services' E-Verify system.]]></description>
+        <duration>00:00:45</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_everify.mp4</url>
+        <transcript>data/transcripts/emod_everify.xml</transcript>
+      </video>
+      <video>
+        <title>Re Representation of Non Novated Merger/Acquisition</title>
+        <description><![CDATA[A Non-novated Merger or Acquisition implies that all Terms and Conditions of your GSA Contract are not being acquired by or merged with your Company. In the event of a merger or acquisition of this type, you must submit this Mod notifying GSA that such a Non-novated Merger or Acquisition has taken place. Note that if the merger does not require Novation, a different Modification (the Novation Agreement Modification) will be necessary.]]></description>
+        <duration>00:01:03</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_rerep_nonnovated_merger_acq.mp4</url>
+        <transcript>data/transcripts/emod_rerep_nonnovated_merger_acq.xml</transcript>
+      </video>
+      <video>
+        <title>Re-representation of Business Size</title>
+        <description><![CDATA[Federal agencies often set aside Contracts for small businesses whose revenue falls under a specific threshold. As part of the Contract Offer process, your Company will have been required to certify that it is or is not a small business. The Re-Representation of Business Size Modification allows you to inform GSA if your Company outgrows its small business designation, meaning it exceeds the revenue threshold that allows it to be categorized as a small business. Or, in the contrary instance, you can inform GSA if your Company size has decreased, meaning that it will qualify as a small business.]]></description>
+        <duration>00:00:53</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_rerep_business_size.mp4</url>
+        <transcript>data/transcripts/emod_rerep_business_size.xml</transcript>
+      </video>
+      <video>
+        <title>Revise Terms and Conditions</title>
+        <description><![CDATA[The Revise Terms and Conditions Modification allows you to revise Clauses that apply to the Contract Offer. You may add multiple Clause revisions under this Modification,  working with each one individually before you submit.]]></description>
+        <duration>00:00:56</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_revise_tandc.mp4</url>
+        <transcript>data/transcripts/emod_revise_tandc.xml</transcript>
+      </video>
+      <video>
+        <title>Re-representation of Small Business Type</title>
+        <description><![CDATA[Set-aside opportunities for small businesses make it possible for businesses that fall within the guidelines of specific socioeconomic categories to receive fair consideration for government Contracts. These categories include: Woman-Owned Business, Woman Owned Small Business, HUBZone, Veteran Owned Business, and 8(a) Businesses, (eligible small disadvantaged business entities). As part of the Contract Offer process, your company would have been required to certify its socioeconomic Set-aside status. The Re-Representation of Business Type Modification allows you to inform GSA if your Company has received a new small business Set-aside designation.]]></description>
+        <duration>00:01:04</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_rerep_business_type.mp4</url>
+        <transcript>data/transcripts/emod_rerep_business_type.xml</transcript>
+      </video>
+      <video>
+        <title>Update/Revise Commercial Sales Practice</title>
+        <description><![CDATA[When you submitted your initial Offer, you would have been asked to perform projections as to how much business you planned to do with the government. One of the Solicitation documents that you were required to upload was the CSP-1. You will notice that on some Mods there is a section called &quot;Update/Revise Commerical Sales Practice (CSP-1).&quot; Beginning in August of 2013, all Contract Modifications that could potentially impact the CSP will include the ability to revise the existing CSP-1 associated with your Contract. The primary Mod types within this section include Additions, Deletions, and Pricing.]]></description>
+        <duration>00:05:30</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_update_csp.mp4</url>
+        <transcript>data/transcripts/emod_update_csp.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>subcontracting-plan-modification</name>
+      <title>Subcontracting Plan Modification</title>
+      <description></description>
+      <video>
+        <title>Subcontracting Plan Mod Overview</title>
+        <description><![CDATA[A Subcontracting Plan is required on a Contract under certain circumstances. The Incorporate Sub-Contracting Plan (SubK) Modification allows Contractors to add a Subcontracting Plan to their Contract Offer as required. Generally, Federal Acquisition Regulations (FAR) require a Subcontracting Plan from a Contractor classified as &quot;Other than Small Business&quot; when the actual Sales of a Contract exceed the $650,000 threshold, (or the $1,500,000 threshold for construction).]]></description>
+        <duration>00:01:54</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_subk_overview.mp4</url>
+        <transcript>data/transcripts/emod_subk_overview.xml</transcript>
+      </video>
+      <video>
+        <title>Identification Data</title>
+        <description><![CDATA[Enter a detailed description of your Supplies/Services in the textbox. Next enter your Place of Performance, and then the Estimated Contract Value covering the Base Period and all of the Option Periods of the Contract.]]></description>
+        <duration>00:00:21</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_subk_identification.mp4</url>
+        <transcript>data/transcripts/emod_subk_identification.xml</transcript>
+      </video>
+      <video>
+        <title>Goals</title>
+        <description><![CDATA[The Goals section asks you to state the percentage of the Contract value that you intend to designate for each of the various Subcontracting categories. These values are applied to Small Business types according to the designations for which Subcontractors may qualify, and then defined over the Base year, and all Option years of the Contract.]]></description>
+        <duration>00:02:27</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_subk_goals.mp4</url>
+        <transcript>data/transcripts/emod_subk_goals.xml</transcript>
+      </video>
+      <video>
+        <title>Program Administrator</title>
+        <description><![CDATA[When completing a Subcontracting Plan, you must designate a Subcontracting Plan Administrator in the Point of Contact Information Template of the Solicitation Clauses section.]]></description>
+        <duration>00:01:21</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_subk_admin.mp4</url>
+        <transcript>data/transcripts/emod_subk_admin.xml</transcript>
+      </video>
+      <video>
+        <title>Equitable Opportunity</title>
+        <description><![CDATA[The Equitable Opportunity section summarizes your business' efforts to ensure Equitable Opportunity and Competition, including outreach efforts and internal programs designed for purchasing and personnel. Check all applicable boxes and describe any additional efforts in the textbox provided.]]></description>
+        <duration>00:00:30</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_subk_equitable_opportunity.mp4</url>
+        <transcript>data/transcripts/emod_subk_equitable_opportunity.xml</transcript>
+      </video>
+      <video>
+        <title>Clause Inclusion and Flow Down</title>
+        <description><![CDATA[The Clause Inclusion and Flow Down section requires your assurance that all Subcontracts in excess of $650,000 (or $1,500,000 for construction) adopt plans that provide further Subcontracting opportunities. You must agree to this Clause by marking the checkbox.]]></description>
+        <duration>00:00:21</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_subk_clause_inclusion.mp4</url>
+        <transcript>data/transcripts/emod_subk_clause_inclusion.xml</transcript>
+      </video>
+      <video>
+        <title>Reporting and Cooperation</title>
+        <description><![CDATA[The Reporting and Cooperation section contains assurances required by FAR that all Contractors will submit various Reports, including a timetable for Individual Subcontract Reports. All Contractors must agree to these conditions. Confirm your agreement by marking the checkbox.]]></description>
+        <duration>00:00:20</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_subk_reporting.mp4</url>
+        <transcript>data/transcripts/emod_subk_reporting.xml</transcript>
+      </video>
+      <video>
+        <title>Record Keeping</title>
+        <description><![CDATA[The Record Keeping section requires your assurance that records have been maintained to prove compliance with the requirements and goals of your Subcontracting Plan.]]></description>
+        <duration>00:00:20</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_subk_record_keeping.mp4</url>
+        <transcript>data/transcripts/emod_subk_record_keeping.xml</transcript>
+      </video>
+      <video>
+        <title>Statutory Requirements</title>
+        <description><![CDATA[The Statutory Requirements section requires your agreement to the responsibilities of a Prime Contractor as established by FAR.]]></description>
+        <duration>00:00:16</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_subk_statutory.mp4</url>
+        <transcript>data/transcripts/emod_subk_statutory.xml</transcript>
+      </video>
+      <video>
+        <title>Good Faith Effects</title>
+        <description><![CDATA[The final Subcontracting Plan section is the demonstration of Good Faith Effort, in which you must provide a detailed outline of the steps your Company plans to take to achieve your Subcontracting goals.]]></description>
+        <duration>00:00:12</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_subk_good_faith.mp4</url>
+        <transcript>data/transcripts/emod_subk_good_faith.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>upload-documents</name>
+      <title>Upload Documents</title>
+      <description></description>
+      <video>
+        <title>Upload Documents</title>
+        <description><![CDATA[As noted in each of the individual Modifications processes, you will be asked to upload any necessary documents upon completion of all necessary information. The list of documents to upload depends on the Modification sub-type. Certain documents will be required; these will be identified by a red asterisk.]]></description>
+        <duration>00:01:37</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_upload.mp4</url>
+        <transcript>data/transcripts/emod_upload.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>final-review</name>
+      <title>Final Review</title>
+      <description></description>
+      <video>
+        <title>Final Review of eMod</title>
+        <description><![CDATA[The Final Review of eMod screen affords one last opportunity to review the contents of your Modification. Take the time to review each of the documents. Read the disclaimer carefully before agreeing to it and submitting your eMod.]]></description>
+        <duration>00:00:37</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/emod_final_review.mp4</url>
+        <transcript>data/transcripts/emod_final_review.xml</transcript>
+      </video>
+    </collection>
+  </library>
+  <library>
+    <name>helpful-hints</name>
+    <title>Helpful Hints</title>
+    <description></description>
+    <collection>
+      <name>authorized-negotiators</name>
+      <title>Authorized Negotiators</title>
+      <description></description>
+      <video>
+        <title>General Importance</title>
+        <description><![CDATA[An Authorized Negotiator is an individual designated to work on a GSA Contract, and, if given the authority to sign, can bind his or her Company to purchasing agreements with the federal government. This video explains the role of an Authorized Negotiator, as well as the steps required to be sure Authorized Negotiators maintain the access to GSA systems they require.]]></description>
+        <duration>00:07:10</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/authorized_negotiator_general_importance.mp4</url>
+        <transcript>data/transcripts/authorized_negotiator_general_importance.xml</transcript>
+      </video>
+      <video>
+        <title>System Validations</title>
+        <description><![CDATA[The eOffer/eMod system affords individuals whose Digital Certificate information no longer matches their business or personal information the opportunity to validate their credentials and submit requests of reinstatement to Contracting Officers. Whereas the process of reinstating oneself as an Authorized Negotiator once required the help of another Authorized Negotiator assigned to the same eOffer, or the outside help of a Contracting Officer, eOffer/eMod now facilitates interaction with the CO directly. This video explains the process.]]></description>
+        <duration>00:05:22</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/authorized_negotiator_system_validations.mp4</url>
+        <transcript>data/transcripts/authorized_negotiator_system_validations.xml</transcript>
+      </video>
+      <video>
+        <title>Adding Negotiators</title>
+        <description><![CDATA[Authorized Negotiators may be assigned to an Offer with or without the authority to sign, and it is recommended practice to assign multiple Authorized Negotiators to the same Offer in order to ensure consistent representation throughout the Award process. Authorized Negotiators are added to an Offer when it is first created, but can also be added, removed, or have their authority status changed through the Modification process. This video will demonstrate the steps required to add Authorized Negotiators while creating an eOffer, as well as working with the Authorized Negotiator Modification.]]></description>
+        <duration>00:04:36</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/authorized_negotiator_adding_negotiators.mp4</url>
+        <transcript>data/transcripts/authorized_negotiator_adding_negotiators.xml</transcript>
+      </video>
+    </collection>
+    <collection>
+      <name>digital-certificates</name>
+      <title>Digital Certificates</title>
+      <description></description>
+      <video>
+        <title>Digital Certificates Introduction</title>
+        <description><![CDATA[Authorized Negotiators may be assigned to an Offer with or without the authority to sign, and it is recommended practice to assign multiple Authorized Negotiators to the same Offer in order to ensure consistent representation throughout the Award process. Authorized Negotiators are added to an Offer when it is first created, but can also be added, removed, or have their authority status changed through the Modification process. This video will demonstrate the steps required to add Authorized Negotiators while creating an eOffer, as well as working with the Authorized Negotiator Modification.]]></description>
+        <duration>00:03:09</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/digital_cert_intro.mp4</url>
+        <transcript>data/transcripts/digital_cert_intro.xml</transcript>
+      </video>
+      <video>
+        <title>Obtaining a Digital Certificate</title>
+        <description><![CDATA[There are a number of trusted Certificate providers who partner with GSA. This video will point you in the right direction and help you begin the process of acquiring a Digital Certificate.]]></description>
+        <duration>00:01:03</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/digital_cert_obtaining.mp4</url>
+        <transcript>data/transcripts/digital_cert_obtaining.xml</transcript>
+      </video>
+      <video>
+        <title>Importing a Digital Certificate (Internet Explorer)</title>
+        <description><![CDATA[Once you have acquired your Digital Certificate, you will need to upload it to the internet browser you use to access the eOffer/eMod system. This video walks you through the Certificate import steps for the Microsoft Internet Explorer web browser.]]></description>
+        <duration>00:02:03</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/digital_cert_import_ie.mp4</url>
+        <transcript>data/transcripts/digital_cert_import_ie.xml</transcript>
+      </video>
+      <video>
+        <title>Importing a Digital Certificate (Firefox)</title>
+        <description><![CDATA[Once you have acquired your Digital Certificate, you will need to upload it to the internet browser you use to access the eOffer/eMod system. This video walks you through the Certificate import steps for the Mozilla Firefox web browser.]]></description>
+        <duration>00:01:14</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/digital_cert_import_ff.mp4</url>
+        <transcript>data/transcripts/digital_cert_import_ff.xml</transcript>
+      </video>
+      <video>
+        <title>Verifying a Digital Certificate (Internet Explorer)</title>
+        <description><![CDATA[After you have uploaded your Digital Certificate, it may be helpful to verify that it is properly installed within the internet browser, and that your name, company, and email address appear as expected. Doing so will ensure the Certificate is validated when you sign into the eOffer/eMod system. This video follows the Certificate verification process for the Microsoft Internet Explorer web browser.]]></description>
+        <duration>00:01:17</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/digital_cert_verifying_ie.mp4</url>
+        <transcript>data/transcripts/digital_cert_verifying_ie.xml</transcript>
+      </video>
+      <video>
+        <title>Verifying a Digital Certificate (Firefox)</title>
+        <description><![CDATA[After you have uploaded your Digital Certificate, it may be helpful to verify that it is properly installed within the internet browser, and that your name, company, and email address appear as expected. Doing so will ensure the Certificate is validated when you sign into the eOffer/eMod system. This video follows the Certificate verification process for the Mozilla Firefox web browser.]]></description>
+        <duration>00:00:58</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/digital_cert_verifying_ff.mp4</url>
+        <transcript>data/transcripts/digital_cert_verifying_ff.xml</transcript>
+      </video>
+      <video>
+        <title>Exporting a Digital Certificate (Internet Explorer)</title>
+        <description><![CDATA[You may choose to create a backup of your Digital Certificate by exporting it from your internet browser to an external drive. This video follows the steps for exporting your Digital Certificate from the Microsoft Internet Explorer web browser.]]></description>
+        <duration>00:01:43</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/digital_cert_exporting_ie.mp4</url>
+        <transcript>data/transcripts/digital_cert_exporting_ie.xml</transcript>
+      </video>
+      <video>
+        <title>Exporting a Digital Certificate (Firefox)</title>
+        <description><![CDATA[You may choose to create a backup of your Digital Certificate by exporting it from your internet browser to an external drive. This video follows the steps for exporting your Digital Certificate from the Mozilla Firefox web browser.]]></description>
+        <duration>00:01:38</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/digital_cert_exporting_ff.mp4</url>
+        <transcript>data/transcripts/digital_cert_exporting_ff.xml</transcript>
+      </video>
+      <video>
+        <title>Being a Good Steward of your Digital Certificate</title>
+        <description><![CDATA[Being a good steward of Digital Certificates means taking proper security measures with active Certificates, and also knowing when to revoke a Certificate, as might be necessary when an individual retires or changes jobs. This video reviews your responsibilities to maintining Digital Certificates in good faith.]]></description>
+        <duration>00:03:34</duration>
+        <url>http://larry_lee.guides.elucidsolutions.com/data/videos/digital_cert_good_steward.mp4</url>
+        <transcript>data/transcripts/digital_cert_good_steward.xml</transcript>
+      </video>
+    </collection>
+  </library>
+</database>

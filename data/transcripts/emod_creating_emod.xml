@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Getting Started with eMod</category>
+         <ttm:title>Creating an eMod</ttm:title>
+         <ttm:desc>From the My Modifications homepage you can see all of the Saved, Submitted, and Signed Modifications. From here, you can create a new eMod, or edit an existing one. It is important to note that eMod will allow you to submit only one Modification Request for any given type of Mod Action.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:04.60" region="speaker">Once you are logged into the system, creating an</p>
+         <p begin="00:00:04.60" end="00:00:06.20" region="speaker">eMod is simple.</p>
+         <p begin="00:00:06.20" end="00:00:08.66" region="speaker">First select the contract from the dropdown menu in</p>
+         <p begin="00:00:08.66" end="00:00:10.90" region="speaker">the New Modifications section.</p>
+         <p begin="00:00:10.90" end="00:00:12.50" region="speaker">Once you have the appropriate contract</p>
+         <p begin="00:00:12.50" end="00:00:15.60" region="speaker">selected click &quot;Submit Contract&quot; and you are on</p>
+         <p begin="00:00:15.60" end="00:00:17.60" region="speaker">your way.</p>
+    </div>
+  </body>
+</tt>

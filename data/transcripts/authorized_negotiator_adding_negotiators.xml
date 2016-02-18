@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Authorized Negotiators</category>
+         <ttm:title>Adding Negotiators</ttm:title>
+         <ttm:desc>Authorized Negotiators may be assigned to an Offer with or without the authority to sign, and it is recommended practice to assign multiple Authorized Negotiators to the same Offer in order to ensure consistent representation throughout the Award process. Authorized Negotiators are added to an Offer when it is first created, but can also be added, removed, or have their authority status changed through the Modification process. This video will demonstrate the steps required to add Authorized Negotiators while creating an eOffer, as well as working with the Authorized Negotiator Modification.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:08.40" end="00:00:10.83" region="speaker">In a previous video, we talked about the</p>
+         <p begin="00:00:10.83" end="00:00:13.33" region="speaker">importance of maintaining up to date Authorized</p>
+         <p begin="00:00:13.33" end="00:00:15.43" region="speaker">Negotiator information.</p>
+         <p begin="00:00:15.43" end="00:00:18.13" region="speaker">In this video, we are going to demonstrate how</p>
+         <p begin="00:00:18.13" end="00:00:20.66" region="speaker">an Authorized Negotiator can be added to one of</p>
+         <p begin="00:00:20.66" end="00:00:25.20" region="speaker">your existing GSA Schedule Contracts.Let&apos;s walk</p>
+         <p begin="00:00:25.20" end="00:00:27.63" region="speaker">through how you add an Authorized Negotiator to</p>
+         <p begin="00:00:27.63" end="00:00:29.40" region="speaker">your contract.</p>
+         <p begin="00:00:29.40" end="00:00:31.70" region="speaker">Again, we&apos;re going to assume for the purposes of</p>
+         <p begin="00:00:31.70" end="00:00:34.26" region="speaker">this video that you already have a GSA</p>
+         <p begin="00:00:34.26" end="00:00:37.73" region="speaker">Schedule contract in place and are somewhat familiar</p>
+         <p begin="00:00:37.73" end="00:00:41.73" region="speaker">with the way the eMod system works.Begin by</p>
+         <p begin="00:00:41.73" end="00:00:45.06" region="speaker">accessing the eOffer/eMod system, and clicking the</p>
+         <p begin="00:00:45.06" end="00:00:48.03" region="speaker">Sign In button under Contract Modifications.</p>
+         <p begin="00:00:48.03" end="00:00:50.56" region="speaker">You will be asked to confirm your digital</p>
+         <p begin="00:00:50.56" end="00:00:51.56" region="speaker">certificate.</p>
+         <p begin="00:00:51.56" end="00:00:54.23" region="speaker">Click OK if the information on the screen</p>
+         <p begin="00:00:54.23" end="00:00:56.26" region="speaker">is yours.</p>
+         <p begin="00:00:56.26" end="00:00:59.10" region="speaker">Select your DUNS number from the drop down menu or</p>
+         <p begin="00:00:59.10" end="00:00:62.10" region="speaker">enter it in the textbox provided, and select the</p>
+         <p begin="00:00:62.10" end="00:00:64.36" region="speaker">appropriate contract on the following screen.</p>
+         <p begin="00:00:64.36" end="00:00:70.80" region="speaker">You will also see a list of the Saved, Submitted,</p>
+         <p begin="00:00:70.80" end="00:00:72.93" region="speaker">Signed, and GSA-Initiated modifications on your</p>
+         <p begin="00:00:72.93" end="00:00:76.06" region="speaker">interface.</p>
+         <p begin="00:00:76.06" end="00:00:79.06" region="speaker">Because we are performing a new modification, click</p>
+         <p begin="00:00:79.06" end="00:00:83.33" region="speaker">&quot;Select Contract&quot; in the &quot;New Modifications&quot; table.</p>
+         <p begin="00:00:83.33" end="00:00:84.90" region="speaker">Within the &quot;Administrative&quot; mod</p>
+         <p begin="00:00:84.90" end="00:00:87.53" region="speaker">types, you will note the &quot;Authorized Negotiator&quot;</p>
+         <p begin="00:00:87.53" end="00:00:88.53" region="speaker">sub type.</p>
+         <p begin="00:00:88.53" end="00:00:94.50" region="speaker">Check this box and click &quot;Submit Online.&quot;</p>
+         <p begin="00:00:97.83" end="00:00:100.46" region="speaker">Take a moment to verify that all of your corporate</p>
+         <p begin="00:00:100.46" end="00:00:102.46" region="speaker">information is correct.</p>
+         <p begin="00:00:104.60" end="00:00:107.03" region="speaker">If you notice something is incorrect, you will need</p>
+         <p begin="00:00:107.03" end="00:00:110.36" region="speaker">to sign out of eOffer/eMod and make the necessary</p>
+         <p begin="00:00:110.36" end="00:00:112.50" region="speaker">changes in CCR.</p>
+         <p begin="00:00:112.50" end="00:00:114.53" region="speaker">A nightly batch process will then bring your</p>
+         <p begin="00:00:114.53" end="00:00:117.70" region="speaker">changes in to eOffer/eMod and you will be able to</p>
+         <p begin="00:00:117.70" end="00:00:120.86" region="speaker">continue your modification the next day.</p>
+         <p begin="00:00:120.86" end="00:00:123.33" region="speaker">If everything looks accurate, click &quot;Save and</p>
+         <p begin="00:00:123.33" end="00:00:124.33" region="speaker">Continue.&quot;</p>
+         <p begin="00:00:124.33" end="00:00:132.20" region="speaker">Click Continue to confirm the Save.On the next</p>
+         <p begin="00:00:132.20" end="00:00:134.66" region="speaker">screen, you will see a table identifying your</p>
+         <p begin="00:00:134.66" end="00:00:137.30" region="speaker">existing negotiators and their associated signing</p>
+         <p begin="00:00:137.30" end="00:00:141.03" region="speaker">authorities.Note that you can edit or delete any of</p>
+         <p begin="00:00:141.03" end="00:00:142.43" region="speaker">these negotiators by using the links to the</p>
+         <p begin="00:00:142.43" end="00:00:147.93" region="speaker">right.Click the &quot;Add New Negotiator&quot; button to</p>
+         <p begin="00:00:147.93" end="00:00:151.46" region="speaker">continue.Provide the information required in</p>
+         <p begin="00:00:151.46" end="00:00:152.93" region="speaker">the form.</p>
+         <p begin="00:00:152.93" end="00:00:156.26" region="speaker">This will include the negotiator&apos;s Name, Title,</p>
+         <p begin="00:00:156.26" end="00:00:159.40" region="speaker">Phone Number, and E-mail.</p>
+         <p begin="00:00:159.40" end="00:00:161.76" region="speaker">His or her Fax number is optional and may be</p>
+         <p begin="00:00:161.76" end="00:00:168.83" region="speaker">included if you so choose.In the Role drop</p>
+         <p begin="00:00:168.83" end="00:00:171.36" region="speaker">down menu, identify whether you want this</p>
+         <p begin="00:00:171.36" end="00:00:174.20" region="speaker">negotiator to have the authority to sign contract</p>
+         <p begin="00:00:174.20" end="00:00:176.53" region="speaker">modifications on your company&apos;s behalf.Remember,</p>
+         <p begin="00:00:176.53" end="00:00:180.43" region="speaker">if you select &quot;Not Authorized to Sign,&quot; the</p>
+         <p begin="00:00:180.43" end="00:00:182.83" region="speaker">new negotiator will be able to help prepare</p>
+         <p begin="00:00:182.83" end="00:00:185.70" region="speaker">modifications and mod responses, but will not be</p>
+         <p begin="00:00:185.70" end="00:00:188.56" region="speaker">able to submit or sign off on any contractual</p>
+         <p begin="00:00:188.56" end="00:00:192.23" region="speaker">documents between your company and GSA.One final</p>
+         <p begin="00:00:192.23" end="00:00:194.33" region="speaker">note before moving on.</p>
+         <p begin="00:00:194.33" end="00:00:197.06" region="speaker">You MUST be sure that the authorized negotiator</p>
+         <p begin="00:00:197.06" end="00:00:200.20" region="speaker">information you enter is an exact match to the</p>
+         <p begin="00:00:200.20" end="00:00:202.56" region="speaker">information on the digital certificate of the</p>
+         <p begin="00:00:202.56" end="00:00:204.46" region="speaker">individual you are adding.</p>
+         <p begin="00:00:204.46" end="00:00:206.80" region="speaker">The importance of this will be touched on later</p>
+         <p begin="00:00:206.80" end="00:00:207.80" region="speaker">in the video.</p>
+         <p begin="00:00:207.80" end="00:00:210.66" region="speaker">With this in mind, double-check that all of</p>
+         <p begin="00:00:210.66" end="00:00:212.83" region="speaker">the information is correct.Click &quot;Add this</p>
+         <p begin="00:00:212.83" end="00:00:219.03" region="speaker">Negotiator&quot; when you are ready to continue.The</p>
+         <p begin="00:00:219.03" end="00:00:221.66" region="speaker">person you added will now appear in the table on the</p>
+         <p begin="00:00:221.66" end="00:00:223.10" region="speaker">previous screen.</p>
+         <p begin="00:00:223.10" end="00:00:229.76" region="speaker">Click &quot;Save and Continue&quot; to move on.Click Continue</p>
+         <p begin="00:00:229.76" end="00:00:235.70" region="speaker">again to confirm your changes.You may be taken</p>
+         <p begin="00:00:235.70" end="00:00:237.76" region="speaker">to the Upload Documents screen.</p>
+         <p begin="00:00:237.76" end="00:00:240.86" region="speaker">For Authorized Negotiator changes, no additional</p>
+         <p begin="00:00:240.86" end="00:00:243.30" region="speaker">documentation is required.</p>
+         <p begin="00:00:243.30" end="00:00:248.20" region="speaker">Click &quot;Save and Continue&quot; and &quot;Continue&quot; again to</p>
+         <p begin="00:00:248.20" end="00:00:253.00" region="speaker">confirm your changes.You will be offered one final</p>
+         <p begin="00:00:253.00" end="00:00:254.56" region="speaker">review of your mod.</p>
+         <p begin="00:00:254.56" end="00:00:257.70" region="speaker">Read the disclaimer and, if you agree, select the</p>
+         <p begin="00:00:257.70" end="00:00:258.86" region="speaker">&quot;Yes&quot; radio button.</p>
+         <p begin="00:00:258.86" end="00:00:262.66" region="speaker">Then click &quot;Continue.&quot;</p>
+         <p begin="00:00:262.66" end="00:00:264.43" region="speaker">You have now successfully submitted your</p>
+         <p begin="00:00:264.43" end="00:00:265.90" region="speaker">modification.</p>
+         <p begin="00:00:265.90" end="00:00:268.56" region="speaker">Updates to negotiator information are handled by</p>
+         <p begin="00:00:268.56" end="00:00:270.76" region="speaker">batch process every morning.</p>
+         <p begin="00:00:270.76" end="00:00:273.90" region="speaker">You should allow 24 to 48 hours after the changes</p>
+         <p begin="00:00:273.90" end="00:00:276.13" region="speaker">are approved by the contracting officer for</p>
+         <p begin="00:00:276.13" end="00:00:278.43" region="speaker">your updates to become active within the system.</p>
+    </div>
+  </body>
+</tt>

@@ -1,0 +1,85 @@
+/* I. Variables */
+/* II. Mixins */
+/* III. Declarations */
+.menu_link {
+  color: #333333;
+  text-decoration: none; }
+
+.menu_contents {
+  margin: 0px;
+  padding: 0px; }
+  .menu_contents h3 {
+    font-size: 1.1em;
+    background-color: #f29a2f;
+    color: white;
+    display: block;
+    font-weight: 300;
+    padding: 10px 0px;
+    text-align: center; }
+  .menu_contents li {
+    list-style: none; }
+  .menu_contents .menu_link {
+    font-weight: 400;
+    font-size: 0.9em; }
+  .menu_contents .menu_link:hover {
+    background-color: #ffffcc !important;
+    color: #f29b30 !important;
+    transition: background-color 0.25s ease 0s, color 0.25s ease 0s; }
+  .menu_contents .menu_link[data-menu-level="2"] {
+    background-color: #f29a2f;
+    color: white;
+    display: block;
+    font-weight: 300;
+    padding: 10px 0px;
+    text-align: center; }
+  .menu_contents .menu_link[data-menu-level="3"] {
+    display: block;
+    padding: 10px 10px 10px 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+  .menu_contents .menu_link[data-menu-level="4"] {
+    display: block;
+    padding: 10px 10px 10px 60px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    background: url("images/navArrow.png") no-repeat 15px 14px; }
+  .menu_contents .menu_link[data-menu-level="4"]:hover {
+    background-color: #fed6b0 !important;
+    color: #e27612 !important;
+    transition: background-color 0.25s ease 0s, color 0.25s ease 0s; }
+  .menu_contents .menu_link[data-menu-level="5"] {
+    display: block;
+    padding: 10px 10px 10px 80px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    background: url("images/navCircle.png") no-repeat 55px 18px; }
+  .menu_contents .menu_link[data-menu-level="5"]:hover {
+    background-color: #f7ba77 !important;
+    color: #b75513 !important;
+    transition: background-color 0.25s ease 0s, color 0.25s ease 0s; }
+  .menu_contents .menu_node_link[data-menu-level="3"] {
+    background: url("images/collapse.png") no-repeat 15px 14px; }
+  .menu_contents .menu_node_link[data-menu-level="4"] {
+    background: url("images/navArrowCollapse.png") no-repeat 15px 14px; }
+  .menu_contents .menu_contents_item.menu_collapsed > .menu_node_link[data-menu-level="3"] {
+    background: url("images/expand.png") no-repeat 15px 14px; }
+  .menu_contents .menu_contents_item.menu_collapsed > .menu_node_link[data-menu-level="4"] {
+    background: url("images/navArrowExpand.png") no-repeat 15px 14px; }
+  .menu_contents .menu_contents_item.menu_selected > .menu_link[data-menu-level="3"] {
+    background-color: #ffffcc !important;
+    color: #f29b30 !important;
+    transition: background-color 0.25s ease 0s, color 0.25s ease 0s; }
+  .menu_contents .menu_contents_item.menu_selected > .menu_link[data-menu-level="4"] {
+    background-color: #fed6b0 !important;
+    color: #e27612 !important;
+    transition: background-color 0.25s ease 0s, color 0.25s ease 0s; }
+  .menu_contents .menu_contents_item.menu_selected > .menu_link[data-menu-level="5"] {
+    background-color: #f7ba77 !important;
+    color: #b75513 !important;
+    transition: background-color 0.25s ease 0s, color 0.25s ease 0s; }
+
+.menu_contents[data-menu-level="1"] {
+  background-color: #f9f5f2; }
+
+.menu_contents[data-menu-level="3"] {
+  background-color: #dddddd; }
+
+.menu_contents[data-menu-level="4"] {
+  background-color: #b2b2b2; }

@@ -1,0 +1,20 @@
+# Created by https://www.gitignore.io
+
+### Sass ###
+/.sass-cache/
+.sass-cache
+*.css.map
+*.scssc
+
+### grunt ###
+# Grunt usually compiles files inside this directory
+# dist/
+
+# Grunt usually preprocesses files such as coffeescript, compass... inside the .tmp directory
+.tmp/
+
+
+#node modules
+
+/node_modules/
+

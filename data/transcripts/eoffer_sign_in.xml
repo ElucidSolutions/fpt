@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Getting Started with eOffer</category>
+         <ttm:title>eOffer Sign In</ttm:title>
+         <ttm:desc>When you visit the eOffer/eMod site you will find the Sign In buttons for each of the two systems on the right-hand side. Both systems use the same initial log in process. In our example, we will assume this is the first time you have visited the site. 
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.20" end="00:00:05.66" region="speaker">Before you can log into eOffer or eMod, you will</p>
+         <p begin="00:00:05.66" end="00:00:08.63" region="speaker">need a DUNS and a Digital Certificate.</p>
+         <p begin="00:00:08.63" end="00:00:11.93" region="speaker">A Digital Certificates are unique to a single person</p>
+         <p begin="00:00:11.93" end="00:00:14.20" region="speaker">and are associated with the organization for which</p>
+         <p begin="00:00:14.20" end="00:00:16.53" region="speaker">that person works.</p>
+         <p begin="00:00:16.53" end="00:00:19.40" region="speaker">A DUNS is a unique nine digit number, issued by</p>
+         <p begin="00:00:19.40" end="00:00:22.26" region="speaker">Dun and Bradstreet, used to identify individual</p>
+         <p begin="00:00:22.26" end="00:00:24.56" region="speaker">businesses throughout the US and the rest of the</p>
+         <p begin="00:00:24.56" end="00:00:25.80" region="speaker">world.</p>
+         <p begin="00:00:25.80" end="00:00:29.46" region="speaker">Begin by clicking the Sign In button under eOffer.</p>
+         <p begin="00:00:29.46" end="00:00:32.13" region="speaker">If it is your first time logging into the system,</p>
+         <p begin="00:00:32.13" end="00:00:33.76" region="speaker">you will be asked to select your digital</p>
+         <p begin="00:00:33.76" end="00:00:35.00" region="speaker">certificate.</p>
+         <p begin="00:00:35.00" end="00:00:38.36" region="speaker">Go ahead and pick yours then click &quot;OK.&quot;</p>
+         <p begin="00:00:38.36" end="00:00:40.53" region="speaker">On the &quot;Sign-In&quot; page, select your &quot;DUNS&quot; from</p>
+         <p begin="00:00:40.53" end="00:00:41.96" region="speaker">the drop down menu.</p>
+         <p begin="00:00:41.96" end="00:00:44.63" region="speaker">If you have not previously accessed the system, no</p>
+         <p begin="00:00:44.63" end="00:00:46.26" region="speaker">DUNS may be available.</p>
+         <p begin="00:00:46.26" end="00:00:48.66" region="speaker">In this case, you will need to manually type in</p>
+         <p begin="00:00:48.66" end="00:00:51.90" region="speaker">your DUNS and possibly your &quot;DUNS plus 4&quot;.</p>
+         <p begin="00:00:51.90" end="00:00:54.30" region="speaker">The &quot;DUNS plus 4&quot; designation is used to</p>
+         <p begin="00:00:54.30" end="00:00:56.70" region="speaker">identify specific business units within the</p>
+         <p begin="00:00:56.70" end="00:00:58.20" region="speaker">organization.</p>
+         <p begin="00:00:58.20" end="00:00:60.73" region="speaker">If you don&apos;t know your DUNS or need to apply for</p>
+         <p begin="00:00:60.73" end="00:00:63.56" region="speaker">one, visit Dun and Bradstreet&apos;s homepage at</p>
+         <p begin="00:00:63.56" end="00:00:66.33" region="speaker">www.dnb.com.</p>
+         <p begin="00:00:66.33" end="00:00:68.86" region="speaker">hen you have made your selection, click the</p>
+         <p begin="00:00:68.86" end="00:00:69.96" region="speaker">&quot;Submit&quot; button.</p>
+         <p begin="00:00:69.96" end="00:00:72.70" region="speaker">You will be taken to the &quot;My eOffers&quot; page where</p>
+         <p begin="00:00:72.70" end="00:00:75.76" region="speaker">you can submit new offers, review saved offers, and</p>
+         <p begin="00:00:75.76" end="00:00:77.76" region="speaker">view submitted eOffers.</p>
+    </div>
+  </body>
+</tt>

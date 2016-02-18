@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+       <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Deletions Modifications</category>
+         <ttm:title>Delete SIN</ttm:title>
+         <ttm:desc>If you remove Products or Services from the Contract, you should also be sure to remove the SINs that correspond to those Products or Services. Note that Deletion Modifications fall under the category known as &quot;Rapid Action Modifications.&quot; This means a Contractor can submit a Deletion Modification Request and the Contracting Officer can approve it without having to go through the Signature process.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:04.20" region="speaker">Your contract should always reflect the most</p>
+         <p begin="00:00:04.20" end="00:00:05.93" region="speaker">up-to-date SINs.</p>
+         <p begin="00:00:05.93" end="00:00:08.36" region="speaker">On this screen, you can delete SIN(s) from your</p>
+         <p begin="00:00:08.36" end="00:00:10.36" region="speaker">GSA contract.</p>
+         <p begin="00:00:10.36" end="00:00:12.63" region="speaker">Select the date on which you would like to schedule</p>
+         <p begin="00:00:12.63" end="00:00:14.93" region="speaker">the termination of that SIN.</p>
+         <p begin="00:00:14.93" end="00:00:17.86" region="speaker">The actual termination date depends entirely on</p>
+         <p begin="00:00:17.86" end="00:00:20.33" region="speaker">the CO approving this modification.</p>
+         <p begin="00:00:20.33" end="00:00:22.70" region="speaker">For example, if you choose tomorrow as your</p>
+         <p begin="00:00:22.70" end="00:00:25.70" region="speaker">termination date, the SIN will not be deleted from</p>
+         <p begin="00:00:25.70" end="00:00:28.93" region="speaker">your schedule until the CO has had time to review and</p>
+         <p begin="00:00:28.93" end="00:00:30.76" region="speaker">approve the deletion.</p>
+         <p begin="00:00:30.76" end="00:00:33.46" region="speaker">Once the termination is in effect, you will no longer</p>
+         <p begin="00:00:33.46" end="00:00:35.60" region="speaker">be able to provide products or services</p>
+         <p begin="00:00:35.60" end="00:00:38.06" region="speaker">falling under that SIN category.</p>
+         <p begin="00:00:38.06" end="00:00:40.53" region="speaker">Note that the system will not allow you to terminate</p>
+         <p begin="00:00:40.53" end="00:00:43.46" region="speaker">all of the SINs associated with a particular contract</p>
+         <p begin="00:00:43.46" end="00:00:46.00" region="speaker">as doing so would eliminate your company&apos;s</p>
+         <p begin="00:00:46.00" end="00:00:48.43" region="speaker">ability to provide products or services to</p>
+         <p begin="00:00:48.43" end="00:00:49.80" region="speaker">the government.</p>
+         <p begin="00:00:49.80" end="00:00:52.83" region="speaker">If this is your goal, you should instead submit a</p>
+         <p begin="00:00:52.83" end="00:00:55.46" region="speaker">Cancel Contract modification.</p>
+         <p begin="00:00:55.46" end="00:00:58.20" region="speaker">When you have identified a termination date, check</p>
+         <p begin="00:00:58.20" end="00:00:61.20" region="speaker">the box under the &quot;Action&quot; column of the SIN or SINs</p>
+         <p begin="00:00:61.20" end="00:00:63.10" region="speaker">you would like to delete.</p>
+         <p begin="00:00:63.10" end="00:00:65.76" region="speaker">Deletion modifications fall under the category</p>
+         <p begin="00:00:65.76" end="00:00:68.43" region="speaker">known as &quot;Rapid Action Modifications&quot;.</p>
+         <p begin="00:00:68.43" end="00:00:70.53" region="speaker">This means that a contractor can submit a</p>
+         <p begin="00:00:70.53" end="00:00:72.96" region="speaker">Deletion Modification request and the</p>
+         <p begin="00:00:72.96" end="00:00:75.50" region="speaker">Contracting Officer can approve it without having</p>
+         <p begin="00:00:75.50" end="00:00:78.23" region="speaker">to go through the signature process.</p>
+         <p begin="00:00:78.23" end="00:00:80.00" region="speaker">When you have finished click &quot;Save and</p>
+         <p begin="00:00:80.00" end="00:00:82.03" region="speaker">Continue&quot;</p>
+    </div>
+  </body>
+</tt>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Terms &amp; Conditions Modifications</category>
+         <ttm:title>Create/Manage Clause Exception(s)</ttm:title>
+         <ttm:desc>GSA currently lists dozens of Contract Clauses outlining guidelines that pertain to everything from equipment purchases to Privacy Act notifications. Should your company not be able to meet one of these requirements, an Exception must be put forth for approval by the CO.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:05.23" region="speaker">While taking exceptions to GSA schedule contracts may</p>
+         <p begin="00:00:05.23" end="00:00:08.13" region="speaker">not be necessary for most schedule holders, this</p>
+         <p begin="00:00:08.13" end="00:00:10.90" region="speaker">modification allows you to do so if you think it is</p>
+         <p begin="00:00:10.90" end="00:00:13.03" region="speaker">important to your business.</p>
+         <p begin="00:00:13.03" end="00:00:15.13" region="speaker">If you feel it is necessary to request an</p>
+         <p begin="00:00:15.13" end="00:00:18.30" region="speaker">exception to a clause, eMod will display the list</p>
+         <p begin="00:00:18.30" end="00:00:20.43" region="speaker">of clauses against which exceptions might be</p>
+         <p begin="00:00:20.43" end="00:00:21.53" region="speaker">granted.</p>
+         <p begin="00:00:21.53" end="00:00:24.26" region="speaker">The Title and Clause number are provided.</p>
+         <p begin="00:00:24.26" end="00:00:26.16" region="speaker">You can click the number for full text of the</p>
+         <p begin="00:00:26.16" end="00:00:27.43" region="speaker">clause.</p>
+         <p begin="00:00:27.43" end="00:00:29.63" region="speaker">Check the box next to the clause for which you are</p>
+         <p begin="00:00:29.63" end="00:00:31.53" region="speaker">taking an exception.</p>
+         <p begin="00:00:31.53" end="00:00:33.43" region="speaker">Click the &quot;Select Regulation&quot; button to</p>
+         <p begin="00:00:33.43" end="00:00:34.86" region="speaker">continue.</p>
+         <p begin="00:00:34.86" end="00:00:38.53" region="speaker">Now you will be able to edit specific clause text.</p>
+         <p begin="00:00:38.53" end="00:00:42.33" region="speaker">First click on the link to the clause you selected.</p>
+         <p begin="00:00:42.33" end="00:00:44.20" region="speaker">Find the text in the clause that you want to</p>
+         <p begin="00:00:44.20" end="00:00:45.70" region="speaker">take exception with.</p>
+         <p begin="00:00:45.70" end="00:00:48.30" region="speaker">Highlight it And press &quot;Control-C&apos; on your</p>
+         <p begin="00:00:48.30" end="00:00:50.33" region="speaker">keyboard to copy it.</p>
+         <p begin="00:00:50.33" end="00:00:52.90" region="speaker">When performing this action, be sure to copy</p>
+         <p begin="00:00:52.90" end="00:00:54.56" region="speaker">enough of the text so that the CO will understand the</p>
+         <p begin="00:00:54.56" end="00:00:58.10" region="speaker">context of what has been copied.</p>
+         <p begin="00:00:58.10" end="00:00:61.26" region="speaker">Next paste the text into the &quot;Excerpt From Clause&quot;</p>
+         <p begin="00:00:61.26" end="00:00:64.63" region="speaker">box by selecting the box then pressing &quot;Control-V&quot;</p>
+         <p begin="00:00:64.63" end="00:00:66.33" region="speaker">on your keyboard.</p>
+         <p begin="00:00:66.33" end="00:00:68.30" region="speaker">Click the &quot;Ready to Edit&quot; button.</p>
+         <p begin="00:00:68.30" end="00:00:71.03" region="speaker">A warning arises saying &quot;This will update any</p>
+         <p begin="00:00:71.03" end="00:00:73.36" region="speaker">exceptions already Taken or entered.&quot;</p>
+         <p begin="00:00:73.36" end="00:00:75.10" region="speaker">Press &quot;Okay&quot;.</p>
+         <p begin="00:00:75.10" end="00:00:77.90" region="speaker">In the bottom box, select the specific text you want</p>
+         <p begin="00:00:77.90" end="00:00:80.90" region="speaker">to edit and make the necessary changes.</p>
+         <p begin="00:00:80.90" end="00:00:83.00" region="speaker">When you are finished editing press the &quot;Save</p>
+         <p begin="00:00:83.00" end="00:00:85.00" region="speaker">and Continue&quot; button.</p>
+    </div>
+  </body>
+</tt>

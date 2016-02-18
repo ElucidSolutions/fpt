@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Subcontracting Plan Modification</category>
+         <ttm:title>Reporting and Cooperation</ttm:title>
+         <ttm:desc>The Reporting and Cooperation section contains assurances required by FAR that all Contractors will submit various Reports, including a timetable for Individual Subcontract Reports. All Contractors must agree to these conditions. Confirm your agreement by marking the checkbox.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.10" end="00:00:04.83" region="speaker">The Reporting and Cooperation section</p>
+         <p begin="00:00:04.83" end="00:00:07.70" region="speaker">contains assurances required by the far that</p>
+         <p begin="00:00:07.70" end="00:00:10.06" region="speaker">all contractors will submit various forms of</p>
+         <p begin="00:00:10.06" end="00:00:13.00" region="speaker">reports, including a timetable for Individual</p>
+         <p begin="00:00:13.00" end="00:00:14.96" region="speaker">Subcontract Reports.</p>
+         <p begin="00:00:14.96" end="00:00:17.83" region="speaker">All contractors must agree to this.</p>
+         <p begin="00:00:17.83" end="00:00:20.43" region="speaker">You must agree to this by checking the box then</p>
+         <p begin="00:00:20.43" end="00:00:22.43" region="speaker">click &quot;Save and Continue.&quot;</p>
+    </div>
+  </body>
+</tt>

@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Authorized Negotiators</category>
+         <ttm:title>General Importance</ttm:title>
+         <ttm:desc>An Authorized Negotiator is an individual designated to work on a GSA Contract, and, if given the authority to sign, can bind his or her Company to purchasing agreements with the federal government. This video explains the role of an Authorized Negotiator, as well as the steps required to be sure Authorized Negotiators maintain the access to GSA systems they require.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:05.56" end="00:00:08.56" region="speaker">Whether you are a long time participant or are</p>
+         <p begin="00:00:08.56" end="00:00:11.93" region="speaker">new to the GSA Schedules program, you may think you</p>
+         <p begin="00:00:11.93" end="00:00:13.96" region="speaker">have an understanding of what an &quot;Authorized</p>
+         <p begin="00:00:13.96" end="00:00:18.76" region="speaker">Negotiator&apos;s&quot; role on the contract actually entails.</p>
+         <p begin="00:00:18.76" end="00:00:22.00" region="speaker">As the name implies, an Authorized Negotiator is</p>
+         <p begin="00:00:22.00" end="00:00:24.13" region="speaker">someone who a company designates as being</p>
+         <p begin="00:00:24.13" end="00:00:26.73" region="speaker">authorized to negotiate and bind the company to</p>
+         <p begin="00:00:26.73" end="00:00:31.23" region="speaker">any changes or updates to its GSA contract.</p>
+         <p begin="00:00:31.23" end="00:00:33.70" region="speaker">If a particular employee of your company is NOT</p>
+         <p begin="00:00:33.70" end="00:00:35.90" region="speaker">listed as an Authorized Negotiator on your</p>
+         <p begin="00:00:35.90" end="00:00:39.40" region="speaker">contract, he or she will not be able to prepare or</p>
+         <p begin="00:00:39.40" end="00:00:42.86" region="speaker">sign off on modifications to your GSA contract.</p>
+         <p begin="00:00:42.86" end="00:00:45.73" region="speaker">In fact, he or she will not even be able to access</p>
+         <p begin="00:00:45.73" end="00:00:47.86" region="speaker">the eOffer/eMods system!</p>
+         <p begin="00:00:47.86" end="00:00:50.80" region="speaker">Even further, just because a person is listed as an</p>
+         <p begin="00:00:50.80" end="00:00:53.40" region="speaker">Authorized Negotiator on a contract doesn&apos;t</p>
+         <p begin="00:00:53.40" end="00:00:55.90" region="speaker">necessarily mean that he or she can submit a</p>
+         <p begin="00:00:55.90" end="00:00:58.53" region="speaker">modification to GSA for approval.</p>
+         <p begin="00:00:58.53" end="00:00:61.16" region="speaker">There are two types of Authorized Negotiators:</p>
+         <p begin="00:00:61.16" end="00:00:63.33" region="speaker">Those with signing authority and those</p>
+         <p begin="00:00:63.33" end="00:00:65.16" region="speaker">without.</p>
+         <p begin="00:00:65.16" end="00:00:66.93" region="speaker">Let&apos;s first talk about those Authorized</p>
+         <p begin="00:00:66.93" end="00:00:69.43" region="speaker">Negotiators without signing authority and why</p>
+         <p begin="00:00:69.43" end="00:00:73.33" region="speaker">this particular role was introduced to eOffer/eMod.</p>
+         <p begin="00:00:73.33" end="00:00:76.43" region="speaker">Preparing an offer for a GSA Schedule is a fairly</p>
+         <p begin="00:00:76.43" end="00:00:77.60" region="speaker">intensive process.</p>
+         <p begin="00:00:77.60" end="00:00:79.96" region="speaker">It requires companies to gather a lot of</p>
+         <p begin="00:00:79.96" end="00:00:82.70" region="speaker">documentation and do a lot of writing about their</p>
+         <p begin="00:00:82.70" end="00:00:85.63" region="speaker">company history, the types of goods and services they</p>
+         <p begin="00:00:85.63" end="00:00:89.86" region="speaker">offer, and a wealth of other information.</p>
+         <p begin="00:00:89.86" end="00:00:92.13" region="speaker">Realizing the level of effort necessary to</p>
+         <p begin="00:00:92.13" end="00:00:95.13" region="speaker">prepare a responsive offer, many companies</p>
+         <p begin="00:00:95.13" end="00:00:98.20" region="speaker">began relying on services of third parties to help</p>
+         <p begin="00:00:98.20" end="00:00:101.43" region="speaker">complete their GSA Schedule proposals.</p>
+         <p begin="00:00:101.43" end="00:00:103.23" region="speaker">There needed to be a mechanism in place,</p>
+         <p begin="00:00:103.23" end="00:00:105.80" region="speaker">however, that would allow these third parties to</p>
+         <p begin="00:00:105.80" end="00:00:108.83" region="speaker">access the eOffer/eMod system and enter</p>
+         <p begin="00:00:108.83" end="00:00:111.70" region="speaker">information, but be prevented from submitting</p>
+         <p begin="00:00:111.70" end="00:00:113.63" region="speaker">any offers or modifications that would</p>
+         <p begin="00:00:113.63" end="00:00:115.36" region="speaker">bind the company.</p>
+         <p begin="00:00:115.36" end="00:00:117.70" region="speaker">This is where &quot;Authorized Negotiators Without</p>
+         <p begin="00:00:117.70" end="00:00:120.20" region="speaker">Signing Authority&quot; come in to the picture.</p>
+         <p begin="00:00:120.20" end="00:00:122.76" region="speaker">Users with this role - whether they are your own</p>
+         <p begin="00:00:122.76" end="00:00:125.33" region="speaker">employees or those of a third party consulting</p>
+         <p begin="00:00:125.33" end="00:00:128.73" region="speaker">company - can still access the system and help work</p>
+         <p begin="00:00:128.73" end="00:00:131.80" region="speaker">on contract offers and modifications.</p>
+         <p begin="00:00:131.80" end="00:00:134.10" region="speaker">They can submit this information, but they</p>
+         <p begin="00:00:134.10" end="00:00:136.90" region="speaker">cannot actually sign the final product.</p>
+         <p begin="00:00:136.90" end="00:00:139.70" region="speaker">By separating those users without signing authority</p>
+         <p begin="00:00:139.70" end="00:00:142.26" region="speaker">from those with such authority, the ability to</p>
+         <p begin="00:00:142.26" end="00:00:145.20" region="speaker">sign and submit contract documents can be retained</p>
+         <p begin="00:00:145.20" end="00:00:147.86" region="speaker">with a trusted company employee.</p>
+         <p begin="00:00:147.86" end="00:00:150.23" region="speaker">With all of this in mind, the importance of</p>
+         <p begin="00:00:150.23" end="00:00:152.60" region="speaker">maintaining accurate authorized negotiator</p>
+         <p begin="00:00:152.60" end="00:00:156.30" region="speaker">information cannot be overstated.</p>
+         <p begin="00:00:156.30" end="00:00:159.40" region="speaker">As an example, imagine for a moment that a wonderful</p>
+         <p begin="00:00:159.40" end="00:00:162.10" region="speaker">new opportunity comes up for which you need to add</p>
+         <p begin="00:00:162.10" end="00:00:163.83" region="speaker">new products to your contract.</p>
+         <p begin="00:00:163.83" end="00:00:169.20" region="speaker">This opportunity could be worth a LOT of money and</p>
+         <p begin="00:00:169.20" end="00:00:172.80" region="speaker">you only have a short time to take advantage of it.</p>
+         <p begin="00:00:172.80" end="00:00:175.23" region="speaker">All of a sudden, you remember your GSA</p>
+         <p begin="00:00:175.23" end="00:00:176.23" region="speaker">training.</p>
+         <p begin="00:00:176.23" end="00:00:179.23" region="speaker">You can&apos;t just add the new products to your contract.</p>
+         <p begin="00:00:179.23" end="00:00:181.73" region="speaker">You need to have an Authorized Negotiator with</p>
+         <p begin="00:00:181.73" end="00:00:185.40" region="speaker">signing authority actually sign the modification.</p>
+         <p begin="00:00:185.40" end="00:00:188.13" region="speaker">Realizing this, you think of Susan Sicklee, the</p>
+         <p begin="00:00:188.13" end="00:00:190.06" region="speaker">individual who has been designated as your</p>
+         <p begin="00:00:190.06" end="00:00:192.50" region="speaker">company&apos;s authorized negotiator.</p>
+         <p begin="00:00:192.50" end="00:00:194.80" region="speaker">Unfortunately, she has been out all week with the</p>
+         <p begin="00:00:194.80" end="00:00:195.80" region="speaker">flu.</p>
+         <p begin="00:00:195.80" end="00:00:199.06" region="speaker">&quot;No problem,&quot; you think to yourself.</p>
+         <p begin="00:00:199.06" end="00:00:201.96" region="speaker">&quot;I remember that Robert Retiree was an authorized</p>
+         <p begin="00:00:201.96" end="00:00:204.56" region="speaker">negotiator on the contract as well.</p>
+         <p begin="00:00:204.56" end="00:00:207.13" region="speaker">I even think he helped write the proposal.</p>
+         <p begin="00:00:207.13" end="00:00:209.10" region="speaker">He can take care of this....&quot;</p>
+         <p begin="00:00:209.10" end="00:00:210.10" region="speaker">Then.</p>
+         <p begin="00:00:210.10" end="00:00:211.70" region="speaker">A moment of panic.</p>
+         <p begin="00:00:211.70" end="00:00:214.36" region="speaker">Robert retired from the company last month.</p>
+         <p begin="00:00:214.36" end="00:00:216.93" region="speaker">He&apos;s still listed on the contract and you never</p>
+         <p begin="00:00:216.93" end="00:00:220.10" region="speaker">assigned anyone else to serve in his place.</p>
+         <p begin="00:00:220.10" end="00:00:222.96" region="speaker">Finally, you recall having asked your intern Nathan</p>
+         <p begin="00:00:222.96" end="00:00:225.43" region="speaker">Nosign to assist in the preparation of your</p>
+         <p begin="00:00:225.43" end="00:00:226.43" region="speaker">schedule offer.</p>
+         <p begin="00:00:226.43" end="00:00:229.63" region="speaker">Nathan is in the office today, but, while he was</p>
+         <p begin="00:00:229.63" end="00:00:232.30" region="speaker">responsible for helping to prepare your offer and is</p>
+         <p begin="00:00:232.30" end="00:00:234.83" region="speaker">an Authorized Negotiator on the contract, he was</p>
+         <p begin="00:00:234.83" end="00:00:237.30" region="speaker">not registered as having the necessary signing</p>
+         <p begin="00:00:237.30" end="00:00:239.83" region="speaker">privileges to bind the company to modifications</p>
+         <p begin="00:00:239.83" end="00:00:240.90" region="speaker">with GSA.</p>
+         <p begin="00:00:240.90" end="00:00:243.66" region="speaker">With no Authorization Negotiator with signing</p>
+         <p begin="00:00:243.66" end="00:00:246.40" region="speaker">privileges available, you cannot execute the</p>
+         <p begin="00:00:246.40" end="00:00:250.53" region="speaker">modification and will not be able to take advantage</p>
+         <p begin="00:00:250.53" end="00:00:252.83" region="speaker">of the new contract opportunity.</p>
+         <p begin="00:00:252.83" end="00:00:255.26" region="speaker">This scenario, while purely hypothetical,</p>
+         <p begin="00:00:255.26" end="00:00:256.56" region="speaker">illustrates some of the problems that contractors</p>
+         <p begin="00:00:256.56" end="00:00:260.60" region="speaker">run in to when they don&apos;t keep their Authorized</p>
+         <p begin="00:00:260.60" end="00:00:262.90" region="speaker">Negotiator information up to date.</p>
+         <p begin="00:00:262.90" end="00:00:264.76" region="speaker">Let&apos;s take a look at how this problem could be</p>
+         <p begin="00:00:264.76" end="00:00:268.33" region="speaker">avoided as well as some of the steps GSA has taken to</p>
+         <p begin="00:00:268.33" end="00:00:270.30" region="speaker">make dealing with Authorized Negotiator</p>
+         <p begin="00:00:270.30" end="00:00:273.50" region="speaker">information easier for you, the GSA Schedule</p>
+         <p begin="00:00:273.50" end="00:00:275.00" region="speaker">contractor.</p>
+         <p begin="00:00:275.00" end="00:00:277.56" region="speaker">First, let&apos;s acknowledge the positive steps that</p>
+         <p begin="00:00:277.56" end="00:00:278.80" region="speaker">were taken.</p>
+         <p begin="00:00:278.80" end="00:00:281.13" region="speaker">When you submitted your offer, you took note of</p>
+         <p begin="00:00:281.13" end="00:00:283.93" region="speaker">GSA&apos;s recommendation that you assign at least two</p>
+         <p begin="00:00:283.93" end="00:00:286.06" region="speaker">negotiators to a contract.</p>
+         <p begin="00:00:286.06" end="00:00:289.03" region="speaker">In fact, you went above and beyond and assigned</p>
+         <p begin="00:00:289.03" end="00:00:292.93" region="speaker">three people: Susan Sicklee and Robert Retiree</p>
+         <p begin="00:00:292.93" end="00:00:295.20" region="speaker">who are both Authorized Negotiators with signing</p>
+         <p begin="00:00:295.20" end="00:00:298.00" region="speaker">privileges, and Nathan Nosign, who is an</p>
+         <p begin="00:00:298.00" end="00:00:300.60" region="speaker">Authorized Negotiator but does not have the</p>
+         <p begin="00:00:300.60" end="00:00:303.63" region="speaker">authority to sign off on modifications.</p>
+         <p begin="00:00:303.63" end="00:00:306.26" region="speaker">Instances where someone like Susan who may be out</p>
+         <p begin="00:00:306.26" end="00:00:308.43" region="speaker">sick are not uncommon.</p>
+         <p begin="00:00:308.43" end="00:00:310.70" region="speaker">This is why assigning a second Negotiator with</p>
+         <p begin="00:00:310.70" end="00:00:314.36" region="speaker">signing authority is of extreme importance.</p>
+         <p begin="00:00:314.36" end="00:00:316.86" region="speaker">In addition, vendors often get the help of people</p>
+         <p begin="00:00:316.86" end="00:00:318.46" region="speaker">like Nathan to prepare offers and monitor their</p>
+         <p begin="00:00:318.46" end="00:00:322.33" region="speaker">schedule but do not want these people to sign off</p>
+         <p begin="00:00:322.33" end="00:00:324.23" region="speaker">on any changes to the contract.</p>
+         <p begin="00:00:324.23" end="00:00:328.03" region="speaker">The real break down here centers on the lack of</p>
+         <p begin="00:00:328.03" end="00:00:331.50" region="speaker">monitoring of Authorized Negotiator information.</p>
+         <p begin="00:00:331.50" end="00:00:334.33" region="speaker">It is recommended that, at a minimum, you review your</p>
+         <p begin="00:00:334.33" end="00:00:337.36" region="speaker">Authorized Negotiator information each month to</p>
+         <p begin="00:00:337.36" end="00:00:340.13" region="speaker">ensure that the information is current.</p>
+         <p begin="00:00:340.13" end="00:00:341.96" region="speaker">You should also be sure that the digital</p>
+         <p begin="00:00:341.96" end="00:00:344.43" region="speaker">certificates of your negotiators are not about</p>
+         <p begin="00:00:344.43" end="00:00:346.86" region="speaker">to expire.</p>
+         <p begin="00:00:346.86" end="00:00:349.43" region="speaker">In the above scenario, it would have been easy to</p>
+         <p begin="00:00:349.43" end="00:00:351.86" region="speaker">see that Robert Retiree has departed from the</p>
+         <p begin="00:00:351.86" end="00:00:354.70" region="speaker">company leaving Susan Sicklee as the only</p>
+         <p begin="00:00:354.70" end="00:00:357.13" region="speaker">Authorized Negotiator with signing authority on the</p>
+         <p begin="00:00:357.13" end="00:00:359.40" region="speaker">contract.</p>
+         <p begin="00:00:359.40" end="00:00:361.96" region="speaker">So what steps should you take to be sure that this</p>
+         <p begin="00:00:361.96" end="00:00:364.23" region="speaker">does not happen to you?</p>
+         <p begin="00:00:364.23" end="00:00:366.53" region="speaker">First, make sure that at least two Authorized</p>
+         <p begin="00:00:366.53" end="00:00:369.10" region="speaker">Negotiators are included on the contract at all</p>
+         <p begin="00:00:369.10" end="00:00:370.96" region="speaker">times.</p>
+         <p begin="00:00:370.96" end="00:00:373.80" region="speaker">Second, review all Authorized Negotiator</p>
+         <p begin="00:00:373.80" end="00:00:376.16" region="speaker">information each month to ensure that their</p>
+         <p begin="00:00:376.16" end="00:00:378.46" region="speaker">information remains current and that their</p>
+         <p begin="00:00:378.46" end="00:00:381.70" region="speaker">digital certificates are not set to expire.</p>
+         <p begin="00:00:381.70" end="00:00:384.16" region="speaker">Third, even if you have multiple negotiators</p>
+         <p begin="00:00:384.16" end="00:00:386.80" region="speaker">assigned to the contract, be sure to check on their</p>
+         <p begin="00:00:386.80" end="00:00:388.56" region="speaker">signing privileges.</p>
+         <p begin="00:00:388.56" end="00:00:391.43" region="speaker">Users without the ability to sign modifications</p>
+         <p begin="00:00:391.43" end="00:00:395.30" region="speaker">cannot execute agreements with GSA.</p>
+         <p begin="00:00:395.30" end="00:00:397.33" region="speaker">Remember these steps during the administration</p>
+         <p begin="00:00:397.33" end="00:00:400.46" region="speaker">of your contract and you should be fine.</p>
+         <p begin="00:00:400.46" end="00:00:401.83" region="speaker">Do note that there are additional issues that may</p>
+         <p begin="00:00:401.83" end="00:00:405.10" region="speaker">arise when dealing with Digital Certificates and</p>
+         <p begin="00:00:405.10" end="00:00:407.40" region="speaker">when an Authorized Negotiator&apos;s information</p>
+         <p begin="00:00:407.40" end="00:00:411.60" region="speaker">does not match that which is present on an</p>
+         <p begin="00:00:411.60" end="00:00:412.63" region="speaker">individual&apos;s cert.</p>
+         <p begin="00:00:412.63" end="00:00:415.20" region="speaker">Videos covering these topics are available from</p>
+         <p begin="00:00:415.20" end="00:00:417.50" region="speaker">the eOffer/eMod home page.</p>
+         <p begin="00:00:417.50" end="00:00:420.40" region="speaker">If you have any additional questions, please consult</p>
+         <p begin="00:00:420.40" end="00:00:424.30" region="speaker">the eOffer/eMod User Guide or feel free to contact us</p>
+         <p begin="00:00:424.30" end="00:00:428.00" region="speaker">by e-mail eoffer@gsa.gov.</p>
+         <p begin="00:00:428.00" end="00:00:430.26" region="speaker">Thank you for your continued support of the</p>
+         <p begin="00:00:430.26" end="00:00:435.43" region="speaker">General Services Administration.</p>
+    </div>
+  </body>
+</tt>

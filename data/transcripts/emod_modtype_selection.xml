@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Getting Started with eMod</category>
+         <ttm:title>Mod Type Selection</ttm:title>
+         <ttm:desc>There are eight primary Modification types, each of which includes several sub-types pertaining to various processes and procedures relevant to the Modification process.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.10" end="00:00:04.80" region="speaker">Identifying the type of contract modification you</p>
+         <p begin="00:00:04.80" end="00:00:06.93" region="speaker">are requesting is the first step towards</p>
+         <p begin="00:00:06.93" end="00:00:10.00" region="speaker">submitting an eMod for GSA review.</p>
+         <p begin="00:00:10.00" end="00:00:12.66" region="speaker">On the &quot;Select Modification Types&quot; page</p>
+         <p begin="00:00:12.66" end="00:00:15.33" region="speaker">you will see all of the modification types and</p>
+         <p begin="00:00:15.33" end="00:00:19.46" region="speaker">subtypes available to you as an MAS contract holder.</p>
+         <p begin="00:00:19.46" end="00:00:22.36" region="speaker">These include: Additions Administrative</p>
+         <p begin="00:00:22.36" end="00:00:25.96" region="speaker">Cancellation or Termination Deletions</p>
+         <p begin="00:00:25.96" end="00:00:31.26" region="speaker">Legal Pricing Technical, and Terms and Conditions</p>
+         <p begin="00:00:31.26" end="00:00:33.90" region="speaker">You may select a single modification type or</p>
+         <p begin="00:00:33.90" end="00:00:37.06" region="speaker">multiple types of modifications at once.</p>
+         <p begin="00:00:37.06" end="00:00:39.46" region="speaker">When you are ready to continue, click &quot;Submit</p>
+         <p begin="00:00:39.46" end="00:00:40.96" region="speaker">Online&quot;.</p>
+         <p begin="00:00:40.96" end="00:00:43.83" region="speaker">After your selection, subsequent videos will</p>
+         <p begin="00:00:43.83" end="00:00:45.73" region="speaker">provide you with information on how to</p>
+         <p begin="00:00:45.73" end="00:00:48.43" region="speaker">complete each of these modifications and offer</p>
+         <p begin="00:00:48.43" end="00:00:50.96" region="speaker">greater detail on the impacts each one will have</p>
+         <p begin="00:00:50.96" end="00:00:53.13" region="speaker">on your GSA schedule contract.</p>
+    </div>
+  </body>
+</tt>

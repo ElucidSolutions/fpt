@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Getting Started</category>
+         <ttm:title>eOffer/eMod Homepage</ttm:title>
+         <ttm:desc>Within the eMod/eOffer system there are two modules, both of which are accessible on the right-hand side of the screen in the box marked &quot;System Access.&quot; Each module serves its own distinct purposes, and these videos will illuminate the step-by-step processes associated with each.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:05.83" region="speaker">The eOffer/eMod system is a web-based application</p>
+         <p begin="00:00:05.83" end="00:00:08.36" region="speaker">that allows companies to electronically prepare and</p>
+         <p begin="00:00:08.36" end="00:00:11.60" region="speaker">submit MAS contract proposals and contract</p>
+         <p begin="00:00:11.60" end="00:00:13.03" region="speaker">modifications to GSA.</p>
+         <p begin="00:00:13.03" end="00:00:15.80" region="speaker">At any point, as you are proceeding through these</p>
+         <p begin="00:00:15.80" end="00:00:19.10" region="speaker">systems, you can click the &quot;video&quot; icon on the screen</p>
+         <p begin="00:00:19.10" end="00:00:20.83" region="speaker">to get help with completing a particular</p>
+         <p begin="00:00:20.83" end="00:00:22.83" region="speaker">section.</p>
+         <p begin="00:00:22.83" end="00:00:25.20" region="speaker">On the right side of the homepage, you will notice</p>
+         <p begin="00:00:25.20" end="00:00:28.26" region="speaker">boxes that allow you to prepare Contract Offers,</p>
+         <p begin="00:00:28.26" end="00:00:32.20" region="speaker">and Contract Modifications This homepage provides</p>
+         <p begin="00:00:32.20" end="00:00:34.10" region="speaker">links to a wealth of information that you can</p>
+         <p begin="00:00:34.10" end="00:00:36.76" region="speaker">review before getting started with an eOffer or</p>
+         <p begin="00:00:36.76" end="00:00:37.86" region="speaker">eMod.</p>
+         <p begin="00:00:37.86" end="00:00:40.20" region="speaker">The &quot;About eOffer&quot; section provides high level</p>
+         <p begin="00:00:40.20" end="00:00:42.40" region="speaker">information about the systems.</p>
+         <p begin="00:00:42.40" end="00:00:44.50" region="speaker">By clicking the links, you can learn more about</p>
+         <p begin="00:00:44.50" end="00:00:45.96" region="speaker">eOffers and eMods.</p>
+         <p begin="00:00:46.83" end="00:00:49.03" region="speaker">The &quot;Digital Certificates&quot; and &quot;Authorized</p>
+         <p begin="00:00:49.03" end="00:00:51.53" region="speaker">Negotiator&quot; links are useful for vendors who are</p>
+         <p begin="00:00:51.53" end="00:00:54.26" region="speaker">having trouble accessing the system because they</p>
+         <p begin="00:00:54.26" end="00:00:55.73" region="speaker">have either: not obtained or loaded their digital</p>
+         <p begin="00:00:55.73" end="00:00:59.40" region="speaker">certificate, or they have not been designated as a</p>
+         <p begin="00:00:59.40" end="00:00:62.30" region="speaker">negotiator assigned to their company&apos;s contract.</p>
+         <p begin="00:00:62.30" end="00:00:64.73" region="speaker">Note that, without a valid certificate, it is</p>
+         <p begin="00:00:64.73" end="00:00:68.83" region="speaker">impossible to do anything in eOffer/eMod at all.</p>
+         <p begin="00:00:68.83" end="00:00:71.90" region="speaker">The &quot;Subcontracting Plan&quot; template provides offerors</p>
+         <p begin="00:00:71.90" end="00:00:74.13" region="speaker">with a model template that can be modified and</p>
+         <p begin="00:00:74.13" end="00:00:76.76" region="speaker">included in their contract offer.</p>
+         <p begin="00:00:76.76" end="00:00:79.43" region="speaker">Subcontracting plans are generally applicable to</p>
+         <p begin="00:00:79.43" end="00:00:82.16" region="speaker">certain &quot;Other than Small Businesses,&quot; who meet a</p>
+         <p begin="00:00:82.16" end="00:00:83.70" region="speaker">certain dollar threshold.</p>
+         <p begin="00:00:83.70" end="00:00:88.73" region="speaker">Finally, the &quot;MAS Schedule Solicitations&quot; link will</p>
+         <p begin="00:00:88.73" end="00:00:90.76" region="speaker">provide you with links to each of the schedule</p>
+         <p begin="00:00:90.76" end="00:00:93.03" region="speaker">solicitations.</p>
+         <p begin="00:00:93.03" end="00:00:95.43" region="speaker">The Customer Assistance and Training section</p>
+         <p begin="00:00:95.43" end="00:00:98.23" region="speaker">provides links to User Guides, Frequently Asked</p>
+         <p begin="00:00:98.23" end="00:00:103.33" region="speaker">Questions, GSA Contact Information, The &quot;Before</p>
+         <p begin="00:00:103.33" end="00:00:105.33" region="speaker">you Begin&quot; section basically provides you</p>
+         <p begin="00:00:105.33" end="00:00:107.33" region="speaker">with a &quot;To Do List&quot; of things that you should</p>
+         <p begin="00:00:107.33" end="00:00:109.63" region="speaker">complete prior to submitting an Offer or a</p>
+         <p begin="00:00:109.63" end="00:00:111.33" region="speaker">Modification.</p>
+         <p begin="00:00:111.33" end="00:00:114.43" region="speaker">Items include reviewing solicitations, completing</p>
+         <p begin="00:00:114.43" end="00:00:116.23" region="speaker">training, Did you get your DUNs number?</p>
+         <p begin="00:00:116.23" end="00:00:119.13" region="speaker">Audio change needed &quot;Registering with SAM</p>
+         <p begin="00:00:119.13" end="00:00:122.70" region="speaker">(formerly CCR and Orca) &quot;Have you applied for your</p>
+         <p begin="00:00:122.70" end="00:00:123.86" region="speaker">digital cert?&quot;</p>
+         <p begin="00:00:123.86" end="00:00:125.86" region="speaker">, and more.</p>
+         <p begin="00:00:127.46" end="00:00:129.03" region="speaker">Whenever you are ready to begin a Contract Offer or</p>
+         <p begin="00:00:129.03" end="00:00:133.90" region="speaker">Modification, simply click the &quot;Sign In&quot; link.</p>
+         <p begin="00:00:133.90" end="00:00:135.80" region="speaker">If your digital certificate is properly</p>
+         <p begin="00:00:135.80" end="00:00:138.36" region="speaker">loaded to your browser, you will be granted access</p>
+         <p begin="00:00:138.36" end="00:00:139.36" region="speaker">to the system.</p>
+    </div>
+  </body>
+</tt>

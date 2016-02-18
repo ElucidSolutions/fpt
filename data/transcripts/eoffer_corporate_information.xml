@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Corporate Information</category>
+         <ttm:title>Corporate Information</ttm:title>
+         <ttm:desc>Confirm your Corporate Information before proceeding. Your Corporate Information is pulled directly frm the System for Award Management, (SAM). Therefore, if incorrect, Corporate Information must be corrected outside the eOffer/eMod system.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:01.73" end="00:00:03.46" region="speaker">The &quot;Corporate Information&quot; screen</p>
+         <p begin="00:00:03.46" end="00:00:05.70" region="speaker">provides you with an opportunity to review your</p>
+         <p begin="00:00:05.70" end="00:00:07.96" region="speaker">company information before proceeding with your</p>
+         <p begin="00:00:07.96" end="00:00:08.96" region="speaker">offer.</p>
+         <p begin="00:00:08.96" end="00:00:10.96" region="speaker">It is critical that you review your corporate</p>
+         <p begin="00:00:10.96" end="00:00:14.40" region="speaker">information page for accuracy as any incorrect</p>
+         <p begin="00:00:14.40" end="00:00:17.83" region="speaker">information could cause a delay in your award or an</p>
+         <p begin="00:00:17.83" end="00:00:19.23" region="speaker">outright rejection.</p>
+         <p begin="00:00:19.23" end="00:00:21.73" region="speaker">It is important to note that this information is</p>
+         <p begin="00:00:21.73" end="00:00:24.70" region="speaker">drawn from the Central Contractor Registry and is</p>
+         <p begin="00:00:24.70" end="00:00:28.13" region="speaker">not directly editable in the eOffer system If you</p>
+         <p begin="00:00:28.13" end="00:00:30.46" region="speaker">find any errors, you should scroll to the</p>
+         <p begin="00:00:30.46" end="00:00:33.13" region="speaker">bottom of the page and click the &quot;Sign out and</p>
+         <p begin="00:00:33.13" end="00:00:36.43" region="speaker">Correct Errors in CCR&quot; button before proceeding.</p>
+         <p begin="00:00:36.43" end="00:00:38.76" region="speaker">If you wish to leave the system, your progress will</p>
+         <p begin="00:00:38.76" end="00:00:40.40" region="speaker">be saved.</p>
+         <p begin="00:00:40.40" end="00:00:43.16" region="speaker">Before moving on, notice the &quot;Checklist&quot; on the</p>
+         <p begin="00:00:43.16" end="00:00:45.23" region="speaker">left hand side of the page.</p>
+         <p begin="00:00:45.23" end="00:00:47.73" region="speaker">eOffer makes it easy to track the progress you are</p>
+         <p begin="00:00:47.73" end="00:00:50.70" region="speaker">making towards completing your contract offer.</p>
+         <p begin="00:00:50.70" end="00:00:53.96" region="speaker">Green checkboxes indicate that a section is complete</p>
+         <p begin="00:00:53.96" end="00:00:56.50" region="speaker">whereas yellow boxes containing exclamation</p>
+         <p begin="00:00:56.50" end="00:00:59.73" region="speaker">points indicate an item that needs attention.</p>
+         <p begin="00:00:59.73" end="00:00:62.13" region="speaker">If everything looks correct, click the &quot;Save</p>
+         <p begin="00:00:62.13" end="00:00:64.06" region="speaker">and Continue&quot; button to move on to the</p>
+         <p begin="00:00:64.06" end="00:00:65.33" region="speaker">&quot;Negotiators&quot; section.</p>
+    </div>
+  </body>
+</tt>

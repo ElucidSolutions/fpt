@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Administrative Modifications</category>
+         <ttm:title>Address Change</ttm:title>
+         <ttm:desc>This particular Modification is recommended to keep your Company information up-to-date.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:05.46" region="speaker">A new address may impact your DUNS, to begin with</p>
+         <p begin="00:00:05.46" end="00:00:07.50" region="speaker">you will be asked if you would like the replace the</p>
+         <p begin="00:00:07.50" end="00:00:09.66" region="speaker">existing DUNS on this contract.</p>
+         <p begin="00:00:09.66" end="00:00:12.00" region="speaker">For the purpose of this demonstration we are going</p>
+         <p begin="00:00:12.00" end="00:00:15.20" region="speaker">to respond &quot;Yes,&quot; and take you through the process.</p>
+         <p begin="00:00:15.20" end="00:00:18.20" region="speaker">Selecting Yes will reveal text boxes which allow you</p>
+         <p begin="00:00:18.20" end="00:00:20.60" region="speaker">to enter your new DUNS and Plus 4 number if</p>
+         <p begin="00:00:20.60" end="00:00:21.76" region="speaker">applicable.</p>
+         <p begin="00:00:21.76" end="00:00:24.66" region="speaker">Click &quot;Save and Continue&quot; to move on.</p>
+         <p begin="00:00:24.66" end="00:00:26.30" region="speaker">You will be asked to confirm that the</p>
+         <p begin="00:00:26.30" end="00:00:28.56" region="speaker">information appearing with your new DUNS number is</p>
+         <p begin="00:00:28.56" end="00:00:29.76" region="speaker">correct.</p>
+         <p begin="00:00:29.76" end="00:00:32.56" region="speaker">Review the new Corporate Information screen.</p>
+         <p begin="00:00:32.56" end="00:00:35.13" region="speaker">If there are any issues you must make corrections</p>
+         <p begin="00:00:35.13" end="00:00:40.56" region="speaker">on the SAM website at www.sam.gov. eMod will take</p>
+         <p begin="00:00:40.56" end="00:00:44.36" region="speaker">24 hours for updates to be reflected in the system.</p>
+         <p begin="00:00:44.36" end="00:00:48.26" region="speaker">If everything is correct, click &quot;Save and Continue.&quot;</p>
+         <p begin="00:00:48.26" end="00:00:50.83" region="speaker">Enter your new address in the textbox.</p>
+         <p begin="00:00:50.83" end="00:00:53.23" region="speaker">Make sure to include your street address, suite</p>
+         <p begin="00:00:53.23" end="00:00:56.66" region="speaker">number if applicable, city, state or region, zip</p>
+         <p begin="00:00:56.66" end="00:00:58.86" region="speaker">code and country.</p>
+         <p begin="00:00:58.86" end="00:00:61.33" region="speaker">When you are finished, click &quot;Save and Continue.&quot;</p>
+    </div>
+  </body>
+</tt>

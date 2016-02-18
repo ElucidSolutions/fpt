@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<articles>
+  <article>
+    <id>additions-006</id>
+    <title>May 2015 Release Notes Updates</title>
+    <date>2015-05-01</date>
+    <summary><![CDATA[<p>GSA has made recent updates to eOffer/eMod. Find out the details of the udpate and how they impact you today.</p><a class="core_link_block" href="index.html#article_article_page_block/additions-006">Read More</a>]]></summary>
+    <body><![CDATA[
+      <p>In May 2015, GSA implemented changes to the eOffer/eMod System. The follow changes have been made:</p>
+      <ul>
+        <li><p>Price reduction modifications are now effective immediately upon submission.  This affects the following modifications:</p><ul><li><a class="core_link_block" href="index.html#book_page_page_block/data%2Fbooks.xml/eoffer_emod/emod-resources/modtypes/pricing-modifications/temporary-price-reduction">Temporary Price Reduction</a></li><li><a class="core_link_block" href="index.html#book_page_page_block/data%2Fbooks.xml/eoffer_emod/emod-resources/modtypes/pricing-modifications/permanent-price-reduction-based-on-most-favored-customer">Permanent Price Reduction (based on Most Favored Customer)</a></li><li><a class="core_link_block" href="index.html#book_page_page_block/data%2Fbooks.xml/eoffer_emod/emod-resources/modtypes/pricing-modifications/permanent-price-reduction-industry-partner-requested">Permanent Price Reduction (Industry Partner Request)</a></li></ul></li>
+        <li><p>Vendors may now respond to Solicitation Provisions in formatted text entry fields. Read about <a class="core_link_block" href="index.html#book_page_page_block/data%2Fbooks.xml/eoffer_emod/eoffer-resources/preparing-your-electronic-contract-offer-eoffer/responding-to-solicitation-provisions">Responding to Solicitation Provisions here</a>.</p></li>
+      </ul>
+    ]]></body>
+  </article>
+  <article>
+    <id>additions-005</id>
+    <title><![CDATA[November 2014 Release Notes Updates]]></title>
+    <date>2014-11-01</date>
+    <summary><![CDATA[<p>GSA has made recent updates to eOffer/eMod. Find out the details of the udpate and how they impact you today.</p><a class="core_link_block" href="index.html#article_article_page_block/additions-005">Read More</a>]]></summary>
+    <body><![CDATA[
+      <p>In November 2014, GSA implemented changes to the eOffer/eMod System. The follow changes have been made:</p>
+      <ul>
+        <li><p>Vendors have been given the ability to express their Commercial Sales Practice (CSP) in terms of Markup/Build Out to better capture their business model.</p></li>
+        <li><p>When a vendor wishes to create a new offer based off a withdrawn or rejected offer, the system gives vendors the ability to import information from the previous eOffer. This feature now includes Commercial Sales Practice (CSP) data.  Read about <a class="core_link_block" href="index.html#book_page_page_block/data%2Fbooks.xml/eoffer_emod/emod-resources/update-revise-commercial-sales-practice">Commercial Sales Practices</a> here.</p></li>
+      </ul>
+    ]]></body>
+  </article>
+  <article>
+    <id>additions-004</id>
+    <title><![CDATA[September 2014 Release Notes Updates]]></title>
+    <date>2014-09-01</date>
+    <summary><![CDATA[<p>In Sepetmber 2014, GSA implemented changes to the eOffer/eMod System.</p><a class="core_link_block" href="index.html#article_article_page_block/additions-004">Read More</a>
+    ]]></summary>
+    <body><![CDATA[
+      <p>In Sepetmber 2014, GSA implemented changes to the eOffer/eMod System. The follow changes have been made: </p>
+      <ul>
+        <li><p>When a Vendor submits a new Offer under the CORP Schedule, eOffer will now ask if the vendor is migrating existing contract(s) to a consolidated contract under the Standard Responses section.</p></li>
+        <li><p>On the <a class="core_link_block" href="http://http://eoffer.gsa.gov/">eOffer/eMod Homepage</a>, there is now a list in the About eOffer section titled View Solicitations that contains links to <a class="core_link_block" href="http://eoffer.gsa.gov/eOffer/util/solicitationUtilAction.do?method=view&amp;displaySolList=Y&amp;isMas=Y">MAS Schedule Solicitations</a>, (previously found in the Learn More About: section), and <a class="core_link_block" href="http://eoffer.gsa.gov/eOffer/util/solicitationUtilAction.do?method=view&amp;displaySolList=Y&amp;isMas=N">Non-MAS Schedule Solicitations</a>.</p>
+          <div class="screenshotContainer">
+            <div class="screenshotBox">
+              <a class="fancybox" data-lightbox="additions-004" href="images/004-schedules.jpg" title=" ">
+              <img src="images/004-schedules.jpg" alt="MAS and Non-MAS Schedules can now be found on the eOffer/eMod homepage" delegate="" button="" is="" class="screenshot"/>
+              </a>
+              <div class="screenshotText">
+              <p class="figCaption">MAS and Non-MAS Schedules can now be found on the eOffer/eMod homepage</p>
+              <p class="clickTo">Click the image to enlarge</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    ]]></body>
+  </article>
+  <article>
+    <id>additions-003</id>
+    <title><![CDATA[May 2014 Release Notes Updates]]></title>
+    <date>2014-05-01</date>
+    <summary><![CDATA[<p>In May 2014, GSA implemented changes to the eOffer/eMod System.</p><a class="core_link_block" href="index.html#article_article_page_block/additions-003">Read More</a>]]></summary>
+    <body><![CDATA[
+      <p>In May 2014, GSA implemented changes to the eOffer/eMod System. You can read a detailed description of each update on the <a href="../../release-notes/index.html" target="_blank">Release Notes</a> website.</p>
+      <ul>
+        <li><p>In situations where you would have needed to exercise a <a class="core_link_block" href="index.html#book_page_page_block/data%2Fbooks.xml/eoffer_emod/emod-resources/modtypes/legal-modifications/novation-agreement-modification" target="_blank">Novation Agreement Modification</a>, a <a class="core_link_block" href="index.html#book_page_page_block/data%2Fbooks.xml/eoffer_emod/emod-resources/modtypes/legal-modifications/change-of-name-agreement-modification" target="_blank">Name Change Modification</a>, or an <a class="core_link_block" href="index.html#book_page_page_block/data%2Fbooks.xml/eoffer_emod/emod-resources/modtypes/administrative-modifications/address-change" target="_blank">Address Change Modficiation</a>, you may have also needed to update your DUNS number. Previously, you would have needed to reach out to your Contracting Officer, whereas now eMod gives you the option to modify your DUNS within the system.</p>
+          <p>Learn more by clicking on the links for each respective Modification: </p>
+          <ul>
+            <li><a class="core_link_block" href="index.html#book_page_page_block/data%2Fbooks.xml/eoffer_emod/emod-resources/modtypes/legal-modifications/novation-agreement-modification" target="_blank">Novation Agreement Modification</a></li>
+            <li><a class="core_link_block" href="index.html#book_page_page_block/data%2Fbooks.xml/eoffer_emod/emod-resources/modtypes/legal-modifications/change-of-name-agreement-modification" target="_blank">Name Change Modification</a></li>
+            <li><a class="core_link_block" href="index.html#book_page_page_block/data%2Fbooks.xml/eoffer_emod/emod-resources/modtypes/administrative-modifications/address-change" target="_blank">Address Change Modficiation</a></li>
+          </ul>
+        </li>
+      </ul>
+    ]]></body>
+  </article>
+  <article>
+    <id>additions-002</id>
+    <title><![CDATA[Release of the eOffer/eMod Online User Guide]]></title>
+    <date>2014-02-01</date>
+    <summary><![CDATA[<p>The new version of the Online User Guide has launched. Learn more about its features here.</p><a class="core_link_block" href="index.html#article_article_page_block/additions-002">Read More</a>]]></summary>
+    <body><![CDATA[
+      <p>The new version of the Online User Guide has launched. Learn more about its features here.</p>
+      <h4>The Side Navigation Menu</h4>
+      <hr/>
+      <p>Open the navigation menu by clicking the menu button in the top left corner of the screen. You will be able to access this menu at all times.</p>
+      <div class="screenshotContainer">
+        <div class="screenshotBox">
+          <a class="fancybox" data-lightbox="additions-002" href="images/002-NavMenu.jpg" title=" ">
+            <img src="images/002-NavMenu.jpg" alt="The navigation is anchored in the top left" delegate="" button="" is="" class="screenshot"/>
+          </a>
+          <div class="screenshotText">
+            <p class="figCaption">The navigation menu is anchored in the top left corner of the screen.</p>
+            <p class="clickTo">Click the image to enlarge</p>
+          </div>
+        </div>
+      </div>
+      <div class="screenshotContainer">
+        <div class="screenshotBox">
+          <a class="fancybox" data-lightbox="additions-002" href="images/002-NavMenuOpen.jpg" title=" ">
+            <img src="images/002-NavMenuOpen.jpg" alt="A look at the eOffer/eMod User Guide with the navigation menu open." delegate="" button="" is="" class="screenshot"/>
+          </a>
+          <div class="screenshotText">
+            <p class="figCaption">A look at the eOffer/eMod User Guide with the navigation menu open.</p>
+            <p class="clickTo">Click the image to enlarge</p>
+          </div>
+        </div>
+      </div>
+      <p>You can search the User Guide by using the search fields located at the top of the navigation menu, as well as at the top right of the page header. There is also an <a class="core_link_block" href="index.html#search_page_block/data%2Fbooks_index.json//0/20">Advanced Search</a> feature located under the <strong>Utilities</strong> section.</p>
+      <div class="screenshotContainer">
+        <div class="screenshotBox">
+          <a class="fancybox" data-lightbox="additions-002" href="images/002-Search.jpg" title=" ">
+            <img src="images/002-Search.jpg" alt="These search fields are the quickest way to search the User Guide." delegate="" button="" is="" class="screenshot"/>
+          </a>
+          <div class="screenshotText">
+            <p class="figCaption">These search fields are the quickest way to search the User Guide.</p>
+            <p class="clickTo">Click the image to enlarge</p>
+          </div>
+        </div>
+      </div>
+    ]]></body>
+  </article>
+  <article>
+    <id>additions-001</id>
+    <title><![CDATA[February 2014 Release Notes Updates]]></title>
+    <date>2014-02-01</date>
+    <summary><![CDATA[<p>In February 2014, GSA implemented changes to the eOffer/eMod System.</p><a class="core_link_block" href="index.html#article_article_page_block/additions-001">Read More</a>]]></summary>
+    <body><![CDATA[
+      <p>In February 2014, GSA implemented changes to the eOffer/eMod System. You can read a detailed description of each update on the <a href="../../release-notes/index.html" target="_blank">Release Notes</a> website.</p>
+      <ul>
+        <li><p>eOffer/eMod is now compatible with Firefox to support a wider ranger of users.</p></li>
+        <li><p>The Add Labor Category and/or Service Offering now requires Vendors to go through the Subcontracting Plan utilitiy to add a Subcontracting Plan to their to their Contract. Previously, users simply uploaded a handmade Subcontracting Plan.</p>
+          <p>To learn more, read the <a class="core_link_block" href="index.html#book_page_page_block/data%2Fbooks.xml/eoffer_emod/emod-resources/modtypes/terms-and-conditions-modifications/subcontracting-modification">Subcontracting Plan</a> section under the <strong>eMod Resources</strong> category of the User Guide.</p></li>
+        <li><p>Vendors can now choose two full years for their Subcontracting Plan on Commercial Plans, whereas previously the utility only allowed Vendors to choose a one year term.</p>
+          <p>To learn more, read the <a class="core_link_block" href="index.html#book_page_page_block/data%2Fbooks.xml/eoffer_emod/emod-resources/modtypes/terms-and-conditions-modifications/subcontracting-modification">Subcontracting Plan</a> section under the <strong>eMod Resources</strong> category of the User Guide. </p></li>
+      </ul>
+    ]]></body>
+  </article>
+</articles>

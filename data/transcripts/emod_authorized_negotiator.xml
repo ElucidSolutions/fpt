@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Administrative Modifications</category>
+         <ttm:title>Authorized Negotiator</ttm:title>
+         <ttm:desc>Depending on their assigned role, Authorized Negotiators can either Sign binding Contract documents, or remain limited to simply preparingn eMods. It is important for these roles to be clearly distinguished at all times. Note that an Authorized Negotiator is the term used for an individual prior to Contract Award. After an Award has been made, that same person will be referred to as a Contract Administrator.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.20" end="00:00:04.10" region="speaker">The importance of maintaining up-to-date</p>
+         <p begin="00:00:04.10" end="00:00:06.53" region="speaker">Authorized Negotiator information cannot be</p>
+         <p begin="00:00:06.53" end="00:00:08.13" region="speaker">stressed enough.</p>
+         <p begin="00:00:08.13" end="00:00:10.40" region="speaker">The importance of negotiators is covered in</p>
+         <p begin="00:00:10.40" end="00:00:13.90" region="speaker">our Helpful Hints videos on Authorized Negotiators.</p>
+         <p begin="00:00:13.90" end="00:00:16.30" region="speaker">In this video, we will cover how to modify your</p>
+         <p begin="00:00:16.30" end="00:00:20.56" region="speaker">contract&apos;s existing assigned Authorized Negotiators.</p>
+         <p begin="00:00:20.56" end="00:00:23.13" region="speaker">Under &quot;Your Negotiator(s) Details,&quot; you will see a</p>
+         <p begin="00:00:23.13" end="00:00:25.93" region="speaker">list of the negotiators assigned to your contract.</p>
+         <p begin="00:00:25.93" end="00:00:29.60" region="speaker">Their Roll - specifically whether or not they are</p>
+         <p begin="00:00:29.60" end="00:00:33.23" region="speaker">authorized to sign off on any modifications - is</p>
+         <p begin="00:00:33.23" end="00:00:34.23" region="speaker">identified.</p>
+         <p begin="00:00:34.23" end="00:00:36.76" region="speaker">You may also Add a New Negotiator.</p>
+         <p begin="00:00:36.76" end="00:00:39.23" region="speaker">If you wish to edit an existing negotiator&apos;s</p>
+         <p begin="00:00:39.23" end="00:00:42.33" region="speaker">information or status, click &quot;Edit,&quot; if you wish</p>
+         <p begin="00:00:42.33" end="00:00:45.00" region="speaker">to add a new negotiator click &quot;Add New</p>
+         <p begin="00:00:45.00" end="00:00:47.50" region="speaker">Negotiator.&quot;</p>
+         <p begin="00:00:47.50" end="00:00:50.86" region="speaker">Enter the name of the new negotiator, His or her</p>
+         <p begin="00:00:50.86" end="00:00:55.00" region="speaker">Title The ten digit phone number of the negotiator,</p>
+         <p begin="00:00:55.00" end="00:00:57.90" region="speaker">if located domestically, or the person&apos;s</p>
+         <p begin="00:00:57.90" end="00:00:61.53" region="speaker">international phone number if located abroad.</p>
+         <p begin="00:00:61.53" end="00:00:65.13" region="speaker">Enter the person&apos;s company e-mail address Provide a</p>
+         <p begin="00:00:65.13" end="00:00:67.53" region="speaker">fax number if desired.</p>
+         <p begin="00:00:67.53" end="00:00:70.10" region="speaker">It is important to be sure that the negotiator&apos;s name</p>
+         <p begin="00:00:70.10" end="00:00:72.70" region="speaker">and e-mail address match their digital certificate</p>
+         <p begin="00:00:72.70" end="00:00:74.23" region="speaker">exactly.</p>
+         <p begin="00:00:74.23" end="00:00:76.86" region="speaker">Click the &quot;Role&quot; drop down menu and select whether or</p>
+         <p begin="00:00:76.86" end="00:00:79.50" region="speaker">not the new negotiator will be authorized to sign</p>
+         <p begin="00:00:79.50" end="00:00:82.13" region="speaker">off on contract modifications.</p>
+         <p begin="00:00:82.13" end="00:00:84.63" region="speaker">Individuals without signature authority can</p>
+         <p begin="00:00:84.63" end="00:00:87.46" region="speaker">review contract and modification packages and</p>
+         <p begin="00:00:87.46" end="00:00:89.53" region="speaker">may submit packages for review.</p>
+         <p begin="00:00:89.53" end="00:00:92.73" region="speaker">However, they cannot sign the modification When the</p>
+         <p begin="00:00:92.73" end="00:00:95.23" region="speaker">information is completed, click the &quot;Add This</p>
+         <p begin="00:00:95.23" end="00:00:97.03" region="speaker">Negotiator&quot; Button.</p>
+         <p begin="00:00:97.03" end="00:00:99.93" region="speaker">You will now see the newly added negotiator.</p>
+         <p begin="00:00:99.93" end="00:00:101.70" region="speaker">When you are satisfied with your authorized</p>
+         <p begin="00:00:101.70" end="00:00:104.73" region="speaker">negotiator information, click &quot;Save &amp; Continue.&quot;</p>
+    </div>
+  </body>
+</tt>

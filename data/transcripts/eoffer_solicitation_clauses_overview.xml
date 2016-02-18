@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Solicitation Clauses</category>
+         <ttm:title>Solicitation Clauses Overview</ttm:title>
+         <ttm:desc>Each of the four Templates requires your response before proceeding. As you respond to each section, the status will change from &quot;Incomplete&quot; to &quot;Complete.&quot;
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.20" end="00:00:05.06" region="speaker">The &quot;Solicitation Clauses&quot; screen requires that you</p>
+         <p begin="00:00:05.06" end="00:00:07.73" region="speaker">respond to all contract clauses before moving on</p>
+         <p begin="00:00:07.73" end="00:00:09.43" region="speaker">to the next section.</p>
+         <p begin="00:00:09.43" end="00:00:12.00" region="speaker">Note that the clauses on your screen may differ</p>
+         <p begin="00:00:12.00" end="00:00:14.66" region="speaker">slightly from those you see here, as different</p>
+         <p begin="00:00:14.66" end="00:00:17.23" region="speaker">solicitations require you to respond to different</p>
+         <p begin="00:00:17.23" end="00:00:18.63" region="speaker">clauses.</p>
+         <p begin="00:00:18.63" end="00:00:21.10" region="speaker">Here you see &quot;Basic Information&quot;, &quot;Commercial</p>
+         <p begin="00:00:21.10" end="00:00:24.53" region="speaker">Sales Practice&quot;, &quot;Points of Contact&quot;, and &quot;Ordering</p>
+         <p begin="00:00:24.53" end="00:00:26.00" region="speaker">Information.&quot;</p>
+         <p begin="00:00:26.00" end="00:00:28.16" region="speaker">The &quot;Status&quot; will be listed as &quot;Incomplete&quot;</p>
+         <p begin="00:00:28.16" end="00:00:31.33" region="speaker">until you respond with the required information.</p>
+         <p begin="00:00:31.33" end="00:00:33.46" region="speaker">Click &quot;Respond&quot; to complete each section.</p>
+         <p begin="00:00:35.56" end="00:00:37.30" region="speaker">Once you have added information for each</p>
+         <p begin="00:00:37.30" end="00:00:40.10" region="speaker">section the &quot;Status&quot; will update.</p>
+         <p begin="00:00:40.10" end="00:00:42.33" region="speaker">You will also be able to &quot;Edit&quot; or &quot;Delete&quot; your</p>
+         <p begin="00:00:42.33" end="00:00:43.80" region="speaker">responses.</p>
+         <p begin="00:00:43.80" end="00:00:46.06" region="speaker">When you are finished, click &quot;Save and Continue&quot;</p>
+         <p begin="00:00:46.06" end="00:00:48.06" region="speaker">to move on.</p>
+    </div>
+  </body>
+</tt>

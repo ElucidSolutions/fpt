@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Subcontracting Plan Modification</category>
+         <ttm:title>Goals</ttm:title>
+         <ttm:desc>The Goals section asks you to state the percentage of the Contract value that you intend to designate for each of the various Subcontracting categories. These values are applied to Small Business types according to the designations for which Subcontractors may qualify, and then defined over the Base year, and all Option years of the Contract.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.10" end="00:00:04.63" region="speaker">The Goals section is where you state what percent of</p>
+         <p begin="00:00:04.63" end="00:00:07.03" region="speaker">the contract value you intend to designate for</p>
+         <p begin="00:00:07.03" end="00:00:10.03" region="speaker">the various subcontracting categories.</p>
+         <p begin="00:00:10.03" end="00:00:13.66" region="speaker">Begin by clicking &quot;Add&quot; for the base year You will</p>
+         <p begin="00:00:13.66" end="00:00:15.56" region="speaker">need to enter the &quot;Total Dollars to be</p>
+         <p begin="00:00:15.56" end="00:00:18.50" region="speaker">Subcontracted&quot;, which will be the sum of your &quot;Large</p>
+         <p begin="00:00:18.50" end="00:00:21.76" region="speaker">Business Goals&quot; and &quot;All Small&quot; goals.</p>
+         <p begin="00:00:21.76" end="00:00:24.30" region="speaker">When filling out the Large Business goals, you will</p>
+         <p begin="00:00:24.30" end="00:00:26.60" region="speaker">find the system will automatically complete</p>
+         <p begin="00:00:26.60" end="00:00:29.60" region="speaker">either the percentage or dollar amount, depending</p>
+         <p begin="00:00:29.60" end="00:00:31.60" region="speaker">on which you choose to fill out.</p>
+         <p begin="00:00:31.60" end="00:00:34.03" region="speaker">This will help you along the way ensure you are</p>
+         <p begin="00:00:34.03" end="00:00:37.26" region="speaker">doing the proper math and that everything adds up.</p>
+         <p begin="00:00:37.26" end="00:00:40.56" region="speaker">Next fill in the Small Business Type goals.</p>
+         <p begin="00:00:40.56" end="00:00:42.96" region="speaker">These goals should be thought of independently,</p>
+         <p begin="00:00:42.96" end="00:00:45.50" region="speaker">not as values that equal your All Small Business</p>
+         <p begin="00:00:45.50" end="00:00:47.70" region="speaker">goal as there may be instances where</p>
+         <p begin="00:00:47.70" end="00:00:51.50" region="speaker">subcontractors qualify for multiple designations,</p>
+         <p begin="00:00:51.50" end="00:00:54.36" region="speaker">each of the Small Business Types could add up beyond</p>
+         <p begin="00:00:54.36" end="00:00:57.16" region="speaker">the total of the All Small Business.</p>
+         <p begin="00:00:57.16" end="00:00:59.33" region="speaker">When you are finished click &quot;Save&quot;, to return to</p>
+         <p begin="00:00:59.33" end="00:00:61.00" region="speaker">the goals screen.</p>
+         <p begin="00:00:61.00" end="00:00:61.96" region="speaker">You will see the subcontracting values</p>
+         <p begin="00:00:61.96" end="00:00:65.03" region="speaker">reflected in the Goals chart.</p>
+         <p begin="00:00:65.03" end="00:00:67.60" region="speaker">If you wish to fill any subsequent Option periods</p>
+         <p begin="00:00:67.60" end="00:00:70.23" region="speaker">with the same goals as the Base year, click the</p>
+         <p begin="00:00:70.23" end="00:00:71.30" region="speaker">&quot;Copy&quot; link.</p>
+         <p begin="00:00:71.30" end="00:00:73.56" region="speaker">Otherwise you can fill them out manually by</p>
+         <p begin="00:00:73.56" end="00:00:77.36" region="speaker">clicking Add and following the previous steps.</p>
+         <p begin="00:00:77.36" end="00:00:81.60" region="speaker">Select the desired Option Periods and click Copy. You</p>
+         <p begin="00:00:81.60" end="00:00:84.36" region="speaker">will notice your goals reflected in the chart.</p>
+         <p begin="00:00:84.36" end="00:00:87.00" region="speaker">On the next section, select which Supplies or</p>
+         <p begin="00:00:87.00" end="00:00:89.76" region="speaker">Services are to be subcontracted by clicking</p>
+         <p begin="00:00:89.76" end="00:00:91.26" region="speaker">Add.</p>
+         <p begin="00:00:91.26" end="00:00:93.10" region="speaker">Identify the Supply or Service to be</p>
+         <p begin="00:00:93.10" end="00:00:95.73" region="speaker">subcontracted and select which type of</p>
+         <p begin="00:00:95.73" end="00:00:98.10" region="speaker">subcontractor will be leveraged.</p>
+         <p begin="00:00:98.10" end="00:00:100.76" region="speaker">When you have finished click &quot;Save.&quot;</p>
+         <p begin="00:00:100.76" end="00:00:103.53" region="speaker">The supply or service will appear on the chart,</p>
+         <p begin="00:00:103.53" end="00:00:105.96" region="speaker">continue adding as many relevant supplies or</p>
+         <p begin="00:00:105.96" end="00:00:109.26" region="speaker">services as needed.</p>
+         <p begin="00:00:109.26" end="00:00:111.63" region="speaker">For Section C, explain how your goals were</p>
+         <p begin="00:00:111.63" end="00:00:114.43" region="speaker">established and justify any particularly low</p>
+         <p begin="00:00:114.43" end="00:00:117.53" region="speaker">goals, using evidence such as historical data,</p>
+         <p begin="00:00:117.53" end="00:00:119.83" region="speaker">experience, or research.</p>
+         <p begin="00:00:119.83" end="00:00:123.06" region="speaker">For Section D, enter a detailed description on</p>
+         <p begin="00:00:123.06" end="00:00:124.43" region="speaker">how your company plans to identify potential</p>
+         <p begin="00:00:124.43" end="00:00:128.63" region="speaker">partners to meet your subcontracting goals.</p>
+         <p begin="00:00:128.63" end="00:00:131.73" region="speaker">Finally state whether indirect costs, such as</p>
+         <p begin="00:00:131.73" end="00:00:135.46" region="speaker">overhead, administrative costs, benefits, etc, have</p>
+         <p begin="00:00:135.46" end="00:00:138.33" region="speaker">been included in the subcontracting goals.</p>
+         <p begin="00:00:138.33" end="00:00:140.60" region="speaker">If they have been accounted for, explain the</p>
+         <p begin="00:00:140.60" end="00:00:143.36" region="speaker">methodology used to calculate these costs in</p>
+         <p begin="00:00:143.36" end="00:00:145.26" region="speaker">the textbox below.</p>
+         <p begin="00:00:145.26" end="00:00:147.46" region="speaker">When you are finished click &quot;Save and Continue&quot;</p>
+         <p begin="00:00:147.46" end="00:00:150.00" region="speaker">to move on to the Program Administrator section.</p>
+    </div>
+  </body>
+</tt>

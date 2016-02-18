@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Solicitation Clauses</category>
+         <ttm:title>Ordering Information</ttm:title>
+         <ttm:desc>Include details on how your Company wishes to receives Orders in the Order Information Template. You may select either Facsimile Transmission, or Computer-to-Computer Electronic Data Interchange, (EDI). Selecting EDI requires contact information for the Company representative responsible for establishing the EDI connection.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.13" end="00:00:04.06" region="speaker">Two entries are required in the &quot;Ordering</p>
+         <p begin="00:00:04.06" end="00:00:06.50" region="speaker">Information&quot; screen - &quot;Ordering Receipt</p>
+         <p begin="00:00:06.50" end="00:00:08.96" region="speaker">Information&quot; and &quot;Remittance Address.&quot;</p>
+         <p begin="00:00:08.96" end="00:00:11.36" region="speaker">You will need to add information for each of</p>
+         <p begin="00:00:11.36" end="00:00:13.70" region="speaker">these items in the drop down menu.</p>
+         <p begin="00:00:13.70" end="00:00:16.13" region="speaker">Choose either option from the drop down menu and</p>
+         <p begin="00:00:16.13" end="00:00:19.50" region="speaker">click &quot;Add Ordering Information Details.&quot;</p>
+         <p begin="00:00:19.50" end="00:00:21.56" region="speaker">Begin by selecting whether you would prefer to</p>
+         <p begin="00:00:21.56" end="00:00:25.00" region="speaker">receive orders via fax or electronically.</p>
+         <p begin="00:00:25.00" end="00:00:28.03" region="speaker">If you select &quot;Facsimile transmission,&quot; you need to</p>
+         <p begin="00:00:28.03" end="00:00:29.80" region="speaker">enter the &quot;Fax number&quot; where the government</p>
+         <p begin="00:00:29.80" end="00:00:31.83" region="speaker">should send order requests.</p>
+         <p begin="00:00:31.83" end="00:00:34.86" region="speaker">When selecting &quot;Facsimile transmission,&quot; you do not</p>
+         <p begin="00:00:34.86" end="00:00:37.26" region="speaker">need to enter the &quot;Contact information&quot; in the area</p>
+         <p begin="00:00:37.26" end="00:00:41.40" region="speaker">below Instead of receiving orders via fax, you can</p>
+         <p begin="00:00:41.40" end="00:00:43.50" region="speaker">elect to establish an electronic means for</p>
+         <p begin="00:00:43.50" end="00:00:45.33" region="speaker">receipt of orders.</p>
+         <p begin="00:00:45.33" end="00:00:47.93" region="speaker">Select the &quot;Computer to Computer Electronic Data</p>
+         <p begin="00:00:47.93" end="00:00:49.86" region="speaker">Interchange&quot; option.</p>
+         <p begin="00:00:49.86" end="00:00:52.33" region="speaker">In order to receive orders via Electronic Data</p>
+         <p begin="00:00:52.33" end="00:00:55.66" region="speaker">Interchange (or EDI), you will need to set up an</p>
+         <p begin="00:00:55.66" end="00:00:58.03" region="speaker">interface with the government.</p>
+         <p begin="00:00:58.03" end="00:00:59.30" region="speaker">You do not need to set up the interface prior to</p>
+         <p begin="00:00:59.30" end="00:00:63.53" region="speaker">contract award, however, you do need to provide the</p>
+         <p begin="00:00:63.53" end="00:00:65.73" region="speaker">contact information for the person who will be</p>
+         <p begin="00:00:65.73" end="00:00:68.60" region="speaker">responsible for setting up the EDI.</p>
+         <p begin="00:00:68.60" end="00:00:71.23" region="speaker">This person will need to contact GSA after the</p>
+         <p begin="00:00:71.23" end="00:00:74.13" region="speaker">contract is awarded to establish the interface.</p>
+         <p begin="00:00:74.13" end="00:00:78.10" region="speaker">If opting to receive orders via EDI, provide</p>
+         <p begin="00:00:78.10" end="00:00:80.76" region="speaker">all the relevant contact information including</p>
+         <p begin="00:00:80.76" end="00:00:83.33" region="speaker">&quot;Name,&quot; &quot;Title,&quot; &quot;Address,&quot; &quot;City,&quot;</p>
+         <p begin="00:00:83.33" end="00:00:86.76" region="speaker">&quot;State,&quot; &quot;Zip,&quot; &quot;Country,&quot; &quot;Phone,&quot; and &quot;E-mail</p>
+         <p begin="00:00:86.76" end="00:00:89.03" region="speaker">address.&quot;</p>
+         <p begin="00:00:89.03" end="00:00:90.80" region="speaker">Click &quot;Add Ordering Information&quot; when</p>
+         <p begin="00:00:90.80" end="00:00:92.63" region="speaker">complete.</p>
+         <p begin="00:00:92.63" end="00:00:95.06" region="speaker">The Ordering information with appear in the table</p>
+         <p begin="00:00:95.06" end="00:00:97.53" region="speaker">below with the ability to &quot;Edit&quot; or &quot;Delete&quot; the</p>
+         <p begin="00:00:97.53" end="00:00:98.76" region="speaker">entry.</p>
+         <p begin="00:00:98.76" end="00:00:100.36" region="speaker">Continue adding the relevant ordering</p>
+         <p begin="00:00:100.36" end="00:00:102.36" region="speaker">information for your offer.</p>
+         <p begin="00:00:102.36" end="00:00:105.00" region="speaker">When you are finished click Back to Solicitation</p>
+         <p begin="00:00:105.00" end="00:00:107.00" region="speaker">Clauses.</p>
+    </div>
+  </body>
+</tt>

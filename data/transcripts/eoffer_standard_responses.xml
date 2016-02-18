@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Solicitation Clauses</category>
+         <ttm:title>Standard Responses</ttm:title>
+         <ttm:desc>There are five specific questions to which you must respond, each of which relates to various acts, programs, or administrative issues concerning your GSA Schedule Contract Offer. Though there is some information available on-screen, in this video we will identify some of the important elements of feach question requiring your response.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.30" end="00:00:04.56" region="speaker">There are five specific questions in the &quot;Standard</p>
+         <p begin="00:00:04.56" end="00:00:07.66" region="speaker">Responses&quot; screen, each of which deal with various</p>
+         <p begin="00:00:07.66" end="00:00:10.33" region="speaker">acts, programs, or administrative issues</p>
+         <p begin="00:00:10.33" end="00:00:12.63" region="speaker">relating to your GSA Schedule contract</p>
+         <p begin="00:00:12.63" end="00:00:14.23" region="speaker">offering.</p>
+         <p begin="00:00:14.23" end="00:00:16.16" region="speaker">Under the &quot;Disaster Recovery Purchasing</p>
+         <p begin="00:00:16.16" end="00:00:19.16" region="speaker">Program&quot;, state and local government entities may</p>
+         <p begin="00:00:19.16" end="00:00:21.73" region="speaker">purchase a variety of products and services from</p>
+         <p begin="00:00:21.73" end="00:00:24.26" region="speaker">contracts awarded under GSA Federal Supply</p>
+         <p begin="00:00:24.26" end="00:00:27.20" region="speaker">Schedules to facilitate recovery from a major</p>
+         <p begin="00:00:27.20" end="00:00:29.86" region="speaker">disaster or terrorism attack.</p>
+         <p begin="00:00:29.86" end="00:00:32.03" region="speaker">By selecting &quot;Yes&quot; to participation in the</p>
+         <p begin="00:00:32.03" end="00:00:34.73" region="speaker">Disaster Recovery Purchasing Program, your</p>
+         <p begin="00:00:34.73" end="00:00:37.10" region="speaker">company becomes eligible to receive orders made</p>
+         <p begin="00:00:37.10" end="00:00:38.73" region="speaker">under this program.</p>
+         <p begin="00:00:38.73" end="00:00:41.80" region="speaker">The &quot;Exceptions To Terms and Conditions&quot; question</p>
+         <p begin="00:00:41.80" end="00:00:44.30" region="speaker">basically asks whether or not you agree to all the</p>
+         <p begin="00:00:44.30" end="00:00:46.30" region="speaker">standard terms and conditions described in</p>
+         <p begin="00:00:46.30" end="00:00:48.36" region="speaker">the solicitation package.</p>
+         <p begin="00:00:48.36" end="00:00:50.83" region="speaker">While reading through the solicitation documents,</p>
+         <p begin="00:00:50.83" end="00:00:52.70" region="speaker">you should note whether there are any terms you</p>
+         <p begin="00:00:52.70" end="00:00:54.53" region="speaker">wish to negotiate.</p>
+         <p begin="00:00:54.53" end="00:00:55.73" region="speaker">If you find a particular clause or term that you</p>
+         <p begin="00:00:55.73" end="00:00:59.16" region="speaker">would like to negotiate, you should keep track of</p>
+         <p begin="00:00:59.16" end="00:00:61.50" region="speaker">it in a separate document that you can later use</p>
+         <p begin="00:00:61.50" end="00:00:63.53" region="speaker">during negotiations.</p>
+         <p begin="00:00:63.53" end="00:00:66.06" region="speaker">The &quot;ORCA Certs and Reps&quot; question allows you to</p>
+         <p begin="00:00:66.06" end="00:00:68.26" region="speaker">state whether you wish to take exception to any of</p>
+         <p begin="00:00:68.26" end="00:00:70.60" region="speaker">the ORCA reps and certs.</p>
+         <p begin="00:00:70.60" end="00:00:72.46" region="speaker">If there have been any changes to your company</p>
+         <p begin="00:00:72.46" end="00:00:75.20" region="speaker">information (such as a change in company size,</p>
+         <p begin="00:00:75.20" end="00:00:79.70" region="speaker">NAICS, etc.), you should answer &quot;No&quot; and provide</p>
+         <p begin="00:00:79.70" end="00:00:83.36" region="speaker">information to GSA as to why you have done so.</p>
+         <p begin="00:00:83.36" end="00:00:86.73" region="speaker">The &quot;American Recovery and Reinvestment Act of 2009&quot;</p>
+         <p begin="00:00:86.73" end="00:00:88.73" region="speaker">provided the Federal Government with several</p>
+         <p begin="00:00:88.73" end="00:00:90.93" region="speaker">billion dollars for investments in Federal</p>
+         <p begin="00:00:90.93" end="00:00:93.26" region="speaker">buildings, procurement of more energy-efficient</p>
+         <p begin="00:00:93.26" end="00:00:95.10" region="speaker">motor vehicles, and more.</p>
+         <p begin="00:00:95.10" end="00:00:97.10" region="speaker">Participating in the program allows you to</p>
+         <p begin="00:00:97.10" end="00:00:99.23" region="speaker">accept orders that are made with recovery act</p>
+         <p begin="00:00:99.23" end="00:00:100.56" region="speaker">funds.</p>
+         <p begin="00:00:100.56" end="00:00:103.26" region="speaker">Depending on whether you choose to participate,</p>
+         <p begin="00:00:103.26" end="00:00:105.43" region="speaker">different clauses become part of the terms and</p>
+         <p begin="00:00:105.43" end="00:00:106.86" region="speaker">conditions.</p>
+         <p begin="00:00:106.86" end="00:00:109.46" region="speaker">Before you respond, you are encouraged to review</p>
+         <p begin="00:00:109.46" end="00:00:111.83" region="speaker">the full text of these clauses by searching for</p>
+         <p begin="00:00:111.83" end="00:00:115.66" region="speaker">them on www.acquisition.gov.</p>
+         <p begin="00:00:115.66" end="00:00:117.56" region="speaker">Clicking the &quot;yellow&quot; question marks next to the</p>
+         <p begin="00:00:117.56" end="00:00:119.56" region="speaker">act title will also provide additional</p>
+         <p begin="00:00:119.56" end="00:00:121.10" region="speaker">information.</p>
+         <p begin="00:00:121.10" end="00:00:123.70" region="speaker">&quot;Employment Eligibility Verification&quot; or</p>
+         <p begin="00:00:123.70" end="00:00:126.63" region="speaker">&quot;E-Verify&quot; is an Internet-based system that</p>
+         <p begin="00:00:126.63" end="00:00:129.60" region="speaker">allows an employer, using information reported on an</p>
+         <p begin="00:00:129.60" end="00:00:132.83" region="speaker">employee&apos;s Form I-9, Employment Eligibility</p>
+         <p begin="00:00:132.83" end="00:00:135.70" region="speaker">Verification, to determine the eligibility of that</p>
+         <p begin="00:00:135.70" end="00:00:138.46" region="speaker">employee to work in the United States.</p>
+         <p begin="00:00:138.46" end="00:00:141.63" region="speaker">This new system allows you to certify online whether</p>
+         <p begin="00:00:141.63" end="00:00:143.90" region="speaker">or not all of your employees are eligible to</p>
+         <p begin="00:00:143.90" end="00:00:145.60" region="speaker">work in the U.S.</p>
+         <p begin="00:00:145.60" end="00:00:148.33" region="speaker">More information on the e-Verify program can be</p>
+         <p begin="00:00:148.33" end="00:00:152.56" region="speaker">found at www.dhs.gov/e-verify.</p>
+         <p begin="00:00:152.56" end="00:00:158.56" region="speaker">Click &quot;Save Response&quot; when you have finished.</p>
+    </div>
+  </body>
+</tt>

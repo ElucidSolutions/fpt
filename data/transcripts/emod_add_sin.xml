@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Adding Modifications</category>
+         <ttm:title>Add SIN</ttm:title>
+         <ttm:desc>Your Modification may refer to the addition of a specific SIN, allowing GSA to quickly identify the Product or Service in the Contract Offer.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.16" end="00:00:05.90" region="speaker">A special item number, or SIN, is used on GSA</p>
+         <p begin="00:00:05.90" end="00:00:08.56" region="speaker">contracts in order to identify the type of</p>
+         <p begin="00:00:08.56" end="00:00:10.93" region="speaker">product or service to be used.</p>
+         <p begin="00:00:10.93" end="00:00:13.90" region="speaker">As this modification could potentially impact your</p>
+         <p begin="00:00:13.90" end="00:00:16.40" region="speaker">projections of how much business you plan to do</p>
+         <p begin="00:00:16.40" end="00:00:18.46" region="speaker">with the government, you will need to review and</p>
+         <p begin="00:00:18.46" end="00:00:20.93" region="speaker">update your Commercial Sales Practice by clicking</p>
+         <p begin="00:00:20.93" end="00:00:22.43" region="speaker">&quot;Revise.&quot;</p>
+         <p begin="00:00:22.43" end="00:00:25.06" region="speaker">Updating your CSP is covered in a different</p>
+         <p begin="00:00:25.06" end="00:00:26.36" region="speaker">video.</p>
+         <p begin="00:00:26.36" end="00:00:29.16" region="speaker">When adding a SIN, you simply need to select the</p>
+         <p begin="00:00:29.16" end="00:00:31.73" region="speaker">appropriate SIN from the drop down menu.</p>
+         <p begin="00:00:31.73" end="00:00:34.73" region="speaker">You may add multiple SINs but you must add them one</p>
+         <p begin="00:00:34.73" end="00:00:35.96" region="speaker">at a time.</p>
+         <p begin="00:00:35.96" end="00:00:38.96" region="speaker">Once you have selected the appropriate SIN, click the</p>
+         <p begin="00:00:38.96" end="00:00:41.30" region="speaker">&quot;Add SIN Details&quot; button.</p>
+         <p begin="00:00:41.30" end="00:00:44.50" region="speaker">On the next screen, the &quot;SIN Types and SIN Titles&quot;</p>
+         <p begin="00:00:44.50" end="00:00:47.56" region="speaker">are populated based on your selected SIN.</p>
+         <p begin="00:00:47.56" end="00:00:50.46" region="speaker">You must define the SIN&apos;s scope, identifying the</p>
+         <p begin="00:00:50.46" end="00:00:52.83" region="speaker">locations where you intend to offer products or</p>
+         <p begin="00:00:52.83" end="00:00:56.50" region="speaker">services related to this SIN Certain schedules</p>
+         <p begin="00:00:56.50" end="00:00:59.13" region="speaker">allow State and Local entities to have access to</p>
+         <p begin="00:00:59.13" end="00:00:61.80" region="speaker">your services as they relate to this SIN.</p>
+         <p begin="00:00:61.80" end="00:00:64.53" region="speaker">Selecting &quot;No&quot; will limit your company to providing</p>
+         <p begin="00:00:64.53" end="00:00:67.13" region="speaker">services to only Federal customers.</p>
+         <p begin="00:00:67.13" end="00:00:69.53" region="speaker">By selecting &quot;Yes,&quot; you will be able to serve</p>
+         <p begin="00:00:69.53" end="00:00:72.50" region="speaker">customers other than those in the federal government.</p>
+         <p begin="00:00:72.50" end="00:00:74.80" region="speaker">When you are finished click &quot;Add This SIN&quot;</p>
+         <p begin="00:00:74.80" end="00:00:77.93" region="speaker">button You will see the Name and Description of</p>
+         <p begin="00:00:77.93" end="00:00:81.20" region="speaker">the new SIN under &quot;Your SINs,&quot; with the ability to</p>
+         <p begin="00:00:81.20" end="00:00:83.20" region="speaker">Edit or Delete it.</p>
+         <p begin="00:00:83.20" end="00:00:87.13" region="speaker">Repeat the process to add as many SINs as necessary.</p>
+         <p begin="00:00:87.13" end="00:00:90.03" region="speaker">When you have finished click Save and Continue.</p>
+    </div>
+  </body>
+</tt>

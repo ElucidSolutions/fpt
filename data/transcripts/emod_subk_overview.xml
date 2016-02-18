@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Subcontracting Plan Modification</category>
+         <ttm:title>Subcontracting Plan Mod Overview</ttm:title>
+         <ttm:desc>A Subcontracting Plan is required on a Contract under certain circumstances. The Incorporate Sub-Contracting Plan (SubK) Modification allows Contractors to add a Subcontracting Plan to their Contract Offer as required. Generally, Federal Acquisition Regulations (FAR) require a Subcontracting Plan from a Contractor classified as &quot;Other than Small Business&quot; when the actual Sales of a Contract exceed the $650,000 threshold, (or the $1,500,000 threshold for construction).
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:01.63" end="00:00:04.26" region="speaker">A Sub-Contracting Plan is required on a Contract</p>
+         <p begin="00:00:04.26" end="00:00:06.03" region="speaker">under certain situations.</p>
+         <p begin="00:00:06.03" end="00:00:08.60" region="speaker">Generally, the Federal Acquisition Regulations</p>
+         <p begin="00:00:08.60" end="00:00:11.33" region="speaker">(FAR) require a subcontracting plan from a</p>
+         <p begin="00:00:11.33" end="00:00:13.70" region="speaker">Contractor classified as &quot;Other than Small</p>
+         <p begin="00:00:13.70" end="00:00:16.76" region="speaker">Business&quot; when the actual sales of a contract exceed</p>
+         <p begin="00:00:16.76" end="00:00:20.76" region="speaker">the $650,000 threshold (for contracts awarded on</p>
+         <p begin="00:00:20.76" end="00:00:25.83" region="speaker">or after October 1, 2010) or the $550,000 threshold</p>
+         <p begin="00:00:25.83" end="00:00:29.50" region="speaker">(for contracts awarded prior to October 1, 2010).</p>
+         <p begin="00:00:29.50" end="00:00:31.93" region="speaker">In such a case an informational message will</p>
+         <p begin="00:00:31.93" end="00:00:34.33" region="speaker">appear on the &apos;MY MODIFICATIONS&apos; page as</p>
+         <p begin="00:00:34.33" end="00:00:35.56" region="speaker">shown here.</p>
+         <p begin="00:00:35.56" end="00:00:38.00" region="speaker">Create a sub-Contracting Mod by selecting the</p>
+         <p begin="00:00:38.00" end="00:00:41.33" region="speaker">Contract and click Select Contract.</p>
+         <p begin="00:00:41.33" end="00:00:43.36" region="speaker">Select the sub type Incorporate</p>
+         <p begin="00:00:43.36" end="00:00:45.20" region="speaker">Sub-Contracting Plan (SubK) and click the</p>
+         <p begin="00:00:45.20" end="00:00:48.56" region="speaker">Submit Online button at the bottom of the page.</p>
+         <p begin="00:00:48.56" end="00:00:51.00" region="speaker">Verify your corporate information.</p>
+         <p begin="00:00:51.00" end="00:00:54.43" region="speaker">Click &quot;Continue&quot; on the information saved screen.</p>
+         <p begin="00:00:54.43" end="00:00:56.36" region="speaker">You will be presented with the options for the</p>
+         <p begin="00:00:56.36" end="00:00:59.80" region="speaker">creation or upload of your subcontracting plan.</p>
+         <p begin="00:00:59.80" end="00:00:62.70" region="speaker">If you already have a subcontracting plan,</p>
+         <p begin="00:00:62.70" end="00:00:64.90" region="speaker">choose from the first set of options which will</p>
+         <p begin="00:00:64.90" end="00:00:67.93" region="speaker">allow you to upload either a Master, or Commercial</p>
+         <p begin="00:00:67.93" end="00:00:68.93" region="speaker">Plan.</p>
+         <p begin="00:00:68.93" end="00:00:71.53" region="speaker">If you do not have a subcontracting plan, the</p>
+         <p begin="00:00:71.53" end="00:00:73.73" region="speaker">second option will guide you through the steps to</p>
+         <p begin="00:00:73.73" end="00:00:75.13" region="speaker">create one.</p>
+         <p begin="00:00:75.13" end="00:00:78.26" region="speaker">Commercial Plans cover a vendor&apos;s fiscal year and</p>
+         <p begin="00:00:78.26" end="00:00:80.50" region="speaker">applies to the entire production of commercial</p>
+         <p begin="00:00:80.50" end="00:00:83.36" region="speaker">items sold by either the entire company or a</p>
+         <p begin="00:00:83.36" end="00:00:84.96" region="speaker">portion there of.</p>
+         <p begin="00:00:84.96" end="00:00:87.13" region="speaker">It applies both for commercial and government</p>
+         <p begin="00:00:87.13" end="00:00:89.96" region="speaker">business and affects all government contracts in</p>
+         <p begin="00:00:89.96" end="00:00:91.43" region="speaker">the applicable year.</p>
+         <p begin="00:00:91.43" end="00:00:94.73" region="speaker">Individual Plans cover an entire contract period and</p>
+         <p begin="00:00:94.73" end="00:00:97.56" region="speaker">apply to one contract specifically.</p>
+         <p begin="00:00:97.56" end="00:00:100.86" region="speaker">Select either &quot;Individual Plan&quot; or &quot;Commercial Plan&quot;</p>
+         <p begin="00:00:100.86" end="00:00:103.46" region="speaker">then click &quot;Save Plan Type.&quot;</p>
+         <p begin="00:00:103.46" end="00:00:105.86" region="speaker">With your selection made, you will now be able to</p>
+         <p begin="00:00:105.86" end="00:00:108.53" region="speaker">work through each section of the Subcontracting Plan</p>
+         <p begin="00:00:108.53" end="00:00:111.56" region="speaker">by clicking the respective &quot;Respond&quot; buttons.</p>
+         <p begin="00:00:111.56" end="00:00:113.70" region="speaker">You will find videos on each section of plan</p>
+         <p begin="00:00:113.70" end="00:00:115.70" region="speaker">creation.</p>
+    </div>
+  </body>
+</tt>

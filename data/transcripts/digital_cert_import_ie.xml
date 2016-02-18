@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Digital Certificates</category>
+         <ttm:title>Importing a Digital Certificate (Internet Explorer)</ttm:title>
+         <ttm:desc>Once you have acquired your Digital Certificate, you will need to upload it to the internet browser you use to access the eOffer/eMod system. This video walks you through the Certificate import steps for the Microsoft Internet Explorer web browser.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:08.06" end="00:00:10.23" region="speaker">Once you have received your Digital Certificate,</p>
+         <p begin="00:00:10.23" end="00:00:12.86" region="speaker">you will need to install it on your web browser.</p>
+         <p begin="00:00:12.86" end="00:00:15.20" region="speaker">This video covers installation instructions</p>
+         <p begin="00:00:15.20" end="00:00:16.76" region="speaker">for Internet Explorer.</p>
+         <p begin="00:00:16.76" end="00:00:20.73" region="speaker">In your browser&apos;s &quot;Menu bar&quot; click &quot;Tools&quot; and</p>
+         <p begin="00:00:20.73" end="00:00:23.23" region="speaker">then &quot;Internet Options.&quot;</p>
+         <p begin="00:00:23.23" end="00:00:24.56" region="speaker">Open the &quot;Content&quot; tab.</p>
+         <p begin="00:00:24.56" end="00:00:28.43" region="speaker">Then click &quot;Certificates.&quot;</p>
+         <p begin="00:00:28.43" end="00:00:32.23" region="speaker">Make sure the &quot;Personal&quot; tab is selected Click the</p>
+         <p begin="00:00:32.23" end="00:00:34.10" region="speaker">&quot;Import&quot; button.</p>
+         <p begin="00:00:34.10" end="00:00:37.96" region="speaker">This will launch the Import Wizard, click next.</p>
+         <p begin="00:00:37.96" end="00:00:44.06" region="speaker">Click browse and make sure the &quot;File Type&quot; is set to</p>
+         <p begin="00:00:44.06" end="00:00:46.93" region="speaker">Personal Information Exchange&quot; (PIF).</p>
+         <p begin="00:00:46.93" end="00:00:48.93" region="speaker">Now select your digital certificate.</p>
+         <p begin="00:00:53.16" end="00:00:55.63" region="speaker">Enter your private key&apos;s password.</p>
+         <p begin="00:00:55.63" end="00:00:58.20" region="speaker">It is important to note at this time that neither the</p>
+         <p begin="00:00:58.20" end="00:00:61.70" region="speaker">cert provider nor GSA can recover your password.</p>
+         <p begin="00:00:61.70" end="00:00:64.33" region="speaker">Thus if you forget or lose it, you&apos;ll have to buy a</p>
+         <p begin="00:00:64.33" end="00:00:65.80" region="speaker">new certificate altogether.</p>
+         <p begin="00:00:65.80" end="00:00:69.20" region="speaker">You have the following options: First, enabling</p>
+         <p begin="00:00:69.20" end="00:00:71.76" region="speaker">strong private key protection requires you to</p>
+         <p begin="00:00:71.76" end="00:00:74.26" region="speaker">enter your chosen password when you use your cert,</p>
+         <p begin="00:00:74.26" end="00:00:78.00" region="speaker">for example, every time you log in to eOffer/eMod.</p>
+         <p begin="00:00:78.00" end="00:00:79.96" region="speaker">This option is certainly preferable when you are</p>
+         <p begin="00:00:79.96" end="00:00:83.06" region="speaker">using a shared computer as it reduces the possibility</p>
+         <p begin="00:00:83.06" end="00:00:85.90" region="speaker">that someone else could use your certificate.</p>
+         <p begin="00:00:85.90" end="00:00:88.40" region="speaker">Secondly, you may allow this key to be exported</p>
+         <p begin="00:00:88.40" end="00:00:89.70" region="speaker">later into a</p>
+         <p begin="00:00:89.70" end="00:00:91.06" region="speaker">.pfx file.</p>
+         <p begin="00:00:91.06" end="00:00:93.53" region="speaker">This is useful if you need to copy your certificate</p>
+         <p begin="00:00:93.53" end="00:00:95.76" region="speaker">onto another computer.</p>
+         <p begin="00:00:95.76" end="00:00:98.50" region="speaker">Finally, &quot;Include all extended properties&quot; is</p>
+         <p begin="00:00:98.50" end="00:00:99.70" region="speaker">checked by default.</p>
+         <p begin="00:00:99.70" end="00:00:101.70" region="speaker">You should leave this checked.</p>
+         <p begin="00:00:105.13" end="00:00:107.26" region="speaker">Now click &quot;Next.&quot;</p>
+         <p begin="00:00:107.26" end="00:00:109.46" region="speaker">The next screen asks where you would like to store</p>
+         <p begin="00:00:109.46" end="00:00:112.50" region="speaker">your cert, choose Personal, and click next.</p>
+         <p begin="00:00:112.50" end="00:00:116.83" region="speaker">You will see one final summary screen, click</p>
+         <p begin="00:00:116.83" end="00:00:120.63" region="speaker">&quot;Finish&quot;, and you should get a success message.</p>
+         <p begin="00:00:120.63" end="00:00:123.40" region="speaker">Click &quot;OK&quot; and you will see your digital cert show</p>
+         <p begin="00:00:123.40" end="00:00:125.36" region="speaker">up under the &quot;Personal&quot; tab.</p>
+    </div>
+  </body>
+</tt>

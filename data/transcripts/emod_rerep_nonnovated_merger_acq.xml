@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Terms &amp; Conditions Modifications</category>
+         <ttm:title>Re Representation of Non Novated Merger/Acquisition</ttm:title>
+         <ttm:desc>A Non-novated Merger or Acquisition implies that all Terms and Conditions of your GSA Contract are not being acquired by or merged with your Company. In the event of a merger or acquisition of this type, you must submit this Mod notifying GSA that such a Non-novated Merger or Acquisition has taken place. Note that if the merger does not require Novation, a different Modification (the Novation Agreement Modification) will be necessary.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.13" end="00:00:05.13" region="speaker">eMod allows you to submit modifications regarding</p>
+         <p begin="00:00:05.13" end="00:00:07.80" region="speaker">Non-Novated Mergers or Acquisitions.</p>
+         <p begin="00:00:07.80" end="00:00:10.50" region="speaker">A non-novated merger or acquisition implies that</p>
+         <p begin="00:00:10.50" end="00:00:13.40" region="speaker">all terms and conditions of your GSA contract are</p>
+         <p begin="00:00:13.40" end="00:00:16.36" region="speaker">not being transferred to the firm being acquired by</p>
+         <p begin="00:00:16.36" end="00:00:18.46" region="speaker">or merged with your company.</p>
+         <p begin="00:00:18.46" end="00:00:20.60" region="speaker">In the event of a merger or acquisition of this</p>
+         <p begin="00:00:20.60" end="00:00:24.50" region="speaker">type, you must submit this mod notifying GSA that</p>
+         <p begin="00:00:24.50" end="00:00:27.10" region="speaker">such a non-novated merger or acquisition has taken</p>
+         <p begin="00:00:27.10" end="00:00:28.30" region="speaker">place.</p>
+         <p begin="00:00:28.30" end="00:00:31.16" region="speaker">Note that if the merger does require novation, a</p>
+         <p begin="00:00:31.16" end="00:00:34.10" region="speaker">different modification - Novation Agreement - will</p>
+         <p begin="00:00:34.10" end="00:00:36.33" region="speaker">be necessary.</p>
+         <p begin="00:00:36.33" end="00:00:38.70" region="speaker">Within the text box, provide a detailed</p>
+         <p begin="00:00:38.70" end="00:00:40.73" region="speaker">description of the reason you are re-representing</p>
+         <p begin="00:00:40.73" end="00:00:42.80" region="speaker">your merger or acquisition.</p>
+         <p begin="00:00:42.80" end="00:00:45.66" region="speaker">You need to provide GSA with information regarding</p>
+         <p begin="00:00:45.66" end="00:00:48.20" region="speaker">how the merger or acquisition does or does</p>
+         <p begin="00:00:48.20" end="00:00:50.30" region="speaker">not impact your company.</p>
+         <p begin="00:00:50.30" end="00:00:52.63" region="speaker">Specifically, you should note how the merger</p>
+         <p begin="00:00:52.63" end="00:00:55.23" region="speaker">affects your business size classification, your</p>
+         <p begin="00:00:55.23" end="00:00:58.90" region="speaker">socio-economic status, or any other information the</p>
+         <p begin="00:00:58.90" end="00:00:61.40" region="speaker">CO may need to be aware of.</p>
+         <p begin="00:00:61.40" end="00:00:63.36" region="speaker">When you are finished click the &quot;Save and</p>
+         <p begin="00:00:63.36" end="00:00:64.36" region="speaker">Continue&quot; button.</p>
+    </div>
+  </body>
+</tt>

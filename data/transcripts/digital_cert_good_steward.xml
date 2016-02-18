@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Digital Certificates</category>
+         <ttm:title>Being a Good Steward of your Digital Certificate</ttm:title>
+         <ttm:desc>Being a good steward of Digital Certificates means taking proper security measures with active Certificates, and also knowing when to revoke a Certificate, as might be necessary when an individual retires or changes jobs. This video reviews your responsibilities to maintining Digital Certificates in good faith.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:08.03" end="00:00:10.16" region="speaker">Your digital certificate is essentially an</p>
+         <p begin="00:00:10.16" end="00:00:12.60" region="speaker">electronic credential stored on the web browser</p>
+         <p begin="00:00:12.60" end="00:00:14.70" region="speaker">that verifies your identity.</p>
+         <p begin="00:00:14.70" end="00:00:17.13" region="speaker">As such, it is important to be a good steward of</p>
+         <p begin="00:00:17.13" end="00:00:20.16" region="speaker">your digital certificate and observe best practices</p>
+         <p begin="00:00:20.16" end="00:00:21.33" region="speaker">in its use.</p>
+         <p begin="00:00:21.33" end="00:00:23.60" region="speaker">In this video we will cover backing up a</p>
+         <p begin="00:00:23.60" end="00:00:27.40" region="speaker">certificate, passwords, what to do on shared work</p>
+         <p begin="00:00:27.40" end="00:00:29.56" region="speaker">stations and when to revoke a digital</p>
+         <p begin="00:00:29.56" end="00:00:31.53" region="speaker">certificate.</p>
+         <p begin="00:00:33.46" end="00:00:35.83" region="speaker">It is highly recommended that you create a back up</p>
+         <p begin="00:00:35.83" end="00:00:38.60" region="speaker">copy of your certificate, and store it offline in a</p>
+         <p begin="00:00:38.60" end="00:00:41.23" region="speaker">safe place, such as a stick drive or writable</p>
+         <p begin="00:00:41.23" end="00:00:44.13" region="speaker">DVD, such as you would with ANY of your important</p>
+         <p begin="00:00:44.13" end="00:00:46.16" region="speaker">files.</p>
+         <p begin="00:00:46.16" end="00:00:49.10" region="speaker">In the event of a computer crash, this backup could</p>
+         <p begin="00:00:49.10" end="00:00:51.10" region="speaker">prove invaluable.</p>
+         <p begin="00:00:55.23" end="00:00:57.73" region="speaker">To make a backup of your certificate, open your web</p>
+         <p begin="00:00:57.73" end="00:00:61.00" region="speaker">browser, in this example we&apos;re using Internet</p>
+         <p begin="00:00:61.00" end="00:00:62.90" region="speaker">Explorer.</p>
+         <p begin="00:00:62.90" end="00:00:67.70" region="speaker">Open the &quot;Tools&quot; menu and select &quot;Internet Options.&quot;</p>
+         <p begin="00:00:67.70" end="00:00:70.06" region="speaker">Click the &quot;Content&quot; tab, then the &quot;Certificates</p>
+         <p begin="00:00:70.06" end="00:00:71.46" region="speaker">button.&quot;</p>
+         <p begin="00:00:71.46" end="00:00:74.26" region="speaker">From the &quot;Personal&quot;, tab, click &quot;Export&quot; to start</p>
+         <p begin="00:00:74.26" end="00:00:76.93" region="speaker">the export wizard and follow the instructions to</p>
+         <p begin="00:00:76.93" end="00:00:79.66" region="speaker">export your certificate.</p>
+         <p begin="00:00:79.66" end="00:00:82.20" region="speaker">This is a brief overview of the process, more</p>
+         <p begin="00:00:82.20" end="00:00:84.56" region="speaker">details and instructions for other browsers are</p>
+         <p begin="00:00:84.56" end="00:00:87.56" region="speaker">provided in our videos on &quot;Exporting a Certificate.&quot;</p>
+         <p begin="00:00:87.56" end="00:00:90.80" region="speaker">In submitting your application, you entered a</p>
+         <p begin="00:00:90.80" end="00:00:93.13" region="speaker">password for the digital certificate.</p>
+         <p begin="00:00:93.13" end="00:00:95.66" region="speaker">It is absolutely essential that you do not Forget</p>
+         <p begin="00:00:95.66" end="00:00:97.00" region="speaker">Your Password!</p>
+         <p begin="00:00:97.00" end="00:00:100.16" region="speaker">If you lose your password neither GSA nor your cert</p>
+         <p begin="00:00:100.16" end="00:00:103.13" region="speaker">provider can recover the password for you and you</p>
+         <p begin="00:00:103.13" end="00:00:105.33" region="speaker">will have to go through the process of purchasing</p>
+         <p begin="00:00:105.33" end="00:00:107.63" region="speaker">a new certificate all over again.</p>
+         <p begin="00:00:107.63" end="00:00:111.83" region="speaker">Write it down in a safe place and do not lose it.</p>
+         <p begin="00:00:111.83" end="00:00:114.03" region="speaker">If you share your computer with others, it is</p>
+         <p begin="00:00:114.03" end="00:00:116.50" region="speaker">important to enable strong private key protection</p>
+         <p begin="00:00:116.50" end="00:00:118.36" region="speaker">when you import your key.</p>
+         <p begin="00:00:118.36" end="00:00:121.00" region="speaker">For more information watch the video on importing a</p>
+         <p begin="00:00:121.00" end="00:00:123.00" region="speaker">digital certificate.</p>
+         <p begin="00:00:124.46" end="00:00:126.03" region="speaker">Enabling strong private key protection will</p>
+         <p begin="00:00:126.03" end="00:00:129.66" region="speaker">require users to enter their password every time</p>
+         <p begin="00:00:129.66" end="00:00:132.30" region="speaker">their certificate is verified when logging into</p>
+         <p begin="00:00:132.30" end="00:00:134.40" region="speaker">eOffer or eMod.</p>
+         <p begin="00:00:134.40" end="00:00:136.93" region="speaker">This will help ensure that no one is misusing your</p>
+         <p begin="00:00:136.93" end="00:00:140.50" region="speaker">digital certificate, intentionally or not.</p>
+         <p begin="00:00:140.50" end="00:00:142.53" region="speaker">Also make sure you do not leave your computer</p>
+         <p begin="00:00:142.53" end="00:00:145.76" region="speaker">unattended and that you log out of eOffer and eMod</p>
+         <p begin="00:00:145.76" end="00:00:148.43" region="speaker">when you are finished with either system.</p>
+         <p begin="00:00:148.43" end="00:00:151.13" region="speaker">There may be instances in which it is necessary to</p>
+         <p begin="00:00:151.13" end="00:00:153.13" region="speaker">revoke your or an employee&apos;s digital</p>
+         <p begin="00:00:153.13" end="00:00:154.50" region="speaker">certificate.</p>
+         <p begin="00:00:154.50" end="00:00:156.53" region="speaker">When for example an employee leaves your</p>
+         <p begin="00:00:156.53" end="00:00:159.46" region="speaker">company or you feel that your digital certificate&apos;s</p>
+         <p begin="00:00:159.46" end="00:00:161.46" region="speaker">security has been compromised.</p>
+         <p begin="00:00:163.36" end="00:00:165.53" region="speaker">An employee&apos;s digital certificate is tied</p>
+         <p begin="00:00:165.53" end="00:00:167.70" region="speaker">directly to your business.</p>
+         <p begin="00:00:167.70" end="00:00:170.23" region="speaker">If an employee leaves your company, even on friendly</p>
+         <p begin="00:00:170.23" end="00:00:172.66" region="speaker">terms, it is advised to have his or her</p>
+         <p begin="00:00:172.66" end="00:00:175.13" region="speaker">certificate revoked so they no longer have the</p>
+         <p begin="00:00:175.13" end="00:00:177.63" region="speaker">ability to represent your business.</p>
+         <p begin="00:00:177.63" end="00:00:179.66" region="speaker">You should first ensure they are removed as a</p>
+         <p begin="00:00:179.66" end="00:00:181.90" region="speaker">negotiator on any contracts they are</p>
+         <p begin="00:00:181.90" end="00:00:183.23" region="speaker">involved with.</p>
+         <p begin="00:00:183.23" end="00:00:185.26" region="speaker">You should then get in touch with the respective</p>
+         <p begin="00:00:185.26" end="00:00:187.93" region="speaker">digital certificate provider and ensure the</p>
+         <p begin="00:00:187.93" end="00:00:190.86" region="speaker">certificate is revoked.</p>
+         <p begin="00:00:190.86" end="00:00:193.90" region="speaker">Also a situation may arise where you think your key</p>
+         <p begin="00:00:193.90" end="00:00:196.36" region="speaker">has been compromised or you think someone has</p>
+         <p begin="00:00:196.36" end="00:00:198.36" region="speaker">access to your digital certificate.</p>
+         <p begin="00:00:198.36" end="00:00:201.56" region="speaker">You will need to get in touch with your digital</p>
+         <p begin="00:00:201.56" end="00:00:202.86" region="speaker">cert provider.</p>
+         <p begin="00:00:202.86" end="00:00:205.06" region="speaker">This may entail you having to purchase another</p>
+         <p begin="00:00:205.06" end="00:00:206.86" region="speaker">digital certificate.</p>
+         <p begin="00:00:206.86" end="00:00:208.60" region="speaker">Good stewardship is important throughout the</p>
+         <p begin="00:00:208.60" end="00:00:211.23" region="speaker">lifecycle of your digital certificate.</p>
+         <p begin="00:00:211.23" end="00:00:214.30" region="speaker">Best practices will keep your identity safe and</p>
+         <p begin="00:00:214.30" end="00:00:216.30" region="speaker">secure.</p>
+    </div>
+  </body>
+</tt>

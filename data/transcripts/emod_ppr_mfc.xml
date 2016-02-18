@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Pricing Modifications</category>
+         <ttm:title>Permanent Price Reduction (Based on Most Favored Customer)</ttm:title>
+         <ttm:desc>A Permanent Price Reduction Modification may be implemented for the benefit of a specific Contractor-Customer relationship, in which case &quot;Most Favored Customer&quot; rates are applied to the Schedule Contract.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:04.40" region="speaker">When your schedule contract prices are based</p>
+         <p begin="00:00:04.40" end="00:00:06.00" region="speaker">on the rates offered to your most favored</p>
+         <p begin="00:00:06.00" end="00:00:08.30" region="speaker">customer, you need to be sure to update your</p>
+         <p begin="00:00:08.30" end="00:00:11.43" region="speaker">schedule so your rates remain equal to or below</p>
+         <p begin="00:00:11.43" end="00:00:13.96" region="speaker">that which is offered to other clients.</p>
+         <p begin="00:00:13.96" end="00:00:16.60" region="speaker">As this modification could potentially impact your</p>
+         <p begin="00:00:16.60" end="00:00:18.83" region="speaker">projections of how much business you plan to do</p>
+         <p begin="00:00:18.83" end="00:00:20.93" region="speaker">with the government, you may need to review and</p>
+         <p begin="00:00:20.93" end="00:00:24.30" region="speaker">update your Commercial Sales Practice If so,</p>
+         <p begin="00:00:24.30" end="00:00:27.10" region="speaker">click Yes and Save, upon which you will be taken</p>
+         <p begin="00:00:27.10" end="00:00:29.13" region="speaker">through the CSP utility.</p>
+         <p begin="00:00:29.13" end="00:00:31.73" region="speaker">Updating your CSP is covered in a different</p>
+         <p begin="00:00:31.73" end="00:00:32.73" region="speaker">video.</p>
+         <p begin="00:00:32.73" end="00:00:36.20" region="speaker">If this is not the case, select No and continue</p>
+         <p begin="00:00:36.20" end="00:00:39.20" region="speaker">with the modification First select a &quot;Start</p>
+         <p begin="00:00:39.20" end="00:00:41.83" region="speaker">Date&quot; for your price reduction.</p>
+         <p begin="00:00:41.83" end="00:00:43.43" region="speaker">Enter a detailed description of your</p>
+         <p begin="00:00:43.43" end="00:00:46.06" region="speaker">reduction including information regarding the</p>
+         <p begin="00:00:46.06" end="00:00:48.83" region="speaker">&quot;most favored customer&quot; upon which your GSA rates</p>
+         <p begin="00:00:48.83" end="00:00:51.63" region="speaker">are based as well as any other information that may</p>
+         <p begin="00:00:51.63" end="00:00:54.06" region="speaker">be relevant to the CO.</p>
+         <p begin="00:00:54.06" end="00:00:55.83" region="speaker">When you are finished click the &quot;Save and</p>
+         <p begin="00:00:55.83" end="00:00:57.83" region="speaker">Continue&quot; button.</p>
+    </div>
+  </body>
+</tt>

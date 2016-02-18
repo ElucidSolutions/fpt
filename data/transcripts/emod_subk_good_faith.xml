@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Subcontracting Plan Modification</category>
+         <ttm:title>Good Faith Effects</ttm:title>
+         <ttm:desc>The final Subcontracting Plan section is the demonstration of Good Faith Effort, in which you must provide a detailed outline of the steps your Company plans to take to achieve your Subcontracting goals.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:04.70" region="speaker">The final section is the Good Faith Effort.</p>
+         <p begin="00:00:04.70" end="00:00:07.13" region="speaker">You must give a detailed outline on the steps your</p>
+         <p begin="00:00:07.13" end="00:00:09.23" region="speaker">company plans to take to achieve your</p>
+         <p begin="00:00:09.23" end="00:00:11.53" region="speaker">subcontracting goals in good faith.</p>
+         <p begin="00:00:11.53" end="00:00:14.56" region="speaker">Click &quot;save and continue&quot; to move forward.</p>
+    </div>
+  </body>
+</tt>

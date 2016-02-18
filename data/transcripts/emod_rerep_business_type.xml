@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Terms &amp; Conditions Modifications</category>
+         <ttm:title>Re-representation of Small Business Type</ttm:title>
+         <ttm:desc>Set-aside opportunities for small businesses make it possible for businesses that fall within the guidelines of specific socioeconomic categories to receive fair consideration for government Contracts. These categories include: Woman-Owned Business, Woman Owned Small Business, HUBZone, Veteran Owned Business, and 8(a) Businesses, (eligible small disadvantaged business entities). As part of the Contract Offer process, your company would have been required to certify its socioeconomic Set-aside status. The Re-Representation of Business Type Modification allows you to inform GSA if your Company has received a new small business Set-aside designation.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.06" end="00:00:04.66" region="speaker">As part of your initial contract process, your</p>
+         <p begin="00:00:04.66" end="00:00:07.66" region="speaker">company was required to certify its socioeconomic</p>
+         <p begin="00:00:07.66" end="00:00:09.53" region="speaker">set aside status.</p>
+         <p begin="00:00:09.53" end="00:00:11.80" region="speaker">Since that time circumstances may have</p>
+         <p begin="00:00:11.80" end="00:00:13.83" region="speaker">occurred, which qualify your business for</p>
+         <p begin="00:00:13.83" end="00:00:15.93" region="speaker">additional business types.</p>
+         <p begin="00:00:15.93" end="00:00:18.23" region="speaker">The re-representation of Small Business Type</p>
+         <p begin="00:00:18.23" end="00:00:22.26" region="speaker">modification allows you to inform GSA if your company</p>
+         <p begin="00:00:22.26" end="00:00:24.53" region="speaker">has received a new small business set aside</p>
+         <p begin="00:00:24.53" end="00:00:26.06" region="speaker">designation.</p>
+         <p begin="00:00:26.06" end="00:00:28.80" region="speaker">The various business types already in your contract</p>
+         <p begin="00:00:28.80" end="00:00:31.13" region="speaker">are listed first on the page.</p>
+         <p begin="00:00:31.13" end="00:00:33.80" region="speaker">Next to that are the Business Types listed in</p>
+         <p begin="00:00:33.80" end="00:00:35.13" region="speaker">SAM.</p>
+         <p begin="00:00:35.13" end="00:00:37.36" region="speaker">You will notice that these lists differ.</p>
+         <p begin="00:00:37.36" end="00:00:40.26" region="speaker">This modification will only update your contract</p>
+         <p begin="00:00:40.26" end="00:00:43.03" region="speaker">and not your set aside types in SAM, formerly</p>
+         <p begin="00:00:43.03" end="00:00:44.76" region="speaker">known as CCR.</p>
+         <p begin="00:00:44.76" end="00:00:46.80" region="speaker">Select the relevant business types that you</p>
+         <p begin="00:00:46.80" end="00:00:49.46" region="speaker">wish to add from the list of all available business</p>
+         <p begin="00:00:49.46" end="00:00:50.63" region="speaker">types.</p>
+         <p begin="00:00:50.63" end="00:00:53.13" region="speaker">You may select multiple business types by holding</p>
+         <p begin="00:00:53.13" end="00:00:54.26" region="speaker">&quot;Control&quot; down on your keyboard and clicking</p>
+         <p begin="00:00:54.26" end="00:00:57.73" region="speaker">additional items on the list.</p>
+         <p begin="00:00:57.73" end="00:00:60.60" region="speaker">Within the text box, provide the CO with a</p>
+         <p begin="00:00:60.60" end="00:00:63.60" region="speaker">reason why your business type has changed.</p>
+         <p begin="00:00:63.60" end="00:00:66.03" region="speaker">When you are finished click &quot;Save and Continue.&quot;</p>
+    </div>
+  </body>
+</tt>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Subcontracting Plan</category>
+         <ttm:title>Record Keeping</ttm:title>
+         <ttm:desc>The Record Keeping section requires your assurance that records have been maintained to prove compliance with the requirements and goals of your Subcontracting Plan.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:04.46" region="speaker">The section on Record Keeping requires that</p>
+         <p begin="00:00:04.46" end="00:00:06.96" region="speaker">vendors maintain records with certain standards and</p>
+         <p begin="00:00:06.96" end="00:00:08.23" region="speaker">procedures.</p>
+         <p begin="00:00:08.23" end="00:00:09.86" region="speaker">Read through the requirements.</p>
+         <p begin="00:00:09.86" end="00:00:12.73" region="speaker">You must ultimately agree to the requirements.</p>
+         <p begin="00:00:12.73" end="00:00:14.93" region="speaker">If you have any additional records to support</p>
+         <p begin="00:00:14.93" end="00:00:18.13" region="speaker">compliance, enter them in the text box.</p>
+         <p begin="00:00:18.13" end="00:00:21.03" region="speaker">Otherwise, check the box stating you agree.</p>
+         <p begin="00:00:21.03" end="00:00:23.23" region="speaker">Click Save and Continue to move forward.</p>
+    </div>
+  </body>
+</tt>

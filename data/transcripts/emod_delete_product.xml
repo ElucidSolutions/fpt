@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+       <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Deletions Modifications</category>
+         <ttm:title>Delete Product(s)</ttm:title>
+         <ttm:desc>Use the Delete Product(s) Modification to narrow the scope of your business' Products within the terms of the Contract Offer. Note that Deletion Modifications fall under the category known as &quot;Rapid Action Modifications.&quot; This means a Contractor can submit a Deletion Modification Request and the Contracting Officer can approve it without having to go through the Signature process.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:03.03" end="00:00:05.56" region="speaker">Eliminating product offerings is a necessary</p>
+         <p begin="00:00:05.56" end="00:00:07.33" region="speaker">business function.</p>
+         <p begin="00:00:07.33" end="00:00:08.90" region="speaker">Enter a detailed description of your</p>
+         <p begin="00:00:08.90" end="00:00:11.40" region="speaker">request, and identify the product you would like</p>
+         <p begin="00:00:11.40" end="00:00:13.53" region="speaker">removed from your schedule.</p>
+         <p begin="00:00:13.53" end="00:00:16.10" region="speaker">You can also provide the CO with some information</p>
+         <p begin="00:00:16.10" end="00:00:18.26" region="speaker">as to why you are removing this product from your</p>
+         <p begin="00:00:18.26" end="00:00:19.66" region="speaker">schedule.</p>
+         <p begin="00:00:19.66" end="00:00:22.23" region="speaker">Deletion modifications fall under the category</p>
+         <p begin="00:00:22.23" end="00:00:24.80" region="speaker">known as &quot;Rapid Action Modifications&quot;.</p>
+         <p begin="00:00:24.80" end="00:00:27.00" region="speaker">This means that a contractor can submit a</p>
+         <p begin="00:00:27.00" end="00:00:29.46" region="speaker">Deletion Modification request and the</p>
+         <p begin="00:00:29.46" end="00:00:31.90" region="speaker">Contracting Officer can approve it without having</p>
+         <p begin="00:00:31.90" end="00:00:34.46" region="speaker">to go through the signature process.</p>
+         <p begin="00:00:34.46" end="00:00:36.20" region="speaker">When you are finished click &quot;Save and</p>
+         <p begin="00:00:36.20" end="00:00:38.16" region="speaker">continue.&quot;</p>
+    </div>
+  </body>
+</tt>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Pricing Modifications</category>
+         <ttm:title>Economic Price Adjustments (EPA) without Commercial Price List (increase)</ttm:title>
+         <ttm:desc>Economic Price Adjustments (EPAs) are Modifications to Commercial Pricing that are made based on changes in the national economic climate. Whether submitted with a Commercial Price List or without, this Modification is intended for pricing increases.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:04.76" region="speaker">GSA allows vendors to increase their schedule</p>
+         <p begin="00:00:04.76" end="00:00:07.06" region="speaker">prices in accordance with economic price</p>
+         <p begin="00:00:07.06" end="00:00:08.16" region="speaker">adjustments.</p>
+         <p begin="00:00:08.16" end="00:00:10.73" region="speaker">The pricing index to be used - whether it is the</p>
+         <p begin="00:00:10.73" end="00:00:14.53" region="speaker">CPI, inflation, or another agreed-upon index - is</p>
+         <p begin="00:00:14.53" end="00:00:17.86" region="speaker">typically determined prior to contract award.</p>
+         <p begin="00:00:17.86" end="00:00:20.53" region="speaker">As this modification could potentially impact your</p>
+         <p begin="00:00:20.53" end="00:00:22.73" region="speaker">projections of how much business you plan to do</p>
+         <p begin="00:00:22.73" end="00:00:25.13" region="speaker">with the government, you may need to review and</p>
+         <p begin="00:00:25.13" end="00:00:28.46" region="speaker">update your Commercial Sales Practice If so,</p>
+         <p begin="00:00:28.46" end="00:00:31.26" region="speaker">click Yes and Save, upon which you will be taken</p>
+         <p begin="00:00:31.26" end="00:00:33.40" region="speaker">through the CSP utility.</p>
+         <p begin="00:00:33.40" end="00:00:36.03" region="speaker">Updating your CSP is covered in a different</p>
+         <p begin="00:00:36.03" end="00:00:37.30" region="speaker">video.</p>
+         <p begin="00:00:37.30" end="00:00:40.76" region="speaker">If this is not the case, select No and continue</p>
+         <p begin="00:00:40.76" end="00:00:43.66" region="speaker">with the modification Enter the percentage</p>
+         <p begin="00:00:43.66" end="00:00:45.33" region="speaker">increase you are requesting.</p>
+         <p begin="00:00:45.33" end="00:00:46.93" region="speaker">Note that this should be pursuant to the</p>
+         <p begin="00:00:46.93" end="00:00:50.13" region="speaker">agreed-upon terms of your schedule contract.</p>
+         <p begin="00:00:50.13" end="00:00:52.73" region="speaker">In the textbox, provide the CO with enough</p>
+         <p begin="00:00:52.73" end="00:00:56.66" region="speaker">information justifying your price increase.</p>
+         <p begin="00:00:56.66" end="00:00:58.76" region="speaker">When you are finished click the &quot;Save and</p>
+         <p begin="00:00:58.76" end="00:00:60.80" region="speaker">Continue&quot; button</p>
+    </div>
+  </body>
+</tt>

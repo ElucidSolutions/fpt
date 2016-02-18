@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Authorized Negotiators</category>
+         <ttm:title>System Validations</ttm:title>
+         <ttm:desc>The eOffer/eMod system affords individuals whose Digital Certificate information no longer matches their business or personal information the opportunity to validate their credentials and submit requests of reinstatement to Contracting Officers. Whereas the process of reinstating oneself as an Authorized Negotiator once required the help of another Authorized Negotiator assigned to the same eOffer, or the outside help of a Contracting Officer, eOffer/eMod now facilitates interaction with the CO directly. This video explains the process.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:08.40" end="00:00:11.46" region="speaker">In this video, we will discuss the mechanism GSA</p>
+         <p begin="00:00:11.46" end="00:00:14.20" region="speaker">has introduced that helps contractors when their</p>
+         <p begin="00:00:14.20" end="00:00:16.86" region="speaker">digital certificate information does not align</p>
+         <p begin="00:00:16.86" end="00:00:18.70" region="speaker">with the information associated with their</p>
+         <p begin="00:00:18.70" end="00:00:21.73" region="speaker">authorized negotiator in eOffer/eMods.</p>
+         <p begin="00:00:23.80" end="00:00:26.00" region="speaker">You will notice that, prior to accessing the</p>
+         <p begin="00:00:26.00" end="00:00:29.13" region="speaker">system, we have to confirm our identity through our</p>
+         <p begin="00:00:29.13" end="00:00:31.06" region="speaker">digital certificate.</p>
+         <p begin="00:00:31.06" end="00:00:33.03" region="speaker">For more general information on digital</p>
+         <p begin="00:00:33.03" end="00:00:35.50" region="speaker">certs, you should watch our series of training</p>
+         <p begin="00:00:35.50" end="00:00:40.10" region="speaker">videos posted to the eOffer/eMods home page.</p>
+         <p begin="00:00:40.10" end="00:00:42.53" region="speaker">At a high-level, the purpose of a digital</p>
+         <p begin="00:00:42.53" end="00:00:45.60" region="speaker">certificate is to assert your identity and assure</p>
+         <p begin="00:00:45.60" end="00:00:48.76" region="speaker">that eOffer/eMod verifies your authorization to</p>
+         <p begin="00:00:48.76" end="00:00:51.26" region="speaker">access the system and prepare or submit</p>
+         <p begin="00:00:51.26" end="00:00:53.10" region="speaker">documents.</p>
+         <p begin="00:00:53.10" end="00:00:55.93" region="speaker">In order to successfully access the system, your</p>
+         <p begin="00:00:55.93" end="00:00:58.16" region="speaker">digital certificate information must be an</p>
+         <p begin="00:00:58.16" end="00:00:60.83" region="speaker">exact match to that which is on your authorized</p>
+         <p begin="00:00:60.83" end="00:00:62.36" region="speaker">negotiator.</p>
+         <p begin="00:00:62.36" end="00:00:65.03" region="speaker">But what happens when it is not?</p>
+         <p begin="00:00:65.03" end="00:00:67.03" region="speaker">In the past, you would have needed to have a</p>
+         <p begin="00:00:67.03" end="00:00:69.06" region="speaker">different Authorized Negotiator log in to the</p>
+         <p begin="00:00:69.06" end="00:00:70.60" region="speaker">system and edit your details.</p>
+         <p begin="00:00:70.60" end="00:00:73.43" region="speaker">Or, if there was not another Authorized</p>
+         <p begin="00:00:73.43" end="00:00:76.13" region="speaker">Negotiator available to make the change, you would</p>
+         <p begin="00:00:76.13" end="00:00:78.76" region="speaker">need to contact your Contracting Officer and</p>
+         <p begin="00:00:78.76" end="00:00:81.56" region="speaker">ask him or her to manually enter the system and</p>
+         <p begin="00:00:81.56" end="00:00:83.73" region="speaker">change your details.</p>
+         <p begin="00:00:83.73" end="00:00:85.26" region="speaker">Not anymore.</p>
+         <p begin="00:00:85.26" end="00:00:87.96" region="speaker">GSA has made it easy for you to add yourself as a</p>
+         <p begin="00:00:87.96" end="00:00:91.00" region="speaker">negotiator to a contract or to modify your</p>
+         <p begin="00:00:91.00" end="00:00:93.80" region="speaker">negotiator information to align it with your digital</p>
+         <p begin="00:00:93.80" end="00:00:95.53" region="speaker">certificate.</p>
+         <p begin="00:00:95.53" end="00:00:98.50" region="speaker">Let&apos;s see how this process works.</p>
+         <p begin="00:00:98.50" end="00:00:101.10" region="speaker">Begin by selecting &quot;Sign In&quot; under Contract</p>
+         <p begin="00:00:101.10" end="00:00:102.90" region="speaker">Modifications.</p>
+         <p begin="00:00:102.90" end="00:00:106.13" region="speaker">As before, your digital certificate will appear.</p>
+         <p begin="00:00:106.13" end="00:00:108.26" region="speaker">Click OK to proceed through the system as</p>
+         <p begin="00:00:108.26" end="00:00:109.56" region="speaker">before.</p>
+         <p begin="00:00:109.56" end="00:00:112.53" region="speaker">Behind the scenes, a series of validations are</p>
+         <p begin="00:00:112.53" end="00:00:115.16" region="speaker">being run to ensure that the information on your</p>
+         <p begin="00:00:115.16" end="00:00:117.86" region="speaker">digital certificate matches that which is</p>
+         <p begin="00:00:117.86" end="00:00:120.70" region="speaker">associated with one of the Authorized Negotiators on</p>
+         <p begin="00:00:120.70" end="00:00:123.43" region="speaker">your contract.</p>
+         <p begin="00:00:123.43" end="00:00:124.76" region="speaker">The system is essentially trying to match the first</p>
+         <p begin="00:00:124.76" end="00:00:125.76" region="speaker">name, last name, or e-mail address on your digital</p>
+         <p begin="00:00:125.76" end="00:00:126.96" region="speaker">certificate to the first name, last name, and</p>
+         <p begin="00:00:126.96" end="00:00:133.83" region="speaker">e-mail address for each of your Authorized</p>
+         <p begin="00:00:133.83" end="00:00:136.36" region="speaker">Negotiators.</p>
+         <p begin="00:00:136.36" end="00:00:139.10" region="speaker">Let&apos;s first examine what happens if no match is</p>
+         <p begin="00:00:139.10" end="00:00:140.16" region="speaker">found.</p>
+         <p begin="00:00:140.16" end="00:00:142.66" region="speaker">The most likely reason for this scenario is that you</p>
+         <p begin="00:00:142.66" end="00:00:144.60" region="speaker">are trying to add yourself as an authorized</p>
+         <p begin="00:00:144.60" end="00:00:147.06" region="speaker">negotiator to the contract.</p>
+         <p begin="00:00:147.06" end="00:00:149.76" region="speaker">In this instance, you will need to provide your Name,</p>
+         <p begin="00:00:149.76" end="00:00:152.63" region="speaker">Title, Phone number, and e-mail address exactly as</p>
+         <p begin="00:00:152.63" end="00:00:154.66" region="speaker">it appears on your digital certificate.</p>
+         <p begin="00:00:159.76" end="00:00:162.03" region="speaker">Identify whether you are or are not Authorized to</p>
+         <p begin="00:00:162.03" end="00:00:166.00" region="speaker">Sign and click &quot;Submit Request.&quot;</p>
+         <p begin="00:00:166.00" end="00:00:168.10" region="speaker">If there is another Authorized Negotiators on</p>
+         <p begin="00:00:168.10" end="00:00:171.33" region="speaker">the contract, the system will create a modification</p>
+         <p begin="00:00:171.33" end="00:00:173.33" region="speaker">pre-populated with the information you have</p>
+         <p begin="00:00:173.33" end="00:00:177.20" region="speaker">provided in order to add you as a new negotiator.</p>
+         <p begin="00:00:177.20" end="00:00:179.73" region="speaker">The existing Authorized Negotiator will receive an</p>
+         <p begin="00:00:179.73" end="00:00:182.56" region="speaker">e-mail notifying them that the modification has been</p>
+         <p begin="00:00:182.56" end="00:00:185.46" region="speaker">created and will now need to be submitted by them.</p>
+         <p begin="00:00:187.56" end="00:00:188.53" region="speaker">If no Authorized Negotiators are on the</p>
+         <p begin="00:00:188.53" end="00:00:192.43" region="speaker">contract, an e-mail will be sent requesting</p>
+         <p begin="00:00:192.43" end="00:00:195.00" region="speaker">approval from the Contracting Officer to add</p>
+         <p begin="00:00:195.00" end="00:00:198.00" region="speaker">you as a negotiator to the contract.</p>
+         <p begin="00:00:198.00" end="00:00:200.00" region="speaker">So what happens if some of the details on your</p>
+         <p begin="00:00:200.00" end="00:00:202.90" region="speaker">digital certificate match what is present for one or</p>
+         <p begin="00:00:202.90" end="00:00:204.90" region="speaker">more of the Authorized Negotiators on the</p>
+         <p begin="00:00:204.90" end="00:00:206.46" region="speaker">contract?</p>
+         <p begin="00:00:206.46" end="00:00:208.40" region="speaker">When entering your authorized negotiator</p>
+         <p begin="00:00:208.40" end="00:00:210.96" region="speaker">information, you may have neglected to add a middle</p>
+         <p begin="00:00:210.96" end="00:00:213.76" region="speaker">initial or used the wrong e-mail address.</p>
+         <p begin="00:00:213.76" end="00:00:215.90" region="speaker">You may have gotten married since you last</p>
+         <p begin="00:00:215.90" end="00:00:219.30" region="speaker">accessed the system and changed your name.</p>
+         <p begin="00:00:219.30" end="00:00:221.60" region="speaker">Any of these reasons could cause a problem during the</p>
+         <p begin="00:00:221.60" end="00:00:223.60" region="speaker">validation process.</p>
+         <p begin="00:00:225.90" end="00:00:228.43" region="speaker">So let&apos;s log in as we did before, selecting our</p>
+         <p begin="00:00:228.43" end="00:00:230.43" region="speaker">digital certificate.</p>
+         <p begin="00:00:233.60" end="00:00:236.40" region="speaker">This time, we can see that, while &quot;Paul Tran&quot; is</p>
+         <p begin="00:00:236.40" end="00:00:240.96" region="speaker">not a negotiator on the contract, &quot;Paul Ran&quot; is.</p>
+         <p begin="00:00:240.96" end="00:00:244.70" region="speaker">We can also see that a Paul.Tran@example.com is</p>
+         <p begin="00:00:244.70" end="00:00:246.90" region="speaker">tied to this account.</p>
+         <p begin="00:00:246.90" end="00:00:249.76" region="speaker">It is immediately apparent that, when entering Paul&apos;s</p>
+         <p begin="00:00:249.76" end="00:00:252.53" region="speaker">name as an Authorized Negotiator, someone</p>
+         <p begin="00:00:252.53" end="00:00:256.16" region="speaker">neglected to include the &quot;T&quot; in &quot;Tran.&quot;</p>
+         <p begin="00:00:256.16" end="00:00:258.60" region="speaker">All we need to do now is select the radio button</p>
+         <p begin="00:00:258.60" end="00:00:261.73" region="speaker">next to &quot;Paul Ran&quot; and click &quot;Initiate Request.&quot;</p>
+         <p begin="00:00:268.26" end="00:00:270.56" region="speaker">If there are no other Authorized Negotiators on</p>
+         <p begin="00:00:270.56" end="00:00:272.93" region="speaker">the contract, an e-mail will be sent to the</p>
+         <p begin="00:00:272.93" end="00:00:275.60" region="speaker">Contracting Officer assigned to the contract</p>
+         <p begin="00:00:275.60" end="00:00:278.30" region="speaker">who will then log in to the system and Accept or</p>
+         <p begin="00:00:278.30" end="00:00:281.16" region="speaker">Reject &quot;Paul Tran&apos;s&quot; inclusion as a negotiator</p>
+         <p begin="00:00:281.16" end="00:00:282.76" region="speaker">on the contract.</p>
+         <p begin="00:00:282.76" end="00:00:284.80" region="speaker">If there IS an Authorized Negotiator on the</p>
+         <p begin="00:00:284.80" end="00:00:288.06" region="speaker">contract, an e-mail will be sent instructing him or</p>
+         <p begin="00:00:288.06" end="00:00:290.66" region="speaker">her to submit a modification updating</p>
+         <p begin="00:00:290.66" end="00:00:293.26" region="speaker">Paul&apos;s name to match that which is on his digital</p>
+         <p begin="00:00:293.26" end="00:00:294.53" region="speaker">certificate.</p>
+         <p begin="00:00:294.53" end="00:00:296.63" region="speaker">If the authorized negotiator does not</p>
+         <p begin="00:00:296.63" end="00:00:299.26" region="speaker">respond to this e-mail within seven days, the</p>
+         <p begin="00:00:299.26" end="00:00:301.76" region="speaker">system will automatically notify the Contracting</p>
+         <p begin="00:00:301.76" end="00:00:304.80" region="speaker">Officer to initiate a modification to update the</p>
+         <p begin="00:00:304.80" end="00:00:308.36" region="speaker">Authorized Negotiator information.</p>
+         <p begin="00:00:308.36" end="00:00:311.23" region="speaker">We hope this information has proven useful to you.</p>
+         <p begin="00:00:311.23" end="00:00:314.00" region="speaker">Please check out our other training videos located</p>
+         <p begin="00:00:314.00" end="00:00:317.20" region="speaker">throughout the eOffer/eMod system as well as our</p>
+         <p begin="00:00:317.20" end="00:00:319.33" region="speaker">features on Digital Certificates and the</p>
+         <p begin="00:00:319.33" end="00:00:322.13" region="speaker">Importance of Authorized Negotiators.</p>
+         <p begin="00:00:322.13" end="00:00:324.70" region="speaker">Thank you for your continued support of GSA.</p>
+    </div>
+  </body>
+</tt>

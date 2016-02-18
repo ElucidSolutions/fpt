@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Subcontracting Plan Modification</category>
+         <ttm:title>Program Administrator</ttm:title>
+         <ttm:desc>When completing a Subcontracting Plan, you must designate a Subcontracting Plan Administrator in the Point of Contact Information Template of the Solicitation Clauses section.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:04.70" region="speaker">The Program Administration screen will show the</p>
+         <p begin="00:00:04.70" end="00:00:07.20" region="speaker">information provided if you had previously filled</p>
+         <p begin="00:00:07.20" end="00:00:09.20" region="speaker">out a subcontracting plan.</p>
+         <p begin="00:00:09.20" end="00:00:11.40" region="speaker">However, if there is no contact information</p>
+         <p begin="00:00:11.40" end="00:00:13.66" region="speaker">already entered, or you need to change the</p>
+         <p begin="00:00:13.66" end="00:00:16.36" region="speaker">information in there, you will need to navigate to</p>
+         <p begin="00:00:16.36" end="00:00:18.46" region="speaker">the Terms &amp; Conditions section using the</p>
+         <p begin="00:00:18.46" end="00:00:21.26" region="speaker">navigation on the left side of your screen.</p>
+         <p begin="00:00:21.26" end="00:00:23.40" region="speaker">On the Terms and Conditions screen, you</p>
+         <p begin="00:00:23.40" end="00:00:25.53" region="speaker">will notice the addition of the Point of Contacts</p>
+         <p begin="00:00:25.53" end="00:00:27.03" region="speaker">Information entry.</p>
+         <p begin="00:00:27.03" end="00:00:29.96" region="speaker">Click the &quot;Respond&quot; link in the actions column.</p>
+         <p begin="00:00:29.96" end="00:00:32.60" region="speaker">Select &quot;Contact for Subcontracting Plan&quot; from</p>
+         <p begin="00:00:32.60" end="00:00:34.90" region="speaker">the dropdown menu and click &quot;Add Point of</p>
+         <p begin="00:00:34.90" end="00:00:36.86" region="speaker">Contact Details.&quot;</p>
+         <p begin="00:00:36.86" end="00:00:39.13" region="speaker">Fill out the administrator for the Subcontracting</p>
+         <p begin="00:00:39.13" end="00:00:40.20" region="speaker">Plan.</p>
+         <p begin="00:00:40.20" end="00:00:42.46" region="speaker">When you are finished click &quot;Add Point of</p>
+         <p begin="00:00:42.46" end="00:00:44.50" region="speaker">Contact Information.&quot;</p>
+         <p begin="00:00:44.50" end="00:00:47.46" region="speaker">While it is not required, it is a good idea to add</p>
+         <p begin="00:00:47.46" end="00:00:51.10" region="speaker">an Alternative Contact for the Subcontracting Plan.</p>
+         <p begin="00:00:51.10" end="00:00:52.93" region="speaker">When you have finished, return to the</p>
+         <p begin="00:00:52.93" end="00:00:54.86" region="speaker">Subcontracting plan by clicking its link on the</p>
+         <p begin="00:00:54.86" end="00:00:57.63" region="speaker">menu to the left.</p>
+         <p begin="00:00:57.63" end="00:00:59.90" region="speaker">You will notice the Point of Contact details are</p>
+         <p begin="00:00:59.90" end="00:00:60.96" region="speaker">now being displayed.</p>
+         <p begin="00:00:60.96" end="00:00:64.33" region="speaker">Next you will need to identify the duties of the</p>
+         <p begin="00:00:64.33" end="00:00:67.10" region="speaker">Subcontracting Plan administrator.</p>
+         <p begin="00:00:67.10" end="00:00:70.13" region="speaker">One through five are required by the FAR.</p>
+         <p begin="00:00:70.13" end="00:00:72.66" region="speaker">Select the applicable functions, meant to ensure</p>
+         <p begin="00:00:72.66" end="00:00:75.13" region="speaker">effective implementation of the subcontracting</p>
+         <p begin="00:00:75.13" end="00:00:76.40" region="speaker">plan.</p>
+         <p begin="00:00:76.40" end="00:00:79.30" region="speaker">Identify any additional measures in the textbox at</p>
+         <p begin="00:00:79.30" end="00:00:81.10" region="speaker">the end of the list.</p>
+         <p begin="00:00:81.10" end="00:00:83.66" region="speaker">When you are finished click &quot;Save and Continue.&quot;</p>
+    </div>
+  </body>
+</tt>

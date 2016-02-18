@@ -1,0 +1,274 @@
+/* BxSlider Module */
+
+.bx-wrapper {
+  color: white;
+  text-align: center;
+  margin: 0 auto !important;
+  @include box-shadow(none);
+  .bx-viewport{
+	  left: 0px !important;
+	  margin-top: 0px !important;
+	  border-left: 0px !important;
+	  border-right: 0px !important;
+	  border-top: 0px !important;
+	}
+
+}
+
+.bxslider{
+	margin: 0px 0px;
+	li{
+		margin: 0px 0px;
+	}
+}
+
+.slide {
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1em 1em 2.5em 1em;
+  min-height: 250px;
+}
+
+.slide-icon {
+	display: block;
+	margin:0px;
+	float:left;	
+	padding-right:0.75em;
+	border-right: 1px dotted #fff;
+}
+
+
+.banner h1{
+	font-size: 200%;
+	color: white;
+	margin: 20px 0px;
+	padding:0px;
+	line-height:32px
+
+}
+.banner h1,.bannerText p{
+	text-shadow: $banner-text-shadow;
+}
+
+.bannerText{
+	text-align:left;
+	max-width:700px;
+	display:inline-block;
+	margin-left: 2em;
+	p{
+		font-weight: 200;
+		color: #fff;
+		font-size: 128%;
+		margin: 5px 0px 10px 0px;
+		padding: 0px;
+		line-height: 120%
+	}
+}
+
+
+/* Slide Background Images */
+
+#slideOne {
+  @extend .slide;
+  background-image: url("images/slideOne.png");
+}
+
+#slideTwo {
+  @extend .slide;
+  background-image: url("images/slideTwo.png");
+}
+
+#slideThree {
+  @extend .slide;
+  background-image: url("images/slideThree.png");
+}
+
+/* Centering  and styling the Slider Controls */
+
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto{
+	position: relative !important;
+	margin-left: auto;
+	margin-right: auto;
+	bottom: 15px !important;
+}
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager{
+	text-align: center !important;
+	width: 80% !important;
+}
+
+div.bx-pager-item {
+	margin: 10px !important;
+}
+
+.bx-wrapper .bx-controls-auto {
+	margin-top: 5px !important;
+}
+div.bx-controls-direction {
+	a{
+		top: 45% !important;
+	}
+
+}
+
+/*  Button Styles */
+
+.bannerButton{
+  @include box-shadow(0px 2px 2px rgba(0, 0, 0, 0.2));
+  display:inline-block;
+  color:#fff;
+  height: 42px;
+  line-height: 1.4em;
+  padding: .6em 1.2em .6em 1.2em;
+  margin: 10px 0 0 0;
+  border: none;
+  background:$primary-color;
+  cursor: pointer;  
+  transition: all 0.2s ease;
+}
+
+.bannerButton:hover, .bannerButton:active{
+  @include box-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
+  color: #fff;
+  background: lighten($primary-color, 10%);
+  text-decoration:none;
+  transition: all 0.2s ease;
+}
+
+/*
+.bx-wrapper {
+  color: white;
+  text-align: center;
+  margin: 0 auto !important;
+  @include box-shadow(none);
+  .bx-viewport{
+	  border-top: none !important; 
+	  margin-top: 97px !important;
+	}
+
+}
+
+.bxslider{
+	margin: 0px 0px;
+	li{
+		margin: 0px 0px;
+	}
+}
+
+
+
+.slide {
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1em 1em 2.5em 1em;
+  min-height: 250px;
+}
+
+.slide-icon {
+	display: block;
+	margin:0px;
+	float:left;	
+	padding-right:0.75em;
+	border-right: 1px dotted #fff;
+}
+
+.banner-text{
+	text-align:left; 
+	max-width:700px; 
+	display:inline-block; 
+	margin-left: 2em;
+
+}
+
+.banner h1{
+	font-size: 200%;
+	color: white;
+	margin: 20px 0px;
+	padding:0px;
+	line-height:32px
+
+}
+.banner h1,.bannerText p{
+	text-shadow: $banner-text-shadow;
+}
+
+.bannerText{
+	text-align:left;
+	max-width:700px;
+	display:inline-block;
+	margin-left: 2em;
+	p{
+		font-weight:100;
+		color:#fff;font-size:128%;
+		margin: 5px 0px 10px 0px;
+		padding:0px;
+		line-height:120%
+	}
+}
+
+
+#slideOne {
+  @extend .slide;
+  background-image: url("images/slideOne.png");
+}
+
+#slideTwo {
+  @extend .slide;
+  background-image: url("images/slideTwo.png");
+}
+
+#slideThree {
+  @extend .slide;
+  background-image: url("images/slideThree.png");
+}
+
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto{
+	position: relative !important;
+	margin-left: auto;
+	margin-right: auto;
+	bottom: 15px !important;
+}
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager{
+	text-align: center !important;
+	width: 80% !important;
+}
+
+div.bx-pager-item {
+	margin: 10px !important;
+}
+
+.bx-wrapper .bx-controls-auto {
+	margin-top: 5px !important;
+}
+div.bx-controls-direction {
+	a{
+		top: 45% !important;
+	}
+
+}
+
+
+
+.bannerButton{
+  @include box-shadow(0px 2px 2px rgba(0, 0, 0, 0.2));
+  display:inline-block;
+  color:#fff;
+  height: 1.4em;
+  line-height: 1.4em;
+  padding: .6em 1.2em .6em 1.2em;
+  margin: 10px 0 0 0;
+  border: none;
+  background:$primary-color;
+  cursor: pointer;  
+  transition: all 0.2s ease;
+}
+
+.bannerButton:hover, .bannerButton:active{
+  @include box-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
+  color: #fff;
+  background: lighten($primary-color, 10%);
+  text-decoration:none;
+  transition: all 0.2s ease;
+}
+*/

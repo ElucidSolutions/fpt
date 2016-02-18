@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Technical Modifications</category>
+         <ttm:title>Change in Geographic Coverage (scope)</ttm:title>
+         <ttm:desc>Change of Scope refers to a Change in Geographic Coverage Modification.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.06" end="00:00:04.30" region="speaker">This modification allows you to change the</p>
+         <p begin="00:00:04.30" end="00:00:06.06" region="speaker">geographic scope of coverage for your</p>
+         <p begin="00:00:06.06" end="00:00:07.56" region="speaker">contract.</p>
+         <p begin="00:00:07.56" end="00:00:10.23" region="speaker">Select the desired SIN from the dropdown menu</p>
+         <p begin="00:00:10.23" end="00:00:13.33" region="speaker">then click &quot;Update SIN Details.&quot;</p>
+         <p begin="00:00:13.33" end="00:00:15.43" region="speaker">The SIN details will show you the current scope</p>
+         <p begin="00:00:15.43" end="00:00:18.26" region="speaker">associated with your chosen SIN.</p>
+         <p begin="00:00:18.26" end="00:00:20.53" region="speaker">From the dropdown menu, select what your new</p>
+         <p begin="00:00:20.53" end="00:00:22.76" region="speaker">geographic coverage Will be.</p>
+         <p begin="00:00:22.76" end="00:00:25.30" region="speaker">When you are satisfied with your selection click</p>
+         <p begin="00:00:25.30" end="00:00:27.20" region="speaker">&quot;Update This SIN.&quot;</p>
+         <p begin="00:00:27.20" end="00:00:29.76" region="speaker">If you would like to make changes to your scope or</p>
+         <p begin="00:00:29.76" end="00:00:31.83" region="speaker">if you have made an error and wish to delete the</p>
+         <p begin="00:00:31.83" end="00:00:34.73" region="speaker">change in scope you may do so with the &quot;Edit&quot; and</p>
+         <p begin="00:00:34.73" end="00:00:36.56" region="speaker">&quot;Delete&quot; links.</p>
+         <p begin="00:00:36.56" end="00:00:39.10" region="speaker">Otherwise, provide a description about what has</p>
+         <p begin="00:00:39.10" end="00:00:42.13" region="speaker">necessitated your change in Geographic coverage as</p>
+         <p begin="00:00:42.13" end="00:00:44.16" region="speaker">well as any other pertinent details in the</p>
+         <p begin="00:00:44.16" end="00:00:46.03" region="speaker">textbox below.</p>
+         <p begin="00:00:46.03" end="00:00:48.56" region="speaker">When you are finished click &quot;Save and Continue.&quot;</p>
+    </div>
+  </body>
+</tt>

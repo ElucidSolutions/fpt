@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Final Review</category>
+         <ttm:title>Final Review</ttm:title>
+         <ttm:desc>Once you have completed all sections of your eOffer, you will arrive at the Submitting your eOffer screen. It will ask whether you are ready to Submit. By selecting 'Yes,' you will be directed to the Final Review of eOffer screen.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.16" end="00:00:04.50" region="speaker">After completing the Upload Documents screen</p>
+         <p begin="00:00:04.50" end="00:00:06.33" region="speaker">you will be asked to confirm that you are ready</p>
+         <p begin="00:00:06.33" end="00:00:07.63" region="speaker">to submit your eOffer.</p>
+         <p begin="00:00:07.63" end="00:00:10.26" region="speaker">You will still have one final opportunity to</p>
+         <p begin="00:00:10.26" end="00:00:13.86" region="speaker">review your offer prior to submission, click Yes to</p>
+         <p begin="00:00:13.86" end="00:00:15.86" region="speaker">move onto the review.</p>
+         <p begin="00:00:15.86" end="00:00:18.53" region="speaker">Once you make it to the final review screen you</p>
+         <p begin="00:00:18.53" end="00:00:20.96" region="speaker">should notice that all of the items in the left-hand</p>
+         <p begin="00:00:20.96" end="00:00:23.76" region="speaker">navigation have check marks next to them.</p>
+         <p begin="00:00:23.76" end="00:00:25.40" region="speaker">This indicates that everything has been</p>
+         <p begin="00:00:25.40" end="00:00:28.23" region="speaker">completed except for the submission of your offer</p>
+         <p begin="00:00:28.23" end="00:00:29.46" region="speaker">package.</p>
+         <p begin="00:00:29.46" end="00:00:32.03" region="speaker">If any of the menu items have a yellow exclamation</p>
+         <p begin="00:00:32.03" end="00:00:34.66" region="speaker">point, you should click that item, return to the</p>
+         <p begin="00:00:34.66" end="00:00:37.43" region="speaker">section, and provide the information necessary to</p>
+         <p begin="00:00:37.43" end="00:00:38.83" region="speaker">complete it.</p>
+         <p begin="00:00:38.83" end="00:00:40.93" region="speaker">It is recommended that you review each of the</p>
+         <p begin="00:00:40.93" end="00:00:44.16" region="speaker">attached documents for accuracy and completeness</p>
+         <p begin="00:00:44.16" end="00:00:47.00" region="speaker">as providing incorrect information may delay your</p>
+         <p begin="00:00:47.00" end="00:00:49.03" region="speaker">contract award.</p>
+         <p begin="00:00:49.03" end="00:00:51.80" region="speaker">Simply click the &quot;Review&quot; button to download a PDF</p>
+         <p begin="00:00:51.80" end="00:00:54.33" region="speaker">copy of each of the files.</p>
+         <p begin="00:00:54.33" end="00:00:55.10" region="speaker">If you find any information that is</p>
+         <p begin="00:00:55.10" end="00:00:59.00" region="speaker">inaccurate, simply click the link in the left hand</p>
+         <p begin="00:00:59.00" end="00:00:62.13" region="speaker">navigation to return to that section and replace</p>
+         <p begin="00:00:62.13" end="00:00:64.46" region="speaker">the incorrect information.</p>
+         <p begin="00:00:64.46" end="00:00:67.16" region="speaker">If everything looks correct, certify that you</p>
+         <p begin="00:00:67.16" end="00:00:69.93" region="speaker">have reviewed the &quot;ORCA response&quot; document and</p>
+         <p begin="00:00:69.93" end="00:00:71.76" region="speaker">understand that it will be submitted with your</p>
+         <p begin="00:00:71.76" end="00:00:73.13" region="speaker">eOffer.</p>
+         <p begin="00:00:73.13" end="00:00:75.90" region="speaker">Also, certify that you downloaded the Request for</p>
+         <p begin="00:00:75.90" end="00:00:79.40" region="speaker">Proposal from FBO and understand all of the</p>
+         <p begin="00:00:79.40" end="00:00:82.13" region="speaker">associated clauses and provisions that required</p>
+         <p begin="00:00:82.13" end="00:00:83.83" region="speaker">your response.</p>
+         <p begin="00:00:83.83" end="00:00:86.50" region="speaker">If you can answer &quot;Yes&quot; to each of these questions</p>
+         <p begin="00:00:86.50" end="00:00:89.03" region="speaker">and have reviewed your entire offer package, you</p>
+         <p begin="00:00:89.03" end="00:00:91.03" region="speaker">are ready to click &quot;Continue.&quot;</p>
+    </div>
+  </body>
+</tt>

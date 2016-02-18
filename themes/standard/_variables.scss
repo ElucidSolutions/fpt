@@ -1,0 +1,104 @@
+/* I. Colors */
+
+$background_color: #555555;
+
+$primary-color: rgb(242,154,47);  
+
+$red: rgb(237,28,36);
+
+$bg-color: rgb(255, 255, 255);
+
+$link-color: $red;
+
+$light_orange: #f8bb78;
+
+$dark_orange: #ec6f1b;
+
+$darkest_orange: darken($dark_orange, 20%);
+
+$light_blue: #AECFED;
+
+$light_gray: #f9f5f2;
+
+$medium_gray: rgb(221, 221, 221);
+
+$dark_gray: rgb(178, 178, 178);
+
+$darkest_gray: #5C5C5C;
+
+$text_gray: rgb(51, 51, 51);
+
+$highlight: #ffc;
+
+$default_header_color: #ed1c24;
+
+$default_header_font: "Open Sans" sans-serif;
+
+$default_header_weight: 200;
+
+/* II. Dimensions */
+
+$header_height: 97px;
+
+$header_top_height: 27px;
+
+$header_bottom_height: $header_height - $header_top_height;
+
+/*
+  The Sidr nav menu content area width.
+  The Sidr nav menu is 300px wide by default
+  and the sidebar occupies 20px by default.
+  The default Sidr width is determined by the
+  stylesheet in the Sidr module.
+*/
+$nav_menu_width: 280px;
+
+$font-family: 'Open Sans', sans-serif;
+
+$banner-text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+
+$video_library_height: 400px;
+
+/*
+$background_color: #555555;
+
+
+$primary-color: rgb(242,154,47);  
+
+$secondary-color: rgb(237,28,36);
+
+$bg-color: rgb(255, 255, 255);
+
+$link-color: $secondary-color;
+
+$light_orange: #f8bb78;
+$dark_orange: #ec6f1b;
+$darkest_orange: darken($dark_orange, 20%);
+
+$light_blue: #AECFED;
+
+$light_gray: #f9f5f2;
+$medium_gray: #f4f4f4;
+$dark_gray: rgb(34, 34, 34);
+
+$border_color: rgb(220,220,220);
+
+$highlight: #ffc;
+
+$default_header_color: #ed1c24;
+$default_header_font: "Open Sans" sans-serif;
+
+$default_header_weight: 200;
+
+$header_height: 4.5em;
+
+$navigation_menu_width: $header_height;
+
+
+
+
+
+$font-family: 'Open Sans', sans-serif;
+
+$banner-text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+*/

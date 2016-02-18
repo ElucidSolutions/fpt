@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Pricing Modifications</category>
+         <ttm:title>Temporary Price Reduction</ttm:title>
+         <ttm:desc>A Temporary Price Reduction Modification indicates an adjustment of prices over a defined period of time, and may be necessary based on a variety of factors including competition or internal Company changes.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.60" end="00:00:05.13" region="speaker">GSA allows you to temporarily reduce the</p>
+         <p begin="00:00:05.13" end="00:00:07.43" region="speaker">prices of the goods and services offered under</p>
+         <p begin="00:00:07.43" end="00:00:11.90" region="speaker">your GSA schedule contract As this modification could</p>
+         <p begin="00:00:11.90" end="00:00:14.20" region="speaker">potentially impact your projections of how much</p>
+         <p begin="00:00:14.20" end="00:00:16.66" region="speaker">business you plan to do with the government, you</p>
+         <p begin="00:00:16.66" end="00:00:18.66" region="speaker">may need to review and update your Commercial</p>
+         <p begin="00:00:18.66" end="00:00:22.86" region="speaker">Sales Practice If so, click Yes and Save, upon</p>
+         <p begin="00:00:22.86" end="00:00:26.10" region="speaker">which you will be taken through the CSP utility.</p>
+         <p begin="00:00:26.10" end="00:00:28.70" region="speaker">Updating your CSP is covered in a different</p>
+         <p begin="00:00:28.70" end="00:00:29.80" region="speaker">video.</p>
+         <p begin="00:00:29.80" end="00:00:33.26" region="speaker">If this is not the case, select No and continue</p>
+         <p begin="00:00:33.26" end="00:00:35.10" region="speaker">with the modification.</p>
+         <p begin="00:00:35.10" end="00:00:37.73" region="speaker">Begin by selecting a &quot;Start&quot; and &quot;End Date&quot; for</p>
+         <p begin="00:00:37.73" end="00:00:40.13" region="speaker">your Temporary Price Reduction.</p>
+         <p begin="00:00:40.13" end="00:00:41.70" region="speaker">Enter a detailed description of your</p>
+         <p begin="00:00:41.70" end="00:00:43.90" region="speaker">Temporary Price Reduction.</p>
+         <p begin="00:00:43.90" end="00:00:46.56" region="speaker">Information here may include actual costs of</p>
+         <p begin="00:00:46.56" end="00:00:49.30" region="speaker">particular goods or services or percentage</p>
+         <p begin="00:00:49.30" end="00:00:51.10" region="speaker">reductions you are offering for the given</p>
+         <p begin="00:00:51.10" end="00:00:52.20" region="speaker">period.</p>
+         <p begin="00:00:52.20" end="00:00:54.36" region="speaker">You may also include a reason for the temporary</p>
+         <p begin="00:00:54.36" end="00:00:56.03" region="speaker">price reduction.</p>
+         <p begin="00:00:56.03" end="00:00:58.13" region="speaker">When you are finished click the &quot;Save and</p>
+         <p begin="00:00:58.13" end="00:00:60.20" region="speaker">Continue&quot; button</p>
+    </div>
+  </body>
+</tt>

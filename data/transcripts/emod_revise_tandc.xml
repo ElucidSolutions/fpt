@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Terms &amp; Conditions Modifications</category>
+         <ttm:title>Revise Terms and Conditions</ttm:title>
+         <ttm:desc>The Revise Terms and Conditions Modification allows you to revise Clauses that apply to the Contract Offer. You may add multiple Clause revisions under this Modification,  working with each one individually before you submit.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:04.10" region="speaker">Terms and Conditions should be up to date at</p>
+         <p begin="00:00:04.10" end="00:00:07.40" region="speaker">all times, as they ensure that parties of both sides</p>
+         <p begin="00:00:07.40" end="00:00:10.40" region="speaker">of all transactions are aware of expectations and</p>
+         <p begin="00:00:10.40" end="00:00:12.13" region="speaker">responsibilities.</p>
+         <p begin="00:00:12.13" end="00:00:14.63" region="speaker">The clauses that appear in your dropdown menu will</p>
+         <p begin="00:00:14.63" end="00:00:16.96" region="speaker">differ depending on your contract.</p>
+         <p begin="00:00:16.96" end="00:00:20.16" region="speaker">You must add at least one clause; multiple clauses</p>
+         <p begin="00:00:20.16" end="00:00:22.90" region="speaker">can be revised but one at a time.</p>
+         <p begin="00:00:22.90" end="00:00:25.06" region="speaker">Select the clause you wish to add from the drop down</p>
+         <p begin="00:00:25.06" end="00:00:26.06" region="speaker">menu.</p>
+         <p begin="00:00:26.06" end="00:00:29.53" region="speaker">Make your applicable selection and click &quot;Add.&quot;</p>
+         <p begin="00:00:29.53" end="00:00:32.03" region="speaker">The clause will appear in the table below.</p>
+         <p begin="00:00:32.03" end="00:00:34.86" region="speaker">When you have added all of the necessary clauses,</p>
+         <p begin="00:00:34.86" end="00:00:37.80" region="speaker">click &quot;Respond&quot; under the Action column.</p>
+         <p begin="00:00:37.80" end="00:00:40.36" region="speaker">The screen you are brought to will depend on the type</p>
+         <p begin="00:00:40.36" end="00:00:42.70" region="speaker">of clause to which you are responding.</p>
+         <p begin="00:00:42.70" end="00:00:46.33" region="speaker">In this scenario we are responding to a CSP but</p>
+         <p begin="00:00:46.33" end="00:00:48.13" region="speaker">your screen may vary.</p>
+         <p begin="00:00:48.13" end="00:00:50.20" region="speaker">If you have another clause, repeat the</p>
+         <p begin="00:00:50.20" end="00:00:52.50" region="speaker">previous steps until you are satisfied with your</p>
+         <p begin="00:00:52.50" end="00:00:54.00" region="speaker">revisions.</p>
+         <p begin="00:00:54.00" end="00:00:56.10" region="speaker">Click the &quot;Save and Continue&quot; button to move</p>
+         <p begin="00:00:56.10" end="00:00:58.10" region="speaker">forward.</p>
+    </div>
+  </body>
+</tt>

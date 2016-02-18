@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Technical Modifications</category>
+         <ttm:title>Product Descriptive Changes</ttm:title>
+         <ttm:desc>A Product Descriptive Change Modification allows Contractors to update the description of Products included in the Contract Offer.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.03" end="00:00:05.10" region="speaker">When you were applying for your GSA contract, you had</p>
+         <p begin="00:00:05.10" end="00:00:07.23" region="speaker">to provide detailed information regarding the</p>
+         <p begin="00:00:07.23" end="00:00:09.86" region="speaker">products that you intended to sell.</p>
+         <p begin="00:00:09.86" end="00:00:12.63" region="speaker">As your business evolves, there may be the need to</p>
+         <p begin="00:00:12.63" end="00:00:15.53" region="speaker">update these product descriptions.</p>
+         <p begin="00:00:15.53" end="00:00:17.83" region="speaker">This modification allows you to update those</p>
+         <p begin="00:00:17.83" end="00:00:20.40" region="speaker">products on your schedule, ensuring that the</p>
+         <p begin="00:00:20.40" end="00:00:22.93" region="speaker">descriptive product information from your GSA</p>
+         <p begin="00:00:22.93" end="00:00:25.46" region="speaker">Schedule matches that which you are actually</p>
+         <p begin="00:00:25.46" end="00:00:26.96" region="speaker">selling.</p>
+         <p begin="00:00:26.96" end="00:00:30.13" region="speaker">In the text box, enter enough information for the</p>
+         <p begin="00:00:30.13" end="00:00:32.06" region="speaker">CO to understand the product description you</p>
+         <p begin="00:00:32.06" end="00:00:35.76" region="speaker">are updating and the reason for the update.</p>
+         <p begin="00:00:35.76" end="00:00:38.30" region="speaker">When you finish, click &quot;Save and Continue.&quot;</p>
+    </div>
+  </body>
+</tt>

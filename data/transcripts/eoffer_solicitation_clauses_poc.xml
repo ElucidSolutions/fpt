@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Solicitation Clauses</category>
+         <ttm:title>Point of Contact Information</ttm:title>
+         <ttm:desc>Multiple Points of Contact may be designated in the Points of Contact Information Template. For some organizations, it may be advantageous to designate separate Points of Contact for specialized roles, such as Marketing and Contract Administration.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.10" end="00:00:04.53" region="speaker">The &quot;Point of Contact Information&quot; screen</p>
+         <p begin="00:00:04.53" end="00:00:07.00" region="speaker">requires you to add the contact information for</p>
+         <p begin="00:00:07.00" end="00:00:09.40" region="speaker">people associated with your contract.</p>
+         <p begin="00:00:09.40" end="00:00:11.83" region="speaker">Note the drop down menu under &quot;Point of Contact</p>
+         <p begin="00:00:11.83" end="00:00:12.93" region="speaker">Information.&quot;</p>
+         <p begin="00:00:12.93" end="00:00:16.16" region="speaker">Although only one Contract Administrator is required,</p>
+         <p begin="00:00:16.16" end="00:00:19.36" region="speaker">a best practice is to designate two or more.</p>
+         <p begin="00:00:19.36" end="00:00:21.76" region="speaker">Having multiple administrators reduces the</p>
+         <p begin="00:00:21.76" end="00:00:24.43" region="speaker">risk of costly lag time in the event that one</p>
+         <p begin="00:00:24.43" end="00:00:28.36" region="speaker">administrator is unable to perform his/her duties.</p>
+         <p begin="00:00:28.36" end="00:00:31.36" region="speaker">A contract administrator can be either Domestic or</p>
+         <p begin="00:00:31.36" end="00:00:32.86" region="speaker">Overseas.</p>
+         <p begin="00:00:32.86" end="00:00:35.43" region="speaker">You can also identify individuals specifically</p>
+         <p begin="00:00:35.43" end="00:00:38.26" region="speaker">responsible for marketing and for management of your</p>
+         <p begin="00:00:38.26" end="00:00:41.13" region="speaker">contract&apos;s Industrial Funding Fee.</p>
+         <p begin="00:00:41.13" end="00:00:43.40" region="speaker">It is recommended that you begin with the &quot;Contract</p>
+         <p begin="00:00:43.40" end="00:00:45.03" region="speaker">Administrator.&quot;</p>
+         <p begin="00:00:45.03" end="00:00:48.00" region="speaker">Select this option from the drop down menu, again</p>
+         <p begin="00:00:48.00" end="00:00:50.06" region="speaker">indicating whether that person is located</p>
+         <p begin="00:00:50.06" end="00:00:53.60" region="speaker">domestically or Overseas, and click &quot;Add Point of</p>
+         <p begin="00:00:53.60" end="00:00:55.80" region="speaker">Contact Details&quot; when you&apos;re ready to move</p>
+         <p begin="00:00:55.80" end="00:00:58.06" region="speaker">forward.</p>
+         <p begin="00:00:58.06" end="00:00:60.23" region="speaker">On the Contact Information Screen, note the fields</p>
+         <p begin="00:00:60.23" end="00:00:63.73" region="speaker">designated with a red asterisk.</p>
+         <p begin="00:00:63.73" end="00:00:67.16" region="speaker">These are mandatory fields which must be completed.</p>
+         <p begin="00:00:67.16" end="00:00:69.20" region="speaker">Begin with the individual&apos;s &quot;Name&quot; and</p>
+         <p begin="00:00:69.20" end="00:00:70.50" region="speaker">&quot;Title.</p>
+         <p begin="00:00:70.50" end="00:00:72.30" region="speaker">&quot;You will also need to enter the &quot;address&quot; of the</p>
+         <p begin="00:00:72.30" end="00:00:75.26" region="speaker">person for whom you are entering information.</p>
+         <p begin="00:00:75.26" end="00:00:78.00" region="speaker">Note that the address and phone information should</p>
+         <p begin="00:00:78.00" end="00:00:80.76" region="speaker">identify where the person works, not where that</p>
+         <p begin="00:00:80.76" end="00:00:82.76" region="speaker">person lives.</p>
+         <p begin="00:00:83.76" end="00:00:86.03" region="speaker">Indicate the street address and the city in</p>
+         <p begin="00:00:86.03" end="00:00:88.86" region="speaker">the free form text boxes.</p>
+         <p begin="00:00:88.86" end="00:00:91.80" region="speaker">If the person is located domestically, select the</p>
+         <p begin="00:00:91.80" end="00:00:94.96" region="speaker">state from the drop down menu; if internationally</p>
+         <p begin="00:00:94.96" end="00:00:97.96" region="speaker">based, enter the country name in the free form</p>
+         <p begin="00:00:97.96" end="00:00:99.63" region="speaker">&quot;text box.&quot;</p>
+         <p begin="00:00:99.63" end="00:00:102.53" region="speaker">Enter the person&apos;s &quot;zip or postal code.&quot;</p>
+         <p begin="00:00:102.53" end="00:00:104.43" region="speaker">Select the appropriate country from the &quot;drop</p>
+         <p begin="00:00:104.43" end="00:00:105.83" region="speaker">down menu.&quot;</p>
+         <p begin="00:00:105.83" end="00:00:110.50" region="speaker">Note that United States is at the top of the list.</p>
+         <p begin="00:00:110.50" end="00:00:114.60" region="speaker">Enter the person&apos;s &quot;phone&quot; and &quot;fax number.&quot;</p>
+         <p begin="00:00:114.60" end="00:00:118.60" region="speaker">As well as the person&apos;s &quot;e-mail address.&quot;</p>
+         <p begin="00:00:118.60" end="00:00:121.10" region="speaker">Note the &quot;DUNS number text field.&quot;</p>
+         <p begin="00:00:121.10" end="00:00:123.46" region="speaker">This could be the same DUNS associated with your</p>
+         <p begin="00:00:123.46" end="00:00:127.20" region="speaker">company or, in the case of some larger businesses, a</p>
+         <p begin="00:00:127.20" end="00:00:129.73" region="speaker">different DUNS signifying a separate branch or</p>
+         <p begin="00:00:129.73" end="00:00:132.26" region="speaker">division within your overall company structure.</p>
+         <p begin="00:00:132.26" end="00:00:135.16" region="speaker">Click the &quot;Add Point of Contact Information&quot;</p>
+         <p begin="00:00:135.16" end="00:00:138.40" region="speaker">button You will see new Point of Contact added to</p>
+         <p begin="00:00:138.40" end="00:00:141.13" region="speaker">your list with the ability to &quot;Edit&quot; or &quot;Delete&quot; the</p>
+         <p begin="00:00:141.13" end="00:00:143.20" region="speaker">individual.</p>
+         <p begin="00:00:143.20" end="00:00:145.10" region="speaker">Continue adding the necessary points of</p>
+         <p begin="00:00:145.10" end="00:00:147.00" region="speaker">contact to your Offer.</p>
+         <p begin="00:00:147.00" end="00:00:149.13" region="speaker">When you are finished adding Points of Contact</p>
+         <p begin="00:00:149.13" end="00:00:152.03" region="speaker">Information, click &quot;Back to Solicitation Clauses&quot;</p>
+         <p begin="00:00:152.03" end="00:00:154.03" region="speaker">to move on.</p>
+    </div>
+  </body>
+</tt>

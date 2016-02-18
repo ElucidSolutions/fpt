@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Digital Certificates</category>
+         <ttm:title>Verifying a Digital Certificate (Firefox)</ttm:title>
+         <ttm:desc>After you have uploaded your Digital Certificate, it may be helpful to verify that it is properly installed within the internet browser, and that your name, company, and email address appear as expected. Doing so will ensure the Certificate is validated when you sign into the eOffer/eMod system. This video follows the Certificate verification process for the Mozilla Firefox web browser.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:08.16" end="00:00:10.30" region="speaker">You may need to verify the information on your</p>
+         <p begin="00:00:10.30" end="00:00:11.90" region="speaker">digital certificate.</p>
+         <p begin="00:00:11.90" end="00:00:14.70" region="speaker">To check your certificate on Firefox, first click</p>
+         <p begin="00:00:14.70" end="00:00:18.33" region="speaker">&quot;Tools,&quot; then &quot;Options.&quot;</p>
+         <p begin="00:00:18.33" end="00:00:20.70" region="speaker">Open the &quot;Advanced&quot; tab.</p>
+         <p begin="00:00:20.70" end="00:00:23.20" region="speaker">Then click the &quot;Encryption&quot; tab.</p>
+         <p begin="00:00:23.20" end="00:00:25.53" region="speaker">Click the &quot;View Certificates&quot; button.</p>
+         <p begin="00:00:25.53" end="00:00:28.90" region="speaker">Select the cert you would like to verify then click</p>
+         <p begin="00:00:28.90" end="00:00:30.23" region="speaker">&quot;View.&quot;</p>
+         <p begin="00:00:30.23" end="00:00:32.93" region="speaker">Open the &quot;Details&quot; tab, and then select the &quot;Subject&quot;</p>
+         <p begin="00:00:32.93" end="00:00:34.46" region="speaker">field.</p>
+         <p begin="00:00:34.46" end="00:00:36.63" region="speaker">Check that your name is correct as you submitted</p>
+         <p begin="00:00:36.63" end="00:00:37.63" region="speaker">it.</p>
+         <p begin="00:00:37.63" end="00:00:39.26" region="speaker">If anything does not match, you will be unable</p>
+         <p begin="00:00:39.26" end="00:00:41.43" region="speaker">to access the system later on.</p>
+         <p begin="00:00:41.43" end="00:00:43.63" region="speaker">If there are any problems with the information in</p>
+         <p begin="00:00:43.63" end="00:00:46.03" region="speaker">your digital certificate, you must contact your</p>
+         <p begin="00:00:46.03" end="00:00:48.16" region="speaker">respective certificate provider - either</p>
+         <p begin="00:00:48.16" end="00:00:50.80" region="speaker">IdenTrust or Operational Research Consultants -</p>
+         <p begin="00:00:50.80" end="00:00:55.06" region="speaker">before moving forward.</p>
+         <p begin="00:00:55.06" end="00:00:57.93" region="speaker">Next scroll down to the &quot;Certificate Subject Alt</p>
+         <p begin="00:00:57.93" end="00:00:60.56" region="speaker">Name&quot; field to verify your e-mail address.</p>
+    </div>
+  </body>
+</tt>

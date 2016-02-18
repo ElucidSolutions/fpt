@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Digital Certificates</category>
+         <ttm:title>Digital Certificates Introduction</ttm:title>
+         <ttm:desc>Authorized Negotiators may be assigned to an Offer with or without the authority to sign, and it is recommended practice to assign multiple Authorized Negotiators to the same Offer in order to ensure consistent representation throughout the Award process. Authorized Negotiators are added to an Offer when it is first created, but can also be added, removed, or have their authority status changed through the Modification process. This video will demonstrate the steps required to add Authorized Negotiators while creating an eOffer, as well as working with the Authorized Negotiator Modification.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:07.86" end="00:00:10.43" region="speaker">In this series of videos, we will be talking about</p>
+         <p begin="00:00:10.43" end="00:00:12.70" region="speaker">many aspects of digital certificates.</p>
+         <p begin="00:00:12.70" end="00:00:15.33" region="speaker">A digital certificate is essentially an electronic</p>
+         <p begin="00:00:15.33" end="00:00:18.16" region="speaker">credential stored on the web browser that verifies</p>
+         <p begin="00:00:18.16" end="00:00:20.23" region="speaker">a user&apos;s identity.</p>
+         <p begin="00:00:20.23" end="00:00:23.06" region="speaker">In order for an individual to sign-in to eOffer/eMod</p>
+         <p begin="00:00:23.06" end="00:00:25.86" region="speaker">successfully, a digital certificate must be</p>
+         <p begin="00:00:25.86" end="00:00:30.10" region="speaker">present and verified on the user&apos;s computer.</p>
+         <p begin="00:00:30.10" end="00:00:34.13" region="speaker">Digital Certificates are unique to a single person</p>
+         <p begin="00:00:34.13" end="00:00:36.33" region="speaker">and are associated with the organization for which</p>
+         <p begin="00:00:36.33" end="00:00:37.73" region="speaker">that person works.</p>
+         <p begin="00:00:37.73" end="00:00:40.00" region="speaker">They cannot be used by another individual or a</p>
+         <p begin="00:00:40.00" end="00:00:42.13" region="speaker">group.</p>
+         <p begin="00:00:42.13" end="00:00:45.70" region="speaker">Digital Certificates serve five primary functions.</p>
+         <p begin="00:00:45.70" end="00:00:48.80" region="speaker">They: Assert the identity of an individual Enable</p>
+         <p begin="00:00:48.80" end="00:00:51.50" region="speaker">systems such as eOffer/eMod to verify the</p>
+         <p begin="00:00:51.50" end="00:00:53.93" region="speaker">identity of the individual entering the system and</p>
+         <p begin="00:00:53.93" end="00:00:55.53" region="speaker">signing documents.</p>
+         <p begin="00:00:55.53" end="00:00:58.13" region="speaker">Encrypt and decrypt data to ensure that it is</p>
+         <p begin="00:00:58.13" end="00:00:60.43" region="speaker">securely transmitted.</p>
+         <p begin="00:00:60.43" end="00:00:62.50" region="speaker">Ensure accurate information is stored on a</p>
+         <p begin="00:00:62.50" end="00:00:63.56" region="speaker">web browser.</p>
+         <p begin="00:00:63.56" end="00:00:65.53" region="speaker">And they create verifiable Digital signatures.</p>
+         <p begin="00:00:68.96" end="00:00:71.16" region="speaker">Having explained their purpose, let&apos;s further</p>
+         <p begin="00:00:71.16" end="00:00:74.06" region="speaker">break down exactly what a digital signature is, how</p>
+         <p begin="00:00:74.06" end="00:00:77.66" region="speaker">it functions, and what it is not.</p>
+         <p begin="00:00:77.66" end="00:00:80.66" region="speaker">A digital signature is: A piece of information based</p>
+         <p begin="00:00:80.66" end="00:00:83.63" region="speaker">on both the document and the signer&apos;s private key.</p>
+         <p begin="00:00:83.63" end="00:00:86.10" region="speaker">Is unique to both the document and the signer.</p>
+         <p begin="00:00:86.10" end="00:00:90.00" region="speaker">And is Virtually impossible to forge</p>
+         <p begin="00:00:90.00" end="00:00:92.73" region="speaker">Generally, when applying for a digital certificate</p>
+         <p begin="00:00:92.73" end="00:00:94.83" region="speaker">the cert provider will require you to submit</p>
+         <p begin="00:00:94.83" end="00:00:97.66" region="speaker">proof of employment with your organization as well</p>
+         <p begin="00:00:97.66" end="00:00:99.83" region="speaker">as up to two forms of identification.</p>
+         <p begin="00:00:99.83" end="00:00:102.13" region="speaker">More information about specific application</p>
+         <p begin="00:00:102.13" end="00:00:105.90" region="speaker">requirements is available from each provider.</p>
+         <p begin="00:00:105.90" end="00:00:108.46" region="speaker">Let&apos;s next discuss how this digital certificate</p>
+         <p begin="00:00:108.46" end="00:00:110.63" region="speaker">actually functions.</p>
+         <p begin="00:00:110.63" end="00:00:113.00" region="speaker">The digital cert&apos;s public key is stored with the</p>
+         <p begin="00:00:113.00" end="00:00:115.60" region="speaker">cert provider and the private key is installed</p>
+         <p begin="00:00:115.60" end="00:00:118.63" region="speaker">locally your web browser This combination of the</p>
+         <p begin="00:00:118.63" end="00:00:121.53" region="speaker">public and private keys creates a &quot;hash&quot;.</p>
+         <p begin="00:00:121.53" end="00:00:124.23" region="speaker">The hash consist of a bunch of &quot;1s&quot; and &quot;0s&quot;</p>
+         <p begin="00:00:124.23" end="00:00:126.03" region="speaker">that are unique to your certificate.</p>
+         <p begin="00:00:126.03" end="00:00:128.60" region="speaker">It is this combination that comprises the digital</p>
+         <p begin="00:00:128.60" end="00:00:130.53" region="speaker">signature.</p>
+         <p begin="00:00:130.53" end="00:00:132.83" region="speaker">Once the document is signed, the hash can be</p>
+         <p begin="00:00:132.83" end="00:00:134.73" region="speaker">verified.</p>
+         <p begin="00:00:134.73" end="00:00:137.40" region="speaker">With all of this in mind, describing what a digital</p>
+         <p begin="00:00:137.40" end="00:00:141.53" region="speaker">certificate is not, should be relatively inuitive.</p>
+         <p begin="00:00:141.53" end="00:00:144.06" region="speaker">For example, a digital signature is not: A</p>
+         <p begin="00:00:144.06" end="00:00:146.06" region="speaker">digitized handwritten signature.</p>
+         <p begin="00:00:146.06" end="00:00:148.96" region="speaker">The type name of an individual, or A secret</p>
+         <p begin="00:00:148.96" end="00:00:151.03" region="speaker">code, password, or a PIN number.</p>
+         <p begin="00:00:153.06" end="00:00:155.90" region="speaker">Once your certification is loaded onto your browser,</p>
+         <p begin="00:00:155.90" end="00:00:157.96" region="speaker">you will be able to effortlessly log into</p>
+         <p begin="00:00:157.96" end="00:00:159.96" region="speaker">eOffer and eMod.</p>
+         <p begin="00:00:162.53" end="00:00:165.03" region="speaker">The topics we will discuss in this series of videos</p>
+         <p begin="00:00:165.03" end="00:00:167.76" region="speaker">include: Being a good Steward of your Digital</p>
+         <p begin="00:00:167.76" end="00:00:170.96" region="speaker">Certificate Obtaining a digital certificate and</p>
+         <p begin="00:00:170.96" end="00:00:173.06" region="speaker">the types of information you will need to submit to</p>
+         <p begin="00:00:173.06" end="00:00:176.20" region="speaker">the cert providers such as your application, proof of</p>
+         <p begin="00:00:176.20" end="00:00:177.96" region="speaker">employment and forms of identification, How to</p>
+         <p begin="00:00:177.96" end="00:00:181.56" region="speaker">load your digital certificate, The process</p>
+         <p begin="00:00:181.56" end="00:00:183.93" region="speaker">for renewing a certificate, Exporting</p>
+         <p begin="00:00:183.93" end="00:00:186.96" region="speaker">your digital certificate to a USB drive, and</p>
+         <p begin="00:00:186.96" end="00:00:189.33" region="speaker">Finding information about a certificate you already</p>
+         <p begin="00:00:189.33" end="00:00:190.33" region="speaker">have.</p>
+    </div>
+  </body>
+</tt>

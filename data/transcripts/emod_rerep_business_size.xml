@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+   <head>
+      <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">
+         <category>Terms &amp; Conditions Modifications</category>
+         <ttm:title>Re-representation of Business Size</ttm:title>
+         <ttm:desc>Federal agencies often set aside Contracts for small businesses whose revenue falls under a specific threshold. As part of the Contract Offer process, your Company will have been required to certify that it is or is not a small business. The Re-Representation of Business Size Modification allows you to inform GSA if your Company outgrows its small business designation, meaning it exceeds the revenue threshold that allows it to be categorized as a small business. Or, in the contrary instance, you can inform GSA if your Company size has decreased, meaning that it will qualify as a small business.
+         </ttm:desc>
+      </metadata>
+      <styling>
+         <style
+            xml:id="defaultSpeaker"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:extent="80% 10%"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:origin="10% 85%"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+         <style
+            xml:id="defaultCaption"
+            tts:backgroundColor="black"
+            tts:color="#ffffff"
+            tts:fontFamily="Arial"
+            tts:fontSize="10px"
+            tts:fontStyle="normal"
+            tts:fontWeight="normal"
+            tts:textAlign="center"
+            tts:textDecoration="none">
+         </style>
+      </styling>
+      <layout>
+         <region style="defaultSpeaker" xml:id="speaker"></region>
+      </layout>
+   </head>
+   <body xml:id="thebody" style="defaultCaption">
+      <div xml:lang="en">
+         <p begin="00:00:02.10" end="00:00:05.23" region="speaker">Federal agencies often set aside contracts for small</p>
+         <p begin="00:00:05.23" end="00:00:07.36" region="speaker">businesses with revenues under a specified</p>
+         <p begin="00:00:07.36" end="00:00:08.36" region="speaker">threshold.</p>
+         <p begin="00:00:08.36" end="00:00:10.86" region="speaker">As part of the contract offer process, your</p>
+         <p begin="00:00:10.86" end="00:00:13.96" region="speaker">company was required to certify that it was or was</p>
+         <p begin="00:00:13.96" end="00:00:16.00" region="speaker">not a small business.</p>
+         <p begin="00:00:16.00" end="00:00:19.30" region="speaker">The Re-Representation of Business Size modification</p>
+         <p begin="00:00:19.30" end="00:00:22.40" region="speaker">allows you to inform GSA if your company outgrows</p>
+         <p begin="00:00:22.40" end="00:00:25.03" region="speaker">its small business designation, meaning it</p>
+         <p begin="00:00:25.03" end="00:00:27.40" region="speaker">exceeds the revenue threshold that allows it</p>
+         <p begin="00:00:27.40" end="00:00:30.66" region="speaker">to be categorized as a small business; OR, if</p>
+         <p begin="00:00:30.66" end="00:00:33.03" region="speaker">your company size decreases and it now</p>
+         <p begin="00:00:33.03" end="00:00:36.10" region="speaker">qualifies as a small business.</p>
+         <p begin="00:00:36.10" end="00:00:38.80" region="speaker">Within the text box, provide the CO with the</p>
+         <p begin="00:00:38.80" end="00:00:40.43" region="speaker">reason you are re-representing your</p>
+         <p begin="00:00:40.43" end="00:00:42.63" region="speaker">company&apos;s business size.</p>
+         <p begin="00:00:42.63" end="00:00:45.26" region="speaker">This information can be relatively high-level as</p>
+         <p begin="00:00:45.26" end="00:00:47.10" region="speaker">you are going to need to provide supporting</p>
+         <p begin="00:00:47.10" end="00:00:51.26" region="speaker">documentation in the Upload Documents section.</p>
+         <p begin="00:00:51.26" end="00:00:53.23" region="speaker">When you are finished click the &quot;Save and</p>
+         <p begin="00:00:53.23" end="00:00:55.23" region="speaker">Continue&quot; button.</p>
+    </div>
+  </body>
+</tt>
