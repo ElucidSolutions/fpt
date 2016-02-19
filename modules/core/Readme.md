@@ -20,7 +20,7 @@ Every module should define a separate QUnit module to group its unit tests under
 QUnit.module ('core');
 ```
 
-### Configuration Variables
+### Global Variables
 
 The Core module defines a number of global variables. These variables can be divided into two groups: those that specify global configuration parameters and those that list registered block and page handlers. 
 
@@ -34,6 +34,10 @@ The Core module defines two global configuration parameters:
 
   `STRICT_ERROR_MODE` indicates whether or not Lucidity should try to recover gracefully from errors or report them immediately. This parameter is set by the `errorMode` element in the Configuration Settings file. 
 
+The remaining global variables store the registered block and page handlers. Whenever a module defines a block or page handler, the module's load event handler must register the block or page handler by calling `registerBlockHandler` or `registerPageHandler` respectively. These functions add entries to `BLOCK_HANDLERS` and `PAGE_HANDLERS`.
+
+Both variables are associative arrays keyed by name. See "Page Handlers" and "Block Handlers" below for more details about page and block handlers.
+
 ```javascript
 // Specifies the settings file URL. 
 var SETTINGS_URL = 'settings.xml';
@@ -46,15 +50,7 @@ var SETTINGS_URL = 'settings.xml';
   "errorMode" parameter in settings.xml.
 */
 var STRICT_ERROR_MODE = true;
-```
 
-### Block and Page Handlers
-
-The remaining global variables store the registered block and page handlers. Whenever a module defines a block or page handler, the module's load event handler must register the block or page handler by calling `registerBlockHandler` or `registerPageHandler` respectively. These functions add entries to `BLOCK_HANDLERS` and `PAGE_HANDLERS`.
-
-Both variables are associative arrays keyed by name. See "Page Handlers" and "Block Handlers" below for more details about page and block handlers.
-
-```javascript
 /*
   The global BLOCK_HANDLERS array lists the active
   block handlers that have been registered with the
@@ -73,13 +69,6 @@ var BLOCK_HANDLERS = {};
 */
 var PAGE_HANDLERS = {};
 
-```
-
-### The Page Load Handlers
-
-The global `PAGE_LOAD_HANDLERS` array lists the Page Load event handlers that have been registered with the system. Whenever the loadPage function is executed, the functions listed within this array are called and passed the new page's ID.
-
-```javascript
 /*
   The global PAGE_LOAD_HANDLERS array lists
   the Page Load event handlers that have been
@@ -89,14 +78,14 @@ The global `PAGE_LOAD_HANDLERS` array lists the Page Load event handlers that ha
   the new page's ID.
 */
 var PAGE_LOAD_HANDLERS = [];
-```
 
-### Modules
-
-```javascript
 /*
 */
 var MODULES = [];
+
+/*
+*/
+var currentId = 0;
 ```
 
 ### The Load Event Handler
@@ -1202,11 +1191,10 @@ function getClassNames (element) {
   w.r.t the current document.
 */
 function getUniqueId () {
-  var n = 0;
-  while ($('#id' + n).length > 0) {
-    n ++;
+  while ($('#id' + currentId).length > 0) {
+    currentId ++;
   }
-  return 'id' + n;
+  return 'id' + (currentId ++);
 }
 
 /*
@@ -1396,13 +1384,7 @@ _"Core Module"
 
 _"QUnit Module Declaration"
 
-_"Configuration Variables"
-
-_"Block and Page Handlers"
-
-_"The Page Load Handlers"
-
-_"Modules"
+_"Global Variables"
 
 _"The Load Event Handler"
 

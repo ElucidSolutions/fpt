@@ -128,6 +128,20 @@
             ]]></body>
           </page>
           <page>
+            <name>fpt-part-1</name>
+            <title><![CDATA[FPT: Part 1]]></title>
+            <body><![CDATA[
+              <div class="presentation_slide_block">presentation_slide_page/example_presentation/first_slide</div>
+            ]]></body>
+          </page>
+          <page>
+            <name>fpt-part-2</name>
+            <title><![CDATA[FPT: Part 2]]></title>
+            <body><![CDATA[
+              <div class="presentation_slide_block">presentation_slide_page/example_presentation/second_slide</div>
+            ]]></body>
+          </page>
+          <page>
             <name>using-the-guide</name>
             <title>Using the Guide</title>
             <body><![CDATA[    

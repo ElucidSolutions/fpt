@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database>
+  <presentation>
+    <name>Example Presentation</name>
+    <slides>
+      <slide>
+        <name>Example Slide</name>
+        <image>https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png</image>
+        <steps>
+          <blankStep>
+            <name>First Step</name>
+            <text><![CDATA[<p>This is an example blank step.</p>]]></text>
+            <position>top</position>
+            <top>10%</top>
+            <left>10%</left>
+            <width>100px</width>
+            <height>100px</height>
+          </blankStep>
+          <inputStep>
+            <name>Second Step</name>
+            <text><![CDATA[<p>This is an example input step.</p>]]></text>
+            <position>top</position>
+            <top>10%</top>
+            <left>10%</left>
+            <width>100px</width>
+            <height>100px</height>
+            <expression><![CDATA[\d+\.\d{2}]]></expression>
+          </inputStep>
+        </steps>
+      </slide>
+    </slides>
+  </presentation>
+</database>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database>
+  <presentation>
+    <name>example_presentation</name>
+    <slides>
+      <slide>
+        <name>first_slide</name>
+        <image>images/fpt_screenshot.png</image>
+        <next>book_page_page/modules%2Fbook%2Fdatabase.xml/eoffer_emod/overview/fpt-part-2</next>
+        <steps>
+          <inputStep>
+            <name>First Step</name>
+            <text><![CDATA[<p>The Manufacturer Part Number cell accepts a number. Enter a number into the cell below.</p>]]></text>
+            <position>top</position>
+            <top>49%</top>
+            <left>13%</left>
+            <width>18.1%</width>
+            <height>5%</height>
+            <expression><![CDATA[\d+]]></expression>
+          </inputStep>
+          <blankStep>
+            <name>Second Step</name>
+            <text><![CDATA[<p>Once you are finished, click the General Tab to continue.</p>]]></text>
+            <position>top</position>
+            <top>28%</top>
+            <left>11%</left>
+            <width>8%</width>
+            <height>6%</height>
+          </blankStep>
+        </steps>
+      </slide>
+      <slide>
+        <name>second_slide</name>
+        <image>images/import_digital_certificate_006.jpg</image>
+        <next></next>
+        <steps>
+          <inputStep>
+            <name>First Step</name>
+            <text><![CDATA[<p>This is an example blank step.</p>]]></text>
+            <position>top</position>
+            <top>25%</top>
+            <left>10%</left>
+            <width>64%</width>
+            <height>5%</height>
+            <expression><![CDATA[\d+]]></expression>
+          </inputStep>
+          <blankStep>
+            <name>Second Step</name>
+            <text><![CDATA[<p>This is an example input step.</p>]]></text>
+            <position>top</position>
+            <top>78%</top>
+            <left>66%</left>
+            <width>14%</width>
+            <height>4%</height>
+          </blankStep>
+        </steps>
+      </slide>
+    </slides>
+  </presentation>
+</database>

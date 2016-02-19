@@ -654,6 +654,26 @@ margin-bottom: 30px;
   transition: background-color 4s;
 }
 
+/* Presentation Module */
+
+.presentation_slide {
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 500px;
+  width:  1000px;
+}
+
+.presentation_step > input {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  width: 100%;
+}
+
+.presentation_step.presentation_valid {
+  background-color: rgba(0,255,0,0.5);
+}
+
 /* Footer Styles */
 
 #footer{

@@ -50,6 +50,10 @@ var PAGE_LOAD_HANDLERS = [];
 var MODULES = [];
 
 /*
+*/
+var currentId = 0;
+
+/*
   The Document Ready event handler. This function
   loads the modules that have been enabled in
   settings.xml and initializes the user interface
@@ -983,11 +987,10 @@ function getClassNames (element) {
   w.r.t the current document.
 */
 function getUniqueId () {
-  var n = 0;
-  while ($('#id' + n).length > 0) {
-    n ++;
+  while ($('#id' + currentId).length > 0) {
+    currentId ++;
   }
-  return 'id' + n;
+  return 'id' + (currentId ++);
 }
 
 /*
