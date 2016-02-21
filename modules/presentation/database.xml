@@ -14,18 +14,28 @@
             <position>top</position>
             <top>49%</top>
             <left>13%</left>
-            <width>18.1%</width>
+            <width>17%</width>
             <height>5%</height>
             <expression><![CDATA[\d+]]></expression>
           </inputStep>
-          <blankStep>
+          <inputStep>
             <name>Second Step</name>
+            <text><![CDATA[<p>The Manufacturer Name cell accepts a text string. Enter a name into the cell below.</p>]]></text>
+            <position>top</position>
+            <top>49%</top>
+            <left>31%</left>
+            <width>12%</width>
+            <height>5%</height>
+            <expression><![CDATA[[A-Za-z]+]]></expression>
+          </inputStep>
+          <blankStep>
+            <name>Third Step</name>
             <text><![CDATA[<p>Once you are finished, click the General Tab to continue.</p>]]></text>
             <position>top</position>
-            <top>28%</top>
+            <top>32%</top>
             <left>11%</left>
             <width>8%</width>
-            <height>6%</height>
+            <height>8%</height>
           </blankStep>
         </steps>
       </slide>
@@ -36,22 +46,22 @@
         <steps>
           <inputStep>
             <name>First Step</name>
-            <text><![CDATA[<p>This is an example blank step.</p>]]></text>
+            <text><![CDATA[<p>Enter in a filename having the format "NAME.EXT".</p>]]></text>
             <position>top</position>
-            <top>25%</top>
-            <left>10%</left>
-            <width>64%</width>
-            <height>5%</height>
-            <expression><![CDATA[\d+]]></expression>
+            <top>27%</top>
+            <left>7%</left>
+            <width>33%</width>
+            <height>6%</height>
+            <expression><![CDATA[[A-Za-z]+\.[a-z]+]]></expression>
           </inputStep>
           <blankStep>
             <name>Second Step</name>
-            <text><![CDATA[<p>This is an example input step.</p>]]></text>
+            <text><![CDATA[<p>Click the next button to continue.</p>]]></text>
             <position>top</position>
-            <top>78%</top>
-            <left>66%</left>
-            <width>14%</width>
-            <height>4%</height>
+            <top>91%</top>
+            <left>36%</left>
+            <width>8%</width>
+            <height>5%</height>
           </blankStep>
         </steps>
       </slide>

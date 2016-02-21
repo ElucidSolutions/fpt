@@ -57,13 +57,17 @@ function presentation_Step (id, text, position, top, left, width, height) {
 
 /*
 */
+presentation_Step.prototype.onShow = function () {}
+
+/*
+*/
 presentation_Step.prototype.createElement = function () {
   this.elementId = getUniqueId ();
   return $('<div></div>')
     .addClass ('presentation_step')
     .attr ('data-presentation-step', this.id)
     .attr ('id',                     this.elementId)
-    .css ('position',                'relative')
+    .css ('position',                'absolute')
     .css ('top',                     this.top)
     .css ('left',                    this.left)
     .css ('width',                   this.width)
@@ -110,27 +114,64 @@ presentation_InputStep.prototype.constructor = presentation_InputStep;
 
 /*
 */
-presentation_InputStep.prototype.createElement = function () {
+presentation_InputStep.prototype.checkInput = function (inputElement) {
+  var expression = new RegExp (this.expression);
+  return expression.test (inputElement.val ());
+}
 
+/*
+*/
+presentation_InputStep.prototype.lockStep = function (intro) {
+  intro.locked = true;
+  $('.introjs-nextbutton', intro._targetElement)
+    .addClass ('introjs-disabled');
+}
+
+/*
+*/
+presentation_InputStep.prototype.unlockStep = function (intro) {
+  intro.locked = false;
+  $('.introjs-nextbutton', intro._targetElement)
+    .removeClass ('introjs-disabled')
+}
+
+/*
+*/
+presentation_InputStep.prototype.onShow = function (intro) {
+  var inputElement = $('[data-presentation-step="' + this.id + '"] > input', intro._targetElement);
+  this.checkInput (inputElement) ?
+    this.unlockStep (intro):
+    this.lockStep (intro);
+}
+
+/*
+*/
+presentation_InputStep.prototype.createElement = function (intro) {
   this.elementId = getUniqueId ();
   var element = $('<div></div>')
     .addClass ('presentation_step')
     .attr ('data-presentation-step', this.id)
     .attr ('id',                     this.elementId)
-    .css ('position',                'relative')
+    .css ('position',                'absolute')
     .css ('top',                     this.top)
     .css ('left',                    this.left)
     .css ('width',                   this.width)
     .css ('height',                  this.height);
 
-  var expression = new RegExp (this.expression);
+  var self = this;
   var inputElement = $('<input></input>')
     .attr ('type', 'text')
-    .keypress (
+    .keyup (
       function () {
-        expression.test (inputElement.val ()) ?
-          element.addClass    ('presentation_valid') :
-          element.removeClass ('presentation_valid') ;
+        if (self.checkInput (inputElement)) {
+          self.unlockStep (intro);
+          element.addClass ('presentation_valid')
+            .removeClass ('presentation_invalid');
+        } else {
+          self.lockStep (intro);
+          element.removeClass ('presentation_valid')
+            .addClass ('presentation_invalid');
+        }
     });
 
   element.append (inputElement);
@@ -171,33 +212,20 @@ presentation_Slide.prototype.createElement = function () {
   var element = $('<div></div>')
     .addClass ('presentation_slide')
     .attr ('data-presentation-slide', this.id)
-    .css ('background-image', 'url(' + this.image + ')');
+    .css ('background-image', 'url(' + this.image + ')')
+    .css ('position', 'relative');
 
-  var options = {
-    steps: []
-  };
-
-  for (var i = 0; i < this.steps.length; i ++) {
-    var step = this.steps [i];
-
-    var stepElement = step.createElement ();
-    element.append (stepElement);
-
-    options.steps.push ({
-      element:  '#' + stepElement.attr ('id'),
-      intro:    step.text,
-      position: step.position,
-    });
-  }
-
-  var intro = introJs (element.get (0));
   var self = this;
-  intro
-    .setOptions (options)
+  var intro = introJs (element.get (0))
+    .onafterchange (
+      function () {
+        intro.locked = false;
+        self.steps [intro._currentStep].onShow (intro);
+    })
     .onexit (
       function () {
+        intro.locked = false;
         $('.presentation_valid', element).removeClass ('presentation_valid');
-        self.running = false;     
     })
     .oncomplete (
       function () {
@@ -207,17 +235,36 @@ presentation_Slide.prototype.createElement = function () {
         }
     });
 
+  var options = {
+    showStepNumbers: false,
+    overlayOpacity: 0.5,
+    steps: []
+  };
+
+  for (var i = 0; i < this.steps.length; i ++) {
+    var step = this.steps [i];
+
+    var stepElement = step.createElement (intro);
+    element.append (stepElement);
+
+    options.steps.push ({
+      element:  '#' + stepElement.attr ('id'),
+      intro:    step.text,
+      position: step.position,
+    });
+  }
+
+  intro.setOptions (options)
+
   element.click (
     function () {
-      if (!self.running) {
-        self.running = true;
+      if (!intro.running) {
         intro.start ();
       }
   });
 
   PAGE_LOAD_HANDLERS.push (
     function (done) {
-      self.running = false;
       intro.exit ();
       done ();
   });

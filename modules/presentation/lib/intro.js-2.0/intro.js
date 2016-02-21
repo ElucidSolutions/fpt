@@ -83,6 +83,8 @@
    * @returns {Boolean} Success or not?
    */
   function _introForElement(targetElm) {
+    this.running = true;
+
     var introItems = [],
         self = this;
 
@@ -301,6 +303,8 @@
    * @method _nextStep
    */
   function _nextStep() {
+    if (this.locked) { return; }
+
     this._direction = 'forward';
 
     if (typeof (this._currentStep) === 'undefined') {
@@ -417,6 +421,8 @@
 
     //set the step to zero
     this._currentStep = undefined;
+
+    this.running = false;
   }
 
   /**
@@ -1159,7 +1165,8 @@
       //set overlay layer position
       var elementPosition = _getOffset(targetElm);
       if (elementPosition) {
-        styleText += 'width: ' + elementPosition.width + 'px; height:' + elementPosition.height + 'px; top:' + elementPosition.top + 'px;left: ' + elementPosition.left + 'px;';
+        // styleText += 'width: ' + elementPosition.width + 'px; height:' + elementPosition.height + 'px; top:' + elementPosition.top + 'px;left: ' + elementPosition.left + 'px;';
+        styleText += 'width: ' + elementPosition.width + 'px; height:' + elementPosition.height + 'px;';
         overlayLayer.setAttribute('style', styleText);
       }
     }
@@ -1510,13 +1517,11 @@
     elementPosition.height = element.offsetHeight;
 
     //calculate element top and left
-    var _x = 0;
-    var _y = 0;
-    while (element && !isNaN(element.offsetLeft) && !isNaN(element.offsetTop)) {
-      _x += element.offsetLeft;
-      _y += element.offsetTop;
-      element = element.offsetParent;
-    }
+    var elementRect = element.getBoundingClientRect ();
+    var parentRect  = element.parentNode.getBoundingClientRect ();
+    var _y = elementRect.top - parentRect.top; 
+    var _x = elementRect.left - parentRect.left;
+
     //set top
     elementPosition.top = _y;
     //set left
