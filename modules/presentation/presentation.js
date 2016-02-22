@@ -236,6 +236,7 @@ presentation_Slide.prototype.createElement = function () {
     });
 
   var options = {
+    exitOnOverlayClick: false,
     showStepNumbers: false,
     overlayOpacity: 0.5,
     steps: []
