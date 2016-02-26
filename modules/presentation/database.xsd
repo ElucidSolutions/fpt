@@ -38,6 +38,20 @@
     <xs:all>
       <xs:element name="name"  type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="image" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="width" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]+px"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="height" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]+px"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
       <xs:element name="steps" type="stepsType" minOccurs="1" maxOccurs="1">
         <xs:unique name="uniqueStepName">
           <xs:selector xpath="blankStep|inputStep"/>
@@ -73,28 +87,28 @@
       <xs:element name="top" minOccurs="1" maxOccurs="1">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9]+%"/>
+            <xs:pattern value="[0-9]+px"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
       <xs:element name="left" minOccurs="1" maxOccurs="1">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9]+%"/>
+            <xs:pattern value="[0-9]+px"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
       <xs:element name="width" minOccurs="1" maxOccurs="1">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9]+%"/>
+            <xs:pattern value="[0-9]+px"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
       <xs:element name="height" minOccurs="1" maxOccurs="1">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9]+%"/>
+            <xs:pattern value="[0-9]+px"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>

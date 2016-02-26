@@ -1397,12 +1397,6 @@ ul.article_list {
   transition: background-color 4s; }
 
 /* Presentation Module */
-.presentation_slide {
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 500px;
-  width: 1000px; }
-
 .presentation_step > input {
   background-color: transparent;
   border: none;
@@ -1410,10 +1404,14 @@ ul.article_list {
   width: 100%; }
 
 .presentation_step.presentation_valid {
-  background-color: rgba(0, 255, 0, 0.5); }
+  border-color: lime;
+  border-style: solid;
+  border-width: 1px; }
 
 .presentation_step.presentation_invalid {
-  background-color: rgba(255, 0, 0, 0.5); }
+  border-color: rgba(255, 0, 0, 0.5);
+  border-style: solid;
+  border-width: 1px; }
 
 /* Footer Styles */
 #footer {

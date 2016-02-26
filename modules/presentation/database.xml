@@ -6,62 +6,66 @@
       <slide>
         <name>first_slide</name>
         <image>images/fpt_screenshot.png</image>
+        <width>1000px</width>
+        <height>500px</height>
         <next>book_page_page/modules%2Fbook%2Fdatabase.xml/eoffer_emod/overview/fpt-part-2</next>
         <steps>
           <inputStep>
             <name>First Step</name>
             <text><![CDATA[<p>The Manufacturer Part Number cell accepts a number. Enter a number into the cell below.</p>]]></text>
             <position>top</position>
-            <top>49%</top>
-            <left>13%</left>
-            <width>17%</width>
-            <height>5%</height>
+            <top>252px</top>
+            <left>135px</left>
+            <width>176px</width>
+            <height>24px</height>
             <expression><![CDATA[\d+]]></expression>
           </inputStep>
           <inputStep>
             <name>Second Step</name>
             <text><![CDATA[<p>The Manufacturer Name cell accepts a text string. Enter a name into the cell below.</p>]]></text>
             <position>top</position>
-            <top>49%</top>
-            <left>31%</left>
-            <width>12%</width>
-            <height>5%</height>
+            <top>252px</top>
+            <left>312px</left>
+            <width>137px</width>
+            <height>24px</height>
             <expression><![CDATA[[A-Za-z]+]]></expression>
           </inputStep>
           <blankStep>
             <name>Third Step</name>
             <text><![CDATA[<p>Once you are finished, click the General Tab to continue.</p>]]></text>
             <position>top</position>
-            <top>32%</top>
-            <left>11%</left>
-            <width>8%</width>
-            <height>8%</height>
+            <top>168px</top>
+            <left>115px</left>
+            <width>82px</width>
+            <height>34px</height>
           </blankStep>
         </steps>
       </slide>
       <slide>
         <name>second_slide</name>
         <image>images/import_digital_certificate_006.jpg</image>
+        <width>500px</width>
+        <height>500px</height>
         <next></next>
         <steps>
           <inputStep>
             <name>First Step</name>
             <text><![CDATA[<p>Enter in a filename having the format "NAME.EXT".</p>]]></text>
             <position>top</position>
-            <top>27%</top>
-            <left>7%</left>
-            <width>33%</width>
-            <height>6%</height>
+            <top>127px</top>
+            <left>51px</left>
+            <width>318px</width>
+            <height>21px</height>
             <expression><![CDATA[[A-Za-z]+\.[a-z]+]]></expression>
           </inputStep>
           <blankStep>
             <name>Second Step</name>
             <text><![CDATA[<p>Click the next button to continue.</p>]]></text>
             <position>top</position>
-            <top>91%</top>
-            <left>36%</left>
-            <width>8%</width>
-            <height>5%</height>
+            <top>415px</top>
+            <left>327px</left>
+            <width>72px</width>
+            <height>21px</height>
           </blankStep>
         </steps>
       </slide>

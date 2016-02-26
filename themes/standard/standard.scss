@@ -656,13 +656,6 @@ margin-bottom: 30px;
 
 /* Presentation Module */
 
-.presentation_slide {
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 500px;
-  width:  1000px;
-}
-
 .presentation_step > input {
   background-color: transparent;
   border: none;
@@ -671,11 +664,15 @@ margin-bottom: 30px;
 }
 
 .presentation_step.presentation_valid {
-  background-color: rgba(0,255,0,0.5);
+  border-color: rgba(0, 255, 0, 1);
+  border-style: solid;
+  border-width: 1px;
 }
 
 .presentation_step.presentation_invalid {
-  background-color: rgba(255,0,0,0.5);
+  border-color: rgba(255,0,0,0.5);
+  border-style: solid;
+  border-width: 1px;
 }
 
 /* Footer Styles */

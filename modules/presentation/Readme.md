@@ -231,9 +231,11 @@ The Slide Class
 ```javascript
 /*
 */
-function presentation_Slide (id, image, next, steps) {
+function presentation_Slide (id, image, width, height, next, steps) {
   this.id      = id;
   this.image   = image;
+  this.width   = width;
+  this.height  = height;
   this.next    = next;
   this.steps   = steps;
 
@@ -247,6 +249,10 @@ presentation_Slide.prototype.createElement = function () {
     .addClass ('presentation_slide')
     .attr ('data-presentation-slide', this.id)
     .css ('background-image', 'url(' + this.image + ')')
+    .css ('background-size', this.width + ', ' + this.height)
+    .css ('background-repeat', 'no-repeat')
+    .css ('width', this.width)
+    .css ('height', this.height)
     .css ('position', 'relative');
 
   var self = this;
@@ -279,7 +285,12 @@ presentation_Slide.prototype.createElement = function () {
   for (var i = 0; i < this.steps.length; i ++) {
     var step = this.steps [i];
 
-    var stepElement = step.createElement (intro);
+    var stepElement = step.createElement (intro)
+      .css ('background-image', 'url(' + self.image + ')')
+      .css ('background-position', '-' + step.left + ' -' + step.top)
+      .css ('background-size', self.width + ', ' + self.height)
+      .css ('background-repeat', 'no-repeat');
+ 
     element.append (stepElement);
 
     options.steps.push ({
@@ -316,6 +327,8 @@ function presentation_parseSlide (presentationPath, element) {
   return new presentation_Slide (
     presentation_getId ('presentation_slide_page', path),
     $('> image', element).text (),
+    $('> width', element).text (),
+    $('> height', element).text (),
     next === '' ? null : next,
     $('> steps', element).children ().map (
       function (i, stepElement) {
@@ -479,6 +492,20 @@ To be considered valid, the Presentation Database XML file must conform to the f
     <xs:all>
       <xs:element name="name"  type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="image" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="width" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]+px"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="height" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]+px"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
       <xs:element name="steps" type="stepsType" minOccurs="1" maxOccurs="1">
         <xs:unique name="uniqueStepName">
           <xs:selector xpath="blankStep|inputStep"/>
@@ -514,28 +541,28 @@ To be considered valid, the Presentation Database XML file must conform to the f
       <xs:element name="top" minOccurs="1" maxOccurs="1">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9]+%"/>
+            <xs:pattern value="[0-9]+px"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
       <xs:element name="left" minOccurs="1" maxOccurs="1">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9]+%"/>
+            <xs:pattern value="[0-9]+px"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
       <xs:element name="width" minOccurs="1" maxOccurs="1">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9]+%"/>
+            <xs:pattern value="[0-9]+px"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
       <xs:element name="height" minOccurs="1" maxOccurs="1">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9]+%"/>
+            <xs:pattern value="[0-9]+px"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -569,6 +596,8 @@ An example Presentation Database can be found in [database.xml.example](#An Exam
       <slide>
         <name>Example Slide</name>
         <image>https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png</image>
+        <width>500px</width>
+        <height>500px</height>
         <steps>
           <blankStep>
             <name>First Step</name>

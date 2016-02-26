@@ -197,9 +197,11 @@ function presentation_parseInputStep (slidePath, element) {
 
 /*
 */
-function presentation_Slide (id, image, next, steps) {
+function presentation_Slide (id, image, width, height, next, steps) {
   this.id      = id;
   this.image   = image;
+  this.width   = width;
+  this.height  = height;
   this.next    = next;
   this.steps   = steps;
 
@@ -213,6 +215,10 @@ presentation_Slide.prototype.createElement = function () {
     .addClass ('presentation_slide')
     .attr ('data-presentation-slide', this.id)
     .css ('background-image', 'url(' + this.image + ')')
+    .css ('background-size', this.width + ', ' + this.height)
+    .css ('background-repeat', 'no-repeat')
+    .css ('width', this.width)
+    .css ('height', this.height)
     .css ('position', 'relative');
 
   var self = this;
@@ -245,7 +251,12 @@ presentation_Slide.prototype.createElement = function () {
   for (var i = 0; i < this.steps.length; i ++) {
     var step = this.steps [i];
 
-    var stepElement = step.createElement (intro);
+    var stepElement = step.createElement (intro)
+      .css ('background-image', 'url(' + self.image + ')')
+      .css ('background-position', '-' + step.left + ' -' + step.top)
+      .css ('background-size', self.width + ', ' + self.height)
+      .css ('background-repeat', 'no-repeat');
+ 
     element.append (stepElement);
 
     options.steps.push ({
@@ -282,6 +293,8 @@ function presentation_parseSlide (presentationPath, element) {
   return new presentation_Slide (
     presentation_getId ('presentation_slide_page', path),
     $('> image', element).text (),
+    $('> width', element).text (),
+    $('> height', element).text (),
     next === '' ? null : next,
     $('> steps', element).children ().map (
       function (i, stepElement) {

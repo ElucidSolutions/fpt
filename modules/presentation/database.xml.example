@@ -6,6 +6,8 @@
       <slide>
         <name>Example Slide</name>
         <image>https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png</image>
+        <width>500px</width>
+        <height>500px</height>
         <steps>
           <blankStep>
             <name>First Step</name>
