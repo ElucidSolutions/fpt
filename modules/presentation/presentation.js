@@ -52,21 +52,36 @@ function presentation_Step (id, text, position, top, left, width, height) {
   this.left      = left;
   this.width     = width;
   this.height    = height;
-  this.elementId = null;
 }
 
 /*
 */
-presentation_Step.prototype.onShow = function () {}
+presentation_Step.prototype.lockStep = function (intro) {
+  intro.locked = true;
+  $('.introjs-nextbutton', intro._targetElement)
+    .addClass ('introjs-disabled');
+}
+
+/*
+*/
+presentation_Step.prototype.unlockStep = function (intro) {
+  intro.locked = false;
+  $('.introjs-nextbutton', intro._targetElement)
+    .removeClass ('introjs-disabled')
+}
+
+
+/*
+*/
+presentation_Step.prototype.onShow = function (intro) {}
 
 /*
 */
 presentation_Step.prototype.createElement = function () {
-  this.elementId = getUniqueId ();
   return $('<div></div>')
     .addClass ('presentation_step')
     .attr ('data-presentation-step', this.id)
-    .attr ('id',                     this.elementId)
+    .attr ('id',                     getUniqueId ())
     .css ('position',                'absolute')
     .css ('top',                     this.top)
     .css ('left',                    this.left)
@@ -91,17 +106,61 @@ function presentation_parseStep (slidePath, element) {
 
 /*
 */
-function presentation_InputStep (id, text, position, top, left, width, height, expression) {
-  this.id         = id;
-  this.text       = text;
-  this.position   = position;
-  this.top        = top;
-  this.left       = left;
-  this.width      = width;
-  this.height     = height;
-  this.expression = expression;
+function presentation_ButtonStep (id, text, position, top, left, width, height) {
+  presentation_Step.call (this, id, text, position, top, left, width, height);
+  this.completed = false;
+}
 
-  this.elementId  = null;
+/*
+*/
+presentation_ButtonStep.prototype = Object.create (presentation_Step.prototype);
+
+/*
+*/
+presentation_ButtonStep.prototype.constructor = presentation_ButtonStep;
+
+/*
+*/
+presentation_ButtonStep.prototype.onShow = function (intro) {
+  this.completed ?
+    this.unlockStep (intro):
+    this.lockStep (intro);
+}
+
+/*
+*/
+presentation_ButtonStep.prototype.createElement = function (intro) {
+  var self = this;
+  return presentation_Step.prototype.createElement.call (this, intro)
+    .click (
+      function (event) {
+        event.stopPropagation ();
+        self.completed = true;
+        self.unlockStep (intro);
+        intro.nextStep ();
+     });
+}
+
+/*
+*/
+function presentation_parseButtonStep (slidePath, element) {
+  var path = slidePath.concat ($('> name', element).text ());
+  return new presentation_ButtonStep (
+    presentation_getId ('presentation_step_page', path),
+    $('> text',     element).text (),
+    $('> position', element).text (),
+    $('> top',      element).text (),
+    $('> left',     element).text (),
+    $('> width',    element).text (),
+    $('> height',   element).text ()
+  );
+}
+
+/*
+*/
+function presentation_InputStep (id, text, position, top, left, width, height, expression) {
+  presentation_Step.call (this, id, text, position, top, left, width, height);
+  this.expression = expression;
 }
 
 /*
@@ -121,22 +180,6 @@ presentation_InputStep.prototype.checkInput = function (inputElement) {
 
 /*
 */
-presentation_InputStep.prototype.lockStep = function (intro) {
-  intro.locked = true;
-  $('.introjs-nextbutton', intro._targetElement)
-    .addClass ('introjs-disabled');
-}
-
-/*
-*/
-presentation_InputStep.prototype.unlockStep = function (intro) {
-  intro.locked = false;
-  $('.introjs-nextbutton', intro._targetElement)
-    .removeClass ('introjs-disabled')
-}
-
-/*
-*/
 presentation_InputStep.prototype.onShow = function (intro) {
   var inputElement = $('[data-presentation-step="' + this.id + '"] > input', intro._targetElement);
   this.checkInput (inputElement) ?
@@ -147,16 +190,7 @@ presentation_InputStep.prototype.onShow = function (intro) {
 /*
 */
 presentation_InputStep.prototype.createElement = function (intro) {
-  this.elementId = getUniqueId ();
-  var element = $('<div></div>')
-    .addClass ('presentation_step')
-    .attr ('data-presentation-step', this.id)
-    .attr ('id',                     this.elementId)
-    .css ('position',                'absolute')
-    .css ('top',                     this.top)
-    .css ('left',                    this.left)
-    .css ('width',                   this.width)
-    .css ('height',                  this.height);
+  var element = presentation_Step.prototype.createElement.call (this, intro);
 
   var self = this;
   var inputElement = $('<input></input>')
@@ -302,6 +336,8 @@ function presentation_parseSlide (presentationPath, element) {
         switch (tagName) {
           case 'blankStep':
             return presentation_parseStep (path, stepElement); 
+          case 'buttonStep':
+            return presentation_parseButtonStep (path, stepElement);
           case 'inputStep':
             return presentation_parseInputStep (path, stepElement);
           default:

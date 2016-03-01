@@ -30,7 +30,7 @@
             <height>24px</height>
             <expression><![CDATA[[A-Za-z]+]]></expression>
           </inputStep>
-          <blankStep>
+          <buttonStep>
             <name>Third Step</name>
             <text><![CDATA[<p>Once you are finished, click the General Tab to continue.</p>]]></text>
             <position>top</position>
@@ -38,7 +38,7 @@
             <left>115px</left>
             <width>82px</width>
             <height>34px</height>
-          </blankStep>
+          </buttonStep>
         </steps>
       </slide>
       <slide>
@@ -58,7 +58,7 @@
             <height>21px</height>
             <expression><![CDATA[[A-Za-z]+\.[a-z]+]]></expression>
           </inputStep>
-          <blankStep>
+          <buttonStep>
             <name>Second Step</name>
             <text><![CDATA[<p>Click the next button to continue.</p>]]></text>
             <position>top</position>
@@ -66,7 +66,7 @@
             <left>327px</left>
             <width>72px</width>
             <height>21px</height>
-          </blankStep>
+          </buttonStep>
         </steps>
       </slide>
     </slides>
