@@ -675,6 +675,24 @@ margin-bottom: 30px;
   border-width: 1px;
 }
 
+.presentation_quiz_step {
+  opacity: 0;
+}
+
+.presentation_quiz_step.introjs-showElement {
+  opacity: 1;
+}
+
+.presentation_test {
+  background-color: white;
+  padding: 10px;
+}
+
+.presentation_option > input {
+  margin: 10px;
+}
+
+
 /* Footer Styles */
 
 #footer{

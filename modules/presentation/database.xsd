@@ -68,6 +68,7 @@
       <xs:element name="blankStep"  type="blankStepType" minOccurs="0"/>
       <xs:element name="buttonStep" type="blankStepType" minOccurs="0"/>
       <xs:element name="inputStep"  type="inputStepType" minOccurs="0"/>
+      <xs:element name="testStep"   type="testStepType"  minOccurs="0"/>
     </xs:choice>
   </xs:complexType>
 
@@ -126,5 +127,38 @@
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Defines the Test Step element type. -->
+  <xs:complexType name="testStepType">
+    <xs:complexContent>
+      <xs:extension base="blankStepType">
+        <xs:sequence>
+          <xs:element name="options" type="optionsType" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Defines the Options element type. -->
+  <xs:complexType name="optionsType">
+    <xs:sequence>
+      <xs:element name="option" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="label" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="isCorrect" minOccurs="1" maxOccurs="1">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="true"/>
+                  <xs:enumeration value="false"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="onSelect" type="xs:string" minOccurs="1" maxOccurs="1"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
   </xs:complexType>
 </xs:schema>

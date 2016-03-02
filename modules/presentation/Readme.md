@@ -115,18 +115,7 @@ presentation_Step.prototype.createElement = function () {
 
 /*
 */
-function presentation_parseStep (slidePath, element) {
-  var path = slidePath.concat ($('> name', element).text ());
-  return new presentation_Step (
-    presentation_getId ('presentation_step_page', path),
-    $('> text',     element).text (),
-    $('> position', element).text (),
-    $('> top',      element).text (),
-    $('> left',     element).text (),
-    $('> width',    element).text (),
-    $('> height',   element).text ()
-  );
-}
+// function presentation_parseStep (slidePath, element) {}
 ```
 
 The Button Step Class
@@ -161,6 +150,7 @@ presentation_ButtonStep.prototype.onShow = function (intro) {
 presentation_ButtonStep.prototype.createElement = function (intro) {
   var self = this;
   return presentation_Step.prototype.createElement.call (this, intro)
+    .addClass ('presentation_button_step')
     .click (
       function (event) {
         event.stopPropagation ();
@@ -224,7 +214,8 @@ presentation_InputStep.prototype.onShow = function (intro) {
 /*
 */
 presentation_InputStep.prototype.createElement = function (intro) {
-  var element = presentation_Step.prototype.createElement.call (this, intro);
+  var element = presentation_Step.prototype.createElement.call (this, intro)
+    .addClass ('presentation_input_step');
 
   var self = this;
   var inputElement = $('<input></input>')
@@ -260,6 +251,169 @@ function presentation_parseInputStep (slidePath, element) {
     $('> width',        element).text (),
     $('> height',       element).text (),
     $('> expression',   element).text ()
+  );
+}
+```
+
+The Quiz Step Class
+-------------------
+
+```javascript
+/*
+  presentation_QuizStep accepts eight arguments:
+
+  * id, an HTML ID string
+  * text, an HTML string
+  * position, either 'top', 'bottom', 'left', or 'right'
+  * top, a CSS Length string
+  * left, a CSS Length string
+  * width, a CSS Length string
+  * height, a CSS Length string
+  * and options an Options array
+
+  and returns a new presentation_QuizStep object.
+
+  Note: Every Option element must have the following stucture:
+
+    {label: <string>, isCorrect: <bool>, onSelect: <string>}
+*/
+function presentation_QuizStep (id, text, position, top, left, width, height, options) {
+  presentation_Step.call (this, id, text, position, top, left, width, height);
+  this.options = options;
+}
+
+/*
+*/
+presentation_QuizStep.prototype = Object.create (presentation_Step.prototype);
+
+/*
+*/
+presentation_QuizStep.prototype.constructor = presentation_QuizStep;
+
+/*
+*/
+presentation_QuizStep.prototype.getCorrectOption = function () {
+  for (var i = 0; i < this.options.length; i ++) {
+    var option = this.options [i];
+    if (option.isCorrect) {
+      return option;
+    }
+  }
+  strictError ('[presentation][getCorrectOption] Error: an error occured while trying to retrieve the correct value for a presentation test step. The test does not have a correct value.');
+  return null;
+}
+
+/*
+*/
+presentation_QuizStep.prototype.getSelectedValue = function (optionsElement) {
+  return $('input[name="' + this.id + '"]:checked', optionsElement).val ();
+}
+
+/*
+*/
+presentation_QuizStep.prototype.getSelectedOption = function (optionsElement) {
+  var selectedValue = this.getSelectedValue (optionsElement);
+  for (var i = 0; i < this.options.length; i ++) {
+    var option = this.options [i];
+    if (option.label === selectedValue) {
+      return option;
+    }
+  }
+  return null;
+}
+
+/*
+*/
+presentation_QuizStep.prototype.checkInput = function (optionsElement) {
+  var correctOption = this.getCorrectOption ();
+  return correctOption && correctOption.label === this.getSelectedValue (optionsElement);
+}
+
+/*
+*/
+presentation_QuizStep.prototype.onShow = function (intro) {
+  var optionsElement = $('[data-presentation-step="' + this.id + '"] .presentation_options', intro._targetElement);
+  this.checkInput (optionsElement) ?
+    this.unlockStep (intro):
+    this.lockStep (intro);
+}
+
+/*
+*/
+presentation_QuizStep.prototype.onClick = function (intro, stepElement) {
+  var optionsElement = $('.presentation_options', stepElement);
+
+  var selectedOption = this.getSelectedOption (optionsElement);
+  $('.presentation_message', stepElement).text (selectedOption.onSelect);
+
+  if (this.checkInput (optionsElement)) {
+     this.unlockStep (intro);
+     stepElement.addClass ('presentation_valid')
+       .removeClass ('presentation_invalid');
+  } else {
+     this.lockStep (intro);
+     stepElement.removeClass ('presentation_valid')
+       .addClass ('presentation_invalid');
+  }
+}
+
+/*
+*/
+presentation_QuizStep.prototype.createElement = function (intro) {
+  var element = presentation_Step.prototype.createElement.call (this, intro)
+    .addClass ('presentation_quiz_step');
+
+  var testElement = $('<div></div>')
+    .addClass ('presentation_test')
+    .append ($('<div></div>').addClass ('presentation_message'));
+
+  element.append (testElement);
+
+  var optionsElement = $('<div></div>').addClass ('presentation_options');
+  testElement.append (optionsElement);
+
+  var self = this;
+  for (var i = 0; i < this.options.length; i ++) {
+    var option = this.options [i];
+    optionsElement.append (
+      $('<div></div>')
+        .addClass ('presentation_option')
+        .append ($('<input></input>')
+          .attr ('type', 'radio')
+          .attr ('name', this.id)
+          .attr ('value', option.label)
+          .addClass ('presentation_option_input')
+          .click (
+            function () {
+              self.onClick (intro, element);
+          }))
+        .append ($('<label></label>')
+          .addClass ('presentation_option_label')
+          .text (option.label)));
+  }
+  return element;
+}
+
+/*
+*/
+function presentation_parseTestStep (slidePath, element) {
+  var path = slidePath.concat ($('> name', element).text ());
+  return new presentation_QuizStep (
+    presentation_getId ('presentation_test_step_page', path),
+    $('> text',         element).text (),
+    $('> position',     element).text (),
+    $('> top',          element).text (),
+    $('> left',         element).text (),
+    $('> width',        element).text (),
+    $('> height',       element).text (),
+    $('> options', element).children ('option').map (
+      function (i, optionElement) {
+        return {
+          label:     $('label', optionElement).text (),
+          isCorrect: $('isCorrect', optionElement).text () === 'true',
+          onSelect:  $('onSelect', optionElement).text ()
+        };
+    }).toArray ()
   );
 }
 ```
@@ -379,6 +533,8 @@ function presentation_parseSlide (presentationPath, element) {
             return presentation_parseButtonStep (path, stepElement);
           case 'inputStep':
             return presentation_parseInputStep (path, stepElement);
+          case 'testStep':
+            return presentation_parseTestStep (path, stepElement);
           default:
             strictError ('[presentation][presentation_parseSlide] Error: an error occured while parsing a slide element. "' + type + '" is an invalid slide type.');
             return null;
@@ -563,6 +719,7 @@ To be considered valid, the Presentation Database XML file must conform to the f
       <xs:element name="blankStep"  type="blankStepType" minOccurs="0"/>
       <xs:element name="buttonStep" type="blankStepType" minOccurs="0"/>
       <xs:element name="inputStep"  type="inputStepType" minOccurs="0"/>
+      <xs:element name="testStep"   type="testStepType"  minOccurs="0"/>
     </xs:choice>
   </xs:complexType>
 
@@ -622,6 +779,39 @@ To be considered valid, the Presentation Database XML file must conform to the f
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+
+  <!-- Defines the Test Step element type. -->
+  <xs:complexType name="testStepType">
+    <xs:complexContent>
+      <xs:extension base="blankStepType">
+        <xs:sequence>
+          <xs:element name="options" type="optionsType" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Defines the Options element type. -->
+  <xs:complexType name="optionsType">
+    <xs:sequence>
+      <xs:element name="option" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="label" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="isCorrect" minOccurs="1" maxOccurs="1">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="true"/>
+                  <xs:enumeration value="false"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="onSelect" type="xs:string" minOccurs="1" maxOccurs="1"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
 </xs:schema>
 ```
 
@@ -661,6 +851,27 @@ An example Presentation Database can be found in [database.xml.example](#An Exam
             <height>100px</height>
             <expression><![CDATA[\d+\.\d{2}]]></expression>
           </inputStep>
+          <testStep>
+            <name>Third Step</name>
+            <text><![CDATA[<p>This is an example test.</p>]]></text>
+            <position>top</position>
+            <top>10%</top>
+            <left>10%</left>
+            <width>100px</width>
+            <height>100px</height>
+            <options>
+              <option>
+                <label><![CDATA[First option]]></label>
+                <isCorrect>true</isCorrect>
+                <onSelect><![CDATA[Correct!]]></onSelect>
+              </option>
+              <option>
+                <label><![CDATA[Second option]]></label>
+                <isCorrect>false</isCorrect>
+                <onSelect><![CDATA[Incorrect!]]></onSelect>
+              </option>
+            </options>
+          </testStep>
         </steps>
       </slide>
     </slides>
@@ -699,6 +910,8 @@ _"The Step Class"
 _"The Button Step Class"
 
 _"The Input Step Class"
+
+_"The Quiz Step Class"
 
 _"The Slide Class"
 

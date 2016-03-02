@@ -39,6 +39,27 @@
             <width>82px</width>
             <height>34px</height>
           </buttonStep>
+          <testStep>
+            <name>Fourth Step</name>
+            <text><![CDATA[<p>What values are allowed in manufacturer part numbers?</p>]]></text>
+            <position>top</position>
+            <top>168px</top>
+            <left>115px</left>
+            <width>150px</width>
+            <height>150px</height>
+            <options>
+              <option>
+                <label><![CDATA[Numbers]]></label>
+                <isCorrect>true</isCorrect>
+                <onSelect><![CDATA[Correct!]]></onSelect>
+              </option>
+              <option>
+                <label><![CDATA[Random text]]></label>
+                <isCorrect>false</isCorrect>
+                <onSelect><![CDATA[Incorrect!]]></onSelect>
+              </option>
+            </options>
+          </testStep>
         </steps>
       </slide>
       <slide>
