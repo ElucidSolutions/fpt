@@ -52,7 +52,6 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="next" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
       <xs:element name="steps" type="stepsType" minOccurs="1" maxOccurs="1">
         <xs:unique name="uniqueStepName">
           <xs:selector xpath="blankStep|inputStep"/>

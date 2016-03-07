@@ -380,12 +380,11 @@ function presentation_parseTestStep (slidePath, element) {
 
 /*
 */
-function presentation_Slide (id, image, width, height, next, steps) {
+function presentation_Slide (id, image, width, height, steps) {
   this.id      = id;
   this.image   = image;
   this.width   = width;
   this.height  = height;
-  this.next    = next;
   this.steps   = steps;
 
   this.running = false;
@@ -419,9 +418,6 @@ presentation_Slide.prototype.createElement = function () {
     .oncomplete (
       function () {
         this.exit ();
-        if (self.next) {
-          loadPage (self.next, function () {}, function () {});
-        }
     });
 
   var options = {
@@ -471,14 +467,11 @@ presentation_Slide.prototype.createElement = function () {
 */
 function presentation_parseSlide (presentationPath, element) {
   var path = presentationPath.concat ($('> name', element).text ());
-  var next = $('> next', element).text ();
-
   return new presentation_Slide (
     presentation_getId ('presentation_slide_page', path),
     $('> image', element).text (),
     $('> width', element).text (),
     $('> height', element).text (),
-    next === '' ? null : next,
     $('> steps', element).children ().map (
       function (i, stepElement) {
         var tagName = $(stepElement).prop ('tagName');

@@ -24,15 +24,10 @@
 registerModule (
   function (done) {
   // I. Load libraries.
-  // loadScript ('modules/sidr/lib/sidr/jquery.sidr.min.js',
   loadScript ('modules/sidr/lib/sidr-2.2.1/dist/jquery.sidr.js',
     function () {
-      // II. Load CSS files.
-      // $.getCSS ('modules/sidr/sidr.css');
-
-      // III. Register the block handlers.
+      // II. Register the block handlers.
       registerBlockHandler ('sidr_block', sidr_block);
-
       done ();
   });
 });

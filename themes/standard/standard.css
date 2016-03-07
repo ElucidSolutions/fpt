@@ -1306,6 +1306,10 @@ table.padded-list tbody tr td {
   padding-right: 30px; }
 
 /* Presentation Module */
+.presentation_slide {
+  border-width: 1px;
+  border-style: solid; }
+
 .presentation_step > input {
   background-color: transparent;
   border: none;

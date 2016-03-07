@@ -8,7 +8,6 @@
         <image>images/fpt_screenshot.png</image>
         <width>1000px</width>
         <height>500px</height>
-        <next>book_page_page/modules%2Fbook%2Fdatabase.xml/eoffer_emod/overview/fpt-part-2</next>
         <steps>
           <inputStep>
             <name>First Step</name>
@@ -67,7 +66,6 @@
         <image>images/import_digital_certificate_006.jpg</image>
         <width>500px</width>
         <height>500px</height>
-        <next></next>
         <steps>
           <inputStep>
             <name>First Step</name>

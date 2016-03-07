@@ -28,7 +28,9 @@
             <body><![CDATA[
               <p>The Getting Started Tab is your entryway into the on screen pricing data entry screen. This is where you establish your list of products, beginning with entering their Manufacturer Part Number then their Manufacturer name.</p>
               <p>On the following tabs, you will be able to enter detailed information about the products you list here.</p>
+              <div class="main_replay_presentation"></div>
               <div class="presentation_slide_block">presentation_slide_page/example_presentation/first_slide</div>
+              <a href=
             ]]></body>
           </page>
           <page>
