@@ -1,0 +1,98 @@
+/* I. Break Points */
+$large-width: 1300px;
+$medium-width: 1050px;
+$small-width: 950px;
+$extra-small-width: 550px;
+
+/* II. Colors */
+
+$eoffer-orange: rgba(242, 154, 47, 1); 
+$eoffer-medium-orange: rgba(247, 187, 120, 1);
+
+$fssonline-red: rgba(239, 75, 56, 1);
+$fssonline-medium-red: rgba( 244, 131, 130, 1);
+
+$ors-teal: rgba(43, 191, 189, 1);
+$ors-medium-teal: rgba(100, 198, 192, 1);
+
+$sws-yellow: rgba(242, 208, 59, 1);
+$sws-medium-yellow: rgba(249, 201, 83, 1);
+
+$release-notes-green: rgba(68, 191, 100, 1);
+
+$background_color: #555555;
+
+$primary-color: $eoffer-orange; 
+
+$red: rgb(237,28,36);
+
+$bg-color: rgb(255, 255, 255);
+
+$link-color: $red;
+
+$light_orange: #f8bb78;
+ 
+$dark_orange: #ec6f1b;
+
+$darkest_orange: darken($dark_orange, 20%);
+
+$light_blue: #AECFED;
+
+$light_gray: #f9f5f2;
+
+$medium_gray: rgb(221, 221, 221);
+
+$dark_gray: rgb(178, 178, 178);
+
+$darkest_gray: #5C5C5C;
+
+$text_gray: rgb(51, 51, 51);
+
+$highlight: #ffc;
+
+$default_header_color: #ed1c24;
+
+/* II.b - Navigation Color */
+
+$eoffer-nav-highlight-1: rgba(254, 214, 176, 1);
+$eoffer-nav-highlight-2: rgba(247, 186, 119, 1);
+
+$fssonline-nav-highlight-1: rgba(243, 188, 190, 1);
+$fssonline-nav-highlight-2: rgba(228, 123, 131, 1);
+
+$ors-nav-highlight-1: rgba(180, 214, 210, 1);
+$ors-nav-highlight-2: rgba(180, 214, 210, 1);
+
+$sws-nav-highlight-1: rgba(255, 242, 217, 1);
+$sws-nav-highlight-2: rgba(255, 242, 217, 1);
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic);  
+
+
+$default_header_font: "Open Sans" sans-serif;
+
+$default_header_weight: 200;
+
+/* III. Dimensions */
+
+$header_height: 97px;
+
+$header_top_height: 27px;
+
+$header_bottom_height: $header_height - $header_top_height;
+
+/*
+  The Sidr nav menu content area width.
+  The Sidr nav menu is 300px wide by default
+  and the sidebar occupies 20px by default.
+  The default Sidr width is determined by the
+  stylesheet in the Sidr module.
+*/
+$nav_menu_width: 280px;
+
+
+$font-family: 'Open Sans', sans-serif;
+
+$banner-text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+
