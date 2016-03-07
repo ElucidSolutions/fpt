@@ -30,17 +30,8 @@
             <height>24px</height>
             <expression><![CDATA[[A-Za-z]+]]></expression>
           </inputStep>
-          <buttonStep>
-            <name>Third Step</name>
-            <text><![CDATA[<p>Once you are finished, click the General Tab to continue.</p>]]></text>
-            <position>top</position>
-            <top>168px</top>
-            <left>115px</left>
-            <width>82px</width>
-            <height>34px</height>
-          </buttonStep>
           <testStep>
-            <name>Fourth Step</name>
+            <name>Third Step</name>
             <text><![CDATA[<p>What values are allowed in manufacturer part numbers?</p>]]></text>
             <position>top</position>
             <top>168px</top>
@@ -60,6 +51,15 @@
               </option>
             </options>
           </testStep>
+          <buttonStep>
+            <name>Fourth Step</name>
+            <text><![CDATA[<p>Once you are finished, click the General Tab to continue.</p>]]></text>
+            <position>top</position>
+            <top>168px</top>
+            <left>115px</left>
+            <width>82px</width>
+            <height>34px</height>
+          </buttonStep>
         </steps>
       </slide>
       <slide>
