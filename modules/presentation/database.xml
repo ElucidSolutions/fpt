@@ -12,7 +12,7 @@
         <steps>
           <inputStep>
             <name>First Step</name>
-            <text><![CDATA[<p>The Manufacturer Part Number cell accepts a number. Enter a number into the cell below.</p>]]></text>
+            <text><![CDATA[<p><strong>Enter the Manufacturer's Part Number</strong></p><p>The Manufacturer Part Number cell only accepts numbers. Enter a number into the cell below.</p>]]></text>
             <position>top</position>
             <top>252px</top>
             <left>135px</left>
@@ -22,7 +22,7 @@
           </inputStep>
           <inputStep>
             <name>Second Step</name>
-            <text><![CDATA[<p>The Manufacturer Name cell accepts a text string. Enter a name into the cell below.</p>]]></text>
+            <text><![CDATA[<p><strong>Enter the Manufacturer's Name</strong></p><p>The Manufacturer Name cell accepts a text string. Enter a name, using letters only, into the cell below.</p>]]></text>
             <position>top</position>
             <top>252px</top>
             <left>312px</left>
@@ -32,7 +32,7 @@
           </inputStep>
           <buttonStep>
             <name>Third Step</name>
-            <text><![CDATA[<p>Once you are finished, click the General Tab to continue.</p>]]></text>
+            <text><![CDATA[<p><strong>Move onto the General Tab</strong><p>Once you are finished, click the General Tab to continue.</p>]]></text>
             <position>top</position>
             <top>168px</top>
             <left>115px</left>
@@ -41,7 +41,7 @@
           </buttonStep>
           <testStep>
             <name>Fourth Step</name>
-            <text><![CDATA[<p>What values are allowed in manufacturer part numbers?</p>]]></text>
+            <text><![CDATA[<p>What values are allowed in Manufacturer Part Numbers?</p>]]></text>
             <position>top</position>
             <top>168px</top>
             <left>115px</left>
@@ -71,7 +71,7 @@
         <steps>
           <inputStep>
             <name>First Step</name>
-            <text><![CDATA[<p>Enter in a filename having the format "NAME.EXT".</p>]]></text>
+            <text><![CDATA[<p>Enter in a filename with the format "NAME.EXT".</p>]]></text>
             <position>top</position>
             <top>127px</top>
             <left>51px</left>
@@ -81,7 +81,7 @@
           </inputStep>
           <buttonStep>
             <name>Second Step</name>
-            <text><![CDATA[<p>Click the next button to continue.</p>]]></text>
+            <text><![CDATA[<p><strong>Click Next.</strong></p><p>Click the Next button to continue.</p>]]></text>
             <position>top</position>
             <top>415px</top>
             <left>327px</left>
