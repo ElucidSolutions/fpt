@@ -19,26 +19,73 @@
     ]]></body>
     <content>
       <section>
-        <name>overview</name>
-        <title><![CDATA[Overview]]></title>
+        <name>formatted-pricing-tool-training</name>
+        <title><![CDATA[Formatted Pricing Tool Training]]></title>
         <content>
           <page>
-            <name>fpt-part-1</name>
+            <name>filling-out-the-getting-started-tab</name>
             <title><![CDATA[Filling out the Getting Started Tab]]></title>
             <body><![CDATA[
-              <p>The Getting Started Tab is your entryway into the on screen pricing data entry screen. This is where you establish your list of products, beginning with entering their Manufacturer Part Number then their Manufacturer name.</p>
+              <p>The <em>Getting Started</em> tab is your entryway into the <em>On-Screen Pricing Data Entry</em> screen. This is where you will establish your list of products, beginning with entering the Manufacturer Part Number and Manufacturer Name.</p>
               <p>On the following tabs, you will be able to enter detailed information about the products you list here.</p>
-              <div class="main_replay_presentation"></div>
               <div class="presentation_slide_block">presentation_slide_page/example_presentation/first_slide</div>
             ]]></body>
           </page>
           <page>
-            <name>fpt-part-2</name>
-            <title><![CDATA[FPT: Part 2]]></title>
+            <name>what-is-the-formatted-pricing-tool</name>
+            <title><![CDATA[What is the Formatted Pricing Tool?]]></title>
             <body><![CDATA[
-              <div class="presentation_slide_block">presentation_slide_page/example_presentation/second_slide</div>
+              <div class="presentation_slide_block">presentation_slide_page/example_presentation/first_slide</div>
             ]]></body>
           </page>
+          <page>
+            <name>how-goods-services-impact-offer</name>
+            <title><![CDATA[How Your Goods and Services Impact Your Offer]]></title>
+            <body><![CDATA[
+              <div class="presentation_slide_block">presentation_slide_page/example_presentation/first_slide</div>
+            ]]></body>
+          </page>
+          <page>
+            <name>set-up-fpt-from-wizard-management</name>
+            <title><![CDATA[Set Up the FPT From the Wizard Management Tool]]></title>
+            <body><![CDATA[
+              <div class="presentation_slide_block">presentation_slide_page/example_presentation/first_slide</div>
+            ]]></body>
+          </page>
+          <page>
+            <name>choosing-correct-pricing-data-method</name>
+            <title><![CDATA[Choosing the Correct Pricing Data Entry Method]]></title>
+            <body><![CDATA[
+              <div class="presentation_slide_block">presentation_slide_page/example_presentation/first_slide</div>
+            ]]></body>
+          </page>
+          <section>
+            <name>using-the-on-screen-pricing-data-entry</name>
+            <title><![CDATA[Using the On-Screen Pricing Data Entry]]></title>
+            <content>
+              <page>
+                <name>general-information</name>
+                <title><![CDATA[General Information]]></title>
+                <body><![CDATA[
+                  <div class="presentation_slide_block">presentation_slide_page/example_presentation/first_slide</div>
+                ]]></body>
+              </page>
+              <page>
+                <name>uploading-additional-photos</name>
+                <title><![CDATA[Uploading Additional Photos]]></title>
+                <body><![CDATA[
+                  <div class="presentation_slide_block">presentation_slide_page/example_presentation/first_slide</div>
+                ]]></body>
+              </page>
+              <page>
+                <name>discounts</name>
+                <title><![CDATA[Discounts]]></title>
+                <body><![CDATA[
+                  <div class="presentation_slide_block">presentation_slide_page/example_presentation/first_slide</div>
+                ]]></body>
+              </page>
+            </content>
+          </section>
         </content>
       </section>
     </content>
