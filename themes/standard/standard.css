@@ -505,6 +505,9 @@ div.bx-controls-direction a {
   transition: all 0.2s ease; }
 
 /* Search Module */
+.search_page {
+  padding: 0px 5% 2% 5%; }
+
 /*Redoing the Search */
 .search_link {
   background: white url("images/searchIcon.png") no-repeat;

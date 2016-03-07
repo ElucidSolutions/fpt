@@ -28,9 +28,6 @@ registerModule (
   });
 
   // IV. Set the Sidr Fadeout handler.
-  $('#sidr').click (function (event) {
-    event.stopPropagation ();
-  });
   setInterval (
     function () {
       var status = $.sidr ('status');
@@ -65,10 +62,9 @@ function main_displayBackToTop () {
 // Darken the body element.
 function main_darken () {
   if ($('#dark_overlay').length == 0) {
-    $('body').prepend (
-      $('<a></a>')
+    $('#body').prepend (
+      $('<div></div>')
         .attr ('id', 'dark_overlay')
-        .attr ('href', '#sidr')
         .css ({
            'background-color': 'black',
            'display':          'none',
@@ -78,11 +74,8 @@ function main_darken () {
            'width':            '100%',
            'z-index':          '30000'
          })
-        // .sidr ({displace: true, speed: 250})
         .fadeTo (250, '0.5'))
         .click (function (event) {
-          // event.preventDefault ();
-          // event.stopPropagation ();
           $.sidr ('close');
         });
   }
