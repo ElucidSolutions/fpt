@@ -251,11 +251,13 @@ Once the configuration settings have been loaded from settings.xml, the load eve
 */
 function loadModules (settings, done) {
   // I. Add the main module to the modules list.
+/*
   settings.modules.push ({
     name:    'main',
     enabled: true,
     url:     'index.js'
   });
+*/
 
   // II. Load the module files in the modules list.
   _loadModules (0, settings.modules, 

@@ -28,9 +28,13 @@ registerModule (
   });
 
   // IV. Set the Sidr Fadeout handler.
+  $('#sidr').click (function (event) {
+    event.stopPropagation ();
+  });
   setInterval (
     function () {
-      if ((!sidrMoving && sidrOpened) || (sidrMoving && !sidrOpened)) {
+      var status = $.sidr ('status');
+      if ((!status.moving && status.opened) || (status.moving && !status.opened)) {
         main_darken ();
       } else {
         main_undarken ();
@@ -74,8 +78,13 @@ function main_darken () {
            'width':            '100%',
            'z-index':          '30000'
          })
-        .sidr ({displace: false, speed: 250})
-        .fadeTo (250, '0.5'));
+        // .sidr ({displace: true, speed: 250})
+        .fadeTo (250, '0.5'))
+        .click (function (event) {
+          // event.preventDefault ();
+          // event.stopPropagation ();
+          $.sidr ('close');
+        });
   }
 }
 
