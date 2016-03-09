@@ -12,7 +12,8 @@ registerModule (
     'main_header_block':        'templates/main_header_block.html',
     'main_menu_block':          'templates/main_menu_block.html',
     'main_search_header_block': 'templates/main_search_header_block.html',
-    'main_search_menu_block':   'templates/main_search_menu_block.html'
+    'main_search_menu_block':   'templates/main_search_menu_block.html',
+    'main_start_presentation_block': main_startPresentationBlock
   });
 
   // II. Display/hide the Back to Top tab.
@@ -87,4 +88,40 @@ function main_undarken () {
     function () {
       $(this).remove ();
   });
+}
+
+/*
+*/
+function main_startPresentationBlock (blockElement, done) {
+  var element = $('<p>Play the Getting Started Tab</p>')
+
+  var slide = presentation_DATABASE.getSlide (blockElement.text ());
+  slide.getIntro (
+    function (intro) {
+      intro.onchange (
+        function () { 
+          element.html ('<p>Stop the Getting Started Tab</p>');
+      });
+      intro.oncomplete (
+        function () {
+          element.html ('<p>Replay the Getting Started Tab</p>');
+      });
+      intro.onexit (
+        function () {
+          element.html ('<p>Replay the Getting Started Tab</p>');
+      });
+      element.click (
+        function () {
+          if (intro.running) {
+            intro.exit ();
+            // There is a bug in the IntroJS library in which the onexit callback is not called when intro.exit is called directly.
+            element.html ('<p>Replay the Getting Started Tab</p>');
+          } else {
+            intro.start ();
+          }
+      });
+  });
+
+  blockElement.replaceWith (element);
+  done (element);
 }

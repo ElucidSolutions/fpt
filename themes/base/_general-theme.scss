@@ -316,7 +316,7 @@ tr:nth-child(even) {
 
   .menu_link[data-menu-level="3"]:hover,
   .menu_label[data-menu-level="3"]:hover,
-  .menu_link[data-menu-level="3"].menu_selected {
+  .menu_contents_item.menu_selected_line > .menu_link[data-menu-level="3"] {
     @include navItemHover($primary-color, rgb(255,255,204));
   }
 
@@ -337,7 +337,7 @@ tr:nth-child(even) {
 
   .menu_link[data-menu-level="4"]:hover,
   .menu_label[data-menu-level="4"]:hover,
-  .menu_link[data-menu-level="4"].menu_selected {
+  .menu_contents_item.menu_selected_line > .menu_link[data-menu-level="4"] {
     @include navItemHover($darker-primary, $nav-highlight-1);
   }
 
@@ -349,7 +349,7 @@ tr:nth-child(even) {
 
   .menu_link[data-menu-level="5"]:hover,
   .menu_label[data-menu-level="5"]:hover,
-  .menu_link[data-menu-level="5"].menu_selected {
+  .menu_contents_item.menu_selected_line > .menu_link[data-menu-level="5"] {
     @include navItemHover($darkest-primary, $nav-highlight-2);
  }
 

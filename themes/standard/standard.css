@@ -869,7 +869,7 @@ tr:nth-child(even) {
     background: url("images/expand.png") no-repeat 15px 14px; }
   #sidr .menu_link[data-menu-level="3"]:hover,
   #sidr .menu_label[data-menu-level="3"]:hover,
-  #sidr .menu_link[data-menu-level="3"].menu_selected {
+  #sidr .menu_contents_item.menu_selected_line > .menu_link[data-menu-level="3"] {
     background-color: #ffffcc;
     color: #f29a2f;
     transition: background-color 0.25s ease 0s, color 0.25s ease 0s; }
@@ -886,7 +886,7 @@ tr:nth-child(even) {
     background: url("images/navArrowExpand.png") no-repeat 15px 14px; }
   #sidr .menu_link[data-menu-level="4"]:hover,
   #sidr .menu_label[data-menu-level="4"]:hover,
-  #sidr .menu_link[data-menu-level="4"].menu_selected {
+  #sidr .menu_contents_item.menu_selected_line > .menu_link[data-menu-level="4"] {
     background-color: #fed6b0;
     color: #e0810e;
     transition: background-color 0.25s ease 0s, color 0.25s ease 0s; }
@@ -898,7 +898,7 @@ tr:nth-child(even) {
     background: url("images/navCircle.png") no-repeat 55px 18px; }
   #sidr .menu_link[data-menu-level="5"]:hover,
   #sidr .menu_label[data-menu-level="5"]:hover,
-  #sidr .menu_link[data-menu-level="5"].menu_selected {
+  #sidr .menu_contents_item.menu_selected_line > .menu_link[data-menu-level="5"] {
     background-color: #f7ba77;
     color: #b0660b;
     transition: background-color 0.25s ease 0s, color 0.25s ease 0s; }

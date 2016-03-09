@@ -25,10 +25,10 @@ The Load Event Handler
 registerModule (
   function (done) {
     // I. Load the Intro.JS library.
-    loadScript ('modules/presentation/lib/intro.js-2.0/intro.js',
+    loadScript ('modules/presentation/lib/intro.js-2.0.0/intro.js',
       function () {
         // II. Load the Intro.JS stylesheets.
-        $.getCSS ('modules/presentation/lib/intro.js-2.0/introjs.css');
+        $.getCSS ('modules/presentation/lib/intro.js-2.0.0/introjs.css');
 
         // III. Load the Presentation database.
         presentation_loadDatabase (
@@ -56,7 +56,7 @@ The Block Handlers
 /*
 */
 function presentation_slideBlock (blockElement, success, failure) {
-  var element = presentation_DATABASE.getSlide (blockElement.text ()).createElement ();
+  var element = presentation_DATABASE.getSlide (blockElement.text ()).getElement ();
   blockElement.replaceWith (element);
   success (element);
 }
@@ -425,86 +425,108 @@ The Slide Class
 /*
 */
 function presentation_Slide (id, image, width, height, steps) {
-  this.id      = id;
-  this.image   = image;
-  this.width   = width;
-  this.height  = height;
-  this.steps   = steps;
+  var intro = null;
+  var introFunctions = [];
+  var element = null;
 
-  this.running = false;
-}
+  this.getId = function () { return id; };
+  this.getSteps = function () { return steps; };
 
-/*
-*/
-presentation_Slide.prototype.createElement = function () {
-  var element = $('<div></div>')
-    .addClass ('presentation_slide')
-    .attr ('data-presentation-slide', this.id)
-    .css ('background-image', 'url(' + this.image + ')')
-    .css ('background-size', this.width + ', ' + this.height)
-    .css ('background-repeat', 'no-repeat')
-    .css ('width', this.width)
-    .css ('height', this.height)
-    .css ('position', 'relative');
+  /*
+    Accepts one argument: f, a function that
+    accepts an IntroJS object; and either passes
+    this slide's IntroJS object to f or saves
+    f as a deferred function.
 
-  var self = this;
-  var intro = introJs (element.get (0))
-    .onafterchange (
-      function () {
-        intro.locked = false;
-        self.steps [intro._currentStep].onShow (intro);
-    })
-    .onexit (
-      function () {
-        intro.locked = false;
-        $('.presentation_valid', element).removeClass ('presentation_valid');
-    })
-    .oncomplete (
-      function () {
-        this.exit ();
-    });
-
-  var options = {
-    exitOnOverlayClick: false,
-    showStepNumbers: false,
-    overlayOpacity: 0.5,
-    steps: []
+    Note: When this slide's IntroJS object
+    is created by getElement, these deferred
+    functions are executed.
+  */
+  this.getIntro = function (f) {
+    if (intro) { return f (intro); }
+    introFunctions.push (f);
   };
 
-  for (var i = 0; i < this.steps.length; i ++) {
-    var step = this.steps [i];
+  /*
+    Returns this slide's HTML element as a JQuery
+    HTML Element.
 
-    var stepElement = step.createElement (intro)
-      .css ('background-image', 'url(' + self.image + ')')
-      .css ('background-position', '-' + step.left + ' -' + step.top)
-      .css ('background-size', self.width + ', ' + self.height)
-      .css ('background-repeat', 'no-repeat');
+    Note: This function sets this slide's IntroJS
+    object and executes any deferred functions
+    stored in introFunctions.
+  */
+  this.getElement = function () {
+    if (element) { return element; }
+
+    element = $('<div></div>')
+      .addClass ('presentation_slide')
+      .attr ('data-presentation-slide', id)
+      .css ('background-image', 'url(' + image + ')')
+      .css ('background-size', width + ', ' + height)
+      .css ('background-repeat', 'no-repeat')
+      .css ('width', width)
+      .css ('height', height)
+      .css ('position', 'relative');
+
+    intro = introJs (element.get (0))
+      .onafterchange (
+        function () {
+          intro.locked = false;
+          var step = steps [intro._currentStep]; 
+          if (step) { step.onShow (intro); }
+      })
+      .onexit (
+        function () {
+          intro.locked = false;
+          $('.presentation_valid', element).removeClass ('presentation_valid');
+      });
+
+    var options = {
+      exitOnOverlayClick: false,
+      showStepNumbers: false,
+      overlayOpacity: 0.5,
+      steps: []
+    };
+
+    for (var i = 0; i < steps.length; i ++) {
+      var step = steps [i];
+
+      var stepElement = step.createElement (intro)
+        .css ('background-image', 'url(' + image + ')')
+        .css ('background-position', '-' + step.left + ' -' + step.top)
+        .css ('background-size', width + ', ' + height)
+        .css ('background-repeat', 'no-repeat');
  
-    element.append (stepElement);
+      element.append (stepElement);
 
-    options.steps.push ({
-      element:  '#' + stepElement.attr ('id'),
-      intro:    step.text,
-      position: step.position,
+      options.steps.push ({
+        element:  '#' + stepElement.attr ('id'),
+        intro:    step.text,
+        position: step.position,
+      });
+    }
+
+    intro.setOptions (options)
+
+    element.click (
+      function () {
+        if (!intro.running) {
+          intro.start ();
+        }
     });
-  }
 
-  intro.setOptions (options)
+    PAGE_LOAD_HANDLERS.push (
+      function (done) {
+        intro.exit ();
+        done ();
+    });
 
-  element.click (
-    function () {
-      if (!intro.running) {
-        intro.start ();
-      }
-  });
+    for (var i = 0; i < introFunctions.length; i ++) {
+      (introFunctions [i]) (intro);
+    }
 
-  PAGE_LOAD_HANDLERS.push (
-    function (done) {
-      intro.exit ();
-      done ();
-  });
-
-  return element;
+    return element;
+  };
 }
 
 /*
@@ -552,7 +574,7 @@ function presentation_Presentation (id, slides) {
 */
 presentation_Presentation.prototype.getSlide = function (id) {
   for (var i = 0; i < this.slides.length; i ++) {
-    if (this.slides [i].id === id) {
+    if (this.slides [i].getId () === id) {
       return this.slides [i];
     }
   }
