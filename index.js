@@ -93,23 +93,24 @@ function main_undarken () {
 /*
 */
 function main_startPresentationBlock (blockElement, done) {
-  var element = $('<p>Play the Getting Started Tab</p>')
+  var element = $('<p>Play the Getting Started Tab</p>');
 
-  var slide = presentation_DATABASE.getSlide (blockElement.text ());
-  slide.getIntro (
-    function (intro) {
-      intro.onchange (
-        function () { 
-          element.html ('<p>Stop the Getting Started Tab</p>');
-      });
-      intro.oncomplete (
-        function () {
-          element.html ('<p>Replay the Getting Started Tab</p>');
-      });
-      intro.onexit (
-        function () {
-          element.html ('<p>Replay the Getting Started Tab</p>');
-      });
+  presentation_SLIDE_ELEMENTS.get (blockElement.text (),
+    function (slideElement) {
+      var intro = slideElement.getIntro ()
+        .onchange (
+          function () { 
+            element.html ('<p>Stop the Getting Started Tab</p>');
+        })
+        .oncomplete (
+          function () {
+            element.html ('<p>Replay the Getting Started Tab</p>');
+        })
+        .onexit (
+          function () {
+            element.html ('<p>Replay the Getting Started Tab</p>');
+        });
+         
       element.click (
         function () {
           if (intro.running) {

@@ -19,11 +19,23 @@ registerModule (
   function (done) {
     // I. Register the block handlers.
     registerBlockHandlers ({
-      menu_contents_block:      menu_contentsBlock,
-      menu_leaf_label_block:    menu_leafLabelBlock,
-      menu_leaf_link_block:     menu_leafLinkBlock,
-      menu_node_label_block:    menu_nodeLabelBlock,
-      menu_node_link_block:     menu_nodeLinkBlock
+      menu_contents_block:            menu_contentsBlock,
+      menu_leaf_label_block:          menu_leafLabelBlock,
+      menu_leaf_link_block:           menu_leafLinkBlock,
+      menu_leaf_next_label_block:     menu_leafNextLabelBlock,
+      menu_leaf_next_link_block:      menu_leafNextLinkBlock,
+      menu_leaf_parent_label_block:   menu_leafParentLabelBlock,
+      menu_leaf_parent_link_block:    menu_leafParentLinkBlock,
+      menu_leaf_previous_label_block: menu_leafPreviousLabelBlock,
+      menu_leaf_previous_link_block:  menu_leafPreviousLinkBlock,
+      menu_node_label_block:          menu_nodeLabelBlock,
+      menu_node_link_block:           menu_nodeLinkBlock,
+      menu_node_next_label_block:     menu_nodeNextLabelBlock,
+      menu_node_next_link_block:      menu_nodeNextLinkBlock,
+      menu_node_parent_label_block:   menu_nodeParentLabelBlock,
+      menu_node_parent_link_block:    menu_nodeParentLinkBlock,
+      menu_node_previous_label_block: menu_nodePreviousLabelBlock,
+      menu_node_previous_link_block:  menu_nodePreviousLinkBlock
     });
 
     done ();
@@ -150,6 +162,42 @@ function menu_leafLinkBlock (blockElement, success, failure) {
 }
 
 /*
+*/
+function menu_leafNextLabelBlock (blockElement, success, failure) {
+  menu_MENU.getLeafNextLabelBlock (blockElement, success, failure);
+}
+
+/*
+*/
+function menu_leafNextLinkBlock (blockElement, success, failure) {
+  menu_MENU.getLeafNextLinkBlock (blockElement, success, failure);
+}
+
+/*
+*/
+function menu_leafParentLabelBlock (blockElement, success, failure) {
+  menu_MENU.getLeafParentLabelBlock (blockElement, success, failure);
+}
+
+/*
+*/
+function menu_leafParentLinkBlock (blockElement, success, failure) {
+  menu_MENU.getLeafParentLinkBlock (blockElement, success, failure);
+}
+
+/*
+*/
+function menu_leafPreviousLabelBlock (blockElement, success, failure) {
+  menu_MENU.getLeafPreviousLabelBlock (blockElement, success, failure);
+}
+
+/*
+*/
+function menu_leafPreviousLinkBlock (blockElement, success, failure) {
+  menu_MENU.getLeafPreviousLinkBlock (blockElement, success, failure);
+}
+
+/*
   menu_nodeLabelBlock accepts three arguments:
 
   * blockElement, a JQuery HTML Element
@@ -204,6 +252,42 @@ function menu_nodeLinkBlock (blockElement, success, failure) {
 }
 
 /*
+*/
+function menu_nodeNextLabelBlock (blockElement, success, failure) {
+  menu_MENU.getNodeNextLabelBlock (blockElement, success, failure);
+}
+
+/*
+*/
+function menu_nodeNextLinkBlock (blockElement, success, failure) {
+  menu_MENU.getNodeNextLinkBlock (blockElement, success, failure);
+}
+
+/*
+*/
+function menu_nodeParentLabelBlock (blockElement, success, failure) {
+  menu_MENU.getNodeParentLabelBlock (blockElement, success, failure);
+}
+
+/*
+*/
+function menu_nodeParentLinkBlock (blockElement, success, failure) {
+  menu_MENU.getNodeParentLinkBlock (blockElement, success, failure);
+}
+
+/*
+*/
+function menu_nodePreviousLabelBlock (blockElement, success, failure) {
+  menu_MENU.getNodePreviousLabelBlock (blockElement, success, failure);
+}
+
+/*
+*/
+function menu_nodePreviousLinkBlock (blockElement, success, failure) {
+  menu_MENU.getNodePreviousLinkBlock (blockElement, success, failure);
+}
+
+/*
   The menu_Element class is a base class for both
   the menu_Leaf and menu_Node classes. It
   represents generic menu elements.
@@ -253,6 +337,36 @@ function menu_Element (parent, id, title, classes) {
   getLinkElement returns a JQuery HTML Element that represents a link
 */
 // menu_Element.prototype.getLinkElement = function () {}
+
+/*
+*/
+menu_Element.prototype.getIndex = function () {
+  if (!this.parent) { return null; }
+
+  for (var i = 0; i < this.parent.children.length; i ++) {
+    if (this.parent.children [i].id === this.id) { return i; }
+  }
+  strictError ('[menu][menu_Element.getIndex] Error: the "' + this.id + '" menu element references a parent ("' + this.parent.id + '") that does not list "' + this.id + '" as a child.');
+  return null;
+}
+
+/*
+*/
+menu_Element.prototype.getNext = function () {
+  if (!this.parent) { return null; }
+
+  var i = this.getIndex () + 1;
+  return this.parent.children.length > i ? this.parent.children [i] : null;
+}
+
+/*
+*/
+menu_Element.prototype.getPrevious = function () {
+  if (!this.parent) { return null; }
+
+  var i = this.getIndex () - 1;
+  return i >= 0 ? this.parent.children [i] : null;
+}
 
 /*
 */
@@ -319,6 +433,46 @@ menu_Element.prototype._getLinkElement = function (id) {
 */
 menu_Element.prototype.getContentsItemElement = function (numColumns, depth) {
   return this.addAttributes ($('<li></li>').addClass ('menu_contents_item'));
+}
+
+/*
+*/
+menu_Element.prototype.getParentLabelElement = function () {
+  return this.parent ? this.parent.getLabelElement () : null;
+}
+
+/*
+*/
+menu_Element.prototype.getParentLinkElement = function () {
+  return this.parent ? this.parent.getLinkElement () : null;
+}
+
+/*
+*/
+menu_Element.prototype.getNextLabelElement = function () {
+  var element = this.getNext ();
+  return element ? element.getLabelElement () : null;
+}
+
+/*
+*/
+menu_Element.prototype.getNextLinkElement = function () {
+  var element = this.getNext ();
+  return element ? element.getLinkElement () : null;
+}
+
+/*
+*/
+menu_Element.prototype.getPreviousLabelElement = function () {
+  var element = this.getPrevious ();
+  return element ? element.getLabelElement () : null;
+}
+
+/*
+*/
+menu_Element.prototype.getPreviousLinkElement = function () {
+  var element = this.getPrevious ();
+  return element ? element.getLinkElement () : null;
 }
 
 /*
@@ -503,6 +657,54 @@ menu_Menu.prototype.getLeafLinkBlock = function (blockElement, success, failure)
 
 /*
 */
+menu_Menu.prototype.getLeafNextLabelBlock = function (blockElement, success, failure) {
+  var element = this.getLeaf (blockElement.text ()).getNextLabelElement ();
+  blockElement.replaceWith (element);
+  success (element);
+}
+
+/*
+*/
+menu_Menu.prototype.getLeafNextLinkBlock = function (blockElement, success, failure) {
+  var element = this.getLeaf (blockElement.text ()).getNextLinkElement ();
+  blockElement.replaceWith (element);
+  success (element);
+}
+
+/*
+*/
+menu_Menu.prototype.getLeafParentLabelBlock = function (blockElement, success, failure) {
+  var element = this.getLeaf (blockElement.text ()).getParentLabelElement ();
+  blockElement.replaceWith (element);
+  success (element);
+}
+
+/*
+*/
+menu_Menu.prototype.getLeafParentLinkBlock = function (blockElement, success, failure) {
+  var element = this.getLeaf (blockElement.text ()).getParentLinkElement ();
+  blockElement.replaceWith (element);
+  success (element);
+}
+
+/*
+*/
+menu_Menu.prototype.getLeafPreviousLabelBlock = function (blockElement, success, failure) {
+  var element = this.getLeaf (blockElement.text ()).getPreviousLabelElement ();
+  blockElement.replaceWith (element);
+  success (element);
+}
+
+/*
+*/
+menu_Menu.prototype.getLeafPreviousLinkBlock = function (blockElement, success, failure) {
+  var element = this.getLeaf (blockElement.text ()).getPreviousLinkElement ();
+  blockElement.replaceWith (element);
+  success (element);
+}
+
+/*
+*/
 menu_Menu.prototype.getNodeLabelBlock = function (blockElement, success, failure) {
   var element = this.getNode (blockElement.text ()).getLabelElement ();
   blockElement.replaceWith (element);
@@ -513,6 +715,54 @@ menu_Menu.prototype.getNodeLabelBlock = function (blockElement, success, failure
 */
 menu_Menu.prototype.getNodeLinkBlock = function (blockElement, success, failure) {
   var element = this.getNode (blockElement.text ()).getLinkElement ();
+  blockElement.replaceWith (element);
+  success (element);
+}
+
+/*
+*/
+menu_Menu.prototype.getNodeNextLabelBlock = function (blockElement, success, failure) {
+  var element = this.getNode (blockElement.text ()).getNextLabelElement ();
+  blockElement.replaceWith (element);
+  success (element);
+}
+
+/*
+*/
+menu_Menu.prototype.getNodeNextLinkBlock = function (blockElement, success, failure) {
+  var element = this.getNode (blockElement.text ()).getNextLinkElement ();
+  blockElement.replaceWith (element);
+  success (element);
+}
+
+/*
+*/
+menu_Menu.prototype.getNodeParentLabelBlock = function (blockElement, success, failure) {
+  var element = this.getNode (blockElement.text ()).getParentLabelElement ();
+  blockElement.replaceWith (element);
+  success (element);
+}
+
+/*
+*/
+menu_Menu.prototype.getNodeParentLinkBlock = function (blockElement, success, failure) {
+  var element = this.getNode (blockElement.text ()).getParentLinkElement ();
+  blockElement.replaceWith (element);
+  success (element);
+}
+
+/*
+*/
+menu_Menu.prototype.getNodePreviousLabelBlock = function (blockElement, success, failure) {
+  var element = this.getNode (blockElement.text ()).getPreviousLabelElement ();
+  blockElement.replaceWith (element);
+  success (element);
+}
+
+/*
+*/
+menu_Menu.prototype.getNodePreviousLinkBlock = function (blockElement, success, failure) {
+  var element = this.getNode (blockElement.text ()).getPreviousLinkElement ();
   blockElement.replaceWith (element);
   success (element);
 }
@@ -562,7 +812,6 @@ menu_Menu.prototype.getNodeLinkBlock = function (blockElement, success, failure)
   menu_selected_element_id class and contain a
   single text node representing the initially
   selected element ID.
-  
 
   getContentsBlock:
 
