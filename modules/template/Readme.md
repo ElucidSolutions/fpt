@@ -8,55 +8,6 @@ The Template module allows other modules to define and nested templates.
 */
 ```
 
-The Global Variables
---------------------
-
-```javascript
-/*
-*/
-var template_TEMPLATES = [];
-```
-
-The Template Registration Functions
------------------------------------
-
-```javascript
-/*
-*/
-function template_registerTemplate (template) {
-  template_TEMPLATES.push (template);
-}
-
-/*
-*/
-function template_registerTemplates (templates) {
-  for (var i = 0; i < templates.length; i ++) {
-    template_registerTemplate (templates [i]);
-  }
-}
-```
-
-The Page Handler Function
--------------------------
-
-```javascript
-/*
-*/
-function template_page (id, success, failure) {
-  var errorMsg = '[template][template_page] Error: an error occured while trying to load page template "' + id + '".';
-  var template = template_getPageTemplate (id);
-  if (!template) {
-    strictError (errorMsg + ' The template does not exist.');
-    return failure ();
-  }
-  if (!template.getPageElement) {
-    strictError (errorMsg + ' The template is not a page template.');
-    return failure ();
-  }
-  template.getPageElement (success, failure);
-}
-```
-
 The Template Class
 ------------------
 
@@ -73,6 +24,10 @@ function template_Template (parent, id, getRawElement, classes) {
 /*
 */
 // template_Template.prototype.getPageTemplate = function (id) {}
+
+/*
+*/
+// template_Template.prototype.getSectionTemplate = function (id) {}
 
 /*
 */
@@ -103,6 +58,13 @@ template_Template.prototype.getLine = function () {
 */
 template_Template.prototype.getLevel = function () {
   return this.getPath ().length;
+}
+
+/*
+*/
+template_Template.prototype.iterate = function (templateFunction, done) {
+  templateFunction (this);
+  done (); 
 }
 
 /*
@@ -143,6 +105,12 @@ template_Page.prototype.constructor = template_Page;
 */
 template_Page.prototype.getPageTemplate = function (id) {
   return this.id === id ? this : null;
+}
+
+/*
+*/
+template_Page.prototype.getSectionTemplate = function (id) {
+  return null;
 }
 
 /*
@@ -212,6 +180,25 @@ template_Section.prototype.getPageTemplate = function (id) {
 
 /*
 */
+template_Section.prototype.getSectionTemplate = function (id) {
+  return this.id === id ? this : template_findSectionTemplate (id, this.children);
+}
+
+/*
+*/
+template_Section.prototype.iterate = function (templateFunction, done) {
+  templateFunction (this);
+  iter (
+    function (template, next) {
+      template.iterate (templateFunction, next);
+    },
+    this.children,
+    done
+  );
+}
+
+/*
+*/
 template_Section.prototype.getElement = function (success, failure) {
   template_Template.prototype.getElement.call (this,
     function (template) {
@@ -219,6 +206,120 @@ template_Section.prototype.getElement = function (success, failure) {
     },
     failure
   );
+}
+```
+The Template Store Class
+------------------------
+
+```javascript
+/*
+  Template Stores store registered templates.
+*/
+function template_TemplateStore () {
+  var self = this;
+
+  /*
+  */
+  var _templates = [];
+
+  /*
+  */
+  var _templateFunctions = {};
+
+  /*
+  */
+  this.add = function (template) {
+    // I. Add the template to the store.
+    _templates.push (template);
+
+    // II. Call template functions on the added templates.
+    template.iterate (
+      function (template, next) {
+        var id = template.getId ();
+        var templateFunctions = _templateFunctions [id];
+        templateFunctions ? seq (templateFunctions, next, template) : next ();
+    });
+  }
+
+  /*
+  */
+  this.addTemplateFunction = function (id, templateFunction) {
+    if (!_templateFunctions [id]) { _templateFunctions [id] = []; }
+    _templateFunctions [id].push (templateFunction);
+  }
+
+  /*
+  */
+  this.getPageTemplate = function (id, templateFunction) {
+    var template = template_findPageTemplate (id, _templates);
+    template ? templateFunction (template) : self.addTemplateFunction (id, templateFunction);
+  }
+
+  /*
+  */
+  this.getSectionTemplate = function (id, templateFunction) {
+    var template = template_findSectionTemplate (id, _templates);
+    template ? templateFunction (template) : self.addTemplateFunction (id, templateFunction);
+  }
+}
+```
+
+The Template Store
+------------------
+
+```javascript
+/*
+  A template_TemplateStore that stores all of
+  the registered templates.
+*/
+var template_TEMPLATES = new template_TemplateStore ();
+```
+
+The Module Load Event Handler
+-----------------------------
+
+```javascript
+/*
+*/
+MODULE_LOAD_HANDLERS.add (
+  function (done) {
+    // I. Register the block handlers.
+    block_BLOCK_HANDLERS.add ('template_block', template_block);
+
+    // II. Continue.
+    done ();
+});
+```
+
+The Page Block Handler
+----------------------
+
+```javascript
+/*
+*/
+function template_block (context, success, failure, expand) {
+  template_TEMPLATES.getPageTemplate (context.element.text (),
+    function (pageTemplate) {
+      pageTemplate.getPageElement (
+        function (pageElement) {
+          context.element.replaceWith (pageElement);
+
+          // Define and register the page load event handler.
+          PAGE_LOAD_HANDLERS.add (
+            function (id, next) {
+              template_TEMPLATES.getPageTemplate (id,
+                function (newPageTemplate) {
+                  pageTemplate.getPageElement (
+                    function (newPageElement) {
+                      pageElement.replaceWith (newPageElement);
+                      expand (newPageElement, next);
+                  });
+              });
+          });
+
+          success (pageElement);
+      });
+  });
 }
 ```
 
@@ -238,8 +339,12 @@ function template_findPageTemplate (id, templates) {
 
 /*
 */
-function template_getPageTemplate (id) {
-  return template_findPageTemplate (id, template_TEMPLATES);
+function template_findSectionTemplate (id, templates) {
+  for (var i = 0; i < templates.length; i ++) {
+    var template = templates [i].getSectionTemplate (id);
+    if (template) { return template; }
+  }
+  return null;
 }
 ```
 

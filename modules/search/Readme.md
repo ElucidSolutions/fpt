@@ -655,7 +655,12 @@ function search_getSetEntries (setId, success, failure) {
 /*
 */
 function search_getEntry (entries, id) {
-  return find (function (entry) { return entry.id === id; }, entries);
+  for (var i = 0; i < entries.length; i ++) {
+    if (entries [i].id === id) {
+      return entries [i];
+    }
+  }
+  return null;
 }
 ```
 
