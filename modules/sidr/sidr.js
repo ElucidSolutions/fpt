@@ -21,13 +21,13 @@
   sidr_load is the load event handler for this
   module.
 */
-registerModule (
+MODULE_LOAD_HANDLERS.add (
   function (done) {
   // I. Load libraries.
   loadScript ('modules/sidr/lib/sidr-2.2.1/dist/jquery.sidr.js',
     function () {
       // II. Register the block handlers.
-      registerBlockHandler ('sidr_block', sidr_block);
+      block_HANDLERS.add ('sidr_block', sidr_block);
       done ();
   });
 });
@@ -35,20 +35,20 @@ registerModule (
 /*
   sidr_block accepts two arguments:
 
-  * blockElement, a JQuery HTML Element
+  * context, a Block Expansion Context
   * done, a function.
 
-  blockElement must be a link element that is
+  context.element must be a link element that is
   linked to an HTML div element that contains a
   list. 
 
-  sidr_block modifies blockElement so that when
+  sidr_block modifies context.element so that when
   clicked, the div element referenced by
   blockElement will appear/disappear as a side
   panel. sidr_block then calls done.
 */
-function sidr_block (blockElement, done) {
-  blockElement.sidr ({
+function sidr_block (context, done) {
+  context.element.sidr ({
     displace: true,
     speed: 300
   });

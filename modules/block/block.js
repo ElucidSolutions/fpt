@@ -1,32 +1,3 @@
-Block Module
-============
-
-Block Handlers
---------------
-
-Block handlers may be either strings or functions.
-
-### Block Handler Strings 
-
-Block Handler Strings must be URLs that reference HTML templates. When applied, the core module will load the referenced HTML template and replace the block element with the loaded HTML document.
-
-### Block Handler Functions
-
-Block Handler Functions must accept four arguments:
-
-* `context`, the block expansion context as a `block_Context`
-* `success`, a function that accepts the expanded block element as a JQuery HTML Element
-* `failure`, a function that does not accept any arguments
-* and `expand`, a function that accepts two arguments: a child of `element` as JQuery HTML Element; and a function that does not accept any arguments  
-
-The handler should perform some action and may either modify or replace `element`. It should pass the modified element to `success`. If it removes `element`, it should pass null or undefined to `success`. If an error occurs, it should throw a strict error and call `failure` instead of calling `success`.
-
-Any function that creates a child element within `element` or modifies `element` should call `expand` to expand on the new element to expand any blocks that the child may contain along with any continuation.
-
-The Block Handler Store Class
------------------------------
-
-```javascript
 /*
   Block Handler Stores store the registered
   block handlers and provide a safe interface
@@ -94,23 +65,13 @@ function block_HandlerStore () {
     }
   }
 }
-```
 
-The Block Handler Store
------------------------
-
-```javascript
 /*
   A Handler Store that stores the registered
   block handlers.
 */
 var block_HANDLERS = new block_HandlerStore ();
-```
 
-The Block Expansion Context Class
----------------------------------
-
-```javascript
 /*
   Accepts two arguments:
 
@@ -123,25 +84,7 @@ function block_Context (id, element) {
   this.getId = function () { return id; }
   this.element = element;
 }
-```
 
-The Page Load Event Handler
----------------------------
-
-Whenever Lucidity renders a page, this module iterates over the HTML elements contained within the page in inner-outer depth-first order.
-
-When this module encounters an HTML element that has an HTML class, it checks to see whether or not there is a block handler in `block_BLOCK_HANDLERS`associated with the class.
-
-If there is, this module calls the block handler and passes the element to it in a Block Expansion Context.
-
-The block handler may or may not modify or remove the element.
-
-When the block handler returns, this module continues iterating over the remaining elements.
-
-The Module Load Event Handler
------------------------------
-
-```javascript
 /*
 */
 MODULE_LOAD_HANDLERS.add (
@@ -158,12 +101,7 @@ MODULE_LOAD_HANDLERS.add (
     // III. Continue.
     done ();
 });
-```
 
-Block Expansion 
----------------
-
-```javascript
 /*
   block_expandDocumentBlocks accepts two
   arguments:
@@ -332,12 +270,7 @@ function block_applyBlockHandler (handler, context, success, failure) {
       return done ();
   }
 }
-```
 
-The Core Block Handlers
------------------------
-
-```javascript
 /*
   block_templateBlock accepts three arguments:
 
@@ -359,12 +292,7 @@ function block_templateBlock (context, success, failure) {
   var templateURL = context.element.text ();
   replaceWithTemplate (templateURL, context.element, success, failure);
 }
-```
 
-Auxiliary Functions
--------------------
-
-```javascript
 /*
   getBlockArguments accepts four arguments: schema,
   an array of Block Schema objects; rootElement,
@@ -406,31 +334,3 @@ function getClassNames (element) {
   var classNames = element.attr ('class');
   return classNames ? classNames.split (/\s+/) : [];
 }
-```
-
-Generating Source Files
------------------------
-
-You can generate the Block module's source files using [Literate Programming](https://github.com/jostylr/literate-programming), simply execute:
-`literate-programming Readme.md`
-from the command line.
-
-<!---
-### Block.js
-```
-_"The Block Handler Store Class"
-
-_"The Block Handler Store"
-
-_"The Block Expansion Context Class"
-
-_"The Module Load Event Handler"
-
-_"Block Expansion"
-
-_"The Core Block Handlers"
-
-_"Auxiliary Functions"
-```
-[block.js](#Block.js "save:")
--->

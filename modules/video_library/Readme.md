@@ -19,33 +19,33 @@ Load Event Handler
 /*
   The module's load event handler.
 */
-registerModule (
-function (done) {
-  // I. Load the Video Database.
-  video_library_loadDatabase (video_library_DATABASE_URL,
-    function (database) {
-      // II. Cache the Video Library.
-      video_library_DATABASE = database;
+MODULE_LOAD_HANDLERS.add (
+  function (done) {
+    // I. Load the Video Database.
+    video_library_loadDatabase (video_library_DATABASE_URL,
+      function (database) {
+        // II. Cache the Video Library.
+        video_library_DATABASE = database;
 
-      // III. Register the module's block handler.
-      registerBlockHandlers ({
-        'video_library_description_block': video_library_descriptionBlock,
-        'video_library_menu_block':        video_library_menuBlock,
-        'video_library_player_block':      video_library_playerBlock,
-        'video_library_title_block':       video_library_titleBlock,
-        'video_library_transcript_block':  video_library_transcriptBlock
-      });
+        // III. Register the module's block handler.
+        block_HANDLERS.addHandlers ({
+          'video_library_description_block': video_library_descriptionBlock,
+          'video_library_menu_block':        video_library_menuBlock,
+          'video_library_player_block':      video_library_playerBlock,
+          'video_library_title_block':       video_library_titleBlock,
+          'video_library_transcript_block':  video_library_transcriptBlock
+        });
 
-      // IV. Register the module's page handler.
-      registerPageHandler ('video_library_page', 'modules/video_library/templates/video_library_page.html');
+        // IV. Register the module's page handler.
+        // registerPageHandler ('video_library_page', 'modules/video_library/templates/video_library_page.html');
 
-      // V. Register the module's search source.
-      search_registerSource ('video_library_search_source', video_library_searchSource);
+        // V. Register the module's search source.
+        // search_registerSource ('video_library_search_source', video_library_searchSource);
 
-      done ();
-    },
-    done
-  );
+        done ();
+      },
+      done
+    );
 });
 ```
 
@@ -54,11 +54,11 @@ Block Handlers
 
 ```javascript
 /*
-function video_library_collectionBlock (blockElement, success, failure, expand) {
+function video_library_collectionBlock (context, success, failure, expand) {
   getBlockArguments ([
       {'name': 'video_library_player_id',    'text': true, 'required': true},
       {'name': 'video_library_video_id',     'text': true, 'required': true}
-    ], blockElement,
+    ], context.element,
     function (blockArguments) {
       var videoId   = blockArguments.video_library_library_id;
       var videoPath = video_library_getPath (videoId);
@@ -74,15 +74,15 @@ function video_library_collectionBlock (blockElement, success, failure, expand) 
   );
 }
 */
-function video_library_descriptionBlock (blockElement, success, failure) {
+function video_library_descriptionBlock (context, success, failure) {
   getBlockArguments ([
       {'name': 'video_library_player_id',    'text': true, 'required': true},
       {'name': 'video_library_library_id',   'text': true, 'required': true},
       {'name': 'video_library_default_text', 'text': true, 'required': false}
-    ], blockElement,
+    ], context.element,
     function (blockArguments) {
       var next = function (descriptionElement) {
-        blockElement.replaceWith (descriptionElement);
+        context.element.replaceWith (descriptionElement);
         success (descriptionElement);
       }
 
@@ -105,18 +105,18 @@ function video_library_descriptionBlock (blockElement, success, failure) {
       var playerId = blockArguments.video_library_player_id;
       var descriptionElement = library.createDescriptionElement (playerId, defaultText, videoURL);
 
-      blockElement.replaceWith (descriptionElement);
+      context.element.replaceWith (descriptionElement);
       success (descriptionElement);
     },
     failure
   );
 }
 
-function video_library_menuBlock (blockElement, success, failure) {
+function video_library_menuBlock (context, success, failure) {
   getBlockArguments ([
       {'name': 'video_library_player_id',  'text': true, 'required': true},
       {'name': 'video_library_library_id', 'text': true, 'required': true}
-    ], blockElement,
+    ], context.element,
     function (blockArguments) {
       var libraryId   = blockArguments.video_library_library_id;
       var libraryPath = video_library_getPath (libraryId);
@@ -132,18 +132,18 @@ function video_library_menuBlock (blockElement, success, failure) {
       var playerId = blockArguments.video_library_player_id;
       var menuElement = library.createMenuElement (playerId, videoURL);
 
-      blockElement.replaceWith (menuElement);
+      context.element.replaceWith (menuElement);
       success (menuElement);
     },
     failure
   );
 }
 
-function video_library_playerBlock (blockElement, success, failure) {
+function video_library_playerBlock (context, success, failure) {
   getBlockArguments ([
       {'name': 'video_library_player_id',        'text': true, 'required': true},
       {'name': 'video_library_default_video_id', 'text': true, 'required': false}
-    ], blockElement,
+    ], context.element,
     function (blockArguments) {
       var playerId = blockArguments.video_library_player_id;
 
@@ -166,18 +166,18 @@ function video_library_playerBlock (blockElement, success, failure) {
         videoElement.append ($('<source></source>').attr ('src', videoURL));
       }
 
-      blockElement.replaceWith (playerElement);
+      context.element.replaceWith (playerElement);
       success (playerElement);
     },
     failure
   );
 }
 
-function video_library_titleBlock (blockElement, success, failure, expand) {
+function video_library_titleBlock (context, success, failure, expand) {
   getBlockArguments ([
       {'name': 'video_library_player_id',    'text': true, 'required': true},
       {'name': 'video_library_library_id',   'text': true, 'required': true}
-    ], blockElement,
+    ], context.element,
     function (blockArguments) {
       var libraryId   = blockArguments.video_library_library_id;
       var libraryPath = video_library_getPath (libraryId);
@@ -207,22 +207,22 @@ function video_library_titleBlock (blockElement, success, failure, expand) {
           });
       });
 
-      blockElement.replaceWith (titleElement);
+      context.element.replaceWith (titleElement);
       success (titleElement);
     },
     failure
   );
 }
 
-function video_library_transcriptBlock (blockElement, success, failure, expand) {
+function video_library_transcriptBlock (context, success, failure, expand) {
   getBlockArguments ([
       {'name': 'video_library_player_id',    'text': true, 'required': true},
       {'name': 'video_library_library_id',   'text': true, 'required': true},
       {'name': 'video_library_default_text', 'text': true, 'required': false}
-    ], blockElement,
+    ], context.element,
     function (blockArguments) {
       var next = function (transcriptElement) {
-        blockElement.replaceWith (transcriptElement);
+        context.element.replaceWith (transcriptElement);
         success (transcriptElement);
       }
 
@@ -245,7 +245,7 @@ function video_library_transcriptBlock (blockElement, success, failure, expand) 
       var playerId = blockArguments.video_library_player_id;
       library.createTranscriptElement (playerId, defaultText, videoURL,
         function (transcriptElement) {
-          blockElement.replaceWith (transcriptElement);
+          context.element.replaceWith (transcriptElement);
           success (transcriptElement);
         },
         failure,

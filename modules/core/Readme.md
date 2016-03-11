@@ -87,7 +87,7 @@ The Page Load Handler Store Class
   Page Load Handlers and provide a safe interface
   for registering and retrieving them.
 */
-class PageLoadHandlerStore () {
+function PageLoadHandlerStore () {
   // A Page Load Handler array.
   var _handlers = [];
 

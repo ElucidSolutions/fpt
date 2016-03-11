@@ -36,7 +36,7 @@ Load Event Handler
 ```javascript
 /*
 */
-registerModule (
+MODULE_LOAD_HANDLERS.add (
   function (done) {
     // II. Load libraries.
     loadScript ('modules/search/lib/lunr/lunr.js',
@@ -47,7 +47,7 @@ registerModule (
             search_DATABASE = database;
 
             // IV. Register the block handlers.
-            registerBlockHandlers ({
+            block_HANDLERS.addHandlers ({
               search_filter_block:    search_filterBlock,
               search_form_block:      search_formBlock,
               search_index_block:     search_indexBlock,
@@ -57,7 +57,7 @@ registerModule (
             });
 
             // V. Register the page handlers.
-            registerPageHandler ('search_page_block', 'modules/search/templates/search_page.html');
+            // registerPageHandler ('search_page_block', 'modules/search/templates/search_page.html');
 
             done ();
           },

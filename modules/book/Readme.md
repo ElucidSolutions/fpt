@@ -37,7 +37,7 @@ The Load Event Handler
   The module's load event handler. This function
   registers this modules block and page handlers.
 */
-registerModule (
+MODULE_LOAD_HANDLERS.add (
   function (done) {
     // I. Load the Book database.
     book_loadDatabase (book_DATABASE_URL,
@@ -46,26 +46,20 @@ registerModule (
         book_DATABASE = database;
 
         // III. Register the book templates.
-        template_registerTemplates (book_DATABASE.getTemplates ());
+        template_TEMPLATES.addTemplates (book_DATABASE.getTemplates ());
 
         // IV. Register the book menu.
         menu_MENU = book_DATABASE.getMenu ();
 
         // V. Register the block handlers.
-        registerBlockHandlers ({
+        block_HANDLERS.addHandlers ({
           book_body_block: book_bodyBlock,
         });
 
-        // VI. Register the page handlers.
-        registerPageHandlers ({
-          book_book_page:    template_page,
-          book_page_page:    template_page,
-          book_section_page: template_page
-        });
+        // VI. Register the search source.
+        // search_registerSource ('book_search_source', book_index);
 
-        // VII. Register the search source.
-        search_registerSource ('book_search_source', book_index);
-
+        // VII. Continue.
         done ();
       },
       done
@@ -198,8 +192,8 @@ Block Handlers
 ```javascript
 /*
 */
-function book_bodyBlock (blockElement, success, failure) {
-  book_DATABASE.getBodyBlock (blockElement, success, failure);
+function book_bodyBlock (context, success, failure) {
+  book_DATABASE.getBodyBlock (context.element, success, failure);
 }
 ```
 
@@ -226,18 +220,21 @@ The Entry Class
 ```javascript
 /*
 */
+/*
 function book_Entry (id, title, body) {
   search_Entry.call (this, id);
   this.title = title;
   this.body  = body;
 }
-
+*/
 /*
 */
+/*
 book_Entry.prototype = Object.create (search_Entry.prototype);
-
+*/
 /*
 */
+/*
 book_Entry.prototype.getResultElement = function (done) {
   done ($('<li></li>')
     .addClass ('search_result')
@@ -251,6 +248,7 @@ book_Entry.prototype.getResultElement = function (done) {
       .append ($('<h3></h3>').html (this.title))
       .append ($('<p></p>').text (book_getSnippet (this.body)))));
 }
+*/
 ```
 
 The Page Class

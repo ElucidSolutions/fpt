@@ -42,7 +42,7 @@ The module's load event handler:
 
 ```javascript
 // The module's load event handler.
-registerModule (
+MODULE_LOAD_HANDLERS.add (
   function (done) {
     // I. Load the module settings.
     article_loadSettings (article_SETTINGS_URL,
@@ -54,7 +54,7 @@ registerModule (
             article_ARTICLES = articles;
 
             // IV. Register the block handlers.
-            registerBlockHandlers ({
+            block_HANDLERS.addHandlers ({
               article_article_list_block: article_articleListBlock,
               article_article_block:      article_articleBlock,
               article_author_block:       article_authorBlock,
@@ -65,7 +65,10 @@ registerModule (
             });
 
             // V. Register the page handlers.
-            registerPageHandler ('article_article_page', 'modules/article/templates/article_page.html');
+            // registerPageHandler ('article_article_page', 'modules/article/templates/article_page.html');
+            for (var i = 0; i < articles.length; i ++) {
+              template_TEMPLATES.add (article.id, 'modules/article/templates/article_page.html');
+            }
 
             done ();
           },
@@ -202,198 +205,198 @@ The module essentially defines a block for each article element. For example, it
 /*
   article_articleListBlock accepts two arguments:
 
-  * blockElement, a JQuery HTML Element
+  * context, a Block Expansion Context
   * and done, a function that accepts a JQuery
     HTML Element.
 
-  article_articleListBlock replaces blockElement
+  article_articleListBlock replaces context.element
   with a new HTML element that lists the articles
   stored in the articles database and passes the
   new element to done.
 */
-function article_articleListBlock (blockElement, done) {
+function article_articleListBlock (context, done) {
   var element = article_createArticleListElement ();
-  blockElement.replaceWith (element);
+  context.element.replaceWith (element);
   done (element);
 }
 
 /*
   article_articleBlock accepts three arguments:
 
-  * blockElement, a JQuery HTML Element
+  * context, a Block Expansion Context
   * success, a function that accepts a JQuery HTML
     Element
   * and failure, a function that does not accept
     any arguments.
 
-  blockElement must contain a single text node
+  context.element must contain a single text node
   representing a valid article id.
 
-  article_articleBlock replaces blockElement with a
+  article_articleBlock replaces context.element with a
   new HTML element that represents the referenced
   article and passes the new element to success. If
   an error occurs, article_articleBlock calls
   failure instead. 
 */
-function article_articleBlock (blockElement, success, failure) {
-  var articleId = blockElement.text ();
+function article_articleBlock (context, success, failure) {
+  var articleId = context.element.text ();
   var article = article_ARTICLES [articleId];
   if (!article) {
     strictError ('[article][article_articleBlock] Error: an error occured while trying to expand an article block. The referenced article does not exist.');
     return failure ();
   }
   element = article_createArticleElement (article);
-  blockElement.replaceWith (element);
+  context.element.replaceWith (element);
   success (element);
 }
 
 /*
   article_authorBlock accepts three arguments:
 
-  * blockElement, a JQuery HTML Element
+  * context, a Block Expansion Context
   * success, a function that accepts a JQuery HTML
     Element
   * and failure, a function that does not accept
     any arguments.
 
-  blockElement must contain a single text node
+  context.element must contain a single text node
   representing a valid article id.
 
-  article_authorBlock replaces blockElement with a
+  article_authorBlock replaces context.element with a
   new HTML element that represents the referenced
   article's author and passes the new element to
   success. If an error occurs, article_authorBlock
   calls failure instead. 
 */
-function article_authorBlock (blockElement, success, failure) {
-  var articleId = blockElement.text ();
+function article_authorBlock (context, success, failure) {
+  var articleId = context.element.text ();
   var article = article_ARTICLES [articleId];
   if (!article) {
     strictError ('[article][article_authorBlock] Error: an error occured while trying to expand an article author block. The referenced article does not exist.');
     return failure ();
   }
   var element = article_createAuthorElement (article.author);
-  blockElement.replaceWith (element);
+  context.element.replaceWith (element);
   success (element);
 }
 
 /*
   article_bodyBlock accepts three arguments:
 
-  * blockElement, a JQuery HTML Element
+  * context, a Block Expansion Context
   * success, a function that accepts a JQuery HTML
     Element
   * and failure, a function that does not accept
     any arguments.
 
-  blockElement must contain a single text node
+  context.element must contain a single text node
   representing a valid article id.
 
-  article_bodyBlock replaces blockElement with a
+  article_bodyBlock replaces context.element with a
   new HTML element that represents the referenced
   article's body and passes the new element to
   success. If an error occurs, article_bodyBlock
   calls failure instead. 
 */
-function article_bodyBlock (blockElement, success, failure) {
-  var articleId = blockElement.text ();
+function article_bodyBlock (context, success, failure) {
+  var articleId = context.element.text ();
   var article = article_ARTICLES [articleId];
   if (!article) {
     strictError ('[article][article_bodyBlock] Error: an error occured while trying to expand an article body block. The referenced article does not exist.');
     return failure ();
   }
   var element = article_createBodyElement (article.body);
-  blockElement.replaceWith (element);
+  context.element.replaceWith (element);
   success (element);
 }
 
 /*
   article_dateBlock accepts three arguments:
 
-  * blockElement, a JQuery HTML Element
+  * context, a Block Expansion Context
   * success, a function that accepts a JQuery HTML
     Element
   * and failure, a function that does not accept
     any arguments.
 
-  blockElement must contain a single text node
+  context.element must contain a single text node
   representing a valid article id.
 
-  article_dateBlock replaces blockElement with a
+  article_dateBlock replaces context.element with a
   new HTML element that represents the referenced
   article's date and passes the new element to
   success. If an error occurs, article_dateBlock
   calls failure instead. 
 */
-function article_dateBlock (blockElement, success, failure) {
-  var articleId = blockElement.text ();
+function article_dateBlock (context, success, failure) {
+  var articleId = context.element.text ();
   var article = article_ARTICLES [articleId];
   if (!article) {
     strictError ('[article][article_dateBlock] Error: an error occured while trying to expand an article date block. The referenced article does not exist.');
     return failure ();
   }
   var element = article_createDateElement (article.date);
-  blockElement.replaceWith (element);
+  context.element.replaceWith (element);
   success (element);
 }
 
 /*
   article_summaryBlock accepts three arguments:
 
-  * blockElement, a JQuery HTML Element
+  * context, a Block Expansion Context
   * success, a function that accepts a JQuery HTML
     Element
   * and failure, a function that does not accept
     any arguments.
 
-  blockElement must contain a single text node
+  context.element must contain a single text node
   representing a valid article id.
 
-  article_summaryBlock replaces blockElement with a
+  article_summaryBlock replaces context.element with a
   new HTML element that represents the referenced
   article's summary and passes the new element to
   success. If an error occurs, article_summaryBlock
   calls failure instead. 
 */
-function article_summaryBlock (blockElement, success, failure) {
-  var articleId = blockElement.text ();
+function article_summaryBlock (context, success, failure) {
+  var articleId = context.element.text ();
   var article = article_ARTICLES [articleId];
   if (!article) {
     strictError ('[article][article_summaryBlock] Error: an error occured while trying to expand an article summary block. The referenced article does not exist.');
     return failure ();
   }
   var element = article_createSummaryElement (article.summary);
-  blockElement.replaceWith (element);
+  context.element.replaceWith (element);
   success (element);
 }
 
 /*
   article_titleBlock accepts three arguments:
 
-  * blockElement, a JQuery HTML Element
+  * context, a Block Expansion Context
   * success, a function that accepts a JQuery HTML
     Element
   * and failure, a function that does not accept
     any arguments.
 
-  blockElement must contain a single text node
+  context.element must contain a single text node
   representing a valid article id.
 
-  article_titleBlock replaces blockElement with a
+  article_titleBlock replaces context.element with a
   new HTML element that represents the referenced
   article's title and passes the new element to
   success. If an error occurs, article_titleBlock
   calls failure instead. 
 */
-function article_titleBlock (blockElement, success, failure) {
-  var articleId = blockElement.text ();
+function article_titleBlock (context, success, failure) {
+  var articleId = context.element.text ();
   var article = article_ARTICLES [articleId];
   if (!article) {
     strictError ('[article][article_titleBlock] Error: an error occured while trying to expand an article title block. The referenced article does not exist.');
     return failure ();
   }
   var element = article_createTitleElement (article.title);
-  blockElement.replaceWith (element);
+  context.element.replaceWith (element);
   success (element);
 }
 

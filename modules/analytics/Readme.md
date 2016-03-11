@@ -44,7 +44,7 @@ The module's load event handler performs the following actions:
   page visit event to Google Analytics for the
   current page.
 */
-registerModule (
+MODULE_LOAD_HANDLERS.add (
   function (done) {
     // I. Load the configuration settings.
     analytics_loadSettings (analytics_SETTINGS_URL,
@@ -73,7 +73,7 @@ registerModule (
         ga('send', 'pageview');
 
         // V. Register a Page Load event handler that logs page view events.
-        PAGE_LOAD_HANDLERS.push (
+        PAGE_LOAD_HANDLERS.add (
           function (done, id) {
             var url = getContentURL (id);
             ga ('set', 'page', url);

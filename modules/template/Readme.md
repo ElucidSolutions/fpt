@@ -15,10 +15,11 @@ The Template Class
 /*
 */
 function template_Template (parent, id, getRawElement, classes) {
-  this.parent        = parent;
-  this.id            = id;
+  this.getParent     = function () { return parent; }
+  this.getId         = function () { return id; }
   this.getRawElement = getRawElement;
   this.classes       = classes;
+
 }
 
 /*
@@ -32,7 +33,7 @@ function template_Template (parent, id, getRawElement, classes) {
 /*
 */
 template_Template.prototype.getAncestors = function () {
-  return this.parent ? this.parent.getPath () : [];
+  return this.getParent () ? this.getParent ().getPath () : [];
 }
 
 /*
@@ -49,7 +50,7 @@ template_Template.prototype.getLine = function () {
   var line = [];
   var path = this.getPath ();
   for (var i = 0; i < path.length; i ++) {
-    line.push (path [i].id);
+    line.push (path [i].getId ());
   }
   return line;
 }
@@ -62,9 +63,8 @@ template_Template.prototype.getLevel = function () {
 
 /*
 */
-template_Template.prototype.iterate = function (templateFunction, done) {
+template_Template.prototype.iterate = function (templateFunction) {
   templateFunction (this);
-  done (); 
 }
 
 /*
@@ -75,7 +75,7 @@ template_Template.prototype.getElement = function (success, failure) {
     function (rawTemplate) {
       success (rawTemplate
         .addClass (self.classes)
-        .attr ('data-template-id', self.id)
+        .attr ('data-template-id', self.getId ())
         .attr ('data-template-level', self.getLevel ()));
     },
     failure
@@ -104,7 +104,7 @@ template_Page.prototype.constructor = template_Page;
 /*
 */
 template_Page.prototype.getPageTemplate = function (id) {
-  return this.id === id ? this : null;
+  return this.getId () === id ? this : null;
 }
 
 /*
@@ -135,7 +135,7 @@ template_Page.prototype.getPageElement = function (success, failure) {
         function (element, sectionTemplate, success, failure) {
           sectionTemplate.getElement (
             function (sectionElement) {
-              $('.template_id_block', sectionElement).replaceWith (sectionTemplate.id);
+              $('.template_id_block', sectionElement).replaceWith (sectionTemplate.getId ());
               $('.template_hole_block', sectionElement).replaceWith (element);
               success (sectionElement);
             },
@@ -181,20 +181,16 @@ template_Section.prototype.getPageTemplate = function (id) {
 /*
 */
 template_Section.prototype.getSectionTemplate = function (id) {
-  return this.id === id ? this : template_findSectionTemplate (id, this.children);
+  return this.getId () === id ? this : template_findSectionTemplate (id, this.children);
 }
 
 /*
 */
-template_Section.prototype.iterate = function (templateFunction, done) {
+template_Section.prototype.iterate = function (templateFunction) {
   templateFunction (this);
-  iter (
-    function (template, next) {
-      template.iterate (templateFunction, next);
-    },
-    this.children,
-    done
-  );
+  for (var i = 0; i < this.children.length; i ++) {
+    this.children [i].iterate (templateFunction);
+  }
 }
 
 /*
@@ -208,6 +204,7 @@ template_Section.prototype.getElement = function (success, failure) {
   );
 }
 ```
+
 The Template Store Class
 ------------------------
 
@@ -228,38 +225,50 @@ function template_TemplateStore () {
 
   /*
   */
-  this.add = function (template) {
-    // I. Add the template to the store.
-    _templates.push (template);
-
-    // II. Call template functions on the added templates.
-    template.iterate (
-      function (template, next) {
-        var id = template.getId ();
-        var templateFunctions = _templateFunctions [id];
-        templateFunctions ? seq (templateFunctions, next, template) : next ();
-    });
-  }
-
-  /*
-  */
-  this.addTemplateFunction = function (id, templateFunction) {
+  var addTemplateFunction = function (id, templateFunction) {
     if (!_templateFunctions [id]) { _templateFunctions [id] = []; }
     _templateFunctions [id].push (templateFunction);
   }
 
   /*
   */
+  this.add = function (template) {
+    // I. Add the template to the store.
+    _templates.push (template);
+
+    // II. Call template functions on the added templates.
+    template.iterate (
+      function (template) {
+        var id = template.getId ();
+        var templateFunctions = _templateFunctions [id];
+        if (templateFunctions) {
+          for (var i = 0; i < templateFunctions.length; i ++) {
+            (templateFunctions [i]) (template);
+          }
+        }
+    });
+  }
+
+  /*
+  */
+  this.addTemplates = function (templates) {
+    for (var i = 0; i < templates.length; i ++) {
+      self.add (templates [i]);
+    }
+  }
+
+  /*
+  */
   this.getPageTemplate = function (id, templateFunction) {
     var template = template_findPageTemplate (id, _templates);
-    template ? templateFunction (template) : self.addTemplateFunction (id, templateFunction);
+    template ? templateFunction (template) : addTemplateFunction (id, templateFunction);
   }
 
   /*
   */
   this.getSectionTemplate = function (id, templateFunction) {
     var template = template_findSectionTemplate (id, _templates);
-    template ? templateFunction (template) : self.addTemplateFunction (id, templateFunction);
+    template ? templateFunction (template) : addTemplateFunction (id, templateFunction);
   }
 }
 ```
@@ -284,7 +293,7 @@ The Module Load Event Handler
 MODULE_LOAD_HANDLERS.add (
   function (done) {
     // I. Register the block handlers.
-    block_BLOCK_HANDLERS.add ('template_block', template_block);
+    block_HANDLERS.add ('template_block', template_block);
 
     // II. Continue.
     done ();
@@ -298,23 +307,25 @@ The Page Block Handler
 /*
 */
 function template_block (context, success, failure, expand) {
-  template_TEMPLATES.getPageTemplate (context.element.text (),
+  template_TEMPLATES.getPageTemplate (context.id,
     function (pageTemplate) {
       pageTemplate.getPageElement (
         function (pageElement) {
-          context.element.replaceWith (pageElement);
+          context.element.append (pageElement);
 
           // Define and register the page load event handler.
           PAGE_LOAD_HANDLERS.add (
-            function (id, next) {
+            function (next, id) {
               template_TEMPLATES.getPageTemplate (id,
                 function (newPageTemplate) {
                   pageTemplate.getPageElement (
                     function (newPageElement) {
-                      pageElement.replaceWith (newPageElement);
-                      expand (newPageElement, next);
+                      context.element.empty ();
+                      context.element.append (newPageElement);
+                      expand (newPageElement, function () {});
                   });
               });
+              next ();
           });
 
           success (pageElement);
@@ -360,17 +371,19 @@ from the command line.
 ```
 _"Template Module"
 
-_"The Global Variables"
-
-_"The Template Registration Functions"
-
-_"The Page Handler Function"
-
 _"The Template Class"
 
 _"The Page Template Class"
 
 _"The Section Template Class"
+
+_"The Template Store Class"
+
+_"The Template Store"
+
+_"The Module Load Event Handler"
+
+_"The Page Block Handler"
 
 _"Auxiliary Functions"
 ```

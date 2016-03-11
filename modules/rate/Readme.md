@@ -32,10 +32,10 @@ The module's load event handler simply registers the module's block handlers. Th
   The module's load event handler. This function
   registers the module's block handlers.
 */
-registerModule (
+MODULE_LOAD_HANDLERS.add (
   function (done) {
     // I. Register the block handlers.
-    registerBlockHandlers ({
+    block_HANDLERS.addHandlers ({
       rate_block:           'modules/rate/templates/rate_block.html',
       rate_up_vote_block:   rate_upVoteBlock,
       rate_down_vote_block: rate_downVoteBlock
@@ -80,7 +80,7 @@ These handlers add an on-click event handler to their block elements that sends 
 /*
   rate_upVoteBlock accepts two arguments:
 
-  * blockElement, a JQuery HTML Element
+  * context, a Block Expansion Context
   * done, a function that accepts a JQuery HTML
     Element
 
@@ -90,11 +90,11 @@ These handlers add an on-click event handler to their block elements that sends 
   whenever a user clicks on the element.
   rate_upVoteBlock then calls done.
 */
-function rate_upVoteBlock (blockElement, done) {
+function rate_upVoteBlock (context, done) {
   // I. Register the on-click event handler.
-  blockElement.click (
+  context.element.click (
     function () {
-      blockElement.addClass ('rate_clicked');
+      context.element.addClass ('rate_clicked');
 
       // Send an "Up Vote" event notification to Google Analytics.
       ga ('send', 'event', 'Up Vote', 'clicked');
@@ -107,7 +107,7 @@ function rate_upVoteBlock (blockElement, done) {
 /*
   rate_downVoteBlock accepts two arguments:
 
-  * blockElement, a JQuery HTML Element
+  * context, a Block Expansion Context
   * done, a function that accepts a JQuery HTML
     Element
 
@@ -117,11 +117,11 @@ function rate_upVoteBlock (blockElement, done) {
   whenever a user clicks on the element.
   rate_downVoteBlock then calls done.
 */
-function rate_downVoteBlock (blockElement, done) {
+function rate_downVoteBlock (context, done) {
   // I. Register the on-click event handler.
-  blockElement.click (
+  context.element.click (
     function () {
-      blockElement.addClass ('rate_clicked');
+      context.element.addClass ('rate_clicked');
 
       // Send an "Down Vote" event notification to Google Analytics.
       ga ('send', 'event', 'Down Vote', 'clicked');

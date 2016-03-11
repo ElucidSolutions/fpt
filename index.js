@@ -4,10 +4,10 @@
   block handlers have been executed.
 */
 
-registerModule (
+MODULE_LOAD_HANDLERS.add (
   function (done) {
   // I. Register the block handlers.
-  registerBlockHandlers ({
+  block_HANDLERS.addHandlers ({
     'main_banner_block':        'templates/main_banner_block.html',
     'main_header_block':        'templates/main_header_block.html',
     'main_menu_block':          'templates/main_menu_block.html',
@@ -42,7 +42,7 @@ registerModule (
   );
 
   // V. Close the menu on page load.
-  PAGE_LOAD_HANDLERS.push (
+  PAGE_LOAD_HANDLERS.add (
     function (done) {
       $.sidr ('close');
       done ();
@@ -92,10 +92,10 @@ function main_undarken () {
 
 /*
 */
-function main_startPresentationBlock (blockElement, done) {
+function main_startPresentationBlock (context, done) {
   var element = $('<p>Play the Getting Started Tab</p>');
 
-  presentation_SLIDE_ELEMENTS.get (blockElement.text (),
+  presentation_SLIDE_ELEMENTS.get (context.element.text (),
     function (slideElement) {
       var intro = slideElement.getIntro ()
         .onchange (
@@ -123,6 +123,6 @@ function main_startPresentationBlock (blockElement, done) {
       });
   });
 
-  blockElement.replaceWith (element);
+  context.element.replaceWith (element);
   done (element);
 }

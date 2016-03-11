@@ -15,10 +15,10 @@ var menu_MENU = new menu_Menu ([]);
   The Menu module's load event handler. This
   function registers the module's block handlers.
 */
-registerModule (
+MODULE_LOAD_HANDLERS.add (
   function (done) {
     // I. Register the block handlers.
-    registerBlockHandlers ({
+    block_HANDLERS.addHandlers ({
       menu_contents_block:            menu_contentsBlock,
       menu_leaf_label_block:          menu_leafLabelBlock,
       menu_leaf_link_block:           menu_leafLinkBlock,
@@ -52,7 +52,7 @@ registerModule (
   * and failure, a function that does not accept
     any arguments.
 
-  blockElement must be a DIV element that
+  context.element must be a DIV element that
   contains six child elements:
 
   * The first element must belong to the
@@ -94,17 +94,17 @@ registerModule (
 
   * creates a new HTML element that represents
     the node using the settings provided by
-    blockElement
+    context.element
 
-  * replaces blockElement with the new element
+  * replaces context.element with the new element
 
   * and passes the element to success.
 
   If an error occurs, menu_contentsBlock calls
   failure instead of success.
 */
-function menu_contentsBlock (blockElement, success, failure) {
-  menu_MENU.getContentsBlock (blockElement, success, failure);
+function menu_contentsBlock (context, success, failure) {
+  menu_MENU.getContentsBlock (context.element, success, failure);
 }
 
 /*
@@ -116,7 +116,7 @@ function menu_contentsBlock (blockElement, success, failure) {
   * and failure, a function that does not accept
     any arguments.
 
-  blockElement must contain a single text node
+  context.element must contain a single text node
   that represents a Menu Element ID.
 
   menu_leafLabelBlock:
@@ -124,14 +124,14 @@ function menu_contentsBlock (blockElement, success, failure) {
   * loads referenced menu element
   * creates an HTML element that represents the
     element's title
-  * replaces blockElement with the new element
+  * replaces context.element with the new element
   * and passes the new element to success.
 
   If an error occurs, menu_leafLabelBlock calls
   failure instead of success.
 */
-function menu_leafLabelBlock (blockElement, success, failure) {
-  menu_MENU.getLeafLabelBlock (blockElement, success, failure);
+function menu_leafLabelBlock (context, success, failure) {
+  menu_MENU.getLeafLabelBlock (context.element, success, failure);
 }
 
 /*
@@ -143,7 +143,7 @@ function menu_leafLabelBlock (blockElement, success, failure) {
   * and failure, a function that does not accept
     any arguments.
 
-  blockElement must contain a single text node
+  context.element must contain a single text node
   that represents a Menu Element ID.
 
   menu_leafLinkBlock:
@@ -151,50 +151,50 @@ function menu_leafLabelBlock (blockElement, success, failure) {
   * loads the referenced menu element
   * creates an HTML link element that represents
     the menu element's title
-  * replaces blockElement with the new element
+  * replaces context.element with the new element
   * and passes the new element to success.
 
   If an error occurs, menu_leafLinkBlock calls
   failure instead of success.
 */
-function menu_leafLinkBlock (blockElement, success, failure) {
-  menu_MENU.getLeafLinkBlock (blockElement, success, failure);
+function menu_leafLinkBlock (context, success, failure) {
+  menu_MENU.getLeafLinkBlock (context.element, success, failure);
 }
 
 /*
 */
-function menu_leafNextLabelBlock (blockElement, success, failure) {
-  menu_MENU.getLeafNextLabelBlock (blockElement, success, failure);
+function menu_leafNextLabelBlock (context, success, failure) {
+  menu_MENU.getLeafNextLabelBlock (context.element, success, failure);
 }
 
 /*
 */
-function menu_leafNextLinkBlock (blockElement, success, failure) {
-  menu_MENU.getLeafNextLinkBlock (blockElement, success, failure);
+function menu_leafNextLinkBlock (context, success, failure) {
+  menu_MENU.getLeafNextLinkBlock (context.element, success, failure);
 }
 
 /*
 */
-function menu_leafParentLabelBlock (blockElement, success, failure) {
-  menu_MENU.getLeafParentLabelBlock (blockElement, success, failure);
+function menu_leafParentLabelBlock (context, success, failure) {
+  menu_MENU.getLeafParentLabelBlock (context.element, success, failure);
 }
 
 /*
 */
-function menu_leafParentLinkBlock (blockElement, success, failure) {
-  menu_MENU.getLeafParentLinkBlock (blockElement, success, failure);
+function menu_leafParentLinkBlock (context, success, failure) {
+  menu_MENU.getLeafParentLinkBlock (context.element, success, failure);
 }
 
 /*
 */
-function menu_leafPreviousLabelBlock (blockElement, success, failure) {
-  menu_MENU.getLeafPreviousLabelBlock (blockElement, success, failure);
+function menu_leafPreviousLabelBlock (context, success, failure) {
+  menu_MENU.getLeafPreviousLabelBlock (context.element, success, failure);
 }
 
 /*
 */
-function menu_leafPreviousLinkBlock (blockElement, success, failure) {
-  menu_MENU.getLeafPreviousLinkBlock (blockElement, success, failure);
+function menu_leafPreviousLinkBlock (context, success, failure) {
+  menu_MENU.getLeafPreviousLinkBlock (context.element, success, failure);
 }
 
 /*
@@ -206,7 +206,7 @@ function menu_leafPreviousLinkBlock (blockElement, success, failure) {
   * and failure, a function that does not accept
     any arguments.
 
-  blockElement must contain a single text node
+  context.element must contain a single text node
   that represents a Menu Element ID.
 
   menu_nodeLabelBlock:
@@ -214,14 +214,14 @@ function menu_leafPreviousLinkBlock (blockElement, success, failure) {
   * loads the referenced menu element
   * creates an HTML link element that represents
     the menu element's title
-  * replaces blockElement with the new element
+  * replaces context.element with the new element
   * and passes the new element to success.
 
   If an error occurs, menu_nodeLabelBlock calls
   failure instead of success.
 */
-function menu_nodeLabelBlock (blockElement, success, failure) {
-  menu_MENU.getNodeLabelBlock (blockElement, success, failure);
+function menu_nodeLabelBlock (context, success, failure) {
+  menu_MENU.getNodeLabelBlock (context.element, success, failure);
 }
 
 /*
@@ -233,7 +233,7 @@ function menu_nodeLabelBlock (blockElement, success, failure) {
   * and failure, a function that does not accept
     any arguments.
 
-  blockElement must contain a single text node
+  context.element must contain a single text node
   that represents a Menu Element ID.
 
   menu_nodeLinkBlock:
@@ -241,50 +241,50 @@ function menu_nodeLabelBlock (blockElement, success, failure) {
   * loads the referenced menu element
   * creates an HTML link element that represents
     the menu element's title
-  * replaces blockElement with the new element
+  * replaces context.element with the new element
   * and passes the new element to success.
 
   If an error occurs, menu_nodeLinkBlock calls
   failure instead of success.
 */
-function menu_nodeLinkBlock (blockElement, success, failure) {
-  menu_MENU.getNodeLinkBlock (blockElement, success, failure);
+function menu_nodeLinkBlock (context, success, failure) {
+  menu_MENU.getNodeLinkBlock (context.element, success, failure);
 }
 
 /*
 */
-function menu_nodeNextLabelBlock (blockElement, success, failure) {
-  menu_MENU.getNodeNextLabelBlock (blockElement, success, failure);
+function menu_nodeNextLabelBlock (context, success, failure) {
+  menu_MENU.getNodeNextLabelBlock (context.element, success, failure);
 }
 
 /*
 */
-function menu_nodeNextLinkBlock (blockElement, success, failure) {
-  menu_MENU.getNodeNextLinkBlock (blockElement, success, failure);
+function menu_nodeNextLinkBlock (context, success, failure) {
+  menu_MENU.getNodeNextLinkBlock (context.element, success, failure);
 }
 
 /*
 */
-function menu_nodeParentLabelBlock (blockElement, success, failure) {
-  menu_MENU.getNodeParentLabelBlock (blockElement, success, failure);
+function menu_nodeParentLabelBlock (context, success, failure) {
+  menu_MENU.getNodeParentLabelBlock (context.element, success, failure);
 }
 
 /*
 */
-function menu_nodeParentLinkBlock (blockElement, success, failure) {
-  menu_MENU.getNodeParentLinkBlock (blockElement, success, failure);
+function menu_nodeParentLinkBlock (context, success, failure) {
+  menu_MENU.getNodeParentLinkBlock (context.element, success, failure);
 }
 
 /*
 */
-function menu_nodePreviousLabelBlock (blockElement, success, failure) {
-  menu_MENU.getNodePreviousLabelBlock (blockElement, success, failure);
+function menu_nodePreviousLabelBlock (context, success, failure) {
+  menu_MENU.getNodePreviousLabelBlock (context.element, success, failure);
 }
 
 /*
 */
-function menu_nodePreviousLinkBlock (blockElement, success, failure) {
-  menu_MENU.getNodePreviousLinkBlock (blockElement, success, failure);
+function menu_nodePreviousLinkBlock (context, success, failure) {
+  menu_MENU.getNodePreviousLinkBlock (context.element, success, failure);
 }
 
 /*
@@ -868,7 +868,7 @@ menu_Menu.prototype.getContentsBlock = function (blockElement, success, failure)
 
       blockElement.replaceWith (element);
 
-      PAGE_LOAD_HANDLERS.push (
+      PAGE_LOAD_HANDLERS.add (
         function (done, id) {
           menu_deselect (element);
           var leaf = self.getLeaf (id);

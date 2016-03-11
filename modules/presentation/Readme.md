@@ -22,7 +22,7 @@ The Load Event Handler
 ```javascript
 /*
 */
-registerModule (
+MODULE_LOAD_HANDLERS.add (
   function (done) {
     // I. Load the Intro.JS library.
     loadScript ('modules/presentation/lib/intro.js-2.0.0/intro.js',
@@ -38,7 +38,7 @@ registerModule (
             presentation_DATABASE = database;
 
             // V. Register the block handlers.
-            registerBlockHandler ('presentation_slide_block', presentation_slideBlock);
+            block_HANDLERS.add ('presentation_slide_block', presentation_slideBlock);
 
             // VI. Continue.
             done ();
@@ -55,17 +55,17 @@ The Block Handlers
 ```javascript
 /*
 */
-function presentation_slideBlock (blockElement, success, failure) {
-  var slideElementId = blockElement.attr ('id');
+function presentation_slideBlock (context, success, failure) {
+  var slideElementId = context.element.attr ('id');
   if (!slideElementId) {
     slideElementId = getUniqueId ();
   }
 
-  var slideElement = presentation_DATABASE.getSlide (blockElement.text ()).createElement (slideElementId);
+  var slideElement = presentation_DATABASE.getSlide (context.element.text ()).createElement (slideElementId);
   presentation_SLIDE_ELEMENTS.save (slideElement);
 
   var element = slideElement.getElement ();
-  blockElement.replaceWith (element);
+  context.element.replaceWith (element);
   success (element);
 }
 ```
@@ -624,7 +624,7 @@ function presentation_SlideElement (id, slide) {
       }
   });
 
-  PAGE_LOAD_HANDLERS.push (
+  PAGE_LOAD_HANDLERS.add (
     function (done) {
       intro.exit ();
       done ();

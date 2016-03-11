@@ -17,7 +17,7 @@
             <left>135px</left>
             <width>176px</width>
             <height>24px</height>
-            <expression><![CDATA[\d+]]></expression>
+            <expression><![CDATA[^\d+$]]></expression>
           </inputStep>
           <inputStep>
             <name>Second Step</name>
@@ -27,7 +27,7 @@
             <left>312px</left>
             <width>137px</width>
             <height>24px</height>
-            <expression><![CDATA[[A-Za-z]+]]></expression>
+            <expression><![CDATA[^[A-Za-z]+$]]></expression>
           </inputStep>
           <testStep>
             <name>Third Step</name>

@@ -3,45 +3,12 @@
 
 /*
 */
-var template_TEMPLATES = [];
-
-/*
-*/
-function template_registerTemplate (template) {
-  template_TEMPLATES.push (template);
-}
-
-/*
-*/
-function template_registerTemplates (templates) {
-  for (var i = 0; i < templates.length; i ++) {
-    template_registerTemplate (templates [i]);
-  }
-}
-
-/*
-*/
-function template_page (id, success, failure) {
-  var errorMsg = '[template][template_page] Error: an error occured while trying to load page template "' + id + '".';
-  var template = template_getPageTemplate (id);
-  if (!template) {
-    strictError (errorMsg + ' The template does not exist.');
-    return failure ();
-  }
-  if (!template.getPageElement) {
-    strictError (errorMsg + ' The template is not a page template.');
-    return failure ();
-  }
-  template.getPageElement (success, failure);
-}
-
-/*
-*/
 function template_Template (parent, id, getRawElement, classes) {
-  this.parent        = parent;
-  this.id            = id;
+  this.getParent     = function () { return parent; }
+  this.getId         = function () { return id; }
   this.getRawElement = getRawElement;
   this.classes       = classes;
+
 }
 
 /*
@@ -50,8 +17,12 @@ function template_Template (parent, id, getRawElement, classes) {
 
 /*
 */
+// template_Template.prototype.getSectionTemplate = function (id) {}
+
+/*
+*/
 template_Template.prototype.getAncestors = function () {
-  return this.parent ? this.parent.getPath () : [];
+  return this.getParent () ? this.getParent ().getPath () : [];
 }
 
 /*
@@ -68,7 +39,7 @@ template_Template.prototype.getLine = function () {
   var line = [];
   var path = this.getPath ();
   for (var i = 0; i < path.length; i ++) {
-    line.push (path [i].id);
+    line.push (path [i].getId ());
   }
   return line;
 }
@@ -81,13 +52,19 @@ template_Template.prototype.getLevel = function () {
 
 /*
 */
+template_Template.prototype.iterate = function (templateFunction) {
+  templateFunction (this);
+}
+
+/*
+*/
 template_Template.prototype.getElement = function (success, failure) {
   var self = this;
   this.getRawElement (
     function (rawTemplate) {
       success (rawTemplate
         .addClass (self.classes)
-        .attr ('data-template-id', self.id)
+        .attr ('data-template-id', self.getId ())
         .attr ('data-template-level', self.getLevel ()));
     },
     failure
@@ -111,7 +88,13 @@ template_Page.prototype.constructor = template_Page;
 /*
 */
 template_Page.prototype.getPageTemplate = function (id) {
-  return this.id === id ? this : null;
+  return this.getId () === id ? this : null;
+}
+
+/*
+*/
+template_Page.prototype.getSectionTemplate = function (id) {
+  return null;
 }
 
 /*
@@ -136,7 +119,7 @@ template_Page.prototype.getPageElement = function (success, failure) {
         function (element, sectionTemplate, success, failure) {
           sectionTemplate.getElement (
             function (sectionElement) {
-              $('.template_id_block', sectionElement).replaceWith (sectionTemplate.id);
+              $('.template_id_block', sectionElement).replaceWith (sectionTemplate.getId ());
               $('.template_hole_block', sectionElement).replaceWith (element);
               success (sectionElement);
             },
@@ -155,8 +138,8 @@ template_Page.prototype.getPageElement = function (success, failure) {
 
 /*
 */
-function template_Section (parent, id, children, getRawTemplate, classes) {
-  template_Template.call (this, parent, id, getRawTemplate, classes);
+function template_Section (parent, id, children, getRawElement, classes) {
+  template_Template.call (this, parent, id, getRawElement, classes);
   this.children = children;
 }
 
@@ -176,6 +159,21 @@ template_Section.prototype.getPageTemplate = function (id) {
 
 /*
 */
+template_Section.prototype.getSectionTemplate = function (id) {
+  return this.getId () === id ? this : template_findSectionTemplate (id, this.children);
+}
+
+/*
+*/
+template_Section.prototype.iterate = function (templateFunction) {
+  templateFunction (this);
+  for (var i = 0; i < this.children.length; i ++) {
+    this.children [i].iterate (templateFunction);
+  }
+}
+
+/*
+*/
 template_Section.prototype.getElement = function (success, failure) {
   template_Template.prototype.getElement.call (this,
     function (template) {
@@ -183,6 +181,115 @@ template_Section.prototype.getElement = function (success, failure) {
     },
     failure
   );
+}
+
+/*
+  Template Stores store registered templates.
+*/
+function template_TemplateStore () {
+  var self = this;
+
+  /*
+  */
+  var _templates = [];
+
+  /*
+  */
+  var _templateFunctions = {};
+
+  /*
+  */
+  var addTemplateFunction = function (id, templateFunction) {
+    if (!_templateFunctions [id]) { _templateFunctions [id] = []; }
+    _templateFunctions [id].push (templateFunction);
+  }
+
+  /*
+  */
+  this.add = function (template) {
+    // I. Add the template to the store.
+    _templates.push (template);
+
+    // II. Call template functions on the added templates.
+    template.iterate (
+      function (template) {
+        var id = template.getId ();
+        var templateFunctions = _templateFunctions [id];
+        if (templateFunctions) {
+          for (var i = 0; i < templateFunctions.length; i ++) {
+            (templateFunctions [i]) (template);
+          }
+        }
+    });
+  }
+
+  /*
+  */
+  this.addTemplates = function (templates) {
+    for (var i = 0; i < templates.length; i ++) {
+      self.add (templates [i]);
+    }
+  }
+
+  /*
+  */
+  this.getPageTemplate = function (id, templateFunction) {
+    var template = template_findPageTemplate (id, _templates);
+    template ? templateFunction (template) : addTemplateFunction (id, templateFunction);
+  }
+
+  /*
+  */
+  this.getSectionTemplate = function (id, templateFunction) {
+    var template = template_findSectionTemplate (id, _templates);
+    template ? templateFunction (template) : addTemplateFunction (id, templateFunction);
+  }
+}
+
+/*
+  A template_TemplateStore that stores all of
+  the registered templates.
+*/
+var template_TEMPLATES = new template_TemplateStore ();
+
+/*
+*/
+MODULE_LOAD_HANDLERS.add (
+  function (done) {
+    // I. Register the block handlers.
+    block_HANDLERS.add ('template_block', template_block);
+
+    // II. Continue.
+    done ();
+});
+
+/*
+*/
+function template_block (context, success, failure, expand) {
+  template_TEMPLATES.getPageTemplate (context.id,
+    function (pageTemplate) {
+      pageTemplate.getPageElement (
+        function (pageElement) {
+          context.element.append (pageElement);
+
+          // Define and register the page load event handler.
+          PAGE_LOAD_HANDLERS.add (
+            function (next, id) {
+              template_TEMPLATES.getPageTemplate (id,
+                function (newPageTemplate) {
+                  pageTemplate.getPageElement (
+                    function (newPageElement) {
+                      context.element.empty ();
+                      context.element.append (newPageElement);
+                      expand (newPageElement, function () {});
+                  });
+              });
+              next ();
+          });
+
+          success (pageElement);
+      });
+  });
 }
 
 /*
@@ -197,6 +304,10 @@ function template_findPageTemplate (id, templates) {
 
 /*
 */
-function template_getPageTemplate (id) {
-  return template_findPageTemplate (id, template_TEMPLATES);
+function template_findSectionTemplate (id, templates) {
+  for (var i = 0; i < templates.length; i ++) {
+    var template = templates [i].getSectionTemplate (id);
+    if (template) { return template; }
+  }
+  return null;
 }
