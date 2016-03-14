@@ -266,30 +266,29 @@ MODULE_LOAD_HANDLERS.add (
 /*
 */
 function template_block (context, success, failure, expand) {
-  template_TEMPLATES.getPageTemplate (context.id,
+  var blockElement = context.element;
+  template_TEMPLATES.getPageTemplate (context.getId (),
     function (pageTemplate) {
       pageTemplate.getPageElement (
         function (pageElement) {
-          context.element.append (pageElement);
-
           // Define and register the page load event handler.
           PAGE_LOAD_HANDLERS.add (
             function (next, id) {
               template_TEMPLATES.getPageTemplate (id,
                 function (newPageTemplate) {
-                  pageTemplate.getPageElement (
+                  newPageTemplate.getPageElement (
                     function (newPageElement) {
-                      context.element.empty ();
-                      context.element.append (newPageElement);
+                      blockElement.empty ();
+                      blockElement.append (newPageElement);
                       expand (newPageElement, function () {});
                   });
               });
               next ();
           });
-
-          success (pageElement);
+          expand (blockElement.append (pageElement), function () {});
       });
   });
+  success ();
 }
 
 /*
