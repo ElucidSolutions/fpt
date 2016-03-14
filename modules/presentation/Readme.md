@@ -677,6 +677,9 @@ function presentation_SlideElementsStore () {
     }
     slideElements [slideElementId] = slideElement;
 
+    if (!slideElementFunctions [slideElementId]) {
+      slideElementFunctions [slideElementId] = [];
+    }
     for (var i = 0; i < slideElementFunctions [slideElementId].length; i ++) {
       (slideElementFunctions [slideElementId][i]) (slideElement);
     }
