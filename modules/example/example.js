@@ -8,7 +8,7 @@ MODULE_LOAD_HANDLERS.add (
     block_HANDLERS.add ('example_block', 'modules/example/templates/block.html');
 
     // II. Register the page handler.
-    template_TEMPLATES.add ('example_page', 'modules/example/templates/page.html');
+    page_HANDLERS.add ('example_page', 'modules/example/templates/page.html');
 
     done ();
 });

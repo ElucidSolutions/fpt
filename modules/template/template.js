@@ -256,8 +256,8 @@ var template_TEMPLATES = new template_TemplateStore ();
 */
 MODULE_LOAD_HANDLERS.add (
   function (done) {
-    // I. Register the block handlers.
-    block_HANDLERS.add ('template_block', template_block);
+    // I. Register the Page Handler.
+    page_HANDLERS.add ('template_page', template_page);
 
     // II. Continue.
     done ();
@@ -265,30 +265,11 @@ MODULE_LOAD_HANDLERS.add (
 
 /*
 */
-function template_block (context, success, failure, expand) {
-  var blockElement = context.element;
-  template_TEMPLATES.getPageTemplate (context.getId (),
-    function (pageTemplate) {
-      pageTemplate.getPageElement (
-        function (pageElement) {
-          // Define and register the page load event handler.
-          PAGE_LOAD_HANDLERS.add (
-            function (next, id) {
-              template_TEMPLATES.getPageTemplate (id,
-                function (newPageTemplate) {
-                  newPageTemplate.getPageElement (
-                    function (newPageElement) {
-                      blockElement.empty ();
-                      blockElement.append (newPageElement);
-                      block_expandBlock (new block_Context (id, newPageElement), function () {});
-                  });
-              });
-              next ();
-          });
-          expand (blockElement.append (pageElement), function () {});
-      });
+function template_page (id, success, failure) {
+  template_TEMPLATES.getPageTemplate (id,
+    function (template) {
+      template.getPageElement (success, failure);
   });
-  success ();
 }
 
 /*

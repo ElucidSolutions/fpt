@@ -41,16 +41,16 @@ MODULE_LOAD_HANDLERS.add (
         });
 
         // VI. Register the page handlers.
-/*
-        block_HANDLERS.addHandlers ({
+        page_HANDLERS.addHandlers ({
           book_book_page:    template_page,
           book_page_page:    template_page,
           book_section_page: template_page
         });
-*/
-        // VII. Register the search source.
-        // search_registerSource ('book_search_source', book_index);
 
+        // VII. Register the search source.
+        search_registerSource ('book_search_source', book_index);
+
+        // VIII. Continue.
         done ();
       },
       done
@@ -185,21 +185,18 @@ function book_index (databaseURL, success, failure) {
 
 /*
 */
-/*
 function book_Entry (id, title, body) {
   search_Entry.call (this, id);
   this.title = title;
   this.body  = body;
 }
-*/
+
 /*
 */
-/*
 book_Entry.prototype = Object.create (search_Entry.prototype);
-*/
+
 /*
 */
-/*
 book_Entry.prototype.getResultElement = function (done) {
   done ($('<li></li>')
     .addClass ('search_result')
@@ -213,7 +210,6 @@ book_Entry.prototype.getResultElement = function (done) {
       .append ($('<h3></h3>').html (this.title))
       .append ($('<p></p>').text (book_getSnippet (this.body)))));
 }
-*/
 
 /*
 */

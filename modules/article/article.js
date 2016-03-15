@@ -41,10 +41,7 @@ MODULE_LOAD_HANDLERS.add (
             });
 
             // V. Register the page handlers.
-            // registerPageHandler ('article_article_page', 'modules/article/templates/article_page.html');
-            for (var i = 0; i < articles.length; i ++) {
-              template_TEMPLATES.add (article.id, 'modules/article/templates/article_page.html');
-            }
+            page_HANDLERS.add ('article_article_page', 'modules/article/templates/article_page.html');
 
             done ();
           },

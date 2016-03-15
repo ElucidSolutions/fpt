@@ -1,6 +1,6 @@
 var video_library_SNIPPET_LENGTH = 500;
 
-var video_library_DATABASE_URL = 'modules/video_library/library.xml';
+var video_library_DATABASE_URL = 'modules/video_library/database.xml';
 
 var video_library_DATABASE = {};
 
@@ -25,10 +25,10 @@ MODULE_LOAD_HANDLERS.add (
         });
 
         // IV. Register the module's page handler.
-        // registerPageHandler ('video_library_page', 'modules/video_library/templates/video_library_page.html');
+        page_HANDLERS.add ('video_library_page', 'modules/video_library/templates/video_library_page.html');
 
         // V. Register the module's search source.
-        // search_registerSource ('video_library_search_source', video_library_searchSource);
+        search_registerSource ('video_library_search_source', video_library_searchSource);
 
         done ();
       },
@@ -36,27 +36,6 @@ MODULE_LOAD_HANDLERS.add (
     );
 });
 
-/*
-function video_library_collectionBlock (context, success, failure, expand) {
-  getBlockArguments ([
-      {'name': 'video_library_player_id',    'text': true, 'required': true},
-      {'name': 'video_library_video_id',     'text': true, 'required': true}
-    ], context.element,
-    function (blockArguments) {
-      var videoId   = blockArguments.video_library_library_id;
-      var videoPath = video_library_getPath (videoId);
-      var libraryName = video_library_getLibraryName (videoPath);
-      var library = video_library_DATABASE [libraryName];
-      if (!library) {
-        strictError ();
-        return failure ();
-      }
-      var videoURL 
-    },
-    failure
-  );
-}
-*/
 function video_library_descriptionBlock (context, success, failure) {
   getBlockArguments ([
       {'name': 'video_library_player_id',    'text': true, 'required': true},

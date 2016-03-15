@@ -13,9 +13,9 @@
       <title>Example Collection</title>
       <description>This is an example collection.</description>
       <video>
-	<title>Example Video</title>
-	<description><![CDATA[This is an example video.]]></description>
-	<duration>00:00:00</duration>
+        <title>Example Video</title>
+        <description><![CDATA[This is an example video.]]></description>
+        <duration>00:00:00</duration>
         <url>http://vjs.zencdn.net/v/oceans.mp4</url>
         <transcript>example/transcript.xml</transcript>
       </video>

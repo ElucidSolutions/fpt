@@ -57,7 +57,7 @@ MODULE_LOAD_HANDLERS.add (
             });
 
             // V. Register the page handlers.
-            // registerPageHandler ('search_page_block', 'modules/search/templates/search_page.html');
+            page_HANDLERS.add ('search_page_block', 'modules/search/templates/search_page.html');
 
             done ();
           },
@@ -73,15 +73,15 @@ Block Handlers
 ```javascript
 /*
 */
-function search_filterBlock (blockElement, success, failure, expand) {
-  var interface = search_INTERFACES [blockElement.text ()];
+function search_filterBlock (context, success, failure, expand) {
+  var interface = search_INTERFACES [context.element.text ()];
   if (!interface) {
-    strictError ('[search][search_filterBlock] Error: The "' + blockElement.text () + '" search interface has not been initialized.'); 
+    strictError ('[search][search_filterBlock] Error: The "' + context.element.text () + '" search interface has not been initialized.'); 
     return failure ();
   }
   interface.getFilterElement (
     function (filterElement) {
-      blockElement.replaceWith (filterElement);
+      context.element.replaceWith (filterElement);
       success (filterElement);
     },
     failure, expand
@@ -91,14 +91,14 @@ function search_filterBlock (blockElement, success, failure, expand) {
 /*
   search_form_block accepts three arguments:
 
-  * blockElement, a JQuery HTML Element
+  * context, a Block Expansion Context
   * and success and failure, two functions that
     do not accept any arguments.
 
-  blockElement must contain a single text node
+  context.element must contain a single text node
   that represents a Search Interface id.
 
-  search_form_block replaces blockElement with an
+  search_form_block replaces context.element with an
   inline search form and calls success. Whenever
   a query is entered into the form, an event
   handler executes the query against the
@@ -107,21 +107,21 @@ function search_filterBlock (blockElement, success, failure, expand) {
   If an error occurs, search_block calls failure
   instead of success.
 */
-function search_formBlock (blockElement, success, failure) {
-  var interface = search_INTERFACES [blockElement.text ()];
+function search_formBlock (context, success, failure) {
+  var interface = search_INTERFACES [context.element.text ()];
   if (!interface) {
-    strictError ('[search][search_formBlock] Error: The "' + blockElement.text () + '" search interface has not been initialized.');
+    strictError ('[search][search_formBlock] Error: The "' + context.element.text () + '" search interface has not been initialized.');
     return failure ();
   }
   var element = search_createFormElement (interface);
-  blockElement.replaceWith (element);
+  context.element.replaceWith (element);
   success (element);
 }
 
 /*
 */
-function search_indexBlock (blockElement, success, failure) {
-  var indexName = blockElement.text ();
+function search_indexBlock (context, success, failure) {
+  var indexName = context.element.text ();
   var index = search_DATABASE [indexName];
   if (!index) {
     strictError ();
@@ -138,7 +138,7 @@ function search_indexBlock (blockElement, success, failure) {
           .addClass ('search_lunr_index')
           .text (JSON.stringify (lunrIndex.toJSON ())));
 
-      blockElement.replaceWith (element);
+      context.element.replaceWith (element);
       success ();
     },
     failure
@@ -148,55 +148,55 @@ function search_indexBlock (blockElement, success, failure) {
 /*
   search_interfaceBlock accepts three arguments:
 
-  * blockElement, a JQuery HTML Element
+  * context, a Block Expansion Context
   * and success and failure, two functions that
     do not accept any arguments.
 
-  blockElement must have an HTML id attribute
+  context.element must have an HTML ID attribute
   and contain a single text node that represents
-  a Search Id.
+  a Search ID.
 
-  search_interfaceBlock removes blockElement,
+  search_interfaceBlock removes context.element,
   creates a search interface linked to the index
-  given by the search id, adds the interface to
-  search_INTERFACES using blockElement's id as
-  the interface id, and calls success.
+  given by the search ID, adds the interface to
+  search_INTERFACES using context.element's ID as
+  the interface ID, and calls success.
 
-  If the search id includes a query,
+  If the search ID includes a query,
   search_interfaceBlock executes it before
   calling success.
 
   If an error occurs, search_interfaceBlock
   calls failure instead of success.
 */
-function search_interfaceBlock (blockElement, success, failure) {
+function search_interfaceBlock (context, success, failure) {
   var errorMessage = '[search][search_interfaceBlock]';
 
   // I. Get the interface ID
-  var interfaceId = blockElement.attr ('id');
+  var interfaceId = context.element.attr ('id');
   if (!interfaceId) {
     strictError (errorMessage + ' Error: The Search Interface block is invalid. The HTML ID attribute is required for Search Interface blocks.');
     return failure ();
   }
 
   // II. Parse the search ID
-  var searchId    = new URI (blockElement.text ());
+  var searchId    = new URI (context.element.text ());
   var indexName   = searchId.segmentCoded (1);
   var query       = searchId.segmentCoded (2);
   var start       = parseInt (searchId.segment (3), 10);
   var num         = parseInt (searchId.segment (4), 10);
 
   if (isNaN (start)) {
-    strictError (errorMessage + ' Error: "' + blockElement.text () + '" is an invalid search id. The "start" parameter is missing or invalid.');
+    strictError (errorMessage + ' Error: "' + context.element.text () + '" is an invalid search id. The "start" parameter is missing or invalid.');
     start = 0;
   }
   if (isNaN (num)) {
-    strictError (errorMessage + ' Error: "' + blockElement.text () + '" is an invalid search id. The "num" parameter is missing or invalid.');
+    strictError (errorMessage + ' Error: "' + context.element.text () + '" is an invalid search id. The "num" parameter is missing or invalid.');
     num = 10;
   }
 
   // II. Remove the block element
-  blockElement.remove ();
+  context.element.remove ();
 
   // III. Create and register the search interface 
   var index = search_DATABASE [indexName];
@@ -215,30 +215,30 @@ function search_interfaceBlock (blockElement, success, failure) {
 /*
   search_linkBlock accepts three arguments:
 
-  * blockElement, a JQuery HTML Element
+  * context, a Block Expansion Context
   * and done, a function that does not accept
     any arguments.
 
-  blockElement must contain a single text node that
-  represents a Search Id. 
+  context.element must contain a single text node
+  that represents a Search ID. 
 
-  search_linkBlock replaces blockElement with
+  search_linkBlock replaces context.element with
   a search form linked to the referenced search
   index and calls done. Whenever a user enters
   a query into the form, the Search module will
   redirect them to the search results page.
 */
-function search_linkBlock (blockElement, done) {
-  var searchId = new URI (blockElement.text ());
+function search_linkBlock (context, done) {
+  var searchId = new URI (context.element.text ());
   var element = search_createLinkElement (searchId);
-  blockElement.replaceWith (element);
+  context.element.replaceWith (element);
   done (element);
 }
 
 /*
   search_resultsBlock accepts four arguments:
   
-  * blockElement, a JQuery HTML Element
+  * context, a Block Expansion Context
   * success, a function that acepts a JQuery
     HTML Element
   * failure, a function that does not accept
@@ -246,10 +246,10 @@ function search_linkBlock (blockElement, done) {
   * and expand, a function that accepts a JQuery
     HTML Element.
 
-  blockElement must contain a single text node
-  that represents a Search Interface id.
+  context.element must contain a single text node
+  that represents a Search Interface ID.
 
-  search_resultsElement replaces blockElement
+  search_resultsElement replaces context.element
   with a search results element that lists the
   results returned by the last query executed
   against the referenced interface and then calls
@@ -259,15 +259,15 @@ function search_linkBlock (blockElement, done) {
   If an error occurs, search_resultsBlock calls
   failure instead of success.
 */
-function search_resultsBlock (blockElement, success, failure, expand) {
-  var interface = search_INTERFACES [blockElement.text ()];
+function search_resultsBlock (context, success, failure, expand) {
+  var interface = search_INTERFACES [context.element.text ()];
   if (!interface) {
-    strictError ('[search][search_resultsBlock] Error: The "' + blockElement.text () + '" search interface has not been initialized.');
+    strictError ('[search][search_resultsBlock] Error: The "' + context.element.text () + '" search interface has not been initialized.');
     return failure ();
   }
   interface.getResultsElement (
     function (resultsElement) {
-      blockElement.replaceWith (resultsElement);
+      context.element.replaceWith (resultsElement);
       success (resultsElement);
     },
     failure, expand

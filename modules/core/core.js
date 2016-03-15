@@ -104,11 +104,14 @@ $(document).ready (function () {
     loadModules (settings, function () {
       // III. Call the module load event handlers.
       MODULE_LOAD_HANDLERS.execute (function () {
-        // IV. Call the page load event handlers.
-        PAGE_LOAD_HANDLERS.execute (settings.defaultId, function () {
-          // V. Fade out the overlay element.
-          $('#overlay').fadeOut ('slow');
-        });
+        // IV. Get the initial page ID.
+        var id = getIdFromURL (new URI ());
+        if (!id) {
+          id = settings.defaultId;
+        }
+
+        // V. Call the page load event handlers.
+        PAGE_LOAD_HANDLERS.execute (id, function () {});
       });
     });
   });
@@ -119,16 +122,7 @@ $(document).ready (function () {
   if the browser URL hash changes.
 */
 $(window).on ('hashchange', function () {
-  // I. Fade in the overlay element.
-  $('#overlay').fadeIn ('slow');
-
-  // II. Call the page load event handlers.
-  PAGE_LOAD_HANDLERS.execute (
-    new URI ().fragment (),
-    function () {
-      // III. Fade out the overlay element.
-      $('#overlay').fadeOut ('slow');
-  });
+  PAGE_LOAD_HANDLERS.execute (new URI ().fragment (), function () {});
 });
 
 /*
@@ -298,6 +292,22 @@ function strictError (message) {
   if (STRICT_ERROR_MODE) {
     throw new Error (message);
   }
+}
+
+/*
+  loadPage accepts three arguments:
+
+  * id, a Page ID string
+
+  loadPage triggers a Page Load Event using id
+  as the page ID.
+*/
+function loadPage (id) {
+  // I. Load the referenced page.
+  // Note: The hashchange event handler is
+  // responsible for actually loading the page
+  // at this point.
+  document.location.href = getContentURL (id);
 }
 
 /*

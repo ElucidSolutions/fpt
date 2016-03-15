@@ -18,7 +18,7 @@ This module simply loads the Lightbox2 library and its associated CSS files.
   This function loads the Lightbox2 library and
   its associated stylesheets.
 */
-MODULES_LOAD_HANDLERS.add (
+MODULE_LOAD_HANDLERS.add (
   function (done) {
     // I. Load the Lightbox2 library.
     loadScript ('modules/lightbox/lib/lightbox2/dist/js/lightbox.js',

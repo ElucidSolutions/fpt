@@ -168,19 +168,19 @@ Block Expansion
   block_expandDocumentBlocks accepts two
   arguments:
 
-  * defaultId, a Resource ID string
+  * id, a Resource ID string
   * and done, a function that does not accept
     any arguments.
 
   block_expandDocumentBlocks expands the blocks
   contained within the current page and calls
-  done. If the current URL does not include
-  a resource ID, it sets the initial block
-  expansion context's id to defaultId.
+  done.
+
+  Note: block_expandDocumentBlocks sets the
+  initial block expansion context's id to id.
 */
-function block_expandDocumentBlocks (defaultId, done) {
-  var id = getIdFromURL (new URI ());
-  block_expandBlock (new block_Context (id ? id : defaultId, $(document.body)), done);
+function block_expandDocumentBlocks (id, done) {
+  block_expandBlock (new block_Context (id, $(document.body)), done);
 }
 
 /*

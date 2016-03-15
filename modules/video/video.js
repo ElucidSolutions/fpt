@@ -83,11 +83,12 @@ function video_playerBlock (context, done) {
     video_PLAYERS [playerElementId] = this;
 
     var handlers = video_LOAD_HANDLERS [playerElementId];
-    for (var i = 0; i < handlers.length; i ++) {
-      var handler = handlers [i];
-      handler (this);
+    if (handlers) {
+      for (var i = 0; i < handlers.length; i ++) {
+        var handler = handlers [i];
+        handler (this);
+      }
     }
-
     done ();
   });
 }
