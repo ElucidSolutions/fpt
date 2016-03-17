@@ -41,7 +41,7 @@ MODULE_LOAD_HANDLERS.add (
       rate_down_vote_block: rate_downVoteBlock
     });
 
-    done ();
+    done (null);
 });
 ```
 
@@ -101,7 +101,7 @@ function rate_upVoteBlock (context, done) {
   });
 
   // II. Continue.
-  done ();
+  done (null);
 }
 
 /*
@@ -128,7 +128,7 @@ function rate_downVoteBlock (context, done) {
   });
 
   // II. Continue.
-  done ();
+  done (null);
 }
 ```
 

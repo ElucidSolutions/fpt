@@ -28,7 +28,9 @@ MODULE_LOAD_HANDLERS.add (
   function (done) {
     // I. Load libraries.
     loadScript ('modules/video/lib/video-js/video.js',
-      function () {
+      function (error) {
+        if (error) { return done (error); }
+
         // II. Load the CSS files.
         $.getCSS ('modules/video/lib/video-js/video-js.css');
 
@@ -41,7 +43,7 @@ MODULE_LOAD_HANDLERS.add (
           video_example_block: 'modules/video/templates/example_block.html'
         });
 
-        done ();
+        done (null);
     });    
 });
 
@@ -89,7 +91,7 @@ function video_playerBlock (context, done) {
         handler (this);
       }
     }
-    done ();
+    done (null);
   });
 }
 

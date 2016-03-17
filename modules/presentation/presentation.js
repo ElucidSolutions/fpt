@@ -12,14 +12,18 @@ MODULE_LOAD_HANDLERS.add (
   function (done) {
     // I. Load the Intro.JS library.
     loadScript ('modules/presentation/lib/intro.js-2.0.0/intro.js',
-      function () {
+      function (error) {
+        if (error) { return done (error); }
+
         // II. Load the Intro.JS stylesheets.
         $.getCSS ('modules/presentation/lib/intro.js-2.0.0/introjs.css');
 
         // III. Load the Presentation database.
         presentation_loadDatabase (
           presentation_DATABASE_URL,
-          function (database) {
+          function (error, database) {
+            if (error) { return done (error); }
+
             // IV. Cache the Presentation database.
             presentation_DATABASE = database;
 
@@ -27,16 +31,14 @@ MODULE_LOAD_HANDLERS.add (
             block_HANDLERS.add ('presentation_slide_block', presentation_slideBlock);
 
             // VI. Continue.
-            done ();
-          },
-          function () {}
-        );
+            done (null);
+        });
   });
 });
 
 /*
 */
-function presentation_slideBlock (context, success, failure) {
+function presentation_slideBlock (context, done) {
   var slideElementId = context.element.attr ('id');
   if (!slideElementId) {
     slideElementId = getUniqueId ();
@@ -47,7 +49,7 @@ function presentation_slideBlock (context, success, failure) {
 
   var element = slideElement.getElement ();
   context.element.replaceWith (element);
-  success (element);
+  done (null, element);
 }
 
 /*
@@ -77,7 +79,6 @@ presentation_Step.prototype.unlockStep = function (intro) {
   $('.introjs-nextbutton', intro._targetElement)
     .removeClass ('introjs-disabled')
 }
-
 
 /*
 */
@@ -491,15 +492,16 @@ function presentation_parseDatabase (element) {
 
 /*
 */
-function presentation_loadDatabase (url, success, failure) {
+function presentation_loadDatabase (url, done) {
   $.ajax (url, {
     dataType: 'xml',
     success: function (doc) {
-      success (presentation_parseDatabase (doc));
+      done (null, presentation_parseDatabase (doc));
     },
-    error: function (request, status, error) {
-      strictError ('[presentation][presentation_loadDatabase] Error: an error occured while trying the load a presentation database from "' + url + '".');
-      failure ();
+    error: function (request, status, errorMsg) {
+      var error = new Error ('[presentation][presentation_loadDatabase] Error: an error occured while trying the load a presentation database from "' + url + '".');
+      strictError (error);
+      done (error);
     }
   });
 }
@@ -568,7 +570,7 @@ function presentation_SlideElement (id, slide) {
   PAGE_LOAD_HANDLERS.add (
     function (done) {
       intro.exit ();
-      done ();
+      done (null);
   });
 
   this.getId = function () { return id; }
@@ -609,7 +611,8 @@ function presentation_SlideElementsStore () {
   this.save = function (slideElement) {
     var slideElementId = slideElement.getId ();
     if (slideElements [slideElementId]) {
-      return strictError ('[presentation][presentation_SlideElementStore] Error: an error occured while trying to save a slide element. Another slide element already has the given ID.');
+      strictError (new Error ('[presentation][presentation_SlideElementStore] Error: an error occured while trying to save a slide element. Another slide element already has the given ID.'));
+      return null;
     }
     slideElements [slideElementId] = slideElement;
 

@@ -23,7 +23,13 @@ MODULE_LOAD_HANDLERS.add (
   function (done) {
     // I. Load the configuration settings.
     analytics_loadSettings (analytics_SETTINGS_URL,
-      function (settings) {
+      function (error, settings) {
+        if (error) {
+          var error = new Error ('[analytics] Error: an error occured while trying to load the Analytics module.');
+          strictError (error);
+          done (error);
+        }
+
         // II. Load Google Analytics.
         // Note: This code was taken verbatim from https://developers.google.com/analytics/devguides/collection/analyticsjs/.
         (function (i,s,o,g,r,a,m) {
@@ -49,44 +55,40 @@ MODULE_LOAD_HANDLERS.add (
 
         // V. Register a Page Load event handler that logs page view events.
         PAGE_LOAD_HANDLERS.add (
-          function (done, id) {
+          function (id, done) {
             var url = getContentURL (id);
             ga ('set', 'page', url);
             ga ('send', 'pageview');
-            done ();
+            done (null);
         });
 
-        done ();
-      },
-      function () {
-        strictError ('[analytics] Error: an error occured while trying to load the Analytics module.');
-        done ();
+        done (null);
     });
 });
 
 /*
-  analytics_loadSettings accepts three arguments:
+  analytics_loadSettings accepts two arguments:
 
   * url, a URL string
-  * success, a function that accepts an Analytics
-    Settings object
-  * and failure, a function that does not accept
-    any arguments.
+  * done, a function that accepts two arguments:
+    an Error object and an Analytics Settings
+    object
 
   analytics_loadSettings loads and parses the
   Analytics Settings document referenced by url and
-  passes the result to success. If an error occurs,
-  it calls failure instead of calling success. 
+  passes the result to done. If an error occurs,
+  it passes an error to done instead.
 */
-function analytics_loadSettings (url, success, failure) {
+function analytics_loadSettings (url, done) {
   $.ajax (url, {
     dataType: 'xml',
     success: function (doc) {
-      success (analytics_parseSettings (doc));
+      done (null, analytics_parseSettings (doc));
     },
-    error: function (request, status, error) {
-      strictError ('[analytics][analytics_loadSettings] Error: an error occured while trying to load "' + url + '".');
-      failure ();
+    error: function (request, status, errorMsg) {
+      var error = new Error ('[analytics][analytics_loadSettings] Error: an error occured while trying to load "' + url + '".');
+      strictError (error);
+      done (error);
     }
   });
 }

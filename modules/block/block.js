@@ -41,7 +41,7 @@ function block_HandlerStore () {
   */
   this.add = function (className, handler) {
     if (_handlers [className]) {
-      return strictError ('[block][block_HandlerStore] Error: an error occured while trying to register a block handler for "' + className + '". Another block handler has already been registered for "' + className + '"');
+      return strictError (new Error ('[block][block_HandlerStore] Error: an error occured while trying to register a block handler for "' + className + '". Another block handler has already been registered for "' + className + '"'));
     }
     _handlers [className] = handler;
   }
@@ -92,14 +92,8 @@ MODULE_LOAD_HANDLERS.add (
     // I. Register the core block handlers.
     block_HANDLERS.add ('block_template_block', block_templateBlock);
 
-    // II. Register the page load event handler.
-    PAGE_LOAD_HANDLERS.add (
-      function (done, pageId) {
-        block_expandDocumentBlocks (pageId, done);
-    });
-
-    // III. Continue.
-    done ();
+    // II. Continue.
+    done (null);
 });
 
 /*
@@ -161,14 +155,18 @@ function block_expandDocumentBlocks (id, done) {
 function block_expandBlock (context, done) {
   if (!context || !context.element) { return done (); }
 
+  var id = context.getId ();
+
   // I. Expand Core Id blocks.
   if (context.element.hasClass ('core_id_block')) {
-    context.element.replaceWith (context.getId ());
+    context.element.replaceWith (id);
     return done ();
   }
 
-  // II. Expand normal blocks.
-  block_expandBlocks (context.getId (), context.element.children (),
+  async.eachSeries (context.element.children ().toArray (),
+    function (element, next) {
+      block_expandBlock (new block_Context (id, $(element)), next);
+    },
     function () {
       var blockHandler = block_getHandler (block_HANDLERS, context.element);
       if (blockHandler) {
@@ -177,34 +175,15 @@ function block_expandBlock (context, done) {
 
         // Apply the block handler.
         return block_applyBlockHandler (blockHandler.handler, context,
-          function (expandedElement) {
+          function (error, expandedElement) {
+            if (error) { return done (error); }
+
             context.element = expandedElement;
             block_expandBlock (context, done);
-          },
-          done
-        );
+        });
       }
       done ();
   });
-}
-
-/*
-  block_expandBlocks accepts three arguments:
-
-  * id, an Id string
-  * elements, a JQuery HTML Element Set
-  * and done, a function that does not accept any
-    arguments.
-
-  block_expandBlocks expands the blocks within
-  elements and calls done.
-*/
-function block_expandBlocks (id, elements, done) {
-  iter (
-    function (element, next) {
-      block_expandBlock (new block_Context (id, $(element)), next);
-    }, elements, done
-  );
 }
 
 /*
@@ -248,26 +227,26 @@ function block_getHandler (handlers, element) {
 
   * handler, a Block Handler
   * context, a Block Expansion Context
-  * success, a function that accepts a JQuery
+  * done, a function that accepts two
+    arguments: an Error object and a JQuery
     HTML Element
-  * and failure, a function that does not accept
-    any arguments.
 
   block_applyBlockHandler applies handler to
   context.element and passes the result to done.
 */
-function block_applyBlockHandler (handler, context, success, failure) {
+function block_applyBlockHandler (handler, context, done) {
   switch ($.type (handler)) {
     case 'function':
-      return handler (context, success, failure,
+      return handler (context, done,
         function (element, done) {
           block_expandBlock (new block_Context (context.getId (), element), done);
       });
     case 'string':
-      return replaceWithTemplate (handler, context.element, success, failure);
+      return replaceWithTemplate (handler, context.element, done);
     default:
-      strictError ('[block][block_applyBlockHandler] Error: Invalid block handler. Block handlers must be either template URL strings or block handler functions.');
-      return done ();
+      var error = new Error ('[block][block_applyBlockHandler] Error: Invalid block handler. Block handlers must be either template URL strings or block handler functions.');
+      strictError (error);
+      return done (error);
   }
 }
 
@@ -275,42 +254,43 @@ function block_applyBlockHandler (handler, context, success, failure) {
   block_templateBlock accepts three arguments:
 
   * context, a Block Expansion Context
-  * success, a function that accepts a JQuery HTML
-    Element
-  * and failure, a function that does not accept any
-    arguments.
+  * done, a function that accepts two
+    arguments: an Error object and a JQuery
+    HTML Element
 
   context.element must contain a single text node that 
   represents an HTML document URL.
 
   block_templateBlock will load the referenced document, 
   replace context.element with the loaded content, and
-  passes the content to success. If an error occurs,
-  it will call failure instead. 
+  passes the content to done. If an error occurs,
+  it will pass an error to done instead. 
 */
-function block_templateBlock (context, success, failure) {
-  var templateURL = context.element.text ();
-  replaceWithTemplate (templateURL, context.element, success, failure);
+function block_templateBlock (context, done) {
+  replaceWithTemplate (context.element.text (), context.element, done);
 }
 
 /*
-  getBlockArguments accepts four arguments: schema,
-  an array of Block Schema objects; rootElement,
-  a JQuery HTML Element; success, a function; and
-  failure, another function.
+  getBlockArguments accepts three arguments:
+
+  * schema, an array of Block Schema objects
+  * rootElement, a JQuery HTML Element
+  * and done, a function that accepts two
+    arguments: an Error object and a Block
+    Arguments object.
 
   getBlockArguments finds the child elements of
   rootElement that have the argument class names
   given in schema, stores them in an associative
   array keyed by the names given in schema, and
-  passes the resulting object to success.
+  passes the resulting object to done.
 
   If any of the argument elements are listed as 
   required but none of the child elements have the
   given argument class name, this function throws a
-  strict error and calls failure.
+  strict error and passes the error to done.
 */
-function getBlockArguments (schema, rootElement, success, failure) {
+function getBlockArguments (schema, rootElement, done) {
   var elements = {};
   for (var i = 0; i < schema.length; i ++) {
     var scheme  = schema [i];
@@ -318,11 +298,12 @@ function getBlockArguments (schema, rootElement, success, failure) {
     if (element.length > 0) {
       elements [scheme.name] = scheme.text ? element.text () : element;
     } else if (scheme.required) {
-      strictError ('[core][getBlockArguments] Error: an error occured while trying to get a required element. The "' + scheme.name + '" element is required.');
-      return failure ();
+      var error = new Error ('[core][getBlockArguments] Error: an error occured while trying to get a required element. The "' + scheme.name + '" element is required.');
+      strictError (error);
+      return done (error);
     }
   }
-  return success (elements);
+  done (null, elements);
 }
 
 /*

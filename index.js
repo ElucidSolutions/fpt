@@ -45,10 +45,10 @@ MODULE_LOAD_HANDLERS.add (
   PAGE_LOAD_HANDLERS.add (
     function (done) {
       $.sidr ('close');
-      done ();
+      done (null);
   });
 
-  done ();
+  done (null);
 });
 
 // This function hides/displays the Back to Top tab.
@@ -124,5 +124,5 @@ function main_startPresentationBlock (context, done) {
   });
 
   context.element.replaceWith (element);
-  done (element);
+  done (null, element);
 }

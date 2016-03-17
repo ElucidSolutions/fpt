@@ -62,7 +62,7 @@ function ModuleLoadHandlers () {
     stored in this store before calling done.
   */
   this.execute = function (done) {
-    seq (_handlers, done);
+    async.series (_handlers, done);
   }
 }
 ```
@@ -116,7 +116,7 @@ function PageLoadHandlerStore () {
     in this store on id and calls done.
   */
   this.execute = function (id, done) {
-    seq (_handlers, done, id);
+    async.applyEach (_handlers, id, done);
   }
 }
 ```
@@ -152,8 +152,6 @@ The Core module's load event handler runs when the site is loaded. This function
 $(document).ready (function () {
   // I. Load the configuration settings.
   loadSettings (function (settings) {
-    STRICT_ERROR_MODE = settings.errorMode;
-
     // II. Load the enabled modules.
     loadModules (settings, function () {
       // III. Call the module load event handlers.
@@ -257,33 +255,12 @@ function loadModules (settings, done) {
   });
 
   // II. Load the module files in the modules list.
-  _loadModules (0, settings.modules, done);
-}
-
-/*
-  _loadModules accepts three arguments: moduleIndex,
-  a number; modules, an array of Module
-  Declarations; and done, a function. _loadModules
-  skips over the first moduleIndex declarations in
-  modules, loads the remaining modules, and calls
-  done. If an error occurs while trying to load 
-  one of the modules, this function will throw a
-  strict error and continue on to the next one.
-*/
-function _loadModules (moduleIndex, modules, done) {
-  if (moduleIndex >= modules.length) {
-    return done ();
-  }
-
-  var module = modules [moduleIndex];
-
-  var next = function () {
-    _loadModules (moduleIndex + 1, modules, done);
-  };
-
-  module.enabled ? 
-    loadScript (module.url, next) :
-    next ();
+  async.eachSeries (settings.modules,
+    function (module, next) {
+      module.enabled ? loadScript (module.url, next) : next ();
+    },
+    done
+  );
 }
 
 /*
@@ -297,8 +274,9 @@ function loadScript (url, done) {
   $.getScript (url)
     .done (done)
     .fail (function (jqxhr, settings, exception) {
-        strictError ('[core.js][loadScript] Error: an error occured while trying to load "' + url + '".');
-        return done ();
+        var error = new Error ('[core.js][loadScript] Error: an error occured while trying to load "' + url + '".');
+        strictError (error);
+        done (error);
       });
 }
 ```
@@ -312,65 +290,63 @@ Auxiliary Functions
 
   * url, a URL string
   * element, a JQuery HTML Element
-  * success, a function that accepts a JQuery
-    HTML Element
-  * and failure, a function that does not accept
-    any arguments.
+  * done, a function that accepts two arguments:
+    an Error object and a JQuery HTML Element
 
   replaceWithTemplate replaces element with
   the HTML element referenced by url and passes
-  referenced element to success.
+  referenced element to done.
 
-  If an error occurs, replaceWithTemplate calls
-  failure instead of success.
+  If an error occurs, replaceWithTemplate passes
+  an Error object to done instead.
 */
-function replaceWithTemplate (url, element, success, failure) {
+function replaceWithTemplate (url, element, done) {
   getTemplate (url,
-    function (template) {
+    function (error, template) {
+      if (error) { return done (error); }
+
       element.replaceWith (template);
-      success (template);
-    },
-    failure
-  );
+      done (null, template);
+  });
 }
 
 /*
   getTemplate accepts three arguments:
 
   * url, a URL string
-  * success, a function that accepts a JQuery
-    HTML Element
-  * and failure, a function that does not accept
-    any arguments.
+  * done, a function that accepts two arguments:
+    an Error object and a JQuery HTML Element
 
   getTemplate loads the HTML template element
-  referenced by url and passes it to success.
+  referenced by url and passes it to done.
 
   If an error occurs, getTemplate throws a strict
-  error and calls failure instead of success.
+  error and passes an error to done instead.
 */
-function getTemplate (url, success, failure) {
-  $.get (url, function (html) {
-    var template = $(html);
-    success (template);
+function getTemplate (url, done) {
+  $.get (url,
+    function (html) {
+      var template = $(html);
+      done (null, template);
     },
     'html'
-  ).fail (function () {
-    strictError ('[core][getTemplate] Error: an error occured while trying to load a template from "' + url + '".');
-    failure ();
-  });
+    ).fail (function () {
+      var error = new Error ('[core][getTemplate] Error: an error occured while trying to load a template from "' + url + '".');
+      strictError (error);
+      done (error);
+    });
 }
 
 /*
-  strictError accepts one argument: message, a
-  string. If the error mode has been set to strict,
+  strictError accepts one argument: error, an Error
+  object. If the error mode has been set to strict,
   this function throws an exception with the given
-  message. Note: the error mode is set by setting
+  error. Note: the error mode is set by setting
   the "errorMode" parameter in settings.xml.
 */
-function strictError (message) {
+function strictError (error) {
   if (STRICT_ERROR_MODE) {
-    throw new Error (message);
+    throw error;
   }
 }
 
@@ -442,7 +418,7 @@ function getIdFromURL (url) {
 function getContentType (id) {
   var type = new URI (id).segmentCoded (0);
   if (!type) {
-    strictError ('[core][getContentType] Error: "' + id + '" is an invalid id. The "type" path parameter is missing.');
+    strictError (new Error ('[core][getContentType] Error: "' + id + '" is an invalid id. The "type" path parameter is missing.'));
     return null;
   }
   return type;
@@ -457,156 +433,6 @@ function getUniqueId () {
     currentId ++;
   }
   return 'id' + (currentId ++);
-}
-
-/*
-*/
-function seq (fs, done, x) {
-  _seq (0, fs, done, x);
-}
-
-/*
-*/
-function _seq (i, fs, done, x) {
-  if (i >= fs.length) {
-    return done ();
-  }
-  var f = fs [i];
-  f (
-    function () {
-      _seq (i + 1, fs, done, x);
-    },
-    x
-  );
-}
-
-/*
-*/
-function iter (f, xs, done) {
-  _iter (0, f, xs, done);
-}
-
-/*
-*/
-function _iter (i, f, xs, done) {
-  if (i >= xs.length) {
-    return done ();
-  }
-  var x = xs [i];
-  var next = function () {
-    _iter (i + 1, f, xs, done);
-  };
-  f (x, next, next);
-}
-
-/*
-  map accepts four arguments:
-
-  * f, a function that accepts three arguments:
-    x, a value; fsuccess, a function that accepts
-    a value; and ffailure, a function that does
-    not accept any arguments
-  * xs, an array
-  * success, a function that accepts an array
-  * and failure, a function that does not accept
-    any arguments.
-
-  f must accept a value, x, and pass its result,
-  y, to fsuccess.
-
-  map applies f to every element, x, in xs;
-  collects the results into an array, ys, and
-  passes this array to success. If f calls
-  ffailure at any point, map calls failure
-  instead of success.
-*/
-function map (f, xs, success, failure) {
-  _map (f, 0, xs, success, failure);
-}
-
-/*
-  _map accepts five arguments:
-
-  * f, a function that accepts three arguments:
-    x, a value; fsuccess, a function that accepts
-    a value; and ffailure, a function that does
-    not accept any arguments
-  * i, a natural number
-  * xs, an array
-  * success, a function that accepts an array
-  * and failure, a function that does not accept
-    any arguments.
-
-  f must accept a value, x, and pass its result,
-  y, to fsuccess.
-
-  _map applies f to every element, x, in xs;
-  collects the results into an array, ys, and
-  passes this array to success. If f calls
-  ffailure at any point, _map calls failure
-  instead of success.
-*/
-function _map (f, i, xs, success, failure) {
-  if (i >= xs.length) {
-    return success ([]);
-  }
-  var x = xs [i];
-  f (xs [i],
-    function (y) {
-      _map (f, i + 1, xs,
-        function (ys) {
-          ys.unshift (y);
-          success (ys);
-        },
-        failure
-      );
-    },
-    failure
-  );
-}
-
-/*
-  fold accepts five arguments:
-
-  * f, a function that accepts four arguments:
-
-    * z, the value returned by the last iteration
-    * y, the next element in ys
-    * fsuccess, a function that accepts the
-      value returned by the current iteration
-    * and ffailure, a function that does not
-      accept any arguments
-
-    computes the value of the current iteration
-    and passes the value to fsuccess.
-
-    If an error occurs, f calls ffailure instead.
-
-  * x, the initial value used by the first
-    iteration and returned if ys is empty
-  * ys, an array
-  * success, a function that accepts the value
-    returned by the last iteration
-  * and failure, a function that does not accept
-    any arguments
-*/
-function fold (f, x, ys, success, failure) {
-  _fold (0, f, x, ys, success, failure);
-}
-
-/*
-*/
-function _fold (i, f, x, ys, success, failure) {
-  if (i >= ys.length) {
-    return success (x);
-  }
-  var y = ys [i];
-  f (x, y,
-    function (z) {
-      _fold (i + 1, f, z, ys, success, failure);
-    },
-    failure
-  );
 }
 ```
 

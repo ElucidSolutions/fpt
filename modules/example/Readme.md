@@ -20,7 +20,7 @@ MODULE_LOAD_HANDLERS.add (
     // II. Register the page handler.
     page_HANDLERS.add ('example_page', 'modules/example/templates/page.html');
 
-    done ();
+    done (null);
 });
 ```
 

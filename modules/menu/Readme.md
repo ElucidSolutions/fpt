@@ -67,15 +67,12 @@ The Menu module defined five block handlers. The most important of these is the 
 
 ```javascript
 /*
-  menu_contentsBlock accepts three arguments:
+  menu_contentsBlock accepts two arguments:
 
-  * blockElement, a JQuery HTML Element
+  * context, a Block Expansion Context
 
-  * success, a function that accepts a JQuery
-    HTML Element
-
-  * and failure, a function that does not accept
-    any arguments.
+  * done, a function that accepts two arguments:
+    an Error object and a JQuery HTML Element.
 
   context.element must be a DIV element that
   contains six child elements:
@@ -123,23 +120,75 @@ The Menu module defined five block handlers. The most important of these is the 
 
   * replaces context.element with the new element
 
-  * and passes the element to success.
+  * and passes the element to done.
 
-  If an error occurs, menu_contentsBlock calls
-  failure instead of success.
+  If an error occurs, menu_contentsBlock passes
+  the error to done instead.
 */
-function menu_contentsBlock (context, success, failure) {
-  menu_MENU.getContentsBlock (context.element, success, failure);
+function menu_contentsBlock (context, done) {
+  getBlockArguments ([
+      {'name': 'menu_id',                  'text': true, 'required': true},
+      {'name': 'menu_num_columns',         'text': true, 'required': true},
+      {'name': 'menu_max_level',           'text': true, 'required': true},
+      {'name': 'menu_expand_level',        'text': true, 'required': true},
+      {'name': 'menu_expandable',          'text': true, 'required': true},
+      {'name': 'menu_selected_element_id', 'text': true, 'required': true}
+    ],
+    context.element,
+    function (error, blockArguments) {
+      if (error) { return done (error); }
+
+      var node = menu_MENU.getNode (blockArguments.menu_id);
+
+      var element = node.getContentsElement (
+        blockArguments.menu_num_columns,
+        blockArguments.menu_max_level
+      );
+
+      var level = parseInt (blockArguments.menu_expand_level) + 1;
+      menu_collapse (level, element);
+
+      if (blockArguments.menu_expandable === 'true') {
+        menu_makeCollapsable (level, blockArguments.menu_max_level, element);
+      }
+
+      var leaf = menu_MENU.getLeaf (blockArguments.menu_selected_element_id);
+      if (leaf) {
+        var line = leaf.getLine ();
+
+        menu_select     (blockArguments.menu_selected_element_id, element);
+        menu_selectLine (line, element);
+
+        if (blockArguments.menu_expandable === 'true') {
+          menu_expandLine (line, element);
+        }
+      }
+
+      context.element.replaceWith (element);
+
+      PAGE_LOAD_HANDLERS.add (
+        function (id, done) {
+          menu_deselect (element);
+          var leaf = menu_MENU.getLeaf (id);
+          if (leaf) {
+            var newLine = leaf.getLine ();
+            menu_select     (id, element);
+            menu_selectLine (newLine, element);
+            menu_expandLine (newLine, element);
+          }
+          done (null);
+      });
+
+      done (null, element);
+  });
 }
 
 /*
-  menu_leafLabelBlock accepts three arguments:
+  menu_leafLabelBlock accepts two arguments:
 
-  * blockElement, a JQuery HTML Element
-  * success, a function that accepts a JQuery
-    HTML Element
-  * and failure, a function that does not accept
-    any arguments.
+  * context, a Block Expansion Context
+  * done, a function that accepts two arguments:
+    an Error object and a JQuery HTML Element.
 
   context.element must contain a single text node
   that represents a Menu Element ID.
@@ -150,23 +199,23 @@ function menu_contentsBlock (context, success, failure) {
   * creates an HTML element that represents the
     element's title
   * replaces context.element with the new element
-  * and passes the new element to success.
+  * and passes the new element to done.
 
-  If an error occurs, menu_leafLabelBlock calls
-  failure instead of success.
+  If an error occurs, menu_leafLabelBlock passes
+  the error to done instead.
 */
-function menu_leafLabelBlock (context, success, failure) {
-  menu_MENU.getLeafLabelBlock (context.element, success, failure);
+function menu_leafLabelBlock (context, done) {
+  var element = menu_MENU.getLeaf (context.element.text ()).getLabelElement ();
+  context.element.replaceWith (element);
+  done (null, element);
 }
 
 /*
-  menu_leafLabelBlock accepts three arguments:
+  menu_leafLabelBlock accepts two arguments:
 
-  * blockElement, a JQuery HTML Element
-  * success, a function that accepts a JQuery
-    HTML Element
-  * and failure, a function that does not accept
-    any arguments.
+  * context, a Block Expansion Context
+  * done, a function that accepts two arguments:
+    an Error object and a JQuery HTML Element.
 
   context.element must contain a single text node
   that represents a Menu Element ID.
@@ -177,59 +226,71 @@ function menu_leafLabelBlock (context, success, failure) {
   * creates an HTML link element that represents
     the menu element's title
   * replaces context.element with the new element
-  * and passes the new element to success.
+  * and passes the new element to done.
 
-  If an error occurs, menu_leafLinkBlock calls
-  failure instead of success.
+  If an error occurs, menu_leafLinkBlock passes
+  the error to done instead.
 */
-function menu_leafLinkBlock (context, success, failure) {
-  menu_MENU.getLeafLinkBlock (context.element, success, failure);
+function menu_leafLinkBlock (context, done) {
+  var element = menu_MENU.getLeaf (context.element.text ()).getLinkElement ();
+  context.element.replaceWith (element);
+  done (null, element);
 }
 
 /*
 */
-function menu_leafNextLabelBlock (context, success, failure) {
-  menu_MENU.getLeafNextLabelBlock (context.element, success, failure);
+function menu_leafNextLabelBlock (context, done) {
+  var element = menu_MENU.getLeaf (context.element.text ()).getNextLabelElement ();
+  context.element.replaceWith (element);
+  done (null, element);
 }
 
 /*
 */
-function menu_leafNextLinkBlock (context, success, failure) {
-  menu_MENU.getLeafNextLinkBlock (context.element, success, failure);
+function menu_leafNextLinkBlock (context, done) {
+  var element = menu_MENU.getLeaf (context.element.text ()).getNextLinkElement ();
+  context.element.replaceWith (element);
+  done (null, element);
 }
 
 /*
 */
-function menu_leafParentLabelBlock (context, success, failure) {
-  menu_MENU.getLeafParentLabelBlock (context.element, success, failure);
+function menu_leafParentLabelBlock (context, done) {
+  var element = menu_MENU.getLeaf (context.element.text ()).getParentLabelElement ();
+  context.element.replaceWith (element);
+  done (null, element);
 }
 
 /*
 */
-function menu_leafParentLinkBlock (context, success, failure) {
-  menu_MENU.getLeafParentLinkBlock (context.element, success, failure);
+function menu_leafParentLinkBlock (context, done) {
+  var element = menu_MENU.getLeaf (context.element.text ()).getParentLinkElement ();
+  context.element.replaceWith (element);
+  done (null, element);
 }
 
 /*
 */
-function menu_leafPreviousLabelBlock (context, success, failure) {
-  menu_MENU.getLeafPreviousLabelBlock (context.element, success, failure);
+function menu_leafPreviousLabelBlock (context, done) {
+  var element = menu_MENU.getLeaf (context.element.text ()).getPreviousLabelElement ();
+  context.element.replaceWith (element);
+  done (null, element);
 }
 
 /*
 */
-function menu_leafPreviousLinkBlock (context, success, failure) {
-  menu_MENU.getLeafPreviousLinkBlock (context.element, success, failure);
+function menu_leafPreviousLinkBlock (context, done) {
+  var element = menu_MENU.getLeaf (context.element.text ()).getPreviousLinkElement ();
+  context.element.replaceWith (element);
+  done (null, element);
 }
 
 /*
-  menu_nodeLabelBlock accepts three arguments:
+  menu_nodeLabelBlock accepts two arguments:
 
-  * blockElement, a JQuery HTML Element
-  * success, a function that accepts a JQuery
-    HTML Element
-  * and failure, a function that does not accept
-    any arguments.
+  * context, a Block Expansion Context
+  * done, a function that accepts two arguments:
+    an Error object and a JQuery HTML Element.
 
   context.element must contain a single text node
   that represents a Menu Element ID.
@@ -240,23 +301,23 @@ function menu_leafPreviousLinkBlock (context, success, failure) {
   * creates an HTML link element that represents
     the menu element's title
   * replaces context.element with the new element
-  * and passes the new element to success.
+  * and passes the new element to done.
 
-  If an error occurs, menu_nodeLabelBlock calls
-  failure instead of success.
+  If an error occurs, menu_nodeLabelBlock passes
+  the error to done instead.
 */
-function menu_nodeLabelBlock (context, success, failure) {
-  menu_MENU.getNodeLabelBlock (context.element, success, failure);
+function menu_nodeLabelBlock (context, done) {
+  var element = menu_MENU.getNode (context.element.text ()).getLabelElement ();
+  context.element.replaceWith (element);
+  done (null, element);
 }
 
 /*
-  menu_nodeLinkBlock accepts three arguments:
+  menu_nodeLinkBlock accepts two arguments:
 
-  * blockElement, a JQuery HTML Element
-  * success, a function that accepts a JQuery
-    HTML Element
-  * and failure, a function that does not accept
-    any arguments.
+  * context, a Block Expansion Context
+  * done, a function that accepts two arguments:
+    an Error object and a JQuery HTML Element.
 
   context.element must contain a single text node
   that represents a Menu Element ID.
@@ -267,49 +328,63 @@ function menu_nodeLabelBlock (context, success, failure) {
   * creates an HTML link element that represents
     the menu element's title
   * replaces context.element with the new element
-  * and passes the new element to success.
+  * and passes the new element to done.
 
-  If an error occurs, menu_nodeLinkBlock calls
-  failure instead of success.
+  If an error occurs, menu_nodeLinkBlock passes
+  the error to done instead.
 */
-function menu_nodeLinkBlock (context, success, failure) {
-  menu_MENU.getNodeLinkBlock (context.element, success, failure);
+function menu_nodeLinkBlock (context, done) {
+  var element = menu_MENU.getNode (context.element.text ()).getLinkElement ();
+  context.element.replaceWith (element);
+  done (null, element);
 }
 
 /*
 */
-function menu_nodeNextLabelBlock (context, success, failure) {
-  menu_MENU.getNodeNextLabelBlock (context.element, success, failure);
+function menu_nodeNextLabelBlock (context, done) {
+  var element = menu_MENU.getNode (context.element.text ()).getNextLabelElement ();
+  context.element.replaceWith (element);
+  done (null, element);
 }
 
 /*
 */
-function menu_nodeNextLinkBlock (context, success, failure) {
-  menu_MENU.getNodeNextLinkBlock (context.element, success, failure);
+function menu_nodeNextLinkBlock (context, done) {
+  var element = menu_MENU.getNode (context.element.text ()).getNextLinkElement ();
+  context.element.replaceWith (element);
+  done (null, element);
 }
 
 /*
 */
-function menu_nodeParentLabelBlock (context, success, failure) {
-  menu_MENU.getNodeParentLabelBlock (context.element, success, failure);
+function menu_nodeParentLabelBlock (context, done) {
+  var element = menu_MENU.getNode (context.element.text ()).getParentLabelElement ();
+  context.element.replaceWith (element);
+  done (null, element);
 }
 
 /*
 */
-function menu_nodeParentLinkBlock (context, success, failure) {
-  menu_MENU.getNodeParentLinkBlock (context.element, success, failure);
+function menu_nodeParentLinkBlock (context, done) {
+  var element = menu_MENU.getNode (context.element.text ()).getParentLinkElement ();
+  context.element.replaceWith (element);
+  done (null, element);
 }
 
 /*
 */
-function menu_nodePreviousLabelBlock (context, success, failure) {
-  menu_MENU.getNodePreviousLabelBlock (context.element, success, failure);
+function menu_nodePreviousLabelBlock (context, done) {
+  var element = menu_MENU.getNode (context.element.text ()).getPreviousLabelElement ();
+  context.element.replaceWith (element);
+  done (null, element);
 }
 
 /*
 */
-function menu_nodePreviousLinkBlock (context, success, failure) {
-  menu_MENU.getNodePreviousLinkBlock (context.element, success, failure);
+function menu_nodePreviousLinkBlock (context, done) {
+  var element = menu_MENU.getNode (context.element.text ()).getPreviousLinkElement ();
+  context.element.replaceWith (element);
+  done (null, element);
 }
 ```
 
@@ -378,7 +453,7 @@ menu_Element.prototype.getIndex = function () {
   for (var i = 0; i < this.parent.children.length; i ++) {
     if (this.parent.children [i].id === this.id) { return i; }
   }
-  strictError ('[menu][menu_Element.getIndex] Error: the "' + this.id + '" menu element references a parent ("' + this.parent.id + '") that does not list "' + this.id + '" as a child.');
+  strictError (new Error ('[menu][menu_Element.getIndex] Error: the "' + this.id + '" menu element references a parent ("' + this.parent.id + '") that does not list "' + this.id + '" as a child.'));
   return null;
 }
 
@@ -688,254 +763,6 @@ menu_Menu.prototype.getNode = function (id) {
     if (element) { return element; }
   }
   return null;
-}
-
-/*
-*/
-menu_Menu.prototype.getLeafLabelBlock = function (blockElement, success, failure) {
-  var element = this.getLeaf (blockElement.text ()).getLabelElement ();
-  blockElement.replaceWith (element);
-  success (element);
-}
-
-/*
-*/
-menu_Menu.prototype.getLeafLinkBlock = function (blockElement, success, failure) {
-  var element = this.getLeaf (blockElement.text ()).getLinkElement ();
-  blockElement.replaceWith (element);
-  success (element);
-}
-
-/*
-*/
-menu_Menu.prototype.getLeafNextLabelBlock = function (blockElement, success, failure) {
-  var element = this.getLeaf (blockElement.text ()).getNextLabelElement ();
-  blockElement.replaceWith (element);
-  success (element);
-}
-
-/*
-*/
-menu_Menu.prototype.getLeafNextLinkBlock = function (blockElement, success, failure) {
-  var element = this.getLeaf (blockElement.text ()).getNextLinkElement ();
-  blockElement.replaceWith (element);
-  success (element);
-}
-
-/*
-*/
-menu_Menu.prototype.getLeafParentLabelBlock = function (blockElement, success, failure) {
-  var element = this.getLeaf (blockElement.text ()).getParentLabelElement ();
-  blockElement.replaceWith (element);
-  success (element);
-}
-
-/*
-*/
-menu_Menu.prototype.getLeafParentLinkBlock = function (blockElement, success, failure) {
-  var element = this.getLeaf (blockElement.text ()).getParentLinkElement ();
-  blockElement.replaceWith (element);
-  success (element);
-}
-
-/*
-*/
-menu_Menu.prototype.getLeafPreviousLabelBlock = function (blockElement, success, failure) {
-  var element = this.getLeaf (blockElement.text ()).getPreviousLabelElement ();
-  blockElement.replaceWith (element);
-  success (element);
-}
-
-/*
-*/
-menu_Menu.prototype.getLeafPreviousLinkBlock = function (blockElement, success, failure) {
-  var element = this.getLeaf (blockElement.text ()).getPreviousLinkElement ();
-  blockElement.replaceWith (element);
-  success (element);
-}
-
-/*
-*/
-menu_Menu.prototype.getNodeLabelBlock = function (blockElement, success, failure) {
-  var element = this.getNode (blockElement.text ()).getLabelElement ();
-  blockElement.replaceWith (element);
-  success (element);
-}
-
-/*
-*/
-menu_Menu.prototype.getNodeLinkBlock = function (blockElement, success, failure) {
-  var element = this.getNode (blockElement.text ()).getLinkElement ();
-  blockElement.replaceWith (element);
-  success (element);
-}
-
-/*
-*/
-menu_Menu.prototype.getNodeNextLabelBlock = function (blockElement, success, failure) {
-  var element = this.getNode (blockElement.text ()).getNextLabelElement ();
-  blockElement.replaceWith (element);
-  success (element);
-}
-
-/*
-*/
-menu_Menu.prototype.getNodeNextLinkBlock = function (blockElement, success, failure) {
-  var element = this.getNode (blockElement.text ()).getNextLinkElement ();
-  blockElement.replaceWith (element);
-  success (element);
-}
-
-/*
-*/
-menu_Menu.prototype.getNodeParentLabelBlock = function (blockElement, success, failure) {
-  var element = this.getNode (blockElement.text ()).getParentLabelElement ();
-  blockElement.replaceWith (element);
-  success (element);
-}
-
-/*
-*/
-menu_Menu.prototype.getNodeParentLinkBlock = function (blockElement, success, failure) {
-  var element = this.getNode (blockElement.text ()).getParentLinkElement ();
-  blockElement.replaceWith (element);
-  success (element);
-}
-
-/*
-*/
-menu_Menu.prototype.getNodePreviousLabelBlock = function (blockElement, success, failure) {
-  var element = this.getNode (blockElement.text ()).getPreviousLabelElement ();
-  blockElement.replaceWith (element);
-  success (element);
-}
-
-/*
-*/
-menu_Menu.prototype.getNodePreviousLinkBlock = function (blockElement, success, failure) {
-  var element = this.getNode (blockElement.text ()).getPreviousLinkElement ();
-  blockElement.replaceWith (element);
-  success (element);
-}
-
-/*
-  getContentsBlock accepts three arguments:
-
-  * blockElement, a JQuery HTML Element
-
-  * success, a function that accepts a JQuery
-    HTML Element
-
-  * and failure, a function that does not accept
-    any arguments.
-
-  blockElement must be a DIV element that
-  contains six child elements:
-
-  * The first element must belong to the
-    menu_id class and contain a single text node
-    representing a menu element ID.
-
-  * The second element must belong to the
-    menu_num_columns class and contain a single
-    text node specifying the number of columns
-    that the menu element will be divided into.
-
-  * The third element must belong to the
-    menu_max_level class and contain an integer
-    value specifying the maximum number of menu
-    levels to include in the menu element.
-
-  * The fourth element must belong to the
-    max_expand_level class and contains an
-    integer value specifying the maximum number
-    of menu levels to initially display in the
-    menu element.
-
-  * The fifth element must belong to the
-    menu_expandable class and must contain a
-    single boolean value of "true" or "false". This
-    element indicates whether or not users should
-    be able to expand and collapse menu items
-    beyond the max_expand_level.
-
-  * and the sixth element must belong to the
-  menu_selected_element_id class and contain a
-  single text node representing the initially
-  selected element ID.
-
-  getContentsBlock:
-
-  * loads the menu node referenced by menu_id
-
-  * creates a new HTML element that represents
-    the node using the settings provided by
-    blockElement
-
-  * replaces blockElement with the new element
-
-  * and passes the element to success.
-
-  If an error occurs, getContentsBlock calls
-  failure instead of success.
-*/
-menu_Menu.prototype.getContentsBlock = function (blockElement, success, failure) {
-  var self = this;
-  getBlockArguments ([
-      {'name': 'menu_id',                  'text': true, 'required': true},
-      {'name': 'menu_num_columns',         'text': true, 'required': true},
-      {'name': 'menu_max_level',           'text': true, 'required': true},
-      {'name': 'menu_expand_level',        'text': true, 'required': true},
-      {'name': 'menu_expandable',          'text': true, 'required': true},
-      {'name': 'menu_selected_element_id', 'text': true, 'required': true}
-    ],
-    blockElement,
-    function (blockArguments) {
-      var node = self.getNode (blockArguments.menu_id);
-
-      var element = node.getContentsElement (
-        blockArguments.menu_num_columns,
-        blockArguments.menu_max_level
-      );
-
-      var level = parseInt (blockArguments.menu_expand_level) + 1;
-      menu_collapse (level, element);
-
-      if (blockArguments.menu_expandable === 'true') {
-        menu_makeCollapsable (level, blockArguments.menu_max_level, element);
-      }
-
-      var leaf = self.getLeaf (blockArguments.menu_selected_element_id);
-      if (leaf) {
-        var line = leaf.getLine ();
-
-        menu_select     (blockArguments.menu_selected_element_id, element);
-        menu_selectLine (line, element);
-
-        if (blockArguments.menu_expandable === 'true') {
-          menu_expandLine (line, element);
-        }
-      }
-
-      blockElement.replaceWith (element);
-
-      PAGE_LOAD_HANDLERS.add (
-        function (done, id) {
-          menu_deselect (element);
-          var leaf = self.getLeaf (id);
-          if (leaf) {
-            var newLine = leaf.getLine ();
-            menu_select     (id, element);
-            menu_selectLine (newLine, element);
-            menu_expandLine (newLine, element);
-          }
-          done ();
-      });
-
-      success (element);
-    },
-    failure
-  );
 }
 ```
 

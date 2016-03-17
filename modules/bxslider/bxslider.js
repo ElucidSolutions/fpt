@@ -16,14 +16,16 @@ MODULE_LOAD_HANDLERS.add (
   function (done) {
     // I. Load libraries.
     loadScript ('modules/bxslider/lib/jquery.bxslider/jquery.bxslider.js',
-      function () {
+      function (error) {
+        if (error) { return done (error); }
+
         // II. Load CSS files.
         $.getCSS ('modules/bxslider/lib/jquery.bxslider/jquery.bxslider.css');
 
         // III. Register the block handler.
         block_HANDLERS.add ('bxslider_block', bxslider_block);
 
-        done ();
+        done (null);
       });
 });
 
@@ -39,5 +41,5 @@ function bxslider_block (context, done) {
     autoControls : true,
     pause : 10000
   });
-  done ();
+  done (null);
 }

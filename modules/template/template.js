@@ -58,17 +58,17 @@ template_Template.prototype.iterate = function (templateFunction) {
 
 /*
 */
-template_Template.prototype.getElement = function (success, failure) {
+template_Template.prototype.getElement = function (done) {
   var self = this;
   this.getRawElement (
-    function (rawTemplate) {
-      success (rawTemplate
+    function (error, rawTemplate) {
+      if (error) { return done (error); }
+
+      done (rawTemplate
         .addClass (self.classes)
         .attr ('data-template-id', self.id)
         .attr ('data-template-level', self.getLevel ()));
-    },
-    failure
-  );
+  });
 }
 
 /*
@@ -99,41 +99,40 @@ template_Page.prototype.getSectionTemplate = function (id) {
 
 /*
 */
-template_Page.prototype.getElement = function (success, failure) {
+template_Page.prototype.getElement = function (done) {
   template_Template.prototype.getElement.call (this,
-    function (template) {
-      success (template.addClass ('template_page'));
-    },
-    failure
-  );
+    function (error, template) {
+      if (error) { return done (error); }
+
+      done (null, template.addClass ('template_page'));
+  });
 }
 
 /*
 */
-template_Page.prototype.getPageElement = function (success, failure) {
+template_Page.prototype.getPageElement = function (done) {
   var templates = this.getPath ().reverse ();
   var pageTemplate = templates.shift ();
   pageTemplate.getElement (
-    function (pageElement) {
-      fold (
-        function (element, sectionTemplate, success, failure) {
+    function (error, pageElement) {
+      if (error) { return done (error); }
+
+      async.reduce (
+        templates,
+        pageElement,
+        function (element, sectionTemplate, next) {
           sectionTemplate.getElement (
-            function (sectionElement) {
+            function (error, sectionElement) {
+              if (error) { return next (error); }
+
               $('.template_id_block', sectionElement).replaceWith (sectionTemplate.id);
               $('.template_hole_block', sectionElement).replaceWith (element);
-              success (sectionElement);
-            },
-            failure
-          );
+              next (null, sectionElement);
+          });
         },
-        pageElement,
-        templates,
-        success,
-        failure
+        done
       );
-    },
-    failure
-  );
+  });
 }
 
 /*
@@ -174,13 +173,13 @@ template_Section.prototype.iterate = function (templateFunction) {
 
 /*
 */
-template_Section.prototype.getElement = function (success, failure) {
+template_Section.prototype.getElement = function (done) {
   template_Template.prototype.getElement.call (this,
-    function (template) {
-      success (template.addClass ('template_section'));
-    },
-    failure
-  );
+    function (error, template) {
+      if (error) { return done (error); }
+
+      done (null, template.addClass ('template_section'));
+  });
 }
 
 /*
@@ -260,15 +259,15 @@ MODULE_LOAD_HANDLERS.add (
     page_HANDLERS.add ('template_page', template_page);
 
     // II. Continue.
-    done ();
+    done (null);
 });
 
 /*
 */
-function template_page (id, success, failure) {
+function template_page (id, done) {
   template_TEMPLATES.getPageTemplate (id,
     function (template) {
-      template.getPageElement (success, failure);
+      template.getPageElement (done);
   });
 }
 

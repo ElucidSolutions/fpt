@@ -41,7 +41,9 @@ MODULE_LOAD_HANDLERS.add (
   function (done) {
     // I. Load the Book database.
     book_loadDatabase (book_DATABASE_URL,
-      function (database) {
+      function (error, database) {
+        if (error) { return done (error); }
+
         // II. Cache the Book database.
         book_DATABASE = database;
 
@@ -67,10 +69,8 @@ MODULE_LOAD_HANDLERS.add (
         search_registerSource ('book_search_source', book_index);
 
         // VIII. Continue.
-        done ();
-      },
-      done
-    );
+        done (null);
+    });
 });
 ```
 
@@ -79,28 +79,28 @@ Load the Database
 
 ```javascript
 /*
-  book_loadDatabase accepts three arguments:
+  book_loadDatabase accepts two arguments:
 
   * url, a URL string
-  * success, a function that accepts a Book
-    Book array
-  * and failure, a function that does not accept
-    any arguments.
+  * done, a function that accepts two arguments:
+    an Error object and a Book array.
 
   book_loadDatabase loads the books stored in the
   database referenced by url and passes them to
-  success. If an error occurs book_loadDatabase
-  calls failure instead.
+  done. If an error occurs book_loadDatabase
+  throws a strict error and passes the error to
+  done instead.
 */
-function book_loadDatabase (url, success, failure) {
+function book_loadDatabase (url, done) {
   $.ajax (url, {
     dataType: 'xml',
     success: function (doc) {
-      success (book_parseDatabase (url, doc));
+      done (null, book_parseDatabase (url, doc));
     },
-    error: function (request, status, error) {
-      strictError ('[book][book_loadDatabase] Error: an error occured while trying to load "' + url + '".');
-      failure ();
+    error: function (request, status, errorMsg) {
+      var error = new Error ('[book][book_loadDatabase] Error: an error occured while trying to load "' + url + '".');
+      strictError (error);
+      done (error);
     }
   });
 }
@@ -199,8 +199,10 @@ Block Handlers
 ```javascript
 /*
 */
-function book_bodyBlock (context, success, failure) {
-  book_DATABASE.getBodyBlock (context.element, success, failure);
+function book_bodyBlock (context, done) {
+  var element = book_DATABASE.getElement (context.element.text ()).getBodyElement ();
+  context.element.replaceWith (element);
+  done (null, element);
 }
 ```
 
@@ -210,13 +212,13 @@ Search Source
 ```javascript
 /*
 */
-function book_index (databaseURL, success, failure) {
+function book_index (databaseURL, done) {
   book_loadDatabase (databaseURL,
-    function (database) {
-      success (database.index ());
-    },
-    failure
-  );
+    function (error, database) {
+      if (error) { return done (error); }
+
+      done (null, database.index ());
+  });
 }
 ```
 
@@ -240,7 +242,7 @@ book_Entry.prototype = Object.create (search_Entry.prototype);
 /*
 */
 book_Entry.prototype.getResultElement = function (done) {
-  done ($('<li></li>')
+  done (null, $('<li></li>')
     .addClass ('search_result')
     .addClass ('book_search_result')
     .addClass ('book_search_page_result')
@@ -280,8 +282,8 @@ book_Page.prototype.index = function () {
 
 /*
 */
-book_Page.prototype.getRawPageTemplate = function (success, failure) {
-  getTemplate ('modules/book/templates/page_page_template.html', success, failure);
+book_Page.prototype.getRawPageTemplate = function (done) {
+  getTemplate ('modules/book/templates/page_page_template.html', done);
 }
 
 /*
@@ -342,8 +344,8 @@ book_Section.prototype.getElement = function (id) {
 
 /*
 */
-book_Section.prototype.getRawSectionTemplate = function (success, failure) {
-  getTemplate ('modules/book/templates/section_section_template.html', success, failure);
+book_Section.prototype.getRawSectionTemplate = function (done) {
+  getTemplate ('modules/book/templates/section_section_template.html', done);
 }
 
 /*
@@ -418,14 +420,14 @@ book_Book.prototype.index = function () {
 
 /*
 */
-book_Book.prototype.getRawPageTemplate = function (success, failure) {
-  getTemplate ('modules/book/templates/book_page_template.html', success, failure);
+book_Book.prototype.getRawPageTemplate = function (done) {
+  getTemplate ('modules/book/templates/book_page_template.html', done);
 }
 
 /*
 */
-book_Book.prototype.getRawSectionTemplate = function (success, failure) {
-  getTemplate ('modules/book/templates/book_section_template.html', success, failure);
+book_Book.prototype.getRawSectionTemplate = function (done) {
+  getTemplate ('modules/book/templates/book_section_template.html', done);
 }
 
 /*
@@ -493,7 +495,7 @@ book_Database.prototype.getElement = function (id) {
     var element = this.books [i].getElement (id);
     if (element) { return element; }
   }
-  strictError ('[book][book_Database.getElement] Error: The referenced element does not exist.');
+  strictError (new Error ('[book][book_Database.getElement] Error: The referenced element does not exist.'));
   return null;
 }
 
@@ -515,14 +517,6 @@ book_Database.prototype.getMenu = function () {
     Array.prototype.push.apply (menu.children, this.books [i].getMenuElements ());
   }
   return menu;
-}
-
-/*
-*/
-book_Database.prototype.getBodyBlock = function (blockElement, success, failure) {
-  var element = this.getElement (blockElement.text ()).getBodyElement ();
-  blockElement.replaceWith (element);
-  success (element);
 }
 ```
 

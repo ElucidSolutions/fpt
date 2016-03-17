@@ -25,10 +25,14 @@ MODULE_LOAD_HANDLERS.add (
   function (done) {
   // I. Load libraries.
   loadScript ('modules/sidr/lib/sidr-2.2.1/dist/jquery.sidr.js',
-    function () {
+    function (error) {
+      if (error) { return done (error); }
+
       // II. Register the block handlers.
       block_HANDLERS.add ('sidr_block', sidr_block);
-      done ();
+
+      // III. Continue.
+      done (null);
   });
 });
 
@@ -52,5 +56,5 @@ function sidr_block (context, done) {
     displace: true,
     speed: 300
   });
-  done ();
+  done (null);
 }
