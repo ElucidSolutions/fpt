@@ -1,4 +1,48 @@
 /*
+  Page Load Handler Stores store the registered
+  Page Load Handlers and provide a safe interface
+  for registering and retrieving them.
+*/
+function PageLoadHandlerStore () {
+  // A Page Load Handler array.
+  var _handlers = [];
+
+  /*
+    Accepts one argument: handler, a Page Load
+    Handler; and adds handler to this store.
+  */
+  this.add = function (handler) { _handlers.push (handler); }
+
+  /*
+    Accepts one argument: handlers, a Page
+    Load Handler array; and adds handlers to
+    this store.
+  */
+  this.addHandlers = function (handlers) {
+    Array.prototype.push (_handlers, handlers);
+  }
+
+  /*
+    Accepts two arguments:
+
+    * id, a page ID string
+    * and done, a function
+
+    calls all of the Page Load Handlers stored
+    in this store on id and calls done.
+  */
+  this.execute = function (id, done) {
+    async.applyEach (_handlers, id, done);
+  }
+}
+
+/*
+  A PageLoadHandlerStore that stores the
+  registered Page Load Handlers.
+*/
+var PAGE_LOAD_HANDLERS = new PageLoadHandlerStore ();
+
+/*
 */
 function page_HandlerStore () {
   var self = this;
@@ -45,8 +89,29 @@ MODULE_LOAD_HANDLERS.add (
         block_expandDocumentBlocks (id, done);
     });
 
-    // III. Continue.
+    // III. Register the app load event handler.
+    APP_LOAD_HANDLERS.add (
+      function (settings, done) {
+        // Get the initial page ID.
+        var id = getIdFromURL (new URI ());
+        if (!id) {
+          id = settings.defaultId;
+        }
+
+        // Call the page load event handlers.
+        PAGE_LOAD_HANDLERS.execute (id, function () {});
+    });
+
+    // IV. Continue.
     done (null);
+});
+
+/*
+  This function will load the referenced page
+  if the browser URL hash changes.
+*/
+$(window).on ('hashchange', function () {
+  PAGE_LOAD_HANDLERS.execute (new URI ().fragment (), function () {});
 });
 
 /*

@@ -45,48 +45,25 @@ function ModuleLoadHandlers () {
 var MODULE_LOAD_HANDLERS = new ModuleLoadHandlers ();
 
 /*
-  Page Load Handler Stores store the registered
-  Page Load Handlers and provide a safe interface
-  for registering and retrieving them.
 */
-function PageLoadHandlerStore () {
-  // A Page Load Handler array.
+function AppLoadHandlers () {
+  //
   var _handlers = [];
 
   /*
-    Accepts one argument: handler, a Page Load
-    Handler; and adds handler to this store.
   */
   this.add = function (handler) { _handlers.push (handler); }
 
   /*
-    Accepts one argument: handlers, a Page
-    Load Handler array; and adds handlers to
-    this store.
   */
-  this.addHandlers = function (handlers) {
-    Array.prototype.push (_handlers, handlers);
-  }
-
-  /*
-    Accepts two arguments:
-
-    * id, a page ID string
-    * and done, a function
-
-    calls all of the Page Load Handlers stored
-    in this store on id and calls done.
-  */
-  this.execute = function (id, done) {
-    async.applyEach (_handlers, id, done);
+  this.execute = function (settings, done) {
+    async.applyEachSeries (_handlers, settings, done);
   }
 }
 
 /*
-  A PageLoadHandlerStore that stores the
-  registered Page Load Handlers.
 */
-var PAGE_LOAD_HANDLERS = new PageLoadHandlerStore ();
+var APP_LOAD_HANDLERS = new AppLoadHandlers ();
 
 /*
   The Document Ready event handler. This function
@@ -102,25 +79,11 @@ $(document).ready (function () {
     loadModules (settings, function () {
       // III. Call the module load event handlers.
       MODULE_LOAD_HANDLERS.execute (function () {
-        // IV. Get the initial page ID.
-        var id = getIdFromURL (new URI ());
-        if (!id) {
-          id = settings.defaultId;
-        }
-
-        // V. Call the page load event handlers.
-        PAGE_LOAD_HANDLERS.execute (id, function () {});
+        // IV. Call the app load event handlers.
+        APP_LOAD_HANDLERS.execute (settings, function () {});
       });
     });
   });
-});
-
-/*
-  This function will load the referenced page
-  if the browser URL hash changes.
-*/
-$(window).on ('hashchange', function () {
-  PAGE_LOAD_HANDLERS.execute (new URI ().fragment (), function () {});
 });
 
 /*
