@@ -13,11 +13,6 @@
           <div class="article_article_list_block"/>
         </div>
       </div>
-      <div class="video_player_block">
-        <video class="video-js vjs-default-skin" controls preload="auto" width="640" height="264">
-          <source src="http://vjs.zencdn.net/v/oceans.mp4"/>
-        </video>
-      </div>
     ]]></body>
     <content>
       <section>

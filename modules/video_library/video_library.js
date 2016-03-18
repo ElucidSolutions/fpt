@@ -11,7 +11,9 @@ MODULE_LOAD_HANDLERS.add (
   function (done) {
     // I. Load the Video Database.
     video_library_loadDatabase (video_library_DATABASE_URL,
-      function (database) {
+      function (error, database) {
+        if (error) { return done (error); }
+
         // II. Cache the Video Library.
         video_library_DATABASE = database;
 
@@ -30,22 +32,22 @@ MODULE_LOAD_HANDLERS.add (
         // V. Register the module's search source.
         search_registerSource ('video_library_search_source', video_library_searchSource);
 
-        done ();
-      },
-      done
-    );
+        done (null);
+    });
 });
 
-function video_library_descriptionBlock (context, success, failure) {
+function video_library_descriptionBlock (context, done) {
   getBlockArguments ([
       {'name': 'video_library_player_id',    'text': true, 'required': true},
       {'name': 'video_library_library_id',   'text': true, 'required': true},
       {'name': 'video_library_default_text', 'text': true, 'required': false}
     ], context.element,
-    function (blockArguments) {
+    function (error, blockArguments) {
+      if (error) { return done (error); }
+
       var next = function (descriptionElement) {
         context.element.replaceWith (descriptionElement);
-        success (descriptionElement);
+        done (null, descriptionElement);
       }
 
       var defaultText = blockArguments.video_library_default_text;
@@ -58,8 +60,9 @@ function video_library_descriptionBlock (context, success, failure) {
       var libraryName = video_library_getLibraryName (libraryPath);
       var library = video_library_DATABASE [libraryName];
       if (!library) {
-        strictError ();
-        return failure ();
+        var error = new Error ('[video_library][video_library_descriptionBlock]');
+        strictError (error);
+        return done (error);
       }
 
       var videoURL = video_library_getVideoURL (libraryPath);
@@ -68,25 +71,26 @@ function video_library_descriptionBlock (context, success, failure) {
       var descriptionElement = library.createDescriptionElement (playerId, defaultText, videoURL);
 
       context.element.replaceWith (descriptionElement);
-      success (descriptionElement);
-    },
-    failure
-  );
+      done (null, descriptionElement);
+  });
 }
 
-function video_library_menuBlock (context, success, failure) {
+function video_library_menuBlock (context, done) {
   getBlockArguments ([
       {'name': 'video_library_player_id',  'text': true, 'required': true},
       {'name': 'video_library_library_id', 'text': true, 'required': true}
     ], context.element,
-    function (blockArguments) {
+    function (error, blockArguments) {
+      if (error) { return done (error); }
+
       var libraryId   = blockArguments.video_library_library_id;
       var libraryPath = video_library_getPath (libraryId);
       var libraryName = video_library_getLibraryName (libraryPath);
       var library = video_library_DATABASE [libraryName];
       if (!library) {
-        strictError ();
-        return failure ();
+        var error = new Error ('[video_library][video_library_menuBlock]');
+        strictError (error);
+        return done (error);
       }
 
       var videoURL = video_library_getVideoURL (libraryPath);
@@ -95,18 +99,18 @@ function video_library_menuBlock (context, success, failure) {
       var menuElement = library.createMenuElement (playerId, videoURL);
 
       context.element.replaceWith (menuElement);
-      success (menuElement);
-    },
-    failure
-  );
+      done (null, menuElement);
+  });
 }
 
-function video_library_playerBlock (context, success, failure) {
+function video_library_playerBlock (context, done) {
   getBlockArguments ([
       {'name': 'video_library_player_id',        'text': true, 'required': true},
       {'name': 'video_library_default_video_id', 'text': true, 'required': false}
     ], context.element,
-    function (blockArguments) {
+    function (error, blockArguments) {
+      if (error) { return done (error); }
+
       var playerId = blockArguments.video_library_player_id;
 
       var videoElement = $('<video></video>')
@@ -129,25 +133,26 @@ function video_library_playerBlock (context, success, failure) {
       }
 
       context.element.replaceWith (playerElement);
-      success (playerElement);
-    },
-    failure
-  );
+      done (null, playerElement);
+  });
 }
 
-function video_library_titleBlock (context, success, failure, expand) {
+function video_library_titleBlock (context, done, expand) {
   getBlockArguments ([
       {'name': 'video_library_player_id',    'text': true, 'required': true},
       {'name': 'video_library_library_id',   'text': true, 'required': true}
     ], context.element,
-    function (blockArguments) {
+    function (error, blockArguments) {
+      if (error) { return done (error); }
+
       var libraryId   = blockArguments.video_library_library_id;
       var libraryPath = video_library_getPath (libraryId);
       var libraryName = video_library_getLibraryName (libraryPath);
       var library = video_library_DATABASE [libraryName];
       if (!library) {
-        strictError ();
-        return failure ();
+        var error = new Error ('[video_library][video_library_titleBlock]');
+        strictError (error);
+        return done (error);
       }
 
       var videoURL = video_library_getVideoURL (libraryPath);
@@ -170,19 +175,19 @@ function video_library_titleBlock (context, success, failure, expand) {
       });
 
       context.element.replaceWith (titleElement);
-      success (titleElement);
-    },
-    failure
-  );
+      done (null, titleElement);
+  });
 }
 
-function video_library_transcriptBlock (context, success, failure, expand) {
+function video_library_transcriptBlock (context, done, expand) {
   getBlockArguments ([
       {'name': 'video_library_player_id',    'text': true, 'required': true},
       {'name': 'video_library_library_id',   'text': true, 'required': true},
       {'name': 'video_library_default_text', 'text': true, 'required': false}
     ], context.element,
-    function (blockArguments) {
+    function (error, blockArguments) {
+      if (error) { return done (error); }
+
       var next = function (transcriptElement) {
         context.element.replaceWith (transcriptElement);
         success (transcriptElement);
@@ -198,34 +203,35 @@ function video_library_transcriptBlock (context, success, failure, expand) {
       var libraryName = video_library_getLibraryName (libraryPath);
       var library = video_library_DATABASE [libraryName];
       if (!library) {
-        strictError ();
-        return failure ();
+        var error = new Error ('[video_library][video_library_transcriptBlock]');
+        strictError (error);
+        return done (error);
       }
 
       var videoURL = video_library_getVideoURL (libraryPath);
 
       var playerId = blockArguments.video_library_player_id;
       library.createTranscriptElement (playerId, defaultText, videoURL,
-        function (transcriptElement) {
+        function (error, transcriptElement) {
+          if (error) { return done (error); }
+
           context.element.replaceWith (transcriptElement);
-          success (transcriptElement);
+          done (null, transcriptElement);
         },
-        failure,
         expand
       );
-    },
-    failure
-  );
+  });
 }
 
 /*
 */
-function video_library_searchSource (libraryName, success, failure) {
+function video_library_searchSource (libraryName, done) {
   var set = [];
   var library = video_library_DATABASE [libraryName];
   if (!library) {
-    strictError ();
-    return failure ();
+    var error = new Error ('[video_library][video_library_searchSource]');
+    strictError (error);
+    return done (error);
   }
   library.getAllVideos ().forEach (
     function (video) {
@@ -235,7 +241,7 @@ function video_library_searchSource (libraryName, success, failure) {
           $('<div>' + video.description + '</div>').text ()
       ));
   });
-  success (set);
+  done (null, set);
 }
 
 /*
@@ -253,7 +259,7 @@ video_library_VideoEntry.prototype = Object.create (video_library_VideoEntry.pro
 /*
 */
 video_library_VideoEntry.prototype.getResultElement = function (done) {
-  done ($('<li></li>')
+  done (null, $('<li></li>')
     .addClass ('search_result')
     .addClass ('book_search_result')
     .addClass ('book_search_page_result')
@@ -480,7 +486,7 @@ video_library_Library.prototype.createDescriptionElement = function (playerId, d
   return descriptionElement;
 }
 
-video_library_Library.prototype.createTranscriptElement = function (playerId, defaultText, videoURL, success, failure, expand) {
+video_library_Library.prototype.createTranscriptElement = function (playerId, defaultText, videoURL, done, expand) {
   var transcriptElement = $('<div></div>').addClass ('video_library_transcript');
 
   var self = this;
@@ -518,20 +524,20 @@ video_library_Library.prototype.createTranscriptElement = function (playerId, de
   if (videoURL) {
     var video = this.getVideo (videoURL);
     if (!video) {
-      strictError ();
-      return failure ();
+      var error = new Error ('[video_library][video_library_Library.createTranscriptElement]');
+      strictError (error);
+      return done (error);
     }
     if (!video.transcriptURL) {
-      return success (transcriptElement);
+      return done (null, transcriptElement);
     }
     return video_library_loadTranscript (video.transcriptURL,
-      function (captions) {
-        success (transcriptElement.append (video_library_createCaptionElements (captions, playerId)));
-      },
-      failure
-    );
+      function (error, captions) {
+        if (error) { return done (error); }
+        done (null, transcriptElement.append (video_library_createCaptionElements (captions, playerId)));
+    });
   }
-  success (transcriptElement);
+  done (null, transcriptElement);
 }
 
 function video_library_parseLibrary (libraryElement) {
@@ -553,16 +559,17 @@ function video_library_parseLibrary (libraryElement) {
   );
 }
 
-function video_library_loadDatabase (databaseURL, success, failure) {
+function video_library_loadDatabase (databaseURL, done) {
   $.get (databaseURL,
     function (databaseElement) {
-      success (video_library_parseDatabase (databaseElement));
+      done (null, video_library_parseDatabase (databaseElement));
     },
     'xml'
   )
   .fail (function () {
-    strictError ('[video_library][video_library_loadDatabase] Error: an error occured while trying to load "' + databaseURL + '".');
-    failure ();
+    var error = new Error ('[video_library][video_library_loadDatabase] Error: an error occured while trying to load "' + databaseURL + '".');
+    strictError (error);
+    done (error);
   });
 }
 
@@ -617,16 +624,17 @@ function video_library_createCaptionElements (captions, playerId) {
   return captions.map (function (caption) { return caption.createElement (playerId); });
 }
 
-function video_library_loadTranscript (transcriptURL, success, failure) {
+function video_library_loadTranscript (transcriptURL, done) {
   $.get (transcriptURL,
     function (transcriptElement) {
-      success (video_library_parseTranscript (transcriptElement));
+      done (null, video_library_parseTranscript (transcriptElement));
     },
     'xml'
   )
   .fail (function () {
-    strictError ('[video_library][video_library_loadTranscript] Error: an error occured while trying to load a Video Transcript "' + transcriptURL + '".');
-    failure ();
+    var error = new Error ('[video_library][video_library_loadTranscript] Error: an error occured while trying to load a Video Transcript "' + transcriptURL + '".');
+    strictError (error);
+    done (error);
   });
 }
 
