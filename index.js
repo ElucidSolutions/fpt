@@ -43,7 +43,7 @@ MODULE_LOAD_HANDLERS.add (
 
   // V. Close the menu on page load.
   PAGE_LOAD_HANDLERS.add (
-    function (done) {
+    function (id, done) {
       $.sidr ('close');
       done (null);
   });

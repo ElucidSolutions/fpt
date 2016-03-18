@@ -113,7 +113,7 @@ function menu_contentsBlock (context, done) {
     function (error, blockArguments) {
       if (error) { return done (error); }
 
-      var node = menu_MENU.getNode (context.element.menu_id);
+      var node = menu_MENU.getNode (blockArguments.menu_id);
 
       var element = node.getContentsElement (
         blockArguments.menu_num_columns,

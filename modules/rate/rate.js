@@ -39,9 +39,10 @@ MODULE_LOAD_HANDLERS.add (
 */
 function rate_upVoteBlock (context, done) {
   // I. Register the on-click event handler.
-  context.element.click (
+  var element = context.element;
+  element.click (
     function () {
-      context.element.addClass ('rate_clicked');
+      element.addClass ('rate_clicked');
 
       // Send an "Up Vote" event notification to Google Analytics.
       ga ('send', 'event', 'Up Vote', 'clicked');
@@ -66,9 +67,10 @@ function rate_upVoteBlock (context, done) {
 */
 function rate_downVoteBlock (context, done) {
   // I. Register the on-click event handler.
-  context.element.click (
+  var element = context.element;
+  element.click (
     function () {
-      context.element.addClass ('rate_clicked');
+      element.addClass ('rate_clicked');
 
       // Send an "Down Vote" event notification to Google Analytics.
       ga ('send', 'event', 'Down Vote', 'clicked');

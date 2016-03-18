@@ -374,7 +374,7 @@ function article_summaryBlock (context, done) {
   article_titleBlock accepts two arguments:
 
   * context, a Block Expansion Context
-  * success, a function that accepts two
+  * done, a function that accepts two
     arguments: an Error object and a JQuery HTML
     Element.
 

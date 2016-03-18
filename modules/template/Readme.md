@@ -75,7 +75,7 @@ template_Template.prototype.getElement = function (done) {
     function (error, rawTemplate) {
       if (error) { return done (error); }
 
-      done (rawTemplate
+      done (null, rawTemplate
         .addClass (self.classes)
         .attr ('data-template-id', self.id)
         .attr ('data-template-level', self.getLevel ()));

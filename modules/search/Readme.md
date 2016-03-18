@@ -221,7 +221,9 @@ function search_interfaceBlock (context, done) {
 
   search_INTERFACES [interfaceId] = interface;
 
-  query ? interface.search (query, done) : done (null);
+  query ? interface.search (query, function () {
+    done (null);
+  }) : done (null);
 }
 
 /*
@@ -429,7 +431,7 @@ function search_Entry (id) {
 /*
 */
 search_Entry.prototype.getResultElement = function (done) {
-  done ($('<li></li>')
+  done (null, $('<li></li>')
     .addClass ('search_result')
     .addClass ('search_' + getContentType (this.id) + '_result')
     .append ($('<div></div>')
@@ -440,7 +442,7 @@ search_Entry.prototype.getResultElement = function (done) {
 /*
 */
 function search_getEntriesResultElements (entries, done) {
-  async.each (entries,
+  async.mapSeries (entries,
     function (entry, next) {
       entry.getResultElement (next);
     },
@@ -527,7 +529,7 @@ search_Interface.prototype.getFilterElements = function (done) {
 search_Interface.prototype.getResultsElement = function (done, expand) {
   var self = this;
   this.getResultElements (
-    function (resultElements) {
+    function (error, resultElements) {
       var resultsElement = $('<ol></ol>').addClass ('search_results').append (resultElements);
 
       self.searchEventHandlers.push (
@@ -626,14 +628,14 @@ function search_getFieldNames (entries) {
 /*
 */
 function search_getSetsEntries (setIds, done) {
-  async.eachSeries (setIds,
-    function (setId, next) {
+  async.reduce (setIds, [],
+    function (entries, setId, next) {
       search_getSetEntries (setId,
-        function (error, sourceEntries) {
-          if (error) { return done (error); }
+        function (error, setEntries) {
+          if (error) { return next (error); }
 
-          Array.prototype.push.apply (entries, sourceEntries);
-          done (null, entries);
+          Array.prototype.push.apply (entries, setEntries);
+          next (null, entries);
       });
     },
     done

@@ -178,8 +178,7 @@ function block_expandBlock (context, done) {
           function (error, expandedElement) {
             if (error) { return done (error); }
 
-            context.element = expandedElement;
-            block_expandBlock (context, done);
+            block_expandBlock (new block_Context (id, expandedElement), done);
         });
       }
       done ();

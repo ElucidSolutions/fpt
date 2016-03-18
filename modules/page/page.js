@@ -56,17 +56,19 @@ MODULE_LOAD_HANDLERS.add (
   block element when a page load event occurs.
 */
 function page_block (context, done) {
+  var errorMsg = '[page][page_block] Error: an error occured while trying to load a page block.';
+
   var element = context.element;
   PAGE_LOAD_HANDLERS.add (
     function (id, next) {
       page_getPageElement (id,
         function (error, newElement) {
           if (error || !newElement) {
-            error = new Error (error.message + '[page][page_block] Error: an error occured while trying to load a page block.');
+            error = error ? new Error (errorMsg + error.message):
+                            new Error (errorMsg);
             strictError (error);
             return next (error);
           }
-
           element.replaceWith (newElement);
           element = newElement;
           block_expandBlock (
@@ -75,7 +77,26 @@ function page_block (context, done) {
           );
       });
   });
-  done (null);
+
+  var id = context.element.text ();
+  if (!id) {
+    id = context.getId ();
+  }
+  page_getPageElement (id,
+    function (error, pageElement) {
+      if (error || !pageElement) {
+        error = error ? new Error (errorMsg + error.message):
+                        new Error (errorMsg);
+        strictError (error);
+        return done (error);
+      }
+      element.replaceWith (pageElement);
+      element = pageElement;
+      block_expandBlock (
+        new block_Context (id, pageElement),
+        done
+      );
+  });
 }
 
 /*

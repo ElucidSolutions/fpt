@@ -272,7 +272,7 @@ function loadModules (settings, done) {
 */
 function loadScript (url, done) {
   $.getScript (url)
-    .done (done)
+    .done (function () { done (null); })
     .fail (function (jqxhr, settings, exception) {
         var error = new Error ('[core.js][loadScript] Error: an error occured while trying to load "' + url + '".');
         strictError (error);

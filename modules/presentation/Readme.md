@@ -627,7 +627,7 @@ function presentation_SlideElement (id, slide) {
   });
 
   PAGE_LOAD_HANDLERS.add (
-    function (done) {
+    function (id, done) {
       intro.exit ();
       done (null);
   });
