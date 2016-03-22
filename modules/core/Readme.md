@@ -301,9 +301,7 @@ function getTemplate (url, done) {
   the "errorMode" parameter in settings.xml.
 */
 function strictError (error) {
-  if (STRICT_ERROR_MODE) {
-    throw error;
-  }
+  if (STRICT_ERROR_MODE) { throw error };
 }
 
 /*
@@ -338,10 +336,7 @@ function loadPage (id) {
 */
 function getContentLink (id, label) {
   var link = $('<a></a>').attr ('href', getContentURL (id));
-  if (label) {
-    link.html (label)
-  }
-  return link;
+  return label ? link.html (label) : link;
 }
 
 /*

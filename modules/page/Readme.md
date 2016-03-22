@@ -122,10 +122,7 @@ MODULE_LOAD_HANDLERS.add (
     APP_LOAD_HANDLERS.add (
       function (settings, done) {
         // Get the initial page ID.
-        var id = getIdFromURL (new URI ());
-        if (!id) {
-          id = settings.defaultId;
-        }
+        var id = getIdFromURL (new URI ()) || settings.defaultId;
 
         // Call the page load event handlers.
         PAGE_LOAD_HANDLERS.execute (id, function () {});
@@ -184,10 +181,7 @@ function page_block (context, done) {
       });
   });
 
-  var id = context.element.text ();
-  if (!id) {
-    id = context.getId ();
-  }
+  var id = context.element.text () || context.getId ();
   page_getPageElement (id,
     function (error, pageElement) {
       if (error || !pageElement) {
@@ -230,12 +224,8 @@ Auxiliary Functions
   the error to done.
 */
 function page_getPageElement (id, done) {
-  var type = getContentType (id);
-  var handler = page_HANDLERS.get (type);
-  if (!handler) {
-    return done (null, null);
-  }
-  page_applyPageHandler (handler, id, done);
+  var handler = page_HANDLERS.get (getContentType (id));
+  handler ? page_applyPageHandler (handler, id, done) : done (null, null);
 }
 
 /*
