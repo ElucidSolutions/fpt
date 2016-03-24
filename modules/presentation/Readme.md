@@ -63,7 +63,7 @@ function presentation_slideBlock (context, done) {
   var slideElement = presentation_DATABASE.getSlide (context.element.text ()).createElement (slideElementId);
   presentation_SLIDE_ELEMENTS.save (slideElement);
 
-  var element = slideElement.getElement ();
+  var element = slideElement.element;
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -83,23 +83,11 @@ function presentation_Step (id, text, position, top, left, width, height) {
   this.left      = left;
   this.width     = width;
   this.height    = height;
-
-  this.completed = false;
-  var onCompleteHandlers = [];
-
-  this.onComplete = function (handler) {
-    onCompleteHandlers.push (handler);
-  }
-
-  this.complete = function (done) {
-    this.completed = true;
-    async.series (onCompleteHandlers, done);
-  }
 }
 
 /*
 */
-presentation_Step.prototype.createElement = function (intro) {
+presentation_Step.prototype.createElement = function (intro, oncomplete) {
   return $('<div></div>')
     .addClass ('presentation_step')
     .attr ('data-presentation-step', this.id)
@@ -136,14 +124,14 @@ presentation_ButtonStep.prototype.constructor = presentation_ButtonStep;
 
 /*
 */
-presentation_ButtonStep.prototype.createElement = function (intro) {
+presentation_ButtonStep.prototype.createElement = function (intro, oncomplete) {
   var self = this;
   return presentation_Step.prototype.createElement.call (this, intro)
     .addClass ('presentation_button_step')
     .click (
       function (event) {
         event.stopPropagation ();
-        self.complete (function () {
+        oncomplete (function () {
           intro.nextStep ();
         });
      });
@@ -193,7 +181,7 @@ presentation_InputStep.prototype.checkInput = function (inputElement) {
 
 /*
 */
-presentation_InputStep.prototype.createElement = function (intro) {
+presentation_InputStep.prototype.createElement = function (intro, oncomplete) {
   var element = presentation_Step.prototype.createElement.call (this, intro)
     .addClass ('presentation_input_step');
 
@@ -205,7 +193,7 @@ presentation_InputStep.prototype.createElement = function (intro) {
         if (self.checkInput (inputElement)) {
           element.addClass ('presentation_valid')
             .removeClass ('presentation_invalid');
-          self.complete ();
+          oncomplete (function () {});
         } else {
           element.removeClass ('presentation_valid')
             .addClass ('presentation_invalid');
@@ -309,7 +297,7 @@ presentation_QuizStep.prototype.checkInput = function (optionsElement) {
 
 /*
 */
-presentation_QuizStep.prototype.onClick = function (stepElement) {
+presentation_QuizStep.prototype.onClick = function (stepElement, oncomplete) {
   var optionsElement = $('.presentation_options', stepElement);
 
   var selectedOption = this.getSelectedOption (optionsElement);
@@ -318,7 +306,7 @@ presentation_QuizStep.prototype.onClick = function (stepElement) {
   if (this.checkInput (optionsElement)) {
      stepElement.addClass ('presentation_valid')
        .removeClass ('presentation_invalid');
-     this.complete ();
+     oncomplete (function () {});
   } else {
      stepElement.removeClass ('presentation_valid')
        .addClass ('presentation_invalid');
@@ -327,7 +315,7 @@ presentation_QuizStep.prototype.onClick = function (stepElement) {
 
 /*
 */
-presentation_QuizStep.prototype.createElement = function (intro) {
+presentation_QuizStep.prototype.createElement = function (intro, oncomplete) {
   var element = presentation_Step.prototype.createElement.call (this, intro)
     .addClass ('presentation_quiz_step');
 
@@ -353,7 +341,7 @@ presentation_QuizStep.prototype.createElement = function (intro) {
           .addClass ('presentation_option_input')
           .click (
             function () {
-              self.onClick (element);
+              self.onClick (element, oncomplete);
           }))
         .append ($('<label></label>')
           .addClass ('presentation_option_label')
@@ -520,6 +508,153 @@ function presentation_loadDatabase (url, done) {
 }
 ```
 
+The Step Element Class
+----------------------
+
+```javascript
+/*
+*/
+function presentation_StepElement (intro, step) {
+  var stepElement = this;
+
+  // Indicates whether or not this step has been completed.
+  var _completed = false;
+
+  // Returns true iff this step has been completed.
+  this.completed = function () { return _completed; }
+
+  /*
+    An array of oncomplete event handlers. Every
+    oncomplete event handler accepts one
+    argument: next, a function that accepts
+    an Error.
+  */
+  var _oncomplete = [];
+
+  /*
+    Accepts one argument:
+
+    * handler, a function that accepts one
+      argument: next, a function that, in turn,
+      accepts an Error object.
+
+    and adds handler to the list of oncomplete
+    event handlers.
+  */
+  this.oncomplete = function (handler) {
+    _oncomplete.push (handler);
+  }
+
+  /*
+    Accepts one argument:
+
+    * done, a function that accepts one argument:
+    error, an Error object
+
+    marks this step as complete and executes
+    the oncomplete event handlers. If any
+    of the handlers pass an error to their
+    continuations, this function passes the
+    error to done and returns immediately.
+  */
+  this.complete = function (done) {
+    // Marks this step as completed.
+    _completed = true;
+
+    // Executes the oncomplete event handlers.
+    async.series (_oncomplete, done);
+  }
+
+  /*
+    A JQuery HTML element that represents this step.
+  */
+  this.element = step.createElement (intro, this.complete);
+}
+```
+
+The Nav Element Class
+---------------------
+
+```javascript
+/*
+*/
+function presentation_NavElement (intro, stepElements) {
+  var self = this;
+
+  // The JQuery HTML Element that represents this nav element.
+  this.element = $('<table></table>')
+    .addClass ('presentation_nav')
+    .append ($('<tbody></tbody>')
+      .append ($('<tr></tr>')
+        .append ($('<td>BACK</td>')
+            .addClass ('presentation_nav_back')
+            .addClass ('presentation_disabled')
+            .click (function (event) {
+                event.stopPropagation ();
+                intro._currentStep > 0 && intro.previousStep ();
+              }))
+        .append (stepElements.map (function (stepElement, i) {
+            return $('<td>' + (i + 1) + '</td>')
+              .addClass ('presentation_nav_step')
+              .addClass (i === 0 ? 'presentation_current_step' : 'presentation_disabled')
+              .attr ('data-presentation-nav-step', i)
+              .click (function (event) {
+                  event.stopPropagation ();
+                  (i === 0 || stepElements [i - 1].completed ()) && intro.goToStep (i + 1);
+                });
+          }))
+        .append ($('<td>NEXT</td>')
+            .addClass ('presentation_nav_next')
+            .addClass (stepElements.length === 0 || stepElements [0].completed () ? '' : 'presentation_disabled')
+            .click (function (event) {
+                event.stopPropagation ();
+                stepElements [intro._currentStep].completed () && 
+                  (intro._currentStep < stepElements.length - 1 ?
+                    intro.nextStep ():
+                    intro.exit ());
+              }))));
+
+  /*
+    Updates the nav element to reflect the
+    current state.
+  */
+  this.refresh = function () {
+    // I. Enable/disable the Back button.
+    var backElement = $('.presentation_nav_back', self.element);
+    intro._currentStep === 0 ?
+      backElement.addClass    ('presentation_disabled'):
+      backElement.removeClass ('presentation_disabled');
+
+    // II. Enable/disable the step buttons.
+    for (var i = 0; i < stepElements.length; i ++) {
+      var stepElement = $('[data-presentation-nav-step="' + i + '"]', self.element);
+      (i === 0 || stepElements [i - 1].completed ()) ?
+        stepElement.removeClass ('presentation_disabled'):
+        stepElement.addClass    ('presentation_disabled');
+    }
+
+    // III. Highlight the current step button.
+    $('.presentation_nav_step', self.element).removeClass ('presentation_current_step');
+    $('[data-presentation-nav-step="' + intro._currentStep + '"]', self.element).addClass ('presentation_current_step');
+
+    // IV. Enable/disable the Next button.
+    var nextElement = $('.presentation_nav_next', self.element);
+    stepElements [intro._currentStep].completed () ?
+      nextElement.removeClass ('presentation_disabled'):
+      nextElement.addClass    ('presentation_disabled');
+  }
+
+  // Register oncomplete event handlers.
+  for (var i = 0; i < stepElements.length; i ++) {
+    stepElements [i].oncomplete (
+      function (done) {
+        self.refresh ();
+        done (null);
+    });
+  }
+}
+```
+
 The Slide Element Class
 -----------------------
 
@@ -527,47 +662,28 @@ The Slide Element Class
 /*
 */
 function presentation_SlideElement (id, slide) {
-  var element = $('<div></div>')
+  var slideElement = this;
+
+  // Returns this slide element's HTML element ID.
+  this.id = function () { return id; }
+
+  // The JQuery HTML Element that represents this slide element.
+  this.element = $('<div></div>')
     .attr ('id', id)
     .addClass ('presentation_slide')
     .attr ('data-presentation-slide', slide.getId ())
-    .css ('background-image', 'url(' + slide.getImage () + ')')
-    .css ('background-size', slide.getWidth () + ', ' + slide.getHeight ())
+    .css ('background-image',  'url(' + slide.getImage () + ')')
+    .css ('background-size',   slide.getWidth () + ', ' + slide.getHeight ())
     .css ('background-repeat', 'no-repeat')
-    .css ('width', slide.getWidth ())
-    .css ('height', slide.getHeight ())
-    .css ('position', 'relative');
+    .css ('width',             slide.getWidth ())
+    .css ('height',            slide.getHeight ())
+    .css ('position',          'relative');
 
-  var steps = slide.getSteps ();
-  var intro = introJs (element.get (0));
+  // The IntroJS object associated with this slide element.
+  this.intro = introJs (slideElement.element.get (0));
 
-  var navElement = presentation_createNavElement (intro, steps);
-  intro.onafterchange (function () {
-      if ($('.presentation_nav', element).length === 0) {
-        $('.introjs-tooltip')
-          .prepend ($('<div class="presentation_exit"></div>')
-            .click (function (event) {
-                event.stopPropagation ();
-                intro.exit ();
-              }))
-          .append (navElement);
-      }
-
-      var backElement = $('.presentation_nav_back', element);
-      intro._currentStep === 0 ?
-        backElement.addClass    ('presentation_disabled'):
-        backElement.removeClass ('presentation_disabled');
-
-      var nextElement = $('.presentation_nav_next', element);
-      steps [intro._currentStep].completed ?
-        nextElement.removeClass ('presentation_disabled'):
-        nextElement.addClass    ('presentation_disabled');
-
-      $('.presentation_nav_step', element).removeClass ('presentation_current_step');
-      $('[data-presentation-nav-step="' + intro._currentStep + '"]', element).addClass ('presentation_current_step');
-    });
-
-  var options = {
+  // The default IntroJS settings.
+  var introOptions = {
     keyboardNavigation: false,
     exitOnOverlayClick: false,
     showStepNumbers: true,
@@ -577,36 +693,52 @@ function presentation_SlideElement (id, slide) {
     steps: []
   };
 
+  // The Steps associated with the slide.
+  var steps = slide.getSteps ();
+
+  // The step elements associated with this slide element.
+  var stepElements = [];
+
   for (var i = 0; i < steps.length; i ++) {
     var step = steps [i];
 
-    step.onComplete (function (next) {
-      presentation_updateNavElement (navElement, intro, steps);
-      next (null);
-    });
+    var stepElement = new presentation_StepElement (this.intro, step);
+    stepElements.push (stepElement);
 
-    var stepElement = step.createElement (intro)
-      .css ('background-image', 'url(' + slide.getImage () + ')')
+    slideElement.element.append (stepElement.element
+      .css ('background-image',    'url(' + slide.getImage () + ')')
       .css ('background-position', '-' + step.left + ' -' + step.top)
-      .css ('background-size', slide.getWidth () + ', ' + slide.getHeight ())
-      .css ('background-repeat', 'no-repeat');
+      .css ('background-size',     slide.getWidth () + ', ' + slide.getHeight ())
+      .css ('background-repeat',   'no-repeat'));
 
-    element.append (stepElement);
-
-    options.steps.push ({
-      element:  '#' + stepElement.attr ('id'),
+    introOptions.steps.push ({
+      element:  '#' + stepElement.element.attr ('id'),
       intro:    step.text,
       position: step.position,
     });
   }
 
-  intro.setOptions (options)
+  // The nav element associated with this slide element.
+  var navElement = new presentation_NavElement (this.intro, stepElements);
 
-  element.click (
+  this.intro.setOptions (introOptions)
+    .onafterchange (
+        function () {
+          if ($('.presentation_nav', slideElement.element).length === 0) {
+            $('.introjs-tooltip', slideElement.element)
+              .prepend ($('<div class="presentation_exit"></div>')
+                  .click (function (event) {
+                      event.stopPropagation ();
+                      slideElement.intro.exit ();
+                }))
+              .append (navElement.element);
+          }
+          navElement.refresh ();
+      });
+
+  this.element.click (
     function () {
-      if (!intro.running) {
-        intro.start ();
-      }
+      slideElement.intro.running || slideElement.intro.start ();
   });
 
   PAGE_LOAD_HANDLERS.add (
@@ -614,12 +746,6 @@ function presentation_SlideElement (id, slide) {
       intro.exit ();
       done (null);
   });
-
-  this.getId = function () { return id; }
-
-  this.getIntro = function () { return intro; }
-
-  this.getElement = function () { return element; }
 }
 ```
 
@@ -656,7 +782,7 @@ function presentation_SlideElementsStore () {
   /*
   */
   this.save = function (slideElement) {
-    var slideElementId = slideElement.getId ();
+    var slideElementId = slideElement.id ();
     if (slideElements [slideElementId]) {
       strictError (new Error ('[presentation][presentation_SlideElementStore] Error: an error occured while trying to save a slide element. Another slide element already has the given ID.'));
       return null;
@@ -681,80 +807,6 @@ Auxiliary Functions
 -------------------
 
 ```javascript
-/*
-  Accepts two arguments: 
-
-  * intro, an IntroJS object
-  * and steps, a presentation_Step array
-
-  and returns a JQuery HTML Element that
-  represents a navigation element that users
-  can use to navigate through steps.
-*/
-function presentation_createNavElement (intro, steps) {
-  return $('<table></table>')
-    .addClass ('presentation_nav')
-    .append ($('<tbody></tbody>')
-      .append ($('<tr></tr>')
-        .append ($('<td>BACK</td>')
-            .addClass ('presentation_nav_back')
-            .addClass ('presentation_disabled')
-            .click (function (event) {
-                event.stopPropagation ();
-                intro._currentStep > 0 && intro.previousStep ();
-              }))
-        .append (steps.map (function (step, i) {
-            return $('<td>' + (i + 1) + '</td>')
-              .addClass ('presentation_nav_step')
-              .addClass (i === 0 ? 'presentation_current_step' : 'presentation_disabled')
-              .attr ('data-presentation-nav-step', i)
-              .click (function (event) {
-                  event.stopPropagation ();
-                  (i === 0 || steps [i - 1].completed) && intro.goToStep (i + 1);
-                });
-          }))
-        .append ($('<td>NEXT</td>')
-            .addClass ('presentation_nav_next')
-            .addClass (steps.length === 0 || steps [0].completed ? '' : 'presentation_disabled')
-            .click (function (event) {
-                event.stopPropagation ();
-                steps [intro._currentStep].completed && 
-                  (intro._currentStep < steps.length - 1 ?
-                    intro.nextStep ():
-                    intro.exit ());
-              }))));
-}
-
-/*
-  Accepts three arguments:
-
-  * navElement, a JQuery HTML Element returned by
-    presentation_createNavElement that represents
-    a navigation element
-  * intro, the IntroJS object passed to
-    presentation_createNavElement
-  * and steps, the presentation_Step array passed
-    to presentation_createNavElement
-
-  and updates the navElement to reflect the
-  state of intro and steps after the user has
-  completed a step but before moving to the
-  next step.
-*/
-function presentation_updateNavElement (navElement, intro, steps) {
-  for (var i = 0; i < steps.length; i ++) {
-    var stepElement = $('[data-presentation-nav-step="' + i + '"]', navElement);
-    (i === 0 || steps [i - 1].completed) ?
-      stepElement.removeClass ('presentation_disabled'):
-      stepElement.addClass    ('presentation_disabled');
-  }
-
-  var nextElement = $('.presentation_nav_next', navElement);
-  steps [intro._currentStep].completed ?
-    nextElement.removeClass ('presentation_disabled'):
-    nextElement.addClass    ('presentation_disabled');
-}
-
 /*
 */
 function presentation_getId (type, path) {
@@ -1041,6 +1093,10 @@ _"The Slide Class"
 _"The Presentation Class"
 
 _"The Database Class"
+
+_"The Step Element Class"
+
+_"The Nav Element Class"
 
 _"The Slide Element Class"
 
