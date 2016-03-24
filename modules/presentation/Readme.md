@@ -1,7 +1,7 @@
 Presentation Module
 ===================
 
-The Presentation module defines the Presentation content type. This module defines a block type called Slide which displays an interactive slide. These slides are stored in a database.
+The Presentation module defines the Presentation content type. This module defines a block type called Presentation which displays an interactive presentation. These presentations are stored in a database.
 
 Global Variables
 ----------------
@@ -39,7 +39,7 @@ MODULE_LOAD_HANDLERS.add (
             presentation_DATABASE = database;
 
             // IV. Register the block handlers.
-            block_HANDLERS.add ('presentation_slide_block', presentation_slideBlock);
+            block_HANDLERS.add ('presentation_block', presentation_block);
 
             // V. Continue.
             done (null);
@@ -54,16 +54,16 @@ The Block Handlers
 ```javascript
 /*
 */
-function presentation_slideBlock (context, done) {
-  var slideElementId = context.element.attr ('id');
-  if (!slideElementId) {
-    slideElementId = getUniqueId ();
+function presentation_block (context, done) {
+  var presentationElementId = context.element.attr ('id');
+  if (!presentationElementId) {
+    presentationElementId = getUniqueId ();
   }
 
-  var slideElement = presentation_DATABASE.getSlide (context.element.text ()).createElement (slideElementId);
-  presentation_SLIDE_ELEMENTS.save (slideElement);
+  var presentationElement = presentation_DATABASE.getPresentation (context.element.text ()).createElement (presentationElementId);
+  presentation_SLIDE_ELEMENTS.save (presentationElement);
 
-  var element = slideElement.element;
+  var element = presentationElement.element;
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -75,8 +75,9 @@ The Step Class
 ```javascript
 /*
 */
-function presentation_Step (id, text, position, top, left, width, height) {
+function presentation_Step (id, image, text, position, top, left, width, height) {
   this.id        = id;
+  this.image     = image;
   this.text      = text;
   this.position  = position;
   this.top       = top;
@@ -101,7 +102,7 @@ presentation_Step.prototype.createElement = function (intro, oncomplete) {
 
 /*
 */
-// function presentation_parseStep (slidePath, element) {}
+// function presentation_parseStep (presentationPath, element) {}
 ```
 
 The Button Step Class
@@ -110,8 +111,8 @@ The Button Step Class
 ```javascript
 /*
 */
-function presentation_ButtonStep (id, text, position, top, left, width, height) {
-  presentation_Step.call (this, id, text, position, top, left, width, height);
+function presentation_ButtonStep (id, image, text, position, top, left, width, height) {
+  presentation_Step.call (this, id, image, text, position, top, left, width, height);
 }
 
 /*
@@ -139,10 +140,11 @@ presentation_ButtonStep.prototype.createElement = function (intro, oncomplete) {
 
 /*
 */
-function presentation_parseButtonStep (slidePath, element) {
-  var path = slidePath.concat ($('> name', element).text ());
+function presentation_parseButtonStep (presentationPath, element) {
+  var path = presentationPath.concat ($('> name', element).text ());
   return new presentation_ButtonStep (
     presentation_getId ('presentation_step_page', path),
+    $('> image',    element).text (),
     $('> text',     element).text (),
     $('> position', element).text (),
     $('> top',      element).text (),
@@ -159,8 +161,8 @@ The Input Step Class
 ```javascript
 /*
 */
-function presentation_InputStep (id, text, position, top, left, width, height, expression) {
-  presentation_Step.call (this, id, text, position, top, left, width, height);
+function presentation_InputStep (id, image, text, position, top, left, width, height, expression) {
+  presentation_Step.call (this, id, image, text, position, top, left, width, height);
   this.expression = expression;
 }
 
@@ -206,10 +208,11 @@ presentation_InputStep.prototype.createElement = function (intro, oncomplete) {
 
 /*
 */
-function presentation_parseInputStep (slidePath, element) {
-  var path = slidePath.concat ($('> name', element).text ());
+function presentation_parseInputStep (presentationPath, element) {
+  var path = presentationPath.concat ($('> name', element).text ());
   return new presentation_InputStep (
     presentation_getId ('presentation_input_step_page', path),
+    $('> image',        element).text (),
     $('> text',         element).text (),
     $('> position',     element).text (),
     $('> top',          element).text (),
@@ -243,8 +246,8 @@ The Quiz Step Class
 
     {label: <string>, isCorrect: <bool>, onSelect: <string>}
 */
-function presentation_QuizStep (id, text, position, top, left, width, height, options) {
-  presentation_Step.call (this, id, text, position, top, left, width, height);
+function presentation_QuizStep (id, image, text, position, top, left, width, height, options) {
+  presentation_Step.call (this, id, image, text, position, top, left, width, height);
   this.options = options;
 }
 
@@ -352,10 +355,11 @@ presentation_QuizStep.prototype.createElement = function (intro, oncomplete) {
 
 /*
 */
-function presentation_parseTestStep (slidePath, element) {
-  var path = slidePath.concat ($('> name', element).text ());
+function presentation_parseTestStep (presentationPath, element) {
+  var path = presentationPath.concat ($('> name', element).text ());
   return new presentation_QuizStep (
     presentation_getId ('presentation_test_step_page', path),
+    $('> image',        element).text (),
     $('> text',         element).text (),
     $('> position',     element).text (),
     $('> top',          element).text (),
@@ -374,13 +378,13 @@ function presentation_parseTestStep (slidePath, element) {
 }
 ```
 
-The Slide Class
+The Presentation Class
 ---------------
 
 ```javascript
 /*
 */
-function presentation_Slide (id, image, width, height, steps) {
+function presentation_Presentation (id, image, width, height, steps) {
   this.getId     = function () { return id; }
   this.getImage  = function () { return image; }
   this.getWidth  = function () { return width; }
@@ -390,16 +394,16 @@ function presentation_Slide (id, image, width, height, steps) {
 
 /*
 */
-presentation_Slide.prototype.createElement = function (elementId) {
-  return new presentation_SlideElement (elementId, this);
+presentation_Presentation.prototype.createElement = function (elementId) {
+  return new presentation_PresentationElement (elementId, this);
 }
 
 /*
 */
-function presentation_parseSlide (presentationPath, element) {
+function presentation_parsePresentation (presentationPath, element) {
   var path = presentationPath.concat ($('> name', element).text ());
-  return new presentation_Slide (
-    presentation_getId ('presentation_slide_page', path),
+  return new presentation_Presentation (
+    presentation_getId ('presentation', path),
     $('> image', element).text (),
     $('> width', element).text (),
     $('> height', element).text (),
@@ -416,46 +420,10 @@ function presentation_parseSlide (presentationPath, element) {
           case 'testStep':
             return presentation_parseTestStep (path, stepElement);
           default:
-            strictError ('[presentation][presentation_parseSlide] Error: an error occured while parsing a slide element. "' + type + '" is an invalid slide type.');
+            strictError ('[presentation][presentation_parsePresentation] Error: an error occured while parsing a presentation element. "' + type + '" is an invalid presentation type.');
             return null;
         }
     }).toArray () 
-  );
-}
-```
-
-The Presentation Class
-----------------------
-
-```javascript
-/*
-*/
-function presentation_Presentation (id, slides) {
-  this.id     = id;
-  this.slides = slides;
-}
-
-/*
-*/
-presentation_Presentation.prototype.getSlide = function (id) {
-  for (var i = 0; i < this.slides.length; i ++) {
-    if (this.slides [i].getId () === id) {
-      return this.slides [i];
-    }
-  }
-  return null;
-}
-
-/*
-*/
-function presentation_parsePresentation (databasePath, element) {
-  var path = databasePath.concat ($('> name', element).text ());
-  return new presentation_Presentation (
-    presentation_getId ('presentation_presentation_page', path),
-    $('> slides', element).children ('slide').map (
-      function (i, slideElement) {
-        return presentation_parseSlide (path, slideElement);
-    }).toArray ()
   );
 }
 ```
@@ -472,10 +440,10 @@ function presentation_Database (presentations) {
 
 /*
 */
-presentation_Database.prototype.getSlide = function (id) {
+presentation_Database.prototype.getPresentation = function (id) {
   for (var i = 0; i < this.presentations.length; i ++) {
-    var slide = this.presentations [i].getSlide (id);
-    if (slide) { return slide; }
+    var presentation = this.presentations [i];
+    if (presentation.getId () === id) { return presentation; }
   }
   return null;
 }
@@ -655,32 +623,32 @@ function presentation_NavElement (intro, stepElements) {
 }
 ```
 
-The Slide Element Class
+The Presentation Element Class
 -----------------------
 
 ```javascript
 /*
 */
-function presentation_SlideElement (id, slide) {
-  var slideElement = this;
+function presentation_PresentationElement (id, presentation) {
+  var self = this;
 
-  // Returns this slide element's HTML element ID.
+  // Returns this presentation element's HTML element ID.
   this.id = function () { return id; }
 
-  // The JQuery HTML Element that represents this slide element.
+  // The JQuery HTML Element that represents this presentation element.
   this.element = $('<div></div>')
     .attr ('id', id)
-    .addClass ('presentation_slide')
-    .attr ('data-presentation-slide', slide.getId ())
-    .css ('background-image',  'url(' + slide.getImage () + ')')
-    .css ('background-size',   slide.getWidth () + ', ' + slide.getHeight ())
+    .addClass ('presentation_presentation')
+    .attr ('data-presentation-presentation', presentation.getId ())
+    .css ('background-image',  'url(' + presentation.getImage () + ')')
+    .css ('background-size',   presentation.getWidth () + ', ' + presentation.getHeight ())
     .css ('background-repeat', 'no-repeat')
-    .css ('width',             slide.getWidth ())
-    .css ('height',            slide.getHeight ())
+    .css ('width',             presentation.getWidth ())
+    .css ('height',            presentation.getHeight ())
     .css ('position',          'relative');
 
-  // The IntroJS object associated with this slide element.
-  this.intro = introJs (slideElement.element.get (0));
+  // The IntroJS object associated with this presentation element.
+  this.intro = introJs (this.element.get (0));
 
   // The default IntroJS settings.
   var introOptions = {
@@ -693,10 +661,10 @@ function presentation_SlideElement (id, slide) {
     steps: []
   };
 
-  // The Steps associated with the slide.
-  var steps = slide.getSteps ();
+  // The Steps associated with the presentation.
+  var steps = presentation.getSteps ();
 
-  // The step elements associated with this slide element.
+  // The step elements associated with this presentation element.
   var stepElements = [];
 
   for (var i = 0; i < steps.length; i ++) {
@@ -705,10 +673,10 @@ function presentation_SlideElement (id, slide) {
     var stepElement = new presentation_StepElement (this.intro, step);
     stepElements.push (stepElement);
 
-    slideElement.element.append (stepElement.element
-      .css ('background-image',    'url(' + slide.getImage () + ')')
+    this.element.append (stepElement.element
+      .css ('background-image',    'url(' + presentation.getImage () + ')')
       .css ('background-position', '-' + step.left + ' -' + step.top)
-      .css ('background-size',     slide.getWidth () + ', ' + slide.getHeight ())
+      .css ('background-size',     presentation.getWidth () + ', ' + presentation.getHeight ())
       .css ('background-repeat',   'no-repeat'));
 
     introOptions.steps.push ({
@@ -718,27 +686,34 @@ function presentation_SlideElement (id, slide) {
     });
   }
 
-  // The nav element associated with this slide element.
+  // The nav element associated with this presentation element.
   var navElement = new presentation_NavElement (this.intro, stepElements);
 
   this.intro.setOptions (introOptions)
     .onafterchange (
         function () {
-          if ($('.presentation_nav', slideElement.element).length === 0) {
-            $('.introjs-tooltip', slideElement.element)
+          if ($('.presentation_nav', self.element).length === 0) {
+            $('.introjs-tooltip', self.element)
               .prepend ($('<div class="presentation_exit"></div>')
                   .click (function (event) {
                       event.stopPropagation ();
-                      slideElement.intro.exit ();
+                      self.intro.exit ();
                 }))
               .append (navElement.element);
           }
           navElement.refresh ();
+
+          var currentStep = steps [self.intro._currentStep];
+          self.element.css ('background-image', 'url(' + currentStep.image + ')');
+      })
+    .oncomplete (
+        function () {
+          self.element.css ('background-image', 'url(' + presentation.getImage () + ')');
       });
 
   this.element.click (
     function () {
-      slideElement.intro.running || slideElement.intro.start ();
+      self.intro.running || self.intro.start ();
   });
 
   PAGE_LOAD_HANDLERS.add (
@@ -749,58 +724,58 @@ function presentation_SlideElement (id, slide) {
 }
 ```
 
-The Slide Elements Store Class
+The Presentation Elements Store Class
 ------------------------------
 
 ```javascript
 /*
 */
-function presentation_SlideElementsStore () {
+function presentation_PresentationElementsStore () {
   var self = this;
 
   /*
   */
-  var slideElements = {};
+  var presentationElements = {};
 
   /*
   */
-  var slideElementFunctions = {};
+  var presentationElementFunctions = {};
 
   /*
   */
-  this.get = function (slideElementId, slideElementFunction) {
-    var slideElement = slideElements [slideElementId];
-    if (slideElement) {
-      return slideElementFunction (slideElement);
+  this.get = function (presentationElementId, presentationElementFunction) {
+    var presentationElement = presentationElements [presentationElementId];
+    if (presentationElement) {
+      return presentationElementFunction (presentationElement);
     }
-    if (!slideElementFunctions [slideElementId]) {
-      slideElementFunctions [slideElementId] = [];
+    if (!presentationElementFunctions [presentationElementId]) {
+      presentationElementFunctions [presentationElementId] = [];
     }
-    slideElementFunctions [slideElementId].push (slideElementFunction);
+    presentationElementFunctions [presentationElementId].push (presentationElementFunction);
   }
 
   /*
   */
-  this.save = function (slideElement) {
-    var slideElementId = slideElement.id ();
-    if (slideElements [slideElementId]) {
-      strictError (new Error ('[presentation][presentation_SlideElementStore] Error: an error occured while trying to save a slide element. Another slide element already has the given ID.'));
+  this.save = function (presentationElement) {
+    var presentationElementId = presentationElement.id ();
+    if (presentationElements [presentationElementId]) {
+      strictError (new Error ('[presentation][presentation_PresentationElementStore] Error: an error occured while trying to save a presentation element. Another presentation element already has the given ID.'));
       return null;
     }
-    slideElements [slideElementId] = slideElement;
+    presentationElements [presentationElementId] = presentationElement;
 
-    if (!slideElementFunctions [slideElementId]) {
-      slideElementFunctions [slideElementId] = [];
+    if (!presentationElementFunctions [presentationElementId]) {
+      presentationElementFunctions [presentationElementId] = [];
     }
-    for (var i = 0; i < slideElementFunctions [slideElementId].length; i ++) {
-      (slideElementFunctions [slideElementId][i]) (slideElement);
+    for (var i = 0; i < presentationElementFunctions [presentationElementId].length; i ++) {
+      (presentationElementFunctions [presentationElementId][i]) (presentationElement);
     }
   }
 };
 
 /*
 */
-var presentation_SLIDE_ELEMENTS = new presentation_SlideElementsStore ();
+var presentation_SLIDE_ELEMENTS = new presentation_PresentationElementsStore ();
 ```
 
 Auxiliary Functions
@@ -844,25 +819,6 @@ To be considered valid, the Presentation Database XML file must conform to the f
   <!-- Defines the Presentation element type. -->
   <xs:complexType name="presentationType">
     <xs:all>
-      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="slides" minOccurs="1" maxOccurs="1">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="slide" type="slideType" minOccurs="0" maxOccurs="unbounded">
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-        <xs:unique name="uniqueSlideName">
-          <xs:selector xpath="slide"/>
-          <xs:field xpath="name"/>
-        </xs:unique>
-      </xs:element>
-    </xs:all>
-  </xs:complexType>
-
-  <!-- Defines the Slide element type. -->
-  <xs:complexType name="slideType">
-    <xs:all>
       <xs:element name="name"  type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="image" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
       <xs:element name="width" minOccurs="1" maxOccurs="1">
@@ -902,6 +858,7 @@ To be considered valid, the Presentation Database XML file must conform to the f
   <xs:complexType name="blankStepType">
     <xs:sequence>
       <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="image" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
       <xs:element name="text" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="position" minOccurs="1" maxOccurs="1">
         <xs:simpleType>
@@ -1000,56 +957,54 @@ An example Presentation Database can be found in [database.xml.example](#An Exam
 <database>
   <presentation>
     <name>Example Presentation</name>
-    <slides>
-      <slide>
-        <name>Example Slide</name>
+    <image>https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png</image>
+    <width>500px</width>
+    <height>500px</height>
+    <steps>
+      <blankStep>
+        <name>First Step</name>
         <image>https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png</image>
-        <width>500px</width>
-        <height>500px</height>
-        <steps>
-          <blankStep>
-            <name>First Step</name>
-            <text><![CDATA[<p>This is an example blank step.</p>]]></text>
-            <position>top</position>
-            <top>10%</top>
-            <left>10%</left>
-            <width>100px</width>
-            <height>100px</height>
-          </blankStep>
-          <inputStep>
-            <name>Second Step</name>
-            <text><![CDATA[<p>This is an example input step.</p>]]></text>
-            <position>top</position>
-            <top>10%</top>
-            <left>10%</left>
-            <width>100px</width>
-            <height>100px</height>
-            <expression><![CDATA[\d+\.\d{2}]]></expression>
-          </inputStep>
-          <testStep>
-            <name>Third Step</name>
-            <text><![CDATA[<p>This is an example test.</p>]]></text>
-            <position>top</position>
-            <top>10%</top>
-            <left>10%</left>
-            <width>100px</width>
-            <height>100px</height>
-            <options>
-              <option>
-                <label><![CDATA[First option]]></label>
-                <isCorrect>true</isCorrect>
-                <onSelect><![CDATA[Correct!]]></onSelect>
-              </option>
-              <option>
-                <label><![CDATA[Second option]]></label>
-                <isCorrect>false</isCorrect>
-                <onSelect><![CDATA[Incorrect!]]></onSelect>
-              </option>
-            </options>
-          </testStep>
-        </steps>
-      </slide>
-    </slides>
+        <text><![CDATA[<p>This is an example blank step.</p>]]></text>
+        <position>top</position>
+        <top>10%</top>
+        <left>10%</left>
+        <width>100px</width>
+        <height>100px</height>
+      </blankStep>
+      <inputStep>
+        <name>Second Step</name>
+        <image>https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png</image>
+        <text><![CDATA[<p>This is an example input step.</p>]]></text>
+        <position>top</position>
+        <top>10%</top>
+        <left>10%</left>
+        <width>100px</width>
+        <height>100px</height>
+        <expression><![CDATA[\d+\.\d{2}]]></expression>
+      </inputStep>
+      <testStep>
+        <name>Third Step</name>
+        <image>https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png</image>
+        <text><![CDATA[<p>This is an example test.</p>]]></text>
+        <position>top</position>
+        <top>10%</top>
+        <left>10%</left>
+        <width>100px</width>
+        <height>100px</height>
+        <options>
+          <option>
+            <label><![CDATA[First option]]></label>
+            <isCorrect>true</isCorrect>
+            <onSelect><![CDATA[Correct!]]></onSelect>
+          </option>
+          <option>
+            <label><![CDATA[Second option]]></label>
+            <isCorrect>false</isCorrect>
+            <onSelect><![CDATA[Incorrect!]]></onSelect>
+          </option>
+        </options>
+      </testStep>
+    </steps>
   </presentation>
 </database>
 ```
@@ -1088,8 +1043,6 @@ _"The Input Step Class"
 
 _"The Quiz Step Class"
 
-_"The Slide Class"
-
 _"The Presentation Class"
 
 _"The Database Class"
@@ -1098,9 +1051,9 @@ _"The Step Element Class"
 
 _"The Nav Element Class"
 
-_"The Slide Element Class"
+_"The Presentation Element Class"
 
-_"The Slide Elements Store Class"
+_"The Presentation Elements Store Class"
 
 _"Auxiliary Functions"
 ```

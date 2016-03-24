@@ -17,25 +17,6 @@
   <!-- Defines the Presentation element type. -->
   <xs:complexType name="presentationType">
     <xs:all>
-      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="slides" minOccurs="1" maxOccurs="1">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="slide" type="slideType" minOccurs="0" maxOccurs="unbounded">
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-        <xs:unique name="uniqueSlideName">
-          <xs:selector xpath="slide"/>
-          <xs:field xpath="name"/>
-        </xs:unique>
-      </xs:element>
-    </xs:all>
-  </xs:complexType>
-
-  <!-- Defines the Slide element type. -->
-  <xs:complexType name="slideType">
-    <xs:all>
       <xs:element name="name"  type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="image" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
       <xs:element name="width" minOccurs="1" maxOccurs="1">
@@ -75,6 +56,7 @@
   <xs:complexType name="blankStepType">
     <xs:sequence>
       <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="image" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
       <xs:element name="text" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="position" minOccurs="1" maxOccurs="1">
         <xs:simpleType>

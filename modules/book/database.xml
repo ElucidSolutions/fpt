@@ -23,7 +23,7 @@
             <name>introduction</name>
             <title><![CDATA[Introduction]]></title>
             <body><![CDATA[            
-              <div class="presentation_slide_block">presentation_slide_page/example_presentation/first_slide</div>
+              <div class="presentation_block">presentation/first_presentation</div>
               <div>
                 <p>Welcome to the eOffer/eMod User Guide! This Guide will introduce you to the eOffer/eMod system, a web-based application designed to make the Contracting process efficient and secure. The system allows for seamless transmission of data from the Vendor/Contractor community to the Federal Acquisition (FAS) Contracting Offices. This Guide is intended for Vendors, but can be useful to Contracting Officers (COs) and Contracting Specialists (CSs) as well.</p>
                 <p>This Guide was written to give an accessible understanding of the different functions of eOffer/eMod to Vendors who use the system to submit Contract Offers and Contract Modifications. The Guide aims to give a comprehensive and easy to understand breakdown of the functions of eOffer/eMod, with helpful hints and important reminders along the way.</p>

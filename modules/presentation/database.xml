@@ -1,93 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <database>
   <presentation>
-    <name>example_presentation</name>
-    <slides>
-      <slide>
-        <name>first_slide</name>
-        <image>images/fpt_screenshot.png</image>
-        <width>1000px</width>
-        <height>500px</height>
-        <steps>
-          <inputStep>
-            <name>First Step</name>
-            <text><![CDATA[<p><strong>Enter the Manufacturer's Part Number</strong></p><p>The Manufacturer Part Number cell only accepts numbers. Enter a number into the cell below.</p>]]></text>
-            <position>top</position>
-            <top>252px</top>
-            <left>135px</left>
-            <width>176px</width>
-            <height>24px</height>
-            <expression><![CDATA[^\d+$]]></expression>
-          </inputStep>
-          <inputStep>
-            <name>Second Step</name>
-            <text><![CDATA[<p><strong>Enter the Manufacturer's Name</strong></p><p>The Manufacturer Name cell accepts a text string. Enter a name, using letters only, into the cell below.</p>]]></text>
-            <position>top</position>
-            <top>252px</top>
-            <left>312px</left>
-            <width>137px</width>
-            <height>24px</height>
-            <expression><![CDATA[^[A-Za-z]+$]]></expression>
-          </inputStep>
-          <testStep>
-            <name>Third Step</name>
-            <text><![CDATA[<p>What values are allowed in manufacturer part numbers?</p>]]></text>
-            <position>top</position>
-            <top>168px</top>
-            <left>115px</left>
-            <width>150px</width>
-            <height>150px</height>
-            <options>
-              <option>
-                <label><![CDATA[Numbers]]></label>
-                <isCorrect>true</isCorrect>
-                <onSelect><![CDATA[Correct!]]></onSelect>
-              </option>
-              <option>
-                <label><![CDATA[Random text]]></label>
-                <isCorrect>false</isCorrect>
-                <onSelect><![CDATA[Incorrect!]]></onSelect>
-              </option>
-            </options>
-          </testStep>
-          <buttonStep>
-            <name>Fourth Step</name>
-            <text><![CDATA[<p>Once you are finished, click the General Tab to continue.</p>]]></text>
-            <position>top</position>
-            <top>168px</top>
-            <left>115px</left>
-            <width>82px</width>
-            <height>34px</height>
-          </buttonStep>
-        </steps>
-      </slide>
-      <slide>
-        <name>second_slide</name>
-        <image>images/import_digital_certificate_006.jpg</image>
-        <width>500px</width>
-        <height>500px</height>
-        <steps>
-          <inputStep>
-            <name>First Step</name>
-            <text><![CDATA[<p>Enter in a filename with the format "NAME.EXT".</p>]]></text>
-            <position>top</position>
-            <top>127px</top>
-            <left>51px</left>
-            <width>318px</width>
-            <height>21px</height>
-            <expression><![CDATA[[A-Za-z]+\.[a-z]+]]></expression>
-          </inputStep>
-          <buttonStep>
-            <name>Second Step</name>
-            <text><![CDATA[<p><strong>Click Next.</strong></p><p>Click the Next button to continue.</p>]]></text>
-            <position>top</position>
-            <top>415px</top>
-            <left>327px</left>
-            <width>72px</width>
-            <height>21px</height>
-          </buttonStep>
-        </steps>
-      </slide>
-    </slides>
+    <name>first_presentation</name>
+    <image>modules/presentation/images/fpt_screenshot.png</image>
+    <width>1000px</width>
+    <height>500px</height>
+    <steps>
+      <inputStep>
+        <name>First Step</name>
+        <image>modules/presentation/images/fpt_screenshot.png</image>
+        <text><![CDATA[<p><strong>Enter the Manufacturer's Part Number</strong></p><p>The Manufacturer Part Number cell only accepts numbers. Enter a number into the cell below.</p>]]></text>
+        <position>top</position>
+        <top>252px</top>
+        <left>135px</left>
+        <width>176px</width>
+        <height>24px</height>
+        <expression><![CDATA[^\d+$]]></expression>
+      </inputStep>
+      <inputStep>
+        <name>Second Step</name>
+        <image>modules/presentation/images/fpt_screenshot.png</image>
+        <text><![CDATA[<p><strong>Enter the Manufacturer's Name</strong></p><p>The Manufacturer Name cell accepts a text string. Enter a name, using letters only, into the cell below.</p>]]></text>
+        <position>top</position>
+        <top>252px</top>
+        <left>312px</left>
+        <width>137px</width>
+        <height>24px</height>
+        <expression><![CDATA[^[A-Za-z]+$]]></expression>
+      </inputStep>
+      <testStep>
+        <name>Third Step</name>
+        <image>modules/presentation/images/fpt_screenshot.png</image>
+        <text><![CDATA[<p>What values are allowed in manufacturer part numbers?</p>]]></text>
+        <position>top</position>
+        <top>168px</top>
+        <left>115px</left>
+        <width>150px</width>
+        <height>150px</height>
+        <options>
+          <option>
+            <label><![CDATA[Numbers]]></label>
+            <isCorrect>true</isCorrect>
+            <onSelect><![CDATA[Correct!]]></onSelect>
+          </option>
+          <option>
+            <label><![CDATA[Random text]]></label>
+            <isCorrect>false</isCorrect>
+            <onSelect><![CDATA[Incorrect!]]></onSelect>
+          </option>
+        </options>
+      </testStep>
+      <buttonStep>
+        <name>Fourth Step</name>
+        <image>modules/presentation/images/fpt_screenshot.png</image>
+        <text><![CDATA[<p>Once you are finished, click the General Tab to continue.</p>]]></text>
+        <position>top</position>
+        <top>168px</top>
+        <left>115px</left>
+        <width>82px</width>
+        <height>34px</height>
+      </buttonStep>
+    </steps>
+  </presentation>
+  <presentation>
+    <name>second_presentation</name>
+    <image>modules/presentation/images/fpt_dropdown_001.jpg</image>
+    <width>750px</width>
+    <height>600px</height>
+    <steps>
+      <buttonStep>
+        <name>First Step</name>
+        <image>modules/presentation/images/fpt_dropdown_001.jpg</image>
+        <text><![CDATA[<p><strong>View Units of Issue.</strong></p><p>Click on the highlighted cell to display the unit options.</p>]]></text>
+        <position>top</position>
+        <top>220px</top>
+        <left>216px</left>
+        <width>123px</width>
+        <height>14px</height>
+      </buttonStep>
+      <buttonStep>
+        <name>Second Step</name>
+        <image>modules/presentation/images/fpt_dropdown_002.jpg</image>
+        <text><![CDATA[<p><strong>Select a Unit of Issue.</strong></p><p>Select "100 BOARD FEET".</p>]]></text>
+        <position>top</position>
+        <top>415px</top>
+        <left>327px</left>
+        <width>72px</width>
+        <height>21px</height>
+      </buttonStep>
+      <testStep>
+        <name>Third Step</name>
+        <image>modules/presentation/images/fpt_dropdown_003.jpg</image>
+        <text><![CDATA[<p><strong>What is a Unit of Issue?</strong></p><p>Select one of the options below.</p>]]></text>
+        <position>top</position>
+        <top>415px</top>
+        <left>327px</left>
+        <width>72px</width>
+        <height>21px</height>
+        <options>
+          <option>
+            <label><![CDATA[A standard measuring unit that should be used to measure your product.]]></label>
+            <isCorrect>true</isCorrect>
+            <onSelect><![CDATA[Correct!]]></onSelect>
+          </option>
+          <option>
+            <label><![CDATA[A certificate issued to vendors for a product.]]></label>
+            <isCorrect>false</isCorrect>
+            <onSelect><![CDATA[Incorrect!]]></onSelect>
+          </option>
+        </options>
+      </testStep>
+    </steps>
   </presentation>
 </database>
