@@ -17,3 +17,76 @@
 // Import General Styles
 @import "../../themes/base/general-theme"; 
  
+/* Presentation Feature */
+
+.introjs-tooltip {
+  font-family: OpenSans;
+  font-size:   14px;
+  line-height: 19px;
+
+  p {
+    margin: 0px 0px 20px 0px;
+  }
+}
+
+.presentation_disabled {
+  color: #BBBBBB;
+}
+
+.presentation_exit {
+  cursor:           pointer;
+  float:            right;
+  height:           10px;
+  width:            10px;
+  background: url('images/x-close.png') no-repeat;
+  background-size: cover;
+
+  -moz-transition: all .25s ease;
+  -webkit-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+.presentation_exit:hover {
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.presentation_nav {
+  border:     1px solid #ECECEC;
+  cursor:     pointer;
+  text-align: center;
+  height:     35px;
+  width:      100%;
+
+  tr {
+    background-color: white;
+  }
+
+  td {
+    padding: 0px;
+  }
+
+  .presentation_nav_next {
+    background: url('images/right-arrow-active.png') no-repeat 85% 10px;
+  }
+
+  .presentation_nav_back {
+    background: url('images/left-arrow-active.png') no-repeat 15% 10px;
+  }
+
+  .presentation_nav_step {
+    width: 35px
+  }
+
+  .presentation_current_step {
+    background-color: #F29A2F;
+    color: white;
+  }
+}
+
+.presentation_button_step {
+  cursor: pointer;
+}
