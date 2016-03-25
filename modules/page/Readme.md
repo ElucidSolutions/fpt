@@ -125,7 +125,7 @@ MODULE_LOAD_HANDLERS.add (
         var id = getIdFromURL (new URI ()) || settings.defaultId;
 
         // Call the page load event handlers.
-        PAGE_LOAD_HANDLERS.execute (id, function () {});
+        PAGE_LOAD_HANDLERS.execute (id, function () { page_fadein (); });
     });
 
     // IV. Continue.
@@ -254,6 +254,18 @@ function page_applyPageHandler (handler, id, done) {
       strictError (error);
       done (error);
   }
+}
+
+/*
+*/
+function page_fadeout () {
+  $('#overlay').fadeIn (250, function () {});
+}
+
+/*
+*/
+function page_fadein () {
+  $('#overlay').fadeOut (250, function () {});
 }
 ```
 

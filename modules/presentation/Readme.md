@@ -718,7 +718,7 @@ function presentation_PresentationElement (id, presentation) {
 
   PAGE_LOAD_HANDLERS.add (
     function (id, done) {
-      intro.exit ();
+      self.intro.exit ();
       done (null);
   });
 }
