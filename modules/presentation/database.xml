@@ -73,30 +73,30 @@
         <image>modules/presentation/images/fpt_dropdown_001.jpg</image>
         <text><![CDATA[<p><strong>View Units of Issue.</strong></p><p>Click on the highlighted cell to display the unit options.</p>]]></text>
         <position>top</position>
-        <top>220px</top>
-        <left>216px</left>
-        <width>123px</width>
-        <height>14px</height>
+        <top>230px</top>
+        <left>161px</left>
+        <width>258px</width>
+        <height>28px</height>
       </buttonStep>
       <buttonStep>
         <name>Second Step</name>
         <image>modules/presentation/images/fpt_dropdown_002.jpg</image>
         <text><![CDATA[<p><strong>Select a Unit of Issue.</strong></p><p>Select "100 BOARD FEET".</p>]]></text>
         <position>top</position>
-        <top>415px</top>
-        <left>327px</left>
-        <width>72px</width>
-        <height>21px</height>
+        <top>230px</top>
+        <left>419px</left>
+        <width>250px</width>
+        <height>28px</height>
       </buttonStep>
       <testStep>
         <name>Third Step</name>
         <image>modules/presentation/images/fpt_dropdown_003.jpg</image>
         <text><![CDATA[<p><strong>What is a Unit of Issue?</strong></p><p>Select one of the options below.</p>]]></text>
         <position>top</position>
-        <top>415px</top>
-        <left>327px</left>
-        <width>72px</width>
-        <height>21px</height>
+        <top>230px</top>
+        <left>161px</left>
+        <width>258px</width>
+        <height>28px</height>
         <options>
           <option>
             <label><![CDATA[A standard measuring unit that should be used to measure your product.]]></label>

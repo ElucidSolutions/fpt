@@ -674,7 +674,7 @@ function presentation_PresentationElement (id, presentation) {
     stepElements.push (stepElement);
 
     this.element.append (stepElement.element
-      .css ('background-image',    'url(' + presentation.getImage () + ')')
+      .css ('background-image',    'url(' + step.image + ')')
       .css ('background-position', '-' + step.left + ' -' + step.top)
       .css ('background-size',     presentation.getWidth () + ', ' + presentation.getHeight ())
       .css ('background-repeat',   'no-repeat'));
