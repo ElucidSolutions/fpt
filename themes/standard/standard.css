@@ -565,7 +565,7 @@ tr.introjs-showElement > th {
 .introjs-tooltipReferenceLayer {
   position: absolute;
   visibility: hidden;
-  z-index: 1001;
+  z-index: 1009;
   background-color: transparent;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -1745,7 +1745,7 @@ table.padded-list tbody tr td {
 
 /* Presentation Feature */
 .introjs-tooltip {
-  font-family: OpenSans;
+  font-family: Open Sans;
   font-size: 14px;
   line-height: 19px; }
   .introjs-tooltip p {
@@ -1783,9 +1783,13 @@ table.padded-list tbody tr td {
   .presentation_nav td {
     padding: 0px; }
   .presentation_nav .presentation_nav_next {
-    background: url("images/right-arrow-active.png") no-repeat 85% 10px; }
+    background: url("images/right-arrow-active.png") no-repeat 75% 10px; }
+  .presentation_nav .presentation_nav_next.presentation_disabled {
+    background-image: url("images/right-arrow-inactive.png"); }
   .presentation_nav .presentation_nav_back {
-    background: url("images/left-arrow-active.png") no-repeat 15% 10px; }
+    background: url("images/left-arrow-active.png") no-repeat 25% 10px; }
+  .presentation_nav .presentation_nav_back.presentation_disabled {
+    background-image: url("images/left-arrow-inactive.png"); }
   .presentation_nav .presentation_nav_step {
     width: 35px; }
   .presentation_nav .presentation_current_step {

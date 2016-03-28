@@ -20,7 +20,7 @@
 /* Presentation Feature */
 
 .introjs-tooltip {
-  font-family: OpenSans;
+  font-family: Open Sans;
   font-size:   14px;
   line-height: 19px;
 
@@ -70,11 +70,19 @@
   }
 
   .presentation_nav_next {
-    background: url('images/right-arrow-active.png') no-repeat 85% 10px;
+    background: url('images/right-arrow-active.png') no-repeat 75% 10px;
+  }
+
+  .presentation_nav_next.presentation_disabled {
+    background-image: url('images/right-arrow-inactive.png');
   }
 
   .presentation_nav_back {
-    background: url('images/left-arrow-active.png') no-repeat 15% 10px;
+    background: url('images/left-arrow-active.png') no-repeat 25% 10px;
+  }
+
+  .presentation_nav_back.presentation_disabled {
+    background-image: url('images/left-arrow-inactive.png');
   }
 
   .presentation_nav_step {
