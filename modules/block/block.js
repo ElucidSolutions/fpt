@@ -163,10 +163,8 @@ function block_expandBlock (context, done) {
     return done ();
   }
 
-  async.eachSeries (context.element.children ().toArray (),
-    function (element, next) {
-      block_expandBlock (new block_Context (id, $(element)), next);
-    },
+  block_expandBlocks (id,
+    context.element.children (),
     function () {
       var blockHandler = block_getHandler (block_HANDLERS, context.element);
       if (blockHandler) {
@@ -182,6 +180,48 @@ function block_expandBlock (context, done) {
         });
       }
       done ();
+  });
+}
+
+/*
+  expandBlocks accepts three arguments:
+
+  * id, an Id string
+  * elements, a JQuery HTML Element Set
+  * and done, a function that does not accept any
+    arguments.
+
+  expandBlocks expands the blocks within elements
+  and calls done.
+*/
+function block_expandBlocks (id, elements, done) {
+  _block_expandBlocks (0, id, elements, done);
+}
+
+/*
+  _expandBlocks accepts four arguments:
+
+  * elementIndex, a positive integer
+  * id, an Id string
+  * elements, JQuery HTML Element Set
+  * and done, a function that does not accept any
+    arguments.
+
+  _expandBlocks starts at elementIndex and
+  iterates over the remaining elements in elements
+  expanding any blocks contained within each. Once
+  done, _expandBlocks calls done.
+*/
+function _block_expandBlocks (elementIndex, id, elements, done) {
+  // I. Call done when all of the elements have been expanded.
+  if (elementIndex >= elements.length) {
+    return done ();
+  }
+  // II. Expand the current element.
+  block_expandBlock (new block_Context (id, elements.eq (elementIndex)),
+    function () {
+      // III. Expand the remaining elements.
+      _block_expandBlocks (elementIndex + 1, id, elements, done);
   });
 }
 
