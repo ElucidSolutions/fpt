@@ -755,6 +755,7 @@ function presentation_PresentationElement (id, presentation) {
       })
     .onexit (
         function () {
+          self.element.css ('background-image', 'url(' + presentation.getImage () + ')');
           $('.introjs-tooltip').remove ();
       });
 
