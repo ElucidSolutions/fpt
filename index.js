@@ -8,12 +8,12 @@ MODULE_LOAD_HANDLERS.add (
   function (done) {
   // I. Register the block handlers.
   block_HANDLERS.addHandlers ({
-    'main_banner_block':        'templates/main_banner_block.html',
-    'main_header_block':        'templates/main_header_block.html',
-    'main_menu_block':          'templates/main_menu_block.html',
-    'main_search_header_block': 'templates/main_search_header_block.html',
-    'main_search_menu_block':   'templates/main_search_menu_block.html',
-    'main_start_presentation_block': main_startPresentationBlock
+    'main_banner_block':          'templates/main_banner_block.html',
+    'main_header_block':          'templates/main_header_block.html',
+    'main_menu_block':            'templates/main_menu_block.html',
+    'main_search_header_block':   'templates/main_search_header_block.html',
+    'main_search_menu_block':     'templates/main_search_menu_block.html',
+    'main_continue_lesson_block': main_continueLessonBlock
   });
 
   // II. Display/hide the Back to Top tab.
@@ -92,34 +92,14 @@ function main_undarken () {
 
 /*
 */
-function main_startPresentationBlock (context, done) {
-  var element = $('<p>Play the Getting Started Tab</p>');
+function main_continueLessonBlock (context, done) {
+  var element = $('<div class="main_continue_lesson">Continue to next Lesson</div>');
 
-  presentation_SLIDE_ELEMENTS.get (context.element.text (),
-    function (slideElement) {
-      var intro = slideElement.getIntro ()
-        .onchange (
-          function () { 
-            element.html ('<p>Stop the Getting Started Tab</p>');
-        })
-        .oncomplete (
-          function () {
-            element.html ('<p>Replay the Getting Started Tab</p>');
-        })
-        .onexit (
-          function () {
-            element.html ('<p>Replay the Getting Started Tab</p>');
-        });
-         
-      element.click (
+  presentation_ELEMENTS.get (context.element.text (),
+    function (presentationElement) {
+      presentationElement.onComplete (
         function () {
-          if (intro.running) {
-            intro.exit ();
-            // There is a bug in the IntroJS library in which the onexit callback is not called when intro.exit is called directly.
-            element.html ('<p>Replay the Getting Started Tab</p>');
-          } else {
-            intro.start ();
-          }
+          element.addClass ('main_continue_lesson_active');
       });
   });
 
