@@ -29,20 +29,25 @@ MODULE_LOAD_HANDLERS.add (
       function (error) {
         if (error) { return done (error); }
 
-        // II. Load the Presentation database.
-        presentation_loadDatabase (
-          presentation_DATABASE_URL,
-          function (error, database) {
-            if (error) { return done (error); }
+        loadScript ('http://code.responsivevoice.org/responsivevoice.js',
+        function (error) {
+          if (error) { return done (error); }
 
-            // III. Cache the Presentation database.
-            presentation_DATABASE = database;
+          // II. Load the Presentation database.
+          presentation_loadDatabase (
+            presentation_DATABASE_URL,
+            function (error, database) {
+              if (error) { return done (error); }
 
-            // IV. Register the block handlers.
-            block_HANDLERS.add ('presentation_block', presentation_block);
+              // III. Cache the Presentation database.
+              presentation_DATABASE = database;
 
-            // V. Continue.
-            done (null);
+              // IV. Register the block handlers.
+              block_HANDLERS.add ('presentation_block', presentation_block);
+
+              // V. Continue.
+              done (null);
+          });
         });
   });
 });
@@ -796,8 +801,10 @@ function presentation_PresentationElement (id, presentation) {
           var stepElement = stepElements [self.intro._currentStep];
           stepElement.start ();
 
+
           var step = stepElement.getStep ();
           self.element.css ('background-image', 'url(' + step.image + ')');
+          responsiveVoice.speak ($(step.text).text ());
       })
     .onexit (
         function () {
