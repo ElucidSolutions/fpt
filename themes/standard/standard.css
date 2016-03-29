@@ -1759,6 +1759,8 @@ table.padded-list tbody tr td {
   border-color: rgba(255, 0, 0, 0.5);
   border-style: solid;
   border-width: 1px; }
+  .presentation_step.presentation_invalid input {
+    background-color: rgba(255, 0, 0, 0.3); }
 
 .presentation_quiz_step.introjs-showElement,
 .presentation_blank_step.introjs-showElement,
