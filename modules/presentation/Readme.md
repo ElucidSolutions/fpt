@@ -695,19 +695,48 @@ function presentation_PresentationElement (id, presentation) {
     .css ('width',             presentation.getWidth ())
     .css ('height',            presentation.getHeight ())
     .css ('position',          'relative')
-    .prepend ($('<div></div>')
-      .addClass ('presentation_start_overlay')
+    .append ($('<div></div>')
+      .addClass ('presentation_overlay_inset')
       .css ({
-        'background-image':    'url(modules/presentation/images/play-circle-outline.png)',
-        'background-repeat':   'no-repeat',
+        'cursor':   'pointer',
+        'height':   '168px',
+        'left':     '416px',
+        'opacity':  '1',
+        'position': 'absolute',
+        'top':      '165px',
+        'width':    '168px',
+        'z-index':  '1011'
+      })
+      .append ($('<div></div>')
+        .addClass ('presentation_overlay_inset_icon')
+        .css ({
+          'background-image':    'url(modules/presentation/images/play-circle-outline.png)',
+          'background-repeat':   'no-repeat',
+          'background-position': '50%',
+          'height':              '100px',
+          'width':               '100%'
+        }))
+      .append ($('<div></div>')
+        .addClass ('presentation_overlay_inset_text')
+        .css ({
+          'height':     '68px',
+          'text-align': 'center',
+          'width':      '100%'
+        })
+        .append ($('<p>PLAY LESSON</p>').css ('color', 'white'))
+    ))
+    .append ($('<div></div>')
+      .addClass ('presentation_overlay')
+      .css ({
         'background-color':    'black',
-        'background-position': '50%',
         'height':              '100%',
-        'width':               '100%',
+        'cursor':               'pointer',
         'opacity':             '0.5',
+        'position':            'absolute',
         'top':                 '0px',
+        'width':               '100%',
         'z-index':             '1010'
-      }));
+    }));
 
   // The IntroJS object associated with this presentation element.
   this.intro = introJs (this.element.get (0));
@@ -776,19 +805,48 @@ function presentation_PresentationElement (id, presentation) {
           self.element.removeClass ('presentation_active');
           $('.introjs-tooltip').remove ();
           self.element
-            .prepend ($('<div></div>')
-              .addClass ('presentation_start_overlay')
+            .append ($('<div></div>')
+              .addClass ('presentation_overlay_inset')
               .css ({
-                'background-image':    'url(modules/presentation/images/replay-icon.png)',
-                'background-repeat':   'no-repeat',
+                'cursor':   'pointer',
+                'height':   '168px',
+                'left':     '416px',
+                'opacity':  '1',
+                'position': 'absolute',
+                'top':      '165px',
+                'width':    '168px',
+                'z-index':  '1011'
+              })
+              .append ($('<div></div>')
+                .addClass ('presentation_overlay_inset_icon')
+                .css ({
+                  'background-image':    'url(modules/presentation/images/replay-icon.png)',
+                  'background-repeat':   'no-repeat',
+                  'background-position': '50%',
+                  'height':              '100px',
+                  'width':               '100%'
+                }))
+              .append ($('<div></div>')
+                .addClass ('presentation_overlay_inset_text')
+                .css ({
+                  'height':     '68px',
+                  'text-align': 'center',
+                  'width':      '100%'
+                })
+                .append ($('<p>REPLAY LESSON</p>').css ('color', 'white'))
+            ))
+            .append ($('<div></div>')
+              .addClass ('presentation_overlay')
+              .css ({
                 'background-color':    'black',
-                'background-position': '50%',
                 'height':              '100%',
-                'width':               '100%',
+                'cursor':               'pointer',
                 'opacity':             '0.5',
+                'position':            'absolute',
                 'top':                 '0px',
+                'width':               '100%',
                 'z-index':             '1010'
-              }));
+            }));
       })
     .oncomplete (
         function () {
@@ -800,7 +858,8 @@ function presentation_PresentationElement (id, presentation) {
       if (!self.intro.running) {
         self.intro.start ();
         self.element.addClass ('presentation_active');
-        $('.presentation_start_overlay', self.element).remove ();
+        $('.presentation_overlay_inset', self.element).remove ();
+        $('.presentation_overlay', self.element).remove ();
       }
   });
 
