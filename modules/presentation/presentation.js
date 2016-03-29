@@ -626,7 +626,20 @@ function presentation_PresentationElement (id, presentation) {
     .css ('background-repeat', 'no-repeat')
     .css ('width',             presentation.getWidth ())
     .css ('height',            presentation.getHeight ())
-    .css ('position',          'relative');
+    .css ('position',          'relative')
+    .prepend ($('<div></div>')
+      .addClass ('presentation_start_overlay')
+      .css ({
+        'background-image':    'url(modules/presentation/images/play-circle-outline.png)',
+        'background-repeat':   'no-repeat',
+        'background-color':    'black',
+        'background-position': '50%',
+        'height':              '100%',
+        'width':               '100%',
+        'opacity':             '0.5',
+        'top':                 '0px',
+        'z-index':             '1010'
+      }));
 
   // The IntroJS object associated with this presentation element.
   this.intro = introJs (this.element.get (0));
@@ -694,6 +707,20 @@ function presentation_PresentationElement (id, presentation) {
           self.element.css ('background-image', 'url(' + presentation.getImage () + ')');
           self.element.removeClass ('presentation_active');
           $('.introjs-tooltip').remove ();
+          self.element
+            .prepend ($('<div></div>')
+              .addClass ('presentation_start_overlay')
+              .css ({
+                'background-image':    'url(modules/presentation/images/replay-icon.png)',
+                'background-repeat':   'no-repeat',
+                'background-color':    'black',
+                'background-position': '50%',
+                'height':              '100%',
+                'width':               '100%',
+                'opacity':             '0.5',
+                'top':                 '0px',
+                'z-index':             '1010'
+              }));
       });
 
   this.element.click (
@@ -701,6 +728,7 @@ function presentation_PresentationElement (id, presentation) {
       if (!self.intro.running) {
         self.intro.start ();
         self.element.addClass ('presentation_active');
+        $('.presentation_start_overlay', self.element).remove ();
       }
   });
 
