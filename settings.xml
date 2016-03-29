@@ -53,7 +53,7 @@
     <module name="example"          enabled="false" url="modules/example/example.js"/>
     <module name="lightbox"         enabled="true"  url="modules/lightbox/lightbox.js"/>
     <module name="menu"             enabled="true"  url="modules/menu/menu.js"/>
-    <module name="presentation"     enabled="true"  url="modules/presentation/presentation.js"/>
+    <module name="presentation"     enabled="false"  url="modules/presentation/presentation.js"/>
     <module name="rate"             enabled="true"  url="modules/rate/rate.js"/>
     <module name="sidr"             enabled="true"  url="modules/sidr/sidr.js"/>
     <module name="template"         enabled="true"  url="modules/template/template.js"/>

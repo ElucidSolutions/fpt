@@ -88,7 +88,13 @@ function presentation_Step (id, image, text, position, top, left, width, height)
 
 /*
 */
-presentation_Step.prototype.createElement = function (intro, oncomplete) {
+presentation_Step.prototype.onstart = function (intro, complete) {
+  complete (function () {});
+}
+
+/*
+*/
+presentation_Step.prototype._createElement = function (intro, oncomplete) {
   return $('<div></div>')
     .addClass ('presentation_step')
     .attr ('data-presentation-step', this.id)
@@ -102,7 +108,26 @@ presentation_Step.prototype.createElement = function (intro, oncomplete) {
 
 /*
 */
-// function presentation_parseStep (presentationPath, element) {}
+presentation_Step.prototype.createElement = function (intro, oncomplete) {
+  return this._createElement.call (this, intro)
+    .addClass ('presentation_blank_step');
+}
+
+/*
+*/
+function presentation_parseStep (presentationPath, element) {
+  var path = presentationPath.concat ($('> name', element).text ());
+  return new presentation_Step (
+    presentation_getId ('presentation_step_page', path),
+    $('> image',    element).text (),
+    $('> text',     element).text (),
+    $('> position', element).text (),
+    $('> top',      element).text (),
+    $('> left',     element).text (),
+    $('> width',    element).text (),
+    $('> height',   element).text ()
+  );
+}
 ```
 
 The Button Step Class
@@ -125,9 +150,13 @@ presentation_ButtonStep.prototype.constructor = presentation_ButtonStep;
 
 /*
 */
+presentation_ButtonStep.prototype.onstart = function (intro, complete) {}
+
+/*
+*/
 presentation_ButtonStep.prototype.createElement = function (intro, oncomplete) {
   var self = this;
-  return presentation_Step.prototype.createElement.call (this, intro)
+  return presentation_Step.prototype._createElement.call (this, intro)
     .addClass ('presentation_button_step')
     .click (
       function (event) {
@@ -183,8 +212,12 @@ presentation_InputStep.prototype.checkInput = function (inputElement) {
 
 /*
 */
+presentation_InputStep.prototype.onstart = function (intro, complete) {}
+
+/*
+*/
 presentation_InputStep.prototype.createElement = function (intro, oncomplete) {
-  var element = presentation_Step.prototype.createElement.call (this, intro)
+  var element = presentation_Step.prototype._createElement.call (this, intro)
     .addClass ('presentation_input_step');
 
   var self = this;
@@ -318,8 +351,12 @@ presentation_QuizStep.prototype.onClick = function (stepElement, oncomplete) {
 
 /*
 */
+presentation_QuizStep.prototype.onstart = function (intro, complete) {}
+
+/*
+*/
 presentation_QuizStep.prototype.createElement = function (intro, oncomplete) {
-  var element = presentation_Step.prototype.createElement.call (this, intro)
+  var element = presentation_Step.prototype._createElement.call (this, intro)
     .addClass ('presentation_quiz_step');
 
   var testElement = $('<div></div>')
@@ -485,6 +522,8 @@ The Step Element Class
 function presentation_StepElement (intro, step) {
   var stepElement = this;
 
+  this.getStep = function () { return step; }
+
   // Indicates whether or not this step has been completed.
   var _completed = false;
 
@@ -531,6 +570,12 @@ function presentation_StepElement (intro, step) {
 
     // Executes the oncomplete event handlers.
     async.series (_oncomplete, done);
+  }
+
+  /*
+  */
+  this.start = function () {
+    step.onstart (intro, this.complete);
   }
 
   /*
@@ -669,7 +714,6 @@ function presentation_PresentationElement (id, presentation) {
 
   for (var i = 0; i < steps.length; i ++) {
     var step = steps [i];
-
     var stepElement = new presentation_StepElement (this.intro, step);
     stepElements.push (stepElement);
 
@@ -703,12 +747,15 @@ function presentation_PresentationElement (id, presentation) {
           }
           navElement.refresh ();
 
-          var currentStep = steps [self.intro._currentStep];
-          self.element.css ('background-image', 'url(' + currentStep.image + ')');
+          var stepElement = stepElements [self.intro._currentStep];
+          stepElement.start ();
+
+          var step = stepElement.getStep ();
+          self.element.css ('background-image', 'url(' + step.image + ')');
       })
-    .oncomplete (
+    .onexit (
         function () {
-          self.element.css ('background-image', 'url(' + presentation.getImage () + ')');
+          $('.introjs-tooltip').remove ();
       });
 
   this.element.click (

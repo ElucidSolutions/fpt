@@ -419,6 +419,10 @@
       document.detachEvent('onkeydown', this._onKeyDown);
     }
 
+    if (this._introExitCallback != undefined) {
+      this._introExitCallback.call(self);
+    }
+
     //set the step to zero
     this._currentStep = undefined;
 

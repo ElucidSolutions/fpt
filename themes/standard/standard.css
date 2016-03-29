@@ -679,7 +679,7 @@ tr.introjs-showElement > th {
   visibility: visible;
   padding: 30px;
   background-color: white;
-  min-width: 500px;
+  min-width: 725px;
   border-radius: 3px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
   -webkit-transition: opacity 0.1s ease-out;
@@ -1730,10 +1730,14 @@ table.padded-list tbody tr td {
   border-style: solid;
   border-width: 1px; }
 
-.presentation_quiz_step {
+.presentation_quiz_step,
+.presentation_blank_step,
+.presentation_button_step {
   opacity: 0; }
 
-.presentation_quiz_step.introjs-showElement {
+.presentation_quiz_step.introjs-showElement,
+.presentation_blank_step.introjs-showElement,
+.presentation_button_step.introjs-showElement {
   opacity: 1; }
 
 .presentation_test {

@@ -792,11 +792,15 @@ table.padded-list {
   border-width: 1px;
 }
 
-.presentation_quiz_step {
+.presentation_quiz_step,
+.presentation_blank_step,
+.presentation_button_step {
   opacity: 0;
 }
 
-.presentation_quiz_step.introjs-showElement {
+.presentation_quiz_step.introjs-showElement,
+.presentation_blank_step.introjs-showElement,
+.presentation_button_step.introjs-showElement {
   opacity: 1;
 }
 
