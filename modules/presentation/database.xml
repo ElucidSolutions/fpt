@@ -140,7 +140,7 @@
       </buttonStep>
       <testStep>
         <name>11_check_your_knowledge</name>
-        <image>modules/presentation/images/007-all-filled-out.jpg</image>
+        <image>modules/presentation/images/006-all-filled-out.jpg</image>
         <text><![CDATA[
           <p><strong>What values are allowed in Manufacturer Part Numbers?</strong></p>
           <p>Once you have completed the <em>Get Started</em> tab and saved your information, you will be able to move on to the <em>General</em> tab to continue.</p>

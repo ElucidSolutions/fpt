@@ -756,12 +756,16 @@ function presentation_PresentationElement (id, presentation) {
     .onexit (
         function () {
           self.element.css ('background-image', 'url(' + presentation.getImage () + ')');
+          self.element.removeClass ('presentation_active');
           $('.introjs-tooltip').remove ();
       });
 
   this.element.click (
     function () {
-      self.intro.running || self.intro.start ();
+      if (!self.intro.running) {
+        self.intro.start ();
+        self.element.addClass ('presentation_active');
+      }
   });
 
   PAGE_LOAD_HANDLERS.add (

@@ -5,6 +5,7 @@
 body {
   background-color: $darkest_gray;
   font-family: $default_header_font;
+  min-width: 1000px;
 }
 
 a {
@@ -771,6 +772,16 @@ table.padded-list {
 .presentation_presentation {
   border-width: 1px;
   border-style: solid;
+
+  .presentation_step {
+    opacity: 0;
+  }
+}
+
+.presentation_presentation.presentation_active {
+  .presentation_input_step {
+    opacity: 1;
+  }
 }
 
 .presentation_step > input {
@@ -792,12 +803,6 @@ table.padded-list {
   border-width: 1px;
 }
 
-.presentation_quiz_step,
-.presentation_blank_step,
-.presentation_button_step {
-  opacity: 0;
-}
-
 .presentation_quiz_step.introjs-showElement,
 .presentation_blank_step.introjs-showElement,
 .presentation_button_step.introjs-showElement {
@@ -815,3 +820,82 @@ table.padded-list {
   margin: 10px;
 }
 
+.introjs-tooltip {
+  font-family: Open Sans;
+  font-size:   14px;
+  line-height: 19px;
+
+  p {
+    margin: 0px 0px 20px 0px;
+  }
+}
+
+.presentation_disabled {
+  color: #BBBBBB;
+}
+
+.presentation_exit {
+  cursor:           pointer;
+  float:            right;
+  height:           10px;
+  width:            10px;
+  background: url('images/x-close.png') no-repeat;
+  background-size: cover;
+
+  -moz-transition: all .25s ease;
+  -webkit-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+.presentation_exit:hover {
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.presentation_nav {
+  border:     1px solid #ECECEC;
+  cursor:     pointer;
+  text-align: center;
+  height:     35px;
+  width:      100%;
+
+  tr {
+    background-color: white;
+  }
+
+  td {
+    padding: 0px;
+  }
+
+  .presentation_nav_next {
+    background: url('images/right-arrow-active.png') no-repeat 75% 10px;
+  }
+
+  .presentation_nav_next.presentation_disabled {
+    background-image: url('images/right-arrow-inactive.png');
+  }
+
+  .presentation_nav_back {
+    background: url('images/left-arrow-active.png') no-repeat 25% 10px;
+  }
+
+  .presentation_nav_back.presentation_disabled {
+    background-image: url('images/left-arrow-inactive.png');
+  }
+
+  .presentation_nav_step {
+    width: 35px
+  }
+
+  .presentation_current_step {
+    background-color: #F29A2F;
+    color: white;
+  }
+}
+
+.presentation_button_step {
+  cursor: pointer;
+}

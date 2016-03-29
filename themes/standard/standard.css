@@ -1018,7 +1018,8 @@ ol.search_results {
 /* I. General Elements */
 body {
   background-color: #5C5C5C;
-  font-family: "Open Sans" sans-serif; }
+  font-family: "Open Sans" sans-serif;
+  min-width: 1000px; }
 
 a {
   color: #ed1c24;
@@ -1713,6 +1714,11 @@ table.padded-list tbody tr td {
 .presentation_presentation {
   border-width: 1px;
   border-style: solid; }
+  .presentation_presentation .presentation_step {
+    opacity: 0; }
+
+.presentation_presentation.presentation_active .presentation_input_step {
+  opacity: 1; }
 
 .presentation_step > input {
   background-color: transparent;
@@ -1730,11 +1736,6 @@ table.padded-list tbody tr td {
   border-style: solid;
   border-width: 1px; }
 
-.presentation_quiz_step,
-.presentation_blank_step,
-.presentation_button_step {
-  opacity: 0; }
-
 .presentation_quiz_step.introjs-showElement,
 .presentation_blank_step.introjs-showElement,
 .presentation_button_step.introjs-showElement {
@@ -1749,7 +1750,6 @@ table.padded-list tbody tr td {
 .presentation_option > input {
   margin: 10px; }
 
-/* Presentation Feature */
 .introjs-tooltip {
   font-family: Open Sans;
   font-size: 14px;
