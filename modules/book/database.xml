@@ -8,12 +8,10 @@
         <div class='main_banner_block'/>
       </div>
       <div class='book_front_body'>
-        <div id='book_articles_section'>
-          <h2>Featured Additions</h2>
-          <hr/>
-          <p>Below are featured articles we would like to bring to your attention.</p>
-          <div class="article_article_list_block"/>
-        </div>
+        <h3>What is the New Capture Pricing Section?</h3>
+        <p>Previously, you would enter pricing information using manual entry into a spreadsheet without a way to validate your information or check for errors.</p>
+        <p>Now, with the Capture Pricing section, you will have three options for entering pricing data that provide a streamlined process spanning both eOffer and eMod.</p>
+        <p>This new method offers a more intelligent pricing template that captures a more detailed picture of your pricing structure and provides feedback on the data you enter into the system, ultimately reducing errors in submission.</p>
         <div class='rate_block'/>
       </div>
     ]]></body>
@@ -35,28 +33,28 @@
                 <name>what-is-the-formatted-pricing-tool</name>
                 <title><![CDATA[What is the Formatted Pricing Tool?]]></title>
                 <body><![CDATA[
-                  <div class="presentation_block">presentation/second_presentation</div>
+                  <div id="presentation" class="presentation_block">presentation/get_started_tab</div>
                 ]]></body>
               </page>
               <page>
                 <name>how-goods-services-impact-offer</name>
                 <title><![CDATA[How Your Goods and Services Impact Your Offer]]></title>
                 <body><![CDATA[
-                  <div class="presentation_block">presentation/first_presentation</div>
+                  <div id="presentation" class="presentation_block">presentation/get_started_tab</div>
                 ]]></body>
               </page>
               <page>
                 <name>set-up-fpt-from-wizard-management</name>
                 <title><![CDATA[Set Up the FPT From the Wizard Management Tool]]></title>
                 <body><![CDATA[
-                  <div class="presentation_block">presentation/first_presentation</div>
+                  <div id="presentation" class="presentation_block">presentation/get_started_tab</div>
                 ]]></body>
               </page>
               <page>
                 <name>choosing-correct-pricing-data-method</name>
                 <title><![CDATA[Choosing the Correct Pricing Data Entry Method]]></title>
                 <body><![CDATA[
-                  <div class="presentation_block">presentation/first_presentation</div>
+                  <div id="presentation" class="presentation_block">presentation/get_started_tab</div>
                 ]]></body>
               </page>
             <section>
@@ -67,21 +65,21 @@
                 <name>general-information</name>
                 <title><![CDATA[General Information]]></title>
                 <body><![CDATA[
-                  <div class="presentation_block">presentation/first_presentation</div>
+                  <div id="presentation" class="presentation_block">presentation/get_started_tab</div>
                 ]]></body>
               </page>
              <page>
                 <name>uploading-additional-photos</name>
                 <title><![CDATA[Uploading Additional Photos]]></title>
                 <body><![CDATA[
-                  <div class="presentation_block">presentation/first_presentation</div>
+                  <div id="presentation" class="presentation_block">presentation/get_started_tab</div>
                 ]]></body>
               </page>
              <page>
                 <name>discounts</name>
                 <title><![CDATA[Discounts]]></title>
                 <body><![CDATA[
-                  <div class="presentation_block">presentation/first_presentation</div>
+                  <div id="presentation" class="presentation_block">presentation/get_started_tab</div>
                 ]]></body>
               </page>
             </content>
