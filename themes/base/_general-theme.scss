@@ -394,11 +394,15 @@ tr:nth-child(even) {
 }
 
 .book_section.template_section[data-template-level="1"] {
-  padding: 0px 5% 2% 5%;
+  padding: 0px 20px;
+  margin: 0px auto;
+  max-width: 1300px;
 }
 
 .book_front_body {
-  padding: 0px 5% 2% 5%;
+  padding: 0px 20px;
+  margin: 0px auto;
+  max-width: 1300px;
 }
 
 /* II. Block Elements */
@@ -768,6 +772,10 @@ table.padded-list {
 }
 
 /* Presentation Module */
+
+.red {
+  color: $red;
+}
 
 .presentation_presentation {
   border-width: 1px;

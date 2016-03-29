@@ -45,7 +45,7 @@
         <left>289px</left>
         <width>124px</width>
         <height>21px</height>
-        <expression><![CDATA[^[A-Za-z1-9]{1,40}$]]></expression>
+        <expression><![CDATA[^[A-Za-z]+$]]></expression>
       </inputStep>
       <buttonStep>
         <name>4_select_the_product_type</name>
@@ -54,7 +54,7 @@
           <p><strong>Select the Product Type.</strong></p>
           <p>Double-click in the text box to reveal the drop-down menu and select <strong>Product</strong></p>
         ]]></text>
-        <position>top</position>
+        <position>top-middle-aligned</position>
         <top>232px</top>
         <left>414px</left>
         <width>147px</width>
@@ -67,11 +67,11 @@
           <p><strong>Select the Product Type.</strong></p>
           <p>Double-click in the text box to reveal the drop-down menu and select <strong>Product</strong></p>
         ]]></text>
-        <position>top</position>
-        <top>255px</top>
-        <left>563px</left>
-        <width>147px</width>
-        <height>21px</height>
+        <position>top-middle-aligned</position>
+        <top>232px</top>
+        <left>414px</left>
+        <width>296px</width>
+        <height>66px</height>
       </buttonStep>
       <buttonStep>
         <name>6_save_after_completing_each_row</name>
@@ -142,8 +142,9 @@
         <name>11_check_your_knowledge</name>
         <image>modules/presentation/images/006-all-filled-out.jpg</image>
         <text><![CDATA[
+          <p class="red"><strong>Comprehension Check</strong></p>
           <p><strong>What values are allowed in Manufacturer Part Numbers?</strong></p>
-          <p>Once you have completed the <em>Get Started</em> tab and saved your information, you will be able to move on to the <em>General</em> tab to continue.</p>
+          <p>Select an answer in the window below.</p>
         ]]></text>
         <position>top</position>
         <top>195px</top>
@@ -163,6 +164,19 @@
           </option>
         </options>
       </testStep>
+      <blankStep>
+        <name>12_conclusion</name>
+        <image>modules/presentation/images/006-all-filled-out.jpg</image>
+        <text><![CDATA[
+          <p><strong>Conclusion.</strong></p>
+          <p>Once you have completed the <em>Get Started</em> tab and saved your information, you will be able to move on to the <em>General</em> tab to continue.</p>
+        ]]></text>
+        <position>floating</position>
+        <top>250px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>
     </steps>
   </presentation>
 </database>

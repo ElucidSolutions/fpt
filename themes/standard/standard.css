@@ -658,6 +658,23 @@ tr.introjs-showElement > th {
   border-bottom-color: transparent;
   border-left-color: transparent; }
 
+.introjs-arrow.bottom-right {
+  bottom: -20px;
+  right: 10px;
+  border-top-color: white;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent; }
+
+.introjs-arrow.bottom-middle {
+  bottom: -20px;
+  left: 50%;
+  margin-left: -5px;
+  border-top-color: white;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent; }
+
 .introjs-arrow.left {
   left: -10px;
   top: 10px;
@@ -1330,10 +1347,14 @@ tr:nth-child(even) {
   list-style-image: none; }
 
 .book_section.template_section[data-template-level="1"] {
-  padding: 0px 5% 2% 5%; }
+  padding: 0px 20px;
+  margin: 0px auto;
+  max-width: 1300px; }
 
 .book_front_body {
-  padding: 0px 5% 2% 5%; }
+  padding: 0px 20px;
+  margin: 0px auto;
+  max-width: 1300px; }
 
 /* II. Block Elements */
 /* Book */
@@ -1711,6 +1732,9 @@ table.padded-list tbody tr td {
   padding-right: 30px; }
 
 /* Presentation Module */
+.red {
+  color: #ed1c24; }
+
 .presentation_presentation {
   border-width: 1px;
   border-style: solid; }
