@@ -60,12 +60,15 @@ function presentation_block (context, done) {
     presentationElementId = getUniqueId ();
   }
 
-  var presentationElement = presentation_DATABASE.getPresentation (context.element.text ()).createElement (presentationElementId);
-  presentation_SLIDE_ELEMENTS.save (presentationElement);
+  var presentation = presentation_DATABASE.getPresentation (context.element.text ());
+  if (!presentation) { return done (null, null); }
+
+  presentationElement = presentation.createElement (presentationElementId);
+  presentation_ELEMENTS.save (presentationElement);
 
   var element = presentationElement.element;
   context.element.replaceWith (element);
-  done (null, element);
+  done (null, null);
 }
 ```
 
@@ -621,10 +624,7 @@ function presentation_NavElement (intro, stepElements) {
             .addClass (stepElements.length === 0 || stepElements [0].completed () ? '' : 'presentation_disabled')
             .click (function (event) {
                 event.stopPropagation ();
-                stepElements [intro._currentStep].completed () && 
-                  (intro._currentStep < stepElements.length - 1 ?
-                    intro.nextStep ():
-                    intro.exit ());
+                stepElements [intro._currentStep].completed () && intro.nextStep ();
               }))));
 
   /*
@@ -676,6 +676,10 @@ The Presentation Element Class
 */
 function presentation_PresentationElement (id, presentation) {
   var self = this;
+
+  var _onComplete = [];
+  
+  this.onComplete = function (handler) { _onComplete.push (handler); }
 
   // Returns this presentation element's HTML element ID.
   this.id = function () { return id; }
@@ -785,6 +789,10 @@ function presentation_PresentationElement (id, presentation) {
                 'top':                 '0px',
                 'z-index':             '1010'
               }));
+      })
+    .oncomplete (
+        function () {
+          async.series (_onComplete);
       });
 
   this.element.click (
@@ -799,6 +807,7 @@ function presentation_PresentationElement (id, presentation) {
   PAGE_LOAD_HANDLERS.add (
     function (id, done) {
       self.intro.exit ();
+      presentation_ELEMENTS.clear ();
       done (null);
   });
 }
@@ -820,6 +829,13 @@ function presentation_PresentationElementsStore () {
   /*
   */
   var presentationElementFunctions = {};
+
+  /*
+  */
+  this.clear = function () {
+    presentationElements = {};
+    presentationElementFunctions = {};
+  }
 
   /*
   */
@@ -855,7 +871,7 @@ function presentation_PresentationElementsStore () {
 
 /*
 */
-var presentation_SLIDE_ELEMENTS = new presentation_PresentationElementsStore ();
+var presentation_ELEMENTS = new presentation_PresentationElementsStore ();
 ```
 
 Auxiliary Functions
