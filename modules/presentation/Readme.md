@@ -655,6 +655,11 @@ function presentation_NavElement (intro, stepElements) {
     stepElements [intro._currentStep].completed () ?
       nextElement.removeClass ('presentation_disabled'):
       nextElement.addClass    ('presentation_disabled');
+
+    // V. Label the Next button.
+    intro._currentStep < stepElements.length - 1 ?
+      nextElement.text ('NEXT'):
+      nextElement.text ('DONE');
   }
 
   // Register oncomplete event handlers.
