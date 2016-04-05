@@ -870,8 +870,10 @@ table.padded-list {
 .presentation_nav {
   border:     1px solid #ECECEC;
   cursor:     pointer;
-  text-align: center;
   height:     35px;
+  margin:     auto;
+  max-width:  290px;
+  text-align: center;
   width:      100%;
 
   tr {
@@ -880,10 +882,11 @@ table.padded-list {
 
   td {
     padding: 0px;
+    width: 30%;
   }
 
   .presentation_nav_next {
-    background: url('images/right-arrow-active.png') no-repeat 75% 10px;
+    background: url('images/right-arrow-active.png') no-repeat 85% 11px;
   }
 
   .presentation_nav_next.presentation_disabled {
@@ -891,7 +894,7 @@ table.padded-list {
   }
 
   .presentation_nav_back {
-    background: url('images/left-arrow-active.png') no-repeat 25% 10px;
+    background: url('images/left-arrow-active.png') no-repeat 15% 11px;
   }
 
   .presentation_nav_back.presentation_disabled {

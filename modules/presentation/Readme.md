@@ -631,6 +631,8 @@ function presentation_NavElement (intro, stepElements) {
                 event.stopPropagation ();
                 intro._currentStep > 0 && intro.previousStep ();
               }))
+        .append ($('<td>Step <span class="presentation_nav_step">1</span> of ' + stepElements.length + '</td>'))
+/*
         .append (stepElements.map (function (stepElement, i) {
             return $('<td>' + (i + 1) + '</td>')
               .attr ('tabindex', -1)
@@ -645,6 +647,7 @@ function presentation_NavElement (intro, stepElements) {
                   (i === 0 || stepElements [i - 1].completed ()) && intro.goToStep (i + 1);
                 });
           }))
+*/
         .append ($('<td>NEXT</td>')
             .attr ('tabindex', 0)
             .addClass ('presentation_nav_next')
@@ -669,12 +672,15 @@ function presentation_NavElement (intro, stepElements) {
       backElement.removeClass ('presentation_disabled');
 
     // II. Enable/disable the step buttons.
+/*
     for (var i = 0; i < stepElements.length; i ++) {
       var stepElement = $('[data-presentation-nav-step="' + i + '"]', self.element);
       (i === 0 || stepElements [i - 1].completed ()) ?
         stepElement.attr ('tabindex',  0).removeClass ('presentation_disabled'):
         stepElement.attr ('tabindex', -1).addClass ('presentation_disabled');
     }
+*/
+    $('.presentation_nav_step', self.element).text (intro._currentStep + 1);
 
     // III. Highlight the current step button.
     $('.presentation_nav_step', self.element).removeClass ('presentation_current_step');
