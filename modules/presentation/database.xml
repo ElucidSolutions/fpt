@@ -1,30 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <database>
   <presentation>
-    <name>get_started_tab</name>
-    <image>modules/presentation/images/001-get-started-mpn.jpg</image>
+    <name>get_started_tab_lesson</name>
+    <image>modules/presentation/images/getting_started_tab_lesson/001-get-started-mpn.jpg</image>
     <width>1000px</width>
     <height>500px</height>
     <steps>
       <blankStep>
         <name>1_introduction_to_the_get_started_tab</name>
-        <image>modules/presentation/images/001-get-started-mpn.jpg</image>
+        <image>modules/presentation/images/getting_started_tab_lesson/001-get-started-mpn.jpg</image>
         <text><![CDATA[
           <p><strong>Introduction to the Get Started tab</strong></p>
-          <p>The Get Started tab is the first step in the On-Screen Data Entry process. This is where you will enter the Manufacturer Part Number and Name, as well as indicate whether you are offering a Product or Accessory. The information you enter here will be automatically transferred to subsequent tabs.</p>
+          <p>The <em>Get Started</em> tab is the first step in the On-Screen Data Entry process. This is where you will enter the Manufacturer Part Number and Name, as well as indicate whether you are offering a Product or Accessory. The information you enter here will be automatically transferred to subsequent tabs.</p>
         ]]></text>
-        <position>right</position>
-        <top>155px</top>
-        <left>16px</left>
-        <width>91px</width>
-        <height>30px</height>
+        <position>floating</position>
+        <top>250px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>
+      <blankStep>
+        <name>2_filling_out_the_first_row</name>
+        <image>modules/presentation/images/getting_started_tab_lesson/001-get-started-mpn.jpg</image>
+        <text><![CDATA[
+          <p><strong>Filling out the first row.</strong></p>
+          <p>For this lesson, you are going to fill out the first row of the <em>Get Started</em> tab.</p>
+        ]]></text>
+        <position>bottom</position>
+        <top>227px</top>
+        <left>24px</left>
+        <width>543px</width>
+        <height>31px</height>
       </blankStep>
       <inputStep>
-        <name>2_enter_the_manufacturer_part_number</name>
-        <image>modules/presentation/images/001-get-started-mpn.jpg</image>
+        <name>3_type_a_manufacturer_part_number</name>
+        <image>modules/presentation/images/getting_started_tab_lesson/001-get-started-mpn.jpg</image>
         <text><![CDATA[
-          <p><strong>Enter the Manufacturer Part Number.</strong></p>
-          <p><em>Example: HSC0424PP</em><br/>This field should be entered exactly as provided by the manufacturer, and should not be edited in any way. You can enter up to 40 characters, but only numbers and letters. Enter a Manufacturer Part Number below.</p>
+          <p><strong>Type a Manufacturer Part Number.</strong></p>
+          <p><em>Example: HSC0424PP</em><br/>This field should be entered exactly as provided by the manufacturer, and should not be edited in any way. You can enter up to 40 characters. Enter a Manufacturer Part Number below.</p>
         ]]></text>
         <position>top</position>
         <top>232px</top>
@@ -34,11 +47,11 @@
         <expression><![CDATA[^[A-Za-z0-9]{1,40}$]]></expression>
       </inputStep>
       <inputStep>
-        <name>3_enter_the_manufacturer_part_name</name>
-        <image>modules/presentation/images/001-get-started-mpn.jpg</image>
+        <name>4_type_a_manufacturer_part_name</name>
+        <image>modules/presentation/images/getting_started_tab_lesson/001-get-started-mpn.jpg</image>
         <text><![CDATA[
-          <p><strong>Enter the Manufacturer Part Name.</strong></p>
-          <p><em>Example: Honeywell, or Samsung, or DeWalt</em><br/>The manufacturer name is the name of the original manufacturer of the product. Enter a name, using letters only, into the cell below.</p>
+          <p><strong>Type a Manufacturer Part Name.</strong></p>
+          <p><em>Example: Honeywell, or Samsung, or DeWalt</em><br/>The manufacturer name is the name of the original manufacturer of the product. Enter a name, with a maximum of 40 characters, into the cell below.</p>
         ]]></text>
         <position>top</position>
         <top>232px</top>
@@ -48,11 +61,11 @@
         <expression><![CDATA[^[A-Za-z]+$]]></expression>
       </inputStep>
       <buttonStep>
-        <name>4_select_the_product_type</name>
-        <image>modules/presentation/images/001-get-started-mpn.jpg</image>
+        <name>5_open_the_drop-down_menu</name>
+        <image>modules/presentation/images/getting_started_tab_lesson/001-get-started-mpn.jpg</image>
         <text><![CDATA[
-          <p><strong>Select the Product Type.</strong></p>
-          <p>Double-click in the text box to reveal the drop-down menu and select <strong>Product</strong></p>
+          <p><strong>Open the drop-down menu.</strong></p>
+          <p>Double-click in the text box to reveal the drop-down menu.</p>
         ]]></text>
         <position>top-middle-aligned</position>
         <top>232px</top>
@@ -61,11 +74,11 @@
         <height>21px</height>
       </buttonStep>
       <buttonStep>
-        <name>5_select_the_product_type</name>
-        <image>modules/presentation/images/003-product-accessory-type-open.jpg</image>
+        <name>6_select_the_product_type</name>
+        <image>modules/presentation/images/getting_started_tab_lesson/003-product-accessory-type-open.jpg</image>
         <text><![CDATA[
           <p><strong>Select the Product Type.</strong></p>
-          <p>Double-click in the text box to reveal the drop-down menu and select <strong>Product</strong></p>
+          <p>For this lesson, select <strong>Product</strong></p>
         ]]></text>
         <position>top-middle-aligned</position>
         <top>232px</top>
@@ -74,8 +87,8 @@
         <height>66px</height>
       </buttonStep>
       <buttonStep>
-        <name>6_save_after_completing_each_row</name>
-        <image>modules/presentation/images/004-product-selected.jpg</image>
+        <name>7_save_after_completing_each_row</name>
+        <image>modules/presentation/images/getting_started_tab_lesson/004-product-selected.jpg</image>
         <text><![CDATA[
           <p><strong>Save after completing each row.</strong></p>
           <p>Click the <strong>Save Products</strong> button frequently while filling out this tab. <em>If you do not save your work, it will be lost.</em></p>
@@ -87,8 +100,8 @@
         <height>34px</height>
       </buttonStep>
       <buttonStep>
-        <name>7_confirm_saved_products</name>
-        <image>modules/presentation/images/005-product-saved.jpg</image>
+        <name>8_confirm_saved_products</name>
+        <image>modules/presentation/images/getting_started_tab_lesson/005-product-saved.jpg</image>
         <text><![CDATA[
           <p><strong>Confirm saved products.</strong></p>
           <p>When the <em>Product Confirmation</em> pop-up message appears, click <strong>OK</strong>.</p>
@@ -100,11 +113,11 @@
         <height>134px</height>
       </buttonStep>
       <blankStep>
-        <name>8_complete_remaining_rows</name>
-        <image>modules/presentation/images/006-all-filled-out.jpg</image>
+        <name>9_filling_out_multiple_rows</name>
+        <image>modules/presentation/images/getting_started_tab_lesson/006-all-filled-out.jpg</image>
         <text><![CDATA[
-          <p><strong>Complete remaining rows.</strong></p>
-          <p>Fill out the rest of your product information in the cells provided.</p>
+          <p><strong>Filling out multiple rows</strong></p>
+          <p>For this lesson, we have filled out the remaining rows for you</p>
         ]]></text>
         <position>top</position>
         <top>254px</top>
@@ -113,11 +126,11 @@
         <height>87px</height>
       </blankStep>
       <buttonStep>
-        <name>9_save_your_work</name>
-        <image>modules/presentation/images/006-all-filled-out.jpg</image>
+        <name>10_save_your_work</name>
+        <image>modules/presentation/images/getting_started_tab_lesson/006-all-filled-out.jpg</image>
         <text><![CDATA[
           <p><strong>Save your work.</strong></p>
-          <p>Before moving onto the next tab, you <strong>must</strong> click the <strong>Save Products</strong> button. If you click off of this tab before saving, all of your information will be lost.
+          <p>Before moving onto the next tab, you <strong>must</strong> click the <strong>Save Products</strong> button. If you click off of this tab before saving, all of your information will be lost.</p>
         ]]></text>
         <position>top</position>
         <top>417px</top>
@@ -126,8 +139,8 @@
         <height>34px</height>
       </buttonStep>
       <buttonStep>
-        <name>10_confirm_saved_products</name>
-        <image>modules/presentation/images/007-all-filled-out.jpg</image>
+        <name>11_confirm_saved_products</name>
+        <image>modules/presentation/images/getting_started_tab_lesson/007-all-filled-out.jpg</image>
         <text><![CDATA[
           <p><strong>Confirm saved products.</strong></p>
           <p>When the <em>Product Confirmation</em> pop-up message appears, click <strong>OK</strong></p>
@@ -139,12 +152,11 @@
         <height>134px</height>
       </buttonStep>
       <testStep>
-        <name>11_check_your_knowledge</name>
-        <image>modules/presentation/images/006-all-filled-out.jpg</image>
+        <name>12_test_your_knowledge</name>
+        <image>modules/presentation/images/getting_started_tab_lesson/006-all-filled-out.jpg</image>
         <text><![CDATA[
-          <p class="red"><strong>Comprehension Check</strong></p>
-          <p><strong>What values are allowed in Manufacturer Part Numbers?</strong></p>
-          <p>Select an answer in the window below.</p>
+          <p class="red"><strong>Test Your Knowledge</strong></p>
+          <p><strong>If you click onto the next tab without saving your information first, your data will be lost.</strong><br/>Select an answer in the window below.</p>
         ]]></text>
         <position>top</position>
         <top>195px</top>
@@ -153,23 +165,24 @@
         <height>134px</height>
         <options>
           <option>
-            <label><![CDATA[Letters and numbers]]></label>
+            <label><![CDATA[True]]></label>
             <isCorrect>true</isCorrect>
             <onSelect><![CDATA[Correct!]]></onSelect>
           </option>
           <option>
-            <label><![CDATA[Special characters]]></label>
+            <label><![CDATA[False]]></label>
             <isCorrect>false</isCorrect>
             <onSelect><![CDATA[Incorrect!]]></onSelect>
           </option>
         </options>
       </testStep>
       <blankStep>
-        <name>12_conclusion</name>
-        <image>modules/presentation/images/006-all-filled-out.jpg</image>
+        <name>13_end_of_get_started_tab_lesson</name>
+        <image>modules/presentation/images/getting_started_tab_lesson/006-all-filled-out.jpg</image>
         <text><![CDATA[
-          <p><strong>Conclusion.</strong></p>
+          <p><strong>End of Get Started tab lesson.</strong></p>
           <p>Once you have completed the <em>Get Started</em> tab and saved your information, you will be able to move on to the <em>General</em> tab to continue.</p>
+          <p>Click <strong>Done</strong> to complete this lesson.</p>
         ]]></text>
         <position>floating</position>
         <top>250px</top>
@@ -333,7 +346,7 @@
         <image>modules/presentation/images/wizard_lesson/wizard_lesson_008.jpg</image>
         <text><![CDATA[
           <p><strong>Zonal Pricing</strong></p>
-          <p>If your pricing for a particular product differs based on location, you should select <strong>Yes</strong> from this drop-down. In this section, you will set up your zone categories for each contiguous and non-contiguous US state. You will indicate actual pricing later in a separate section.</p>
+          <p>If your pricing for a particular product differs based on location, you should select <strong>Yes</strong> from this drop-down. In this section, you will set up your zone categories for each contiguous (CONUS) and non-contiguous (NON-CONUS) state. You will indicate actual pricing later in a separate section.</p>
         ]]></text>
         <position>top</position>
         <top>231px</top>
@@ -372,7 +385,7 @@
         <image>modules/presentation/images/wizard_lesson/wizard_lesson_011.jpg</image>
         <text><![CDATA[
           <p><strong>Accessories</strong></p>
-          <p>Accessories are items that must be associated with a product, but can also be sold separately. Accessories will show up in your final template, but not in the left-hand navigational menu.</p>
+          <p><em>Example: A computer mouse.</em><br/>Accessories are items that must be associated with a product, but can also be sold separately. Accessories will show up in your final template, but not in the left-hand navigational menu.</p>
         ]]></text>
         <position>top</position>
         <top>184px</top>
@@ -436,8 +449,8 @@
         <name>20_test_your_knowledge</name>
         <image>modules/presentation/images/wizard_lesson/wizard_lesson_013.jpg</image>
         <text><![CDATA[
-          <p class="red"><strong>Comprehension Check</strong></p>
-          <p><strong>What values are allowed in Manufacturer Part Numbers?</strong></p>
+          <p class="red"><strong>Test Your Knowledge</strong></p>
+          <p><strong>You must complete the Wizard Management section before your pricing template can be completed.</strong></p>
           <p>Select an answer in the window below.</p>
         ]]></text>
         <position>top</position>
@@ -447,12 +460,12 @@
         <height>134px</height>
         <options>
           <option>
-            <label><![CDATA[Letters and numbers]]></label>
+            <label><![CDATA[True]]></label>
             <isCorrect>true</isCorrect>
             <onSelect><![CDATA[Correct!]]></onSelect>
           </option>
           <option>
-            <label><![CDATA[Special characters]]></label>
+            <label><![CDATA[False]]></label>
             <isCorrect>false</isCorrect>
             <onSelect><![CDATA[Incorrect!]]></onSelect>
           </option>
@@ -463,8 +476,8 @@
         <image>modules/presentation/images/wizard_lesson/wizard_lesson_013.jpg</image>
         <text><![CDATA[
           <p><strong>End of Wizard Management lesson.</strong></p>
-          <p>Once you have completed the Wizard Management section, you will be able to move on to Special Charges.</p>
-          <p>Click Done to complete this lesson.</p>
+          <p>Once you have completed the <em>Wizard Management</em> section, you will be able to move on to <em>Special Charges</em>.</p>
+          <p>Click <strong>Done</strong> to complete this lesson.</p>
         ]]></text>
         <position>floating</position>
         <top>250px</top>

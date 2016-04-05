@@ -24,7 +24,7 @@
     resource ID, Lucidity will load the resource
     referenced here.
   -->
-  <defaultId>book_page_page/modules%2Fbook%2Fdatabase.xml/fpt/formatted-pricing-tool-training/filling-out-the-getting-started-tab</defaultId>
+  <defaultId>book_page_page/modules%2Fbook%2Fdatabase.xml/fpt/formatted-pricing-tool-training/getting-started-tab-lesson</defaultId>
 
   <!--
     The theme element gives the location of the CSS

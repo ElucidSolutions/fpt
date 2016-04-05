@@ -21,18 +21,11 @@
         <title><![CDATA[Formatted Pricing Tool Training]]></title>
         <content>
           <page>
-            <name>filling-out-the-getting-started-tab</name>
-            <title><![CDATA[Filling out the Getting Started Tab]]></title>
+            <name>getting-started-tab-lesson</name>
+            <title><![CDATA[Getting Started Tab Lesson]]></title>
             <body><![CDATA[
-              <p>This is a lesson on filling out the <em>Get Started</em> tab. Click the play button to begin!</p>
-              <div id="presentation" class="presentation_block">presentation/get_started_tab</div>
-            ]]></body>
-          </page>
-          <page>
-            <name>what-is-the-formatted-pricing-tool</name>
-            <title><![CDATA[What is the Formatted Pricing Tool?]]></title>
-            <body><![CDATA[
-              <div id="presentation" class="presentation_block">presentation/get_started_tab</div>
+              <p>This is a lesson on filling out the <em>Get Started</em> tab. You must fill out this section before you can move onto the other tabs in the template. Click the play button to begin!</p>
+              <div id="presentation" class="presentation_block">presentation/get_started_tab_lesson</div>
             ]]></body>
           </page>
           <page>
@@ -47,6 +40,7 @@
             <name>special-charges-lesson</name>
             <title><![CDATA[Special Charges Lesson]]></title>
             <body><![CDATA[
+              <p>This is a lesson on completing the <em>Special Charges</em> section. If you selected <strong>Yes</strong> to this section in <em>Wizard Management</em>, you will see it added to the left-hand navigation menu. Click the play button to begin!</p>
               <div id="presentation" class="presentation_block">presentation/special_charges_lesson</div>
             ]]></body>
           </page>
