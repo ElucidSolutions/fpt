@@ -43,7 +43,13 @@
               <div id="presentation" class="presentation_block">presentation/wizard_management_lesson</div>
             ]]></body>
           </page>
-          
+          <page>
+            <name>special-charges-lesson</name>
+            <title><![CDATA[Special Charges Lesson]]></title>
+            <body><![CDATA[
+              <div id="presentation" class="presentation_block">presentation/special_charges_lesson</div>
+            ]]></body>
+          </page>
         </content>
       </section>
     </content>

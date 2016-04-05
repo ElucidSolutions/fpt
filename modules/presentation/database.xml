@@ -239,77 +239,77 @@
       </buttonStep>
       <buttonStep>
         <name>5_choose_your_discount_level</name>
-        <image>modules/presentation/images/wizard_lesson_003.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_003.jpg</image>
         <text><![CDATA[
           <p><strong>Choose your Discount level.</strong></p>
           <p>You will need to choose whether the discount(s) is offered at the offer, SIN, or line item level. For this lesson, click the radio button next to <em>Offer Level</em>.</p>
         ]]></text>
         <position>top</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
+        <top>126px</top>
+        <left>244px</left>
+        <width>305px</width>
+        <height>35px</height>
       </buttonStep>
-      <buttonStep>
+      <blankStep>
         <name>6_adding_delivery_to_your_offer</name>
-        <image>modules/presentation/images/wizard_lesson_004.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_004.jpg</image>
         <text><![CDATA[
           <p><strong>Adding Delivery to your offer.</strong></p>
           <p>If you select <strong>Yes</strong> to the <em>Delivery</em> feature, you will specify the delivery type for the location(s) that applies to your offer on a later screen. The delivery types you can choose from are: FOB Destination, FOB Origin, FOB Worldwide, and No Delivery.</p>
         ]]></text>
         <position>top</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
-      </buttonStep>
+        <top>158px</top>
+        <left>54px</left>
+        <width>490px</width>
+        <height>35px</height>
+      </blankStep>
       <buttonStep>
         <name>7_open_the_delivery_drop-down_menu</name>
-        <image>modules/presentation/images/wizard_lesson_005.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_004.jpg</image>
         <text><![CDATA[
           <p><strong>Open the Delivery drop-down menu.</strong></p>
           <p>Click on the down-facing arrow in the <em>Delivery</em> row to reveal the drop-down menu.</p>
         ]]></text>
         <position>top</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
+        <top>169px</top>
+        <left>193px</left>
+        <width>46px</width>
+        <height>19px</height>
       </buttonStep>
       <buttonStep>
         <name>8_select_yes</name>
-        <image>modules/presentation/images/wizard_lesson_005.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_005.jpg</image>
         <text><![CDATA[
           <p><strong>Select Yes.</strong></p>
           <p>For this lesson, select <strong>Yes</strong> from the drop-down.</p>
         ]]></text>
         <position>top</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
+        <top>169px</top>
+        <left>193px</left>
+        <width>46px</width>
+        <height>54px</height>
       </buttonStep>
-      <buttonStep>
+      <blankStep>
         <name>9_choose_your_delivery_level</name>
-        <image>modules/presentation/images/wizard_lesson_unselected.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_006.jpg</image>
         <text><![CDATA[
           <p><strong>Choose your Delivery level.</strong></p>
           <p>You will need to select the level at which your delivery option(s) applies. For this lesson, click the radio button next to <em>SIN Level</em>.</p>
         ]]></text>
         <position>top</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
-      </buttonStep>
+        <top>159px</top>
+        <left>244px</left>
+        <width>305px</width>
+        <height>35px</height>
+      </blankStep>
       <blankStep>
         <name>10_understanding_your_selections</name>
-        <image>modules/presentation/images/wizard_lesson_006.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_006.jpg</image>
         <text><![CDATA[
           <p><strong>Understanding your selections.</strong></p>
           <p>To help you understand which selections in <em>Wizard Management</em> apply to your offer, we will now provide you with the definition for each term. For instructional purposes, we will select <strong>Yes</strong> for each option on this screen.</p>
         ]]></text>
-        <position>top</position>
+        <position>floating</position>
         <top>250px</top>
         <left>500px</left>
         <width>0px</width>
@@ -317,116 +317,116 @@
       </blankStep>
       <blankStep>
         <name>11_contractor_warranty</name>
-        <image>modules/presentation/images/wizard_lesson_007.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_007.jpg</image>
         <text><![CDATA[
           <p><strong>Contractor Warranty</strong></p>
           <p>The Contractor Warranty is the warranty your company offers in addition to the manufacturer's warranty. It can be established at the SIN level only and will be applied to all products under that SIN.</p>
         ]]></text>
         <position>top</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
+        <top>201px</top>
+        <left>193px</left>
+        <width>46px</width>
+        <height>19px</height>
       </blankStep>
       <blankStep>
         <name>12_zonal_pricing</name>
-        <image>modules/presentation/images/wizard_lesson_008.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_008.jpg</image>
         <text><![CDATA[
           <p><strong>Zonal Pricing</strong></p>
           <p>If your pricing for a particular product differs based on location, you should select <strong>Yes</strong> from this drop-down. In this section, you will set up your zone categories for each contiguous and non-contiguous US state. You will indicate actual pricing later in a separate section.</p>
         ]]></text>
         <position>top</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
+        <top>231px</top>
+        <left>193px</left>
+        <width>46px</width>
+        <height>19px</height>
       </blankStep>
       <blankStep>
         <name>13_special_charges</name>
-        <image>modules/presentation/images/wizard_lesson_009.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_009.jpg</image>
         <text><![CDATA[
           <p><strong>Special Charges</strong></p>
           <p>This field is used to indicate additional charges for different delivery options. Special Charges include, but are not limited to: One Day Service, Inside Delivery, Assembly, and Installation.</p>
         ]]></text>
         <position>top</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
+        <top>136px</top>
+        <left>603px</left>
+        <width>271px</width>
+        <height>19px</height>
       </blankStep>
       <blankStep>
         <name>14_special_features</name>
-        <image>modules/presentation/images/wizard_lesson_010.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_010.jpg</image>
         <text><![CDATA[
           <p><strong>Special Features.</strong></p>
           <p>This section is divided into two categories: Environmental Features and Special Features.</p>
         ]]></text>
         <position>top</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
+        <top>160px</top>
+        <left>603px</left>
+        <width>271px</width>
+        <height>19px</height>
       </blankStep>
       <blankStep>
         <name>15_accessories</name>
-        <image>modules/presentation/images/wizard_lesson_011.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_011.jpg</image>
         <text><![CDATA[
           <p><strong>Accessories</strong></p>
           <p>Accessories are items that must be associated with a product, but can also be sold separately. Accessories will show up in your final template, but not in the left-hand navigational menu.</p>
         ]]></text>
         <position>top</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
+        <top>184px</top>
+        <left>603px</left>
+        <width>271px</width>
+        <height>19px</height>
       </blankStep>
       <blankStep>
         <name>16_options</name>
-        <image>modules/presentation/images/wizard_lesson_012.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_012.jpg</image>
         <text><![CDATA[
           <p><strong>Options</strong></p>
           <p>An option is a configurable element of a product, or a feature that may be chosen as an addition to, or replacement for, standard equipment and features. Examples of options include but are not limited to: color, size, and fabric type.</p>
         ]]></text>
         <position>top</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
+        <top>208px</top>
+        <left>603px</left>
+        <width>271px</width>
+        <height>19px</height>
       </blankStep>
       <blankStep>
         <name>17_photos</name>
-        <image>modules/presentation/images/wizard_lesson_013.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_013.jpg</image>
         <text><![CDATA[
           <p><strong>Photos</strong></p>
           <p>Selecting <strong>Yes</strong> to this field indicates that you have additional photographs of the product you are selling. This selection will appear in your <em>Capture Pricing</em> template later on. You will then upload the additional photographs via the separate <strong>Upload Photo</strong> interface.</p>
         ]]></text>
         <position>top</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
+        <top>232px</top>
+        <left>603px</left>
+        <width>271px</width>
+        <height>19px</height>
       </blankStep>
       <buttonStep>
         <name>18_save_your_selections</name>
-        <image>modules/presentation/images/wizard_lesson_014.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_013.jpg</image>
         <text><![CDATA[
           <p><strong>Save your selections.</strong></p>
           <p>You must save your work before moving on to a new section; otherwise, your information will be lost. Click the <strong>Save</strong> button.</p>
         ]]></text>
         <position>top</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
+        <top>288px</top>
+        <left>252px</left>
+        <width>70px</width>
+        <height>19px</height>
       </buttonStep>
       <blankStep>
         <name>19_your_left-hand_menu_has_changed</name>
-        <image>modules/presentation/images/wizard-navigation-additions.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard-navigation-additions.jpg</image>
         <text><![CDATA[
           <p><strong>Your left-hand menu has changed.</strong></p>
           <p>Once you have saved your information, you will notice that many of your selections now appear in the left-hand navigational menu, and will require separate completion.</p>
         ]]></text>
-        <position>top</position>
+        <position>floating</position>
         <top>250px</top>
         <left>500px</left>
         <width>0px</width>
@@ -434,7 +434,7 @@
       </blankStep>
       <testStep>
         <name>20_test_your_knowledge</name>
-        <image>modules/presentation/images/006-all-filled-out.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_013.jpg</image>
         <text><![CDATA[
           <p class="red"><strong>Comprehension Check</strong></p>
           <p><strong>What values are allowed in Manufacturer Part Numbers?</strong></p>
@@ -460,13 +460,13 @@
       </testStep>
       <blankStep>
         <name>21_end_of_wizard_management_lesson</name>
-        <image>modules/presentation/images/006-all-filled-out.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_013.jpg</image>
         <text><![CDATA[
           <p><strong>End of Wizard Management lesson.</strong></p>
           <p>Once you have completed the Wizard Management section, you will be able to move on to Special Charges.</p>
           <p>Click Done to complete this lesson.</p>
         ]]></text>
-        <position>top</position>
+        <position>floating</position>
         <top>250px</top>
         <left>500px</left>
         <width>0px</width>
@@ -476,48 +476,48 @@
   </presentation>
   <presentation>
     <name>special_charges_lesson</name>
-    <image>modules/presentation/images/spec_charges_001.jpg</image>
+    <image>modules/presentation/images/special_charges_lesson/spec_charges_001.jpg</image>
     <width>1000px</width>
     <height>500px</height>
     <steps>
       <blankStep>
         <name>1_introduction_to_the_special_charges_section</name>
-        <image>modules/presentation/images/spec_charges_001</image>
+        <image>modules/presentation/images/special_charges_lesson/spec_charges_001.jpg</image>
         <text><![CDATA[
           <p><strong>Introduction to the Special Charges section.</strong></p>
           <p>The <em>Special Charges</em> section is where you will specify which charge(s) applies to your offer, included but not limited to: charges for delivery, assembly, training, and installation.</p>
         ]]></text>
-        <position>right</position>
-        <top>155px</top>
-        <left>16px</left>
-        <width>91px</width>
-        <height>30px</height>
-      </blankStep>
-      <blankStep>
-        <name>2_open_the_sin_drop-down_menu</name>
-        <image>modules/presentation/images/spec_charges_001.jpg</image>
-        <text><![CDATA[
-          <p><strong>Open the SIN drop-down menu.</strong></p>
-          <p>Before you select your charge(s), you will need to indicate under which SIN they apply. Click on the down-facing arrow in the <em>SIN/NSN</em> row to reveal the drop-down menu.</p>
-        ]]></text>
-        <position>top</position>
+        <position>floating</position>
         <top>250px</top>
         <left>500px</left>
         <width>0px</width>
         <height>0px</height>
       </blankStep>
       <buttonStep>
+        <name>2_open_the_sin_drop-down_menu</name>
+        <image>modules/presentation/images/special_charges_lesson/spec_charges_001.jpg</image>
+        <text><![CDATA[
+          <p><strong>Open the SIN drop-down menu.</strong></p>
+          <p>Before you select your charge(s), you will need to indicate under which SIN they apply. Click on the down-facing arrow in the <em>SIN/NSN</em> row to reveal the drop-down menu.</p>
+        ]]></text>
+        <position>top</position>
+        <top>86px</top>
+        <left>16px</left>
+        <width>210px</width>
+        <height>21px</height>
+      </buttonStep>
+      <buttonStep>
         <name>3_select_your_sin</name>
-        <image>modules/presentation/images/spec_charges_002.jpg</image>
+        <image>modules/presentation/images/special_charges_lesson/spec_charges_002.jpg</image>
         <text><![CDATA[
           <p><strong>Select your SIN.</strong></p>
           <p>For this lesson, select 341 500.</p>
         ]]></text>
         <position>top</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
+        <top>86px</top>
+        <left>16px</left>
+        <width>210px</width>
+        <height>21px</height>
       </buttonStep>
       <blankStep>
         <name>4_click_the_select_button</name>
