@@ -181,13 +181,13 @@
   </presentation>
   <presentation>
     <name>wizard_management_lesson</name>
-    <image>modules/presentation/images/wizard_lesson_001.jpg</image>
+    <image>modules/presentation/images/wizard_lesson/wizard_lesson_001.jpg</image>
     <width>1000px</width>
     <height>500px</height>
     <steps>
       <blankStep>
         <name>1_introduction_to_wizard_management</name>
-        <image>modules/presentation/images/wizard_lesson_001.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_001.jpg</image>
         <text><![CDATA[
           <p><strong>Introduction to Wizard Management.</strong></p>
           <p>The <em>Wizard Management</em> section is the first step to building out your pricing structure. This step is integral to the rest of your offer because each selection you make here will appear on the left-hand panel of your screen, and/or as a separate tab in your <em>Capture Pricing</em> table later on.</p>
@@ -200,42 +200,42 @@
       </blankStep>
       <blankStep>
         <name>2_adding a discount to your offer</name>
-        <image>modules/presentation/images/wizard_lesson_001.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_001.jpg</image>
         <text><![CDATA[
           <p><strong>Adding a Discount to your offer.</strong></p>
           <p>A discount is the percentage by which the offer price will be reduced. If you are offering a discount on your product or accessory, you will need to specify if your discount applies at the offer, SIN, or line item level.</p>
         ]]></text>
         <position>top</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
+        <top>126px</top>
+        <left>54px</left>
+        <width>490px</width>
+        <height>35px</height>
       </blankStep>
       <buttonStep>
         <name>3_open the discounts drop-down menu</name>
-        <image>modules/presentation/images/wizard_lesson_002.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_001.jpg</image>
         <text><![CDATA[
           <p><strong>Open the Discounts drop-down menu.</strong></p>
           <p>Click on the down-facing arrow in the Discounts row to reveal the drop-down menu.</p>
         ]]></text>
         <position>top</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
+        <top>134px</top>
+        <left>193px</left>
+        <width>46px</width>
+        <height>19px</height>
       </buttonStep>
       <buttonStep>
         <name>4_select_yes</name>
-        <image>modules/presentation/images/wizard_lesson_002.jpg</image>
+        <image>modules/presentation/images/wizard_lesson/wizard_lesson_002.jpg</image>
         <text><![CDATA[
           <p><strong>Select Yes.</strong></p>
           <p>For this lesson, click Yes from the drop-down.</p>
         ]]></text>
         <position>top</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
+        <top>134px</top>
+        <left>193px</left>
+        <width>46px</width>
+        <height>54px</height>
       </buttonStep>
       <buttonStep>
         <name>5_choose_your_discount_level</name>
@@ -458,26 +458,211 @@
           </option>
         </options>
       </testStep>
+      <blankStep>
+        <name>21_end_of_wizard_management_lesson</name>
+        <image>modules/presentation/images/006-all-filled-out.jpg</image>
+        <text><![CDATA[
+          <p><strong>End of Wizard Management lesson.</strong></p>
+          <p>Once you have completed the Wizard Management section, you will be able to move on to Special Charges.</p>
+          <p>Click Done to complete this lesson.</p>
+        ]]></text>
+        <position>top</position>
+        <top>250px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>
     </steps>
   </presentation>
   <presentation>
     <name>special_charges_lesson</name>
-    <image>modules/presentation/images/spec_charges_001</image>
+    <image>modules/presentation/images/spec_charges_001.jpg</image>
     <width>1000px</width>
-    <height>500px</heigh>
+    <height>500px</height>
     <steps>
       <blankStep>
-        <name>1_introduction_to_the_get_started_tab</name>
-        <image>modules/presentation/images/001-get-started-mpn.jpg</image>
+        <name>1_introduction_to_the_special_charges_section</name>
+        <image>modules/presentation/images/spec_charges_001</image>
         <text><![CDATA[
-          <p><strong>Introduction to the Get Started tab</strong></p>
-          <p>The Get Started tab is the first step in the On-Screen Data Entry process. This is where you will enter the Manufacturer Part Number and Name, as well as indicate whether you are offering a Product or Accessory. The information you enter here will be automatically transferred to subsequent tabs.</p>
+          <p><strong>Introduction to the Special Charges section.</strong></p>
+          <p>The <em>Special Charges</em> section is where you will specify which charge(s) applies to your offer, included but not limited to: charges for delivery, assembly, training, and installation.</p>
         ]]></text>
         <position>right</position>
         <top>155px</top>
         <left>16px</left>
         <width>91px</width>
         <height>30px</height>
+      </blankStep>
+      <blankStep>
+        <name>2_open_the_sin_drop-down_menu</name>
+        <image>modules/presentation/images/spec_charges_001.jpg</image>
+        <text><![CDATA[
+          <p><strong>Open the SIN drop-down menu.</strong></p>
+          <p>Before you select your charge(s), you will need to indicate under which SIN they apply. Click on the down-facing arrow in the <em>SIN/NSN</em> row to reveal the drop-down menu.</p>
+        ]]></text>
+        <position>top</position>
+        <top>250px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>
+      <buttonStep>
+        <name>3_select_your_sin</name>
+        <image>modules/presentation/images/spec_charges_002.jpg</image>
+        <text><![CDATA[
+          <p><strong>Select your SIN.</strong></p>
+          <p>For this lesson, select 341 500.</p>
+        ]]></text>
+        <position>top</position>
+        <top>250px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </buttonStep>
+      <blankStep>
+        <name>4_click_the_select_button</name>
+        <image>modules/presentation/images/spec_charges_003.jpg</image>
+        <text><![CDATA[
+          <p><strong>Click the Select button.</strong></p>
+          <p>Click the <strong>Select</strong> button to save your SIN selection.</p>
+        ]]></text>
+        <position>top</position>
+        <top>250px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>
+      <buttonStep>
+        <name>5_uncheck_the_none_box</name>
+        <image>modules/presentation/images/spec_charges_003.jpg</image>
+        <text><![CDATA[
+          <p><strong>Uncheck the <em>None</em> box.</strong></p>
+          <p>The <em>None</em> checkbox will already be selected when you begin. You will need to uncheck it before making any further selections. Un-select the <em>None</em> radio button by clicking on the check mark.</p>
+        ]]></text>
+        <position>top</position>
+        <top>250px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </buttonStep>
+      <buttonStep>
+        <name>6_choose_your_special_charges</name>
+        <image>modules/presentation/images/spec_charges_004.jpg</image>
+        <text><![CDATA[
+          <p><strong>Choose your special charges.</p>
+          <p>You will be able to select as many charges as apply to your offer. For this lesson, only click on the <em>Two Day Service</em> checkbox.</p>
+        ]]></text>
+        <position>top</position>
+        <top>250px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </buttonStep>
+      <buttonStep>
+        <name>7_save_your_work</name>
+        <image>modules/presentation/images/spec_charges_006.jpg</image>
+        <text><![CDATA[
+          <p><strong>Save your work.</strong></p>
+          <p>Click on the <strong>Save</strong> button.</p>
+        ]]></text>
+        <position>top</position>
+        <top>250px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </buttonStep>
+      <blankStep>
+        <name>8_check_the_special_charges_table</name>
+        <image>modules/presentation/images/spec_charges_006.jpg</image>
+        <text><![CDATA[
+          <p><strong>Check the Special Charges table.</strong></p>
+          <p>You will see your choice has been added to the table below.</p>
+        ]]></text>
+        <position>top</position>
+        <top>250px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>
+      <blankStep>
+        <name>9_add_another_sin</name>
+        <image>modules/presentation/images/spec_charges_007.jpg</image>
+        <text><![CDATA[
+          <p><strong>Add another SIN.</strong></p>
+          <p>If you have multiple SINs that require Special Charges, you will need to repeat the same steps from the beginning and make the applicable selections. The Special Charges for each SIN will be displayed as separate rows in the table.</p>
+          <p>For this lesson, we have chosen a new SIN and special charge for you. Click <strong>Next</strong>.</p>
+        ]]></text>
+        <position>top</position>
+        <top>250px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>
+      <buttonStep>
+        <name>10_edit_a_special_charge</name>
+        <image>modules/presentation/images/spec_charges_008.jpg</image>
+        <text><![CDATA[
+          <p><strong>Edit a Special Charge.</strong></p>
+          <p>To add or delete a Special Charge from the table, click on the pencil icon in the Action column. For this lesson, click the pencil icon in the row for <strong>SIN 341 500</strong>.</p>
+        ]]></text>
+        <position>top</position>
+        <top>250px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </buttonStep>
+      <buttonStep>
+        <name>11_delete_a_special_charge</name>
+        <image>modules/presentation/images/spec_charge_008.jpg</image>
+        <text><![CDATA[
+          <p><strong>Delete a Special Charge.</strong></p>
+          <p>Click on the check box next to <em>Two-Day Service</em> to unselect it.</p>
+        ]]></text>
+        <position>top</position>
+        <top>250px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </buttonStep>
+      <buttonStep>
+        <name>12_add_a_special_charge</name>
+        <image>modules/presentation/images/spec_charge_009.jpg</image>
+        <text><![CDATA[
+          <p><strong>Add a Special Charge.</strong></p>
+          <p>Click on the box next to <em>Expedite Premium</em>.</p>
+        ]]></text>
+        <position>top</position>
+        <top>250px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </buttonStep>
+      <buttonStep>
+        <name>13_save_your_work</name>
+        <image>modules/presentation/images/spec_charge_009.jpg</image>
+        <text><![CDATA[
+          <p><strong>Save your work.</strong></p>
+          <p>Click the <strong>Save</strong> button.</p>
+        ]]></text>
+        <position>top</position>
+        <top>250px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </buttonStep>
+      <blankStep>
+        <name>14_end_of_special_charges_lesson</name>
+        <image>modules/presentation/images/spec_charges_011.jpg</image>
+        <text><![CDATA[
+          <p><strong>End of Special Charges lesson.</strong></p>
+          <p>Once you have completed the <em>Special Charges</em> section, you will be able to move on to the <em>Special Features</em> section.</p>
+          <p>Click <strong>Done</strong> to complete this lesson.</p>
+        ]]></text>
+        <position>top</position>
+        <top>250px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
       </blankStep>
     </steps>
   </presentation>

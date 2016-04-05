@@ -35,6 +35,15 @@
               <div id="presentation" class="presentation_block">presentation/get_started_tab</div>
             ]]></body>
           </page>
+          <page>
+            <name>wizard-management-lesson</name>
+            <title><![CDATA[Wizard Management Lesson]]></title>
+            <body><![CDATA[
+              <p>This is a lesson on completing the <em>Wizard Management</em> section. Click the play button to begin!</p>
+              <div id="presentation" class="presentation_block">presentation/wizard_management_lesson</div>
+            ]]></body>
+          </page>
+          
         </content>
       </section>
     </content>
