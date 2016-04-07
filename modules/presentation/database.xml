@@ -336,10 +336,10 @@
           <p>The Contractor Warranty is the warranty your company offers in addition to the manufacturer's warranty. It can be established at the SIN level only and will be applied to all products under that SIN.</p>
         ]]></text>
         <position>top</position>
-        <top>201px</top>
-        <left>193px</left>
-        <width>46px</width>
-        <height>19px</height>
+        <top>190px</top>
+        <left>54px</left>
+        <width>490px</width>
+        <height>35px</height>
       </blankStep>
       <blankStep>
         <name>12_zonal_pricing</name>
@@ -349,10 +349,10 @@
           <p>If your pricing for a particular product differs based on location, you should select <strong>Yes</strong> from this drop-down. In this section, you will set up your zone categories for each contiguous (CONUS) and non-contiguous (NON-CONUS) state. You will indicate actual pricing later in a separate section.</p>
         ]]></text>
         <position>top</position>
-        <top>231px</top>
-        <left>193px</left>
-        <width>46px</width>
-        <height>19px</height>
+        <top>222px</top>
+        <left>54px</left>
+        <width>490px</width>
+        <height>35px</height>
       </blankStep>
       <blankStep>
         <name>13_special_charges</name>
