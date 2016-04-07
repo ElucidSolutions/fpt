@@ -14,7 +14,7 @@
           <p>The <em>Get Started</em> tab is the first step in the On-Screen Data Entry process. This is where you will enter the Manufacturer Part Number and Name, as well as indicate whether you are offering a Product or Accessory. The information you enter here will be automatically transferred to subsequent tabs.</p>
         ]]></text>
         <position>floating</position>
-        <top>250px</top>
+        <top>400px</top>
         <left>500px</left>
         <width>0px</width>
         <height>0px</height>
