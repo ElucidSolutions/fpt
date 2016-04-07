@@ -772,7 +772,7 @@ function presentation_PresentationElement (id, presentation) {
         'background-color':    'black',
         'height':              '100%',
         'cursor':               'pointer',
-        'opacity':             '0.5',
+        'opacity':             '0.4',
         'position':            'absolute',
         'top':                 '0px',
         'width':               '100%',
@@ -789,7 +789,7 @@ function presentation_PresentationElement (id, presentation) {
     showStepNumbers: true,
     showButtons: false,
     showBullets: false,
-    overlayOpacity: 0.5,
+    overlayOpacity: 0.4,
     steps: []
   };
 
@@ -882,7 +882,7 @@ function presentation_PresentationElement (id, presentation) {
                 'background-color':    'black',
                 'height':              '100%',
                 'cursor':               'pointer',
-                'opacity':             '0.5',
+                'opacity':             '0.4',
                 'position':            'absolute',
                 'top':                 '0px',
                 'width':               '100%',

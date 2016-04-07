@@ -14,7 +14,7 @@
           <p>The <em>Get Started</em> tab is the first step in the On-Screen Data Entry process. This is where you will enter the Manufacturer Part Number and Name, as well as indicate whether you are offering a Product or Accessory. The information you enter here will be automatically transferred to subsequent tabs.</p>
         ]]></text>
         <position>floating</position>
-        <top>250px</top>
+        <top>400px</top>
         <left>500px</left>
         <width>0px</width>
         <height>0px</height>
@@ -206,7 +206,7 @@
           <p>The <em>Wizard Management</em> section is the first step to building out your pricing structure. This step is integral to the rest of your offer because each selection you make here will appear on the left-hand panel of your screen, and/or as a separate tab in your <em>Capture Pricing</em> table later on.</p>
         ]]></text>
         <position>floating</position>
-        <top>250px</top>
+        <top>400px</top>
         <left>500px</left>
         <width>0px</width>
         <height>0px</height>
@@ -336,10 +336,10 @@
           <p>The Contractor Warranty is the warranty your company offers in addition to the manufacturer's warranty. It can be established at the SIN level only and will be applied to all products under that SIN.</p>
         ]]></text>
         <position>top</position>
-        <top>201px</top>
-        <left>193px</left>
-        <width>46px</width>
-        <height>19px</height>
+        <top>190px</top>
+        <left>54px</left>
+        <width>490px</width>
+        <height>35px</height>
       </blankStep>
       <blankStep>
         <name>12_zonal_pricing</name>
@@ -349,10 +349,10 @@
           <p>If your pricing for a particular product differs based on location, you should select <strong>Yes</strong> from this drop-down. In this section, you will set up your zone categories for each contiguous (CONUS) and non-contiguous (NON-CONUS) state. You will indicate actual pricing later in a separate section.</p>
         ]]></text>
         <position>top</position>
-        <top>231px</top>
-        <left>193px</left>
-        <width>46px</width>
-        <height>19px</height>
+        <top>222px</top>
+        <left>54px</left>
+        <width>490px</width>
+        <height>35px</height>
       </blankStep>
       <blankStep>
         <name>13_special_charges</name>
@@ -437,16 +437,29 @@
         <image>modules/presentation/images/wizard_lesson/wizard-navigation-additions.jpg</image>
         <text><![CDATA[
           <p><strong>Your left-hand menu has changed.</strong></p>
+          <p>Before you completed Wizard Management, your left-hand navigational menu looked something like this.</p>
+        ]]></text>
+        <position>right</position>
+        <top>60px</top>
+        <left>150px</left>
+        <width>223px</width>
+        <height>356px</height>
+      </blankStep>
+      <blankStep>
+        <name>20_your_left-hand_menu_has_changed</name>
+        <image>modules/presentation/images/wizard_lesson/wizard-navigation-additions.jpg</image>
+        <text><![CDATA[
+          <p><strong>Your left-hand menu has changed.</strong></p>
           <p>Once you have saved your information, you will notice that many of your selections now appear in the left-hand navigational menu, and will require separate completion.</p>
         ]]></text>
-        <position>floating</position>
-        <top>250px</top>
-        <left>500px</left>
-        <width>0px</width>
-        <height>0px</height>
+        <position>left</position>
+        <top>127px</top>
+        <left>641px</left>
+        <width>223px</width>
+        <height>155px</height>
       </blankStep>
       <testStep>
-        <name>20_test_your_knowledge</name>
+        <name>21_test_your_knowledge</name>
         <image>modules/presentation/images/wizard_lesson/wizard_lesson_013.jpg</image>
         <text><![CDATA[
           <p class="red"><strong>Test Your Knowledge</strong></p>
@@ -472,7 +485,7 @@
         </options>
       </testStep>
       <blankStep>
-        <name>21_end_of_wizard_management_lesson</name>
+        <name>22_end_of_wizard_management_lesson</name>
         <image>modules/presentation/images/wizard_lesson/wizard_lesson_013.jpg</image>
         <text><![CDATA[
           <p><strong>End of Wizard Management lesson.</strong></p>
@@ -501,7 +514,7 @@
           <p>The <em>Special Charges</em> section is where you will specify which charge(s) applies to your offer, included but not limited to: charges for delivery, assembly, training, and installation.</p>
         ]]></text>
         <position>floating</position>
-        <top>250px</top>
+        <top>400px</top>
         <left>500px</left>
         <width>0px</width>
         <height>0px</height>
