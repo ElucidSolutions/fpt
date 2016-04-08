@@ -1457,6 +1457,44 @@ table.glossary tbody tr td:first-child {
   background-repeat: no-repeat;
   background-image: url("images/downVote.png"); }
 
+/* Previous/Next Lesson Nav Links */
+.leaf_nav {
+  color: #b2b2b2;
+  margin-top: 25px;
+  margin-bottom: 60px;
+  width: 1000px; }
+  .leaf_nav a {
+    color: #ed1c24;
+    display: inline;
+    padding: 0;
+    margin: 0; }
+
+.arrow {
+  width: 15px;
+  padding: 0;
+  vertical-align: top; }
+
+.previous_lesson {
+  float: left;
+  max-width: 300px;
+  display: inline-block; }
+  .previous_lesson .sequence {
+    margin-bottom: 5px;
+    margin-left: 30px; }
+  .previous_lesson a {
+    margin-left: 10px; }
+
+.next_lesson {
+  float: right;
+  text-align: right;
+  max-width: 300px;
+  display: inline-block; }
+  .next_lesson .sequence {
+    margin-bottom: 5px;
+    margin-right: 29px; }
+  .next_lesson a {
+    margin-right: 10px; }
+
 /* Layout Configs */
 .middle {
   display: inline-block;

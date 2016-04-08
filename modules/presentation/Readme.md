@@ -694,9 +694,8 @@ function presentation_NavElement (intro, stepElements) {
 
     // V. Label the Next button.
     intro._currentStep < stepElements.length - 1 ?
-      nextElement.text ('NEXT'):
-      nextElement.text ('DONE')
-        .addClass ('presentation_complete');
+      nextElement.text ('NEXT').removeClass ('presentation_complete'):
+      nextElement.text ('DONE').addClass ('presentation_complete');
   }
 
   // Register oncomplete event handlers.
