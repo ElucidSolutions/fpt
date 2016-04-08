@@ -362,10 +362,10 @@
           <p>This field is used to indicate additional charges for different delivery options. Special Charges include, but are not limited to: One Day Service, Inside Delivery, Assembly, and Installation.</p>
         ]]></text>
         <position>top</position>
-        <top>136px</top>
+        <top>132px</top>
         <left>603px</left>
         <width>271px</width>
-        <height>19px</height>
+        <height>25px</height>
       </blankStep>
       <blankStep>
         <name>14_special_features</name>
@@ -375,10 +375,10 @@
           <p>This section is divided into two categories: Environmental Features and Special Features.</p>
         ]]></text>
         <position>top</position>
-        <top>160px</top>
+        <top>156px</top>
         <left>603px</left>
         <width>271px</width>
-        <height>19px</height>
+        <height>25px</height>
       </blankStep>
       <blankStep>
         <name>15_accessories</name>
@@ -388,10 +388,10 @@
           <p><em>Example: A computer mouse.</em><br/>Accessories are items that must be associated with a product, but can also be sold separately. Accessories will show up in your final template, but not in the left-hand navigational menu.</p>
         ]]></text>
         <position>top</position>
-        <top>184px</top>
+        <top>180px</top>
         <left>603px</left>
         <width>271px</width>
-        <height>19px</height>
+        <height>25px</height>
       </blankStep>
       <blankStep>
         <name>16_options</name>
@@ -401,10 +401,10 @@
           <p>An option is a configurable element of a product, or a feature that may be chosen as an addition to, or replacement for, standard equipment and features. Examples of options include but are not limited to: color, size, and fabric type.</p>
         ]]></text>
         <position>top</position>
-        <top>208px</top>
+        <top>204px</top>
         <left>603px</left>
         <width>271px</width>
-        <height>19px</height>
+        <height>25px</height>
       </blankStep>
       <blankStep>
         <name>17_photos</name>
@@ -414,10 +414,10 @@
           <p>Selecting <strong>Yes</strong> to this field indicates that you have additional photographs of the product you are selling. This selection will appear in your <em>Capture Pricing</em> template later on. You will then upload the additional photographs via the separate <strong>Upload Photo</strong> interface.</p>
         ]]></text>
         <position>top</position>
-        <top>232px</top>
+        <top>228px</top>
         <left>603px</left>
         <width>271px</width>
-        <height>19px</height>
+        <height>25px</height>
       </blankStep>
       <buttonStep>
         <name>18_save_your_selections</name>
