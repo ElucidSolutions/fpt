@@ -1821,6 +1821,8 @@ table.padded-list tbody tr td {
     background: url("images/right-arrow-active.png") no-repeat 85% 11px; }
   .presentation_nav .presentation_nav_next.presentation_disabled {
     background-image: url("images/right-arrow-inactive.png"); }
+  .presentation_nav .presentation_nav_next.presentation_complete {
+    background: none; }
   .presentation_nav .presentation_nav_back {
     background: url("images/left-arrow-active.png") no-repeat 15% 11px; }
   .presentation_nav .presentation_nav_back.presentation_disabled {
@@ -1833,3 +1835,5 @@ table.padded-list tbody tr td {
 
 .presentation_button_step {
   cursor: pointer; }
+
+/*# sourceMappingURL=standard.css.map */

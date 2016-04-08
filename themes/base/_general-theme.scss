@@ -893,6 +893,10 @@ table.padded-list {
     background-image: url('images/right-arrow-inactive.png');
   }
 
+  .presentation_nav_next.presentation_complete {
+    background: none;
+  }
+
   .presentation_nav_back {
     background: url('images/left-arrow-active.png') no-repeat 15% 11px;
   }
