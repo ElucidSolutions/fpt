@@ -1013,7 +1013,12 @@ ol.search_results {
   display: none; }
 
 .search_results_block {
-  display: none; }
+  width: 100%;
+  min-height: 50px;
+  background-image: url("images/bx_loader.gif");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  color: transparent; }
 
 .sidr {
   display: block;
@@ -1873,5 +1878,3 @@ table.padded-list tbody tr td {
 
 .presentation_button_step {
   cursor: pointer; }
-
-/*# sourceMappingURL=standard.css.map */

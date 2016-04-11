@@ -102,5 +102,10 @@ ol.search_results {
 }
 
 .search_results_block {
-  display: none;
+  width: 100%;
+  min-height: 50px;
+  background-image: url('images/bx_loader.gif');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  color: transparent;
 }
