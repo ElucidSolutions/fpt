@@ -102,6 +102,10 @@ ol.search_results {
 }
 
 .search_results_block {
+  display: none;
+}
+
+.search_loading {
   width: 100%;
   min-height: 50px;
   background-image: url('images/bx_loader.gif');

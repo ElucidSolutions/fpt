@@ -261,11 +261,15 @@ function search_resultsBlock (context, done, expand) {
     strictError (error);
     return done (error);
   }
+
+  var loadingElement = $('<div></div>').addClass ('search_loading');
+  context.element.replaceWith (loadingElement);
+
   interface.getResultsElement (
     function (error, resultsElement) {
       if (error) { return done (error); }
 
-      context.element.replaceWith (resultsElement);
+      loadingElement.replaceWith (resultsElement);
       done (null, resultsElement);
     },
     expand
