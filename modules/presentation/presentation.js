@@ -169,9 +169,10 @@ function presentation_parseButtonStep (presentationPath, element) {
 
 /*
 */
-function presentation_InputStep (id, image, text, position, top, left, width, height, expression) {
+function presentation_InputStep (id, image, text, position, top, left, width, height, expression, errorAlert) {
   presentation_Step.call (this, id, image, text, position, top, left, width, height);
   this.expression = expression;
+  this.errorAlert = errorAlert;
 }
 
 /*
@@ -212,12 +213,15 @@ presentation_InputStep.prototype.createElement = function (intro, oncomplete) {
             element
               .addClass ('presentation_valid')
               .removeClass ('presentation_invalid');
-
+              $(".presentation_error").remove();
             inputElement.attr ('tabindex', -1);
             oncomplete (function () {});
           } else {
             element.removeClass ('presentation_valid')
               .addClass ('presentation_invalid');
+            if ($(".presentation_error").length === 0) {
+              $(".introjs-tooltiptext").append("<div class='presentation_error'><span class='presentation_error_text'> ERROR: " + self.errorAlert + "</span></div>");
+            }
           }
         }
     });
@@ -239,7 +243,8 @@ function presentation_parseInputStep (presentationPath, element) {
     $('> left',         element).text (),
     $('> width',        element).text (),
     $('> height',       element).text (),
-    $('> expression',   element).text ()
+    $('> expression',   element).text (),
+    $('> errorAlert',   element).text ()
   );
 }
 

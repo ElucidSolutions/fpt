@@ -26,6 +26,7 @@
         <width>100px</width>
         <height>100px</height>
         <expression><![CDATA[\d+\.\d{2}]]></expression>
+        <errorAlert>This field must be less than 40 characters.</errorAlert>
       </inputStep>
       <testStep>
         <name>Third Step</name>

@@ -1105,6 +1105,7 @@ To be considered valid, the Presentation Database XML file must conform to the f
       <xs:extension base="blankStepType">
         <xs:sequence>
           <xs:element name="expression" type="xs:string" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="errorAlert" type="xs:string" minOccurs="1" maxOccurs="1"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

@@ -900,6 +900,17 @@ table.padded-list {
   color: #BBBBBB;
 }
 
+.presentation_error {
+  color: $red;
+  text-align: center;
+  margin-bottom: 20px;
+
+  :before {
+    content: url('images/x-close.png');
+    padding-right: 10px;
+  }
+}
+
 .presentation_exit {
   cursor:           pointer;
   float:            right;

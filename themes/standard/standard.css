@@ -1824,6 +1824,14 @@ table.padded-list tbody tr td {
 .presentation_disabled {
   color: #BBBBBB; }
 
+.presentation_error {
+  color: #ed1c24;
+  text-align: center;
+  margin-bottom: 20px; }
+  .presentation_error :before {
+    content: url("images/x-close.png");
+    padding-right: 10px; }
+
 .presentation_exit {
   cursor: pointer;
   float: right;
