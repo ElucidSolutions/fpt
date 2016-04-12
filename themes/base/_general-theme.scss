@@ -840,6 +840,10 @@ table.padded-list {
   }
 }
 
+.presentation_overlay_inset_text {
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26);
+}
+
 .presentation_presentation.presentation_active {
   .presentation_input_step {
     opacity: 1;
