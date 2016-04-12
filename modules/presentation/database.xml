@@ -45,7 +45,7 @@
         <width>160px</width>
         <height>21px</height>
         <expression><![CDATA[^[A-Za-z0-9]{1,40}$]]></expression>
-        <errorAlert>This field must be less than 40 characters. This message must be very long. 12341231231231231</errorAlert>
+        <errorAlert>This field must be less than 40 characters.</errorAlert>
       </inputStep>
       <inputStep>
         <name>4_type_a_manufacturer_part_name</name>
