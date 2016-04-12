@@ -59,7 +59,7 @@
         <left>289px</left>
         <width>124px</width>
         <height>21px</height>
-        <expression><![CDATA[^[A-Za-z]+$]]></expression>
+        <expression><![CDATA[^[A-Za-z0-9]{1,40}$]]></expression>
         <errorAlert>This field must be less than 40 characters.</errorAlert>
       </inputStep>
       <buttonStep>
