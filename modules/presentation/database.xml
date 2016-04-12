@@ -37,7 +37,8 @@
         <image>modules/presentation/images/getting_started_tab_lesson/001-get-started-mpn.jpg</image>
         <text><![CDATA[
           <p><strong>Type a Manufacturer Part Number.</strong></p>
-          <p><em>Example: HSC0424PP</em><br/>This field should be entered exactly as provided by the manufacturer, and should not be edited in any way. You can enter up to 40 characters. Enter a Manufacturer Part Number below.</p>
+          <p><em>Example: HSC0424PP</em></p>
+          <p>This field should be entered exactly as provided by the manufacturer, and should not be edited in any way. You can enter up to 40 characters. Type in a Manufacturer Part Number below and hit <strong>Enter</strong>.</p>
         ]]></text>
         <position>top</position>
         <top>232px</top>
@@ -52,7 +53,8 @@
         <image>modules/presentation/images/getting_started_tab_lesson/001-get-started-mpn.jpg</image>
         <text><![CDATA[
           <p><strong>Type a Manufacturer Part Name.</strong></p>
-          <p><em>Example: Honeywell, or Samsung, or DeWalt</em><br/>The manufacturer name is the name of the original manufacturer of the product. Enter a name, with a maximum of 40 characters, into the cell below.</p>
+          <p><em>Example: Honeywell, or Samsung, or DeWalt</em></p>
+          <p>The manufacturer name is the name of the original manufacturer of the product. Enter a name, with a maximum of 40 characters, into the cell below and hit <strong>Enter</strong>.</p>
         ]]></text>
         <position>top</position>
         <top>232px</top>
