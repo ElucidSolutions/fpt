@@ -26,8 +26,13 @@
             <body><![CDATA[
               <p>This is a lesson on filling out the <em>Get Started</em> tab. You must fill out this section before you can move onto the other tabs in the template. Click the play button to begin!</p>
               <div id="presentation" class="presentation_block">presentation/get_started_tab_lesson</div>
-              <div class="menu_leaf_previous_link_block"><span class="core_id_block"/></div>
-              <div class="menu_leaf_next_link_block"><span class="core_id_block"/></div>
+              <div class="leaf_nav">
+                <div class="next_lesson">
+                  <div class="sequence">Next Lesson</div>
+                  <div class="menu_leaf_next_link_block"><span class="core_id_block"/></div>
+                  <img src="images/next-arrow.svg" class="arrow" />
+                </div>
+              </div>
             ]]></body>
           </page>
           <page>
@@ -56,8 +61,13 @@
             <body><![CDATA[
               <p>This is a lesson on completing the <em>Special Charges</em> section. If you selected <strong>Yes</strong> to this section in <em>Wizard Management</em>, you will see it added to the left-hand navigation menu. Click the play button to begin!</p>
               <div id="presentation" class="presentation_block">presentation/special_charges_lesson</div>
-              <div class="menu_leaf_previous_link_block"><span class="core_id_block"/></div>
-              <div class="menu_leaf_next_link_block"><span class="core_id_block"/></div>
+              <div class="leaf_nav">
+                <div class="previous_lesson">
+                  <div class="sequence">Previous Lesson</div>
+                  <img src="images/previous-arrow.svg" class="arrow" />
+                  <div class="menu_leaf_previous_link_block"><span class="core_id_block"/></div>
+                </div>
+              </div>
             ]]></body>
           </page>
         </content>
