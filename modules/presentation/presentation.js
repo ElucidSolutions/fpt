@@ -664,7 +664,7 @@ function presentation_PresentationElement (id, presentation) {
 
   // The JQuery HTML Element that represents this presentation element.
   this.element = $('<div></div>')
-    .attr ('id', id)`
+    .attr ('id', id)
     .addClass ('presentation_presentation')
     .attr ('data-presentation-presentation', presentation.getId ())
     .css ('background-image',  'url(' + presentation.getImage () + ')')
