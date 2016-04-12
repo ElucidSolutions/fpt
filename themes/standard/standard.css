@@ -1839,9 +1839,11 @@ table.padded-list tbody tr td {
   color: #ed1c24;
   text-align: center;
   margin-bottom: 20px; }
-  .presentation_error_message :before {
-    content: url("images/x-close.png");
-    padding-right: 10px; }
+
+.presentation_error_message:before {
+  content: '';
+  background: url("images/errorMessageIcon.png") no-repeat 50%;
+  padding: 20px; }
 
 .presentation_exit {
   cursor: pointer;
