@@ -1824,11 +1824,11 @@ table.padded-list tbody tr td {
 .presentation_disabled {
   color: #BBBBBB; }
 
-.presentation_error {
+.presentation_error_message {
   color: #ed1c24;
   text-align: center;
   margin-bottom: 20px; }
-  .presentation_error :before {
+  .presentation_error_message :before {
     content: url("images/x-close.png");
     padding-right: 10px; }
 

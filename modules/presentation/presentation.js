@@ -87,8 +87,8 @@ presentation_Step.prototype._createElement = function (intro, oncomplete) {
 
 /*
 */
-presentation_Step.prototype.createElement = function (intro, oncomplete) {
-  return this._createElement.call (this, intro)
+presentation_Step.prototype.createElement = function (presentationElement, oncomplete) {
+  return this._createElement.call (this, presentationElement.intro)
     .addClass ('presentation_blank_step');
 }
 
@@ -124,8 +124,10 @@ presentation_ButtonStep.prototype.constructor = presentation_ButtonStep;
 
 /*
 */
+// presentation_ButtonStep.prototype.onstart = function (element, presentationElement, complete) { // RGE
 presentation_ButtonStep.prototype.onstart = function (element, intro, complete) {
   element.attr ('tabindex', 0);
+  console.log(presentationElement);
 }
 
 /*
@@ -195,7 +197,8 @@ presentation_InputStep.prototype.checkInput = function (inputElement) {
 
 /*
 */
-presentation_InputStep.prototype.onstart = function (element, presentationElement.intro, complete) { // RGE (altho where is intro being accessed here at all ... ?)
+// presentation_InputStep.prototype.onstart = function (element, presentationElement.intro, complete) {
+presentation_InputStep.prototype.onstart = function (element, intro, complete) {
   $('input', element).attr ('tabindex', 0);
 }
 
@@ -203,7 +206,7 @@ presentation_InputStep.prototype.onstart = function (element, presentationElemen
 */
 // presentation_InputStep.prototype.createElement = function (intro, oncomplete) {
 presentation_InputStep.prototype.createElement = function (presentationElement, oncomplete) { // LL
-  var element = presentation_Step.prototype._createElement.call (this, presentationElement.intro) // RGE
+  var element = presentation_Step.prototype._createElement.call (this, presentationElement.intro)
     .addClass ('presentation_input_step');
 
   var self = this;
@@ -218,16 +221,14 @@ presentation_InputStep.prototype.createElement = function (presentationElement, 
               .addClass ('presentation_valid')
               .removeClass ('presentation_invalid');
               // alert.remove(); // LL
-            $('.presentation_error_message', presentationElement.element).hide ().empty (); // LL
+            $('.presentation_error_message', presentationElement.element).hide ().empty ();
             inputElement.attr ('tabindex', -1);
             oncomplete (function () {});
           } else {
             element.removeClass ('presentation_valid')
               .addClass ('presentation_invalid');
             if ($(".presentation_error").length === 0) {
-              console.log(self.errorAlert)
-              $('.presentation_error_message', presentationElement.element).html (self.errorAlert).show (); // LL
-              // $(".introjs-tooltiptext").append("<div class='presentation_error'><span class='presentation_error_text'> ERROR: " + self.errorAlert + "</span></div>");
+              $('.presentation_error_message', presentationElement.element).html (self.errorAlert).show ();
             }
           }
         }
@@ -345,7 +346,7 @@ presentation_QuizStep.prototype.onClick = function (stepElement, oncomplete) {
 
 /*
 */
-presentation_QuizStep.prototype.onstart = function (element, presentationElement.intro, complete) {} // RGE
+// presentation_QuizStep.prototype.onstart = function (element, presentationElement.intro, complete) {} // RGE
 
 /*
 */
@@ -555,8 +556,8 @@ function presentation_StepElement (presentationElement, step) { // LL
   /*
     A JQuery HTML element that represents this step.
   */
-//  this.element = step.createElement (intro, this.complete);
-  this.element = step.createElement (presentationElement, this.complete);
+ // this.element = step.createElement (this.intro, this.complete);
+  this.element = step.createElement (presentationElement.intro, this.complete); // RGE
 
   /*
   */
@@ -568,7 +569,7 @@ function presentation_StepElement (presentationElement, step) { // LL
 
 /*
 */
-function presentation_NavElement (presentationElement, stepElements) { // all edits to this function RGE
+function presentation_NavElement (presentationElement, stepElements) {
   var self = this;
 
   // The JQuery HTML Element that represents this nav element.
@@ -581,11 +582,12 @@ function presentation_NavElement (presentationElement, stepElements) { // all ed
             .addClass ('presentation_nav_back')
             .addClass ('presentation_disabled')
             .keydown (function (event) {
-                event.keyCode === 13 && presentationElement.intro._currentStep > 0 && presentationElement.intro.previousStep ();
+                event.keyCode === 13 && presentationElement._currentStep > 0 && presentationElement.previousStep ();
               })
             .click (function (event) {
                 event.stopPropagation ();
-                intro._currentStep > 0 && intro.previousStep ();
+                // intro._currentStep > 0 && intro.previousStep ();
+                presentationElement._currentStep > 0 && presentationElement.previousStep ();
               }))
         .append ($('<td>Step <span class="presentation_nav_step">1</span> of ' + stepElements.length + '</td>'))
         .append ($('<td>NEXT</td>')
@@ -593,11 +595,14 @@ function presentation_NavElement (presentationElement, stepElements) { // all ed
             .addClass ('presentation_nav_next')
             .addClass (stepElements.length === 0 || stepElements [0].completed () ? '' : 'presentation_disabled')
             .keydown (function (event) {
-                event.keyCode === 13 && stepElements [presentationElement.intro._currentStep].completed () && presentationElement.intro.nextStep ();
+                // event.keyCode === 13 && stepElements [presentationElement.intro._currentStep].completed () && presentationElement.intro.nextStep ();
+                event.keyCode === 13 && stepElements [presentationElement._currentStep].completed () && presentationElement.nextStep ();
+
               })
             .click (function (event) {
                 event.stopPropagation ();
-                stepElements [presentationElement.intro._currentStep].completed () && presentationElement.intro.nextStep ();
+                // stepElements [presentationElement.intro._currentStep].completed () && presentationElement.intro.nextStep ();
+                stepElements [presentationElement._currentStep].completed () && presentationElement.nextStep ();
               }))));
 
   /*
@@ -607,25 +612,30 @@ function presentation_NavElement (presentationElement, stepElements) { // all ed
   this.refresh = function () {
     // I. Enable/disable the Back button.
     var backElement = $('.presentation_nav_back', self.element);
-    presentationElement.intro._currentStep === 0 ?
+    // presentationElement.intro._currentStep === 0 ?
+    presentationElement._currentStep === 0 ?
       backElement.addClass    ('presentation_disabled'):
       backElement.removeClass ('presentation_disabled');
 
     // II. Enable/disable the step buttons.
-    $('.presentation_nav_step', self.element).text (presentationElement.intro._currentStep + 1);
+    // $('.presentation_nav_step', self.element).text (presentationElement.intro._currentStep + 1);
+    $('.presentation_nav_step', self.element).text (presentationElement._currentStep + 1);
 
     // III. Highlight the current step button.
     $('.presentation_nav_step', self.element).removeClass ('presentation_current_step');
-    $('[data-presentation-nav-step="' + presentationElement.intro._currentStep + '"]', self.element).addClass ('presentation_current_step');
+    // $('[data-presentation-nav-step="' + presentationElement.intro._currentStep + '"]', self.element).addClass ('presentation_current_step');
+    $('[data-presentation-nav-step="' + presentationElement._currentStep + '"]', self.element).addClass ('presentation_current_step');
 
     // IV. Enable/disable the Next button.
     var nextElement = $('.presentation_nav_next', self.element);
-    stepElements [presentationElement.intro._currentStep].completed () ?
+    // stepElements [presentationElement.intro._currentStep].completed () ?
+    stepElements [presentationElement._currentStep].completed () ?
       nextElement.removeClass ('presentation_disabled'):
       nextElement.addClass    ('presentation_disabled');
 
     // V. Label the Next button.
-    presentationElement.intro._currentStep < stepElements.length - 1 ?
+    // presentationElement.intro._currentStep < stepElements.length - 1 ?
+    presentationElement._currentStep < stepElements.length - 1 ?
       nextElement.text ('NEXT').removeClass ('presentation_complete'):
       nextElement.text ('DONE').addClass ('presentation_complete');
   }
@@ -707,7 +717,7 @@ function presentation_PresentationElement (id, presentation) {
     }));
 
   // The IntroJS object associated with this presentation element.
-  this.intro = introJs (this.element.get (0)); // RGE: this doesn't need to be changed, I'm pretty sure ...
+  this.intro = introJs (this.element.get (0)); 
 
 
   // The default IntroJS settings.
