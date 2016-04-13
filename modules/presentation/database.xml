@@ -579,7 +579,7 @@
         <name>6_choose_your_special_charges</name>
         <image>modules/presentation/images/special_charges_lesson/spec_charges_004.jpg</image>
         <text><![CDATA[
-          <p><strong>Choose your special charges.</p>
+          <p><strong>Choose your special charges.</strong></p>
           <p>You will be able to select as many charges as apply to your offer. For this lesson, only click on the <em>Two Day Service</em> checkbox.</p>
         ]]></text>
         <position>bottom</position>
