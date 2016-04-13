@@ -45,8 +45,8 @@
         <left>128px</left>
         <width>160px</width>
         <height>21px</height>
-        <expression><![CDATA[^.{1,40}$]]></expression>
-        <errorAlert>ERROR: There is a 40 character limit.</errorAlert>
+        <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>
       </inputStep>
       <inputStep>
         <name>4_type_a_manufacturer_part_name</name>
@@ -61,8 +61,8 @@
         <left>289px</left>
         <width>124px</width>
         <height>21px</height>
-        <expression><![CDATA[^.{1,40}$]]></expression>
-        <errorAlert>ERROR: There is a 40 character limit.</errorAlert>
+        <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>
       </inputStep>
       <buttonStep>
         <name>5_open_the_drop-down_menu</name>
