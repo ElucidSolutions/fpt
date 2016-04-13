@@ -928,6 +928,7 @@ function presentation_createAudioToggleElement (presentationElement) {
   var inputElement = $('<input></input>')
     .addClass ('presentation_audio_toggle_input')
     .attr ('type', 'checkbox')
+    .prop ('checked', presentation_AUDIO)
     .change (function (event) {
         presentation_AUDIO = $(this).prop ('checked');
 
