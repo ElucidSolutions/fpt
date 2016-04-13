@@ -689,7 +689,7 @@
           <p>Click <strong>Done</strong> to complete this lesson.</p>
         ]]></text>
         <position>floating</position>
-        <top>250px</top>
+        <top>150px</top>
         <left>500px</left>
         <width>0px</width>
         <height>0px</height>
