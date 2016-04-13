@@ -50,6 +50,13 @@ MODULE_LOAD_HANDLERS.add (
                 // V. Register the block handlers.
                 block_HANDLERS.add ('presentation_block', presentation_block);
 
+                // VI.
+                PAGE_LOAD_HANDLERS.add (
+                  function (id, done) {
+                    responsiveVoice.cancel ();
+                    done ();
+                });
+
                 // VI. Continue.
                 done (null);
             });
@@ -930,11 +937,22 @@ function presentation_createAudioToggleElement (presentationElement) {
     .attr ('type', 'checkbox')
     .prop ('checked', presentation_AUDIO)
     .change (function (event) {
-        presentation_AUDIO = $(this).prop ('checked');
+        var checked = $(this).prop ('checked');
+        presentation_AUDIO = checked
+
+        if (!checked) {
+          responsiveVoice.cancel ();
+        }
 
         var stepElement = presentationElement.stepElements [presentationElement.intro._currentStep];
-        if (stepElement && !stepElement.spoken) {
-          stepElement.speak ();
+        if (stepElement) {
+          if (checked) {
+            if (!stepElement.spoken) {
+              stepElement.speak ();
+            }
+          } else { // !checked
+            stepElement.spoken = false;
+          }
         }
       });
 
