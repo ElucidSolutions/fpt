@@ -19,20 +19,26 @@ MODULE_LOAD_HANDLERS.add (
       function (error) {
         if (error) { return done (error); }
 
-        // II. Load the Presentation database.
-        presentation_loadDatabase (
-          presentation_DATABASE_URL,
-          function (error, database) {
+        // II. Load the Responsive Voice library.
+        loadScript ('http://code.responsivevoice.org/responsivevoice.js',
+          function (error) {
             if (error) { return done (error); }
 
-            // III. Cache the Presentation database.
-            presentation_DATABASE = database;
+            // III. Load the Presentation database.
+            presentation_loadDatabase (
+              presentation_DATABASE_URL,
+              function (error, database) {
+                if (error) { return done (error); }
 
-            // IV. Register the block handlers.
-            block_HANDLERS.add ('presentation_block', presentation_block);
+                // IV. Cache the Presentation database.
+                presentation_DATABASE = database;
 
-            // V. Continue.
-            done (null);
+                // V. Register the block handlers.
+                block_HANDLERS.add ('presentation_block', presentation_block);
+
+                // VI. Continue.
+                done (null);
+            });
         });
   });
 });
@@ -67,6 +73,12 @@ function presentation_Step (id, image, text, position, top, left, width, height)
   this.left      = left;
   this.width     = width;
   this.height    = height;
+}
+
+/*
+*/
+presentation_Step.prototype.speak = function () {
+  responsiveVoice.speak ($(this.text).text ());
 }
 
 /*
@@ -251,6 +263,8 @@ presentation_InputStep.prototype.createElement = function (presentationElement, 
             stepElement.message = null;
             $('.presentation_error_message', presentationElement.element).hide ().empty ();
 
+            presentation_AUDIO && responsiveVoice.speak ('correct');
+
             inputElement.attr ('tabindex', -1);
             self.complete (presentationElement, stepElement);
           } else {
@@ -260,6 +274,8 @@ presentation_InputStep.prototype.createElement = function (presentationElement, 
 
             stepElement.message = self.errorAlert;
             $('.presentation_error_message', presentationElement.element).html (self.errorAlert).show ();
+
+            presentation_AUDIO && responsiveVoice.speak ($('<p>incorrect.</p>').append (self.errorAlert).text ());
           }
         }
     });
@@ -323,6 +339,20 @@ presentation_QuizStep.prototype = Object.create (presentation_Step.prototype);
 /*
 */
 presentation_QuizStep.prototype.constructor = presentation_QuizStep;
+
+/*
+*/
+presentation_QuizStep.prototype.speak = function () {
+  responsiveVoice.speak ($('<p></p>')
+    .append (this.text)
+    .append ($('<p>options.</p>')
+      .append (this.options.map (
+        function (option) {
+          return option.label;
+        })))
+    .text ()
+  );
+}
 
 /*
 */
@@ -550,6 +580,17 @@ function presentation_StepElement (presentationElement, step) {
 
   /*
   */
+  this.spoken = false;
+
+  /*
+  */
+  this.speak = function () {
+    step.speak ();
+    this.spoken = true;
+  }
+
+  /*
+  */
   this.element = step.createElement (presentationElement, this);
 
   /*
@@ -657,12 +698,12 @@ function presentation_PresentationElement (id, presentation) {
   var steps = presentation.getSteps ();
 
   // The step elements associated with this presentation element.
-  var stepElements = [];
+  this.stepElements = [];
 
   for (var i = 0; i < steps.length; i ++) {
     var step = steps [i];
     var stepElement = new presentation_StepElement (this, step);
-    stepElements.push (stepElement);
+    this.stepElements.push (stepElement);
 
     this.element.append (stepElement.element
       .css ('background-image',    'url(' + step.image + ')')
@@ -678,7 +719,7 @@ function presentation_PresentationElement (id, presentation) {
   }
 
   // The nav element associated with this presentation element.
-  this.navElement = new presentation_NavElement (this.intro, stepElements);
+  this.navElement = new presentation_NavElement (this.intro, this.stepElements);
 
   this.intro.setOptions (introOptions)
     .onafterchange (
@@ -691,14 +732,18 @@ function presentation_PresentationElement (id, presentation) {
                       self.intro.exit ();
                 }))
               .append ($('<div></div>').addClass ('presentation_error_message'))
+              .append (presentation_createAudioToggleElement (self))
               .append (self.navElement.element);
           }
           self.navElement.refresh ();
 
           $('.presentation_error_message', self.element).hide ().empty ();
 
-          var stepElement = stepElements [self.intro._currentStep];
+          var stepElement = self.stepElements [self.intro._currentStep];
           stepElement.onHighlight ();
+
+          stepElement.spoken = false;
+          presentation_AUDIO && stepElement.speak ();
 
           var step = stepElement.step;
           self.element.css ('background-image', 'url(' + step.image + ')');
@@ -724,7 +769,7 @@ function presentation_PresentationElement (id, presentation) {
         self.element.addClass ('presentation_active');
         $('.presentation_overlay_inset', self.element).remove ();
         $('.presentation_overlay', self.element).remove ();
-        var stepElement = stepElements [0];
+        var stepElement = self.stepElements [0];
         stepElement.onHighlight ();
       }
   });
@@ -810,18 +855,39 @@ function presentation_createPresentationElement (id, presentation) {
 
 /*
 */
-function presentation_createAudioToggleElement () {
+function presentation_createAudioToggleElement (presentationElement) {
+  var inputElement = $('<input></input>')
+    .addClass ('presentation_audio_toggle_input')
+    .attr ('type', 'checkbox')
+    .change (function (event) {
+        presentation_AUDIO = $(this).prop ('checked');
+
+        var stepElement = presentationElement.stepElements [presentationElement.intro._currentStep];
+        if (stepElement && !stepElement.spoken) {
+          stepElement.speak ();
+        }
+      });
+
   return $('<div></div>')
     .addClass ('presentation_audio_toggle')
     .addClass ('materialize')
+    .attr ('tabindex', 0)
     .append ($('<div></div>')
       .addClass ('switch')
-      .append ($('<label></label>').text ('Off'))
-      .append ($('<input></input>')
-        .addClass ('presentation_audio_toggle_input')
-        .attr ('type', 'checkbox'))
-      .append ($('<span></span>').addClass ('lever'))
-      .append ($('<label></label>').text ('On')));
+      .append ($('<span></span>')
+        .addClass ('presentation_audio_toggle_label')
+        .text ('AUDIO NARRATION'))
+      .append ($('<label></label>')
+        .append ('OFF')
+        .append (inputElement)
+        .append ($('<span></span>')
+          .addClass ('lever'))
+        .append ($('<span></span>')
+          .addClass ('presentation_audio_toggle_on')
+          .text ('ON'))))
+    .keydown (function (event) {
+        event.keyCode === 13 && inputElement.prop ('checked', !inputElement.prop ('checked'));
+      });
 }
 
 /*

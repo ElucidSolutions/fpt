@@ -985,6 +985,23 @@ table.padded-list {
   }
 }
 
+
+.presentation_audio_toggle {
+  font-size: 14px;
+  margin: auto;
+  padding: 10px;
+  width: 275px;
+
+  .presentation_audio_toggle_label {
+    color: #333333;
+    padding-right: 10px; 
+  }
+  
+  .presentation_audio_toggle_input:checked ~ .presentation_audio_toggle_on { 
+    color: #84c7c1;
+  }
+}
+
 .presentation_button_step {
   cursor: pointer;
 }
