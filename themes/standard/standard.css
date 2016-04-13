@@ -1787,6 +1787,9 @@ table.padded-list tbody tr td {
   .presentation_presentation .presentation_step {
     opacity: 0; }
 
+.presentation_overlay_inset_text {
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26); }
+
 .presentation_presentation.presentation_active .presentation_input_step {
   opacity: 1; }
 
@@ -1831,6 +1834,16 @@ table.padded-list tbody tr td {
 
 .presentation_disabled {
   color: #BBBBBB; }
+
+.presentation_error_message {
+  color: #ed1c24;
+  text-align: center;
+  margin-bottom: 20px; }
+
+.presentation_error_message:before {
+  content: '';
+  background: url("images/errorMessageIcon.png") no-repeat 50%;
+  padding: 20px; }
 
 .presentation_exit {
   cursor: pointer;

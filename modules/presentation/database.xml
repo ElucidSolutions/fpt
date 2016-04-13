@@ -37,28 +37,32 @@
         <image>modules/presentation/images/getting_started_tab_lesson/001-get-started-mpn.jpg</image>
         <text><![CDATA[
           <p><strong>Type a Manufacturer Part Number.</strong></p>
-          <p><em>Example: HSC0424PP</em><br/>This field should be entered exactly as provided by the manufacturer, and should not be edited in any way. You can enter up to 40 characters. Enter a Manufacturer Part Number below.</p>
+          <p><em>Example: HSC0424PP</em></p>
+          <p>This field should be entered exactly as provided by the manufacturer, and should not be edited in any way. You can enter up to 40 characters. Type in a Manufacturer Part Number below and hit <strong>Enter</strong>.</p>
         ]]></text>
         <position>top</position>
         <top>232px</top>
         <left>128px</left>
         <width>160px</width>
         <height>21px</height>
-        <expression><![CDATA[^[A-Za-z0-9]{1,40}$]]></expression>
+        <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>
       </inputStep>
       <inputStep>
         <name>4_type_a_manufacturer_part_name</name>
         <image>modules/presentation/images/getting_started_tab_lesson/001-get-started-mpn.jpg</image>
         <text><![CDATA[
           <p><strong>Type a Manufacturer Part Name.</strong></p>
-          <p><em>Example: Honeywell, or Samsung, or DeWalt</em><br/>The manufacturer name is the name of the original manufacturer of the product. Enter a name, with a maximum of 40 characters, into the cell below.</p>
+          <p><em>Example: Honeywell, or Samsung, or DeWalt</em></p>
+          <p>The manufacturer name is the name of the original manufacturer of the product. Enter a name, with a maximum of 40 characters, into the cell below and hit <strong>Enter</strong>.</p>
         ]]></text>
         <position>top</position>
         <top>232px</top>
         <left>289px</left>
         <width>124px</width>
         <height>21px</height>
-        <expression><![CDATA[^[A-Za-z]+$]]></expression>
+        <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>
       </inputStep>
       <buttonStep>
         <name>5_open_the_drop-down_menu</name>
@@ -575,7 +579,7 @@
         <name>6_choose_your_special_charges</name>
         <image>modules/presentation/images/special_charges_lesson/spec_charges_004.jpg</image>
         <text><![CDATA[
-          <p><strong>Choose your special charges.</p>
+          <p><strong>Choose your special charges.</strong></p>
           <p>You will be able to select as many charges as apply to your offer. For this lesson, only click on the <em>Two Day Service</em> checkbox.</p>
         ]]></text>
         <position>bottom</position>
@@ -685,7 +689,7 @@
           <p>Click <strong>Done</strong> to complete this lesson.</p>
         ]]></text>
         <position>floating</position>
-        <top>250px</top>
+        <top>150px</top>
         <left>500px</left>
         <width>0px</width>
         <height>0px</height>

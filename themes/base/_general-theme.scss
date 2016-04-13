@@ -840,6 +840,10 @@ table.padded-list {
   }
 }
 
+.presentation_overlay_inset_text {
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26);
+}
+
 .presentation_presentation.presentation_active {
   .presentation_input_step {
     opacity: 1;
@@ -898,6 +902,18 @@ table.padded-list {
 
 .presentation_disabled {
   color: #BBBBBB;
+}
+
+.presentation_error_message {
+  color: $red;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.presentation_error_message:before {
+  content: '';
+  background: url('images/errorMessageIcon.png') no-repeat 50%;
+  padding: 20px;
 }
 
 .presentation_exit {
