@@ -69,7 +69,7 @@
         <image>modules/presentation/images/getting_started_tab_lesson/001-get-started-mpn.jpg</image>
         <text><![CDATA[
           <p><strong>Open the drop-down menu.</strong></p>
-          <p>Double-click in the text box to reveal the drop-down menu.</p>
+          <p>Click in the text box to reveal the drop-down menu.</p>
         ]]></text>
         <position>top-middle-aligned</position>
         <top>232px</top>

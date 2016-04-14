@@ -85,7 +85,7 @@ function presentation_Step (id, image, text, position, top, left, width, height)
 /*
 */
 presentation_Step.prototype.speak = function () {
-  responsiveVoice.speak ($(this.text).text ());
+  presentation_speak (this.text);
 }
 
 /*
@@ -270,7 +270,7 @@ presentation_InputStep.prototype.createElement = function (presentationElement, 
             stepElement.message = null;
             $('.presentation_error_message', presentationElement.element).hide ().empty ();
 
-            presentation_AUDIO && responsiveVoice.speak ('correct');
+            presentation_AUDIO && presentation_speak ('correct');
 
             inputElement.attr ('tabindex', -1);
             self.complete (presentationElement, stepElement);
@@ -282,7 +282,7 @@ presentation_InputStep.prototype.createElement = function (presentationElement, 
             stepElement.message = self.errorAlert;
             $('.presentation_error_message', presentationElement.element).html (self.errorAlert).show ();
 
-            presentation_AUDIO && responsiveVoice.speak ($('<p>incorrect.</p>').append (self.errorAlert).text ());
+            presentation_AUDIO && presentation_speak ($('<p>incorrect.</p>').append (self.errorAlert).text ());
           }
         }
     });
@@ -350,14 +350,13 @@ presentation_QuizStep.prototype.constructor = presentation_QuizStep;
 /*
 */
 presentation_QuizStep.prototype.speak = function () {
-  responsiveVoice.speak ($('<p></p>')
+  presentation_speak ($('<p></p>')
     .append (this.text)
     .append ($('<p>options.</p>')
       .append (this.options.map (
         function (option) {
           return option.label;
         })))
-    .text ()
   );
 }
 
@@ -413,11 +412,15 @@ presentation_QuizStep.prototype.onClick = function (focusElement, presentationEl
       .addClass ('presentation_valid')
       .removeClass ('presentation_invalid');
 
+    presentation_AUDIO && presentation_speak ('correct.')
+
     this.complete (presentationElement, stepElement);
   } else {
     focusElement
       .removeClass ('presentation_valid')
       .addClass ('presentation_invalid');
+
+    presentation_AUDIO && presentation_speak ('incorrect.')
   }
 }
 
@@ -975,4 +978,36 @@ function presentation_getId (type, path) {
       uri.segmentCoded (name);
   });
   return uri.toString ();
+}
+
+/*
+  Accepts one argument: htmlTranscript, an HTML
+  string or JQuery HTML Element; that represents
+  a speech transcript and returns a punctuated
+  version of htmlTranscript with HTML tags
+  removed as a string.
+*/
+presentation_punctuate = function (htmlTranscript) {
+  // I. Append punctuation to paragraphs and headers.
+  var transcript = $('<div></div>').html (htmlTranscript);
+  $('h1,h2,h3,h4,h5,p', transcript).map (
+    function (i, element) {
+      if (!$(element).text ().match (/[!?.]$/)) {
+        $(element).append ('.');
+      }
+  });
+
+  // II. Remove ending and internal whitespace.
+  return transcript.text ().trim ().replace (/\s+/g, ' ');
+} 
+
+/*
+  Accepts on argument: htmlTranscript, an HTML
+  string or JQuary HTML Element that represents a
+  speech transcript; punctuates the transcript,
+  and reads it aloud using a text to speech
+  synthesizer.
+*/
+presentation_speak = function (htmlTranscript) {
+  responsiveVoice.speak (presentation_punctuate (htmlTranscript));
 }
