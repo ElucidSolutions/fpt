@@ -50,14 +50,14 @@ MODULE_LOAD_HANDLERS.add (
                 // V. Register the block handlers.
                 block_HANDLERS.add ('presentation_block', presentation_block);
 
-                // VI.
+                // VI. Cancel text to speech playback on page load.
                 PAGE_LOAD_HANDLERS.add (
                   function (id, done) {
                     responsiveVoice.cancel ();
                     done ();
                 });
 
-                // VI. Continue.
+                // VII. Continue.
                 done (null);
             });
         });
@@ -826,9 +826,12 @@ function presentation_PresentationElement (id, presentation) {
       })
     .onexit (
         function () {
+          responsiveVoice.cancel ();
+
           self.element.css ('background-image', 'url(' + presentation.getImage () + ')');
           self.element.removeClass ('presentation_active');
           $('.introjs-tooltip').remove ();
+
           self.element
             .append (presentation_createOverlayInsetElement ('REPLAY LESSON', 'modules/presentation/images/replay-icon.png'))
             .append (presentation_createOverlayElement ());
@@ -940,9 +943,7 @@ function presentation_createAudioToggleElement (presentationElement) {
         var checked = $(this).prop ('checked');
         presentation_AUDIO = checked
 
-        if (!checked) {
-          responsiveVoice.cancel ();
-        }
+        checked || responsiveVoice.cancel ();
 
         var stepElement = presentationElement.stepElements [presentationElement.intro._currentStep];
         if (stepElement) {
