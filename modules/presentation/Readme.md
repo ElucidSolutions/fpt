@@ -695,7 +695,7 @@ function presentation_NavElement (intro, stepElements) {
                 event.stopPropagation ();
                 intro._currentStep > 0 && intro.previousStep ();
               }))
-        .append ($('<td>Step <span class="presentation_nav_step">1</span> of ' + stepElements.length + '</td>'))
+        .append ($('<td>Step <span class="presentation_nav_step">1</span> of <span class="presentation_nav_total">' + stepElements.length + '</span></td>'))
         .append ($('<td>NEXT</td>')
             .attr ('tabindex', 0)
             .addClass ('presentation_nav_next')

@@ -850,6 +850,10 @@ table.padded-list {
   }
 }
 
+.presentation_nav_step, .presentation_nav_total {
+  font-style: italic;
+}
+
 .presentation_step > input {
   background-color: transparent;
   border: none;
