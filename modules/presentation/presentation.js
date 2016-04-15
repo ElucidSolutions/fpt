@@ -6,6 +6,9 @@ var presentation_DATABASE_URL = 'modules/presentation/database.xml';
 */
 var presentation_DATABASE = {};
 
+/*
+*/
+var presentation_AUDIO = false;
 
 /*
 */
@@ -16,24 +19,36 @@ MODULE_LOAD_HANDLERS.add (
       function (error) {
         if (error) { return done (error); }
 
-        // II. Load the Presentation database.
-        presentation_loadDatabase (
-          presentation_DATABASE_URL,
-          function (error, database) {
+        // II. Load the Responsive Voice library.
+        loadScript ('http://code.responsivevoice.org/responsivevoice.js',
+          function (error) {
             if (error) { return done (error); }
 
-            // III. Cache the Presentation database.
-            presentation_DATABASE = database;
+            // III. Load the Presentation database.
+            presentation_loadDatabase (
+              presentation_DATABASE_URL,
+              function (error, database) {
+                if (error) { return done (error); }
 
-            // IV. Register the block handlers.
-            block_HANDLERS.add ('presentation_block', presentation_block);
+                // IV. Cache the Presentation database.
+                presentation_DATABASE = database;
 
-            // V. Continue.
-            done (null);
+                // V. Register the block handlers.
+                block_HANDLERS.add ('presentation_block', presentation_block);
+
+                // VI. Cancel text to speech playback on page load.
+                PAGE_LOAD_HANDLERS.add (
+                  function (id, done) {
+                    responsiveVoice.cancel ();
+                    done ();
+                });
+
+                // VII. Continue.
+                done (null);
+            });
         });
   });
 });
-
 
 /*
 */
@@ -54,7 +69,6 @@ function presentation_block (context, done) {
   done (null, null);
 }
 
-
 /*
 */
 function presentation_Step (id, image, text, position, top, left, width, height) {
@@ -66,6 +80,12 @@ function presentation_Step (id, image, text, position, top, left, width, height)
   this.left      = left;
   this.width     = width;
   this.height    = height;
+}
+
+/*
+*/
+presentation_Step.prototype.speak = function () {
+  presentation_speak (this.text);
 }
 
 /*
@@ -84,11 +104,6 @@ presentation_Step.prototype._createElement = function () {
 
 /*
 */
-<<<<<<< HEAD
-presentation_Step.prototype.createElement = function (intro, oncomplete) {
-  return this._createElement.call (this, intro)
-    .addClass ('presentation_blank_step');
-=======
 presentation_Step.prototype.createElement = function (presentationElement, stepElement) {}
 
 /*
@@ -96,7 +111,6 @@ presentation_Step.prototype.createElement = function (presentationElement, stepE
 presentation_Step.prototype.complete = function (presentationElement, stepElement) {
   stepElement.completed = true;
   presentationElement.navElement.refresh ();
->>>>>>> 61e73c335584453b55aca25b557621f4ba0fb9a6
 }
 
 /*
@@ -149,7 +163,6 @@ function presentation_parseBlankStep (presentationPath, element) {
   );
 }
 
-
 /*
 */
 function presentation_ButtonStep (id, image, text, position, top, left, width, height) {
@@ -166,30 +179,11 @@ presentation_ButtonStep.prototype.constructor = presentation_ButtonStep;
 
 /*
 */
-<<<<<<< HEAD
-presentation_ButtonStep.prototype.onstart = function (element, intro, complete) {
-  element.attr ('tabindex', 0);
-}
-
-/*
-*/
-presentation_ButtonStep.prototype.createElement = function (intro, oncomplete) {
-  var self = this;
-  var complete = function () {
-    oncomplete (function () {
-      element.attr ('tabindex', -1);
-      intro.nextStep ();
-    });
-  };
-
-  var element = presentation_Step.prototype._createElement.call (this, intro)
-=======
 presentation_ButtonStep.prototype.createElement = function (presentationElement, stepElement) {
   var self = this;
 
   var element = presentation_Step.prototype._createElement.call (this);
   return element
->>>>>>> 61e73c335584453b55aca25b557621f4ba0fb9a6
     .addClass ('presentation_button_step')
     .keydown (function (event) {
         element.attr ('tabindex', -1);
@@ -231,7 +225,6 @@ function presentation_parseButtonStep (presentationPath, element) {
   );
 }
 
-
 /*
 */
 function presentation_InputStep (id, image, text, position, top, left, width, height, expression, errorAlert) {
@@ -257,21 +250,10 @@ presentation_InputStep.prototype.checkInput = function (input) {
 
 /*
 */
-<<<<<<< HEAD
-presentation_InputStep.prototype.onstart = function (element, intro, complete) {
-  $('input', element).attr ('tabindex', 0);
-}
-
-/*
-*/
-presentation_InputStep.prototype.createElement = function (intro, oncomplete) {
-  var element = presentation_Step.prototype._createElement.call (this, intro)
-=======
 presentation_InputStep.prototype.createElement = function (presentationElement, stepElement) {
   var self = this;
 
   var element = presentation_Step.prototype._createElement.call (this)
->>>>>>> 61e73c335584453b55aca25b557621f4ba0fb9a6
     .addClass ('presentation_input_step');
 
   var inputElement = $('<input></input>')
@@ -284,29 +266,23 @@ presentation_InputStep.prototype.createElement = function (presentationElement, 
             element
               .addClass ('presentation_valid')
               .removeClass ('presentation_invalid');
-<<<<<<< HEAD
-              $(".presentation_error").remove();
-=======
 
             stepElement.message = null;
             $('.presentation_error_message', presentationElement.element).hide ().empty ();
 
->>>>>>> 61e73c335584453b55aca25b557621f4ba0fb9a6
+            presentation_AUDIO && presentation_speak ('correct');
+
             inputElement.attr ('tabindex', -1);
             self.complete (presentationElement, stepElement);
           } else {
             element
               .removeClass ('presentation_valid')
               .addClass ('presentation_invalid');
-<<<<<<< HEAD
-            if ($(".presentation_error").length === 0) {
-              $(".introjs-tooltiptext").append("<div class='presentation_error'><span class='presentation_error_text'> ERROR: " + self.errorAlert + "</span></div>");
-            }
-=======
 
             stepElement.message = self.errorAlert;
             $('.presentation_error_message', presentationElement.element).html (self.errorAlert).show ();
->>>>>>> 61e73c335584453b55aca25b557621f4ba0fb9a6
+
+            presentation_AUDIO && presentation_speak ($('<p>incorrect.</p>').append (self.errorAlert).text ());
           }
         }
     });
@@ -340,7 +316,6 @@ function presentation_parseInputStep (presentationPath, element) {
   );
 }
 
-
 /*
   presentation_QuizStep accepts eight arguments:
 
@@ -371,6 +346,19 @@ presentation_QuizStep.prototype = Object.create (presentation_Step.prototype);
 /*
 */
 presentation_QuizStep.prototype.constructor = presentation_QuizStep;
+
+/*
+*/
+presentation_QuizStep.prototype.speak = function () {
+  presentation_speak ($('<p></p>')
+    .append (this.text)
+    .append ($('<p>options.</p>')
+      .append (this.options.map (
+        function (option) {
+          return option.label;
+        })))
+  );
+}
 
 /*
 */
@@ -424,31 +412,26 @@ presentation_QuizStep.prototype.onClick = function (focusElement, presentationEl
       .addClass ('presentation_valid')
       .removeClass ('presentation_invalid');
 
+    presentation_AUDIO && presentation_speak ('correct.')
+
     this.complete (presentationElement, stepElement);
   } else {
     focusElement
       .removeClass ('presentation_valid')
       .addClass ('presentation_invalid');
+
+    presentation_AUDIO && presentation_speak ('incorrect.')
   }
 }
 
 /*
 */
-<<<<<<< HEAD
-presentation_QuizStep.prototype.onstart = function (element, intro, complete) {}
-
-/*
-*/
-presentation_QuizStep.prototype.createElement = function (intro, oncomplete) {
-  var element = presentation_Step.prototype._createElement.call (this, intro)
-=======
 presentation_QuizStep.prototype.onHighlight = function (presentationElement, stepElement) {}
 
 /*
 */
 presentation_QuizStep.prototype.createElement = function (presentationElement, stepElement) {
   var element = presentation_Step.prototype._createElement.call (this)
->>>>>>> 61e73c335584453b55aca25b557621f4ba0fb9a6
     .addClass ('presentation_quiz_step');
 
   var testElement = $('<div></div>')
@@ -506,7 +489,6 @@ function presentation_parseTestStep (presentationPath, element) {
   );
 }
 
-
 /*
 */
 function presentation_Presentation (id, image, width, height, steps) {
@@ -552,7 +534,6 @@ function presentation_parsePresentation (presentationPath, element) {
   );
 }
 
-
 /*
 */
 function presentation_Database (presentations) {
@@ -596,32 +577,9 @@ function presentation_loadDatabase (url, done) {
   });
 }
 
-
 /*
 */
-<<<<<<< HEAD
-function presentation_StepElement (intro, step) {
-  var stepElement = this;
-
-  this.getStep = function () { return step; }
-
-  // Indicates whether or not this step has been completed.
-  var _completed = false;
-
-  // Returns true iff this step has been completed.
-  this.completed = function () { return _completed; }
-
-  /*
-    An array of oncomplete event handlers. Every
-    oncomplete event handler accepts one
-    argument: next, a function that accepts
-    an Error.
-  */
-  var _oncomplete = [];
-
-=======
 function presentation_StepElement (presentationElement, step) {
->>>>>>> 61e73c335584453b55aca25b557621f4ba0fb9a6
   /*
   */
   this.step = step;
@@ -632,24 +590,25 @@ function presentation_StepElement (presentationElement, step) {
 
   /*
   */
-<<<<<<< HEAD
-  this.element = step.createElement (intro, this.complete);
+  this.spoken = false;
 
   /*
   */
-  this.start = function () {
-    step.onstart (this.element, intro, this.complete);
-=======
+  this.speak = function () {
+    step.speak ();
+    this.spoken = true;
+  }
+
+  /*
+  */
   this.element = step.createElement (presentationElement, this);
 
   /*
   */
   this.onHighlight = function () {
     step.onHighlight (presentationElement, this);
->>>>>>> 61e73c335584453b55aca25b557621f4ba0fb9a6
   }
 }
-
 
 /*
 */
@@ -673,40 +632,16 @@ function presentation_NavElement (intro, stepElements) {
                 intro._currentStep > 0 && intro.previousStep ();
               }))
         .append ($('<td>Step <span class="presentation_nav_step">1</span> of ' + stepElements.length + '</td>'))
-/*
-        .append (stepElements.map (function (stepElement, i) {
-            return $('<td>' + (i + 1) + '</td>')
-              .attr ('tabindex', -1)
-              .addClass ('presentation_nav_step')
-              .addClass (i === 0 ? 'presentation_current_step' : 'presentation_disabled')
-              .attr ('data-presentation-nav-step', i)
-              .keydown (function (event) {
-                  event.keyCode == 13 && (i === 0 || stepElements [i - 1].completed ()) && intro.goToStep (i + 1);
-                })
-              .click (function (event) {
-                  event.stopPropagation ();
-                  (i === 0 || stepElements [i - 1].completed ()) && intro.goToStep (i + 1);
-                });
-          }))
-*/
         .append ($('<td>NEXT</td>')
             .attr ('tabindex', 0)
             .addClass ('presentation_nav_next')
             .addClass (stepElements.length === 0 || stepElements [0].completed ? '' : 'presentation_disabled')
             .keydown (function (event) {
-<<<<<<< HEAD
-                event.keyCode === 13 && stepElements [intro._currentStep].completed () && intro.nextStep ();
-              })
-            .click (function (event) {
-                event.stopPropagation ();
-                stepElements [intro._currentStep].completed () && intro.nextStep ();
-=======
                 event.keyCode === 13 && stepElements [intro._currentStep].completed && intro.nextStep ();
               })
             .click (function (event) {
                 event.stopPropagation ();
                 stepElements [intro._currentStep].completed && intro.nextStep ();
->>>>>>> 61e73c335584453b55aca25b557621f4ba0fb9a6
               }))));
 
   /*
@@ -721,17 +656,6 @@ function presentation_NavElement (intro, stepElements) {
       backElement.removeClass ('presentation_disabled');
 
     // II. Enable/disable the step buttons.
-<<<<<<< HEAD
-/*
-    for (var i = 0; i < stepElements.length; i ++) {
-      var stepElement = $('[data-presentation-nav-step="' + i + '"]', self.element);
-      (i === 0 || stepElements [i - 1].completed ()) ?
-        stepElement.attr ('tabindex',  0).removeClass ('presentation_disabled'):
-        stepElement.attr ('tabindex', -1).addClass ('presentation_disabled');
-    }
-*/
-=======
->>>>>>> 61e73c335584453b55aca25b557621f4ba0fb9a6
     $('.presentation_nav_step', self.element).text (intro._currentStep + 1);
 
     // III. Highlight the current step button.
@@ -740,11 +664,7 @@ function presentation_NavElement (intro, stepElements) {
 
     // IV. Enable/disable the Next button.
     var nextElement = $('.presentation_nav_next', self.element);
-<<<<<<< HEAD
-    stepElements [intro._currentStep].completed () ?
-=======
     stepElements [intro._currentStep].completed ?
->>>>>>> 61e73c335584453b55aca25b557621f4ba0fb9a6
       nextElement.removeClass ('presentation_disabled'):
       nextElement.addClass    ('presentation_disabled');
 
@@ -754,7 +674,6 @@ function presentation_NavElement (intro, stepElements) {
       nextElement.text ('DONE').addClass ('presentation_complete');
   }
 }
-
 
 /*
 */
@@ -769,58 +688,7 @@ function presentation_PresentationElement (id, presentation) {
   this.id = function () { return id; }
 
   // The JQuery HTML Element that represents this presentation element.
-  this.element = $('<div></div>')
-    .attr ('id', id)
-    .addClass ('presentation_presentation')
-    .attr ('data-presentation-presentation', presentation.getId ())
-    .css ('background-image',  'url(' + presentation.getImage () + ')')
-    .css ('background-size',   presentation.getWidth () + ', ' + presentation.getHeight ())
-    .css ('background-repeat', 'no-repeat')
-    .css ('width',             presentation.getWidth ())
-    .css ('height',            presentation.getHeight ())
-    .css ('position',          'relative')
-    .append ($('<div></div>')
-      .addClass ('presentation_overlay_inset')
-      .css ({
-        'cursor':   'pointer',
-        'height':   '168px',
-        'left':     '416px',
-        'opacity':  '1',
-        'position': 'absolute',
-        'top':      '165px',
-        'width':    '168px',
-        'z-index':  '1011'
-      })
-      .append ($('<div></div>')
-        .addClass ('presentation_overlay_inset_icon')
-        .css ({
-          'background-image':    'url(modules/presentation/images/play-circle-outline.png)',
-          'background-repeat':   'no-repeat',
-          'background-position': '50%',
-          'height':              '100px',
-          'width':               '100%'
-        }))
-      .append ($('<div></div>')
-        .addClass ('presentation_overlay_inset_text')
-        .css ({
-          'height':     '68px',
-          'text-align': 'center',
-          'width':      '100%'
-        })
-        .append ($('<p>PLAY LESSON</p>').css ('color', 'white'))
-    ))
-    .append ($('<div></div>')
-      .addClass ('presentation_overlay')
-      .css ({
-        'background-color':    'black',
-        'height':              '100%',
-        'cursor':               'pointer',
-        'opacity':             '0.4',
-        'position':            'absolute',
-        'top':                 '0px',
-        'width':               '100%',
-        'z-index':             '1010'
-    }));
+  this.element = presentation_createPresentationElement (id, presentation);
 
   // The IntroJS object associated with this presentation element.
   this.intro = introJs (this.element.get (0));
@@ -840,16 +708,12 @@ function presentation_PresentationElement (id, presentation) {
   var steps = presentation.getSteps ();
 
   // The step elements associated with this presentation element.
-  var stepElements = [];
+  this.stepElements = [];
 
   for (var i = 0; i < steps.length; i ++) {
     var step = steps [i];
-<<<<<<< HEAD
-    var stepElement = new presentation_StepElement (this.intro, step);
-=======
     var stepElement = new presentation_StepElement (this, step);
->>>>>>> 61e73c335584453b55aca25b557621f4ba0fb9a6
-    stepElements.push (stepElement);
+    this.stepElements.push (stepElement);
 
     this.element.append (stepElement.element
       .css ('background-image',    'url(' + step.image + ')')
@@ -865,7 +729,7 @@ function presentation_PresentationElement (id, presentation) {
   }
 
   // The nav element associated with this presentation element.
-  this.navElement = new presentation_NavElement (this.intro, stepElements);
+  this.navElement = new presentation_NavElement (this.intro, this.stepElements);
 
   this.intro.setOptions (introOptions)
     .onafterchange (
@@ -877,71 +741,34 @@ function presentation_PresentationElement (id, presentation) {
                       event.stopPropagation ();
                       self.intro.exit ();
                 }))
-<<<<<<< HEAD
-              .append (navElement.element);
-=======
               .append ($('<div></div>').addClass ('presentation_error_message'))
+              .append (presentation_createAudioToggleElement (self))
               .append (self.navElement.element);
->>>>>>> 61e73c335584453b55aca25b557621f4ba0fb9a6
           }
           self.navElement.refresh ();
 
           $('.presentation_error_message', self.element).hide ().empty ();
 
-          var stepElement = stepElements [self.intro._currentStep];
+          var stepElement = self.stepElements [self.intro._currentStep];
           stepElement.onHighlight ();
+
+          stepElement.spoken = false;
+          presentation_AUDIO && stepElement.speak ();
 
           var step = stepElement.step;
           self.element.css ('background-image', 'url(' + step.image + ')');
       })
     .onexit (
         function () {
+          responsiveVoice.cancel ();
+
           self.element.css ('background-image', 'url(' + presentation.getImage () + ')');
           self.element.removeClass ('presentation_active');
           $('.introjs-tooltip').remove ();
+
           self.element
-            .append ($('<div></div>')
-              .addClass ('presentation_overlay_inset')
-              .css ({
-                'cursor':   'pointer',
-                'height':   '168px',
-                'left':     '416px',
-                'opacity':  '1',
-                'position': 'absolute',
-                'top':      '165px',
-                'width':    '168px',
-                'z-index':  '1011'
-              })
-              .append ($('<div></div>')
-                .addClass ('presentation_overlay_inset_icon')
-                .css ({
-                  'background-image':    'url(modules/presentation/images/replay-icon.png)',
-                  'background-repeat':   'no-repeat',
-                  'background-position': '50%',
-                  'height':              '100px',
-                  'width':               '100%'
-                }))
-              .append ($('<div></div>')
-                .addClass ('presentation_overlay_inset_text')
-                .css ({
-                  'height':     '68px',
-                  'text-align': 'center',
-                  'width':      '100%'
-                })
-                .append ($('<p>REPLAY LESSON</p>').css ('color', 'white'))
-            ))
-            .append ($('<div></div>')
-              .addClass ('presentation_overlay')
-              .css ({
-                'background-color':    'black',
-                'height':              '100%',
-                'cursor':               'pointer',
-                'opacity':             '0.4',
-                'position':            'absolute',
-                'top':                 '0px',
-                'width':               '100%',
-                'z-index':             '1010'
-            }));
+            .append (presentation_createOverlayInsetElement ('REPLAY LESSON', 'modules/presentation/images/replay-icon.png'))
+            .append (presentation_createOverlayElement ());
       })
     .oncomplete (
         function () {
@@ -955,7 +782,7 @@ function presentation_PresentationElement (id, presentation) {
         self.element.addClass ('presentation_active');
         $('.presentation_overlay_inset', self.element).remove ();
         $('.presentation_overlay', self.element).remove ();
-        var stepElement = stepElements [0];
+        var stepElement = self.stepElements [0];
         stepElement.onHighlight ();
       }
   });
@@ -968,6 +795,123 @@ function presentation_PresentationElement (id, presentation) {
   });
 }
 
+/*
+*/
+function presentation_createOverlayInsetElement (label, icon) {
+  return $('<div></div>')
+    .addClass ('presentation_overlay_inset')
+    .css ({
+      'cursor':   'pointer',
+      'height':   '168px',
+      'left':     '416px',
+      'opacity':  '1',
+      'position': 'absolute',
+      'top':      '165px',
+      'width':    '168px',
+      'z-index':  '1011'
+    })
+    .append ($('<div></div>')
+      .addClass ('presentation_overlay_inset_icon')
+      .css ({
+        'background-image':    'url(' + icon + ')',
+        'background-repeat':   'no-repeat',
+        'background-position': '50%',
+        'height':              '100px',
+        'width':               '100%'
+      }))
+    .append ($('<div></div>')
+      .addClass ('presentation_overlay_inset_text')
+      .css ({
+        'height':     '68px',
+        'text-align': 'center',
+        'width':      '100%'
+      })
+      .append ($('<p></p>').text (label).css ('color', 'white'))
+    );
+}
+
+/*
+*/
+function presentation_createOverlayElement () {
+  return $('<div></div>')
+    .addClass ('presentation_overlay')
+    .css ({
+        'background-color':    'black',
+        'height':              '100%',
+        'cursor':               'pointer',
+        'opacity':             '0.4',
+        'position':            'absolute',
+        'top':                 '0px',
+        'width':               '100%',
+        'z-index':             '1010'
+      });
+}
+
+/*
+*/
+function presentation_createPresentationElement (id, presentation) {
+  var icon = 'modules/presentation/images/play-circle-outline.png';
+  var label = 'PLAY LESSON';
+  return $('<div></div>')
+    .attr ('id', id)
+    .addClass ('presentation_presentation')
+    .attr ('data-presentation-presentation', presentation.getId ())
+    .css ('background-image',  'url(' + presentation.getImage () + ')')
+    .css ('background-size',   presentation.getWidth () + ', ' + presentation.getHeight ())
+    .css ('background-repeat', 'no-repeat')
+    .css ('width',             presentation.getWidth ())
+    .css ('height',            presentation.getHeight ())
+    .css ('position',          'relative')
+    .append (presentation_createOverlayInsetElement (label, icon))
+    .append (presentation_createOverlayElement ());
+}
+
+/*
+*/
+function presentation_createAudioToggleElement (presentationElement) {
+  var inputElement = $('<input></input>')
+    .addClass ('presentation_audio_toggle_input')
+    .attr ('type', 'checkbox')
+    .prop ('checked', presentation_AUDIO)
+    .change (function (event) {
+        var checked = $(this).prop ('checked');
+        presentation_AUDIO = checked
+
+        checked || responsiveVoice.cancel ();
+
+        var stepElement = presentationElement.stepElements [presentationElement.intro._currentStep];
+        if (stepElement) {
+          if (checked) {
+            if (!stepElement.spoken) {
+              stepElement.speak ();
+            }
+          } else { // !checked
+            stepElement.spoken = false;
+          }
+        }
+      });
+
+  return $('<div></div>')
+    .addClass ('presentation_audio_toggle')
+    .addClass ('materialize')
+    .attr ('tabindex', 0)
+    .append ($('<div></div>')
+      .addClass ('switch')
+      .append ($('<span></span>')
+        .addClass ('presentation_audio_toggle_label')
+        .text ('AUDIO NARRATION'))
+      .append ($('<label></label>')
+        .append ('OFF')
+        .append (inputElement)
+        .append ($('<span></span>')
+          .addClass ('lever'))
+        .append ($('<span></span>')
+          .addClass ('presentation_audio_toggle_on')
+          .text ('ON'))))
+    .keydown (function (event) {
+        event.keyCode === 13 && inputElement.prop ('checked', !inputElement.prop ('checked'));
+      });
+}
 
 /*
 */
@@ -1025,7 +969,6 @@ function presentation_PresentationElementsStore () {
 */
 var presentation_ELEMENTS = new presentation_PresentationElementsStore ();
 
-
 /*
 */
 function presentation_getId (type, path) {
@@ -1035,4 +978,36 @@ function presentation_getId (type, path) {
       uri.segmentCoded (name);
   });
   return uri.toString ();
+}
+
+/*
+  Accepts one argument: htmlTranscript, an HTML
+  string or JQuery HTML Element; that represents
+  a speech transcript and returns a punctuated
+  version of htmlTranscript with HTML tags
+  removed as a string.
+*/
+presentation_punctuate = function (htmlTranscript) {
+  // I. Append punctuation to paragraphs and headers.
+  var transcript = $('<div></div>').html (htmlTranscript);
+  $('h1,h2,h3,h4,h5,p', transcript).map (
+    function (i, element) {
+      if (!$(element).text ().match (/[!?.]$/)) {
+        $(element).append ('.');
+      }
+  });
+
+  // II. Remove ending and internal whitespace.
+  return transcript.text ().trim ().replace (/\s+/g, ' ');
+} 
+
+/*
+  Accepts on argument: htmlTranscript, an HTML
+  string or JQuary HTML Element that represents a
+  speech transcript; punctuates the transcript,
+  and reads it aloud using a text to speech
+  synthesizer.
+*/
+presentation_speak = function (htmlTranscript) {
+  responsiveVoice.speak (presentation_punctuate (htmlTranscript));
 }

@@ -840,6 +840,10 @@ table.padded-list {
   }
 }
 
+.presentation_overlay_inset_text {
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26);
+}
+
 .presentation_presentation.presentation_active {
   .presentation_input_step {
     opacity: 1;
@@ -903,13 +907,13 @@ table.padded-list {
 .presentation_error_message {
   color: $red;
   text-align: center;
-  margin-bottom: 20px;  
-  /*background: url('images/x-close.png') no-repeat;*/
+  margin-bottom: 20px;
+}
 
-  &:before {
-    content: url('images/x-close.png');
-    padding-right: 10px;
-  }
+.presentation_error_message:before {
+  content: '';
+  background: url('images/errorMessageIcon.png') no-repeat 50%;
+  padding: 20px;
 }
 
 /*.presentation_error_message:before {
@@ -984,6 +988,23 @@ table.padded-list {
   .presentation_current_step {
     background-color: #F29A2F;
     color: white;
+  }
+}
+
+
+.presentation_audio_toggle {
+  font-size: 14px;
+  margin: auto;
+  padding: 10px;
+  width: 275px;
+
+  .presentation_audio_toggle_label {
+    color: #333333;
+    padding-right: 10px; 
+  }
+  
+  .presentation_audio_toggle_input:checked ~ .presentation_audio_toggle_on { 
+    color: #84c7c1;
   }
 }
 

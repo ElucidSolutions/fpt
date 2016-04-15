@@ -1015,6 +1015,14 @@ ol.search_results {
 .search_results_block {
   display: none; }
 
+.search_loading {
+  width: 100%;
+  min-height: 50px;
+  background-image: url("images/bx_loader.gif");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  color: transparent; }
+
 .sidr {
   display: block;
   position: fixed;
@@ -1779,6 +1787,9 @@ table.padded-list tbody tr td {
   .presentation_presentation .presentation_step {
     opacity: 0; }
 
+.presentation_overlay_inset_text {
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26); }
+
 .presentation_presentation.presentation_active .presentation_input_step {
   opacity: 1; }
 
@@ -1827,11 +1838,20 @@ table.padded-list tbody tr td {
 .presentation_error_message {
   color: #ed1c24;
   text-align: center;
+<<<<<<< HEAD
   margin-bottom: 20px;
   /*background: url('images/x-close.png') no-repeat;*/ }
   .presentation_error_message:before {
     content: url("images/x-close.png");
     padding-right: 10px; }
+=======
+  margin-bottom: 20px; }
+
+.presentation_error_message:before {
+  content: '';
+  background: url("images/errorMessageIcon.png") no-repeat 50%;
+  padding: 20px; }
+>>>>>>> dev
 
 /*.presentation_error_message:before {
     content: 'hello';
@@ -1886,7 +1906,16 @@ table.padded-list tbody tr td {
     background-color: #F29A2F;
     color: white; }
 
+.presentation_audio_toggle {
+  font-size: 14px;
+  margin: auto;
+  padding: 10px;
+  width: 275px; }
+  .presentation_audio_toggle .presentation_audio_toggle_label {
+    color: #333333;
+    padding-right: 10px; }
+  .presentation_audio_toggle .presentation_audio_toggle_input:checked ~ .presentation_audio_toggle_on {
+    color: #84c7c1; }
+
 .presentation_button_step {
   cursor: pointer; }
-
-/*# sourceMappingURL=standard.css.map */
