@@ -14,6 +14,10 @@ var presentation_DATABASE_URL = 'modules/presentation/database.xml';
 /*
 */
 var presentation_DATABASE = {};
+
+/*
+*/
+var presentation_AUDIO = false;
 ```
 
 The Load Event Handler
@@ -29,20 +33,33 @@ MODULE_LOAD_HANDLERS.add (
       function (error) {
         if (error) { return done (error); }
 
-        // II. Load the Presentation database.
-        presentation_loadDatabase (
-          presentation_DATABASE_URL,
-          function (error, database) {
+        // II. Load the Responsive Voice library.
+        loadScript ('http://code.responsivevoice.org/responsivevoice.js',
+          function (error) {
             if (error) { return done (error); }
 
-            // III. Cache the Presentation database.
-            presentation_DATABASE = database;
+            // III. Load the Presentation database.
+            presentation_loadDatabase (
+              presentation_DATABASE_URL,
+              function (error, database) {
+                if (error) { return done (error); }
 
-            // IV. Register the block handlers.
-            block_HANDLERS.add ('presentation_block', presentation_block);
+                // IV. Cache the Presentation database.
+                presentation_DATABASE = database;
 
-            // V. Continue.
-            done (null);
+                // V. Register the block handlers.
+                block_HANDLERS.add ('presentation_block', presentation_block);
+
+                // VI. Cancel text to speech playback on page load.
+                PAGE_LOAD_HANDLERS.add (
+                  function (id, done) {
+                    responsiveVoice.cancel ();
+                    done ();
+                });
+
+                // VII. Continue.
+                done (null);
+            });
         });
   });
 });
@@ -91,13 +108,13 @@ function presentation_Step (id, image, text, position, top, left, width, height)
 
 /*
 */
-presentation_Step.prototype.onstart = function (element, intro, complete) {
-  complete (function () {});
+presentation_Step.prototype.speak = function () {
+  presentation_speak (this.text);
 }
 
 /*
 */
-presentation_Step.prototype._createElement = function (intro, oncomplete) {
+presentation_Step.prototype._createElement = function () {
   return $('<div></div>')
     .addClass ('presentation_step')
     .attr ('data-presentation-step', this.id)
@@ -111,16 +128,59 @@ presentation_Step.prototype._createElement = function (intro, oncomplete) {
 
 /*
 */
-presentation_Step.prototype.createElement = function (intro, oncomplete) {
-  return this._createElement.call (this, intro)
-    .addClass ('presentation_blank_step');
+presentation_Step.prototype.createElement = function (presentationElement, stepElement) {}
+
+/*
+*/
+presentation_Step.prototype.complete = function (presentationElement, stepElement) {
+  stepElement.completed = true;
+  presentationElement.navElement.refresh ();
 }
 
 /*
 */
-function presentation_parseStep (presentationPath, element) {
+presentation_Step.prototype.onHighlight = function (presentationElement, stepElement) {}
+
+/*
+*/
+function presentation_parseStep (presentationPath, element) {}
+```
+
+The Blank Step Class
+--------------------
+
+```javascript
+/*
+*/
+function presentation_BlankStep (id, image, text, position, top, left, width, height) {
+  presentation_Step.call (this, id, image, text, position, top, left, width, height);
+}
+
+/*
+*/
+presentation_BlankStep.prototype = Object.create (presentation_Step.prototype);
+
+/*
+*/
+presentation_BlankStep.prototype.constructor = presentation_ButtonStep;
+
+/*
+*/
+presentation_BlankStep.prototype.createElement = function (presentationElement, stepElement) {
+  return this._createElement.call (this).addClass ('presentation_blank_step');
+}
+
+/*
+*/
+presentation_BlankStep.prototype.onHighlight = function (presentationElement, stepElement) {
+  this.complete (presentationElement, stepElement);
+}
+
+/*
+*/
+function presentation_parseBlankStep (presentationPath, element) {
   var path = presentationPath.concat ($('> name', element).text ());
-  return new presentation_Step (
+  return new presentation_BlankStep (
     presentation_getId ('presentation_step_page', path),
     $('> image',    element).text (),
     $('> text',     element).text (),
@@ -153,31 +213,34 @@ presentation_ButtonStep.prototype.constructor = presentation_ButtonStep;
 
 /*
 */
-presentation_ButtonStep.prototype.onstart = function (element, intro, complete) {
-  element.attr ('tabindex', 0);
+presentation_ButtonStep.prototype.createElement = function (presentationElement, stepElement) {
+  var self = this;
+
+  var element = presentation_Step.prototype._createElement.call (this);
+  return element
+    .addClass ('presentation_button_step')
+    .keydown (function (event) {
+        element.attr ('tabindex', -1);
+        event.keyCode === 13 && self.complete (presentationElement, stepElement);
+      })
+    .click (function (event) {
+        event.stopPropagation ();
+        element.attr ('tabindex', -1);
+        self.complete (presentationElement, stepElement);
+     });
 }
 
 /*
 */
-presentation_ButtonStep.prototype.createElement = function (intro, oncomplete) {
-  var self = this;
-  var complete = function () {
-    oncomplete (function () {
-      element.attr ('tabindex', -1);
-      intro.nextStep ();
-    });
-  };
+presentation_ButtonStep.prototype.complete = function (presentationElement, stepElement) {
+  presentation_Step.prototype.complete.call (this, presentationElement, stepElement);
+  presentationElement.intro.nextStep ();
+}
 
-  var element = presentation_Step.prototype._createElement.call (this, intro)
-    .addClass ('presentation_button_step')
-    .keydown (function (event) {
-        event.keyCode === 13 && complete ();
-      })
-    .click (function (event) {
-        event.stopPropagation ();
-        complete ();
-     });
-  return element;
+/*
+*/
+presentation_ButtonStep.prototype.onHighlight = function (presentationElement, stepElement) {
+  stepElement.element.attr ('tabindex', 0);
 }
 
 /*
@@ -219,49 +282,59 @@ presentation_InputStep.prototype.constructor = presentation_InputStep;
 
 /*
 */
-presentation_InputStep.prototype.checkInput = function (inputElement) {
+presentation_InputStep.prototype.checkInput = function (input) {
   var expression = new RegExp (this.expression);
-  return expression.test (inputElement.val ());
+  return expression.test (input);
 }
 
 /*
 */
-presentation_InputStep.prototype.onstart = function (element, intro, complete) {
-  $('input', element).attr ('tabindex', 0);
-}
+presentation_InputStep.prototype.createElement = function (presentationElement, stepElement) {
+  var self = this;
 
-/*
-*/
-presentation_InputStep.prototype.createElement = function (intro, oncomplete) {
-  var element = presentation_Step.prototype._createElement.call (this, intro)
+  var element = presentation_Step.prototype._createElement.call (this)
     .addClass ('presentation_input_step');
 
-  var self = this;
   var inputElement = $('<input></input>')
     .attr ('type', 'text')
     .attr ('tabindex', -1)
     .keyup (
       function (event) {
         if (event.keyCode === 13) {
-          if (self.checkInput (inputElement)) {
+          if (self.checkInput (inputElement.val ())) {
             element
               .addClass ('presentation_valid')
               .removeClass ('presentation_invalid');
-              $(".presentation_error").remove();
+
+            stepElement.message = null;
+            $('.presentation_error_message', presentationElement.element).hide ().empty ();
+
+            presentation_AUDIO && presentation_speak ('correct');
+
             inputElement.attr ('tabindex', -1);
-            oncomplete (function () {});
+            self.complete (presentationElement, stepElement);
           } else {
-            element.removeClass ('presentation_valid')
+            element
+              .removeClass ('presentation_valid')
               .addClass ('presentation_invalid');
-            if ($(".presentation_error").length === 0) {
-              $(".introjs-tooltiptext").append("<div class='presentation_error'><span class='presentation_error_text'> ERROR: " + self.errorAlert + "</span></div>");
-            }
+
+            stepElement.message = self.errorAlert;
+            $('.presentation_error_message', presentationElement.element).html (self.errorAlert).show ();
+
+            presentation_AUDIO && presentation_speak ($('<p>incorrect.</p>').append (self.errorAlert).text ());
           }
         }
     });
 
   element.append (inputElement);
   return element;
+}
+
+/*
+*/
+presentation_InputStep.prototype.onHighlight = function (presentationElement, stepElement) {
+  var input = $('input', stepElement.element).attr ('tabindex', 0).val ();
+  input && (this.checkInput (input) || $('.presentation_error_message', presentationElement.element).html (this.errorAlert).show ());
 }
 
 /*
@@ -320,6 +393,19 @@ presentation_QuizStep.prototype.constructor = presentation_QuizStep;
 
 /*
 */
+presentation_QuizStep.prototype.speak = function () {
+  presentation_speak ($('<p></p>')
+    .append (this.text)
+    .append ($('<p>options.</p>')
+      .append (this.options.map (
+        function (option) {
+          return option.label;
+        })))
+  );
+}
+
+/*
+*/
 presentation_QuizStep.prototype.getCorrectOption = function () {
   for (var i = 0; i < this.options.length; i ++) {
     var option = this.options [i];
@@ -359,30 +445,37 @@ presentation_QuizStep.prototype.checkInput = function (optionsElement) {
 
 /*
 */
-presentation_QuizStep.prototype.onClick = function (stepElement, oncomplete) {
-  var optionsElement = $('.presentation_options', stepElement);
+presentation_QuizStep.prototype.onClick = function (focusElement, presentationElement, stepElement) {
+  var optionsElement = $('.presentation_options', focusElement);
 
   var selectedOption = this.getSelectedOption (optionsElement);
-  $('.presentation_message', stepElement).text (selectedOption.onSelect);
+  $('.presentation_message', focusElement).text (selectedOption.onSelect);
 
   if (this.checkInput (optionsElement)) {
-     stepElement.addClass ('presentation_valid')
-       .removeClass ('presentation_invalid');
-     oncomplete (function () {});
+    focusElement
+      .addClass ('presentation_valid')
+      .removeClass ('presentation_invalid');
+
+    presentation_AUDIO && presentation_speak ('correct.')
+
+    this.complete (presentationElement, stepElement);
   } else {
-     stepElement.removeClass ('presentation_valid')
-       .addClass ('presentation_invalid');
+    focusElement
+      .removeClass ('presentation_valid')
+      .addClass ('presentation_invalid');
+
+    presentation_AUDIO && presentation_speak ('incorrect.')
   }
 }
 
 /*
 */
-presentation_QuizStep.prototype.onstart = function (element, intro, complete) {}
+presentation_QuizStep.prototype.onHighlight = function (presentationElement, stepElement) {}
 
 /*
 */
-presentation_QuizStep.prototype.createElement = function (intro, oncomplete) {
-  var element = presentation_Step.prototype._createElement.call (this, intro)
+presentation_QuizStep.prototype.createElement = function (presentationElement, stepElement) {
+  var element = presentation_Step.prototype._createElement.call (this)
     .addClass ('presentation_quiz_step');
 
   var testElement = $('<div></div>')
@@ -407,7 +500,7 @@ presentation_QuizStep.prototype.createElement = function (intro, oncomplete) {
           .addClass ('presentation_option_input')
           .click (
             function () {
-              self.onClick (element, oncomplete);
+              self.onClick (element, presentationElement, stepElement);
           }))
         .append ($('<label></label>')
           .addClass ('presentation_option_label')
@@ -475,7 +568,7 @@ function presentation_parsePresentation (presentationPath, element) {
         var tagName = $(stepElement).prop ('tagName');
         switch (tagName) {
           case 'blankStep':
-            return presentation_parseStep (path, stepElement); 
+            return presentation_parseBlankStep (path, stepElement); 
           case 'buttonStep':
             return presentation_parseButtonStep (path, stepElement);
           case 'inputStep':
@@ -545,68 +638,34 @@ The Step Element Class
 ```javascript
 /*
 */
-function presentation_StepElement (intro, step) {
-  var stepElement = this;
-
-  this.getStep = function () { return step; }
-
-  // Indicates whether or not this step has been completed.
-  var _completed = false;
-
-  // Returns true iff this step has been completed.
-  this.completed = function () { return _completed; }
+function presentation_StepElement (presentationElement, step) {
+  /*
+  */
+  this.step = step;
 
   /*
-    An array of oncomplete event handlers. Every
-    oncomplete event handler accepts one
-    argument: next, a function that accepts
-    an Error.
   */
-  var _oncomplete = [];
+  this.completed = false;
 
   /*
-    Accepts one argument:
-
-    * handler, a function that accepts one
-      argument: next, a function that, in turn,
-      accepts an Error object.
-
-    and adds handler to the list of oncomplete
-    event handlers.
   */
-  this.oncomplete = function (handler) {
-    _oncomplete.push (handler);
+  this.spoken = false;
+
+  /*
+  */
+  this.speak = function () {
+    step.speak ();
+    this.spoken = true;
   }
 
   /*
-    Accepts one argument:
-
-    * done, a function that accepts one argument:
-    error, an Error object
-
-    marks this step as complete and executes
-    the oncomplete event handlers. If any
-    of the handlers pass an error to their
-    continuations, this function passes the
-    error to done and returns immediately.
   */
-  this.complete = function (done) {
-    // Marks this step as completed.
-    _completed = true;
-
-    // Executes the oncomplete event handlers.
-    async.series (_oncomplete, done);
-  }
-
-  /*
-    A JQuery HTML element that represents this step.
-  */
-  this.element = step.createElement (intro, this.complete);
+  this.element = step.createElement (presentationElement, this);
 
   /*
   */
-  this.start = function () {
-    step.onstart (this.element, intro, this.complete);
+  this.onHighlight = function () {
+    step.onHighlight (presentationElement, this);
   }
 }
 ```
@@ -637,32 +696,16 @@ function presentation_NavElement (intro, stepElements) {
                 intro._currentStep > 0 && intro.previousStep ();
               }))
         .append ($('<td>Step <span class="presentation_nav_step">1</span> of ' + stepElements.length + '</td>'))
-/*
-        .append (stepElements.map (function (stepElement, i) {
-            return $('<td>' + (i + 1) + '</td>')
-              .attr ('tabindex', -1)
-              .addClass ('presentation_nav_step')
-              .addClass (i === 0 ? 'presentation_current_step' : 'presentation_disabled')
-              .attr ('data-presentation-nav-step', i)
-              .keydown (function (event) {
-                  event.keyCode == 13 && (i === 0 || stepElements [i - 1].completed ()) && intro.goToStep (i + 1);
-                })
-              .click (function (event) {
-                  event.stopPropagation ();
-                  (i === 0 || stepElements [i - 1].completed ()) && intro.goToStep (i + 1);
-                });
-          }))
-*/
         .append ($('<td>NEXT</td>')
             .attr ('tabindex', 0)
             .addClass ('presentation_nav_next')
-            .addClass (stepElements.length === 0 || stepElements [0].completed () ? '' : 'presentation_disabled')
+            .addClass (stepElements.length === 0 || stepElements [0].completed ? '' : 'presentation_disabled')
             .keydown (function (event) {
-                event.keyCode === 13 && stepElements [intro._currentStep].completed () && intro.nextStep ();
+                event.keyCode === 13 && stepElements [intro._currentStep].completed && intro.nextStep ();
               })
             .click (function (event) {
                 event.stopPropagation ();
-                stepElements [intro._currentStep].completed () && intro.nextStep ();
+                stepElements [intro._currentStep].completed && intro.nextStep ();
               }))));
 
   /*
@@ -677,14 +720,6 @@ function presentation_NavElement (intro, stepElements) {
       backElement.removeClass ('presentation_disabled');
 
     // II. Enable/disable the step buttons.
-/*
-    for (var i = 0; i < stepElements.length; i ++) {
-      var stepElement = $('[data-presentation-nav-step="' + i + '"]', self.element);
-      (i === 0 || stepElements [i - 1].completed ()) ?
-        stepElement.attr ('tabindex',  0).removeClass ('presentation_disabled'):
-        stepElement.attr ('tabindex', -1).addClass ('presentation_disabled');
-    }
-*/
     $('.presentation_nav_step', self.element).text (intro._currentStep + 1);
 
     // III. Highlight the current step button.
@@ -693,7 +728,7 @@ function presentation_NavElement (intro, stepElements) {
 
     // IV. Enable/disable the Next button.
     var nextElement = $('.presentation_nav_next', self.element);
-    stepElements [intro._currentStep].completed () ?
+    stepElements [intro._currentStep].completed ?
       nextElement.removeClass ('presentation_disabled'):
       nextElement.addClass    ('presentation_disabled');
 
@@ -702,20 +737,11 @@ function presentation_NavElement (intro, stepElements) {
       nextElement.text ('NEXT').removeClass ('presentation_complete'):
       nextElement.text ('DONE').addClass ('presentation_complete');
   }
-
-  // Register oncomplete event handlers.
-  for (var i = 0; i < stepElements.length; i ++) {
-    stepElements [i].oncomplete (
-      function (done) {
-        self.refresh ();
-        done (null);
-    });
-  }
 }
 ```
 
 The Presentation Element Class
------------------------
+------------------------------
 
 ```javascript
 /*
@@ -731,58 +757,7 @@ function presentation_PresentationElement (id, presentation) {
   this.id = function () { return id; }
 
   // The JQuery HTML Element that represents this presentation element.
-  this.element = $('<div></div>')
-    .attr ('id', id)
-    .addClass ('presentation_presentation')
-    .attr ('data-presentation-presentation', presentation.getId ())
-    .css ('background-image',  'url(' + presentation.getImage () + ')')
-    .css ('background-size',   presentation.getWidth () + ', ' + presentation.getHeight ())
-    .css ('background-repeat', 'no-repeat')
-    .css ('width',             presentation.getWidth ())
-    .css ('height',            presentation.getHeight ())
-    .css ('position',          'relative')
-    .append ($('<div></div>')
-      .addClass ('presentation_overlay_inset')
-      .css ({
-        'cursor':   'pointer',
-        'height':   '168px',
-        'left':     '416px',
-        'opacity':  '1',
-        'position': 'absolute',
-        'top':      '165px',
-        'width':    '168px',
-        'z-index':  '1011'
-      })
-      .append ($('<div></div>')
-        .addClass ('presentation_overlay_inset_icon')
-        .css ({
-          'background-image':    'url(modules/presentation/images/play-circle-outline.png)',
-          'background-repeat':   'no-repeat',
-          'background-position': '50%',
-          'height':              '100px',
-          'width':               '100%'
-        }))
-      .append ($('<div></div>')
-        .addClass ('presentation_overlay_inset_text')
-        .css ({
-          'height':     '68px',
-          'text-align': 'center',
-          'width':      '100%'
-        })
-        .append ($('<p>PLAY LESSON</p>').css ('color', 'white'))
-    ))
-    .append ($('<div></div>')
-      .addClass ('presentation_overlay')
-      .css ({
-        'background-color':    'black',
-        'height':              '100%',
-        'cursor':               'pointer',
-        'opacity':             '0.4',
-        'position':            'absolute',
-        'top':                 '0px',
-        'width':               '100%',
-        'z-index':             '1010'
-    }));
+  this.element = presentation_createPresentationElement (id, presentation);
 
   // The IntroJS object associated with this presentation element.
   this.intro = introJs (this.element.get (0));
@@ -802,12 +777,12 @@ function presentation_PresentationElement (id, presentation) {
   var steps = presentation.getSteps ();
 
   // The step elements associated with this presentation element.
-  var stepElements = [];
+  this.stepElements = [];
 
   for (var i = 0; i < steps.length; i ++) {
     var step = steps [i];
-    var stepElement = new presentation_StepElement (this.intro, step);
-    stepElements.push (stepElement);
+    var stepElement = new presentation_StepElement (this, step);
+    this.stepElements.push (stepElement);
 
     this.element.append (stepElement.element
       .css ('background-image',    'url(' + step.image + ')')
@@ -823,7 +798,7 @@ function presentation_PresentationElement (id, presentation) {
   }
 
   // The nav element associated with this presentation element.
-  var navElement = new presentation_NavElement (this.intro, stepElements);
+  this.navElement = new presentation_NavElement (this.intro, this.stepElements);
 
   this.intro.setOptions (introOptions)
     .onafterchange (
@@ -835,64 +810,34 @@ function presentation_PresentationElement (id, presentation) {
                       event.stopPropagation ();
                       self.intro.exit ();
                 }))
-              .append (navElement.element);
+              .append ($('<div></div>').addClass ('presentation_error_message'))
+              .append (presentation_createAudioToggleElement (self))
+              .append (self.navElement.element);
           }
-          navElement.refresh ();
+          self.navElement.refresh ();
 
-          var stepElement = stepElements [self.intro._currentStep];
-          stepElement.start ();
+          $('.presentation_error_message', self.element).hide ().empty ();
 
-          var step = stepElement.getStep ();
+          var stepElement = self.stepElements [self.intro._currentStep];
+          stepElement.onHighlight ();
+
+          stepElement.spoken = false;
+          presentation_AUDIO && stepElement.speak ();
+
+          var step = stepElement.step;
           self.element.css ('background-image', 'url(' + step.image + ')');
       })
     .onexit (
         function () {
+          responsiveVoice.cancel ();
+
           self.element.css ('background-image', 'url(' + presentation.getImage () + ')');
           self.element.removeClass ('presentation_active');
           $('.introjs-tooltip').remove ();
+
           self.element
-            .append ($('<div></div>')
-              .addClass ('presentation_overlay_inset')
-              .css ({
-                'cursor':   'pointer',
-                'height':   '168px',
-                'left':     '416px',
-                'opacity':  '1',
-                'position': 'absolute',
-                'top':      '165px',
-                'width':    '168px',
-                'z-index':  '1011'
-              })
-              .append ($('<div></div>')
-                .addClass ('presentation_overlay_inset_icon')
-                .css ({
-                  'background-image':    'url(modules/presentation/images/replay-icon.png)',
-                  'background-repeat':   'no-repeat',
-                  'background-position': '50%',
-                  'height':              '100px',
-                  'width':               '100%'
-                }))
-              .append ($('<div></div>')
-                .addClass ('presentation_overlay_inset_text')
-                .css ({
-                  'height':     '68px',
-                  'text-align': 'center',
-                  'width':      '100%'
-                })
-                .append ($('<p>REPLAY LESSON</p>').css ('color', 'white'))
-            ))
-            .append ($('<div></div>')
-              .addClass ('presentation_overlay')
-              .css ({
-                'background-color':    'black',
-                'height':              '100%',
-                'cursor':               'pointer',
-                'opacity':             '0.4',
-                'position':            'absolute',
-                'top':                 '0px',
-                'width':               '100%',
-                'z-index':             '1010'
-            }));
+            .append (presentation_createOverlayInsetElement ('REPLAY LESSON', 'modules/presentation/images/replay-icon.png'))
+            .append (presentation_createOverlayElement ());
       })
     .oncomplete (
         function () {
@@ -906,8 +851,8 @@ function presentation_PresentationElement (id, presentation) {
         self.element.addClass ('presentation_active');
         $('.presentation_overlay_inset', self.element).remove ();
         $('.presentation_overlay', self.element).remove ();
-        var stepElement = stepElements [0];
-        stepElement.start ();
+        var stepElement = self.stepElements [0];
+        stepElement.onHighlight ();
       }
   });
 
@@ -917,6 +862,124 @@ function presentation_PresentationElement (id, presentation) {
       presentation_ELEMENTS.clear ();
       done (null);
   });
+}
+
+/*
+*/
+function presentation_createOverlayInsetElement (label, icon) {
+  return $('<div></div>')
+    .addClass ('presentation_overlay_inset')
+    .css ({
+      'cursor':   'pointer',
+      'height':   '168px',
+      'left':     '416px',
+      'opacity':  '1',
+      'position': 'absolute',
+      'top':      '165px',
+      'width':    '168px',
+      'z-index':  '1011'
+    })
+    .append ($('<div></div>')
+      .addClass ('presentation_overlay_inset_icon')
+      .css ({
+        'background-image':    'url(' + icon + ')',
+        'background-repeat':   'no-repeat',
+        'background-position': '50%',
+        'height':              '100px',
+        'width':               '100%'
+      }))
+    .append ($('<div></div>')
+      .addClass ('presentation_overlay_inset_text')
+      .css ({
+        'height':     '68px',
+        'text-align': 'center',
+        'width':      '100%'
+      })
+      .append ($('<p></p>').text (label).css ('color', 'white'))
+    );
+}
+
+/*
+*/
+function presentation_createOverlayElement () {
+  return $('<div></div>')
+    .addClass ('presentation_overlay')
+    .css ({
+        'background-color':    'black',
+        'height':              '100%',
+        'cursor':               'pointer',
+        'opacity':             '0.4',
+        'position':            'absolute',
+        'top':                 '0px',
+        'width':               '100%',
+        'z-index':             '1010'
+      });
+}
+
+/*
+*/
+function presentation_createPresentationElement (id, presentation) {
+  var icon = 'modules/presentation/images/play-circle-outline.png';
+  var label = 'PLAY LESSON';
+  return $('<div></div>')
+    .attr ('id', id)
+    .addClass ('presentation_presentation')
+    .attr ('data-presentation-presentation', presentation.getId ())
+    .css ('background-image',  'url(' + presentation.getImage () + ')')
+    .css ('background-size',   presentation.getWidth () + ', ' + presentation.getHeight ())
+    .css ('background-repeat', 'no-repeat')
+    .css ('width',             presentation.getWidth ())
+    .css ('height',            presentation.getHeight ())
+    .css ('position',          'relative')
+    .append (presentation_createOverlayInsetElement (label, icon))
+    .append (presentation_createOverlayElement ());
+}
+
+/*
+*/
+function presentation_createAudioToggleElement (presentationElement) {
+  var inputElement = $('<input></input>')
+    .addClass ('presentation_audio_toggle_input')
+    .attr ('type', 'checkbox')
+    .prop ('checked', presentation_AUDIO)
+    .change (function (event) {
+        var checked = $(this).prop ('checked');
+        presentation_AUDIO = checked
+
+        checked || responsiveVoice.cancel ();
+
+        var stepElement = presentationElement.stepElements [presentationElement.intro._currentStep];
+        if (stepElement) {
+          if (checked) {
+            if (!stepElement.spoken) {
+              stepElement.speak ();
+            }
+          } else { // !checked
+            stepElement.spoken = false;
+          }
+        }
+      });
+
+  return $('<div></div>')
+    .addClass ('presentation_audio_toggle')
+    .addClass ('materialize')
+    .attr ('tabindex', 0)
+    .append ($('<div></div>')
+      .addClass ('switch')
+      .append ($('<span></span>')
+        .addClass ('presentation_audio_toggle_label')
+        .text ('AUDIO NARRATION'))
+      .append ($('<label></label>')
+        .append ('OFF')
+        .append (inputElement)
+        .append ($('<span></span>')
+          .addClass ('lever'))
+        .append ($('<span></span>')
+          .addClass ('presentation_audio_toggle_on')
+          .text ('ON'))))
+    .keydown (function (event) {
+        event.keyCode === 13 && inputElement.prop ('checked', !inputElement.prop ('checked'));
+      });
 }
 ```
 
@@ -994,6 +1057,38 @@ function presentation_getId (type, path) {
       uri.segmentCoded (name);
   });
   return uri.toString ();
+}
+
+/*
+  Accepts one argument: htmlTranscript, an HTML
+  string or JQuery HTML Element; that represents
+  a speech transcript and returns a punctuated
+  version of htmlTranscript with HTML tags
+  removed as a string.
+*/
+presentation_punctuate = function (htmlTranscript) {
+  // I. Append punctuation to paragraphs and headers.
+  var transcript = $('<div></div>').html (htmlTranscript);
+  $('h1,h2,h3,h4,h5,p', transcript).map (
+    function (i, element) {
+      if (!$(element).text ().match (/[!?.]$/)) {
+        $(element).append ('.');
+      }
+  });
+
+  // II. Remove ending and internal whitespace.
+  return transcript.text ().trim ().replace (/\s+/g, ' ');
+} 
+
+/*
+  Accepts on argument: htmlTranscript, an HTML
+  string or JQuary HTML Element that represents a
+  speech transcript; punctuates the transcript,
+  and reads it aloud using a text to speech
+  synthesizer.
+*/
+presentation_speak = function (htmlTranscript) {
+  responsiveVoice.speak (presentation_punctuate (htmlTranscript));
 }
 ```
 
@@ -1230,10 +1325,8 @@ You can generate the Book module's source files using [Literate Programming](htt
 `literate-programming Readme.md`
 from the command line.
 
-<!--
-Presentation.js
----------------
-
+<!---
+### Presentation.js
 ```
 _"Global Variables"
 
@@ -1242,6 +1335,8 @@ _"The Load Event Handler"
 _"The Block Handlers"
 
 _"The Step Class"
+
+_"The Blank Step Class"
 
 _"The Button Step Class"
 
