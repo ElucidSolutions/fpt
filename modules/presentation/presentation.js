@@ -6,6 +6,7 @@ var presentation_DATABASE_URL = 'modules/presentation/database.xml';
 */
 var presentation_DATABASE = {};
 
+
 /*
 */
 MODULE_LOAD_HANDLERS.add (
@@ -33,6 +34,7 @@ MODULE_LOAD_HANDLERS.add (
   });
 });
 
+
 /*
 */
 function presentation_block (context, done) {
@@ -51,6 +53,7 @@ function presentation_block (context, done) {
   context.element.replaceWith (element);
   done (null, null);
 }
+
 
 /*
 */
@@ -87,8 +90,8 @@ presentation_Step.prototype._createElement = function (intro, oncomplete) {
 
 /*
 */
-presentation_Step.prototype.createElement = function (presentationElement, oncomplete) {
-  return this._createElement.call (this, presentationElement.intro)
+presentation_Step.prototype.createElement = function (intro, oncomplete) {
+  return this._createElement.call (this, intro)
     .addClass ('presentation_blank_step');
 }
 
@@ -108,6 +111,7 @@ function presentation_parseStep (presentationPath, element) {
   );
 }
 
+
 /*
 */
 function presentation_ButtonStep (id, image, text, position, top, left, width, height) {
@@ -124,27 +128,22 @@ presentation_ButtonStep.prototype.constructor = presentation_ButtonStep;
 
 /*
 */
-// presentation_ButtonStep.prototype.onstart = function (element, presentationElement, complete) { // RGE
 presentation_ButtonStep.prototype.onstart = function (element, intro, complete) {
   element.attr ('tabindex', 0);
-  console.log(presentationElement);
 }
 
 /*
 */
-// presentation_ButtonStep.prototype.createElement = function (intro, oncomplete) {
-presentation_ButtonStep.prototype.createElement = function (presentationElement, oncomplete) { // LL
+presentation_ButtonStep.prototype.createElement = function (intro, oncomplete) {
   var self = this;
   var complete = function () {
     oncomplete (function () {
       element.attr ('tabindex', -1);
-      // intro.nextStep (); // LL
-      presentationElement.intro.nextStep (); // LL
+      intro.nextStep ();
     });
   };
 
-//  var element = presentation_Step.prototype._createElement.call (this, intro)
-var element = presentation_Step.prototype._createElement.call (this, presentationElement.intro) // LL
+  var element = presentation_Step.prototype._createElement.call (this, intro)
     .addClass ('presentation_button_step')
     .keydown (function (event) {
         event.keyCode === 13 && complete ();
@@ -172,6 +171,7 @@ function presentation_parseButtonStep (presentationPath, element) {
   );
 }
 
+
 /*
 */
 function presentation_InputStep (id, image, text, position, top, left, width, height, expression, errorAlert) {
@@ -197,16 +197,14 @@ presentation_InputStep.prototype.checkInput = function (inputElement) {
 
 /*
 */
-// presentation_InputStep.prototype.onstart = function (element, presentationElement.intro, complete) {
 presentation_InputStep.prototype.onstart = function (element, intro, complete) {
   $('input', element).attr ('tabindex', 0);
 }
 
 /*
 */
-// presentation_InputStep.prototype.createElement = function (intro, oncomplete) {
-presentation_InputStep.prototype.createElement = function (presentationElement, oncomplete) { // LL
-  var element = presentation_Step.prototype._createElement.call (this, presentationElement.intro)
+presentation_InputStep.prototype.createElement = function (intro, oncomplete) {
+  var element = presentation_Step.prototype._createElement.call (this, intro)
     .addClass ('presentation_input_step');
 
   var self = this;
@@ -220,15 +218,14 @@ presentation_InputStep.prototype.createElement = function (presentationElement, 
             element
               .addClass ('presentation_valid')
               .removeClass ('presentation_invalid');
-              // alert.remove(); // LL
-            $('.presentation_error_message', presentationElement.element).hide ().empty ();
+              $(".presentation_error").remove();
             inputElement.attr ('tabindex', -1);
             oncomplete (function () {});
           } else {
             element.removeClass ('presentation_valid')
               .addClass ('presentation_invalid');
             if ($(".presentation_error").length === 0) {
-              $('.presentation_error_message', presentationElement.element).html (self.errorAlert).show ();
+              $(".introjs-tooltiptext").append("<div class='presentation_error'><span class='presentation_error_text'> ERROR: " + self.errorAlert + "</span></div>");
             }
           }
         }
@@ -255,6 +252,7 @@ function presentation_parseInputStep (presentationPath, element) {
     $('> errorAlert',   element).text ()
   );
 }
+
 
 /*
   presentation_QuizStep accepts eight arguments:
@@ -346,12 +344,12 @@ presentation_QuizStep.prototype.onClick = function (stepElement, oncomplete) {
 
 /*
 */
-// presentation_QuizStep.prototype.onstart = function (element, presentationElement.intro, complete) {} // RGE
+presentation_QuizStep.prototype.onstart = function (element, intro, complete) {}
 
 /*
 */
-presentation_QuizStep.prototype.createElement = function (presentationElement, oncomplete) { // RGE
-  var element = presentation_Step.prototype._createElement.call (this, presentationElement.intro) // RGE
+presentation_QuizStep.prototype.createElement = function (intro, oncomplete) {
+  var element = presentation_Step.prototype._createElement.call (this, intro)
     .addClass ('presentation_quiz_step');
 
   var testElement = $('<div></div>')
@@ -409,6 +407,7 @@ function presentation_parseTestStep (presentationPath, element) {
   );
 }
 
+
 /*
 */
 function presentation_Presentation (id, image, width, height, steps) {
@@ -454,6 +453,7 @@ function presentation_parsePresentation (presentationPath, element) {
   );
 }
 
+
 /*
 */
 function presentation_Database (presentations) {
@@ -497,10 +497,10 @@ function presentation_loadDatabase (url, done) {
   });
 }
 
+
 /*
 */
-// function presentation_StepElement (intro, step) { // LL
-function presentation_StepElement (presentationElement, step) { // LL
+function presentation_StepElement (intro, step) {
   var stepElement = this;
 
   this.getStep = function () { return step; }
@@ -556,20 +556,19 @@ function presentation_StepElement (presentationElement, step) { // LL
   /*
     A JQuery HTML element that represents this step.
   */
- // this.element = step.createElement (this.intro, this.complete);
-  this.element = step.createElement (presentationElement.intro, this.complete); // RGE
+  this.element = step.createElement (intro, this.complete);
 
   /*
   */
   this.start = function () {
-//    step.onstart (this.element, intro, this.complete); // LL
-    step.onstart (this.element, presentationElement.intro, this.complete); // LL
+    step.onstart (this.element, intro, this.complete);
   }
 }
 
+
 /*
 */
-function presentation_NavElement (presentationElement, stepElements) {
+function presentation_NavElement (intro, stepElements) {
   var self = this;
 
   // The JQuery HTML Element that represents this nav element.
@@ -582,27 +581,39 @@ function presentation_NavElement (presentationElement, stepElements) {
             .addClass ('presentation_nav_back')
             .addClass ('presentation_disabled')
             .keydown (function (event) {
-                event.keyCode === 13 && presentationElement._currentStep > 0 && presentationElement.previousStep ();
+                event.keyCode === 13 && intro._currentStep > 0 && intro.previousStep ();
               })
             .click (function (event) {
                 event.stopPropagation ();
-                // intro._currentStep > 0 && intro.previousStep ();
-                presentationElement._currentStep > 0 && presentationElement.previousStep ();
+                intro._currentStep > 0 && intro.previousStep ();
               }))
         .append ($('<td>Step <span class="presentation_nav_step">1</span> of ' + stepElements.length + '</td>'))
+/*
+        .append (stepElements.map (function (stepElement, i) {
+            return $('<td>' + (i + 1) + '</td>')
+              .attr ('tabindex', -1)
+              .addClass ('presentation_nav_step')
+              .addClass (i === 0 ? 'presentation_current_step' : 'presentation_disabled')
+              .attr ('data-presentation-nav-step', i)
+              .keydown (function (event) {
+                  event.keyCode == 13 && (i === 0 || stepElements [i - 1].completed ()) && intro.goToStep (i + 1);
+                })
+              .click (function (event) {
+                  event.stopPropagation ();
+                  (i === 0 || stepElements [i - 1].completed ()) && intro.goToStep (i + 1);
+                });
+          }))
+*/
         .append ($('<td>NEXT</td>')
             .attr ('tabindex', 0)
             .addClass ('presentation_nav_next')
             .addClass (stepElements.length === 0 || stepElements [0].completed () ? '' : 'presentation_disabled')
             .keydown (function (event) {
-                // event.keyCode === 13 && stepElements [presentationElement.intro._currentStep].completed () && presentationElement.intro.nextStep ();
-                event.keyCode === 13 && stepElements [presentationElement._currentStep].completed () && presentationElement.nextStep ();
-
+                event.keyCode === 13 && stepElements [intro._currentStep].completed () && intro.nextStep ();
               })
             .click (function (event) {
                 event.stopPropagation ();
-                // stepElements [presentationElement.intro._currentStep].completed () && presentationElement.intro.nextStep ();
-                stepElements [presentationElement._currentStep].completed () && presentationElement.nextStep ();
+                stepElements [intro._currentStep].completed () && intro.nextStep ();
               }))));
 
   /*
@@ -612,30 +623,33 @@ function presentation_NavElement (presentationElement, stepElements) {
   this.refresh = function () {
     // I. Enable/disable the Back button.
     var backElement = $('.presentation_nav_back', self.element);
-    // presentationElement.intro._currentStep === 0 ?
-    presentationElement._currentStep === 0 ?
+    intro._currentStep === 0 ?
       backElement.addClass    ('presentation_disabled'):
       backElement.removeClass ('presentation_disabled');
 
     // II. Enable/disable the step buttons.
-    // $('.presentation_nav_step', self.element).text (presentationElement.intro._currentStep + 1);
-    $('.presentation_nav_step', self.element).text (presentationElement._currentStep + 1);
+/*
+    for (var i = 0; i < stepElements.length; i ++) {
+      var stepElement = $('[data-presentation-nav-step="' + i + '"]', self.element);
+      (i === 0 || stepElements [i - 1].completed ()) ?
+        stepElement.attr ('tabindex',  0).removeClass ('presentation_disabled'):
+        stepElement.attr ('tabindex', -1).addClass ('presentation_disabled');
+    }
+*/
+    $('.presentation_nav_step', self.element).text (intro._currentStep + 1);
 
     // III. Highlight the current step button.
     $('.presentation_nav_step', self.element).removeClass ('presentation_current_step');
-    // $('[data-presentation-nav-step="' + presentationElement.intro._currentStep + '"]', self.element).addClass ('presentation_current_step');
-    $('[data-presentation-nav-step="' + presentationElement._currentStep + '"]', self.element).addClass ('presentation_current_step');
+    $('[data-presentation-nav-step="' + intro._currentStep + '"]', self.element).addClass ('presentation_current_step');
 
     // IV. Enable/disable the Next button.
     var nextElement = $('.presentation_nav_next', self.element);
-    // stepElements [presentationElement.intro._currentStep].completed () ?
-    stepElements [presentationElement._currentStep].completed () ?
+    stepElements [intro._currentStep].completed () ?
       nextElement.removeClass ('presentation_disabled'):
       nextElement.addClass    ('presentation_disabled');
 
     // V. Label the Next button.
-    // presentationElement.intro._currentStep < stepElements.length - 1 ?
-    presentationElement._currentStep < stepElements.length - 1 ?
+    intro._currentStep < stepElements.length - 1 ?
       nextElement.text ('NEXT').removeClass ('presentation_complete'):
       nextElement.text ('DONE').addClass ('presentation_complete');
   }
@@ -649,6 +663,7 @@ function presentation_NavElement (presentationElement, stepElements) {
     });
   }
 }
+
 
 /*
 */
@@ -717,8 +732,7 @@ function presentation_PresentationElement (id, presentation) {
     }));
 
   // The IntroJS object associated with this presentation element.
-  this.intro = introJs (this.element.get (0)); 
-
+  this.intro = introJs (this.element.get (0));
 
   // The default IntroJS settings.
   var introOptions = {
@@ -739,8 +753,7 @@ function presentation_PresentationElement (id, presentation) {
 
   for (var i = 0; i < steps.length; i ++) {
     var step = steps [i];
-//    var stepElement = new presentation_StepElement (this.intro, step); // LL
-    var stepElement = new presentation_StepElement (this, step); // LL
+    var stepElement = new presentation_StepElement (this.intro, step);
     stepElements.push (stepElement);
 
     this.element.append (stepElement.element
@@ -769,7 +782,6 @@ function presentation_PresentationElement (id, presentation) {
                       event.stopPropagation ();
                       self.intro.exit ();
                 }))
-              .append ($('<div></div>').addClass ('presentation_error_message')) // LL
               .append (navElement.element);
           }
           navElement.refresh ();
@@ -854,6 +866,7 @@ function presentation_PresentationElement (id, presentation) {
   });
 }
 
+
 /*
 */
 function presentation_PresentationElementsStore () {
@@ -909,6 +922,7 @@ function presentation_PresentationElementsStore () {
 /*
 */
 var presentation_ELEMENTS = new presentation_PresentationElementsStore ();
+
 
 /*
 */

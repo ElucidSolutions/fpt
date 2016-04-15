@@ -903,14 +903,21 @@ table.padded-list {
 .presentation_error_message {
   color: $red;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 20px;  
+  /*background: url('images/x-close.png') no-repeat;*/
 
-  :before {
+  &:before {
     content: url('images/x-close.png');
     padding-right: 10px;
   }
 }
 
+/*.presentation_error_message:before {
+    content: 'hello';
+    content: url('images/x-close.png');
+    padding-right: 10px;
+  }
+*/
 .presentation_exit {
   cursor:           pointer;
   float:            right;

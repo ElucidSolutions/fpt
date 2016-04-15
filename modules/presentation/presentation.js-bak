@@ -1,12 +1,3 @@
-Presentation Module
-===================
-
-The Presentation module defines the Presentation content type. This module defines a block type called Presentation which displays an interactive presentation. These presentations are stored in a database.
-
-Global Variables
-----------------
-
-```javascript
 /*
 */
 var presentation_DATABASE_URL = 'modules/presentation/database.xml';
@@ -14,12 +5,7 @@ var presentation_DATABASE_URL = 'modules/presentation/database.xml';
 /*
 */
 var presentation_DATABASE = {};
-```
 
-The Load Event Handler
-----------------------
-
-```javascript
 /*
 */
 MODULE_LOAD_HANDLERS.add (
@@ -46,12 +32,7 @@ MODULE_LOAD_HANDLERS.add (
         });
   });
 });
-```
 
-The Block Handlers
-------------------
-
-```javascript
 /*
 */
 function presentation_block (context, done) {
@@ -70,12 +51,7 @@ function presentation_block (context, done) {
   context.element.replaceWith (element);
   done (null, null);
 }
-```
 
-The Step Class
---------------
-
-```javascript
 /*
 */
 function presentation_Step (id, image, text, position, top, left, width, height) {
@@ -97,7 +73,13 @@ presentation_Step.prototype.onstart = function (element, intro, complete) {
 
 /*
 */
-presentation_Step.prototype._createElement = function (intro, oncomplete) {
+presentation_Step.prototype.complete = function (presentationElement) {
+  presentationElement.navElement.refresh ();
+}
+
+/*
+*/
+presentation_Step.prototype._createElement = function () {
   return $('<div></div>')
     .addClass ('presentation_step')
     .attr ('data-presentation-step', this.id)
@@ -111,8 +93,8 @@ presentation_Step.prototype._createElement = function (intro, oncomplete) {
 
 /*
 */
-presentation_Step.prototype.createElement = function (intro, oncomplete) {
-  return this._createElement.call (this, intro)
+presentation_Step.prototype.createElement = function (presentationElement) {
+  return this._createElement.call (this)
     .addClass ('presentation_blank_step');
 }
 
@@ -131,12 +113,7 @@ function presentation_parseStep (presentationPath, element) {
     $('> height',   element).text ()
   );
 }
-```
 
-The Button Step Class
----------------------
-
-```javascript
 /*
 */
 function presentation_ButtonStep (id, image, text, position, top, left, width, height) {
@@ -153,22 +130,22 @@ presentation_ButtonStep.prototype.constructor = presentation_ButtonStep;
 
 /*
 */
+// presentation_ButtonStep.prototype.onstart = function (element, presentationElement, complete) { // RGE
 presentation_ButtonStep.prototype.onstart = function (element, intro, complete) {
   element.attr ('tabindex', 0);
+  console.log(presentationElement);
 }
 
 /*
 */
-presentation_ButtonStep.prototype.createElement = function (intro, oncomplete) {
+presentation_ButtonStep.prototype.createElement = function (presentationElement) {
   var self = this;
   var complete = function () {
-    oncomplete (function () {
-      element.attr ('tabindex', -1);
-      intro.nextStep ();
-    });
+    element.attr ('tabindex', -1);
+    presentationElement.intro.nextStep (); // LL
   };
 
-  var element = presentation_Step.prototype._createElement.call (this, intro)
+  var element = presentation_Step.prototype._createElement.call (this)
     .addClass ('presentation_button_step')
     .keydown (function (event) {
         event.keyCode === 13 && complete ();
@@ -195,12 +172,7 @@ function presentation_parseButtonStep (presentationPath, element) {
     $('> height',   element).text ()
   );
 }
-```
 
-The Input Step Class
---------------------
-
-```javascript
 /*
 */
 function presentation_InputStep (id, image, text, position, top, left, width, height, expression, errorAlert) {
@@ -226,14 +198,16 @@ presentation_InputStep.prototype.checkInput = function (inputElement) {
 
 /*
 */
+// presentation_InputStep.prototype.onstart = function (element, presentationElement.intro, complete) {
 presentation_InputStep.prototype.onstart = function (element, intro, complete) {
   $('input', element).attr ('tabindex', 0);
 }
 
 /*
 */
-presentation_InputStep.prototype.createElement = function (intro, oncomplete) {
-  var element = presentation_Step.prototype._createElement.call (this, intro)
+// presentation_InputStep.prototype.createElement = function (intro, oncomplete) {
+presentation_InputStep.prototype.createElement = function (presentationElement, oncomplete) { // LL
+  var element = presentation_Step.prototype._createElement.call (this, presentationElement.intro)
     .addClass ('presentation_input_step');
 
   var self = this;
@@ -247,14 +221,15 @@ presentation_InputStep.prototype.createElement = function (intro, oncomplete) {
             element
               .addClass ('presentation_valid')
               .removeClass ('presentation_invalid');
-              $(".presentation_error").remove();
+              // alert.remove(); // LL
+            $('.presentation_error_message', presentationElement.element).hide ().empty ();
             inputElement.attr ('tabindex', -1);
             oncomplete (function () {});
           } else {
             element.removeClass ('presentation_valid')
               .addClass ('presentation_invalid');
             if ($(".presentation_error").length === 0) {
-              $(".introjs-tooltiptext").append("<div class='presentation_error'><span class='presentation_error_text'> ERROR: " + self.errorAlert + "</span></div>");
+              $('.presentation_error_message', presentationElement.element).html (self.errorAlert).show ();
             }
           }
         }
@@ -281,12 +256,7 @@ function presentation_parseInputStep (presentationPath, element) {
     $('> errorAlert',   element).text ()
   );
 }
-```
 
-The Quiz Step Class
--------------------
-
-```javascript
 /*
   presentation_QuizStep accepts eight arguments:
 
@@ -377,12 +347,12 @@ presentation_QuizStep.prototype.onClick = function (stepElement, oncomplete) {
 
 /*
 */
-presentation_QuizStep.prototype.onstart = function (element, intro, complete) {}
+// presentation_QuizStep.prototype.onstart = function (element, presentationElement.intro, complete) {} // RGE
 
 /*
 */
-presentation_QuizStep.prototype.createElement = function (intro, oncomplete) {
-  var element = presentation_Step.prototype._createElement.call (this, intro)
+presentation_QuizStep.prototype.createElement = function (presentationElement, oncomplete) { // RGE
+  var element = presentation_Step.prototype._createElement.call (this, presentationElement.intro) // RGE
     .addClass ('presentation_quiz_step');
 
   var testElement = $('<div></div>')
@@ -439,12 +409,7 @@ function presentation_parseTestStep (presentationPath, element) {
     }).toArray ()
   );
 }
-```
 
-The Presentation Class
----------------
-
-```javascript
 /*
 */
 function presentation_Presentation (id, image, width, height, steps) {
@@ -489,12 +454,7 @@ function presentation_parsePresentation (presentationPath, element) {
     }).toArray () 
   );
 }
-```
 
-The Database Class
-------------------
-
-```javascript
 /*
 */
 function presentation_Database (presentations) {
@@ -537,15 +497,11 @@ function presentation_loadDatabase (url, done) {
     }
   });
 }
-```
 
-The Step Element Class
-----------------------
-
-```javascript
 /*
 */
-function presentation_StepElement (intro, step) {
+// function presentation_StepElement (intro, step) { // LL
+function presentation_StepElement (presentationElement, step) { // LL
   var stepElement = this;
 
   this.getStep = function () { return step; }
@@ -601,23 +557,20 @@ function presentation_StepElement (intro, step) {
   /*
     A JQuery HTML element that represents this step.
   */
-  this.element = step.createElement (intro, this.complete);
+ // this.element = step.createElement (this.intro, this.complete);
+  this.element = step.createElement (presentationElement.intro, this.complete); // RGE
 
   /*
   */
   this.start = function () {
-    step.onstart (this.element, intro, this.complete);
+//    step.onstart (this.element, intro, this.complete); // LL
+    step.onstart (this.element, presentationElement.intro, this.complete); // LL
   }
 }
-```
 
-The Nav Element Class
----------------------
-
-```javascript
 /*
 */
-function presentation_NavElement (intro, stepElements) {
+function presentation_NavElement (presentationElement, stepElements) {
   var self = this;
 
   // The JQuery HTML Element that represents this nav element.
@@ -630,39 +583,27 @@ function presentation_NavElement (intro, stepElements) {
             .addClass ('presentation_nav_back')
             .addClass ('presentation_disabled')
             .keydown (function (event) {
-                event.keyCode === 13 && intro._currentStep > 0 && intro.previousStep ();
+                event.keyCode === 13 && presentationElement._currentStep > 0 && presentationElement.previousStep ();
               })
             .click (function (event) {
                 event.stopPropagation ();
-                intro._currentStep > 0 && intro.previousStep ();
+                // intro._currentStep > 0 && intro.previousStep ();
+                presentationElement._currentStep > 0 && presentationElement.previousStep ();
               }))
         .append ($('<td>Step <span class="presentation_nav_step">1</span> of ' + stepElements.length + '</td>'))
-/*
-        .append (stepElements.map (function (stepElement, i) {
-            return $('<td>' + (i + 1) + '</td>')
-              .attr ('tabindex', -1)
-              .addClass ('presentation_nav_step')
-              .addClass (i === 0 ? 'presentation_current_step' : 'presentation_disabled')
-              .attr ('data-presentation-nav-step', i)
-              .keydown (function (event) {
-                  event.keyCode == 13 && (i === 0 || stepElements [i - 1].completed ()) && intro.goToStep (i + 1);
-                })
-              .click (function (event) {
-                  event.stopPropagation ();
-                  (i === 0 || stepElements [i - 1].completed ()) && intro.goToStep (i + 1);
-                });
-          }))
-*/
         .append ($('<td>NEXT</td>')
             .attr ('tabindex', 0)
             .addClass ('presentation_nav_next')
             .addClass (stepElements.length === 0 || stepElements [0].completed () ? '' : 'presentation_disabled')
             .keydown (function (event) {
-                event.keyCode === 13 && stepElements [intro._currentStep].completed () && intro.nextStep ();
+                // event.keyCode === 13 && stepElements [presentationElement.intro._currentStep].completed () && presentationElement.intro.nextStep ();
+                event.keyCode === 13 && stepElements [presentationElement._currentStep].completed () && presentationElement.nextStep ();
+
               })
             .click (function (event) {
                 event.stopPropagation ();
-                stepElements [intro._currentStep].completed () && intro.nextStep ();
+                // stepElements [presentationElement.intro._currentStep].completed () && presentationElement.intro.nextStep ();
+                stepElements [presentationElement._currentStep].completed () && presentationElement.nextStep ();
               }))));
 
   /*
@@ -672,52 +613,35 @@ function presentation_NavElement (intro, stepElements) {
   this.refresh = function () {
     // I. Enable/disable the Back button.
     var backElement = $('.presentation_nav_back', self.element);
-    intro._currentStep === 0 ?
+    // presentationElement.intro._currentStep === 0 ?
+    presentationElement._currentStep === 0 ?
       backElement.addClass    ('presentation_disabled'):
       backElement.removeClass ('presentation_disabled');
 
     // II. Enable/disable the step buttons.
-/*
-    for (var i = 0; i < stepElements.length; i ++) {
-      var stepElement = $('[data-presentation-nav-step="' + i + '"]', self.element);
-      (i === 0 || stepElements [i - 1].completed ()) ?
-        stepElement.attr ('tabindex',  0).removeClass ('presentation_disabled'):
-        stepElement.attr ('tabindex', -1).addClass ('presentation_disabled');
-    }
-*/
-    $('.presentation_nav_step', self.element).text (intro._currentStep + 1);
+    // $('.presentation_nav_step', self.element).text (presentationElement.intro._currentStep + 1);
+    $('.presentation_nav_step', self.element).text (presentationElement._currentStep + 1);
 
     // III. Highlight the current step button.
     $('.presentation_nav_step', self.element).removeClass ('presentation_current_step');
-    $('[data-presentation-nav-step="' + intro._currentStep + '"]', self.element).addClass ('presentation_current_step');
+    // $('[data-presentation-nav-step="' + presentationElement.intro._currentStep + '"]', self.element).addClass ('presentation_current_step');
+    $('[data-presentation-nav-step="' + presentationElement._currentStep + '"]', self.element).addClass ('presentation_current_step');
 
     // IV. Enable/disable the Next button.
     var nextElement = $('.presentation_nav_next', self.element);
-    stepElements [intro._currentStep].completed () ?
+    // stepElements [presentationElement.intro._currentStep].completed () ?
+    stepElements [presentationElement._currentStep].completed () ?
       nextElement.removeClass ('presentation_disabled'):
       nextElement.addClass    ('presentation_disabled');
 
     // V. Label the Next button.
-    intro._currentStep < stepElements.length - 1 ?
+    // presentationElement.intro._currentStep < stepElements.length - 1 ?
+    presentationElement._currentStep < stepElements.length - 1 ?
       nextElement.text ('NEXT').removeClass ('presentation_complete'):
       nextElement.text ('DONE').addClass ('presentation_complete');
   }
-
-  // Register oncomplete event handlers.
-  for (var i = 0; i < stepElements.length; i ++) {
-    stepElements [i].oncomplete (
-      function (done) {
-        self.refresh ();
-        done (null);
-    });
-  }
 }
-```
 
-The Presentation Element Class
------------------------
-
-```javascript
 /*
 */
 function presentation_PresentationElement (id, presentation) {
@@ -785,7 +709,8 @@ function presentation_PresentationElement (id, presentation) {
     }));
 
   // The IntroJS object associated with this presentation element.
-  this.intro = introJs (this.element.get (0));
+  this.intro = introJs (this.element.get (0)); 
+
 
   // The default IntroJS settings.
   var introOptions = {
@@ -806,7 +731,8 @@ function presentation_PresentationElement (id, presentation) {
 
   for (var i = 0; i < steps.length; i ++) {
     var step = steps [i];
-    var stepElement = new presentation_StepElement (this.intro, step);
+//    var stepElement = new presentation_StepElement (this.intro, step); // LL
+    var stepElement = new presentation_StepElement (this, step); // LL
     stepElements.push (stepElement);
 
     this.element.append (stepElement.element
@@ -823,7 +749,7 @@ function presentation_PresentationElement (id, presentation) {
   }
 
   // The nav element associated with this presentation element.
-  var navElement = new presentation_NavElement (this.intro, stepElements);
+  this.navElement = new presentation_NavElement (this.intro, stepElements);
 
   this.intro.setOptions (introOptions)
     .onafterchange (
@@ -835,9 +761,10 @@ function presentation_PresentationElement (id, presentation) {
                       event.stopPropagation ();
                       self.intro.exit ();
                 }))
-              .append (navElement.element);
+              .append ($('<div></div>').addClass ('presentation_error_message')) // LL
+              .append (self.navElement.element);
           }
-          navElement.refresh ();
+          self.navElement.refresh ();
 
           var stepElement = stepElements [self.intro._currentStep];
           stepElement.start ();
@@ -918,12 +845,7 @@ function presentation_PresentationElement (id, presentation) {
       done (null);
   });
 }
-```
 
-The Presentation Elements Store Class
-------------------------------
-
-```javascript
 /*
 */
 function presentation_PresentationElementsStore () {
@@ -979,12 +901,7 @@ function presentation_PresentationElementsStore () {
 /*
 */
 var presentation_ELEMENTS = new presentation_PresentationElementsStore ();
-```
 
-Auxiliary Functions
--------------------
-
-```javascript
 /*
 */
 function presentation_getId (type, path) {
@@ -995,273 +912,3 @@ function presentation_getId (type, path) {
   });
   return uri.toString ();
 }
-```
-
-The Presentation Database Schema
---------------------------------
-
-To be considered valid, the Presentation Database XML file must conform to the following XML schema, which can be found in [database.xsd](#The Presentation Database Schema "save:").
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <!-- Defines the root element. -->
-  <xs:element name="database">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="presentation" type="presentationType" minOccurs="0" maxOccurs="unbounded">
-          <xs:unique name="uniquePresentationName">
-            <xs:selector xpath="presentation"/>
-            <xs:field xpath="@name"/>
-          </xs:unique>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
-  <!-- Defines the Presentation element type. -->
-  <xs:complexType name="presentationType">
-    <xs:all>
-      <xs:element name="name"  type="xs:string" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="image" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="width" minOccurs="1" maxOccurs="1">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9]+px"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element name="height" minOccurs="1" maxOccurs="1">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9]+px"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element name="steps" type="stepsType" minOccurs="1" maxOccurs="1">
-        <xs:unique name="uniqueStepName">
-          <xs:selector xpath="blankStep|inputStep"/>
-          <xs:field xpath="name"/>
-        </xs:unique>
-      </xs:element>
-    </xs:all>
-  </xs:complexType>
-
-  <!-- Defines the Steps element type. -->
-  <xs:complexType name="stepsType">
-    <xs:choice maxOccurs="unbounded">
-      <xs:element name="blankStep"  type="blankStepType" minOccurs="0"/>
-      <xs:element name="buttonStep" type="blankStepType" minOccurs="0"/>
-      <xs:element name="inputStep"  type="inputStepType" minOccurs="0"/>
-      <xs:element name="testStep"   type="testStepType"  minOccurs="0"/>
-    </xs:choice>
-  </xs:complexType>
-
-  <!-- Defines the Blank Step element type. -->
-  <xs:complexType name="blankStepType">
-    <xs:sequence>
-      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="image" type="xs:anyURI" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="text" type="xs:string" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="position" minOccurs="1" maxOccurs="1">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="bottom"/>
-            <xs:enumeration value="left"/>
-            <xs:enumeration value="right"/>
-            <xs:enumeration value="top"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element name="top" minOccurs="1" maxOccurs="1">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9]+px"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element name="left" minOccurs="1" maxOccurs="1">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9]+px"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element name="width" minOccurs="1" maxOccurs="1">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9]+px"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element name="height" minOccurs="1" maxOccurs="1">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9]+px"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-
-  <!-- Defines the Input Step element type. -->
-  <xs:complexType name="inputStepType">
-    <xs:complexContent>
-      <xs:extension base="blankStepType">
-        <xs:sequence>
-          <xs:element name="expression" type="xs:string" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="errorAlert" type="xs:string" minOccurs="1" maxOccurs="1"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <!-- Defines the Test Step element type. -->
-  <xs:complexType name="testStepType">
-    <xs:complexContent>
-      <xs:extension base="blankStepType">
-        <xs:sequence>
-          <xs:element name="options" type="optionsType" minOccurs="1" maxOccurs="1"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <!-- Defines the Options element type. -->
-  <xs:complexType name="optionsType">
-    <xs:sequence>
-      <xs:element name="option" minOccurs="0" maxOccurs="unbounded">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="label" type="xs:string" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="isCorrect" minOccurs="1" maxOccurs="1">
-              <xs:simpleType>
-                <xs:restriction base="xs:string">
-                  <xs:enumeration value="true"/>
-                  <xs:enumeration value="false"/>
-                </xs:restriction>
-              </xs:simpleType>
-            </xs:element>
-            <xs:element name="onSelect" type="xs:string" minOccurs="1" maxOccurs="1"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-</xs:schema>
-```
-
-An Example Presentation Database
---------------------------------
-
-An example Presentation Database can be found in [database.xml.example](#An Example Presentation Database "save:") and is presented below:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<database>
-  <presentation>
-    <name>Example Presentation</name>
-    <image>https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png</image>
-    <width>500px</width>
-    <height>500px</height>
-    <steps>
-      <blankStep>
-        <name>First Step</name>
-        <image>https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png</image>
-        <text><![CDATA[<p>This is an example blank step.</p>]]></text>
-        <position>top</position>
-        <top>10%</top>
-        <left>10%</left>
-        <width>100px</width>
-        <height>100px</height>
-      </blankStep>
-      <inputStep>
-        <name>Second Step</name>
-        <image>https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png</image>
-        <text><![CDATA[<p>This is an example input step.</p>]]></text>
-        <position>top</position>
-        <top>10%</top>
-        <left>10%</left>
-        <width>100px</width>
-        <height>100px</height>
-        <expression><![CDATA[\d+\.\d{2}]]></expression>
-      </inputStep>
-      <testStep>
-        <name>Third Step</name>
-        <image>https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png</image>
-        <text><![CDATA[<p>This is an example test.</p>]]></text>
-        <position>top</position>
-        <top>10%</top>
-        <left>10%</left>
-        <width>100px</width>
-        <height>100px</height>
-        <options>
-          <option>
-            <label><![CDATA[First option]]></label>
-            <isCorrect>true</isCorrect>
-            <onSelect><![CDATA[Correct!]]></onSelect>
-          </option>
-          <option>
-            <label><![CDATA[Second option]]></label>
-            <isCorrect>false</isCorrect>
-            <onSelect><![CDATA[Incorrect!]]></onSelect>
-          </option>
-        </options>
-      </testStep>
-    </steps>
-  </presentation>
-</database>
-```
-
-The Default Presentation Database
----------------------------------
-
-The default Presentation Database contains an empty database and can be found in [database.xml.default](#The Default Presentation Database "save:").
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<database></database>
-```
-
-Generating Source Files
------------------------
-
-You can generate the Book module's source files using [Literate Programming](https://github.com/jostylr/literate-programming), simply execute:
-`literate-programming Readme.md`
-from the command line.
-
-<!--
-Presentation.js
----------------
-
-```
-_"Global Variables"
-
-_"The Load Event Handler"
-
-_"The Block Handlers"
-
-_"The Step Class"
-
-_"The Button Step Class"
-
-_"The Input Step Class"
-
-_"The Quiz Step Class"
-
-_"The Presentation Class"
-
-_"The Database Class"
-
-_"The Step Element Class"
-
-_"The Nav Element Class"
-
-_"The Presentation Element Class"
-
-_"The Presentation Elements Store Class"
-
-_"Auxiliary Functions"
-```
-[presentation.js](#Presentation.js "save:")
--->

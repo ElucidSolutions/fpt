@@ -1827,11 +1827,18 @@ table.padded-list tbody tr td {
 .presentation_error_message {
   color: #ed1c24;
   text-align: center;
-  margin-bottom: 20px; }
-  .presentation_error_message :before {
+  margin-bottom: 20px;
+  /*background: url('images/x-close.png') no-repeat;*/ }
+  .presentation_error_message:before {
     content: url("images/x-close.png");
     padding-right: 10px; }
 
+/*.presentation_error_message:before {
+    content: 'hello';
+    content: url('images/x-close.png');
+    padding-right: 10px;
+  }
+*/
 .presentation_exit {
   cursor: pointer;
   float: right;
