@@ -931,8 +931,8 @@ tr.introjs-showElement > th {
 
 /*Redoing the Search */
 .search_link {
-  /*  background: white url("images/searchIcon.png") no-repeat;
-    background-position: 96% 50%;*/
+  background: white url("images/searchIcon.png") no-repeat;
+  background-position: 96% 50%;
   border: 1px solid #f29a2f;
   padding: 5px 8px;
   display: inline-block;
@@ -949,15 +949,6 @@ tr.introjs-showElement > th {
     outline: 0px;
     border: none; }
 
-/*.search_icon {
-  background-color: pink;
-  display: inline-block;
-  border: 2px solid red;
-  width: 100px;
-  position: fixed;
-  top: 10px;
-  right: 10px;
-}*/
 /* Original SCSS */
 .search_form {
   background: white url("images/searchIcon.png") no-repeat;
@@ -1923,5 +1914,3 @@ table.padded-list tbody tr td {
 
 .presentation_button_step {
   cursor: pointer; }
-
-/*# sourceMappingURL=standard.css.map */
