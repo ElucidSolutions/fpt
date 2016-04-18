@@ -697,8 +697,9 @@ Block Elements
   JQuery HTML Element.
 */
 function search_createFormElement (interface) {
-  var element = $('<input></input>')
-    .addClass ('search_form')
+  var inputElement = $('<input></input>')
+    .addClass ('search_input')
+    .addClass ('search_form_input')
     .attr ('type', 'text')
     .attr ('placeholder', 'Search')
     .val (interface.query)
@@ -708,11 +709,19 @@ function search_createFormElement (interface) {
 
   interface.searchEventHandlers.push (
     function (done) {
-      element.val (interface.query);
+      inputElement.val (interface.query);
       done (null);
   });
 
-  return element;
+  return $('<div></div>')
+    .addClass ('search_form')
+    .append (inputElement)
+    .append ($('<div></div>')
+      .addClass ('search_button')
+      .addClass ('search_form_button')
+      .click (function () {
+          interface.search (inputElement.val (), function () {});
+        }));
 }
 
 /*
@@ -725,25 +734,47 @@ function search_createFormElement (interface) {
   search results page with the query.
 */
 function search_createLinkElement (searchId) {
-  return $('<input></input>')
-    .addClass ('search_link')
+  var inputElement = $('<input></input>')
+    .addClass ('search_input')
+    .addClass ('search_link_input')
     .attr ('type', 'text')
     .attr ('placeholder', 'Search')
     .val (searchId.segmentCoded (2))
     .keypress (function (event) {
-      if (event.which === 13) {
-        var keywords = $(this).val ();
-        var id = new URI ('')
-          .segmentCoded ('search_page_block')
-          .segmentCoded (searchId.segmentCoded (1))
-          .segmentCoded (keywords ? keywords : ' ')
-          .segment (searchId.segment (3))
-          .segment (searchId.segment (4))
-          .toString ();
+        if (event.which === 13) {
+          loadPage (search_getSearchURL (searchId, $(this).val ()));
+        }
+      });
 
-        loadPage (id);
-      }
-    });
+  return $('<div></div>')
+    .addClass ('search_link')
+    .append (inputElement)
+    .append ($('<div></div>')
+      .addClass ('search_button')
+      .addClass ('search_link_button')
+      .click (function () {
+          loadPage (search_getSearchURL (searchId, $(inputElement).val ()));
+        }));
+}
+
+/*
+  search_getSearchURL accepts two arguments:
+
+  * searchId, a Search Id
+  * and keywords, a string that represents a
+    collection of search terms
+
+  and returns a URL string that represents a
+  query for keywords against searchId.
+*/
+function search_getSearchURL (searchId, keywords) {
+  return new URI ('')
+    .segmentCoded ('search_page_block')
+    .segmentCoded (searchId.segmentCoded (1))
+    .segmentCoded (keywords ? keywords : ' ')
+    .segment (searchId.segment (3))
+    .segment (searchId.segment (4))
+    .toString ();
 }
 ```
 

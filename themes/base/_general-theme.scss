@@ -233,9 +233,7 @@ tr:nth-child(even) {
     border-bottom: 1px solid $medium_gray;
   }
 
-  input {
-    float: right;
-    height: 33px;
+  .search_link {
     margin: 20px;
 
     @include media(max-width $small-width){
