@@ -160,7 +160,7 @@ function loadSettings (done) {
       done (parseSettings (doc));
     },
     error: function (request, status, error) {
-      throw new Error ('[core.js][loadSettings] Critical Error: an error occured while trying to load "settings.xml". ' + error);
+      throw new Error ('[core][loadSettings] Critical Error: an error occured while trying to load "settings.xml". ' + error);
     }
   });
 }
@@ -220,20 +220,47 @@ function loadModules (settings, done) {
 }
 
 /*
-  loadScript accepts two arguments: url, a string;
-  and done, a function. It loads the script 
-  referenced by url and calls done. If an error 
-  occurs, this function throws a strict error and
-  calls done.
+  loadScript accepts two arguments:
+
+  * url, a URL string
+  * and done, a function that accepts one
+    argument: error, an Error.
+
+  It loads the script referenced by url and calls
+  done. If an error occurs, this function throws
+  a strict error and calls done.
 */
 function loadScript (url, done) {
   $.getScript (url)
     .done (function () { done (null); })
     .fail (function (jqxhr, settings, exception) {
-        var error = new Error ('[core.js][loadScript] Error: an error occured while trying to load "' + url + '".');
+        var error = new Error ('[core][loadScript] Error: an error occured while trying to load "' + url + '".');
         strictError (error);
         done (error);
       });
+}
+
+/*
+  loadScripts accepts two arguments:
+
+  * urls, an array of URL strings
+  * and done, a function that accepts one
+    argument: error, an Error
+
+  loads the scripts referenced by urls and calls
+  done. If any of these scripts fails to load,
+  this function throws a strict error and calls
+  done without loading the remaining scripts.
+*/
+function loadScripts (urls, done) {
+  async.eachSeries (urls, loadScript,
+    function (error) {
+      if (error) {
+        strictError (new Error ('[core][loadScripts] Error: an error occured while trying to load one or more scripts. ' + error.message));
+        done (error);
+      }
+      done (null);
+  });
 }
 ```
 

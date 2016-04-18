@@ -1,68 +1,80 @@
 /*
+  A URL string that represents the presentation
+  database URL.
 */
 var presentation_DATABASE_URL = 'modules/presentation/database.xml';
 
 /*
+  A presentation_Database object that represents
+  the current presentation database.
 */
 var presentation_DATABASE = {};
 
 /*
+  A boolean variable indicating whether or not
+  audio narration is enabled.
 */
 var presentation_AUDIO = false;
 
-/*
-*/
+// The module's load event handler.
 MODULE_LOAD_HANDLERS.add (
   function (done) {
-    // I. Load the Intro.JS library.
-    loadScript ('modules/presentation/lib/intro.js-2.0.0/intro.js',
+    // I. Load the external libraries.
+    loadScripts ([
+        'modules/presentation/lib/intro/intro.js-2.0.0/intro.js',
+        'modules/presentation/lib/materialize/materialize-0.97.6/js/bin/materialize.js',
+        'http://code.responsivevoice.org/responsivevoice.js'
+      ],
       function (error) {
         if (error) { return done (error); }
 
-        // II. Load the Responsive Voice library.
-        loadScript ('http://code.responsivevoice.org/responsivevoice.js',
-          function (error) {
+        // II. Load the Materialize stylesheet.
+        $.getCSS ('modules/presentation/lib/materialize/materialize-0.97.6/css/materialize.css');
+
+        // III. Load the Presentation database.
+        presentation_loadDatabase (
+          presentation_DATABASE_URL,
+          function (error, database) {
             if (error) { return done (error); }
 
-            // III. Load the Presentation database.
-            presentation_loadDatabase (
-              presentation_DATABASE_URL,
-              function (error, database) {
-                if (error) { return done (error); }
+            // IV. Cache the Presentation database.
+            presentation_DATABASE = database;
 
-                // IV. Cache the Presentation database.
-                presentation_DATABASE = database;
+            // V. Register the block handlers.
+            block_HANDLERS.add ('presentation_block', presentation_block);
 
-                // V. Register the block handlers.
-                block_HANDLERS.add ('presentation_block', presentation_block);
-
-                // VI. Cancel text to speech playback on page load.
-                PAGE_LOAD_HANDLERS.add (
-                  function (id, done) {
-                    responsiveVoice.cancel ();
-                    done ();
-                });
-
-                // VII. Continue.
-                done (null);
+            // VI. Cancel text to speech playback on page load.
+            PAGE_LOAD_HANDLERS.add (
+              function (id, done) {
+                responsiveVoice.cancel ();
+                done ();
             });
-        });
+
+            // VII. Continue.
+            done (null);
+        });      
   });
 });
 
 /*
+  Accepts two arguments:
+
+  * context, a Block Expansion Context
+  * and done, a function that accepts one
+    argument: error, an Error
+
+  context.element must contain a single text
+  node representing a presentation ID.
+
+  replaces context.element with a JQuery
+  HTML Element that represents the referenced
+  presentation and calls done.
 */
 function presentation_block (context, done) {
-  var presentationElementId = context.element.attr ('id');
-  if (!presentationElementId) {
-    presentationElementId = getUniqueId ();
-  }
-
   var presentation = presentation_DATABASE.getPresentation (context.element.text ());
   if (!presentation) { return done (null, null); }
 
-  presentationElement = presentation.createElement (presentationElementId);
-  presentation_ELEMENTS.save (presentationElement);
+  presentationElement = new presentation_PresentationElement (presentation);
 
   var element = presentationElement.element;
   context.element.replaceWith (element);
@@ -70,6 +82,26 @@ function presentation_block (context, done) {
 }
 
 /*
+  Accepts eight arguments:
+
+  * id, an Presentation Step ID string
+  * image, a URL string
+  * text, an HTML string
+  * position, a string equal to either "top",
+    "bottom", "left", "right", or other positions
+    defined by IntroJS.
+  * top, a CSS Dimension string
+  * left, a CSS Dimension string
+  * width, a CSS Dimension string
+  * and height, a CSS Dimension string
+
+  and returns a presentation_Step that whose
+  background image is given by image, main prompt
+  equals text, whose focus element is positioned
+  by top and left, whose dimensions are given
+  by width and height, and whose main prompt is
+  positioned near the focus element according
+  to position.
 */
 function presentation_Step (id, image, text, position, top, left, width, height) {
   this.id        = id;
@@ -82,13 +114,15 @@ function presentation_Step (id, image, text, position, top, left, width, height)
   this.height    = height;
 }
 
-/*
-*/
+// Accepts no arguments and reads this step's text aloud.
 presentation_Step.prototype.speak = function () {
   presentation_speak (this.text);
 }
 
 /*
+  Accepts no arguments and returns a JQuery
+  HTML element that represents this step's
+  focus element.
 */
 presentation_Step.prototype._createElement = function () {
   return $('<div></div>')
@@ -103,21 +137,72 @@ presentation_Step.prototype._createElement = function () {
 }
 
 /*
+  Accepts two arguments:
+
+  * presentationElement, a presentation_Element
+  * and stepElement, a presentation_StepElement
+
+  and returns a JQuery HTML Element that
+  represents this step's focus element.
 */
 presentation_Step.prototype.createElement = function (presentationElement, stepElement) {}
 
 /*
+  Accepts two arguments:
+
+  * presentationElement, a presentation_Element
+  * and stepElement, a presentation_StepElement.
+
+  stepElement must be one of this step's
+  instances and presentationElement must include
+  stepElement as one of its step elements.
+
+  This function marks the stepElement as having
+  been completed and updates the nav element
+  associated with presentationElement.
+
+  This function should be called when a user
+  completes stepElement.
 */
 presentation_Step.prototype.complete = function (presentationElement, stepElement) {
   stepElement.completed = true;
-  presentationElement.navElement.refresh ();
+  presentation_updateNavElement (presentationElement.intro, presentationElement.stepElements, presentationElement.navElement);
 }
 
 /*
+  Accepts two arguments:
+
+  * presentationElement, a presentation_Element
+  * and stepElement, a presentation_StepElement.
+
+  stepElement must be one of this step's
+  instances and presentationElement must include
+  stepElement as one of its step elements.
+
+  This function updates presentationElement and
+  stepElement.
+
+  This function should be called when introJS
+  highlights stepElement - i.e. when stepElement
+  is presented to the user.
 */
 presentation_Step.prototype.onHighlight = function (presentationElement, stepElement) {}
 
 /*
+  Accepts two arguments:
+
+  * presentationPath, a string array
+  * and element, a JQuery HTML Element.
+
+  element must represent a Presentation Step
+  Database Entry element.
+
+  presentationPath must be a path giving this
+  presentation's location within the database
+  containing element.
+
+  This function returns the step represented by
+  element as a presentation_Step.
 */
 function presentation_parseStep (presentationPath, element) {}
 
@@ -501,12 +586,6 @@ function presentation_Presentation (id, image, width, height, steps) {
 
 /*
 */
-presentation_Presentation.prototype.createElement = function (elementId) {
-  return new presentation_PresentationElement (elementId, this);
-}
-
-/*
-*/
 function presentation_parsePresentation (presentationPath, element) {
   var path = presentationPath.concat ($('> name', element).text ());
   return new presentation_Presentation (
@@ -612,83 +691,15 @@ function presentation_StepElement (presentationElement, step) {
 
 /*
 */
-function presentation_NavElement (intro, stepElements) {
-  var self = this;
-
-  // The JQuery HTML Element that represents this nav element.
-  this.element = $('<table></table>')
-    .addClass ('presentation_nav')
-    .append ($('<tbody></tbody>')
-      .append ($('<tr></tr>')
-        .append ($('<td>BACK</td>')
-            .attr ('tabindex', 0)
-            .addClass ('presentation_nav_back')
-            .addClass ('presentation_disabled')
-            .keydown (function (event) {
-                event.keyCode === 13 && intro._currentStep > 0 && intro.previousStep ();
-              })
-            .click (function (event) {
-                event.stopPropagation ();
-                intro._currentStep > 0 && intro.previousStep ();
-              }))
-        .append ($('<td>Step <span class="presentation_nav_step">1</span> of <span class="presentation_nav_total">' + stepElements.length + '</span></td>'))
-        .append ($('<td>NEXT</td>')
-            .attr ('tabindex', 0)
-            .addClass ('presentation_nav_next')
-            .addClass (stepElements.length === 0 || stepElements [0].completed ? '' : 'presentation_disabled')
-            .keydown (function (event) {
-                event.keyCode === 13 && stepElements [intro._currentStep].completed && intro.nextStep ();
-              })
-            .click (function (event) {
-                event.stopPropagation ();
-                stepElements [intro._currentStep].completed && intro.nextStep ();
-              }))));
-
-  /*
-    Updates the nav element to reflect the
-    current state.
-  */
-  this.refresh = function () {
-    // I. Enable/disable the Back button.
-    var backElement = $('.presentation_nav_back', self.element);
-    intro._currentStep === 0 ?
-      backElement.addClass    ('presentation_disabled'):
-      backElement.removeClass ('presentation_disabled');
-
-    // II. Enable/disable the step buttons.
-    $('.presentation_nav_step', self.element).text (intro._currentStep + 1);
-
-    // III. Highlight the current step button.
-    $('.presentation_nav_step', self.element).removeClass ('presentation_current_step');
-    $('[data-presentation-nav-step="' + intro._currentStep + '"]', self.element).addClass ('presentation_current_step');
-
-    // IV. Enable/disable the Next button.
-    var nextElement = $('.presentation_nav_next', self.element);
-    stepElements [intro._currentStep].completed ?
-      nextElement.removeClass ('presentation_disabled'):
-      nextElement.addClass    ('presentation_disabled');
-
-    // V. Label the Next button.
-    intro._currentStep < stepElements.length - 1 ?
-      nextElement.text ('NEXT').removeClass ('presentation_complete'):
-      nextElement.text ('DONE').addClass ('presentation_complete');
-  }
-}
-
-/*
-*/
-function presentation_PresentationElement (id, presentation) {
+function presentation_PresentationElement (presentation) {
   var self = this;
 
   var _onComplete = [];
   
   this.onComplete = function (handler) { _onComplete.push (handler); }
 
-  // Returns this presentation element's HTML element ID.
-  this.id = function () { return id; }
-
   // The JQuery HTML Element that represents this presentation element.
-  this.element = presentation_createPresentationElement (id, presentation);
+  this.element = presentation_createPresentationElement (presentation);
 
   // The IntroJS object associated with this presentation element.
   this.intro = introJs (this.element.get (0));
@@ -729,7 +740,7 @@ function presentation_PresentationElement (id, presentation) {
   }
 
   // The nav element associated with this presentation element.
-  this.navElement = new presentation_NavElement (this.intro, this.stepElements);
+  this.navElement = presentation_createNavElement (this.intro, this.stepElements);
 
   this.intro.setOptions (introOptions)
     .onafterchange (
@@ -743,9 +754,9 @@ function presentation_PresentationElement (id, presentation) {
                 }))
               .append ($('<div></div>').addClass ('presentation_error_message'))
               .append (presentation_createAudioToggleElement (self))
-              .append (self.navElement.element);
+              .append (self.navElement);
           }
-          self.navElement.refresh ();
+          presentation_updateNavElement (self.intro, self.stepElements, self.navElement);
 
           $('.presentation_error_message', self.element).hide ().empty ();
 
@@ -790,9 +801,68 @@ function presentation_PresentationElement (id, presentation) {
   PAGE_LOAD_HANDLERS.add (
     function (id, done) {
       self.intro.exit ();
-      presentation_ELEMENTS.clear ();
       done (null);
   });
+}
+
+/*
+*/
+function presentation_createNavElement (intro, stepElements) {
+  return $('<table></table>')
+    .addClass ('presentation_nav')
+    .append ($('<tbody></tbody>')
+      .append ($('<tr></tr>')
+        .append ($('<td>BACK</td>')
+            .attr ('tabindex', 0)
+            .addClass ('presentation_nav_back')
+            .addClass ('presentation_disabled')
+            .keydown (function (event) {
+                event.keyCode === 13 && intro._currentStep > 0 && intro.previousStep ();
+              })
+            .click (function (event) {
+                event.stopPropagation ();
+                intro._currentStep > 0 && intro.previousStep ();
+              }))
+        .append ($('<td>Step <span class="presentation_nav_step">1</span> of <span class="presentation_nav_total">' + stepElements.length + '</span></td>'))
+        .append ($('<td>NEXT</td>')
+            .attr ('tabindex', 0)
+            .addClass ('presentation_nav_next')
+            .addClass (stepElements.length === 0 || stepElements [0].completed ? '' : 'presentation_disabled')
+            .keydown (function (event) {
+                event.keyCode === 13 && stepElements [intro._currentStep].completed && intro.nextStep ();
+              })
+            .click (function (event) {
+                event.stopPropagation ();
+                stepElements [intro._currentStep].completed && intro.nextStep ();
+              }))));
+}
+
+/*
+*/
+function presentation_updateNavElement (intro, stepElements, navElement) {
+  // I. Enable/disable the Back button.
+  var backElement = $('.presentation_nav_back', navElement);
+  intro._currentStep === 0 ?
+    backElement.addClass    ('presentation_disabled'):
+    backElement.removeClass ('presentation_disabled');
+
+  // II. Enable/disable the step buttons.
+  $('.presentation_nav_step', navElement).text (intro._currentStep + 1);
+
+  // III. Highlight the current step button.
+  $('.presentation_nav_step', navElement).removeClass ('presentation_current_step');
+  $('[data-presentation-nav-step="' + intro._currentStep + '"]', navElement).addClass ('presentation_current_step');
+
+  // IV. Enable/disable the Next button.
+  var nextElement = $('.presentation_nav_next', navElement);
+  stepElements [intro._currentStep].completed ?
+    nextElement.removeClass ('presentation_disabled'):
+    nextElement.addClass    ('presentation_disabled');
+
+  // V. Label the Next button.
+  intro._currentStep < stepElements.length - 1 ?
+    nextElement.text ('NEXT').removeClass ('presentation_complete'):
+    nextElement.text ('DONE').addClass ('presentation_complete');
 }
 
 /*
@@ -849,11 +919,10 @@ function presentation_createOverlayElement () {
 
 /*
 */
-function presentation_createPresentationElement (id, presentation) {
+function presentation_createPresentationElement (presentation) {
   var icon = 'modules/presentation/images/play-circle-outline.png';
   var label = 'PLAY LESSON';
   return $('<div></div>')
-    .attr ('id', id)
     .addClass ('presentation_presentation')
     .attr ('data-presentation-presentation', presentation.getId ())
     .css ('background-image',  'url(' + presentation.getImage () + ')')
@@ -912,62 +981,6 @@ function presentation_createAudioToggleElement (presentationElement) {
         event.keyCode === 13 && inputElement.prop ('checked', !inputElement.prop ('checked'));
       });
 }
-
-/*
-*/
-function presentation_PresentationElementsStore () {
-  var self = this;
-
-  /*
-  */
-  var presentationElements = {};
-
-  /*
-  */
-  var presentationElementFunctions = {};
-
-  /*
-  */
-  this.clear = function () {
-    presentationElements = {};
-    presentationElementFunctions = {};
-  }
-
-  /*
-  */
-  this.get = function (presentationElementId, presentationElementFunction) {
-    var presentationElement = presentationElements [presentationElementId];
-    if (presentationElement) {
-      return presentationElementFunction (presentationElement);
-    }
-    if (!presentationElementFunctions [presentationElementId]) {
-      presentationElementFunctions [presentationElementId] = [];
-    }
-    presentationElementFunctions [presentationElementId].push (presentationElementFunction);
-  }
-
-  /*
-  */
-  this.save = function (presentationElement) {
-    var presentationElementId = presentationElement.id ();
-    if (presentationElements [presentationElementId]) {
-      strictError (new Error ('[presentation][presentation_PresentationElementStore] Error: an error occured while trying to save a presentation element. Another presentation element already has the given ID.'));
-      return null;
-    }
-    presentationElements [presentationElementId] = presentationElement;
-
-    if (!presentationElementFunctions [presentationElementId]) {
-      presentationElementFunctions [presentationElementId] = [];
-    }
-    for (var i = 0; i < presentationElementFunctions [presentationElementId].length; i ++) {
-      (presentationElementFunctions [presentationElementId][i]) (presentationElement);
-    }
-  }
-};
-
-/*
-*/
-var presentation_ELEMENTS = new presentation_PresentationElementsStore ();
 
 /*
 */
