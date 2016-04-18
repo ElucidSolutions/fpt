@@ -124,12 +124,12 @@ function search_indexBlock (context, done) {
 
       var element = $('<div></div>')
         .addClass ('search_index')
-        .append ($('<div></div>')
-          .addClass ('search_index_name')
-          .text (indexName))
-        .append ($('<textarea></textarea>')
-          .addClass ('search_lunr_index')
-          .text (JSON.stringify (lunrIndex.toJSON ())));
+          .append ($('<div></div>')
+            .addClass ('search_index_name')
+            .text (indexName))
+          .append ($('<textarea></textarea>')
+            .addClass ('search_lunr_index')
+            .text (JSON.stringify (lunrIndex.toJSON ())));
 
       context.element.replaceWith (element);
       done (null, element);
@@ -678,6 +678,9 @@ function search_createLinkElement (searchId) {
     .attr ('type', 'text')
     .attr ('placeholder', 'Search')
     .val (searchId.segmentCoded (2))
+    // .append ($('<div></div')
+    //         .addClass ('search_icon')
+    //         .text ('123123123123123'))
     .keypress (function (event) {
       if (event.which === 13) {
         var keywords = $(this).val ();
