@@ -40,12 +40,13 @@ MODULE_LOAD_HANDLERS.add (
 
             // IV. Register the block handlers.
             block_HANDLERS.addHandlers ({
-              search_filter_block:    search_filterBlock,
-              search_form_block:      search_formBlock,
-              search_index_block:     search_indexBlock,
-              search_interface_block: search_interfaceBlock,
-              search_link_block:      search_linkBlock,
-              search_results_block:   search_resultsBlock
+              search_filter_block:     search_filterBlock,
+              search_form_block:       search_formBlock,
+              search_index_block:      search_indexBlock,
+              search_interface_block:  search_interfaceBlock,
+              search_link_block:       search_linkBlock,
+              search_results_block:    search_resultsBlock,
+              search_no_results_block: 'modules/search/templates/search_no_results_block.html'
             });
 
             // V. Register the page handlers.
@@ -487,12 +488,31 @@ search_Interface.prototype.getFilterElements = function (done) {
 }
 
 /*
+  Accepts two arguments:
+
+  * done, a function that accepts a JQuery
+    HTML Element
+  * and expand, a function that accepts a JQuery
+    HTML Element and expands any blocks embedded
+    within the element
+
+  creates an JQuery HTML Element that represents
+  this interface's search results and passes the
+  element to done. This function also registers
+  a search event handler that updates the search
+  results element whenever a search is executed
+  against the interface.
 */
 search_Interface.prototype.getResultsElement = function (done, expand) {
   var self = this;
   this.getResultElements (
     function (error, resultElements) {
-      var resultsElement = $('<ol></ol>').addClass ('search_results').append (resultElements);
+      var resultsElement = $('<ol></ol>')
+        .addClass ('search_results')
+        .append (resultElements && resultElements.length > 0 ?
+            resultElements :
+            $('<div class="search_no_results_block"></div>')
+          );
 
       self.searchEventHandlers.push (
         function (done) {
@@ -500,7 +520,20 @@ search_Interface.prototype.getResultsElement = function (done, expand) {
             function (error, resultElements) {
               if (error) { return done (error); }
 
-              expand (resultsElement.empty ().append (resultElements), done);
+              expand (resultsElement
+                  .empty ()
+                  .append (resultElements && resultElements.length > 0 ?
+                      resultElements :
+                      $('<div class="search_no_results_block"></div>')
+                    ),
+                done
+              );
+/*
+                done (null, resultElements && resultElements.length > 0 ?
+                  resultElements:
+                  $('<div class="search_no_results_block"></div>')
+                );
+*/
           });
       });
       done (null, resultsElement);
@@ -508,6 +541,14 @@ search_Interface.prototype.getResultsElement = function (done, expand) {
 }
 
 /*
+  Accepts on argument:
+
+  * done, a function that accepts a single JQuery
+    HTML Element
+
+  gets the current search results, creates
+  elements that represent these search results,
+  and passes those results to done.
 */
 search_Interface.prototype.getResultElements = function (done) {
   var self = this;
