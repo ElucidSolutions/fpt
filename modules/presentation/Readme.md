@@ -5,25 +5,19 @@ The Presentation module defines the Presentation block type which expand into in
 
 Presentations are designed to teach users how to use new software by walking them step by step through a series of screenshots.
 
-Every presentation consists of a sequence of steps. Each step in turn consists of a screenshot, a focus region, and some text.
+Every presentation consists of a sequence of steps which, in turn, consist of a screenshot, a focus element, and some text.
 
 Each step highlights a region on its screenshot and presents the user with information or instructions. 
 
-There are several different types of steps which allow users to simulate interactions with the software system being introduced. For example, users can click on highlighted buttons in button steps and input text in input steps.
-
-The current version of the Presentation module also supports audio narration and keyboard navigation.
+There are several different types of steps which allow users to simulate interactions with the software system being introduced. For example, users can click on highlighted buttons in button steps and enter text in input steps.
 
 Presentations a stored as elements within an XML database. When loaded, this database is represented by a <code>presentation_Database</code> object. Presentations themselves are represented by <code>presentation_Presentation</code> objects and their steps are represented by <code>presentation_Step</code> objects.
 
 Every presentation block expands into a presentation "instance". Multiple presentation blocks may represent the same presentation at the same time and be in different states of completion.
 
-For example, the database may define a presentation, Example Presentation, and we may have two presentation blocks that both display instances of Example Presentation. In the first we may complete the first step, while the second may still be waiting for input on the first.
+For example, the database may define a presentation, Example Presentation, and we may have two presentation blocks that both display instances of Example Presentation. In the first we may complete the first step, while the second may still be waiting for input.
 
-It follows that we need to differentiate between presentations and steps described by the database and concrete instances presented to the user by presentation blocks.
-
-Presentation instances are represented by <code>presentation_PresentationInstance</code> objects while step instances are represented by <code>presentation_StepInstance</code> objects.
-
-Instance objects include state information. For example, step instances can be marked as completed and are associated with HTML elements.
+Presentation instances are represented by <code>presentation_PresentationInstance</code> objects while step instances are represented by <code>presentation_StepInstance</code> objects which include state information. For example, step instances can be marked as completed and are associated with HTML elements.
 
 This module relies on IntroJS (http://introjs.com/) to highlight and transition between the steps in each presentation.
 
