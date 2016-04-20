@@ -1,10 +1,43 @@
 Presentation Module
 ===================
 
-The Presentation module defines the Presentation content type. This module defines a block type called Presentation which displays an interactive presentation. These presentations are stored in a database.
+The Presentation module defines the Presentation block type which expand into interactive presentations.
+
+Presentations are designed to teach users how to use new software by walking them step by step through a series of screenshots.
+
+Every presentation consists of a sequence of steps. Each step in turn consists of a screenshot, a focus region, and some text.
+
+Each step highlights a region on its screenshot and presents the user with information or instructions. 
+
+There are several different types of steps which allow users to simulate interactions with the software system being introduced. For example, users can click on highlighted buttons in button steps and input text in input steps.
+
+The current version of the Presentation module also supports audio narration and keyboard navigation.
+
+Presentations a stored as elements within an XML database. When loaded, this database is represented by a <code>presentation_Database</code> object. Presentations themselves are represented by <code>presentation_Presentation</code> objects and their steps are represented by <code>presentation_Step</code> objects.
+
+Every presentation block expands into a presentation "instance". Multiple presentation blocks may represent the same presentation at the same time and be in different states of completion.
+
+For example, the database may define a presentation, Example Presentation, and we may have two presentation blocks that both display instances of Example Presentation. In the first we may complete the first step, while the second may still be waiting for input on the first.
+
+It follows that we need to differentiate between presentations and steps described by the database and concrete instances presented to the user by presentation blocks.
+
+Presentation instances are represented by <code>presentation_PresentationInstance</code> objects while step instances are represented by <code>presentation_StepInstance</code> objects.
+
+Instance objects include state information. For example, step instances can be marked as completed and are associated with HTML elements.
+
+This module relies on IntroJS (http://introjs.com/) to highlight and transition between the steps in each presentation.
 
 Global Variables
 ----------------
+
+The presentation module defines three global variables:
+
+* <code>presentation_DATABASE_URL</code>, which specifies the location of the database file
+
+* <code>presentation_DATABASE</code>, which holds the presentation_Database object that represents the loaded database
+
+* and <code>presentation_AUDIO</code>, which indicates whether or not audio narration is enabled or disabled.
+
 
 ```javascript
 /*
@@ -28,6 +61,14 @@ var presentation_AUDIO = false;
 
 The Load Event Handler
 ----------------------
+
+The module's load event handler is called by the Core module to initialize the module. It performs three main tasks:
+
+1. It loads the external libraries that this module depends on
+
+2. It loads the Presentation Database
+
+3. It registers the Presentation Block handler.
 
 ```javascript
 // The module's load event handler.
@@ -74,6 +115,8 @@ MODULE_LOAD_HANDLERS.add (
 The Block Handlers
 ------------------
 
+The Presentation module only defines one block handler, Presentation block (<code>presentation_block</code>). Every Presentation block expands accepts a Presentation ID and expands into a instance of the referenced presentation.
+
 ```javascript
 /*
   Accepts two arguments:
@@ -109,6 +152,8 @@ function presentation_block (context, done) {
 
 The Step Class
 --------------
+
+The <code>presentation_Step</code> class defines the abstract base class for the step classes. As described above, every step has a screenshot, a focus element, and some text. When presented, this module will load the screenshot, highlight the focus element, and display the step's text. 
 
 ```javascript
 /*
@@ -185,6 +230,8 @@ function presentation_parseStep (presentationPath, element) {}
 The Blank Step Class
 --------------------
 
+The <code>presentation_BlankStep</code> class is the simplest step class. It simply represents those steps in which a region of a screenshot is highlighted and some text is displayed.
+
 ```javascript
 /*
   Accepts eight arguments:
@@ -260,6 +307,8 @@ function presentation_parseBlankStep (presentationPath, element) {
 The Button Step Class
 ---------------------
 
+<code>presentation_ButtonStep</code> objects represent steps in which users must click on the focus element before moving on to the next step.
+
 ```javascript
 /*
   Accepts eight arguments:
@@ -334,6 +383,8 @@ function presentation_parseButtonStep (presentationPath, element) {
 
 The Input Step Class
 --------------------
+
+<code>presentation_InputStep</code> objects prompt the user to input some text into the focus element which is then compared against a regular expression. If the text matches the regular expression, this module allows the user to move to the next step. Otherwise, this module displays an error message.
 
 ```javascript
 /*
@@ -420,6 +471,8 @@ function presentation_parseInputStep (presentationPath, element) {
 
 The Quiz Step Class
 -------------------
+
+<code>presentation_QuizStep</code> objects represent steps in which the user is presented with a multiple-choice quiz. When presented, this module requires the user to select the correct option before moving on to the next step.
 
 ```javascript
 /*
@@ -521,6 +574,8 @@ function presentation_parseQuizStep (presentationPath, element) {
 The Presentation Class
 ----------------------
 
+The <code>presentation_Presentation</code> class represents Presentations. Every presentation consists of a sequence of steps and a default image.
+
 ```javascript
 /*
   Accepts five arguments:
@@ -598,6 +653,8 @@ function presentation_parsePresentation (presentationPath, element) {
 The Database Class
 ------------------
 
+The <code>presentation_Database</code> class represents presentation databases. Each database consists of a collection of presentations.
+
 ```javascript
 /*
   Accepts one argument: presentations, a
@@ -667,6 +724,10 @@ function presentation_loadDatabase (url, done) {
 
 The Step Instance Class
 -----------------------
+
+The following sections define instances to the steps and presentations defined above.
+
+The <code>presentation_StepInstance</code> represents the abstract base class for the step instance classes. Every step instance is a concrete representation of a step described in the Presentation Database.
 
 ```javascript
 /*
@@ -764,6 +825,8 @@ presentation_StepInstance.prototype.getFocusElement = function () {
 The Blank Step Instance Class
 -----------------------------
 
+<code>presentation_BlankStepInstance</code> objects represents concrete instances of blank steps.
+
 ```javascript
 /*
   Accepts two arguments:
@@ -813,6 +876,8 @@ presentation_BlankStepInstance.prototype._createFocusElement = function () {
 
 The Button Step Instance Class
 ------------------------------
+
+The <code>presentation_ButtonStepInstance</code> objects represent concrete instances of button steps.
 
 ```javascript
 /*
@@ -896,6 +961,8 @@ presentation_ButtonStepInstance.prototype._createFocusElement = function () {
 
 The Input Step Instance Class
 -----------------------------
+
+<code>presentation_InputStepInstance</code> objects represent concrete instances of input steps.
 
 ```javascript
 /*
@@ -1018,6 +1085,8 @@ presentation_InputStepInstance.prototype._createFocusElement = function () {
 
 The Quiz Step Instance Class
 ----------------------------
+
+Lastly, <code>presentation_QuizStepInstance</code> objects represent concrete instances of quiz steps.
 
 ```javascript
 /*
@@ -1170,6 +1239,10 @@ presentation_QuizStepInstance.prototype._createFocusElement = function () {
 
 The Presentation Instance Class
 -------------------------------
+
+The <code>presentation_PresentationInstance</code> objects represent concrete instances of presentations and are somewhat complex.
+
+Every presentation instance has a collection of HTML elements that may have multiple states (for example, the navigation element) and it has to interface with an IntroJS object to request and respond to state transitions (for example, starting/stopping a presentation and moving between steps).
 
 ```javascript
 /*
@@ -1680,8 +1753,17 @@ function presentation_createOverlayElement () {
 Auxiliary Functions
 -------------------
 
+The following are miscellaneous functions shared by the classes defined above.
+
 ```javascript
 /*
+  Accepts two arguments:
+
+  * type, a content type string
+  * and path, a string array
+
+  and returns a resource ID string that
+  references the content referenced by path.
 */
 function presentation_getId (type, path) {
   var uri = new URI ('').segmentCoded (type);
