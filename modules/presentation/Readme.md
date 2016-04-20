@@ -17,7 +17,7 @@ Every presentation block expands into a presentation "instance". Multiple presen
 
 For example, the database may define a presentation, Example Presentation, and we may have two presentation blocks that both display instances of Example Presentation. In the first we may complete the first step, while the second may still be waiting for input.
 
-Presentation instances are represented by <code>presentation_PresentationInstance</code> objects while step instances are represented by <code>presentation_StepInstance</code> objects which include state information. For example, step instances can be marked as completed and are associated with HTML elements.
+Presentation instances are represented by <code>presentation_PresentationInstance</code> objects while step instances are represented by <code>presentation_StepInstance</code> objects which include state information.
 
 This module relies on IntroJS (http://introjs.com/) to highlight and transition between the steps in each presentation.
 
@@ -109,7 +109,7 @@ MODULE_LOAD_HANDLERS.add (
 The Block Handlers
 ------------------
 
-The Presentation module only defines one block handler, Presentation block (<code>presentation_block</code>). Every Presentation block expands accepts a Presentation ID and expands into a instance of the referenced presentation.
+The Presentation module only defines one block handler, Presentation block (<code>presentation_block</code>). Every Presentation block accepts a Presentation ID and expands into a instance of the referenced presentation.
 
 ```javascript
 /*
@@ -224,7 +224,7 @@ function presentation_parseStep (presentationPath, element) {}
 The Blank Step Class
 --------------------
 
-The <code>presentation_BlankStep</code> class is the simplest step class. It simply represents those steps in which a region of a screenshot is highlighted and some text is displayed.
+The <code>presentation_BlankStep</code> class is the simplest step class. It simply represents those steps in which a region of their screenshot is highlighted and some text is displayed.
 
 ```javascript
 /*
@@ -301,7 +301,7 @@ function presentation_parseBlankStep (presentationPath, element) {
 The Button Step Class
 ---------------------
 
-<code>presentation_ButtonStep</code> objects represent steps in which users must click on the focus element before moving on to the next step.
+<code>presentation_ButtonStep</code> objects represent steps in which a user must click on the step's focus element before moving on to the next step.
 
 ```javascript
 /*
@@ -378,7 +378,7 @@ function presentation_parseButtonStep (presentationPath, element) {
 The Input Step Class
 --------------------
 
-<code>presentation_InputStep</code> objects prompt the user to input some text into the focus element which is then compared against a regular expression. If the text matches the regular expression, this module allows the user to move to the next step. Otherwise, this module displays an error message.
+<code>presentation_InputStep</code> objects prompt the user to input some text into the step's focus element. This text is then compared against a regular expression. If the text matches the regular expression, this module allows the user to move to the next step. Otherwise, this module displays an error message.
 
 ```javascript
 /*
@@ -719,8 +719,6 @@ function presentation_loadDatabase (url, done) {
 The Step Instance Class
 -----------------------
 
-The following sections define instances to the steps and presentations defined above.
-
 The <code>presentation_StepInstance</code> represents the abstract base class for the step instance classes. Every step instance is a concrete representation of a step described in the Presentation Database.
 
 ```javascript
@@ -918,6 +916,9 @@ presentation_ButtonStepInstance.prototype.onComplete = function () {
 /*
   Accepts no arguments and enables tab focus on
   this step instance's focus element.
+
+  This function is be called when IntroJS
+  highlights this step instance.
 */
 presentation_ButtonStepInstance.prototype.onHighlight = function () {
   this.getFocusElement ().attr ('tabindex', 0);
@@ -983,21 +984,6 @@ presentation_InputStepInstance.prototype = Object.create (presentation_StepInsta
 /*
 */
 presentation_InputStepInstance.prototype.constructor = presentation_InputStepInstance;
-
-/*
-  Accepts no arguments, marks this step instance
-  as having been completed, updates the
-  nav element associated with this instance's
-  presentation instance, and removes this step
-  instance's element from the tab list.
-
-  This function is called when a user
-  completes this step instance. 
-*/
-presentation_InputStepInstance.prototype.onComplete = function () {
-  presentation_StepInstance.prototype.onComplete.call (this);
-  this.getFocusElement ().attr ('tabindex', -1);
-}
 
 /*
   Accepts no arguments and enables tab focus
@@ -1964,49 +1950,73 @@ An example Presentation Database can be found in [database.xml.example](#An Exam
 <?xml version="1.0" encoding="utf-8"?>
 <database>
   <presentation>
-    <name>Example Presentation</name>
-    <image>https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png</image>
-    <width>500px</width>
+    <name>get_started_tab_lesson</name>
+    <image>modules/presentation/images/getting_started_tab_lesson/001-get-started-mpn.jpg</image>
+    <width>1000px</width>
     <height>500px</height>
     <steps>
       <blankStep>
-        <name>First Step</name>
-        <image>https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png</image>
-        <text><![CDATA[<p>This is an example blank step.</p>]]></text>
-        <position>top</position>
-        <top>10%</top>
-        <left>10%</left>
-        <width>100px</width>
-        <height>100px</height>
+        <name>1_introduction_to_the_get_started_tab</name>
+        <image>modules/presentation/images/getting_started_tab_lesson/001-get-started-mpn.jpg</image>
+        <text><![CDATA[
+          <p><strong>Introduction to the Get Started tab</strong></p>
+          <p>The <em>Get Started</em> tab is the first step in the On-Screen Data Entry process. This is where you will enter the Manufacturer Part Number and Name, as well as indicate whether you are offering a Product or Accessory. The information you enter here will be automatically transferred to subsequent tabs.</p>
+        ]]></text>
+        <position>floating</position>
+        <top>400px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
       </blankStep>
       <inputStep>
-        <name>Second Step</name>
-        <image>https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png</image>
-        <text><![CDATA[<p>This is an example input step.</p>]]></text>
+        <name>3_type_a_manufacturer_part_number</name>
+        <image>modules/presentation/images/getting_started_tab_lesson/001-get-started-mpn.jpg</image>
+        <text><![CDATA[
+          <p><strong>Type a Manufacturer Part Number.</strong></p>
+          <p><em>Example: HSC0424PP</em></p>
+          <p>This field should be entered exactly as provided by the manufacturer, and should not be edited in any way. You can enter up to 40 characters. Type in a Manufacturer Part Number below and hit <strong>Enter</strong>.</p>
+        ]]></text>
         <position>top</position>
-        <top>10%</top>
-        <left>10%</left>
-        <width>100px</width>
-        <height>100px</height>
-        <expression><![CDATA[\d+\.\d{2}]]></expression>
+        <top>232px</top>
+        <left>128px</left>
+        <width>160px</width>
+        <height>21px</height>
+        <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>
       </inputStep>
+      <buttonStep>
+        <name>5_open_the_drop-down_menu</name>
+        <image>modules/presentation/images/getting_started_tab_lesson/001-get-started-mpn.jpg</image>
+        <text><![CDATA[
+          <p><strong>Open the drop-down menu.</strong></p>
+          <p>Click in the text box to reveal the drop-down menu.</p>
+        ]]></text>
+        <position>top-middle-aligned</position>
+        <top>232px</top>
+        <left>414px</left>
+        <width>147px</width>
+        <height>21px</height>
+      </buttonStep>
       <testStep>
-        <name>Third Step</name>
-        <image>https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png</image>
-        <text><![CDATA[<p>This is an example test.</p>]]></text>
+        <name>12_test_your_knowledge</name>
+        <image>modules/presentation/images/getting_started_tab_lesson/006-all-filled-out.jpg</image>
+        <text><![CDATA[
+          <p class="red"><strong>Test Your Knowledge</strong></p>
+          <p><strong>If you click onto the next tab without saving your information first, your data will be lost.</strong><br/>Select an answer in the window below.</p>
+        ]]></text>
         <position>top</position>
-        <top>10%</top>
-        <left>10%</left>
-        <width>100px</width>
-        <height>100px</height>
+        <top>195px</top>
+        <left>327px</left>
+        <width>330px</width>
+        <height>134px</height>
         <options>
           <option>
-            <label><![CDATA[First option]]></label>
+            <label><![CDATA[True]]></label>
             <isCorrect>true</isCorrect>
             <onSelect><![CDATA[Correct!]]></onSelect>
           </option>
           <option>
-            <label><![CDATA[Second option]]></label>
+            <label><![CDATA[False]]></label>
             <isCorrect>false</isCorrect>
             <onSelect><![CDATA[Incorrect!]]></onSelect>
           </option>
