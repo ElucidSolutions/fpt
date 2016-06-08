@@ -205,7 +205,7 @@ function menu_contentsBlock (context, done) {
   the error to done instead.
 */
 function menu_leafLabelBlock (context, done) {
-  var element = menu_MENU.getLeaf (context.element.text ()).getLabelElement ();
+  var element = menu_MENU.getLeaf (context.element.text ().trim ()).getLabelElement ();
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -232,7 +232,7 @@ function menu_leafLabelBlock (context, done) {
   the error to done instead.
 */
 function menu_leafLinkBlock (context, done) {
-  var element = menu_MENU.getLeaf (context.element.text ()).getLinkElement ();
+  var element = menu_MENU.getLeaf (context.element.text ().trim ()).getLinkElement ();
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -240,7 +240,7 @@ function menu_leafLinkBlock (context, done) {
 /*
 */
 function menu_leafNextLabelBlock (context, done) {
-  var element = menu_MENU.getLeaf (context.element.text ()).getNextLabelElement ();
+  var element = menu_MENU.getLeaf (context.element.text ().trim ()).getNextLabelElement ();
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -248,7 +248,7 @@ function menu_leafNextLabelBlock (context, done) {
 /*
 */
 function menu_leafNextLinkBlock (context, done) {
-  var element = menu_MENU.getLeaf (context.element.text ()).getNextLinkElement ();
+  var element = menu_MENU.getLeaf (context.element.text ().trim ()).getNextLinkElement ();
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -256,7 +256,7 @@ function menu_leafNextLinkBlock (context, done) {
 /*
 */
 function menu_leafParentLabelBlock (context, done) {
-  var element = menu_MENU.getLeaf (context.element.text ()).getParentLabelElement ();
+  var element = menu_MENU.getLeaf (context.element.text ().trim ()).getParentLabelElement ();
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -264,7 +264,7 @@ function menu_leafParentLabelBlock (context, done) {
 /*
 */
 function menu_leafParentLinkBlock (context, done) {
-  var element = menu_MENU.getLeaf (context.element.text ()).getParentLinkElement ();
+  var element = menu_MENU.getLeaf (context.element.text ().trim ()).getParentLinkElement ();
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -272,7 +272,7 @@ function menu_leafParentLinkBlock (context, done) {
 /*
 */
 function menu_leafPreviousLabelBlock (context, done) {
-  var element = menu_MENU.getLeaf (context.element.text ()).getPreviousLabelElement ();
+  var element = menu_MENU.getLeaf (context.element.text ().trim ()).getPreviousLabelElement ();
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -280,7 +280,7 @@ function menu_leafPreviousLabelBlock (context, done) {
 /*
 */
 function menu_leafPreviousLinkBlock (context, done) {
-  var element = menu_MENU.getLeaf (context.element.text ()).getPreviousLinkElement ();
+  var element = menu_MENU.getLeaf (context.element.text ().trim ()).getPreviousLinkElement ();
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -307,7 +307,7 @@ function menu_leafPreviousLinkBlock (context, done) {
   the error to done instead.
 */
 function menu_nodeLabelBlock (context, done) {
-  var element = menu_MENU.getNode (context.element.text ()).getLabelElement ();
+  var element = menu_MENU.getNode (context.element.text ().trim ()).getLabelElement ();
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -334,7 +334,7 @@ function menu_nodeLabelBlock (context, done) {
   the error to done instead.
 */
 function menu_nodeLinkBlock (context, done) {
-  var element = menu_MENU.getNode (context.element.text ()).getLinkElement ();
+  var element = menu_MENU.getNode (context.element.text ().trim ()).getLinkElement ();
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -342,7 +342,7 @@ function menu_nodeLinkBlock (context, done) {
 /*
 */
 function menu_nodeNextLabelBlock (context, done) {
-  var element = menu_MENU.getNode (context.element.text ()).getNextLabelElement ();
+  var element = menu_MENU.getNode (context.element.text ().trim ()).getNextLabelElement ();
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -350,7 +350,7 @@ function menu_nodeNextLabelBlock (context, done) {
 /*
 */
 function menu_nodeNextLinkBlock (context, done) {
-  var element = menu_MENU.getNode (context.element.text ()).getNextLinkElement ();
+  var element = menu_MENU.getNode (context.element.text ().trim ()).getNextLinkElement ();
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -358,7 +358,7 @@ function menu_nodeNextLinkBlock (context, done) {
 /*
 */
 function menu_nodeParentLabelBlock (context, done) {
-  var element = menu_MENU.getNode (context.element.text ()).getParentLabelElement ();
+  var element = menu_MENU.getNode (context.element.text ().trim ()).getParentLabelElement ();
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -366,7 +366,7 @@ function menu_nodeParentLabelBlock (context, done) {
 /*
 */
 function menu_nodeParentLinkBlock (context, done) {
-  var element = menu_MENU.getNode (context.element.text ()).getParentLinkElement ();
+  var element = menu_MENU.getNode (context.element.text ().trim ()).getParentLinkElement ();
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -374,7 +374,7 @@ function menu_nodeParentLinkBlock (context, done) {
 /*
 */
 function menu_nodePreviousLabelBlock (context, done) {
-  var element = menu_MENU.getNode (context.element.text ()).getPreviousLabelElement ();
+  var element = menu_MENU.getNode (context.element.text ().trim ()).getPreviousLabelElement ();
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -382,7 +382,7 @@ function menu_nodePreviousLabelBlock (context, done) {
 /*
 */
 function menu_nodePreviousLinkBlock (context, done) {
-  var element = menu_MENU.getNode (context.element.text ()).getPreviousLinkElement ();
+  var element = menu_MENU.getNode (context.element.text ().trim ()).getPreviousLinkElement ();
   context.element.replaceWith (element);
   done (null, element);
 }
@@ -459,7 +459,19 @@ menu_Element.prototype.getIndex = function () {
 
 /*
 */
-menu_Element.prototype.getNext = function () {
+menu_Element.prototype.isFirstChild = function () {
+  return this.parent && this.parent.getFirstChild ().id === this.id;
+}
+
+/*
+*/
+menu_Element.prototype.isLastChild = function () {
+  return this.parent && this.parent.getLastChild ().id === this.id;
+}
+
+/*
+*/
+menu_Element.prototype.getNextSibling = function () {
   if (!this.parent) { return null; }
 
   var i = this.getIndex () + 1;
@@ -468,11 +480,63 @@ menu_Element.prototype.getNext = function () {
 
 /*
 */
-menu_Element.prototype.getPrevious = function () {
+menu_Element.prototype.getPreviousSibling = function () {
   if (!this.parent) { return null; }
 
   var i = this.getIndex () - 1;
   return i >= 0 ? this.parent.children [i] : null;
+}
+
+/*
+*/
+menu_Element.prototype.getNext = function () {
+  if (!this.parent) { return null; }
+
+  var successor = this.getNextSibling ();
+  if (!successor) { return this.parent; }
+
+  while (successor instanceof menu_Node && successor.children.length > 0) {
+    successor = successor.getFirstChild ();
+  }
+  return successor;
+}
+
+/*
+*/
+menu_Element.prototype.getPrevious = function () {
+  if (this instanceof menu_Node && this.children.length > 0) {
+    return this.getLastChild ();
+  }
+
+  if (!this.parent) { return null; }
+
+  var element = this;
+  while (element.isFirstChild ()) {
+    element = element.parent;
+    if (!element.parent) { return null; }
+  }
+
+  return element.getPreviousSibling ();
+}
+
+/*
+*/
+menu_Element.prototype.getNextLeaf = function () {
+  var element = this.getNext ();
+  while (element && element instanceof menu_Node) {
+    element = element.getNext ();
+  }
+  return element;
+}
+
+/*
+*/
+menu_Element.prototype.getPreviousLeaf = function () {
+  var element = this.getPrevious ();
+  while (element && element instanceof menu_Node) {
+    element = element.getPrevious ();
+  }
+  return element;
 }
 
 /*
@@ -557,28 +621,28 @@ menu_Element.prototype.getParentLinkElement = function () {
 /*
 */
 menu_Element.prototype.getNextLabelElement = function () {
-  var element = this.getNext ();
+  var element = this.getNextLeaf ();
   return element ? element.getLabelElement () : null;
 }
 
 /*
 */
 menu_Element.prototype.getNextLinkElement = function () {
-  var element = this.getNext ();
+  var element = this.getNextLeaf ();
   return element ? element.getLinkElement () : null;
 }
 
 /*
 */
 menu_Element.prototype.getPreviousLabelElement = function () {
-  var element = this.getPrevious ();
+  var element = this.getPreviousLeaf ();
   return element ? element.getLabelElement () : null;
 }
 
 /*
 */
 menu_Element.prototype.getPreviousLinkElement = function () {
-  var element = this.getPrevious ();
+  var element = this.getPreviousLeaf ();
   return element ? element.getLinkElement () : null;
 }
 ```
@@ -693,6 +757,18 @@ menu_Node.prototype.getFirstLeaf = function () {
     if (leaf) { return leaf; }
   }
   return null;
+}
+
+/*
+*/
+menu_Node.prototype.getFirstChild = function () {
+  return this.children.length > 0 ? this.children [0] : null;
+}
+
+/*
+*/
+menu_Node.prototype.getLastChild = function () {
+  return this.children.length > 0 ? this.children [this.children.length - 1] : null;
 }
 
 /*

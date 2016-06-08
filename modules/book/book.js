@@ -229,8 +229,8 @@ book_Page.prototype.getElement = function (id) {
 
 book_Page.prototype.index = function () {
   return [new book_Entry (this.id,
-    $('<div></div>').html (this.title).text (),
-    $('<div></div>').html (this.body).text ())];
+    book_stripHTMLTags (this.title),
+    book_stripHTMLTags (this.body))];
 }
 
 /*
@@ -352,8 +352,8 @@ book_Book.prototype.constructor = book_Book;
 */
 book_Book.prototype.index = function () {
   var entries = [new book_Entry (this.id,
-    $('<div></div>').html (this.title).text (),
-    $('<div></div>').html (this.body).text ())];
+    book_stripHTMLTags (this.title),
+    book_stripHTMLTags (this.body))];
 
   for (var i = 0; i < this.children.length; i ++) {
     Array.prototype.push.apply (entries, this.children [i].index ());
@@ -476,4 +476,10 @@ function book_getId (type, path) {
 function book_getSnippet (text) {
   return text.length <= book_SNIPPET_LENGTH ? text :
     text.substr (0, book_SNIPPET_LENGTH) + '...';
+}
+
+/*
+*/
+function book_stripHTMLTags (html) {
+  return html.replace (/<[^>]*>/g, '');
 }

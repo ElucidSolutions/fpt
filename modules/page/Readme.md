@@ -62,6 +62,9 @@ The Page Handler Store Class
 
 ```javascript
 /*
+  Page Handler Stores store registered Page
+  Handlers which are responsible for generating
+  the page HTML output.
 */
 function page_HandlerStore () {
   var self = this;
@@ -97,6 +100,8 @@ The Page Handler Store
 
 ```javascript
 /*
+  A page_HandlerStore that stores the set of
+  registered page handlers.
 */
 var page_HANDLERS = new page_HandlerStore ();
 ```
@@ -106,6 +111,15 @@ The Module Load Event Handler
 
 ```javascript
 /*
+  The module's load event handler. This function:
+
+  * registers the page_block Block Handler
+  * registers the page load event handler that
+    outputs page HTML
+  * registers an app load event handler that
+    loads the default page when the app is loaded
+  * and calls its continuation before returning
+    undefined.
 */
 MODULE_LOAD_HANDLERS.add (
   function (done) {
@@ -144,7 +158,12 @@ The Core module defines a Hash Change event handler. Whenever the browser URL ha
   if the browser URL hash changes.
 */
 $(window).on ('hashchange', function () {
-  PAGE_LOAD_HANDLERS.execute (new URI ().fragment (), function () {});
+  PAGE_LOAD_HANDLERS.execute (new URI ().fragment (), function () {
+    // scroll to the top of the page after page load
+    $('html, body').animate ({
+      scrollTop: $('#top').offset ().top
+    });
+  });
 });
 ```
 
@@ -164,16 +183,19 @@ function page_block (context, done) {
   var element = context.element;
   PAGE_LOAD_HANDLERS.add (
     function (id, next) {
+      if (!id) {
+        id = context.getId ();
+      }
+
       page_getPageElement (id,
         function (error, newElement) {
           if (error || !newElement) {
-            error = error ? new Error (errorMsg + error.message):
-                            new Error (errorMsg);
+            error = new Error (error ? errorMsg + error.message : errorMsg);
             strictError (error);
             return next (error);
           }
-          element.replaceWith (newElement);
-          element = newElement;
+          element.empty ();
+          element.append (newElement);
           block_expandBlock (
             new block_Context (id, newElement),
             next
@@ -185,13 +207,12 @@ function page_block (context, done) {
   page_getPageElement (id,
     function (error, pageElement) {
       if (error || !pageElement) {
-        error = error ? new Error (errorMsg + error.message):
-                        new Error (errorMsg);
+        error = new Error (error ? errorMsg + error.message : errorMsg);
         strictError (error);
         return done (error);
       }
-      element.replaceWith (pageElement);
-      element = pageElement;
+      element.empty ();
+      element.append (pageElement);
       block_expandBlock (
         new block_Context (id, pageElement),
         done

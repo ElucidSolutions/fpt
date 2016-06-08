@@ -53,7 +53,7 @@ MODULE_LOAD_HANDLERS.add (
 */
 function sidr_block (context, done) {
   context.element.sidr ({
-    displace: true,
+    displace: false,
     speed: 300
   });
   done (null);

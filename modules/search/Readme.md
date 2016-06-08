@@ -558,18 +558,23 @@ search_Interface.prototype.getResultsElement = function (done, expand) {
 
       self.searchEventHandlers.push (
         function (done) {
+          resultsElement
+            .empty ()
+            .append ($('<div></div>').addClass ('search_loading'));
+
           self.getResultElements (
             function (error, resultElements) {
               if (error) { return done (error); }
 
-              expand (resultsElement
-                  .empty ()
-                  .append (resultElements && resultElements.length > 0 ?
-                      resultElements :
-                      $('<div class="search_no_results_block"></div>')
-                    ),
-                done
-              );
+              expand (
+                resultsElement.append (
+                  resultElements && resultElements.length > 0 ?
+                    resultElements :
+                    $('<div class="search_no_results_block"></div>')),
+                function (error) {
+                  $('.search_loading', resultsElement).remove ();
+                  done (error);
+              });
           });
       });
       done (null, resultsElement);
