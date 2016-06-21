@@ -70,6 +70,21 @@
               </div>
             ]]></body>
           </page>
+          <page>
+            <name>goods_services_lesson</name>
+            <title><![CDATA[Goods and Services Lesson]]></title>
+            <body><![CDATA[
+              <p>This is a lesson on completing the <em>Goods and Services</em> section. GSA assigns all goods and services to Special Item Numbers (SINs). You must complete this section first before you can enter the rest of your pricing data.</p>
+              <p>Click the play button to begin!</p>
+              <div id="presentation" class="presentation_block">presentation/goods_services_lesson</div>
+                <div class="next_lesson">
+                  <div class="sequence">Next Lesson</div>
+                  <div class="menu_leaf_next_link_block"><span class="core_id_block"/></div>
+                  <img src="images/next-arrow.svg" class="arrow" />
+                </div>
+              </div>
+            ]]></body>
+          </page>          
         </content>
       </section>
     </content>

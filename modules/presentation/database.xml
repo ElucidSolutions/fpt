@@ -696,4 +696,325 @@
       </blankStep>
     </steps>
   </presentation>
+  <presentation>
+    <name>goods_services_lesson</name>
+    <image>modules/presentation/images/goods_services_lesson/goods_services_001.jpg</image>
+    <width>1000px</width>
+    <height>500px</height>
+    <steps>
+      <blankStep>
+        <name>01_introduction_to_the_goods_and_services_section</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_001.jpg</image>
+        <text><![CDATA[
+          <p><strong>Introduction to the Goods and Services section.</strong></p>
+          <p>In this section, you will provide information about the goods and services you provide under each SIN. You will need to complete a description, select your Preponderance of Work and indicate your offer category.</p>
+        ]]></text>
+        <position>floating</position>
+        <top>200px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>
+      <buttonStep>
+        <name>02_select_sin_group_dropdown</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_001.jpg</image>
+        <text><![CDATA[
+          <p><strong>Select SIN group drop-down. </strong></p>
+          <p>Click on the down-facing arrow to open the <em>SIN Group</em> drop-down menu.</p>
+          ]]></text>
+        <position>top</position>
+        <top>138px</top>
+        <left>23px</left>
+        <width>288px</width>
+        <height>16px</height>
+      </buttonStep>
+      <buttonStep>
+        <name>03_select_the_sin_group</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_002.jpg</image>
+        <text><![CDATA[
+          <p><strong>Select the SIN group.</strong></p>
+          <p>You will see a list of SIN groups from which to choose.</p>
+          <p>For this lesson, select <strong>FSC 73 - Food Service Equipment, Supplies, and Services</strong>.</p>
+          ]]></text>
+        <position>top</position>
+        <top>138px</top>
+        <left>23px</left>
+        <width>288px</width>
+        <height>86px</height>
+      </buttonStep>
+      <buttonStep>
+        <name>04_confirm_your_selection</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_003.jpg</image>
+        <text><![CDATA[
+          <p><strong>Confirm your selection.</strong></p>
+          <p>Click the <strong>Select SIN Group</strong> button to confirm your selection.</p>
+          ]]></text>
+        <position>top</position>
+        <top>138px</top>
+        <left>473px</left>
+        <width>97px</width>
+        <height>16px</height>
+      </buttonStep>  
+      <buttonStep>
+        <name>05_open_the_sin_drop-down</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_004.jpg</image>
+        <text><![CDATA[
+          <p><strong>Open the SIN drop-down.</strong></p>
+          <p>Click the down-facing arrow under the <em>Add SIN(s)</em> heading to open the drop-down menu.</p>
+          ]]></text>
+        <position>top</position>
+        <top>138px</top>
+        <left>23px</left>
+        <width>425px</width>
+        <height>16px</height>
+      </buttonStep>
+      <buttonStep>
+        <name>06_select_the_sin</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_005.jpg</image>
+        <text><![CDATA[
+          <p><strong>Select the SIN.</strong></p>
+          <p>You will see a list of your SINs from which to choose.</p>
+          <p>For this lesson, select <strong>302 20-Food Preparation Equipment</strong>.</p>
+          ]]></text>
+        <position>top</position>
+        <top>138px</top>
+        <left>23px</left>
+        <width>425px</width>
+        <height>290px</height>
+      </buttonStep>    
+      <buttonStep>
+        <name>07_add_your_sin</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_006.jpg</image>
+        <text><![CDATA[
+          <p><strong>Add your SIN.</strong></p>
+          <p>Click the <strong>Add SIN Details</strong> button</p>
+          ]]></text>
+        <position>top</position>
+        <top>138px</top>
+        <left>496px</left>
+        <width>95px</width>
+        <height>16px</height>
+      </buttonStep>   
+<!--       <buttonStep>
+        <name>08_open_the_naics_drop-down</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_007.jpg</image>
+        <text><![CDATA[
+          <p><strong>Open the NAICS drop-down.</strong></p>
+          <p>Click on the down-facing arrow under the <em>NAICS Code</em> heading to open the drop-down menu.</p>
+          ]]></text>
+        <position>top</position>
+        <top>100px</top>
+        <left>100px</left>
+        <width>100px</width>
+        <height>100px</height>
+      </buttonStep>   --> 
+      <buttonStep>
+        <name>09_select_your_naics_code</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_008.jpg</image>
+        <text><![CDATA[
+          <p><strong>Select your NAICS code.</strong></p>
+          <p>You will see a list of NAICS codes.</p>
+          <p>For this lesson, click on <strong>312112</strong>.</p>
+          ]]></text>
+        <position>top</position>
+        <top>116px</top>
+        <left>19px</left>
+        <width>218px</width>
+        <height>47px</height>
+      </buttonStep>
+      <buttonStep>
+        <name>10_open_the_scope_drop-down</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_009.jpg</image>
+        <text><![CDATA[
+          <p><strong>Open the Scope drop-down.</strong></p>
+          <p>Click on the down-facing arrow under the <em>Scope</em> heading.</p>
+          ]]></text>
+        <position>top</position>
+        <top>176px</top>
+        <left>19px</left>
+        <width>415px</width>
+        <height>18px</height>
+      </buttonStep>   
+      <buttonStep>
+        <name>11_select_your_scope</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_010.jpg</image>
+        <text><![CDATA[
+          <p><strong>Select your Scope.</strong></p>
+          <p>You will notice three possible choices in this drop-down.</p>
+          <p>For this lesson, click on <strong>Contractor will provide domestic delivery only</strong>.</p>
+          ]]></text>
+        <position>top</position>
+        <top>176px</top>
+        <left>158px</left>
+        <width>267px</width>
+        <height>60px</height>
+      </buttonStep>   
+<!--       <inputStep>
+        <name>12_enter_your_estimated_sales</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_011.jpg</image>
+        <text><![CDATA[
+          <p><strong>Enter your Estimated Sales.</strong></p>
+          <p>This field is for your company’s total projected annual sales to the government under a specific SIN.</p>
+          <p>For this lesson, enter a number.</p>
+          ]]></text>
+        <position>top</position>
+        <top>100px</top>
+        <left>100px</left>
+        <width>100px</width>
+        <height>100px</height>
+        <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>
+      </inputStep>    -->      
+      <buttonStep>
+        <name>13_respond_to_the_commercial_delivery_schedule</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_012.jpg</image>
+        <text><![CDATA[
+          <p><strong>Respond to the Commercial Delivery Schedule</strong></p>
+          <p>You will see the question, “Will delivery be within 30 days after receipt of order (ARO)?”</p>
+          <p>For this lesson, click the radio button next to Yes.</p>
+          ]]></text>
+        <position>top</position>
+        <top>291px</top>
+        <left>19px</left>
+        <width>263px</width>
+        <height>47px</height>
+      </buttonStep>   
+<!--       <inputStep>    
+        <name>14_enter_the_expedited_delivery_time</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_013.jpg</image>
+        <text><![CDATA[
+          <p><strong>Enter the expedited delivery time.</strong></p>
+          <p>Enter the expedited delivery time using a number representing days.</p>
+          ]]></text>
+        <position>top</position>
+        <top>100px</top>
+        <left>100px</left>
+        <width>100px</width>
+        <height>100px</height>
+        <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>
+      </inputStep>    -->
+      <buttonStep>
+        <name>15_add_the_sin</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_014.jpg</image>
+        <text><![CDATA[
+          <p><strong>Add the SIN.</strong></p>
+          <p>Click the <strong>Add This Sin</strong> button.</p>
+          ]]></text>
+        <position>top</position>
+        <top>444px</top>
+        <left>19px</left>
+        <width>76px</width>
+        <height>17px</height>
+      </buttonStep>         
+      <blankStep>
+        <name>16_adding_multiple_sins</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_014.jpg</image>
+        <text><![CDATA[
+          <p><strong>Adding multiple SINs.</strong></p>
+          <p>You will notice your SIN has been added to the <em>Your SIN(s)</em> table. You could add more SINs if necessary, but you would have to do so one at a time.</p>
+          <p>For this lesson, we will only be adding one SIN.</p>
+          ]]></text>
+        <position>floating</position>
+        <top>200px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>   
+      <buttonStep>
+        <name>17_open_the_preponderance_of_work_drop-down</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_015.jpg</image>
+        <text><![CDATA[
+          <p><strong>Open the Preponderance of Work drop-down.</strong></p>
+          <p>Click on the down-facing arrow to open the <em>Preponderance of Work</em> drop-down menu.</p>
+          ]]></text>
+        <position>top</position>
+        <top>138px</top>
+        <left>23px</left>
+        <width>289px</width>
+        <height>16px</height>
+      </buttonStep>   
+      <buttonStep>
+        <name>18_select_your_preponderance_of_work</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_016.jpg</image>
+        <text><![CDATA[
+          <p><strong>Select your Preponderance of Work.</strong></p>
+          <p>You will notice multiple NAICS codes in the drop-down.</p>
+          <p>For this lesson, click on <strong>333319</strong>.</p>
+          ]]></text>
+        <position>top</position>
+        <top>314px</top>
+        <left>19px</left>
+        <width>298px</width>
+        <height>59px</height>
+      </buttonStep>         
+      <buttonStep>
+        <name>19_add_preponderance_of_work</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_017.jpg</image>
+        <text><![CDATA[
+          <p><strong>Add Preponderance of Work.</strong></p>
+          <p>Click the <strong>Add Preponderance of Work</strong> button.</p>
+          ]]></text>
+        <position>top</position>
+        <top>314px</top>
+        <left>500px</left>
+        <width>144px</width>
+        <height>22px</height>
+      </buttonStep>   
+      <buttonStep>
+        <name>20_select_your_offer_category</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_018.jpg</image>
+        <text><![CDATA[
+          <p><strong>Select your Offer Category.</strong></p>
+          <p>You will need to indicate if you are offering products, services, or both.</p>
+          <p>For this lesson, click the radio button next to <em>Products Only</em>.</p>
+          ]]></text>
+        <position>top</position>
+        <top>100px</top>
+        <left>100px</left>
+        <width>100px</width>
+        <height>100px</height>
+      </buttonStep>   
+      <buttonStep>
+        <name>21_save_your_work</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_019.jpg</image>
+        <text><![CDATA[
+          <p><strong>Save your work.</strong></p>
+          <p>Click the <strong>Save and Continue</strong> button to ensure your information is not lost.</p>
+          ]]></text>
+        <position>top</position>
+        <top>100px</top>
+        <left>100px</left>
+        <width>100px</width>
+        <height>100px</height>
+      </buttonStep>         
+      <blankStep>
+        <name>22_your_left-hand_navigation_has_changed</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_019.jpg</image>
+        <text><![CDATA[
+          <p><strong>Your left-hand navigation has changed.</strong></p>
+          <p>You will notice that your left-hand navigational menu has changed. The <em>Wizard Management</em> and <em>Capture Pricing</em> sections have been added for you to complete separately.</p>
+          <p>Be aware that <em>Wizard Management</em> will not appear in your menu if you select <em>Services Only</em>.</p>
+          ]]></text>
+        <position>top</position>
+        <top>100px</top>
+        <left>100px</left>
+        <width>100px</width>
+        <height>100px</height>
+      </blankStep>   
+      <buttonStep>
+        <name>23_end_of_goods_and_services_lesson</name>
+        <image>modules/presentation/images/goods_services_lesson/goods_services_019.jpg</image>
+        <text><![CDATA[
+          <p><strong>End of Goods and Services lesson.</strong></p>
+          <p>Click the <strong>Done</strong> button to complete this lesson.</p>
+          ]]></text>
+        <position>top</position>
+        <top>100px</top>
+        <left>100px</left>
+        <width>100px</width>
+        <height>100px</height>
+      </buttonStep>          
+    </steps>
+  </presentation>
 </database>
