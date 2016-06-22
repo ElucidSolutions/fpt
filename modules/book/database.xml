@@ -36,41 +36,6 @@
             ]]></body>
           </page>
           <page>
-            <name>wizard-management-lesson</name>
-            <title><![CDATA[Wizard Management Lesson]]></title>
-            <body><![CDATA[
-              <p>This is a lesson on completing the <em>Wizard Management</em> section. Click the play button to begin!</p>
-              <div id="presentation" class="presentation_block">presentation/wizard_management_lesson</div>
-              <div class="leaf_nav">
-                <div class="previous_lesson">
-                  <div class="sequence">Previous Lesson</div>
-                  <img src="images/previous-arrow.svg" class="arrow" />
-                  <div class="menu_leaf_previous_link_block"><span class="core_id_block"/></div>
-                </div>
-                <div class="next_lesson">
-                  <div class="sequence">Next Lesson</div>
-                  <div class="menu_leaf_next_link_block"><span class="core_id_block"/></div>
-                  <img src="images/next-arrow.svg" class="arrow" />
-                </div>
-              </div>
-            ]]></body>
-          </page>
-          <page>
-            <name>special-charges-lesson</name>
-            <title><![CDATA[Special Charges Lesson]]></title>
-            <body><![CDATA[
-              <p>This is a lesson on completing the <em>Special Charges</em> section. If you selected <strong>Yes</strong> to this section in <em>Wizard Management</em>, you will see it added to the left-hand navigation menu. Click the play button to begin!</p>
-              <div id="presentation" class="presentation_block">presentation/special_charges_lesson</div>
-              <div class="leaf_nav">
-                <div class="previous_lesson">
-                  <div class="sequence">Previous Lesson</div>
-                  <img src="images/previous-arrow.svg" class="arrow" />
-                  <div class="menu_leaf_previous_link_block"><span class="core_id_block"/></div>
-                </div>
-              </div>
-            ]]></body>
-          </page>
-          <page>
             <name>goods_services_lesson</name>
             <title><![CDATA[Goods and Services Lesson]]></title>
             <body><![CDATA[
@@ -84,7 +49,48 @@
                 </div>
               </div>
             ]]></body>
-          </page>          
+          </page>  
+          <page>
+            <name>wizard_management_lesson</name>
+            <title><![CDATA[Wizard Management Lesson]]></title>
+            <body><![CDATA[
+              <p>This is a lesson on the Wizard Management section. This section will appear only when you choose <strong>Products Only</strong> or <strong>Products and Services</strong> within the offer category. You must fill out this section before you can enter any additional pricing information.</p>
+              <p>Click the play button to begin!</p>
+              <div id="presentation" class="presentation_block">presentation/wizard_management_lesson</div>
+                <div class="next_lesson">
+                  <div class="sequence">Next Lesson</div>
+                  <div class="menu_leaf_next_link_block"><span class="core_id_block"/></div>
+                  <img src="images/next-arrow.svg" class="arrow" />
+                </div>
+              </div>
+            ]]></body>
+          </page>     
+          <page>
+            <name>zonal_pricing_lesson</name>
+            <title><![CDATA[Zonal Pricing Lesson]]></title>
+            <body><![CDATA[
+              <p>This is a lesson on completing the first section of <em>Zonal Pricing</em>. If you selected <strong>Yes</strong> to this section in <em>Wizard Management</em>, you will see it added to the left-hand navigation menu, and later, as a tab in the <em>On-Screen Data Entry</em> template.</p>
+              <p>Click the play button to begin!</p>
+              <div id="presentation" class="presentation_block">presentation/zonal_pricing_lesson</div>
+                <div class="next_lesson">
+                  <div class="sequence">Next Lesson</div>
+                  <div class="menu_leaf_next_link_block"><span class="core_id_block"/></div>
+                  <img src="images/next-arrow.svg" class="arrow" />
+                </div>
+              </div>
+            ]]></body>
+          </page>    
+          <page>
+            <name>special_charges_lesson</name>
+            <title><![CDATA[Special Charges Lesson]]></title>
+            <body><![CDATA[
+              <p>This is a lesson on the Special Charges section. This is where you will indicate any special charges for delivery features like one or two day service, assembly, or installation, among others.</p>
+              <p>Click the play button to begin!</p>
+              <div id="presentation" class="presentation_block">presentation/special_charges_lesson</div>
+  
+            ]]></body>
+          </page>
+
         </content>
       </section>
     </content>
