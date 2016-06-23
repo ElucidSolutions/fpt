@@ -27,11 +27,6 @@
               <p>This is a lesson on filling out the <em>Get Started</Em> tab. You must fill out this section before you can move onto the other tabs in the template.</p>
               <p>Click the play button to begin!</p>
               <div id="presentation" class="presentation_block">presentation/get_started_tab_lesson</div>
-              <div class="next_lesson">
-                <div class="sequence">Next Lesson</div>
-                <div class="menu_leaf_next_link_block"><span class="core_id_block"/></div>
-                <img src="images/next-arrow.svg" class="arrow" />
-              </div>
             ]]></body>
           </page>
           <page>
@@ -41,11 +36,6 @@
               <p>This is a lesson on completing the <em>Goods and Services</em> section. GSA assigns all goods and services to Special Item Numbers (SINs). You must complete this section first before you can enter the rest of your pricing data.</p>
               <p>Click the play button to begin!</p>
               <div id="presentation" class="presentation_block">presentation/goods_services_lesson</div>            
-              <div class="next_lesson">
-                <div class="sequence">Next Lesson</div>
-                <div class="menu_leaf_next_link_block"><span class="core_id_block"/></div>
-                <img src="images/next-arrow.svg" class="arrow" />
-              </div>
             ]]></body>
           </page>  
           <page>
@@ -55,11 +45,6 @@
               <p>This is a lesson on the Wizard Management section. This section will appear only when you choose <strong>Products Only</strong> or <strong>Products and Services</strong> within the offer category. You must fill out this section before you can enter any additional pricing information.</p>
               <p>Click the play button to begin!</p>
               <div id="presentation" class="presentation_block">presentation/wizard_management_lesson</div>
-              <div class="next_lesson">
-                <div class="sequence">Next Lesson</div>
-                <div class="menu_leaf_next_link_block"><span class="core_id_block"/></div>
-                <img src="images/next-arrow.svg" class="arrow" />
-              </div>
             ]]></body>
           </page>     
           <page>
@@ -69,11 +54,6 @@
               <p>This is a lesson on completing the first section of <em>Zonal Pricing</em>. If you selected <strong>Yes</strong> to this section in <em>Wizard Management</em>, you will see it added to the left-hand navigation menu, and later, as a tab in the <em>On-Screen Data Entry</em> template.</p>
               <p>Click the play button to begin!</p>
               <div id="presentation" class="presentation_block">presentation/zonal_pricing_lesson</div>
-              <div class="next_lesson">
-                <div class="sequence">Next Lesson</div>
-                <div class="menu_leaf_next_link_block"><span class="core_id_block"/></div>
-                <img src="images/next-arrow.svg" class="arrow" />
-              </div>
             ]]></body>
           </page>    
           <page>
@@ -82,12 +62,7 @@
             <body><![CDATA[
               <p>This is a lesson on the Special Charges section. This is where you will indicate any special charges for delivery features like one or two day service, assembly, or installation, among others.</p>
               <p>Click the play button to begin!</p>
-              <div id="presentation" class="presentation_block">presentation/special_charges_lesson</div>
-              <div class="next_lesson">
-                <div class="sequence">Next Lesson</div>
-                <div class="menu_leaf_next_link_block"><span class="core_id_block"/></div>
-                <img src="images/next-arrow.svg" class="arrow" />
-              </div>              
+              <div id="presentation" class="presentation_block">presentation/special_charges_lesson</div>             
             ]]></body>
           </page>
           <page>
@@ -96,14 +71,25 @@
             <body><![CDATA[
               <p>This is a lesson on the Special Features section. This section includes environmental features, Section 508 items, and other features that apply to the products under each SIN.</p>
               <p>Click the play button to begin!</p>
-              <div id="presentation" class="presentation_block">presentation/special_features_lesson</div>
-              <div class="next_lesson">
-                <div class="sequence">Next Lesson</div>
-                <div class="menu_leaf_next_link_block"><span class="core_id_block"/></div>
-                <img src="images/next-arrow.svg" class="arrow" />
-              </div>              
+              <div id="presentation" class="presentation_block">presentation/special_features_lesson</div>            
             ]]></body>
           </page>
+          <page>
+            <name>pricing_tab_lesson_i</name>
+            <title><![CDATA[Pricing Tab Lesson: Part I]]></title>
+            <body><![CDATA[
+              <p>This is a lesson on the <em>Pricing</em> tab of the <em>On-Screen Data Entry</em> template. You must have completed the <em>Get Started</em> tab before you can complete this one.</p>
+              <div id="presentation" class="presentation_block">presentation/pricing_tab_lesson_i</div>            
+            ]]></body>
+          </page>   
+          <page>
+            <name>pricing_tab_lesson_ii</name>
+            <title><![CDATA[Pricing Tab Lesson: Part II]]></title>
+            <body><![CDATA[
+              <p>This is the second part of the <em>Pricing Tab</em> lesson. If you have not yet completed the first part of this lesson, you can do so by clicking on the <strong>Pricing Tab: Part I</strong> link below.</p>
+              <div id="presentation" class="presentation_block">presentation/pricing_tab_lesson_ii</div>           
+            ]]></body>
+          </page>                            
         </content>
       </section>
     </content>
