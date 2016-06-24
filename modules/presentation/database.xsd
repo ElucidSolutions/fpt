@@ -62,9 +62,11 @@
         <xs:simpleType>
           <xs:restriction base="xs:string">
             <xs:enumeration value="bottom"/>
+            <xs:enumeration value="floating"/>            
             <xs:enumeration value="left"/>
             <xs:enumeration value="right"/>
             <xs:enumeration value="top"/>
+            <xs:enumeration value="top-middle-aligned"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>

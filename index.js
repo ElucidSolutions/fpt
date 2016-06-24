@@ -51,6 +51,8 @@ MODULE_LOAD_HANDLERS.add (
   done (null);
 });
 
+console.log('hello');
+
 // This function hides/displays the Back to Top tab.
 function main_displayBackToTop () {
   if ($(window).scrollTop() > 200) {

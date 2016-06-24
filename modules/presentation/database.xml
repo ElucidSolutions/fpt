@@ -1485,9 +1485,9 @@
           <p>The FSC/PSC (Federal Supply Code/Product Supply Code), UNSPSC (United Nations Standard Products and Services Code), and NSN (National Stock Number) are numerical indicators that further define an item.</p>
           <p>For this lesson, you do not need to complete these fields. Click <strong>Next</strong>.</p>
         ]]></text>
-        <position>right</position>
+        <position>left</position>
         <top>200px</top>
-        <left>50px</left>
+        <left>740px</left>
         <width>0px</width>
         <height>0px</height>
       </blankStep>   
@@ -1499,10 +1499,10 @@
           <p>Click the <strong>Save Pricing</strong> button to ensure the data you just entered is not lost.</p>
         ]]></text>
         <position>top</position>
-        <top>100px</top>
-        <left>100px</left>
-        <width>100px</width>
-        <height>100px</height>
+        <top>190px</top>
+        <left>16px</left>
+        <width>87px</width>
+        <height>20px</height>
       </buttonStep>      
       <blankStep>
         <name>15_completing_the_remaining_rows</name>
@@ -1512,9 +1512,9 @@
           <p>For this lesson, the remaining rows have been filled out for you.</p>
           <p>Click <strong>Next</strong>.</p>
         ]]></text>
-        <position>top</position>
-        <top>100px</top>
-        <left>100px</left>
+        <position>floating</position>
+        <top>75px</top>
+        <left>500px</left>
         <width>0px</width>
         <height>0px</height>
       </blankStep>       
