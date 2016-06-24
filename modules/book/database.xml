@@ -89,7 +89,16 @@
               <p>This is the second part of the <em>Pricing Tab</em> lesson. If you have not yet completed the first part of this lesson, you can do so by clicking on the <strong>Pricing Tab: Part I</strong> link below.</p>
               <div id="presentation" class="presentation_block">presentation/pricing_tab_lesson_ii</div>           
             ]]></body>
-          </page>                           
+          </page>    
+          <page>
+            <name>additional_photos_tab_lesson</name>
+            <title><![CDATA[Additional Photos Tab Lesson]]></title>
+            <body><![CDATA[
+              <p>This is a lesson for completing the <em>Additional Photos</em> tab of the <em>On-Screen Data Entry</em> template. If you selected <strong>Yes</strong> to Photos in <em>Wizard Management</em>, this tab will appear in your pricing data.</p>
+              <p>Click the play button to begin!</p>
+              <div id="presentation" class="presentation_block">presentation/additional_photos_lesson</div>            
+            ]]></body>
+          </page>
         </content>
       </section>
     </content>

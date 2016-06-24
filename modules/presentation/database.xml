@@ -1533,5 +1533,109 @@
       </blankStep>                                     
     </steps>
   </presentation>
-
+  <presentation>
+    <name>additional_photos_lesson</name>
+    <image>modules/presentation/images/additional_photos_lesson/additional_photos_001.jpg</image>
+    <width>1000px</width>
+    <height>500px</height>
+    <steps>
+      <blankStep>
+        <name>01_introduction_to_the_additional_photos_tab</name>
+        <image>modules/presentation/images/additional_photos_lesson/additional_photos_001.jpg</image>
+        <text><![CDATA[
+          <p><strong>Introduction to the Additional Photos Tab</strong></p>
+          <p>After selecting <strong>Yes</strong> to <em>Photos</em> in <em>Wizard Management</em>, completing this tab is the second step to adding pictures of your product/accessory.</p>
+          <p>You will notice that some of the fields have auto-populated with information you entered in other fields. Ensure this data is correct before moving on.</p>
+        ]]></text>
+        <position>floating</position>
+        <top>80px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>  
+      </blankStep>
+      <inputStep>
+        <name>02_enter_your_first_photos_filename</name>
+        <image>modules/presentation/images/additional_photos_lesson/additional_photos_001.jpg</image>
+        <text><![CDATA[
+          <p><strong>Enter your first photo’s filename.</strong></p>
+          <p>In the <em>Additional Photo 1</em> column, you will need to type the name of the photo, including the file extension, <u>exactly</u> as it is saved on your computer.</p>
+          <p>For this lesson, type <strong><em>photo_001.jpg</em></strong> into the textbox and click <strong>Next</strong>.</p>
+        ]]></text>
+        <position>top</position>
+        <top>317px</top>
+        <left>778px</left>
+        <width>163px</width>
+        <height>20px</height>
+        <!-- TODO: Check regex -->
+        <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>        
+      </inputStep>
+      <buttonStep>
+        <name>03_save_your_work</name>
+        <image>modules/presentation/images/additional_photos_lesson/additional_photos_001.jpg</image>
+        <text><![CDATA[
+          <p><strong>Save your work.</strong></p>
+          <p>Click the <strong>Save Photos</strong> button, located at the top of the table.</p>
+        ]]></text>
+        <position>top</position>
+        <top>260px</top>
+        <left>21px</left>
+        <width>85px</width>
+        <height>20px</height>
+      </buttonStep>
+      <buttonStep>
+        <name>04_click_ok</name>
+        <image>modules/presentation/images/additional_photos_lesson/additional_photos_002.jpg</image>
+        <text><![CDATA[
+          <p><strong>Click OK.</strong></p>
+          <p>When the <em>Product Confirmation</em> message pops up, click <strong>OK</strong>.</p>
+        ]]></text>
+        <position>top-middle-aligned</position>
+        <top>162px</top>
+        <left>311px</left>
+        <width>326px</width>
+        <height>134px</height>
+      </buttonStep>
+      <blankStep>
+        <name>05_entering_additional_photos</name>
+        <image>modules/presentation/images/additional_photos_lesson/additional_photos_003.jpg</image>
+        <text><![CDATA[
+          <p><strong>Entering additional photos.</strong></p>
+          <p>To enter more photos, simply type the exact photo name and file extension into the remaining text box(es) and save your information again.</p>
+          <p>For this lesson, the remaining rows have been completed for you.</p>
+        ]]></text>
+        <position>floating</position>
+        <top>150px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>
+      <blankStep>
+        <name>06_uploading_your_photos</name>
+        <image>modules/presentation/images/additional_photos_lesson/additional_photos_003.jpg</image>
+        <text><![CDATA[
+          <p><strong>Uploading your photos.</strong></p>
+          <p>You will upload your photos in a different step, once you have completed the entire On-Screen Data Entry process.</p>
+        ]]></text>
+        <position>floating</position>
+        <top>200px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>
+      <blankStep>
+        <name>07_end_of_additional_photos_tab_lesson</name>
+        <image>modules/presentation/images/additional_photos_lesson/additional_photos_003.jpg</image>
+        <text><![CDATA[
+          <p><strong>End of Additional Photos tab lesson.</strong></p>
+          <p>Click the <strong>Done</strong> button to continue.</p>
+        ]]></text>
+        <position>floating</position>
+        <top>200px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>
+    </steps>
+  </presentation> 
 </database>
