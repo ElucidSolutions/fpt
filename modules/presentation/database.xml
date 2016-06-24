@@ -595,7 +595,7 @@
         <left>500px</left>
         <width>0px</width>
         <height>0px</height>
-      </blankStep>      
+      </blankStep>
       <buttonStep>
         <name>07_save_your_responses</name>
         <image>modules/presentation/images/wizard_management_lesson/wizard_management_006.jpg</image>
@@ -1305,11 +1305,11 @@
     <height>500px</height>
     <steps>
       <blankStep>
-        <name>01_introduction_to_the_</name>
-        <image>modules/presentation/images/special_features_lesson/special_features_001.jpg</image>
+        <name>01_the_pricing_tab_lesson_part_ii</name>
+        <image>modules/presentation/images/pricing_tab_lesson/pricing_009.jpg</image>
         <text><![CDATA[
-          <p><strong>Introduction to the.</strong></p>
-          <p></p>
+          <p><strong>The Pricing Tab Lesson: Part II.</strong></p>
+          <p>After completing the first part of the <em>Pricing</em> tab, we will now move onto filling out the remaining cells in this section. Be sure you have previously filled out each required cell as indicated by an asterisk.</p>
         ]]></text>
         <position>floating</position>
         <top>200px</top>
@@ -1317,194 +1317,213 @@
         <width>0px</width>
         <height>0px</height>
       </blankStep>
-      <buttonStep>
-        <name>02_</name>
-        <image>modules/presentation/images/pricing_tab_lesson/pricing_0.jpg</image>
+      <inputStep>
+        <name>02_enter_the_best_priced_customer</name>
+        <image>modules/presentation/images/pricing_tab_lesson/pricing_009.jpg</image>
         <text><![CDATA[
-          <p><strong></strong></p>
-          <p></p>
+          <p><strong>Enter the Best Priced Customer.</strong></p>
+          <p>The best priced customer is the name of a customer or category of customers (commercial or government entity) in which your company offers the absolute best price, independent of terms and conditions, discounts, and/or concessions.</p>
+          <p>For this lesson, type a customer name and click <strong>Next</strong>.</p>
         ]]></text>
         <position>top</position>
-        <top>100px</top>
-        <left>100px</left>
-        <width>100px</width>
-        <height>100px</height>
-      </buttonStep>      
-      <buttonStep>
-        <name>03_</name>
-        <image>modules/presentation/images/pricing_tab_lesson/pricing_0.jpg</image>
+        <top>250px</top>
+        <left>72px</left>
+        <width>165px</width>
+        <height>20px</height>
+        <!-- TODO: Check regex -->        
+        <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>        
+      </inputStep>      
+      <inputStep>
+        <name>03_enter_the_price_offered_to_best_priced_customer.</name>
+        <image>modules/presentation/images/pricing_tab_lesson/pricing_010.jpg</image>
         <text><![CDATA[
-          <p><strong></strong></p>
-          <p></p>
+          <p><strong>Enter the Price Offered to Best Priced Customer.</strong></p>
+          <p>This is the best price you have offered to your Best Priced Customer from the previous field.</p>
+          <p>For this lesson, type <strong><em>950</em></strong> into the cell and click <strong>Next</strong>.</p>
         ]]></text>
         <position>top</position>
-        <top>100px</top>
-        <left>100px</left>
-        <width>100px</width>
-        <height>100px</height>
-      </buttonStep>     
-      <buttonStep>
-        <name>04_</name>
-        <image>modules/presentation/images/pricing_tab_lesson/pricing_0.jpg</image>
+        <top>250px</top>
+        <left>242px</left>
+        <width>205px</width>
+        <height>20px</height>
+        <!-- TODO: Check regex -->
+        <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>        
+      </inputStep>     
+      <inputStep>
+        <name>04_enter the discount offered to best pricedCcustomer.</name>
+        <image>modules/presentation/images/pricing_tab_lesson/pricing_011.jpg</image>
         <text><![CDATA[
-          <p><strong></strong></p>
-          <p></p>
+          <p><strong>Enter the Discount Offered to Best Priced Customer.</strong></p>
+          <p><em>Example: If you offer your best price customer a 5% discount off the Commercial List Price, you should enter "5" in this field.</em></p>
+          <p>For this lesson, type <strong><em>5</em></strong> to indicate that $950 is 5% less than the Commercial List Price of $1,000 and click <strong>Next</strong>.</p>
         ]]></text>
         <position>top</position>
-        <top>100px</top>
-        <left>100px</left>
-        <width>100px</width>
-        <height>100px</height>
-      </buttonStep>      
-      <buttonStep>
-        <name>05_</name>
-        <image>modules/presentation/images/pricing_tab_lesson/pricing_0.jpg</image>
+        <top>250px</top>
+        <left>453px</left>
+        <width>252px</width>
+        <height>20px</height>
+        <!-- TODO: Check regex -->
+        <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>        
+      </inputStep>      
+      <blankStep>
+        <name>05_note_the_manufacturer_warranty_warranty_period_drop-down</name>
+        <image>modules/presentation/images/pricing_tab_lesson/pricing_012.jpg</image>
         <text><![CDATA[
-          <p><strong></strong></p>
-          <p></p>
+          <p><strong>Note the Manufacturer Warranty - Warranty Period drop-down.</strong></p>
+          <p>This is the unit of time that the warranty is expressed in. Available values are "day," "week," "month," "year," or "lifetime."</p>
+          <p>For this lesson, you do not need to complete this field. Click <strong>Next</strong>.</p>
+        ]]></text>
+        <position>left</position>
+        <top>210px</top>
+        <left>715px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>   
+      <blankStep>
+        <name>06_note_the_manufacturer_warranty_description_field</name>
+        <image>modules/presentation/images/pricing_tab_lesson/pricing_013.jpg</image>
+        <text><![CDATA[
+          <p><strong>Note the Manufacturer Warranty - Description field</strong></p>
+          <p>This is a description of the coverage provided by the manufacturer's warranty.</p>
+          <p>For this lesson, you do not need to complete this field. Click <strong>Next</strong>.</p>
+        ]]></text>
+        <position>left</position>
+         <top>210px</top>
+        <left>612px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>      
+      <buttonStep>
+        <name>07_open_the_production_point_drop-down</name>
+        <image>modules/presentation/images/pricing_tab_lesson/pricing_014.jpg</image>
+        <text><![CDATA[
+          <p><strong>Open the Production Point drop-down.</strong></p>
+          <p>The production point is the country in which the product is manufactured.</p>
+          <p>Click on the downward-facing arrow to open the drop-down menu.</p>
         ]]></text>
         <position>top</position>
-        <top>100px</top>
-        <left>100px</left>
-        <width>100px</width>
-        <height>100px</height>
+        <top>250px</top>
+        <left>230px</left>
+        <width>153px</width>
+        <height>20px</height>
       </buttonStep>   
       <buttonStep>
-        <name>06_</name>
-        <image>modules/presentation/images/pricing_tab_lesson/pricing_0.jpg</image>
+        <name>08_select_your_production_point</name>
+        <image>modules/presentation/images/pricing_tab_lesson/pricing_015.jpg</image>
         <text><![CDATA[
-          <p><strong></strong></p>
-          <p></p>
+          <p><strong>Select your Production Point.</strong></p>
+          <p>For this lesson, select <strong>UNITED STATES OF AMERICA</strong> from the list.</p>
         ]]></text>
-        <position>top</position>
-        <top>100px</top>
-        <left>100px</left>
-        <width>100px</width>
-        <height>100px</height>
+        <position>top-middle-aligned</position>
+        <top>250px</top>
+        <left>230px</left>
+        <width>151px</width>
+        <height>20px</height>
       </buttonStep>      
-      <buttonStep>
-        <name>07_</name>
-        <image>modules/presentation/images/pricing_tab_lesson/pricing_0.jpg</image>
+      <blankStep>
+        <name>09_note_the_production_point_2_drop-down_menu</name>
+        <image>modules/presentation/images/pricing_tab_lesson/pricing_016.jpg</image>
         <text><![CDATA[
-          <p><strong></strong></p>
-          <p></p>
+          <p><strong>Note the Production Point 2 drop-down menu.</strong></p>
+          <p>If your product is manufactured in more than one country, use this field to indicate the additional country.</p>
+          <p>For this lesson, you do not need to complete this field. Click <strong>Next</strong>.</p>
         ]]></text>
         <position>top</position>
-        <top>100px</top>
-        <left>100px</left>
-        <width>100px</width>
-        <height>100px</height>
-      </buttonStep>   
-      <buttonStep>
-        <name>08_</name>
-        <image>modules/presentation/images/pricing_tab_lesson/pricing_0.jpg</image>
+        <top>210px</top>
+        <left>250px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>   
+      <blankStep>
+        <name>10_note_the_delivery_lead_time_days_field</name>
+        <image>modules/presentation/images/pricing_tab_lesson/pricing_016.jpg</image>
         <text><![CDATA[
-          <p><strong></strong></p>
-          <p></p>
+          <p><strong>Note the Delivery (Lead) Time Days field.</strong></p>
+          <p>The delivery (lead) time days is the number of days it will take for the product to meet the established delivery (lead) time code. This field is for defining the numerical value only. For example, if you selected AE for Delivery (Lead) Time Days and enter 5 days, then the expectation is the product will ship (leave your company) 5 days after you receive the order.</p>
+          <p>For this lesson, you do not need to complete this field. Click <strong>Next<strong>.</p>
         ]]></text>
         <position>top</position>
-        <top>100px</top>
-        <left>100px</left>
-        <width>100px</width>
-        <height>100px</height>
-      </buttonStep>      
+        <top>210px</top>
+        <left>400px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>      
       <buttonStep>
-        <name>09_</name>
-        <image>modules/presentation/images/pricing_tab_lesson/pricing_0.jpg</image>
+        <name>11_open_the_delivery_lead_time_code_drop-down</name>
+        <image>modules/presentation/images/pricing_tab_lesson/pricing_016.jpg</image>
         <text><![CDATA[
-          <p><strong></strong></p>
-          <p></p>
+          <p><strong>Open the Delivery (Lead) Time Code drop-down.</strong></p>
+          <p>Use this field to identify the method in which your company determines delivery lead time. “AF” indicates the time the item will be delivered after receipt of order, and “AE” indicates the time shipped after receipt.</p>
         ]]></text>
         <position>top</position>
-        <top>100px</top>
-        <left>100px</left>
-        <width>100px</width>
-        <height>100px</height>
-      </buttonStep>   
-      <buttonStep>
-        <name>10_</name>
-        <image>modules/presentation/images/pricing_tab_lesson/pricing_0.jpg</image>
-        <text><![CDATA[
-          <p><strong></strong></p>
-          <p></p>
-        ]]></text>
-        <position>top</position>
-        <top>100px</top>
-        <left>100px</left>
-        <width>100px</width>
-        <height>100px</height>
-      </buttonStep>      
-      <buttonStep>
-        <name>11_</name>
-        <image>modules/presentation/images/pricing_tab_lesson/pricing_0.jpg</image>
-        <text><![CDATA[
-          <p><strong></strong></p>
-          <p></p>
-        ]]></text>
-        <position>top</position>
-        <top>100px</top>
-        <left>100px</left>
-        <width>100px</width>
-        <height>100px</height>
+        <top>250px</top>
+        <left>556px</left>
+        <width>193px</width>
+        <height>20px</height>
       </buttonStep> 
       <buttonStep>
-        <name>12_</name>
-        <image>modules/presentation/images/pricing_tab_lesson/pricing_0.jpg</image>
+        <name>12_select_the_delivery_lead_time_code</name>
+        <image>modules/presentation/images/pricing_tab_lesson/pricing_017.jpg</image>
         <text><![CDATA[
-          <p><strong></strong></p>
-          <p></p>
+          <p><strong>Select the Delivery (Lead) Time Code.</strong></p>
+          <p>For this lesson, select <strong>AF - Delivered after receipt of order</strong>.</p>
         ]]></text>
-        <position>top</position>
-        <top>100px</top>
-        <left>100px</left>
-        <width>100px</width>
-        <height>100px</height>
+        <position>top-middle-aligned</position>
+        <top>272px</top>
+        <left>752px</left>
+        <width>197px</width>
+        <height>45px</height>
       </buttonStep>      
-      <buttonStep>
-        <name>13_</name>
-        <image>modules/presentation/images/pricing_tab_lesson/pricing_0.jpg</image>
-        <text><![CDATA[
-          <p><strong></strong></p>
-          <p></p>
-        ]]></text>
-        <position>top</position>
-        <top>100px</top>
-        <left>100px</left>
-        <width>100px</width>
-        <height>100px</height>
-      </buttonStep>   
-      <buttonStep>
-        <name>14_</name>
-        <image>modules/presentation/images/pricing_tab_lesson/pricing_0.jpg</image>
-        <text><![CDATA[
-          <p><strong></strong></p>
-          <p></p>
-        ]]></text>
-        <position>top</position>
-        <top>100px</top>
-        <left>100px</left>
-        <width>100px</width>
-        <height>100px</height>
-      </buttonStep>      
-      <buttonStep>
-        <name>15_</name>
-        <image>modules/presentation/images/pricing_tab_lesson/pricing_0.jpg</image>
-        <text><![CDATA[
-          <p><strong></strong></p>
-          <p></p>
-        ]]></text>
-        <position>top</position>
-        <top>100px</top>
-        <left>100px</left>
-        <width>100px</width>
-        <height>100px</height>
-      </buttonStep>       
       <blankStep>
-        <name>16_</name>
-        <image>modules/presentation/images/special_features_lesson/special_features_001.jpg</image>
+        <name>13_note_the_final_code_fields</name>
+        <image>modules/presentation/images/pricing_tab_lesson/pricing_019.jpg</image>
         <text><![CDATA[
-          <p><strong></strong></p>
-          <p></p>
+          <p><strong>Note the final code fields.</strong></p>
+          <p>The FSC/PSC (Federal Supply Code/Product Supply Code), UNSPSC (United Nations Standard Products and Services Code), and NSN (National Stock Number) are numerical indicators that further define an item.</p>
+          <p>For this lesson, you do not need to complete these fields. Click <strong>Next</strong>.</p>
+        ]]></text>
+        <position>right</position>
+        <top>200px</top>
+        <left>50px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>   
+      <buttonStep>
+        <name>14_save_your_work</name>
+        <image>modules/presentation/images/pricing_tab_lesson/pricing_019.jpg</image>
+        <text><![CDATA[
+          <p><strong>Save your work.</strong></p>
+          <p>Click the <strong>Save Pricing</strong> button to ensure the data you just entered is not lost.</p>
+        ]]></text>
+        <position>top</position>
+        <top>100px</top>
+        <left>100px</left>
+        <width>100px</width>
+        <height>100px</height>
+      </buttonStep>      
+      <blankStep>
+        <name>15_completing_the_remaining_rows</name>
+        <image>modules/presentation/images/pricing_tab_lesson/pricing_020.jpg</image>
+        <text><![CDATA[
+          <p><strong>Completing the remaining rows.</strong></p>
+          <p>For this lesson, the remaining rows have been filled out for you.</p>
+          <p>Click <strong>Next</strong>.</p>
+        ]]></text>
+        <position>top</position>
+        <top>100px</top>
+        <left>100px</left>
+        <width>0px</width>
+        <height>0px</height>
+      </blankStep>       
+      <blankStep>
+        <name>16_end_of_pricing_tab_lesson_ii</name>
+        <image>modules/presentation/images/pricing_tab_lesson/pricing_020.jpg</image>
+        <text><![CDATA[
+          <p><strong>End of Pricing Tab Lesson: Part II.</strong></p>
+          <p>You have now completed the last lesson pertaining to the <em>Pricing</em> tab. Click the <strong>Done</strong> button to end this lesson.</p>
         ]]></text>
         <position>floating</position>
         <top>200px</top>

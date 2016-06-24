@@ -28,7 +28,7 @@
               <p>Click the play button to begin!</p>
               <div id="presentation" class="presentation_block">presentation/get_started_tab_lesson</div>
             ]]></body>
-          </page>
+          </page> 
           <page>
             <name>goods_services_lesson</name>
             <title><![CDATA[Goods and Services Lesson]]></title>
@@ -89,7 +89,7 @@
               <p>This is the second part of the <em>Pricing Tab</em> lesson. If you have not yet completed the first part of this lesson, you can do so by clicking on the <strong>Pricing Tab: Part I</strong> link below.</p>
               <div id="presentation" class="presentation_block">presentation/pricing_tab_lesson_ii</div>           
             ]]></body>
-          </page>                            
+          </page>                           
         </content>
       </section>
     </content>
