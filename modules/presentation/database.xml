@@ -90,7 +90,7 @@
         <height>25px</height>
         <!-- TODO: Check regex -->
         <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
-        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>               
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>             
       </inputStep>
       <buttonStep>
         <name>07_open_the_drop-down_menu</name>
@@ -1161,8 +1161,9 @@
         <left>533px</left>
         <width>161px</width>
         <height>18px</height>
+        <!-- TODO: Fix regex -->
         <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
-        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>    
       </inputStep>     
       <blankStep>
         <name>04_note_the_upc_field</name>
@@ -1191,8 +1192,9 @@
         <left>71px</left>
         <width>235px</width>
         <height>18px</height>
+        <!-- TODO: Fix regex -->
         <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
-        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>        
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>         
       </inputStep>   
       <buttonStep>
         <name>06_open_the_unit_of_issue_drop-down_menu</name>
@@ -1235,8 +1237,9 @@
         <left>446px</left>
         <width>131px</width>
         <height>18px</height>
+        <!-- TODO: Fix regex -->
         <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
-        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>        
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>         
       </inputStep>      
       <blankStep>
         <name>09_note_the_quantity_of_product_unit_field</name>
@@ -1279,6 +1282,7 @@
         <left>851px</left>
         <width>143px</width>
         <height>18px</height>
+        <!-- TODO: Fix regex -->
         <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
         <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>        
       </inputStep> 
@@ -1638,4 +1642,363 @@
       </blankStep>
     </steps>
   </presentation> 
+  <presentation>
+    <name>choosing_pricing_template_lesson</name>
+    <image>modules/presentation/images/choosing_pricing_template_lesson/capture_pricing_001.jpg</image>
+    <width>1000px</width>
+    <height>500px</height>
+    <steps>
+      <blankStep>
+        <name>01_introduction_to_the_capture_and_generate_pricing_screen</name>
+        <image>modules/presentation/images/choosing_pricing_template_lesson/capture_pricing_001.jpg</image>
+        <text><![CDATA[
+          <p><strong>Introduction to the Capture and Generate Pricing screen.</strong></p>
+          <p>Before you make your selection for a pricing template, you must have completed each section on your left-hand navigational menu. On this screen, you will see three options: Download/Upload Template, On-Screen Data Entry, and Electronic Data Interchange (EDI).</p>
+        ]]></text>
+        <position>floating</position>
+        <top>200px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>  
+      </blankStep>
+      <blankStep>
+        <name>02_option_1_the download_upload_template</name>
+        <image>modules/presentation/images/choosing_pricing_template_lesson/capture_pricing_001.jpg</image>
+        <text><![CDATA[
+          <p><strong>Option 1: The Download/Upload Template.</strong></p>
+          <p>This method allows you to download an Excel template created by the system and work on it offline. After entering your data, you will need to upload the file back into the system to validate against any errors.<p>
+          <p>This method is best for entering 100 or more items.</p>
+        ]]></text>
+        <position>right</position>
+        <top>83px</top>
+        <left>16px</left>
+        <width>312px</width>
+        <height>190px</height>  
+      </blankStep>
+      <blankStep>
+        <name>03_option_2_on-screen_data_entry</name>
+        <image>modules/presentation/images/choosing_pricing_template_lesson/capture_pricing_001.jpg</image>
+        <text><![CDATA[
+          <p><strong>Option 2: On-Screen Data Entry.</strong></p>
+          <p>This method allows you enter product information into the template within the system. You are required to be online while working in this template.</p>
+          <p>This method is best for entering 100 items or fewer.</p>
+        ]]></text>
+        <position>right</position>
+        <top>83px</top>
+        <left>329px</left>
+        <width>312px</width>
+        <height>190px</height>  
+      </blankStep>
+      <blankStep>
+        <name>04_option_3_electronic_data_interchange</name>
+        <image>modules/presentation/images/choosing_pricing_template_lesson/capture_pricing_001.jpg</image>
+        <text><![CDATA[
+          <p><strong>Option 3: Electronic Data Interchange (EDI).</strong></p>
+          <p>This method allows you to download a template created by the system and work on it offline. You will be required to generate a transaction key and use it in the EDI system to upload your files.</p>
+          <p>This method is best for entering 100 or more items.</p>
+        ]]></text>
+        <position>left</position>
+        <top>83px</top>
+        <left>643px</left>
+        <width>320px</width>
+        <height>190px</height>  
+      </blankStep>
+      <blankStep>
+        <name>05_proceed_to_your_chosen_method</name>
+        <image>modules/presentation/images/choosing_pricing_template_lesson/capture_pricing_001.jpg</image>
+        <text><![CDATA[
+          <p><strong>Proceed to your chosen method.</strong></p>
+          <p>When you have chosen the method that most appropriately suits your need, click on the button within the option box to proceed.</p>
+        ]]></text>
+        <position>floating</position>
+        <top>400px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>  
+      </blankStep>                             
+    </steps>
+  </presentation>
+  <presentation>
+    <name>zonal_offer_lesson</name>
+    <image>modules/presentation/images/zonal_offer_lesson/zonal_offer_001.jpg</image>
+    <width>1000px</width>
+    <height>500px</height>
+    <steps>
+      <blankStep>
+        <name>01_introduction_to_zonal_pricing_within_the_pricing_template</name>
+        <image>modules/presentation/images/zonal_offer_lesson/zonal_offer_001.jpg</image>
+        <text><![CDATA[
+          <p><strong>Introduction to Zonal Pricing within the pricing template.</strong></p>
+          <p>Before you can enter your zonal details into the template, you must have indicated your zones for each contiguous and non-contiguous state in the Zonal Pricing section in the left-hand navigation menu.</p>
+        ]]></text>
+        <position>floating</position>
+        <top>200px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>  
+      </blankStep>  
+      <blankStep>
+        <name>02_note_the_auto-populated_information</name>
+        <image>modules/presentation/images/zonal_offer_lesson/zonal_offer_001.jpg</image>
+        <text><![CDATA[
+          <p><strong>Note the auto-populated information.</strong></p>
+          <p>Some of the data you entered in previous tabs has been auto-populated into this tab. Double check that this information is correct before moving on.</p>
+        ]]></text>
+        <position>floating</position>
+        <top>120px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>  
+      </blankStep>    
+      <inputStep>
+        <name>03_enter_the_first_offer_price</name>
+        <image>modules/presentation/images/zonal_offer_lesson/zonal_offer_002.jpg</image>
+        <text><![CDATA[
+          <p><strong>Enter the first Offer Price.</strong></p>
+          <p>The offer price is the price you will sell this product or accessory to government buyers, not including the Industrial Funding Fee (IFF).</p>
+          <p>You will recall we set up two zones in the <em>Zonal Pricing</em> section. <em>01 Offer Price ($)</em> corresponds to the zone we labeled “01.”</p>
+          <p>Type <strong><em>100</em></strong> into the cell under <em>01 Offer Price ($)</em> and click <strong>Next</strong>.</p>
+        ]]></text>
+        <position>top</position>
+        <top>276px</top>
+        <left>403px</left>
+        <width>104px</width>
+        <height>20px</height> 
+        <!-- TODO: Fix regex -->
+        <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>            
+      </inputStep>    
+      <blankStep>
+        <name>04_note_the_final_price</name>
+        <image>modules/presentation/images/zonal_offer_lesson/zonal_offer_004.jpg</image>
+        <text><![CDATA[
+          <p><strong>Note the Final Price.</strong></p>
+          <p>The final price including industrial funding fee (IFF) is automatically calculated based on your offer price. It includes the IFF, which you will later remit to the government.</p>
+          <p>As soon as you click on this cell, the <em>01 Final Price (Incl. IFF) ($)</em> field will be calculated for you.</p>
+          <p>Click <strong>Next</strong>.</p>
+        ]]></text>
+        <position>top-middle-aligned</position>
+        <top>235px</top>
+        <left>545px</left>
+        <width>0px</width>
+        <height>0px</height>  
+      </blankStep>    
+      <inputStep>
+        <name>05_enter_the_second_offer_price</name>
+        <image>modules/presentation/images/zonal_offer_lesson/zonal_offer_005.jpg</image>
+        <text><![CDATA[
+          <p><strong>Enter the second Offer Price.</strong></p>
+          <p>The second offer price corresponds to the zone we labeled “02.”</p>
+          <p>Type <strong><em>105</em></strong> into the cell under <em>02 Offer Price ($)</em> and click <strong>Next</strong>.</p>
+        ]]></text>
+        <position>top</position>
+        <top>276px</top>
+        <left>675px</left>
+        <width>105px</width>
+        <height>20px</height>  
+        <!-- TODO: Fix regex -->
+        <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>            
+      </inputStep>   
+      <blankStep>
+        <name>06_note_the_second_final_price</name>
+        <image>modules/presentation/images/zonal_offer_lesson/zonal_offer_006.jpg</image>
+        <text><![CDATA[
+          <p><strong>Note the second Final Price.</strong></p>
+          <p>The <em>02 Final Price (IFF) ($)</em> field will be automatically calculated for you.</p>
+        ]]></text>
+        <position>top-middle-aligned</position>
+        <top>235px</top>
+        <left>810px</left>
+        <width>0px</width>
+        <height>0px</height>  
+      </blankStep>    
+      <buttonStep>
+        <name>07_save_your_work</name>
+        <image>modules/presentation/images/zonal_offer_lesson/zonal_offer_007.jpg</image>
+        <text><![CDATA[
+          <p><strong>Save your work.</strong></p>
+          <p>Click the <strong>Save Zonal Pricing</strong> button to ensure your data is not lost.</p>
+        ]]></text>
+        <position>top</position>
+        <top>217px</top>
+        <left>15px</left>
+        <width>117px</width>
+        <height>20px</height>  
+      </buttonStep>    
+      <buttonStep>
+        <name>08_click_ok</name>
+        <image>modules/presentation/images/zonal_offer_lesson/zonal_offer_008.jpg</image>
+        <text><![CDATA[
+          <p><strong>Click OK.</strong></p>
+          <p>On the <em>Product Confirmation</em> pop-up message, click <strong>OK</strong>.</p>
+        ]]></text>
+        <position>top-middle-aligned</position>
+        <top>165px</top>
+        <left>311px</left>
+        <width>326px</width>
+        <height>131px</height>
+      </buttonStep>    
+      <blankStep>
+        <name>09_end_of_zonal_offer_price_on-screen_data_entry</name>
+        <image>modules/presentation/images/zonal_offer_lesson/zonal_offer_007.jpg</image>
+        <text><![CDATA[
+          <p><strong>End of Zonal Offer Price: On-Screen Data Entry.</strong></p>
+          <p>Click the <strong>Done</strong> button to complete this lesson.</p>
+        ]]></text>
+        <position>floating</position>
+        <top>200px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>  
+      </blankStep>                    
+    </steps>
+  </presentation>
+  <presentation>
+    <name>special_charges_tab_lesson</name>
+    <image>modules/presentation/images/special_charges_tab_lesson/special_charges_tab_001.jpg</image>
+    <width>1000px</width>
+    <height>500px</height>
+    <steps>
+      <blankStep>
+        <name>01_introduction_to_the_special_charges_on-screen_data_entry_tab</name>
+        <image>modules/presentation/images/special_charges_tab_lesson/special_charges_tab_001.jpg</image>
+        <text><![CDATA[
+          <p><strong>Introduction to the Special Charges: On-Screen Data Entry tab</strong></p>
+          <p>You can only enter information into this tab after you have completed the <em>Special Charges</em> section found on the left-hand navigation menu.</p>
+        ]]></text>
+        <position>floating</position>
+        <top>200px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>  
+      </blankStep>   
+      <blankStep>
+        <name>02_note_the_auto-populated_information</name>
+        <image>modules/presentation/images/special_charges_tab_lesson/special_charges_tab_001.jpg</image>
+        <text><![CDATA[
+          <p><strong>Note the auto-populated information.</strong></p>
+          <p>Some of the data you entered in previous tabs has been auto-populated into this tab. Double check that this information is correct before moving on.</p>
+        ]]></text>
+        <position>floating</position>
+        <top>100px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>  
+      </blankStep>    
+      <buttonStep>
+        <name>03_add_view_special_charges</name>
+        <image>modules/presentation/images/special_charges_tab_lesson/special_charges_tab_001.jpg</image>
+        <text><![CDATA[
+          <p><strong>Add/View Special Charges.</strong></p>
+          <p>Click the <strong>Add/View Special Charges</strong> button.</p>
+        ]]></text>
+        <position>top</position>
+        <top>253px</top>
+        <left>764px</left>
+        <width>168px</width>
+        <height>29px</height>  
+      </buttonStep>   
+      <inputStep>
+        <name>04_enter_your_charges</name>
+        <image>modules/presentation/images/special_charges_tab_lesson/special_charges_tab_002.jpg</image>
+        <text><![CDATA[
+          <p><strong>Enter your Charges.</strong></p>
+          <p>If you selected more than one Special Charge in the previous section, you will see multiple rows in the <em>Add Special Charges</em> table.</p>
+          <p>For this lesson, enter a number in the <em>Charges</em> column corresponding to <em>One Day Service</em> and click <strong>Next</strong>.</p>
+        ]]></text>
+        <position>top</position>
+        <top>136px</top>
+        <left>320px</left>
+        <width>147px</width>
+        <height>20px</height>  
+        <!-- TODO: Fix regex -->
+        <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>            
+      </inputStep>    
+      <buttonStep>
+        <name>05_open_the_per_drop-down_menu</name>
+        <image>modules/presentation/images/special_charges_tab_lesson/special_charges_tab_002.jpg</image>
+        <text><![CDATA[
+          <p><strong>Open the “Per” drop-down menu.</strong></p>
+          <p>Click on the down-facing arrow in the <em>Per</em> column to open the drop-down menu.</p>
+        ]]></text>
+        <position>top</position>
+        <top>136px</top>
+        <left>471px</left>
+        <width>196px</width>
+        <height>20px</height>  
+      </buttonStep>   
+      <buttonStep>
+        <name>06_select_your_unit_for_pricing</name>
+        <image>modules/presentation/images/special_charges_tab_lesson/special_charges_tab_003.jpg</image>
+        <text><![CDATA[
+          <p><strong>Select your unit for pricing.</strong></p>
+          <p>You will notice there are a number of choices from which to choose.</p>
+          <P>For this lesson, select <strong>EACH</strong>.</p>
+        ]]></text>
+        <position>top</position>
+        <top>136px</top>
+        <left>669px</left>
+        <width>193px</width>
+        <height>227px</height>  
+      </buttonStep>    
+      <inputStep>
+        <name>07_enter_your_descriptions_conditions</name>
+        <image>modules/presentation/images/special_charges_tab_lesson/special_charges_tab_004.jpg</image>
+        <text><![CDATA[
+          <p><strong>Enter your Descriptions/Conditions.</strong></p>
+          <p><em>Example: A product includes One Day Service which costs $7.00 per item but is only applicable in the contiguous US.</em></p>
+          <p>Enter your Descriptions/Conditions and click <strong>Next</strong>.</p>
+        ]]></text>
+        <position>top</position>
+        <top>136px</top>
+        <left>671px</left>
+        <width>196px</width>
+        <height>20px</height> 
+        <!-- TODO: Fix regex -->
+        <expression><![CDATA[^[a-zA-Z0-9]{1,40}$]]></expression>
+        <errorAlert>ERROR: There is a 40 character limit and only alphanumeric characters are allowed.</errorAlert>             
+      </inputStep>   
+      <buttonStep>
+        <name>08_save_your_special_charges</name>
+        <image>modules/presentation/images/special_charges_tab_lesson/special_charges_tab_004.jpg</image>
+        <text><![CDATA[
+          <p><strong>Save your Special Charges.</strong></p>
+          <p>Click the <strong>Save Special Charges</strong> button to ensure your work is not lost.</p>
+        ]]></text>
+        <position>top</position>
+        <top>458px</top>
+        <left>739px</left>
+        <width>136px</width>
+        <height>20px</height>  
+      </buttonStep>   
+      <buttonStep>
+        <name>09_click_ok</name>
+        <image>modules/presentation/images/special_charges_tab_lesson/special_charges_tab_005.jpg</image>
+        <text><![CDATA[
+          <p><strong>Click OK.</strong></p>
+          <p>Click <strong>OK</strong> on the <em>Product Confirmation</em> pop-up message.</p>
+        ]]></text>
+        <position>top-middle-aligned</position>
+        <top>206px</top>
+        <left>282px</left>
+        <width>328px</width>
+        <height>152px</height>
+      </buttonStep>    
+      <blankStep>
+        <name>10_end_of_special_charges_lesson</name>
+        <image>modules/presentation/images/special_charges_tab_lesson/special_charges_tab_006.jpg</image>
+        <text><![CDATA[
+          <p><strong>End of Special Charges lesson.</strong></p>
+          <p>Click <strong>Done</strong> to complete this lesson.</p>
+        ]]></text>
+        <position>floating</position>
+        <top>200px</top>
+        <left>500px</left>
+        <width>0px</width>
+        <height>0px</height>  
+      </blankStep>   
+    </steps>
+  </presentation>
 </database>

@@ -22,7 +22,7 @@
         <content>
           <page>
             <name>get-started-tab-lesson</name>
-            <title><![CDATA[Get Started Tab Lesson]]></title>
+            <title><![CDATA[Get Started Tab]]></title>
             <body><![CDATA[
               <p>This is a lesson on filling out the <em>Get Started</Em> tab. You must fill out this section before you can move onto the other tabs in the template.</p>
               <p>Click the play button to begin!</p>
@@ -40,7 +40,7 @@
           </page>  
           <page>
             <name>wizard_management_lesson</name>
-            <title><![CDATA[Wizard Management Lesson]]></title>
+            <title><![CDATA[Wizard Management]]></title>
             <body><![CDATA[
               <p>This is a lesson on the Wizard Management section. This section will appear only when you choose <strong>Products Only</strong> or <strong>Products and Services</strong> within the offer category. You must fill out this section before you can enter any additional pricing information.</p>
               <p>Click the play button to begin!</p>
@@ -58,7 +58,7 @@
           </page>    
           <page>
             <name>special_charges_lesson</name>
-            <title><![CDATA[Special Charges Lesson]]></title>
+            <title><![CDATA[Special Charges]]></title>
             <body><![CDATA[
               <p>This is a lesson on the Special Charges section. This is where you will indicate any special charges for delivery features like one or two day service, assembly, or installation, among others.</p>
               <p>Click the play button to begin!</p>
@@ -67,13 +67,22 @@
           </page>
           <page>
             <name>special_features_lesson</name>
-            <title><![CDATA[Special Features Lesson]]></title>
+            <title><![CDATA[Special Features]]></title>
             <body><![CDATA[
               <p>This is a lesson on the Special Features section. This section includes environmental features, Section 508 items, and other features that apply to the products under each SIN.</p>
               <p>Click the play button to begin!</p>
               <div id="presentation" class="presentation_block">presentation/special_features_lesson</div>            
             ]]></body>
           </page>
+          <page>
+            <name>choosing_pricing_template_lesson</name>
+            <title><![CDATA[Choosing a Pricing Template]]></title>
+            <body><![CDATA[
+              <p>This is a lesson on choosing your pricing method. When you are ready to enter your pricing data, you have three templates from which to choose. The method you select is dependent upon the number of items you need to enter, and your preference to work on or offline.</p>
+              <p>Click the play button to begin!</p>
+              <div id="presentation" class="presentation_block">presentation/choosing_pricing_template_lesson</div>            
+            ]]></body>
+          </page>          
           <page>
             <name>pricing_tab_lesson_i</name>
             <title><![CDATA[Pricing Tab Lesson: Part I]]></title>
@@ -92,13 +101,32 @@
           </page>    
           <page>
             <name>additional_photos_tab_lesson</name>
-            <title><![CDATA[Additional Photos Tab Lesson]]></title>
+            <title><![CDATA[Additional Photos Tab]]></title>
             <body><![CDATA[
               <p>This is a lesson for completing the <em>Additional Photos</em> tab of the <em>On-Screen Data Entry</em> template. If you selected <strong>Yes</strong> to Photos in <em>Wizard Management</em>, this tab will appear in your pricing data.</p>
               <p>Click the play button to begin!</p>
               <div id="presentation" class="presentation_block">presentation/additional_photos_lesson</div>            
             ]]></body>
           </page>
+          <page>
+            <name>zonal_offer_lesson</name>
+            <title><![CDATA[Zonal Offer Price]]></title>
+            <body><![CDATA[
+              <p>This is the second part of the <em>Zonal Pricing</em> lesson. Be sure you have completed the initial setup before moving onto this lesson, as <em>Zonal Pricing</em> must be completed in two separate sections.</p>
+              <p>This lesson corresponds to the <em>On-Screen Data Entry</em> template; if you need assistance with the <em>Download/Upload Template</em>, use the left-hand menu of this training to navigate to the <em>Zonal Pricing: Download/Upload Template Lesson</em>.</p>
+              <p>Click the play button to begin!</p>
+              <div id="presentation" class="presentation_block">presentation/zonal_offer_lesson</div>            
+            ]]></body>
+          </page>  
+          <page>
+            <name>special_charges_tab_lesson</name>
+            <title><![CDATA[Special Charges Tab: On-Screen Data Entry]]></title>
+            <body><![CDATA[
+              <p>This is the second lesson for the <em>Special Charges</em> section. If you have not yet completed the first part of this lesson, be sure to do so by visiting the Special Charges Lesson.</p>
+              <p>Click the play button to begin!</p>
+              <div id="presentation" class="presentation_block">presentation/special_charges_tab_lesson</div>            
+            ]]></body>
+          </page>                    
         </content>
       </section>
     </content>
